@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Scheme Properties"
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, and tensor constructions."
+  authors:
+    - Formal Frontier Agents
+  license: Apache-2.0
+
+sources:
+  - title: "Original project proofs of reusable scheme-property and module interfaces"
+    type: original-proof
+    relationship: independently-proves
+    note: "Original formal arguments and API design; this entry does not assert complete formalization of any external source."
+  - title: "The Rising Sea: Foundations of Algebraic Geometry"
+    authors:
+      - Ravi Vakil
+    type: book
+    relationship: background
+    note: "Mathematical reference for local properties and geometric constructions; no claim of complete passage coverage."
+  - title: "Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field"
+    authors:
+      - J. S. Milne
+    type: book
+    relationship: background
+    note: "Mathematical context for finite-type points and component schemes; reused Formal Frontier expression is credited separately in CREDITS.md."
+  - title: "The K-book: An Introduction to Algebraic K-theory"
+    authors:
+      - Charles A. Weibel
+    type: book
+    relationship: adapts
+    note: "Chapter I section 5 informs local finite-presentation work; the earlier original project research and its extraction are distinguished in CREDITS.md."
+
+automation:
+  methods:
+    - method: agent
+      framework: "Formal Frontier agent-assisted Lean development"
+      notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
+
+review:
+  status: self-assessed
+  notes: "Ordinary development main has earlier exact-source independent reviews. At documentation preparation on September 26, 2026, the frozen 73-module source and official pins had passed source/client compilation and native API generation; complete release proof/axiom intake and independent exact-candidate release review were not yet recorded for this assembly. This self-assessment does not certify proof integrity, release acceptance or source-complete formalization."

@@ -1,0 +1,18 @@
+module
+
+import SchemeProperties.IdealSheafModule
+
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toSubmodule
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toModule
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toModuleι
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toModuleι_mono
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toModuleSubobject
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.affineSectionsEquiv
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.affineSectionsEquiv_apply
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toModule_isLocalizedModule_basicOpen
+#print axioms AlgebraicGeometry.Scheme.IdealSheafData.toModule_isQuasicoherent
+#print axioms AlgebraicGeometry.Scheme.nilradicalModule
+#print axioms AlgebraicGeometry.Scheme.nilradicalModuleι
+#print axioms AlgebraicGeometry.Scheme.nilradicalModuleSubobject
+#print axioms AlgebraicGeometry.Scheme.nilradicalModule_isQuasicoherent
+#print axioms AlgebraicGeometry.Scheme.nilradicalModuleAffineSections

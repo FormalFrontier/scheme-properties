@@ -1,0 +1,13 @@
+module
+
+import SchemeProperties.QuasicoherentAbelian
+
+#print axioms AlgebraicGeometry.tildeFunctor_preservesFiniteLimits
+#print axioms AlgebraicGeometry.Scheme.Modules.restrictFunctor_preservesFiniteLimits
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isLimit
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isColimit
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderFiniteLimits
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderFiniteColimits
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_containsZero
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderKernels
+#print axioms AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderCokernels

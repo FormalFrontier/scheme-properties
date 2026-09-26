@@ -1,0 +1,29 @@
+name = "scheme-properties"
+version = "0.1.0"
+defaultTargets = ["SchemeProperties", "SchemePropertiesTest", "SchemePropertiesExamples"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "83abb3e776bdefcbc447a1e44d0debe4010039e5"
+
+[[require]]
+name = "coherent-modules"
+git = "https://github.com/FormalFrontier/coherent-modules.git"
+rev = "fc30df937c7476f1c01f7cb39005f8cae37f8f34"
+
+[[require]]
+name = "finiteEtaleAlgebras"
+git = "https://github.com/FormalFrontier/finite-etale-algebras.git"
+rev = "79575f65c9edec560f27756917761eed78331a2a"
+
+[[lean_lib]]
+name = "SchemeProperties"
+
+[[lean_lib]]
+name = "SchemePropertiesTest"
+globs = ["Test.+"]
+
+[[lean_lib]]
+name = "SchemePropertiesExamples"
+globs = ["Examples.+"]

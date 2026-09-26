@@ -1,0 +1,6 @@
+module
+
+import SchemeProperties.ModuleTensorRestriction
+
+#print axioms AlgebraicGeometry.Scheme.Modules.restrictTensorNatIso
+#print axioms AlgebraicGeometry.Scheme.Modules.restrictTensorNatIso_inv_app_tmul

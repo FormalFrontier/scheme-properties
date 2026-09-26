@@ -1,0 +1,3837 @@
+{
+  "display_kinds": {
+    "abbrev": 4,
+    "class": 5,
+    "constructor": 5,
+    "def": 6,
+    "instance": 41,
+    "noncomputable abbrev": 6,
+    "noncomputable def": 83,
+    "noncomputable instance": 1,
+    "theorem": 230
+  },
+  "docgen": "97d4ecdfc8e09e7f511724c25e303d448de6a3db",
+  "format": 1,
+  "inputs": {
+    "Examples/ComponentBaseChange.lean": "f2da6e1e347f8e1cbb7440f1a1139c23fd0ebe5770192154ddea03af1284a226",
+    "Examples/ComponentBaseChangeAxiomAudit.lean": "c78a6f4ee97525713a1827d0a7da295bc26278cbe87f7edb7e4ba97ff31441d3",
+    "Examples/ComponentBaseChangeRoot.lean": "94b2f01ad12cce1b6b576eadc5b1d26dad34e3d0fd29dd78b9a121f17373b2ff",
+    "Examples/ComponentProduct.lean": "83c43bf26c3d874c05d29d93a4405f9384b9b59721d04a68ae3b3894cc20d97a",
+    "Examples/ComponentProductAxiomAudit.lean": "d2116945f4120dbd7779e4b022165e14f74234fa619ba9e4d16d46d897ff0043",
+    "Examples/ComponentProductRoot.lean": "8da4ec4ab5e9277a40ec8a315b59cfcc646e66d5074998233aeda22867a77183",
+    "Examples/ComponentScheme.lean": "99e84123974165dbc58a3f7d47d4063577cdfd74fd7519d8bf17d9911e905704",
+    "Examples/ComponentSchemeAxiomAudit.lean": "cabe05abefbf5ca9a09b95430f6b03befb08f446159160b6894398d6878a8987",
+    "Examples/ComponentSchemeRoot.lean": "83c89d31a5b2675aa386ec52d72fde5f1d273d4bcb3b22cd543422c2ec5f8359",
+    "Examples/CoproductSections.lean": "5be5817a6383e7bed6bd698aeb2e40f894ef546bd60308c6264ed4aa2734da58",
+    "Examples/CoproductSectionsAxiomAudit.lean": "3ca9b3d2c95b0002120ee539fc2b19b3de20a5b1a85f1667eb9c9e1b538973fe",
+    "Examples/CoproductSectionsRoot.lean": "d7db4fbc1cf8a949052c7f34d0c171cfd44f34d9307f8e2c56b21a54d6b83048",
+    "Examples/CoproductTopology.lean": "57628dbd63342d50376390bcad055dc7c420d8540dfced242b6e83579253457a",
+    "Examples/CoproductTopologyAxiomAudit.lean": "bef0a8d147e551e14ba1862b1d20531e12ee4e6d87a206ef7c969b534b5c5c19",
+    "Examples/CoproductTopologyRoot.lean": "acabf2c7db1e398b26faecab7264c35c00ff7b4a7410533e1fdab3961c46f193",
+    "SchemeProperties.lean": "54a0e51e36c5a4a3ccefcbe5d39c1e974d3640f74713b4b63cf45109120aebf6",
+    "SchemeProperties/CoherentQuasicoherent.lean": "dba58cc35d6aa67221c8e1980fdd6731877d26746c23c8ba57f175ea8228f32f",
+    "SchemeProperties/CoherentQuasicoherentLocality.lean": "6cdfd6a71c0146c0026607a04c19fd738d2adb69de212616e03c838ac217c3a8",
+    "SchemeProperties/ComponentBaseChange.lean": "99fda0bd3a393eb9944db63795a05058b8e49a46aea4745c7fa9de7046165693",
+    "SchemeProperties/ComponentFibers.lean": "9917498ae5afa8abf78700398d505d03c0b8cf297b6d2e7ebd40a98c33e095a0",
+    "SchemeProperties/ComponentProduct.lean": "c4eb8af70184930cde00197726e1dd9dccd674208ab2a4ceae1af498906f9987",
+    "SchemeProperties/ComponentScheme.lean": "cfa8091e2348810bc515322e67af22d9916b57db0cc3a0d8efc59cf410a9561f",
+    "SchemeProperties/ConnectedComponents.lean": "2717fe2339723a17ed725db37c671a5725ba36370c1242fc7c36527068bcc928",
+    "SchemeProperties/CoproductSections.lean": "b4b66e6d5279e3035cd75db2c165710636c5be314768a75e72b13a07354cd5c2",
+    "SchemeProperties/CoproductTopology.lean": "7862e0326e4c94a6ed70e91621d3d36833835f8acfdebc118001dbc178c03179",
+    "SchemeProperties/Factorial.lean": "93fd325284f42b2100f12b5663aec79fd222321a2cf97e3f3c0bfc0d0aca4dba",
+    "SchemeProperties/FactorialNormal.lean": "2e82cfbb6ae23c057b2036b4fca7df91a32f53ac1af703284f69c96beb75478b",
+    "SchemeProperties/FiniteTypePoints.lean": "aab9d029efb4f5a12cc926da15853d8ada399dc22206498e038fa254c7663dc2",
+    "SchemeProperties/GeometricConnectedness.lean": "4818a5e8a5cc1554bbd18adcd0ce54f6f046b212daccb879e324e7859bee5b41",
+    "SchemeProperties/GlobalSectionsBaseChange.lean": "bc47be79dde24ec27df4ce07473122bb8da314f2b6de4c530ea669c048c93d6a",
+    "SchemeProperties/IdealSheafModule.lean": "cfc74a9f42e6312b1a264a52afa57726a8d25cf1c6b6056bf7e94c4c2f740837",
+    "SchemeProperties/Integral.lean": "61b62fb64801410fae147952bca2c39da9ec7e1a7e64ee7e89e7e20d6019def8",
+    "SchemeProperties/ModuleProperties.lean": "305b04e9b824631dc657044545f0a74973c63bfca00705aa7c57ecd07cc6e2de",
+    "SchemeProperties/ModuleTensor.lean": "0295a7af20220cafcbcb2eef6f668d3717705299bd9b5cd17112c66c52f58a54",
+    "SchemeProperties/ModuleTensorAffine.lean": "95e364205115900436f49af146d2f8039ee1542c80b8d999014504bbc65a7738",
+    "SchemeProperties/ModuleTensorLocalization.lean": "04fd58670513a320945f62912ea62cdd6603ef9c95affecf81a5e2cdea8217bd",
+    "SchemeProperties/ModuleTensorRestriction.lean": "2e7cfa8d350ca394c7f054321a8bd696239b6783d0d9162e59265d3c8f3194e2",
+    "SchemeProperties/NoetherianComponents.lean": "e3956bbdafe68cd81aabf740e63ee4e74302877bc1e4d8458a04b408e1b6376f",
+    "SchemeProperties/Normal.lean": "da0ea23c4a37762e48ed35a1f8b08ba49baa8feffb5304f87d8c46023fe38cac",
+    "SchemeProperties/NormalEtale.lean": "48fb24e5b54d5a6b5105df479fdd4fa36657af5bda41d2f14e46fe2bf4d13430",
+    "SchemeProperties/NormalLocalization.lean": "6c9a57a2acd7dd8cca5827695e3a3a6e8305e1fdb9abebcf663bc6cf33841b67",
+    "SchemeProperties/NormalPolynomial.lean": "7f3162eae1e1c12237f1aa1e57d27b830a32588e27fadcb5450d4eafdc499995",
+    "SchemeProperties/NormalSeparable.lean": "2fe8d47fdcc1d71d1f84182fcd70ddae9201b9ad36152276fa975fefc61f5a85",
+    "SchemeProperties/NormalSeparableScheme.lean": "3d88ae9c3fa2ecb7ff0780696dcaac94388a8973393470189f2ff70683ca93dd",
+    "SchemeProperties/PresheafModuleTensorStalk.lean": "58ac9d9c27b11dc30ad46ba2fbff7bfcfb4cf0ec6aecafc2f47a04ec360fa7e5",
+    "SchemeProperties/QcqsModuleLocalization.lean": "c24ba991ff857692ddb73b62b379b4c1ef549b85ecfe63a3c846d59cc7e7606f",
+    "SchemeProperties/Quasicoherent.lean": "748e453cf94ec463ffc215bc29f3158b0a48d97c1f377cf97d567a611e99c9c2",
+    "SchemeProperties/QuasicoherentAbelian.lean": "833ee8312db37b98a19031b1635b4bf809f51d1c62a2d9a18828928d3a6f5aa7",
+    "SchemeProperties/Reduced.lean": "63f602bdddc33d0c10e0c8844c1b2a3cc85e38d66d8232f6021fd1589ba0ea98",
+    "SchemeProperties/SheafFinitePresentation.lean": "c7817334e1f2656a066082bb7c0c99968de5941965959f9cfd1546da09b28ac1",
+    "SchemeProperties/StructureSheaf.lean": "61eb7eef46522545f61adc0d4e830415615459a1fb2985391dd172440081c88b",
+    "SchemeProperties/Torsion.lean": "ab93094f5c995ac7e302ebe8f0f74ab61a87bd98590e5d2ea42c7544533b761f",
+    "Test/CoherentLocalityOrdinaryImport.lean": "8b03139afdea5318bc1851a429b1b510e20398e11822dc7e869245046b7a8cc7",
+    "Test/CoherentQuasicoherentAxioms.lean": "ec61a32faec249a8db4cc4a43cf289dcefebd26db308df38c9016d23aa7077de",
+    "Test/CoherentQuasicoherentClient.lean": "2c12db0317a5966ed6e3cd0c60ccdc019fc86546a7615322640a7289f27fb4e9",
+    "Test/ComponentFibersOrdinaryImport.lean": "aa1d63fef006befadfc45336330562eeaeff765bd4de966bcc8e639dd6f8df32",
+    "Test/ComponentProductOrdinaryImport.lean": "4fbfc3f65375a07298511a298573b822076c5a5ba2bcafd76df5743819531543",
+    "Test/FactorialNormalOrdinaryImport.lean": "e2abc55f7595f187a070d387a9c9b6303a7bacdaf7aa918fa6f9347da2038f56",
+    "Test/GlobalSectionsBaseChangeOrdinaryImport.lean": "408586f873a7b189fae03deea20fadb3bf3357a31d030827e63461b417f1201e",
+    "Test/IdealSheafModuleAxioms.lean": "d27f4f9be06d7897bc6b25d7d9bac83c9dbd78b247b90c9f5de1dd64c1db4265",
+    "Test/IdealSheafModuleClient.lean": "952fb9e3b74e4f4358ede4169ed6adf858496a2c795f1c241c983d41c235e06f",
+    "Test/IdealSheafModuleRootClient.lean": "312cf0ec56c71b53a4672c6c15a1596f5436ac4bece4ac32fff2807fe7eaa4a3",
+    "Test/ModuleTensorAxioms.lean": "c2d6387a2f0a2da6c115333e15fc6831b318a5ee9506354b3e8167b911204846",
+    "Test/ModuleTensorClient.lean": "53b86af708402bcc28c02d0d9fc6103d4a84294606d60572f91ef5f41e3bf596",
+    "Test/ModuleTensorRestrictionAxioms.lean": "6e451acb195c35463096cbb9af5c0b56129f6e0c2386abf880055c5a87411acd",
+    "Test/ModuleTensorRestrictionClient.lean": "aeac84df2de5203d8a1ae5a4a74e2537ebbc84e5cd8ffc97543007f476b8511b",
+    "Test/ModuleTensorRestrictionRootClient.lean": "ad17c30c9d61671e3e7f5ef6622c5639118461c7d6bc2e5ff4e7df10d9940efc",
+    "Test/ModuleTensorRootClient.lean": "c77caa2634be921f527a756c36eaf6aec69f51d326ef342fc5f19a0fa608968b",
+    "Test/QuasicoherentAbelianAxioms.lean": "622ade46d1c6a16beea6388a5b9cac28f5971cf14544a9af5ec32845d6dab4a8",
+    "Test/QuasicoherentAbelianClient.lean": "e453f7d4c19d5af91484710baf10234023013f9c125e66acf59e85b8fe3c847a",
+    "Test/SchemeSevenRepairsClient.lean": "931025627458f8e3424ae17b9db6016c11c120a8bb0946f7de728c285bddb8d7",
+    "Test/StructureSheafAxioms.lean": "86065fee38ea040e8fdc676cc0ed004b6f9eb274eee60abd758dd6409d870c38",
+    "Test/StructureSheafClient.lean": "63a594e8cdf986450d598df53026c6eb06ea4ca5bafab4f39a2ad68e1cc0cdff",
+    "lake-manifest.json": "9fc2246b659f1c675ffdce323cff731f4b9886e7c3add90cda95e086e2e00795",
+    "lakefile.toml": "ef6474717e88e34540cc5c1f0414a6472b49ba06421a3d8352b0a10c3408785b",
+    "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+  },
+  "kinds": {
+    "class": 5,
+    "ctor": 5,
+    "def": 99,
+    "instance": 42,
+    "theorem": 230
+  },
+  "missing_docstrings": [
+    "AlgebraicGeometry.IsFactorial.iff_of_openCover",
+    "AlgebraicGeometry.IsFactorial.mk",
+    "AlgebraicGeometry.IsFactorial.stalk_uniqueFactorizationMonoid",
+    "AlgebraicGeometry.IsNormal.iff_of_openCover",
+    "AlgebraicGeometry.IsNormal.mk",
+    "AlgebraicGeometry.IsNormal.stalk_isDomain",
+    "AlgebraicGeometry.IsNormal.stalk_isIntegrallyClosed",
+    "AlgebraicGeometry.Scheme.Modules.IsTorsionFree.mk",
+    "AlgebraicGeometry.Scheme.Modules.IsTorsionFree.stalk",
+    "AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.mk",
+    "AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.stalk",
+    "AlgebraicGeometry.Scheme.Modules.awayLocTensor_tmul",
+    "AlgebraicGeometry.Scheme.Modules.awayModuleEquiv_mk",
+    "AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_awayLocTensor",
+    "AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_mk_tmul",
+    "AlgebraicGeometry.Scheme.Modules.away_actual_restriction_square",
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_locTensor",
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_product_paths",
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_restriction_square",
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_symm_restriction",
+    "AlgebraicGeometry.Scheme.Modules.locTensor_tmul",
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_comp",
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_id",
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor",
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor_apply",
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_tmul",
+    "AlgebraicGeometry.Scheme.Modules.tensorUnit_basicOpen_isIso",
+    "AlgebraicGeometry.Scheme.Modules.topTensorEquiv_symm_tmul",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom_assoc",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_fst",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_snd",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst_assoc",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd",
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd_assoc",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst_assoc",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd_assoc",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_appTop_fst_fst",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst_assoc",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd",
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd_assoc",
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeIdentityEquiv_apply",
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeTowerEquiv_apply",
+    "AlgebraicGeometry.Scheme.mem_connectedComponentOpen",
+    "AlgebraicGeometry.baseChangeLocallyOfFiniteType",
+    "AlgebraicGeometry.baseChangeLocallyOfFiniteType'",
+    "AlgebraicGeometry.baseChangeLocallyOfFiniteTypeProduct",
+    "AlgebraicGeometry.baseChangeQuasiCompact",
+    "AlgebraicGeometry.baseChangeQuasiCompact'",
+    "AlgebraicGeometry.baseChangeQuasiCompactProduct",
+    "AlgebraicGeometry.factorialSpec",
+    "AlgebraicGeometry.instFaithfulLftAffineOverOverSchemeLocallyFiniteTypeMorphismTopMorphismPropertySpecOfLftAffineInclusion",
+    "AlgebraicGeometry.instFullLftAffineOverOverSchemeLocallyFiniteTypeMorphismTopMorphismPropertySpecOfLftAffineInclusion",
+    "AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsFactorial",
+    "AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsNormal",
+    "AlgebraicGeometry.instIsFactorialToScheme",
+    "AlgebraicGeometry.instIsFactorialXScheme",
+    "AlgebraicGeometry.instIsNormalToScheme",
+    "AlgebraicGeometry.instIsNormalXScheme",
+    "AlgebraicGeometry.isReduced_of_isNormal",
+    "AlgebraicGeometry.lftOver_isContinuous",
+    "AlgebraicGeometry.lftOver_locallyCoverDense",
+    "AlgebraicGeometry.lftOver_representablyFlat",
+    "AlgebraicGeometry.lftZariskiTopology_subcanonical",
+    "AlgebraicGeometry.normalSpec",
+    "AlgebraicGeometry.sourceCompactSpace",
+    "AlgebraicGeometry.sourceIsLocallyNoetherian",
+    "AlgebraicGeometry.sourceIsNoetherian",
+    "AlgebraicGeometry.tensorLocallyOfFiniteType",
+    "AlgebraicGeometry.tensorQuasiCompact",
+    "IsLocallyNormalRing.isDomain_atPrime",
+    "IsLocallyNormalRing.isIntegrallyClosed_atPrime",
+    "IsLocallyNormalRing.mk"
+  ],
+  "module_paths": {
+    "Examples.ComponentBaseChange": "Examples/ComponentBaseChange.lean",
+    "Examples.ComponentBaseChangeAxiomAudit": "Examples/ComponentBaseChangeAxiomAudit.lean",
+    "Examples.ComponentBaseChangeRoot": "Examples/ComponentBaseChangeRoot.lean",
+    "Examples.ComponentProduct": "Examples/ComponentProduct.lean",
+    "Examples.ComponentProductAxiomAudit": "Examples/ComponentProductAxiomAudit.lean",
+    "Examples.ComponentProductRoot": "Examples/ComponentProductRoot.lean",
+    "Examples.ComponentScheme": "Examples/ComponentScheme.lean",
+    "Examples.ComponentSchemeAxiomAudit": "Examples/ComponentSchemeAxiomAudit.lean",
+    "Examples.ComponentSchemeRoot": "Examples/ComponentSchemeRoot.lean",
+    "Examples.CoproductSections": "Examples/CoproductSections.lean",
+    "Examples.CoproductSectionsAxiomAudit": "Examples/CoproductSectionsAxiomAudit.lean",
+    "Examples.CoproductSectionsRoot": "Examples/CoproductSectionsRoot.lean",
+    "Examples.CoproductTopology": "Examples/CoproductTopology.lean",
+    "Examples.CoproductTopologyAxiomAudit": "Examples/CoproductTopologyAxiomAudit.lean",
+    "Examples.CoproductTopologyRoot": "Examples/CoproductTopologyRoot.lean",
+    "SchemeProperties": "SchemeProperties.lean",
+    "SchemeProperties.CoherentQuasicoherent": "SchemeProperties/CoherentQuasicoherent.lean",
+    "SchemeProperties.CoherentQuasicoherentLocality": "SchemeProperties/CoherentQuasicoherentLocality.lean",
+    "SchemeProperties.ComponentBaseChange": "SchemeProperties/ComponentBaseChange.lean",
+    "SchemeProperties.ComponentFibers": "SchemeProperties/ComponentFibers.lean",
+    "SchemeProperties.ComponentProduct": "SchemeProperties/ComponentProduct.lean",
+    "SchemeProperties.ComponentScheme": "SchemeProperties/ComponentScheme.lean",
+    "SchemeProperties.ConnectedComponents": "SchemeProperties/ConnectedComponents.lean",
+    "SchemeProperties.CoproductSections": "SchemeProperties/CoproductSections.lean",
+    "SchemeProperties.CoproductTopology": "SchemeProperties/CoproductTopology.lean",
+    "SchemeProperties.Factorial": "SchemeProperties/Factorial.lean",
+    "SchemeProperties.FactorialNormal": "SchemeProperties/FactorialNormal.lean",
+    "SchemeProperties.FiniteTypePoints": "SchemeProperties/FiniteTypePoints.lean",
+    "SchemeProperties.GeometricConnectedness": "SchemeProperties/GeometricConnectedness.lean",
+    "SchemeProperties.GlobalSectionsBaseChange": "SchemeProperties/GlobalSectionsBaseChange.lean",
+    "SchemeProperties.IdealSheafModule": "SchemeProperties/IdealSheafModule.lean",
+    "SchemeProperties.Integral": "SchemeProperties/Integral.lean",
+    "SchemeProperties.ModuleProperties": "SchemeProperties/ModuleProperties.lean",
+    "SchemeProperties.ModuleTensor": "SchemeProperties/ModuleTensor.lean",
+    "SchemeProperties.ModuleTensorAffine": "SchemeProperties/ModuleTensorAffine.lean",
+    "SchemeProperties.ModuleTensorLocalization": "SchemeProperties/ModuleTensorLocalization.lean",
+    "SchemeProperties.ModuleTensorRestriction": "SchemeProperties/ModuleTensorRestriction.lean",
+    "SchemeProperties.NoetherianComponents": "SchemeProperties/NoetherianComponents.lean",
+    "SchemeProperties.Normal": "SchemeProperties/Normal.lean",
+    "SchemeProperties.NormalEtale": "SchemeProperties/NormalEtale.lean",
+    "SchemeProperties.NormalLocalization": "SchemeProperties/NormalLocalization.lean",
+    "SchemeProperties.NormalPolynomial": "SchemeProperties/NormalPolynomial.lean",
+    "SchemeProperties.NormalSeparable": "SchemeProperties/NormalSeparable.lean",
+    "SchemeProperties.NormalSeparableScheme": "SchemeProperties/NormalSeparableScheme.lean",
+    "SchemeProperties.PresheafModuleTensorStalk": "SchemeProperties/PresheafModuleTensorStalk.lean",
+    "SchemeProperties.QcqsModuleLocalization": "SchemeProperties/QcqsModuleLocalization.lean",
+    "SchemeProperties.Quasicoherent": "SchemeProperties/Quasicoherent.lean",
+    "SchemeProperties.QuasicoherentAbelian": "SchemeProperties/QuasicoherentAbelian.lean",
+    "SchemeProperties.Reduced": "SchemeProperties/Reduced.lean",
+    "SchemeProperties.SheafFinitePresentation": "SchemeProperties/SheafFinitePresentation.lean",
+    "SchemeProperties.StructureSheaf": "SchemeProperties/StructureSheaf.lean",
+    "SchemeProperties.Torsion": "SchemeProperties/Torsion.lean",
+    "Test.CoherentLocalityOrdinaryImport": "Test/CoherentLocalityOrdinaryImport.lean",
+    "Test.CoherentQuasicoherentAxioms": "Test/CoherentQuasicoherentAxioms.lean",
+    "Test.CoherentQuasicoherentClient": "Test/CoherentQuasicoherentClient.lean",
+    "Test.ComponentFibersOrdinaryImport": "Test/ComponentFibersOrdinaryImport.lean",
+    "Test.ComponentProductOrdinaryImport": "Test/ComponentProductOrdinaryImport.lean",
+    "Test.FactorialNormalOrdinaryImport": "Test/FactorialNormalOrdinaryImport.lean",
+    "Test.GlobalSectionsBaseChangeOrdinaryImport": "Test/GlobalSectionsBaseChangeOrdinaryImport.lean",
+    "Test.IdealSheafModuleAxioms": "Test/IdealSheafModuleAxioms.lean",
+    "Test.IdealSheafModuleClient": "Test/IdealSheafModuleClient.lean",
+    "Test.IdealSheafModuleRootClient": "Test/IdealSheafModuleRootClient.lean",
+    "Test.ModuleTensorAxioms": "Test/ModuleTensorAxioms.lean",
+    "Test.ModuleTensorClient": "Test/ModuleTensorClient.lean",
+    "Test.ModuleTensorRestrictionAxioms": "Test/ModuleTensorRestrictionAxioms.lean",
+    "Test.ModuleTensorRestrictionClient": "Test/ModuleTensorRestrictionClient.lean",
+    "Test.ModuleTensorRestrictionRootClient": "Test/ModuleTensorRestrictionRootClient.lean",
+    "Test.ModuleTensorRootClient": "Test/ModuleTensorRootClient.lean",
+    "Test.QuasicoherentAbelianAxioms": "Test/QuasicoherentAbelianAxioms.lean",
+    "Test.QuasicoherentAbelianClient": "Test/QuasicoherentAbelianClient.lean",
+    "Test.SchemeSevenRepairsClient": "Test/SchemeSevenRepairsClient.lean",
+    "Test.StructureSheafAxioms": "Test/StructureSheafAxioms.lean",
+    "Test.StructureSheafClient": "Test/StructureSheafClient.lean"
+  },
+  "module_scopes": {
+    "Examples.ComponentBaseChange": "example",
+    "Examples.ComponentBaseChangeAxiomAudit": "example",
+    "Examples.ComponentBaseChangeRoot": "example",
+    "Examples.ComponentProduct": "example",
+    "Examples.ComponentProductAxiomAudit": "example",
+    "Examples.ComponentProductRoot": "example",
+    "Examples.ComponentScheme": "example",
+    "Examples.ComponentSchemeAxiomAudit": "example",
+    "Examples.ComponentSchemeRoot": "example",
+    "Examples.CoproductSections": "example",
+    "Examples.CoproductSectionsAxiomAudit": "example",
+    "Examples.CoproductSectionsRoot": "example",
+    "Examples.CoproductTopology": "example",
+    "Examples.CoproductTopologyAxiomAudit": "example",
+    "Examples.CoproductTopologyRoot": "example",
+    "SchemeProperties": "aggregate",
+    "SchemeProperties.CoherentQuasicoherent": "library",
+    "SchemeProperties.CoherentQuasicoherentLocality": "library",
+    "SchemeProperties.ComponentBaseChange": "library",
+    "SchemeProperties.ComponentFibers": "library",
+    "SchemeProperties.ComponentProduct": "library",
+    "SchemeProperties.ComponentScheme": "library",
+    "SchemeProperties.ConnectedComponents": "library",
+    "SchemeProperties.CoproductSections": "library",
+    "SchemeProperties.CoproductTopology": "library",
+    "SchemeProperties.Factorial": "library",
+    "SchemeProperties.FactorialNormal": "library",
+    "SchemeProperties.FiniteTypePoints": "library",
+    "SchemeProperties.GeometricConnectedness": "library",
+    "SchemeProperties.GlobalSectionsBaseChange": "library",
+    "SchemeProperties.IdealSheafModule": "library",
+    "SchemeProperties.Integral": "library",
+    "SchemeProperties.ModuleProperties": "library",
+    "SchemeProperties.ModuleTensor": "library",
+    "SchemeProperties.ModuleTensorAffine": "library",
+    "SchemeProperties.ModuleTensorLocalization": "library",
+    "SchemeProperties.ModuleTensorRestriction": "library",
+    "SchemeProperties.NoetherianComponents": "library",
+    "SchemeProperties.Normal": "library",
+    "SchemeProperties.NormalEtale": "library",
+    "SchemeProperties.NormalLocalization": "library",
+    "SchemeProperties.NormalPolynomial": "library",
+    "SchemeProperties.NormalSeparable": "library",
+    "SchemeProperties.NormalSeparableScheme": "library",
+    "SchemeProperties.PresheafModuleTensorStalk": "library",
+    "SchemeProperties.QcqsModuleLocalization": "library",
+    "SchemeProperties.Quasicoherent": "library",
+    "SchemeProperties.QuasicoherentAbelian": "library",
+    "SchemeProperties.Reduced": "library",
+    "SchemeProperties.SheafFinitePresentation": "library",
+    "SchemeProperties.StructureSheaf": "library",
+    "SchemeProperties.Torsion": "library",
+    "Test.CoherentLocalityOrdinaryImport": "test",
+    "Test.CoherentQuasicoherentAxioms": "test",
+    "Test.CoherentQuasicoherentClient": "test",
+    "Test.ComponentFibersOrdinaryImport": "test",
+    "Test.ComponentProductOrdinaryImport": "test",
+    "Test.FactorialNormalOrdinaryImport": "test",
+    "Test.GlobalSectionsBaseChangeOrdinaryImport": "test",
+    "Test.IdealSheafModuleAxioms": "test",
+    "Test.IdealSheafModuleClient": "test",
+    "Test.IdealSheafModuleRootClient": "test",
+    "Test.ModuleTensorAxioms": "test",
+    "Test.ModuleTensorClient": "test",
+    "Test.ModuleTensorRestrictionAxioms": "test",
+    "Test.ModuleTensorRestrictionClient": "test",
+    "Test.ModuleTensorRestrictionRootClient": "test",
+    "Test.ModuleTensorRootClient": "test",
+    "Test.QuasicoherentAbelianAxioms": "test",
+    "Test.QuasicoherentAbelianClient": "test",
+    "Test.SchemeSevenRepairsClient": "test",
+    "Test.StructureSheafAxioms": "test",
+    "Test.StructureSheafClient": "test"
+  },
+  "native_records": {
+    "Examples.ComponentBaseChange": "758065d42eecc40a4b77f0f13f704b179a34498b3896cdb6b287aa1309e7defa",
+    "Examples.ComponentBaseChangeAxiomAudit": "5c2694dceb89f345cc35b36ea1d51dd836db57db00eeb702bf69560e281840dc",
+    "Examples.ComponentBaseChangeRoot": "b7da1676f5324c32d6b9b8f848626ccd21f56e93b9093aed102e1f5a8ac92779",
+    "Examples.ComponentProduct": "84b0382c3de54641f77827c6f4c73456cba3cd4606d45dd9bc8cd5c487d6f034",
+    "Examples.ComponentProductAxiomAudit": "081fcbf0b4c3f37abaf16ba1fce9dfcd25f70ebf4299ea56775644ab119cfacc",
+    "Examples.ComponentProductRoot": "8c86885e1bb8a9f057c38e29e76d630bdf96e636928929aaa752c398a6a0a045",
+    "Examples.ComponentScheme": "7690f457328d869ff5925ba04c5db3b1c49c2aec4bdaa1adb382b3eec4bac5e4",
+    "Examples.ComponentSchemeAxiomAudit": "12aeddfb2cc7dadfc1cff1de08df77be60555a687a5904811370ea9a3dec00c3",
+    "Examples.ComponentSchemeRoot": "769648680b008f9050e9429fd3d6c900977a91cd5bb8b22356886b1d8d1262bf",
+    "Examples.CoproductSections": "637ed5dcb181a6e4c04c4ecc784851baec76a5a11c4c4e412e75f50b1c5061d7",
+    "Examples.CoproductSectionsAxiomAudit": "ea3e1c42764a2db39ce2b94310d36317aadf3d663749fe5647fa9835da65f6dc",
+    "Examples.CoproductSectionsRoot": "870ec40b844dbc8216299da4ed1bd1b92080da638d58badd4b86480a172be1a6",
+    "Examples.CoproductTopology": "2dc9c7c28971714b1ec775f46a969c1d21b61fc7fd0d898d34df392bd5a1b2b7",
+    "Examples.CoproductTopologyAxiomAudit": "4967061f71811d76d30040691c125152ed788ea6b1916fc9a5b81418ed3cf91d",
+    "Examples.CoproductTopologyRoot": "4d441cebf74e4dda26f0b309dc85226891e266d9737a3558364e28cbfb3dc2e4",
+    "SchemeProperties": "44a96c3074c1578963f357a09761c02c1c05aa1bd75f53f8cfb7c744b12f1e9f",
+    "SchemeProperties.CoherentQuasicoherent": "df2a2786b3bd6d089b2f90cec60e0bc763213c11024d1d1f17e4311d0c8393a2",
+    "SchemeProperties.CoherentQuasicoherentLocality": "b113563fb1d4604eb97105ed3d67c6334683e118bced700eb5d68a3f8df10268",
+    "SchemeProperties.ComponentBaseChange": "cf3a1ccf8d5284df3a729ed4b0227d991d2b27be6d865a15187720609505e3f1",
+    "SchemeProperties.ComponentFibers": "b3fbecce95f5b70b0ae3d0d1123025a21f3df8aa6c47a913aca85a8f45fa569b",
+    "SchemeProperties.ComponentProduct": "9c9a24cf30234a47702ccc40e03d544046cde76dfa3b34e9db1aded3f9e93dbd",
+    "SchemeProperties.ComponentScheme": "35ccdc0ea483da5f2d8bb2dfa3a2d15987bce27b90842a48663ef7d89e986502",
+    "SchemeProperties.ConnectedComponents": "c7c48607d22e2c1a1da27e9a98d7aa39e5be3ca466ed67e2733f2572690e07bb",
+    "SchemeProperties.CoproductSections": "2ff8bcc8fd38d72c81db5f57536cae7c8b263053ff73786896f9266b1bab50f1",
+    "SchemeProperties.CoproductTopology": "2026a57910157f9350b9d63b6181503b22b5d6d9a98c57dbd4097f59ba2ecda4",
+    "SchemeProperties.Factorial": "17f4dba8e7b674746ca9eb8538567e2d94085499230c2648d9e817e7f24e7204",
+    "SchemeProperties.FactorialNormal": "3f8f1fbcd41c13cca0bd12f50b87e57d81f21e67ec830199e4c05d2e48ffa390",
+    "SchemeProperties.FiniteTypePoints": "cf25351dfd1faf95a587955200bb2dfcb25f59923790193790bb4c6a38ecb9c4",
+    "SchemeProperties.GeometricConnectedness": "3c1457bcf07e9e2b7eef1cdf32531be193bfe28c30620ed702e00740b9dd8425",
+    "SchemeProperties.GlobalSectionsBaseChange": "3cc7a6a2a7f5ba09002103f483b9f563198ada3c61207e8755c5b98195be75fb",
+    "SchemeProperties.IdealSheafModule": "e8e0455cd4f60b4afa10bf55fdf9cc9d7fd4f380d2d35eeae885b4839495b69f",
+    "SchemeProperties.Integral": "f015514f82c5bf6b8d82659f406cbd2008b0036d03db4f20e2fb4537e19dc49d",
+    "SchemeProperties.ModuleProperties": "8581399db68ee1f5b13175706d8866eef8344dd271076db4b7ecde200ebf0383",
+    "SchemeProperties.ModuleTensor": "497cc21a0127ee2dfc0f457d218ae92c7be0301a3483e1996fed0b92e1a85180",
+    "SchemeProperties.ModuleTensorAffine": "5448d8d3854b6fc77193beefb5f67e4e23bdca675caf0d6dd4c887e954a3ecfe",
+    "SchemeProperties.ModuleTensorLocalization": "b38c53dd49f268f87a1744fd3584488de019ee6c30af784814b294eef12ed0e9",
+    "SchemeProperties.ModuleTensorRestriction": "a79c1b62a1a6988a8363acd493e1dc24b9bad94963fbb5f60351d1c3c4a95344",
+    "SchemeProperties.NoetherianComponents": "c0479d6f5e9b3fc5278daa366d54c625a0603e53c31c0a44673d79974491dafc",
+    "SchemeProperties.Normal": "f6cf47572b5206316670d44953cadfcb0ff0aa50acd00f750a5935d2d8363284",
+    "SchemeProperties.NormalEtale": "e1024aace84a57cb814b8ced775527b4dc9ce308c92dd1a2bd5951db1436d30a",
+    "SchemeProperties.NormalLocalization": "0d08e0300e3358ae1b0559f363127c1ee7dfdcf2a40a368975cc256f3c039b8e",
+    "SchemeProperties.NormalPolynomial": "63327a0d59d2a971984998aaba8f8bd92736d30fab89e1ff68a527516cea53d8",
+    "SchemeProperties.NormalSeparable": "6992f90dc09b6762a63c4f0a8f1943502ae4513f1f46e5cc42e845e4d7f3c3a0",
+    "SchemeProperties.NormalSeparableScheme": "2959815d9d0bd4769b37ce13e277677228659f448243827724e8811f6b94aebe",
+    "SchemeProperties.PresheafModuleTensorStalk": "1751229b73bd0de52ed1cc1388a6905c35759900e46e1f7152eba545b0f6b0c5",
+    "SchemeProperties.QcqsModuleLocalization": "e3ac0be315d1d565a12ef491b6e4a5f5f12932041c6ab684c0e7519f695ffdb9",
+    "SchemeProperties.Quasicoherent": "f02f12542ecc424e857bdf50a03846a149391d01839de5591b937b73ae7648ec",
+    "SchemeProperties.QuasicoherentAbelian": "f1926d2747200e8b4692746f5e9d8848867bfae019a3040ca1e9fb0cb17ae78b",
+    "SchemeProperties.Reduced": "6b4133d67ff0bf16ce04fdc475a3454043219fd97ece20482e67b88c093efe09",
+    "SchemeProperties.SheafFinitePresentation": "1caa7a2a7284c90bd6c86627c113f369bd2f43a4da628e8415b23c37de853d24",
+    "SchemeProperties.StructureSheaf": "7d7f306ba6590c7e7a37364ded6795b0fc547ca37cc3a5a0a03a6ce89ca39792",
+    "SchemeProperties.Torsion": "6d2e2cac3cfa0d11ae109cf0b0caeb7c4cc3e331a730ff616a4522092a52ded7",
+    "Test.CoherentLocalityOrdinaryImport": "bf2f5181addf61eb0be6c7743c495c8f08268fb084c90867cad7329e9679619c",
+    "Test.CoherentQuasicoherentAxioms": "7dce6608760d6e8875f510583c8820fea42def4f999f8ab8f06ea032583c6d06",
+    "Test.CoherentQuasicoherentClient": "568ed5a827dd5a07ca774522215a610fca4b31de47c04a013548f4e8cb53bb72",
+    "Test.ComponentFibersOrdinaryImport": "f7324b92bb57ae818f830bd8799e337770cc3d24f1165bff955eff29c195de30",
+    "Test.ComponentProductOrdinaryImport": "a30e71d8fa7486e13dc7d6b3be8af71a03ac4c32acc1fb72357f084f3fb38732",
+    "Test.FactorialNormalOrdinaryImport": "76b864135826ae28bf2af9d8cea0101f84aef5f00457d754541e559596df162a",
+    "Test.GlobalSectionsBaseChangeOrdinaryImport": "761eafa95b893238ec5489efb1f2534230465dacafe17ac58353b2afef1dc7ba",
+    "Test.IdealSheafModuleAxioms": "2ef2dc876300bbcf8444ec50da4ecfc0c4e477bdd4e8478e3ff943713b414c34",
+    "Test.IdealSheafModuleClient": "ec1383c38ee92b5ed63bc3f36b4edf841eb6080347a87d2f9931c6f82d058da1",
+    "Test.IdealSheafModuleRootClient": "e88d40996c688ef16511a8e8a188bf684db0f8b631626657363e29ffd93da32b",
+    "Test.ModuleTensorAxioms": "bdaf4c2ac2ed18f4c26674c7c4872bbed3e39fbdcadeb746bc021f2d2d566b19",
+    "Test.ModuleTensorClient": "878d13d6b980bcccd7ebc82de591a7a819f6cd99f351221f30b1ccd726e224b6",
+    "Test.ModuleTensorRestrictionAxioms": "6df0b519dfde6bdf820881e23a148ac2b8416ca59307fce04ba43c2199e118e7",
+    "Test.ModuleTensorRestrictionClient": "0fc08a94e4c38bbfdc0c2e148a1f38b4e0380f784f7592e267ea695e15a1981f",
+    "Test.ModuleTensorRestrictionRootClient": "a2e3278658b555049ca0c132f98424cb5f573d1a95c69d924efdd0cdc8487ccd",
+    "Test.ModuleTensorRootClient": "dc4b64fe16d0f36836f980a37c6a0d277bc4c0e89a6a78ff11e82813c5871598",
+    "Test.QuasicoherentAbelianAxioms": "e6d09e0c125f1041e39a4e44dfe38e0e3c68a136fa0860eadef50fb7e891701d",
+    "Test.QuasicoherentAbelianClient": "f3a1e9cf06f97956693271a34ea18e83514e1fbe300362e53eef83b0f26d5d11",
+    "Test.SchemeSevenRepairsClient": "c212e53a1d02f9da56da06c157f1f9701a9f50dfa8b243b10a2ea0fba395f2fa",
+    "Test.StructureSheafAxioms": "f975ed299e31361765ea60b64ec8699759c3cadedda017acfbbc2dfbf9a24ac1",
+    "Test.StructureSheafClient": "a07625ffaf2fd469bd567c6990dcd9a73fbc7d9f5c53d036120f9a28ff4b1554"
+  },
+  "sites": {
+    "Algebra.TensorProduct.baseChangeTensorProductEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "6c3f95cfb1d1eea0d213dfc1a099be1da13eb4da1bb907a9ca83f8f9f26b21e2",
+      "end": 155,
+      "header_sha256": "3e988b8702086c72f46580c4218179dfcdaf29ecd6f86a3420d482acf6f22346",
+      "kind": "def",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 148
+    },
+    "AlgebraicGeometry.IsFactorial": {
+      "display_kind": "class",
+      "doc_sha256": "977c547c79394d292b08af42e3252586e2a0164a27d3bc4956fd4629ce5f5da9",
+      "end": 59,
+      "header_sha256": "9f277115bb159508b6467ac9c2a5848142f002507d66b909c358949d507c8e72",
+      "kind": "class",
+      "module": "SchemeProperties.Factorial",
+      "start": 56
+    },
+    "AlgebraicGeometry.IsFactorial.iff_of_openCover": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 108,
+      "header_sha256": "ed0916b792af12c21050694722b0f088e7c4882e370d80a944d5caa13397043d",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 106
+    },
+    "AlgebraicGeometry.IsFactorial.mk": {
+      "display_kind": "constructor",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 59,
+      "header_sha256": "59624fa67b406ad5047ffb8af7a2f40bb418a8baaacdc145386828e9d25a5d41",
+      "kind": "ctor",
+      "module": "SchemeProperties.Factorial",
+      "start": 56
+    },
+    "AlgebraicGeometry.IsFactorial.of_openCover": {
+      "display_kind": "theorem",
+      "doc_sha256": "3e1e1fced8ee8820330b793484c943b8a3889c107f95239ea2dec15d92aa1b6b",
+      "end": 104,
+      "header_sha256": "e2aac466a3ebd20d1f508126bf8d88c831bb1ae8dd1f080e0dd73794f41077cb",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 97
+    },
+    "AlgebraicGeometry.IsFactorial.stalk_isDomain": {
+      "display_kind": "instance",
+      "doc_sha256": "de499ec748a15ab71599054b41b3312692b3aec3cb775670ab7a61385f1453e8",
+      "end": 66,
+      "header_sha256": "62cb35b1041315dc8a821ff200fbef08fd8f8e0bebc9e1770b4adee3ae0ec507",
+      "kind": "instance",
+      "module": "SchemeProperties.Factorial",
+      "start": 63
+    },
+    "AlgebraicGeometry.IsFactorial.stalk_uniqueFactorizationMonoid": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 58,
+      "header_sha256": "94608403027372a9bfb19fe793919abe23a7cef9528b8a678f3f043973fe0c99",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 58
+    },
+    "AlgebraicGeometry.IsNormal": {
+      "display_kind": "class",
+      "doc_sha256": "625328cd9e9245e61bf5f94f45c37fbab8a8cca89ff584808a56c3d4b32a1200",
+      "end": 135,
+      "header_sha256": "93a1978e053c09ea0a3cedb02e1bbe50c346e129a8d6797c1e33dee5dcc21056",
+      "kind": "class",
+      "module": "SchemeProperties.Normal",
+      "start": 131
+    },
+    "AlgebraicGeometry.IsNormal.iff_connectedComponentOpen": {
+      "display_kind": "theorem",
+      "doc_sha256": "8e06c3a3d289a3bf56460036f0c2ba9c91471d1c1b87f9c5ea1d87b3296b78c2",
+      "end": 199,
+      "header_sha256": "0225b8fb7d14c18c6092e27fa9621393ec19c7b52eb8e1bdb4d0ee6fba8170de",
+      "kind": "theorem",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 186
+    },
+    "AlgebraicGeometry.IsNormal.iff_of_openCover": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 178,
+      "header_sha256": "199cdda03492a19130998602c6984f293698701a5e1e181b3170d25700096796",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 176
+    },
+    "AlgebraicGeometry.IsNormal.mk": {
+      "display_kind": "constructor",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 135,
+      "header_sha256": "f26ae5d8981443bf6afec5655d90576962df32ab29703c77b3374164a12177a6",
+      "kind": "ctor",
+      "module": "SchemeProperties.Normal",
+      "start": 131
+    },
+    "AlgebraicGeometry.IsNormal.of_openCover": {
+      "display_kind": "theorem",
+      "doc_sha256": "6eae29a8557c87719fcbc8753c794f0f64f1459bbd0ede98f8c6a325a428c8fb",
+      "end": 174,
+      "header_sha256": "1ab53cb859960988ab83d1b2e01d54993b4f0dad588cffa58f1a3270ec298f78",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 164
+    },
+    "AlgebraicGeometry.IsNormal.pullback_specMap_of_isTranscendentalSeparable": {
+      "display_kind": "theorem",
+      "doc_sha256": "325ac8109280bbf32a46bbd220f668dd951cf08517254d86cc72d639e523f9bb",
+      "end": 73,
+      "header_sha256": "7061bbf9a7196f2396ac2fadf35ae1059378b3d56a504d749a6b1ad92e57850d",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalSeparableScheme",
+      "start": 52
+    },
+    "AlgebraicGeometry.IsNormal.stalk_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 133,
+      "header_sha256": "8cb0b2db7e9f77705da3978da07e58133696964415321aa820dd1796d8965460",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 133
+    },
+    "AlgebraicGeometry.IsNormal.stalk_isIntegrallyClosed": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 134,
+      "header_sha256": "45e6c7b929e5ead12e2e76e001b47e8a6161d3b5ef96ec62842933a92efddee4",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 134
+    },
+    "AlgebraicGeometry.Scheme.Hom.baseChangeGlobalSectionsAlgebra": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "9c8b3d2bc70547cab8439d640588e918156040ac8531f1440e722d643be358e9",
+      "end": 48,
+      "header_sha256": "9f361c52db5dd690d1fcf65d4f714081499ebdb45633c3e2b207ad9fbbe51ba1",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 41
+    },
+    "AlgebraicGeometry.Scheme.Hom.globalSectionsAlgebra": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "988906fb407c9254be3053c16158b7f481f52e0f36f76cd847650354415b08b9",
+      "end": 39,
+      "header_sha256": "afd53eb4d046477aeeafe6445d7441d2afae9ce2c934142fbbb471a9d35ee0b1",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 32
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.affineSectionsEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "b4e82dd64e191b97bf598a663bc8059d44a434e4d12863b9bbc6bde22348d14a",
+      "end": 148,
+      "header_sha256": "637dee3330544b700af7f50512b17834e926334c1e12613a74165f7a1bd18eb8",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 132
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.affineSectionsEquiv_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "6e94adc22dd487aacec679ff6fe76ada892c6eb7406da1af17263655a33d2d81",
+      "end": 156,
+      "header_sha256": "eceb0bce1670f8684712d117ef1e5efab4bfb0ef9e59207a18d5002b2cd5fb3a",
+      "kind": "theorem",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 150
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toModule": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "00c3566b74b3ec477d47d9bc3e4cd315161a4884e8178fb8a8c28ed5258e1176",
+      "end": 105,
+      "header_sha256": "2feabafe17a1578461d4063ce834cba95484b889e4bbd109015c48b7300a88de",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 102
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toModuleSubobject": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f9d8eb08041e35de8f78bac212376e307935f932b7626f2f806d5e177bd134ef",
+      "end": 129,
+      "header_sha256": "9d5c62448407b6ee26ca4197b2cd3b42e3e09cf6b99f3eeec2d219485e665db7",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 123
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toModule_isLocalizedModule_basicOpen": {
+      "display_kind": "theorem",
+      "doc_sha256": "459a5eb690218c6845eaf548d0d4386e2742746b6f68d35286a409476928e07d",
+      "end": 227,
+      "header_sha256": "3c6f9727960cd87d9ec6314928a0c8bdcb2661debcf750c37b2689cb45e98c17",
+      "kind": "theorem",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 159
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toModule_isQuasicoherent": {
+      "display_kind": "theorem",
+      "doc_sha256": "215cd3d6ebb3b6e1066ab2857f7677654ce1d9dcc278475209de151b3ce48964",
+      "end": 380,
+      "header_sha256": "959b8af751d85106cdeef76cca321abfddae7be903f511a72195b30a06f0bc09",
+      "kind": "theorem",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 321
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toModuleι": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "83746a90cd0b942b472f93d8ce41614ede96cb318140d06bcb9408a1cc89c78a",
+      "end": 111,
+      "header_sha256": "cb8cebaec158feb40a09dd4d754eff9e55fedf72ffc744642c0777630e546d4e",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 107
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toModuleι_mono": {
+      "display_kind": "instance",
+      "doc_sha256": "405d50299e6438260f6a42d0851b2e52f8312330d24bd2425eb745c4d90e1cdf",
+      "end": 121,
+      "header_sha256": "86ce390d740b42bccc4176e404272d2dbb6b5da9dfe195f8d932c1f2866bf02f",
+      "kind": "instance",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 113
+    },
+    "AlgebraicGeometry.Scheme.IdealSheafData.toSubmodule": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "4ad65329dd7378a09f4dd82c2a8f07f66196648c21b5288e49f1b4aad90e6811",
+      "end": 95,
+      "header_sha256": "8d4b2d9d3ee3c76f8c29dc055d3632ec9cfc31346e24890d5f01f0aded2850bd",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 65
+    },
+    "AlgebraicGeometry.Scheme.Modules.IsTorsionFree": {
+      "display_kind": "class",
+      "doc_sha256": "f7186a8069202828567b51b11cc7ccb2c69013cbe2d8c7827d6921f09a63df3d",
+      "end": 90,
+      "header_sha256": "5f1490b8c6ac3ec409b2fa1a595e4632ea3e0f3fc50ae7cd4820d98acb6028f0",
+      "kind": "class",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 87
+    },
+    "AlgebraicGeometry.Scheme.Modules.IsTorsionFree.mk": {
+      "display_kind": "constructor",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 90,
+      "header_sha256": "1264aed70830f245f9193957590df9b60f73bfe292ccf0f9541e2b79bd4760d2",
+      "kind": "ctor",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 87
+    },
+    "AlgebraicGeometry.Scheme.Modules.IsTorsionFree.ofIso": {
+      "display_kind": "theorem",
+      "doc_sha256": "d4798d9bb2ab78912198ae3d87aa72279546f3f7b10dafd1fc8620c41333727d",
+      "end": 102,
+      "header_sha256": "a7b9cc65ce907dec7ce1275f2700bb6c7e2080a9bc5438169e4c40bacd7c67dd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 94
+    },
+    "AlgebraicGeometry.Scheme.Modules.IsTorsionFree.stalk": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 90,
+      "header_sha256": "e6a439eead275e941b3395a70cc1831d054e39c0af003c6a24928e15f1e336a1",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 90
+    },
+    "AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints": {
+      "display_kind": "class",
+      "doc_sha256": "3899851137d8e7272cddf3ddc75ea3f9a3477984c9cf88440267c16bafa02c06",
+      "end": 112,
+      "header_sha256": "f5d1faf17f3f0c597a6f153e488ccf8a3769b6955d0ba52e80c7d61e2355807e",
+      "kind": "class",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 109
+    },
+    "AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.mk": {
+      "display_kind": "constructor",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 112,
+      "header_sha256": "7c0b61f04b443cb6515f5c469be33c872b82eda6ccd0e36893e8f64d1e6e6a27",
+      "kind": "ctor",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 109
+    },
+    "AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.ofIso": {
+      "display_kind": "theorem",
+      "doc_sha256": "0970403f7b9cfe9383d51cad0b946715b91304332c8c782e1480bfbaa438f24a",
+      "end": 121,
+      "header_sha256": "2dfadb313034f7b96ee6097e3826df92369c8143a0ade9cc524af9a0b4fe343a",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 116
+    },
+    "AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.stalk": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 112,
+      "header_sha256": "25206a7742065fd1d65966489d5fee28c303bcc60d973e3dcaee32bd1e5ae96d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 112
+    },
+    "AlgebraicGeometry.Scheme.Modules.actual_restriction_square": {
+      "display_kind": "theorem",
+      "doc_sha256": "e187c9f72e7b9152f47d19ae7ca66a1dfcc0791c5d533da58fd558389205e4c8",
+      "end": 252,
+      "header_sha256": "89b3d735b16a1c5d7c697a389a8ddd2fe26b2f82c67b7740dca5ce0ce7ada63d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 240
+    },
+    "AlgebraicGeometry.Scheme.Modules.add_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "73cc7ab22ded58b4575cbedeb2d73c742efc17fb44651c6881bfa6ddd3ffc48f",
+      "end": 121,
+      "header_sha256": "8e10b0045a1a45001a40ebe8ac1fe2a15e2526723d895c73c6bf32bd028c86fb",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 116
+    },
+    "AlgebraicGeometry.Scheme.Modules.affineOpenSectionsLinearEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "0fcb0b76f95aa01c20980e0c01245f29079a357c8b2bf8b4d47e07181cd400cb",
+      "end": 96,
+      "header_sha256": "eca9aa35f2769aceb0cf9503372c8a23661881879fc5f04452864d67d17c2469",
+      "kind": "def",
+      "module": "SchemeProperties.QcqsModuleLocalization",
+      "start": 88
+    },
+    "AlgebraicGeometry.Scheme.Modules.affineTensorNatIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "b0b0933c8019715bfa1d5ae45af94c003e643056709e23deee0a3527c279e1ef",
+      "end": 712,
+      "header_sha256": "fdbd9659f7d016636fde03aeb9fc6ce7e5b88abfb5d30ee9fbddfded032511d2",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorAffine",
+      "start": 706
+    },
+    "AlgebraicGeometry.Scheme.Modules.affineTensorNatIso_inv_app_top_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3e2665c811b88fdb403bb99f75cdfc3e2797b1d4c4be4a1b9220081b77c46fe",
+      "end": 721,
+      "header_sha256": "ef8a15914ab1822a5e8be9a9e9b4562008199397b0d19704dc19e117e1c5a9f0",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorAffine",
+      "start": 714
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayLocTensor": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "898cc877e28c5228a86585975c8436bc2af3925744fcaa55bdfbea051948be1a",
+      "end": 501,
+      "header_sha256": "4e701bda8c8319180f37ac3ca8e02fef38b8476a4305be65518d61e0ef9da437",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 489
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayLocTensor_isLocalized": {
+      "display_kind": "theorem",
+      "doc_sha256": "985a725790015d46dedf25f5bc2db5ee714de664e765f585b7f262f3eff629f8",
+      "end": 514,
+      "header_sha256": "03867aa5c31d08a3e7334a0aaa51285cab3bd2798769c1f91ffd1aa52a9666e8",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 507
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayLocTensor_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 505,
+      "header_sha256": "3825fd94d608a3b2f83d1ddfb2a2c59442eabcc7f2771d6ddbb9ff7f9c919ea6",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 503
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayModuleEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "23c72e5925b7edc81e76b615833a471146fa697769608e4f5106386820b92198",
+      "end": 443,
+      "header_sha256": "c95507c9ef63903e1eed0ed8d47abb21bf023135daf4c190021cf03baa67a9d9",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 406
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayModuleEquiv_mk": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 449,
+      "header_sha256": "d0b33d3c7080ccefe87c53c3dc933368cab0eaba6b32b141158bb6d3c9779c8e",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 445
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayTensorEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "27e101fdcca777f8dde490228a827c2ac621b8b28a63e65cb69d9ef0591d558c",
+      "end": 479,
+      "header_sha256": "2401a5b6c9ac64fb60e8d5d4fad25ffd6641d7675f2fd5bb51da66359ca0a65e",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 451
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_awayLocTensor": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 520,
+      "header_sha256": "e6f2a7f45e2d24b25d7b1addc427328f85cecc281cd3a3fddb2ed2afcf5ff4de",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 516
+    },
+    "AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_mk_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 487,
+      "header_sha256": "9bfdda3cd952bad013e9c2b6edd9e587aa0f75f0b05ad57c2c9d0c1f691b7794",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 481
+    },
+    "AlgebraicGeometry.Scheme.Modules.away_actual_restriction_square": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 529,
+      "header_sha256": "ec02fd2b29a9cb1dd37d8eadc60699fc5917ec8ae4318fa3e0427ce18b4139fb",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 522
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicOpenRestriction": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "8ccee68c725431e8a9b695066992b5f78f0c83f88071633a37413938256d20e9",
+      "end": 49,
+      "header_sha256": "b8702df3d4fa6635d9047098696e00c0d8095ac001160b3eb3076b7fd758aa44",
+      "kind": "def",
+      "module": "SchemeProperties.QcqsModuleLocalization",
+      "start": 37
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "433242af28faae97705da477dba0702c35e56312c1e01e36999b050409992f0e",
+      "end": 175,
+      "header_sha256": "725ee6e80bc718a1e0f8ef25c1c9638f3165439a61b5d6cc7c499b2a8c1b4f32",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 166
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_locTensor": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 217,
+      "header_sha256": "b04d4fbb636314042bd238461b514f725d55b3953ad7ffd4e94f551ec14ec9c5",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 212
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_naturality": {
+      "display_kind": "theorem",
+      "doc_sha256": "a22400e32a4b66e95ce726a7959bb34c642b9a62366adcdeb9793a70157c2566",
+      "end": 369,
+      "header_sha256": "f058e083a9d71e56346a6a716986c6922d8792dd74243af94979b95f9eec8b22",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 354
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_product_paths": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 352,
+      "header_sha256": "e119fb2b4a4b1105d2b13b17bb2a45a65b5937b1e7332faeebe4ed784786fd49",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 338
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_restriction": {
+      "display_kind": "theorem",
+      "doc_sha256": "d390dccccc4959df0d636e141e3a3e1fec8b2425926e9d796beb5e99de5ce609",
+      "end": 279,
+      "header_sha256": "5f984c96bd83c8dc85c8b7d8ca8b7276b391fa0bf08388a06c1b8b3cc6807cc0",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 270
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_restriction_square": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 336,
+      "header_sha256": "2fdf3f20562ae9945b23ec19c8788fb36f9a801402312f8e21a58559fde4a0cd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 329
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_symm_restriction": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 289,
+      "header_sha256": "0c2108dfd1c7048d1bfd5600ad8b11a9dc344bb7e513924ee84aa5fccd8e7464",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 281
+    },
+    "AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "424f993b5badc3da6b47bbcca7433122714f988ee18046e0681cd7dfdae30b1b",
+      "end": 187,
+      "header_sha256": "49df355ac6733d0ee23893dcbe5907e37d34a5590c63ba577c6a45e8edcd7d2b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 177
+    },
+    "AlgebraicGeometry.Scheme.Modules.empty_isTorsionFree": {
+      "display_kind": "instance",
+      "doc_sha256": "da152337e0369bfda694c72cd6fa9bc7a1c9a2b73b3d8aa3e68af786f2ed3b29",
+      "end": 146,
+      "header_sha256": "707561f25899173426b48dc80373a99ff6cc39d6b8a19ebe4d0c8ad997fd4ce1",
+      "kind": "instance",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 143
+    },
+    "AlgebraicGeometry.Scheme.Modules.empty_vanishesAtGenericPoints": {
+      "display_kind": "instance",
+      "doc_sha256": "33a7a1198f46b095371d0ebe91d1874fb90d17ea262c577e41a9c8dd881a582d",
+      "end": 151,
+      "header_sha256": "502eec04f64748e82b6ca18638b9a3a7d2d279a16d9a0ee654e745f493bb1762",
+      "kind": "instance",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 148
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherentOnSpec_restrict_affineOpen_iff": {
+      "display_kind": "theorem",
+      "doc_sha256": "36ad16fb8bf054e5a2d51fa69524a8ebfa60976f2ecdca29dc08ae6ba8ba3810",
+      "end": 45,
+      "header_sha256": "36bed06eaed9616061e2a13d4eedce0715ad49d8e6781593cfb377248360eb47",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherentLocality",
+      "start": 33
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherentQuasicoherent": {
+      "display_kind": "def",
+      "doc_sha256": "8ed3519321b1abecd4d06dfa418825dd9925329da295a7ea111b1476e0e2ba72",
+      "end": 63,
+      "header_sha256": "03e2540dbd1c4b955470decc4f14b041be357b27b422934c45a3ab1b225e0bd9",
+      "kind": "def",
+      "module": "SchemeProperties.CoherentQuasicoherentLocality",
+      "start": 47
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherentQuasicoherent_iff_affineOpenCover": {
+      "display_kind": "theorem",
+      "doc_sha256": "ff0988dca9eaddfab4631c71ff8965a871384334619cc8679e04dd528d166b00",
+      "end": 109,
+      "header_sha256": "0edd93cd75d8814281cac107fa261b13c25d079474aa7ea27e972dcb5c88eef9",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherentLocality",
+      "start": 65
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherent_basicOpen_of_qcqs": {
+      "display_kind": "theorem",
+      "doc_sha256": "1c3fbcd3a21171a291f280a3f1e0990eef152e94313f9cd74c90616066daac57",
+      "end": 59,
+      "header_sha256": "40da8e1b90e3de4d33bef495627f6aa7b7547d21104ea52535dcd0f341450c6f",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 40
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherent_basicOpen_of_qcqs_of_top": {
+      "display_kind": "theorem",
+      "doc_sha256": "859dcff54d66f7671fd1984cba05d7936952c7d5b5dc64951493ce5b1a01aaac",
+      "end": 67,
+      "header_sha256": "8f2718161f25d7820e2ff39b5bad50d03b13d45307ee1c499b6adba280c05f06",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 61
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherent_of_span_basicOpen_of_qcqs": {
+      "display_kind": "theorem",
+      "doc_sha256": "a2a2e2b8efd9c090b34d50594aeb61b1874df97d5bd6fc9bcfa96e015da21995",
+      "end": 89,
+      "header_sha256": "2dce86ec8e42f5cdcd60a98c9a0dfed87cf7f3b7a00f3d5fe4f78032379e3169",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 69
+    },
+    "AlgebraicGeometry.Scheme.Modules.isCoherent_of_span_basicOpen_of_qcqs_of_top": {
+      "display_kind": "theorem",
+      "doc_sha256": "fc6dd352619055426dc5534cb8609c237b385c140529c34c5e08595f8fde5252",
+      "end": 100,
+      "header_sha256": "62f03cba50fc81cd4efa9dcae4f319cd2b42398a25644b7957da7d5411faf781",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 91
+    },
+    "AlgebraicGeometry.Scheme.Modules.isIso_fromTildeΓ_restrict_affineOpen": {
+      "display_kind": "theorem",
+      "doc_sha256": "7257144ed63aab3767e21d7499698b17d96207991cd81852073e7a2c035f2b35",
+      "end": 35,
+      "header_sha256": "d19f20feae03d240adee52c5ead4224ca5bfbcb85abeed9cc77cfd945768b45d",
+      "kind": "theorem",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 27
+    },
+    "AlgebraicGeometry.Scheme.Modules.isLocalizedModule_basicOpen_of_qcqs": {
+      "display_kind": "theorem",
+      "doc_sha256": "0adf4fa0417820c63f28e6887311c52d7a04ab046fb400d20d3d34e10a7ebf2c",
+      "end": 523,
+      "header_sha256": "42ba7e339215b063518d0000fe7f2fb02bc755c59d2e5b63c7e1d6c4e51bbc86",
+      "kind": "theorem",
+      "module": "SchemeProperties.QcqsModuleLocalization",
+      "start": 494
+    },
+    "AlgebraicGeometry.Scheme.Modules.isLocalizedModule_basicOpen_of_qcqs_of_top": {
+      "display_kind": "theorem",
+      "doc_sha256": "7b6991f34272b214c719590b276fb6b35f6f9988662140d263571b8c25f8ea52",
+      "end": 534,
+      "header_sha256": "696327b7ea9c252c54c1183bb1f6cb342daeae361da73c1130e9cafe957cf7ce",
+      "kind": "theorem",
+      "module": "SchemeProperties.QcqsModuleLocalization",
+      "start": 525
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_containsZero": {
+      "display_kind": "instance",
+      "doc_sha256": "c83c501b6b6b45a0c36fe2df471b97d20925634c7eed3946afff4e6e71c26b51",
+      "end": 379,
+      "header_sha256": "5af8c9f9b5c6756260a9fbd87b4342372932691caa0d0608c38b622efa9698f2",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 372
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_iff_affineOpenCover_isIso_fromTildeΓ": {
+      "display_kind": "theorem",
+      "doc_sha256": "ccc7e4de623ef56bb154883ffaf461a1145c6c5550aa0ff3071c129cb766ffd6",
+      "end": 129,
+      "header_sha256": "879c25f390e0fbc1163c474f9f38e41509171ebf7b7c3ac5f9d823cc2b2742f5",
+      "kind": "theorem",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 115
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderCokernels": {
+      "display_kind": "instance",
+      "doc_sha256": "7651fe871051fc3a75235fe125d8112ffb269f8f722e685333a3a0a0bb4b1ceb",
+      "end": 399,
+      "header_sha256": "dc7b3929ad178a6d573fe0c1471373b16e1e94709dea7e91d042e63e69d0a7f3",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 391
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderFiniteColimits": {
+      "display_kind": "instance",
+      "doc_sha256": "74971384062c4dc16a5ba6fe85b3201e35eb63d01a3f93c2a1169e5f9e943bf5",
+      "end": 370,
+      "header_sha256": "9ee46e63ce8abb3ba92141b416786c498130bd164f74f0868987481954ec2ae9",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 363
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderFiniteLimits": {
+      "display_kind": "instance",
+      "doc_sha256": "135dea68bcf655db331c1d06bd77d661f63b68d0f11004a4e2f4fbe7e3e5f16f",
+      "end": 361,
+      "header_sha256": "b32e956f58a2f9fcbae11e0b9bcf36eedc6c82cd682f69811366934e065929f7",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 354
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderKernels": {
+      "display_kind": "instance",
+      "doc_sha256": "1d2b271affa5b3ef8147505823630cf16cf50baf55a38fc580349706f768af69",
+      "end": 389,
+      "header_sha256": "740b6549317b61ce0a3896f08ceb90816be3b834405a9a797a8a6f915913b7fd",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 381
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_affineOpenCover_isIso_fromTildeΓ": {
+      "display_kind": "theorem",
+      "doc_sha256": "a41e97e35ea984353e14219e291373ba4819c5d00cc69e743b90c73d5fe3e00a",
+      "end": 113,
+      "header_sha256": "77aa72ff54ffcd82610715eeddb481b736093ab68e90ffceb53c4ff4d6d9fdf1",
+      "kind": "theorem",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 101
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isColimit": {
+      "display_kind": "theorem",
+      "doc_sha256": "60cf7df075e887c2088f830cdf1aea076be7e17e1b1c69cdac21110df0976ccf",
+      "end": 352,
+      "header_sha256": "920cfa89c6e9c8939c53d556323ccf422008d65a956acc74920afb56f9f1ec9c",
+      "kind": "theorem",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 324
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isLimit": {
+      "display_kind": "theorem",
+      "doc_sha256": "17b4a61abf05d58d1dacc60d8d0f659f1326f7741930fa31057b240c975960ae",
+      "end": 320,
+      "header_sha256": "f660a36901c0979561abadfb0373c81d3a944abdba576609953a02efed1c08ad",
+      "kind": "theorem",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 292
+    },
+    "AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isOpenCover_presentation": {
+      "display_kind": "theorem",
+      "doc_sha256": "97a4d552e6ab65f1a0bf057e65acb0841232faa984c5d35741b39b657f58d16e",
+      "end": 99,
+      "header_sha256": "1cb245145e18cdf628d17fc9f4935838f57da3fd830e94df805b2cd8dc552d46",
+      "kind": "theorem",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 87
+    },
+    "AlgebraicGeometry.Scheme.Modules.isTorsionFree_iff_of_iso": {
+      "display_kind": "theorem",
+      "doc_sha256": "0767d284640b2a4d26ce4228aeb024b10e3d0586cdaad8797169fe07564cb90d",
+      "end": 107,
+      "header_sha256": "712d33bbfc4633b72c4681686228aacc0bd9dcd4701d5e0bfc486779a2f98ab2",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 104
+    },
+    "AlgebraicGeometry.Scheme.Modules.locTensor": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "917a29b3dcd222ab0df1228048a7603fa1626d16d08a5801f2ad5daada56792e",
+      "end": 88,
+      "header_sha256": "5d665586b99a19c9ca7e88ff6752b45db63ea360af6151ef7c1a8763c7395ce5",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 76
+    },
+    "AlgebraicGeometry.Scheme.Modules.locTensor_isLocalized": {
+      "display_kind": "theorem",
+      "doc_sha256": "a0d91a7fb21f9201723cd542016204bb41e23d20444b559c3a5720aa9ab2e280",
+      "end": 106,
+      "header_sha256": "70e9f0192b2209e909f9729b785d81ea987cbc83cc960b65b30d5240bc557902",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 99
+    },
+    "AlgebraicGeometry.Scheme.Modules.locTensor_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 97,
+      "header_sha256": "9081c65bc6b687c4352e6fa5dea44466bc601c8942231ccff7dac2aa257f856e",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 90
+    },
+    "AlgebraicGeometry.Scheme.Modules.map_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "d4d6d6aa7448c8b57f20dfcf2516cc02366f551b1fb84108e56506ef655201a2",
+      "end": 173,
+      "header_sha256": "1feda3499e50a2fd9828e2e5f1c6bb415b047dddfd8f3277ab934283fd6c5133",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 164
+    },
+    "AlgebraicGeometry.Scheme.Modules.pointwiseMonoidalCategory": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "2048924e53ddbabbdffbd81d1d2672d715f0982248e6e0fa64d71ce74907e485",
+      "end": 44,
+      "header_sha256": "f4b88f8aaa410888b757a1403306c9861c299764dc4bf7124c49182fa8c1d226",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 40
+    },
+    "AlgebraicGeometry.Scheme.Modules.pointwiseMonoidalCategoryStruct": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "41e1323c9d0ee52b34010b6313a19bff25a18defe22f351f9c9fa5cdc845f6ff",
+      "end": 38,
+      "header_sha256": "1810ac7c43ec7916337308c01e0ae23ac8368053bcebeb6baa67304a6a1de722",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 34
+    },
+    "AlgebraicGeometry.Scheme.Modules.pointwiseSymmetricCategory": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "5c1ff078f4aab38692c294d8adffc2bca64326f02051f2602ae1cb783791d122",
+      "end": 50,
+      "header_sha256": "a4169913a05b34bd8562b1f5349af3a76e6c382d4b34256dbadf748ef857bf21",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 46
+    },
+    "AlgebraicGeometry.Scheme.Modules.presentationOfIsIsoFromTildeΓ": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "7166eed32630a532526f62cace672578728e9247813fdbaafa3cd339fdcd740c",
+      "end": 47,
+      "header_sha256": "582c256ce49aeaf33d4b27c8c534f1fd590bbe9713bac6649261376c66f31974",
+      "kind": "def",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 37
+    },
+    "AlgebraicGeometry.Scheme.Modules.presentationOverOfPresentationRestrict": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "2adefeef8eaf57cfd87a0beee7452710fd62ba839de54ea794720746509d9e8d",
+      "end": 85,
+      "header_sha256": "68e88b0d3944fa477e57ce09e77c76f57c3af051253c4a9082145dc3d68ff0b8",
+      "kind": "def",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 68
+    },
+    "AlgebraicGeometry.Scheme.Modules.presentationRestrictAffineOpenOfIsIsoFromTildeΓ": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "afd4631270a23824d5ff9a7d5189787e86aa94c5dd52e0c41f74d0382df83447",
+      "end": 66,
+      "header_sha256": "e60928b2f7eaba61fe9d13c10342ccc3dc71f76e1974fec5adcc9c538d7f69f7",
+      "kind": "def",
+      "module": "SchemeProperties.Quasicoherent",
+      "start": 49
+    },
+    "AlgebraicGeometry.Scheme.Modules.resTop": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "bc87aec2143a7aeecbc0ec6f4ed871f4abe3ff73e4b2a1a37e1d1c3d634bca81",
+      "end": 204,
+      "header_sha256": "a174db03ee14473443d3de338ff3ede860fe6502c5d6c47b6e011832516d22e2",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 196
+    },
+    "AlgebraicGeometry.Scheme.Modules.restrictFunctor_preservesFiniteLimits": {
+      "display_kind": "instance",
+      "doc_sha256": "e8f03e91d7efb41d6a9cff875e1ec7111c2d8aa2002969de21f9f13513d49e4c",
+      "end": 288,
+      "header_sha256": "066beb9f6baee45bb692db1c1615c07ec39edcaab85dd66ada2c128d8b57fc96",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 263
+    },
+    "AlgebraicGeometry.Scheme.Modules.restrictTensorNatIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "546f2d1347371091de30c04553f35e215eec16f0b5fb1fccf63c25d759346cb6",
+      "end": 417,
+      "header_sha256": "3ba5be27041d6b888d5f167845fa32140b3d0269dc19909f735476be5b1b8068",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorRestriction",
+      "start": 412
+    },
+    "AlgebraicGeometry.Scheme.Modules.restrictTensorNatIso_inv_app_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "6ac423293b48c07f33eb179d53bade933c91caadffa696b786687927dad3116e",
+      "end": 429,
+      "header_sha256": "764ea23c97fe8328d65a5795ec9048fa37632e9162ebfde33d3e91e1085f5f58",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorRestriction",
+      "start": 419
+    },
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "e615fbea151f39a7ba7a6a6edfa081b269b040e5780a3af3bc1ce0907e93426d",
+      "end": 262,
+      "header_sha256": "a50860aaba5a89f192a47f13b1b390b6f70043f1548c1197be92db9697fe4543",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 254
+    },
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_comp": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 304,
+      "header_sha256": "30afa3523037e3f500e5519d448b27cef9af143d60b6a2c1653d95513e4ee9da",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 298
+    },
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_id": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 296,
+      "header_sha256": "bc4d779863a2a674f28920acd62cfa3f9bc51ca0492053ec5ac2ff2b926c1ade",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 291
+    },
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 319,
+      "header_sha256": "ee1644ab83c8ad3eadfb1b6954550cadc3ce9a0d8d90bfaa7ab3f57d70c15056",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 306
+    },
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 327,
+      "header_sha256": "433d78cc45f6df0a98bb15bfdef20fa6b10286c555ffbce62f1402c30605aa35",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 321
+    },
+    "AlgebraicGeometry.Scheme.Modules.sectionTensorRes_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 268,
+      "header_sha256": "4ed710a18bc016f6d4e214eb5c7603455566e86bf7bae3f1c6d1a51d788093fd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 264
+    },
+    "AlgebraicGeometry.Scheme.Modules.smul_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "75779c0efd5aaf93a99cc54b130d4b920191087d0ff00c66b2aa2a86e11ef215",
+      "end": 145,
+      "header_sha256": "f95e60310e0b602cbdf6e67ede43a423a9ffb1874aa4dc0d457cc22b0a56ad14",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 130
+    },
+    "AlgebraicGeometry.Scheme.Modules.stalkModule": {
+      "display_kind": "noncomputable instance",
+      "doc_sha256": "82829bc7d7e5bbc8a91aa466ec008ba0e33f46a08a7247f7029232921b887970",
+      "end": 44,
+      "header_sha256": "0573fdb2ccfdc33b8e987d6ed3bda2f376c8b779cd08d50397e0c875cbb03fdc",
+      "kind": "instance",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 40
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensor": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "2c46bf731c217fd000a1fb72df3144cb76e48a7b44abc2600f48af0f3482c037",
+      "end": 77,
+      "header_sha256": "94adac2858613aa6dfcee73205f80b864ed9fa9277053fa89c8defac8e4859ed",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 74
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorFunctor": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "ebc06a654462aa821f27dc9e4149577164c2039c3dcf51ab98dd96c4d4879964",
+      "end": 65,
+      "header_sha256": "f966cc48e50433adf897d58b31aef0e0b959e7d1fcefdb82f39f7a9b53b4818e",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 52
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorFunctor_map_app_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "a3d996f293ccdf866467639e038adb393b47042eef13166c09b8882737d79879",
+      "end": 266,
+      "header_sha256": "8e599939c31525e29abd4559d8af256631309973499ed46812663cc91fd84912",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 231
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorFunctor_obj": {
+      "display_kind": "theorem",
+      "doc_sha256": "8b2ac5ee70daf39001a4f9f4777c7af34bdbeb2f88e9c3b892a5a147055fe4f7",
+      "end": 81,
+      "header_sha256": "417bfdd4c2289f2d84798fb4deed72189efe02321a870b61f3b9fc1295ad3dfb",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 79
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorHomEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "ee9c944f2604596030c7da01110d9cbfc6b04374745530f7f914104769e488c3",
+      "end": 182,
+      "header_sha256": "c4e50e87f7ef17fcfe5833f2586c47616f90af2c4400327e6b6e87e66eaf917f",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 175
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_app_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "8a093a97eb4ec5f7bc93e9cf5b063d5528a733221023cb1a91b8d09bafe676bc",
+      "end": 219,
+      "header_sha256": "513a97b6baa77e4f20b275e0cac018221c5fb92d8a6e3ba008ea5fb3cb1e975b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 211
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "c5178534a050faddb436ab6b8b5d10234ffa09b224dc82bf771b0f3f7631a784",
+      "end": 194,
+      "header_sha256": "82cce80b4d93e1bc5ef7ba47e84434d1cb7d00cb5cac457606079986aad189f1",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 184
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_apply_symm_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "001d2f049bcdbe8b47632da6f00dec4b4a3fa9220e374fce80b98def39aa3d83",
+      "end": 209,
+      "header_sha256": "d587cb9973d4d0f0459431b364ba3baa7d439fdad34907b4f8a2db85a858182c",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 204
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_symm_app_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "7768265095324548e17f216934bb0299942a3d83bddbef4921c9b89b269e29ea",
+      "end": 229,
+      "header_sha256": "9f75f6da81edd3344d6d3f417c636775f6e67d20879b08eba5e819d3fa8d7b35",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 221
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_symm_apply_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "c1ffbd7323c599a67887f1ebcd268b18ac660402940a55045c0ba578793fada4",
+      "end": 202,
+      "header_sha256": "930e2468f33a8c0c92d6aa465b61565f7ef29120e814c3adbe8defedd60fd09a",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 196
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorSymm": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "4bc9b454a330c8d4cb5cf83cb65225337fa288671f24713a9ef6645f884c5e00",
+      "end": 272,
+      "header_sha256": "37a2afdfcf3fb91cf52f5d35f993e0b63264e60907c3f56b6b02683dac142634",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 268
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorSymm_hom_app_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "6c83a722cb53eeda3768ac5793cf244b4964802808fae1f3609f933b4f173137",
+      "end": 314,
+      "header_sha256": "aabb2b3f611026059b23a7c6b8adea219abd54dbf5e14df817db0aaf65737d7a",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 274
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorSymm_naturality": {
+      "display_kind": "theorem",
+      "doc_sha256": "a7891f1e8e849dd6bb0732b57b41623bb03e0f2494ec3041f701aeba1821717e",
+      "end": 329,
+      "header_sha256": "694489826dc2de79037a312cdd937d8e4e057f7635db8dc96dc267d120da4aa0",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 316
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorUnit": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "accee6523055e002bfdba0fb2a3605bf2bee005e80da9e8e44cb4b61aca4d077",
+      "end": 89,
+      "header_sha256": "33827667e903012303e8108facfe2fb54500d8cbdf0e0a67b5e82b45df4ae941",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 83
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorUnit_app_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "ffb072e738dde2f2de6e616dd5f4b4349ef9466b856ed5f0ecb1947ee9f98572",
+      "end": 102,
+      "header_sha256": "a90a3ad3a4e98938640d65d558d003866f75193c0e80f859c5fb3cee4e59c37b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 98
+    },
+    "AlgebraicGeometry.Scheme.Modules.tensorUnit_basicOpen_isIso": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 164,
+      "header_sha256": "66afb33c94fccdc4d822d556010165e050528660b70aa74609e6ad5de9163437",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 152
+    },
+    "AlgebraicGeometry.Scheme.Modules.tilde_vanishesAtGenericPoints_iff_isTorsion": {
+      "display_kind": "theorem",
+      "doc_sha256": "2b211b679bad898e8f4cb8e6f5f6659bcd69513ff275c4d9588719e6e8dff5fa",
+      "end": 215,
+      "header_sha256": "59491d871d0ec75c4c1ed249a454139b6aeda9fb3c122d4ca9e13d0a16d0f9b9",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 173
+    },
+    "AlgebraicGeometry.Scheme.Modules.tilde_vanishesAtGenericPoints_iff_subsingleton_fractionRing_tensorProduct": {
+      "display_kind": "theorem",
+      "doc_sha256": "b86387b23772d5b0fced3595f493b1b201655e8a25d818f6bf0bf708d892a5c3",
+      "end": 225,
+      "header_sha256": "5f21ef30b636393f43b86e53f09262508e938ca581537a6e0f47b172239c9510",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 217
+    },
+    "AlgebraicGeometry.Scheme.Modules.tmul": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "61505c84ae11b78b32f2f4858ff6281693e41d53975b258cac77ba13141370a7",
+      "end": 96,
+      "header_sha256": "e7f045e2d499b0dc6d5d9fd043510214852d61c32c0b580a66d81e459392b8a7",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 91
+    },
+    "AlgebraicGeometry.Scheme.Modules.tmul_add": {
+      "display_kind": "theorem",
+      "doc_sha256": "e75e70c42209ab5a559a25d82dd62bf66b24c05fdc73e547e769c74f893325f0",
+      "end": 128,
+      "header_sha256": "0689a779d987575120cf7e5a60a44bdb2278c8bd88e16555b463a4e9600bd18b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 123
+    },
+    "AlgebraicGeometry.Scheme.Modules.tmul_smul": {
+      "display_kind": "theorem",
+      "doc_sha256": "638096857b16b20c193ad54ffbd12c90df094293cf4a09eb8810353fde468bd4",
+      "end": 162,
+      "header_sha256": "25726f18260d6ddd8c689ce09c8ed6b3f12f8b17b111d22cda29fdf908ebd15f",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 147
+    },
+    "AlgebraicGeometry.Scheme.Modules.tmul_zero": {
+      "display_kind": "theorem",
+      "doc_sha256": "6ae64e85b396bf3da29329a5013090a20df339ef3e67de01c953c51f61b1b089",
+      "end": 114,
+      "header_sha256": "ef9f7f272ca77c350a09aee3fafa47613bb7fe3fc1935e7faa01a6ce01b44496",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 110
+    },
+    "AlgebraicGeometry.Scheme.Modules.topTensorEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "0a6778a8a976ab1ab6dd44d628d00d6b7398b3330b67de1346694d2f3325a4e3",
+      "end": 194,
+      "header_sha256": "971c2ec30b0acb174fcbf1997f3f31721c423b1181f965c3b857aa723e8eb1b8",
+      "kind": "def",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 189
+    },
+    "AlgebraicGeometry.Scheme.Modules.topTensorEquiv_symm_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 210,
+      "header_sha256": "01d189d36edb4b7a2b75bb367bbe0a32f26749eb9741c69865672f0aeaedbf67",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensorLocalization",
+      "start": 206
+    },
+    "AlgebraicGeometry.Scheme.Modules.unit_isQuasicoherent": {
+      "display_kind": "theorem",
+      "doc_sha256": "35ff77d7b47ee26542dca881bdfb3c0bf2a64f0c0498234efbb2bdf729818c33",
+      "end": 45,
+      "header_sha256": "8ac2737fdc22f10a56c29737d6cfd7f603017c4e2eb8815e72099b1769ea5c46",
+      "kind": "theorem",
+      "module": "SchemeProperties.StructureSheaf",
+      "start": 26
+    },
+    "AlgebraicGeometry.Scheme.Modules.vanishesAtGenericPoints_iff_irreducibleComponents": {
+      "display_kind": "theorem",
+      "doc_sha256": "45ca36d873af09687db9bdb87e0b81d9ac8bee27a5de2fdd16f23cce38d83920",
+      "end": 141,
+      "header_sha256": "9b331230ef9dfd3f4303dd7f6dcc17827db3495eca973a6684c0572a5bcf67e7",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 129
+    },
+    "AlgebraicGeometry.Scheme.Modules.vanishesAtGenericPoints_iff_of_iso": {
+      "display_kind": "theorem",
+      "doc_sha256": "7635389bde23934e3f8bc15687d18e212ec64f4126304a56c0333b4df630a744",
+      "end": 127,
+      "header_sha256": "89844c4b67633a5c356f9ca488a67d7d855e8bfa5cbd61d74b8d9d7b71c18a16",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 123
+    },
+    "AlgebraicGeometry.Scheme.Modules.zeroIsTorsionFree": {
+      "display_kind": "instance",
+      "doc_sha256": "b19d055d38f6b389a7b4056cefd78bee7050e6b9eb99e569c72d1f9886b3648b",
+      "end": 166,
+      "header_sha256": "40847e9b87103ff02cbc20a507be742befdef667a0398bdc0923501da3892162",
+      "kind": "instance",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 164
+    },
+    "AlgebraicGeometry.Scheme.Modules.zeroStalkSubsingleton": {
+      "display_kind": "instance",
+      "doc_sha256": "697337669807a6db570b2acaf8544dbd8fcb8a6aadd17c2eb07ddc36c5bdf856",
+      "end": 162,
+      "header_sha256": "979440354183961bff07855a246b940bc8f753245f4cd0f5ffdfc2e7ecb6a116",
+      "kind": "instance",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 153
+    },
+    "AlgebraicGeometry.Scheme.Modules.zeroVanishesAtGenericPoints": {
+      "display_kind": "instance",
+      "doc_sha256": "7c788eebb65b408e8244131d128062255193240881d2ae3df215b676763ef272",
+      "end": 171,
+      "header_sha256": "5d8c416c69d441dbcc461677fd2d5a01acf8cb757737985974527292cfd28269",
+      "kind": "instance",
+      "module": "SchemeProperties.ModuleProperties",
+      "start": 168
+    },
+    "AlgebraicGeometry.Scheme.Modules.zero_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "17ee2d24539ef16e6f40f56bdf494a33caa470dc6f2153590c7c4905c9bf0152",
+      "end": 108,
+      "header_sha256": "e0bd94d418ef05ec5d16b1b523d66c5af8ed62b0ee83c0a745a69787f2164489",
+      "kind": "theorem",
+      "module": "SchemeProperties.ModuleTensor",
+      "start": 104
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f642ce926a2ed48393a3cdc876ded9dc936b999d45a74385ac87f77d80d70b22",
+      "end": 260,
+      "header_sha256": "8d78d72a2772baaa3a60f040f7252afa5a12e7bc2675322a65b1560c6bc42a71",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 251
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 267,
+      "header_sha256": "60bc4c486d6bda91e6bb130af135367c05a9dcc3bc985e6ebe136189fa6baaea",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 262
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 262,
+      "header_sha256": "f267f0e415a270714ad427006e9d75f3102d0f939ca28c548c4afeb49dd809d5",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 262
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_fst": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 301,
+      "header_sha256": "9eeb83b8ec2929feec02e5e4253bbc7a61187ebee7c8b7584769cace7868ee85",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 293
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_snd": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 311,
+      "header_sha256": "10e627a11b188e8e0c5815a21ba032667c5f532d6ca92e474c954727f6488f87",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 303
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 277,
+      "header_sha256": "97da78b71ea47313d4464ebf649c724ae8fd6f4c0a746e6f8db07ff8c06ea82c",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 271
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 271,
+      "header_sha256": "45d9240c02bf94a8ebadb106911ccd59ac1ec28acd35d5f214e0e17941819520",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 271
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 291,
+      "header_sha256": "60071af639905f49dd221c3670e58255f407ff874489b15b1449dcf850421b9a",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 279
+    },
+    "AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 279,
+      "header_sha256": "f95d6b6b7e54dee2e8e6c985ed8aa489494c21896ad144cb03b3ec2273141d99",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 279
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "8472439b88580beff46eaee6177d8f9892e9b08c2f7f1571a3e6f4f4031384d1",
+      "end": 427,
+      "header_sha256": "460ed59a7caa76536be75e8e9b12ed80fca6c3c0440ba6d5dcf45ffc60ed9d9a",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 396
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 450,
+      "header_sha256": "7beddd2edffbce879a0e27e7aa373760131537eb02ce2b32c07f2d21c3bd3f35",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 438
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 438,
+      "header_sha256": "97c89b57ddb08e970ddee9ffcbfe7bb417c313efcc45e581a5c6d0fa914ddb30",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 438
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 463,
+      "header_sha256": "9b0209e66fa143e5a161cd3e85e05b1f951b3f25f4eb4ca0a6c8178f62f97931",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 452
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 452,
+      "header_sha256": "dea2a1913b5fe24f0645434ac18a99ccd2d87222e2a47253e61c472533beb30c",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 452
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_appTop_fst_fst": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 504,
+      "header_sha256": "d25226312f57c16c2df12479eb5c9884e725a58d4df899c37ff9f6a31f92c614",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 491
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 489,
+      "header_sha256": "cdc7c6b2aa0c13fc99f5c021a4c9fc83fe2e666105376038d4cb068d58f35779",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 477
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 477,
+      "header_sha256": "f42343d2d88d3cbf4a807ce07db8ff6d5fa31a780c7ca44f79b39e9d65cafa0a",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 477
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 475,
+      "header_sha256": "de76817473cf738cc879cc2b449fdd77336869ffa5c8c989ebec7c595b4a5e13",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 465
+    },
+    "AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 465,
+      "header_sha256": "9fa55452502eb40952f22ced1ae6e0c9ab799b17da266b554909a241acbedc92",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 465
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen": {
+      "display_kind": "def",
+      "doc_sha256": "b4e57a4648eda7d9f2e2731e83b143e69daa76759a8932525d04264917f5b531",
+      "end": 39,
+      "header_sha256": "b533ceeeefc33731dc0264b29e1a25ba6c42d82bce187b4f1764d8ef217c863e",
+      "kind": "def",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 32
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen.connectedSpace": {
+      "display_kind": "instance",
+      "doc_sha256": "4a57d6d011c7fd3bcad5d103d442b099d5d35bba23a17692c6482e889e646673",
+      "end": 162,
+      "header_sha256": "f504ab7d3c44870204421aa3bf8a7c28620a958b876ba0f845051ef13e7f19be",
+      "kind": "instance",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 153
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen.isIntegral": {
+      "display_kind": "instance",
+      "doc_sha256": "41fde5df71c0c23d7d5e102e453c0edee6b6c3cdca026a7637042ceb1e3eb616",
+      "end": 205,
+      "header_sha256": "d583086de13480f8e6d6cb87d69487bb961a6b0fb7ae6b9798afb8d9cc60db56",
+      "kind": "instance",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 201
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen.isNoetherian": {
+      "display_kind": "instance",
+      "doc_sha256": "cf3cb577c8198ce5677108bdb81505f4ac2510debbbdd8963ad77c5ab75039a5",
+      "end": 172,
+      "header_sha256": "abab99e02e0eef9e79165241e4a54fd2f4d431cf9cfcb6c97446a28d7c70a0a4",
+      "kind": "instance",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 164
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpenCover": {
+      "display_kind": "def",
+      "doc_sha256": "787947fbe3401c7860880db22a4f4fc86100c91d69de64938c221f41eb3281a4",
+      "end": 184,
+      "header_sha256": "fa03d133fa1de2449cf2b7965268460c547acb6b0600cd43b77e583cbabca819",
+      "kind": "def",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 174
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen_disjoint": {
+      "display_kind": "theorem",
+      "doc_sha256": "b9edf98c9372d7aa5c7367c5eb3a034e240a6e29f092f35db349edfb2e4890be",
+      "end": 70,
+      "header_sha256": "6805082b1e48d4b48580202bbc3c2ffb057c9c1b92a78e46d50c534b2c42dc97",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 60
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen_mk": {
+      "display_kind": "theorem",
+      "doc_sha256": "0d50a1a5f0a8b595ba9b620042ffd68d49485a983b07d6f9d4eb705dcbb0663d",
+      "end": 52,
+      "header_sha256": "77f50e125d00be3746e2d3b4335b4e5d6a2f6673211f9e8aad401bb8e37d423c",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 47
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen_ι_toConnectedComponentCoproduct": {
+      "display_kind": "theorem",
+      "doc_sha256": "a7e0358ac38d39d44196ec180a3495de0179c52b7b5c7113cd505d033fe8738f",
+      "end": 119,
+      "header_sha256": "adffb7db97fb564fd4b55d7be0aa85ee2d068bda2181671fd3c1ac6765d32fd8",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 108
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentOpen_ι_toConnectedComponentCoproduct_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "a7e0358ac38d39d44196ec180a3495de0179c52b7b5c7113cd505d033fe8738f",
+      "end": 110,
+      "header_sha256": "42593065115cb75c65e38ea2a5bdad3bf84653f638df231899fb275b46a3094b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 110
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentSigmaIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "b17700ad133b400fb8419111e1e8592db0c7e77b4ed8acbff4bd57c94e9246a8",
+      "end": 87,
+      "header_sha256": "0160c0e3ef108ea41a37e638e53484062e44ac50d89ecd0ab32967cc32cbfa20",
+      "kind": "def",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 72
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentSigmaIso_hom_ι": {
+      "display_kind": "theorem",
+      "doc_sha256": "fcc2a51dd70f2fe02a001228cf8f57639f3f21826963984310ba8f2bd2234151",
+      "end": 97,
+      "header_sha256": "6442a08d1aedf5b0452207c3d34e8fa9d5cad64837df2155c62df4c9e3b17ca8",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 89
+    },
+    "AlgebraicGeometry.Scheme.connectedComponentSigmaIso_hom_ι_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "fcc2a51dd70f2fe02a001228cf8f57639f3f21826963984310ba8f2bd2234151",
+      "end": 91,
+      "header_sha256": "c018fb26c1584c02040245a4007fbc6c3e46ef918fea118e3b8cd717d9c020c3",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 91
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "73144a83ce38c3a2b07d3011fc4f80c30a9265041f00ea89d2be261f1c74a278",
+      "end": 169,
+      "header_sha256": "946b39d68eb8e0b9fc88cfa010fe5b9e5fa52eb10594bcac96652ac10a01edbf",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 101
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_identity": {
+      "display_kind": "theorem",
+      "doc_sha256": "f374fe67ab6088ce12d8bba6ffd447cf6c9191a2b52125bf54024172d34ea11e",
+      "end": 370,
+      "header_sha256": "210203ccde921744b7e514b28f161d01c8cb2514a58ee0cd382a88204e13235e",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 348
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_one_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "917975857f527f9efb70747e0a3f0fc7f27c71294d05149c165c103a94015b15",
+      "end": 230,
+      "header_sha256": "c5e7df24f11743f256ac06a76a17af204fb23b380ed33256cc9a10a5590411b1",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 212
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "fa5ac23afba4ba4894fe5dfbff77fdd3fd375a452ff68d7cd648dc40ea114212",
+      "end": 249,
+      "header_sha256": "c811e049a8c0b0edeb57b8e8ac000cc9f66e3c23e8515f01722a6dd8a356bfb0",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 232
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_tmul_one": {
+      "display_kind": "theorem",
+      "doc_sha256": "7eae14b8beba69f03bd2f55598c5b9b614928283ddd378242a71e3321668dae7",
+      "end": 210,
+      "header_sha256": "ccea27e80e4f48c9b03209d40bb0b593c95b3101522383f5e2aa9417ba9df515",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 190
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_tower": {
+      "display_kind": "theorem",
+      "doc_sha256": "7a884c4dbfff739c9c35fd35b69a27d8b7e67ee9db702dfb9f207a41a6d4ba70",
+      "end": 603,
+      "header_sha256": "67cf30509ced040dd2288770ee8cf0648a92cfde5832fed1daa344c2225ecfc3",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 552
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeIdentityEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "0e3dab04b631f5271048736d1c58ebfe0f0322280d049760b949d5adf5968036",
+      "end": 337,
+      "header_sha256": "f9041729c5995350b578021efbe2fceb9b63c5394de5e05eac56ada83d147e64",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 313
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeIdentityEquiv_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 346,
+      "header_sha256": "09b2fe21b2f99d97b8292dc87642640e901ce473186ef9e4c26b205d333235e5",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 339
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeTowerEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "aa80afa962d0bb3f22eb13f08069ac9cb663e86d629d58bd72db3d31a3bb8d30",
+      "end": 535,
+      "header_sha256": "e91de09e94c18dd2dbb7355b1c579bcfa6d60f8378e6f3d321ec8a73d954778c",
+      "kind": "def",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 506
+    },
+    "AlgebraicGeometry.Scheme.globalSectionsBaseChangeTowerEquiv_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 550,
+      "header_sha256": "c65f4f42414fc250ed75dfbe32fcfc3596c2b590d23aa3a61568bbfcf9543915",
+      "kind": "theorem",
+      "module": "SchemeProperties.GlobalSectionsBaseChange",
+      "start": 537
+    },
+    "AlgebraicGeometry.Scheme.iSup_connectedComponentOpen": {
+      "display_kind": "theorem",
+      "doc_sha256": "20d7a20052d4ba187712b2894d0bc8b2b84183d0f7fec18dad8c351fac1d897a",
+      "end": 58,
+      "header_sha256": "aaf7e4f9d8a6b0c8cbeb1191e2413835ccf759079482ad9cfdf73031c50dd01e",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 54
+    },
+    "AlgebraicGeometry.Scheme.mem_connectedComponentOpen": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 45,
+      "header_sha256": "0094de57d079db5f2b871fb0af5dc48762be69a35a3b67b37c03a08dfabea877",
+      "kind": "theorem",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 41
+    },
+    "AlgebraicGeometry.Scheme.nilradicalModule": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "dda376fe15e96ddcfe5b8698665d38cafc91aa88914add55c62a128c96c586f8",
+      "end": 387,
+      "header_sha256": "dfecee459be56f81d8231c40a324b16ad03bb3ceb598afdf23b979345c1b772a",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 384
+    },
+    "AlgebraicGeometry.Scheme.nilradicalModuleAffineSections": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f5d15ba50a975945bcd2f511a6bf3d96f0386965678e2593c8750e8e9db3d23b",
+      "end": 410,
+      "header_sha256": "6d21ee2bd497dc09e16341b6edaef1d317b84344ea1f82de8e6125e980600088",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 405
+    },
+    "AlgebraicGeometry.Scheme.nilradicalModuleSubobject": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "6c76d6937b161ed9018d52bb3aa588a67f90e115a8a532ec9a90bedc491c1637",
+      "end": 398,
+      "header_sha256": "c55bd8c06f808c927027b282f227a76e8a2375225ed1ad1c8ce2dcbf1e1794c2",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 394
+    },
+    "AlgebraicGeometry.Scheme.nilradicalModule_isQuasicoherent": {
+      "display_kind": "theorem",
+      "doc_sha256": "64198be8482965b2736239828dadf56f4dcd24a7339fca2f24bbfa542bd9f609",
+      "end": 403,
+      "header_sha256": "7cd5dc0aabf8516f43596d5025f14bec3336ea8415f585796145c0895f7fa77c",
+      "kind": "theorem",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 400
+    },
+    "AlgebraicGeometry.Scheme.nilradicalModuleι": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "dc33a1660eba874ba00eb0cf8597f0c957bc5090951f57a88f8eb83317c71ffd",
+      "end": 392,
+      "header_sha256": "7e53cd70c0528026d2e2b8d8256efa30d1d1746377e4f220609c7efe536e10f9",
+      "kind": "def",
+      "module": "SchemeProperties.IdealSheafModule",
+      "start": 389
+    },
+    "AlgebraicGeometry.Scheme.sigmaPresheafObjIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "23b4093b5ce7744ba1e060a882b0939a79e111f057272537bc676ae7878a3cdb",
+      "end": 148,
+      "header_sha256": "261e935944f31e298c2590c7fca6bbb903831ff575aef9062ad52611b07d9c17",
+      "kind": "def",
+      "module": "SchemeProperties.CoproductSections",
+      "start": 94
+    },
+    "AlgebraicGeometry.Scheme.sigmaPresheafObjIso_hom_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "709a71f301761a94fd0b6b8975358df1961ef9a7b71101b72957a5e959ccbb41",
+      "end": 163,
+      "header_sha256": "6386dc1ee9fe6d429124b370d1a46486052bab6428686f943393a61d5705c4d8",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoproductSections",
+      "start": 157
+    },
+    "AlgebraicGeometry.Scheme.sigmaPresheafObjIso_hom_res_apply": {
+      "display_kind": "theorem",
+      "doc_sha256": "935157bcac2239f1ddefcb2b2ce79770183180250086ea95d7215a0b5ee91fe8",
+      "end": 176,
+      "header_sha256": "25eeda534d72501c1f0ca5e86870d96ec5001e4f3719892fd0facf6efc90cf6a",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoproductSections",
+      "start": 165
+    },
+    "AlgebraicGeometry.Scheme.toConnectedComponentCoproduct": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "54aa6fc47cdaae39fbd7de6221ee29e746eb95ef9f20c695905e5f90caf0b55f",
+      "end": 106,
+      "header_sha256": "54bb14c2506fbe95b6fda3ffad25da02e80b715d33c95bcc97d978da3a2a4835",
+      "kind": "def",
+      "module": "SchemeProperties.ConnectedComponents",
+      "start": 99
+    },
+    "AlgebraicGeometry.algebraMapOfToSpec": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "39afa2963f2e0045eda84a86ad54d21beda4dc5d7cad22c5ea4f916c685514c8",
+      "end": 380,
+      "header_sha256": "44935249c3990867a77320156339af385a0af0a40bdc0f7acfd6270862f76c25",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 366
+    },
+    "AlgebraicGeometry.algebraicOver": {
+      "display_kind": "abbrev",
+      "doc_sha256": "3c6886578fe75830aa5835e1452ae55cc93f32ce8eeda65d11426c248f84edad",
+      "end": 325,
+      "header_sha256": "f5ca141b8f45b16fcc591b7f6cbf5e5af337bfde75ce19bf917a6123fd0c2425",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 321
+    },
+    "AlgebraicGeometry.algebraicOverInclusion": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f8ef14063f72979560ad7b9281bbf28c3b8b76143b5c860752d775bdd3e8a938",
+      "end": 331,
+      "header_sha256": "c3347bbdb521865263eded962fa462d98937808a2013b82125985a8c5615c47c",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 327
+    },
+    "AlgebraicGeometry.algebraicOverPoints": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "5eb63c9dba6fb764fc27a712e29ae464803cdca0c21daafd562e8574eafc8eae",
+      "end": 337,
+      "header_sha256": "523cf965c99627da1079ccf165aba77b949ba747ff0a6ac108c8960861a96622",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 333
+    },
+    "AlgebraicGeometry.algebraicOverPointsFullyFaithful": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "e8737246d9c94c081ad725b3c5292f8c9c252b530ce909602b6e75a53dfbc76e",
+      "end": 345,
+      "header_sha256": "f4d447defb9385a43e228f18efad89978ce850250de2fafb4de1c7127939f192",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 339
+    },
+    "AlgebraicGeometry.baseChangeLocallyOfFiniteType": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 61,
+      "header_sha256": "e1bea38deefb48df923dcc58156ca5ae87c137f7978ba0aa0381efcf81727a67",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 55
+    },
+    "AlgebraicGeometry.baseChangeLocallyOfFiniteType'": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 631,
+      "header_sha256": "32ff8e9de6f4b506150b1d0f1fa25f45e49273c74af0c5ae174d56e333e58cbd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 625
+    },
+    "AlgebraicGeometry.baseChangeLocallyOfFiniteTypeProduct": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 502,
+      "header_sha256": "4c86114529e562a8d723e56723acac37e4ca91e47771fbf2a02ce276b5b67f59",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 495
+    },
+    "AlgebraicGeometry.baseChangeMap": {
+      "display_kind": "noncomputable abbrev",
+      "doc_sha256": "733c69da49272e80c4d7a05c0b81ccafa196f47a53790deb59820fa6890339c5",
+      "end": 131,
+      "header_sha256": "2bd4c86c84dd7216e250829de193705a29bdfd43b6f65c227e733148328b6912",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 126
+    },
+    "AlgebraicGeometry.baseChangeQuasiCompact": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 69,
+      "header_sha256": "7c219e7a00347d066a945d0c2b0ede2fa6541b99b074e1c717bf205305488b82",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 63
+    },
+    "AlgebraicGeometry.baseChangeQuasiCompact'": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 639,
+      "header_sha256": "988cf1d4e638028b020b4ea80f0a602cf0a0199438bb889e3e303a22e692d3aa",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 633
+    },
+    "AlgebraicGeometry.baseChangeQuasiCompactProduct": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 511,
+      "header_sha256": "e1b954b16680581c76f3cdde7629351375dcff9071f0a390b3c8d9a1c6afd75b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 504
+    },
+    "AlgebraicGeometry.baseChangeSpecIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "6affa212341046508f6967fa9f1733f0d0d1574b5ec1384e7483942800d99e27",
+      "end": 113,
+      "header_sha256": "3653ceff03d79fe92174a1e8f334c9cf216f3a75d2ced085f2ce24e954c2684d",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 105
+    },
+    "AlgebraicGeometry.baseChangeSpecOverIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "4db4203a16a6fee54337db384ea31fe9ba22530e2848a3b4891d4db51157947e",
+      "end": 124,
+      "header_sha256": "a55991cb7100ce3f51610d13c5b18fd06d40fffb440b39799c686150087fc663",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 115
+    },
+    "AlgebraicGeometry.baseChangedComponentSubalgebra": {
+      "display_kind": "noncomputable abbrev",
+      "doc_sha256": "120ae3f49e6730cda11217c3bc2608111bcb9dc7f1cdcd50bed7418b8bc4de98",
+      "end": 120,
+      "header_sha256": "f9511701192171671fef0579d56926c7adf6372e422a652db4cbdcdaa509f145",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 115
+    },
+    "AlgebraicGeometry.baseChangedComponentSubalgebra_eq": {
+      "display_kind": "theorem",
+      "doc_sha256": "ae3bcb3029fb2efc62844b2253a26879fbe9c0e2dcb0aba067aadad2e0fa73ac",
+      "end": 1221,
+      "header_sha256": "a1c91b99f676f95b8870570d1ca81556398852a9f078f3c6727f1b0db973e836",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1213
+    },
+    "AlgebraicGeometry.componentBaseChangeComparison": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "70ee2931f44be98afa495ee93a89bcb9b0d39578a54bdbf91ad3c4d338d9f8f0",
+      "end": 566,
+      "header_sha256": "a857c18f59c91dc5702cdf3013c44a23a16a9fd46e89e8bc67be7d4e1e479d78",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 557
+    },
+    "AlgebraicGeometry.componentBaseChangeComparisonAlgEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "60dfee0800a830857c058da3b804c77e60ac28923bb355fab160ce0acbe1d094",
+      "end": 1232,
+      "header_sha256": "f88a113c711ff58a0674ebd12d9b9a7ebbe16075601d39e947ae27c4e7a2ce74",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1223
+    },
+    "AlgebraicGeometry.componentBaseChangeComparisonAlgHom": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "aa5f903f96c8fbde13dd8bd2cdc90b2406fe9bbfedb9d116a47344b521719c1c",
+      "end": 267,
+      "header_sha256": "517e55c6e7e5c562d6c53fe32d2bd635fb4bb3069dedd9f8f9d1c26e1272d277",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 257
+    },
+    "AlgebraicGeometry.componentBaseChangeComparisonAlgHom_injective": {
+      "display_kind": "theorem",
+      "doc_sha256": "819e7dcb857d66c04380bd35b756e0cffb3eebddaa9a09a71c9842227528eb24",
+      "end": 302,
+      "header_sha256": "e0684adaee56048891b94eb9e67fa42d9e7029cdc5a64439fcc824b6ef846615",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 295
+    },
+    "AlgebraicGeometry.componentBaseChangeComparisonAlgHom_surjective": {
+      "display_kind": "theorem",
+      "doc_sha256": "cd4b4d96abec1f5998cafe7b58ee0968a3e36df90c3755299afa6da0ac6f4cc9",
+      "end": 1197,
+      "header_sha256": "bf9bbd12f8bdbbf1610ac0c5671b15069641fd50ec0a1351768b21d3eb48db3d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1162
+    },
+    "AlgebraicGeometry.componentBaseChangeIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "d1b221e3c1b66a1ea6ccf925cc4d906871544794001a09a566299daae533ea12",
+      "end": 1261,
+      "header_sha256": "6702cac5d5b7ad0f418b7cf899c3b7387adf44f5fb2a817d3ac28ce406e52a8f",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1253
+    },
+    "AlgebraicGeometry.componentBaseChangeIso_hom": {
+      "display_kind": "theorem",
+      "doc_sha256": "f535bce33b119a9a79eff05e3c3bdc629b0e45246fdee4e3954709f3e0c64895",
+      "end": 1272,
+      "header_sha256": "b68818e11bb51036f9e5da66a4015629d39775255fb292b5fde681f7fcd63b56",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1263
+    },
+    "AlgebraicGeometry.componentFactor": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f5223980554cc7cf415d428a5237f1e58edca7d1417f8f8aefb7ee1a654ecbdd",
+      "end": 449,
+      "header_sha256": "98de6ac40caa80cede1a94d9771548626f36e990aaf405a54506e9a17d11602a",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 442
+    },
+    "AlgebraicGeometry.componentFactorAlgHom": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "5ff9575885acde57e6b3d313171c93f20f7547c9e936026ed08114c11ca9851c",
+      "end": 440,
+      "header_sha256": "0485089a2b5c697e6f8962faaef1d7866e0f6d0a7632441670a02ee3df64262b",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 431
+    },
+    "AlgebraicGeometry.componentFibersGlobalSectionsAlgebra": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "10eb21631c693b7cc1aeb0880417aabf80ecba200a93367c0f79cff394b77610",
+      "end": 47,
+      "header_sha256": "d0f4544d79bab7ab0be4798193ec88b25b8775cd123182a7a21ea8af629f9d8f",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 42
+    },
+    "AlgebraicGeometry.componentGlobalSectionsAlgebra": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "5f9fb985920b5d3e8c65555e5a0dfa8f32dc6600a543fcf2500eb47a93fdbb24",
+      "end": 47,
+      "header_sha256": "d0909f09ab2453a8a5307b20e8dc58153dd66d183a3a3f44c19395e52546be63",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 43
+    },
+    "AlgebraicGeometry.componentGlobalSectionsAlgebra'": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "77bc151cd7ea5aa85a10d6f5c1d96c7e8028fd006824bb9b31663cbb51ed6aef",
+      "end": 616,
+      "header_sha256": "7df0cd4d793cca1da53cac40269d2b80fdd5cdf5f900e8927b61842363075e67",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 612
+    },
+    "AlgebraicGeometry.componentProductComparison": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "59c145d8c901a664de54795f4c6579322a857c8755ba624b1eb5b77954da3fdb",
+      "end": 116,
+      "header_sha256": "9bcfdf4ffcf000e89989bac099d099d011313735fcc412c0d0b6377be2c5d189",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 110
+    },
+    "AlgebraicGeometry.componentProductIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "8a6d37add33c72a5b28ab9c2cfffc2dbde697627f181e343dbb2208091399d49",
+      "end": 596,
+      "header_sha256": "c69791cdcdd4da6bcb81284ed56c38074c7737f177ee683fd7f97edccb9df57c",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 589
+    },
+    "AlgebraicGeometry.componentProductIso_hom": {
+      "display_kind": "theorem",
+      "doc_sha256": "71b455807c695eb8a837ef66379e84c6d927a72b6c4d2be6690012357c9b8b61",
+      "end": 608,
+      "header_sha256": "360a2cfb62736ee01fcc19df35a2eb9a73630aee5ef09596fb26a20c6116c80b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 598
+    },
+    "AlgebraicGeometry.componentScalarExtensionAlgHom": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "ae23f3a438a83261e457b4c37c9ca2c41baec9320d78b7af3a9d50786c8ee102",
+      "end": 113,
+      "header_sha256": "7d83fbadf3206862b56f539d209aca4a390a7345174d000d11b15ca831f43cfe",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 98
+    },
+    "AlgebraicGeometry.componentScheme": {
+      "display_kind": "noncomputable abbrev",
+      "doc_sha256": "34b0642ab2d2ade66f1329eb309bebe0121e9098f646c1601dd05c883b71d5db",
+      "end": 309,
+      "header_sha256": "ef4400d2656684a955ae1b2b16b46ec4a8a6c1390fe8953bd3554b65736dba51",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 305
+    },
+    "AlgebraicGeometry.componentSchemeFiber": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "0482e51e02434d063416f9660071832e0a3f0a12e2b8dac944b819dff441d1ee",
+      "end": 205,
+      "header_sha256": "b5a39ed3aeaf0d118527f463cb960285f39542400f9afa85e63731711afdce8c",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 198
+    },
+    "AlgebraicGeometry.componentSchemeMapOfHom": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "bb9ed268a8fa9301469f881c0b1087d1c0bd772311d678c1f828d8aa1f631d09",
+      "end": 70,
+      "header_sha256": "b2208a95a68fcb26ad50c43b030e356478183e5ebe7f75a7b9dd8ab558414145",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 63
+    },
+    "AlgebraicGeometry.componentSchemeMapOfHom_comp": {
+      "display_kind": "theorem",
+      "doc_sha256": "8e3ad7907749cbf36b8a48e7a64b6d6fe1881b8c68cf12eb4358a2576398a799",
+      "end": 108,
+      "header_sha256": "98bc678ea7aad4b65bda4e0e826a653beb0c50819038e5e811fd3bff8be4e006",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 94
+    },
+    "AlgebraicGeometry.componentSchemeMapOfHom_comp_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "8e3ad7907749cbf36b8a48e7a64b6d6fe1881b8c68cf12eb4358a2576398a799",
+      "end": 95,
+      "header_sha256": "55376ec84fc04908f425ae326388c6eeeb69a4610514bd032c3280717cd3e8a2",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 95
+    },
+    "AlgebraicGeometry.componentSchemeMapOfHom_id": {
+      "display_kind": "theorem",
+      "doc_sha256": "4f7bad1f3fe745387b3aa15da732cf2b3c989e98fc22e4634635ce5717a17bab",
+      "end": 92,
+      "header_sha256": "9401eb50c2ed6ec72870f78d05ab8666799ceaea62a9131b9276eb48d40e3690",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 83
+    },
+    "AlgebraicGeometry.componentScheme_universal": {
+      "display_kind": "theorem",
+      "doc_sha256": "218cf5393af9d1fdc65f8eab08b08a847d8768e8386776890032efd4bc982898",
+      "end": 499,
+      "header_sha256": "de905132f6d46e4ac7a8f6edaca280f622ebda040106f0d45e07da46f9eb4720",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 472
+    },
+    "AlgebraicGeometry.componentSubalgebra": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "6e071c457d80a6bd446d25d2692177ae7c30274a5ef48d9698aed36ba6ff1f8e",
+      "end": 275,
+      "header_sha256": "39ce249561ff2505acba1dd1302a162cc122e7adb1a24bc8c2c7c24a06001506",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 270
+    },
+    "AlgebraicGeometry.componentSubalgebra_eq_of_isGreatest": {
+      "display_kind": "theorem",
+      "doc_sha256": "4622413f699df4e2ba6cf8b5c3d51396ef035255b00f9e55af994be182a9cfee",
+      "end": 303,
+      "header_sha256": "0429998fc74778c6ecd4102ccc70b2ea33c719971198d2f695b7ff49e8b0704d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 292
+    },
+    "AlgebraicGeometry.componentSubalgebra_fiber_eq_bot": {
+      "display_kind": "theorem",
+      "doc_sha256": "d39c7c7954443fde53e3bcbb7a83e605d33dd2039da421117d0a337d258a5217",
+      "end": 554,
+      "header_sha256": "a4334870a3fb2e08572705552879352d7040271ed4acc16d399afd21f4148104",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 511
+    },
+    "AlgebraicGeometry.componentSubalgebra_finrank_eq_natCard_connectedComponents": {
+      "display_kind": "theorem",
+      "doc_sha256": "db0a66fd261895a2271ac043f28e99a6c5ba40081f5ce9cc88d882892ff4765f",
+      "end": 784,
+      "header_sha256": "43bc10da2c6942d25f1f1a43652b5dc7fae4a131652c7912bae2e11f940cc3b3",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 754
+    },
+    "AlgebraicGeometry.componentSubalgebra_finrank_eq_natCard_separableClosure": {
+      "display_kind": "theorem",
+      "doc_sha256": "d21740dd4edb5cfc5f390fc0c4a5783d8bf4984babb98933a8d20021dad08a1c",
+      "end": 1076,
+      "header_sha256": "1ff60b678db839780e3cd58dad8731205a53ec40d242bb564a31bb618a050629",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1045
+    },
+    "AlgebraicGeometry.componentSubalgebra_isFiniteEtale": {
+      "display_kind": "theorem",
+      "doc_sha256": "830105b4d05fb414391d13302773cd68343b8b4cec98320b933a519675f86e1d",
+      "end": 282,
+      "header_sha256": "ec576d893972771748a82253ce6e9eb142e7c7b1277e142fbc3c1a48dd9cacf3",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 277
+    },
+    "AlgebraicGeometry.connectedSpace_pullback_of_isAlgClosed": {
+      "display_kind": "theorem",
+      "doc_sha256": "d09d618b85b5d4b25c75818101ab05b9d59b89763208c75e4370dab995651591",
+      "end": 140,
+      "header_sha256": "aa93bc71262d14a22a8edee3a1a4a99c03b8d84d0f10db3f2b8f7922057e1fc8",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 129
+    },
+    "AlgebraicGeometry.eq_irreducibleComponents_of_mem_of_isDomain_stalk": {
+      "display_kind": "theorem",
+      "doc_sha256": "14c50fb5ecba2d652fd30e9aec6a27cbcfae81e2a7196c34ebd2b3a606ecc42c",
+      "end": 127,
+      "header_sha256": "d92b64077647613b0c35c968f3fd43a26fbf9360a0c23f5dc6a569880882b946",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 55
+    },
+    "AlgebraicGeometry.exists_greatest_isFiniteEtaleSubalgebra_globalSections": {
+      "display_kind": "theorem",
+      "doc_sha256": "17d6d5d09c4c71fd9871789d391a28861f9edfaff4bdcd0a19591f4e6325bdb7",
+      "end": 268,
+      "header_sha256": "f530e3328b806b2b41caedcd89cf510335dc9db3a2eb31c28e4cfe3090c43d0d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 244
+    },
+    "AlgebraicGeometry.factorialSpec": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 118,
+      "header_sha256": "80a73867fec1d218ebcbb7c017a4d61b15dde9bcfef22984d765baf82cff6272",
+      "kind": "instance",
+      "module": "SchemeProperties.Factorial",
+      "start": 111
+    },
+    "AlgebraicGeometry.factorialSpec_of_isDedekindDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "10c7257f8991062b817b6a471d40d06eb2ab54708441ded8d353eeede34b7758",
+      "end": 132,
+      "header_sha256": "2ed6eb8bb5aa2bf4e92f1506933bc66d08c48ad04912ec3803d710bba93f96cd",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 121
+    },
+    "AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f8d1385dfc31c1cfccde21b8fec96a88b587053ec4e7167861c11af4ce3e8f8a",
+      "end": 305,
+      "header_sha256": "e33d941cbb02d670889df67b9a7812dd0b293db60f2a9d7c7d794df271e75fc7",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 295
+    },
+    "AlgebraicGeometry.fgAlgToLftAffine": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "1e7f27fa5ffeed34bdbf716d4a45325bc9076214360eb956d383971fb04fbb40",
+      "end": 243,
+      "header_sha256": "8951a29a9bc10dd315ec334f8b72ab597b1da30e4b0e0577254f82c8f4dddd8f",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 239
+    },
+    "AlgebraicGeometry.fgAlgToLftAffineCompIso": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f8b47df6e1c7e2606d49d1b47611b6aa1c31be1683a1f0aeb3674c293fc5f92b",
+      "end": 250,
+      "header_sha256": "a5744f97651edcae9e3767b278378556cc8153539a68f0066aded13449c1eb6e",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 245
+    },
+    "AlgebraicGeometry.fgAlgToLftAffineEssSurj": {
+      "display_kind": "theorem",
+      "doc_sha256": "488f53e18b513fe49949d6252debe39e349762c4978afbc7f9cbe73d078514d7",
+      "end": 293,
+      "header_sha256": "0899356f122762f910810393d76568328d52437a338052c2873777f91df925ad",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 287
+    },
+    "AlgebraicGeometry.fgAlgToLftAffineFullyFaithful": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "6f3542634b0c12bf405252858df83b188fc567ef492d73f5283ac0b727244f26",
+      "end": 259,
+      "header_sha256": "1e292b8155277a5a3bd567b64dbb41be45e682001ddd101b2ba6758e1c1f35bd",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 252
+    },
+    "AlgebraicGeometry.fiberToComponentSchemeLocallyOfFiniteType": {
+      "display_kind": "instance",
+      "doc_sha256": "968b5435522f03147d9c5b23b7b8def9793ea6feb1a8636bae70af3c360948d8",
+      "end": 215,
+      "header_sha256": "cca1bbf6788ae6ac1744828b886d127c97a71da741d19753f826b15deedf9756",
+      "kind": "instance",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 207
+    },
+    "AlgebraicGeometry.fiberToComponentSchemeQuasiCompact": {
+      "display_kind": "instance",
+      "doc_sha256": "e4ecafb1764accac698822163fb6a9c6d572841b2aa587223cb9b98a3999b826",
+      "end": 224,
+      "header_sha256": "e9bb3f4fbfc57af5a70d116046d9c46c9e1901653014a09f256a03fca31ea9a5",
+      "kind": "instance",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 217
+    },
+    "AlgebraicGeometry.finiteAlgSpec": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "cd49c5c2fdb3af4bf1889faa24d151f3f92eb19ca9de8db372810f69d901eb7f",
+      "end": 109,
+      "header_sha256": "7c4ab259ec32acf3994c7c6445ebe5916435b3f55b8fed2cfbaabf9d6bb6aea1",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 106
+    },
+    "AlgebraicGeometry.finiteAlgSpecFullyFaithful": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "2318eb70b75afdb49f2286bc853e8bc8627bd4029e41c983fd9aedceb7a7f88a",
+      "end": 114,
+      "header_sha256": "bec666d43ffc264ba561918707458dfa5d8c54500d5c3c55874c014f69e10db3",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 111
+    },
+    "AlgebraicGeometry.finiteAlgSpecOver": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "a3184e8dd8488337d713e401df3d6042e3773167803c6a2925047d33f0995612",
+      "end": 125,
+      "header_sha256": "62e553294579b242907e70ed54bc2325b431e39c4f35df03f4e925592f17ae65",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 116
+    },
+    "AlgebraicGeometry.finiteAlgSpecOverFullyFaithful": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "a338b41405f83a5420ac35510da7c12bdf099df119bc4a80882dc5a3a9347d4d",
+      "end": 135,
+      "header_sha256": "be605c05d404639f8d31c21be2e24bca3759aa08576bda8bd57cc0c422d90ded",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 127
+    },
+    "AlgebraicGeometry.finiteAlgSpecOver_covers_affine": {
+      "display_kind": "theorem",
+      "doc_sha256": "cd9b7f5b8f3243dde5cc35595670b8751b50c4f6f417280b10f8e2ee0ced8a8f",
+      "end": 285,
+      "header_sha256": "44ae9ec16d54279dc54c08d647b630399d19d173e81ca77b3f97bfd6088e7635",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 261
+    },
+    "AlgebraicGeometry.finiteAlgSpecOver_isDense": {
+      "display_kind": "theorem",
+      "doc_sha256": "620da80b0ad6f787543851c3153096eb9b63853aee1c57e0f38e762f66e9f11a",
+      "end": 319,
+      "header_sha256": "fcfc434b608b70aa08e6a245505eeeb491750517f04dadffc12d09f208e7a9a0",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 307
+    },
+    "AlgebraicGeometry.finiteAlgSpecOver_mem_lftAffineInclusion": {
+      "display_kind": "theorem",
+      "doc_sha256": "764d12d0fbe94619169b12fff4a5047bb75d40020b6ee13ea35b16cecf6a4849",
+      "end": 237,
+      "header_sha256": "7a6b376c0c7b3674aed3a15eb7f7e3665af2928b092366b572a8ed8df52a962c",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 231
+    },
+    "AlgebraicGeometry.finrank_le_natCard_connectedComponents_scalarExtension": {
+      "display_kind": "theorem",
+      "doc_sha256": "c1d4aa5deb4e1d96abd5072d5b63e3c8461df3b4cb82df646692c01eb33f1a2c",
+      "end": 228,
+      "header_sha256": "b738e419f36833b3a08ae0d60eab21d7590f0766c127f3ef2e5272a8ee2ba9dd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 195
+    },
+    "AlgebraicGeometry.flat_toComponentScheme": {
+      "display_kind": "instance",
+      "doc_sha256": "1f764849bfde8a22987cc26a6b19907efbc16ac75f5a0daa2af08370f2e37bed",
+      "end": 364,
+      "header_sha256": "1e5d4b02c93e7006cadc60d3e67bcd352cc25815b48e22519609cc7ae27f8d6a",
+      "kind": "instance",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 329
+    },
+    "AlgebraicGeometry.geometricallyConnected_SpecMap_of_isSepClosed": {
+      "display_kind": "theorem",
+      "doc_sha256": "7fc791a67138d72d42ffb052a05164d95299aa4f34367d64c98af215695fb272",
+      "end": 333,
+      "header_sha256": "5a3d2313f9ec195254c54715a934167af1fe28507b839dc2bd8227808326bff5",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 324
+    },
+    "AlgebraicGeometry.geometricallyConnected_fiber_toComponentScheme": {
+      "display_kind": "theorem",
+      "doc_sha256": "3a7a6b6127e1c38807789cdf8a5b49b5aa3c9fc3352bb9abd7e3cec1df44b08a",
+      "end": 447,
+      "header_sha256": "931787d050242c87a89a991bef702149d11d8fd8fa833a5214c2295ccb2c6db9",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 289
+    },
+    "AlgebraicGeometry.geometricallyConnected_of_connectedSpace_of_section": {
+      "display_kind": "theorem",
+      "doc_sha256": "9aaaf98e957f73386a693e7dc79218b308bb05c5a5cda5609fb509eed6ae0740",
+      "end": 509,
+      "header_sha256": "38b33f1b6f39e974edc5af63df2b1239e69256c77eddb18f752132b35759b937",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 449
+    },
+    "AlgebraicGeometry.geometricallyConnected_of_isSepClosed": {
+      "display_kind": "theorem",
+      "doc_sha256": "732b49191b479e3a9dd29b2619a9ccd6edcc9791d50434b1852b3673500e6a1d",
+      "end": 349,
+      "header_sha256": "fe6f86c6ff3e0043212911a3f9f2f195f244566e35e505135ffee74aef9dff96",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 337
+    },
+    "AlgebraicGeometry.globalSectionsAlgebraInstance": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "2d390640f721fc50351f08f99c12103ebf141ea3b1cb5bb74904a34e6080da65",
+      "end": 51,
+      "header_sha256": "f9996cd2b091e2f223a428fdbc7cd09dd5d236c0ae941f8e62d7e9b723c87ac5",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 47
+    },
+    "AlgebraicGeometry.instFaithfulLftAffineOverOverSchemeLocallyFiniteTypeMorphismTopMorphismPropertySpecOfLftAffineInclusion": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 166,
+      "header_sha256": "0a04e570c170d79fa04e16d514ab001288ec10a44cd4b37de76b40403a6662d8",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 165
+    },
+    "AlgebraicGeometry.instFullLftAffineOverOverSchemeLocallyFiniteTypeMorphismTopMorphismPropertySpecOfLftAffineInclusion": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 163,
+      "header_sha256": "c3a06abe376bf69e76dcbd3f1f3f258ead2da2de8cfc305661bca5387b8b4c1d",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 162
+    },
+    "AlgebraicGeometry.instHasOfPostcompPropertySchemeLocallyFiniteTypeMorphism": {
+      "display_kind": "instance",
+      "doc_sha256": "cd007ced78521bc4d1795fda635f2823258caee28cb7fca2b3db8329eb55e6d0",
+      "end": 94,
+      "header_sha256": "c9e1e24a61c6d621146b03f206e4f28700bd5a1c23b0e5b31b5e13864f564176",
+      "kind": "instance",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 90
+    },
+    "AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsFactorial": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 95,
+      "header_sha256": "cbc876619900c4192c0e565d9888b69fee647242668dba30764479669c21efbd",
+      "kind": "instance",
+      "module": "SchemeProperties.Factorial",
+      "start": 93
+    },
+    "AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsNormal": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 162,
+      "header_sha256": "c193bb211e81551651e8fccc31b380f31b7f89243b8ba5f8a8b6fac38d0b24c9",
+      "kind": "instance",
+      "module": "SchemeProperties.Normal",
+      "start": 161
+    },
+    "AlgebraicGeometry.instIsFactorialOfIsEmptyCarrierCarrierCommRingCat": {
+      "display_kind": "instance",
+      "doc_sha256": "1915432c7f3e5989b8b03ceda27152c61e805957d10e4dfd4cdbec46c34d1caf",
+      "end": 76,
+      "header_sha256": "9dfa1db6ca59ac6d7c92029db386335e16609f1666a721575eaa75fceb07381e",
+      "kind": "instance",
+      "module": "SchemeProperties.Factorial",
+      "start": 74
+    },
+    "AlgebraicGeometry.instIsFactorialToScheme": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 87,
+      "header_sha256": "2341a318ba0ecace54769e21ca7f400e9f52313e65a4010213cf1cbad38680e1",
+      "kind": "instance",
+      "module": "SchemeProperties.Factorial",
+      "start": 86
+    },
+    "AlgebraicGeometry.instIsFactorialXScheme": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 91,
+      "header_sha256": "c16d663774f67edeaa7e7422f7f58ee5f33cb4d0aac0f57cd619c27a6f48f926",
+      "kind": "instance",
+      "module": "SchemeProperties.Factorial",
+      "start": 89
+    },
+    "AlgebraicGeometry.instIsNormalToScheme": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 156,
+      "header_sha256": "250fd82b226c7e8ca67c215fd25a11472c90dc8a690874746ba815477669e7c6",
+      "kind": "instance",
+      "module": "SchemeProperties.Normal",
+      "start": 155
+    },
+    "AlgebraicGeometry.instIsNormalXScheme": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 159,
+      "header_sha256": "044b92ee59d0bd01bfa83cfcf51805554206f7a055c513786ea269cfffa99a77",
+      "kind": "instance",
+      "module": "SchemeProperties.Normal",
+      "start": 158
+    },
+    "AlgebraicGeometry.irreducibleSpace_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "f70f7b7b072a356390163f6ba1f0d22875d80206f60c3df412e720ceacd35d0f",
+      "end": 196,
+      "header_sha256": "c890e14dd20bd9f71fb12dc63fb8a3fa8147122ffe4cc9de94b44680a49d58f8",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 180
+    },
+    "AlgebraicGeometry.irreducibleSpace_of_isNoetherian_of_connectedSpace_of_stalk_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "962c81998b10419f2b132eea9a7e6b858d440e64342fc99b06c001dcbe73d696",
+      "end": 211,
+      "header_sha256": "143d289233c75f204158525280db744c604fab3fecd3e4b197d095bcd43477db",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 207
+    },
+    "AlgebraicGeometry.isCoherentOnSpec": {
+      "display_kind": "def",
+      "doc_sha256": "b1806c52970ce0369a7f37a4edae69eb094dbea7325282165adb89d713feb721",
+      "end": 117,
+      "header_sha256": "cf8ab2909a283288b305cb89c599537e991a1e57ae08af4d4c9d4f04a1f8b49d",
+      "kind": "def",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 108
+    },
+    "AlgebraicGeometry.isCoherentOnSpec_iff": {
+      "display_kind": "theorem",
+      "doc_sha256": "c8c2df6deb38c63f56063c80ce1bf3a6dbc614e187676401d1d3f85007c47963",
+      "end": 126,
+      "header_sha256": "befc586c82975a65c38d9bbf506622e8b9b497068e6bfcd91622c3c01c70be53",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 119
+    },
+    "AlgebraicGeometry.isCoherentOnSpec_tilde_iff": {
+      "display_kind": "theorem",
+      "doc_sha256": "854cb5434087f96a022eaa7347fbc6ff7f74027cb9fa496932131f7ee8ea66c7",
+      "end": 143,
+      "header_sha256": "ceef2c68c711163a42c62c3bff7b470b69837161d5e6016d8f7c09f3db4e3302",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoherentQuasicoherent",
+      "start": 128
+    },
+    "AlgebraicGeometry.isDomain_stalk_of_specializes": {
+      "display_kind": "theorem",
+      "doc_sha256": "637ba58dfb505c99d22115f8e1051fd42434b95d0dcf56369b3deb19abadb869",
+      "end": 252,
+      "header_sha256": "7284d0a4aba64fad1fd839e4ebe6b2d2e34fb5d3acf86b6d86e55d75852a15b8",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 225
+    },
+    "AlgebraicGeometry.isFactorial_of_isOpenImmersion": {
+      "display_kind": "theorem",
+      "doc_sha256": "9732310708380f672b53d16a792d47667623f14516ec3b9e2d41272b01b7e8e0",
+      "end": 84,
+      "header_sha256": "9612141f747283f7e8ba574d7984561b9473357ffd78f44c1b34ad253c53df46",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 78
+    },
+    "AlgebraicGeometry.isFactorial_of_stalk": {
+      "display_kind": "theorem",
+      "doc_sha256": "216785a9711efdc5968682b1c04ae8f9cb17f7b28152af7c95e05af54b4cf583",
+      "end": 72,
+      "header_sha256": "ac7f9d82dde8a4c29cd4a7700f38aef7cb8fb91b88af816d97cf16b557527cee",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 68
+    },
+    "AlgebraicGeometry.isFiniteEtaleSubalgebra_le_componentSubalgebra": {
+      "display_kind": "theorem",
+      "doc_sha256": "f9894f6d4575975de7408c127916a5c4375992534f2e1b287d7c42b0535784f5",
+      "end": 290,
+      "header_sha256": "d13ccda7eb4e62f9747dd6ec6f00155eb86d58e75c4ede4087b993d77c135bab",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 284
+    },
+    "AlgebraicGeometry.isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "74ba6c3d77bb3dc4c3d79a2caa8c464cc738453a5390d6847d77e5eb16a9c0dc",
+      "end": 205,
+      "header_sha256": "7089066d4e4d731201e5cab27691dee157a63a80f8bce05404ce0686cdaccf75",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 198
+    },
+    "AlgebraicGeometry.isIntegral_of_isNoetherian_of_connectedSpace_of_stalk_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "a468d0f89e2d9691833d008951166197fa38b66caf1a05526e25628dd2d94a9f",
+      "end": 217,
+      "header_sha256": "ef8471b103fcf98dfc4c0a8cb3561d5dbd2249bb97888907f7b552bb0f762757",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 213
+    },
+    "AlgebraicGeometry.isIntegrallyClosed_stalk_of_specializes": {
+      "display_kind": "theorem",
+      "doc_sha256": "35dbb06b3171b79a3b4fbd26476bfa7cf1a666b3bb7c7ac904d92eb0e3b00897",
+      "end": 283,
+      "header_sha256": "43e9045e5c284f578c26ee618019fa3172bc3520dd67306d8ffd2ce07d876b97",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 254
+    },
+    "AlgebraicGeometry.isLocallyNormalRing_of_isNormal_spec": {
+      "display_kind": "theorem",
+      "doc_sha256": "ef83818ae2f7baf8a990ee336c29b57733e074b955279f58da98ec7a49ce88ef",
+      "end": 208,
+      "header_sha256": "fd2888d0b60919794f9e889e90e20c3bdd8d63dfc502d68dfbd19644e1224c2f",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 194
+    },
+    "AlgebraicGeometry.isNormal_of_isFactorial": {
+      "display_kind": "instance",
+      "doc_sha256": "8980c677ae96729db5a642751973591e8f560bc7419f0edc99b63bfb5232fac8",
+      "end": 29,
+      "header_sha256": "b9914982b94fae8b6a4906e02803b6227366b8148320582a4f7b282fd5dbb816",
+      "kind": "instance",
+      "module": "SchemeProperties.FactorialNormal",
+      "start": 27
+    },
+    "AlgebraicGeometry.isNormal_of_isOpenImmersion": {
+      "display_kind": "theorem",
+      "doc_sha256": "6dfce6677079e471553d71f04c3249df5c4da3bcba09f11a91ca160dd2f50238",
+      "end": 153,
+      "header_sha256": "abcb7421ba779909ac2ff4ddfeff34cbf66792bce4ed96058411409eb8e17737",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 145
+    },
+    "AlgebraicGeometry.isNormal_of_stalk": {
+      "display_kind": "theorem",
+      "doc_sha256": "2ea99f6f6fd37b429a2d58ec56041399eb194fd9038ae98b586126536d3b9a92",
+      "end": 143,
+      "header_sha256": "76b88c789eaab3dae4ef55a0c4972ad1fc29357b8463d8a13a40e805fa17c69e",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 139
+    },
+    "AlgebraicGeometry.isNormal_spec_iff_isLocallyNormalRing": {
+      "display_kind": "theorem",
+      "doc_sha256": "82f5f216ced034cf8711c374953e008c3e990b665d285e08c62f1c10382632c4",
+      "end": 220,
+      "header_sha256": "ac99e4073efdbdd0f3747c33b04bd03afe4e14494cb591eb022bf9ee51f7221b",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 210
+    },
+    "AlgebraicGeometry.isOpen_of_mem_irreducibleComponents_of_isLocallyNoetherian_of_stalk_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "b2042657934786ebb07b4be953d150a41b9445ae9af806c5aa9116f053b7ad8a",
+      "end": 178,
+      "header_sha256": "8991eb6b82757b0226c65cf4fd1e7a679bab4cc462cc3b73c24dea4f341425dc",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 154
+    },
+    "AlgebraicGeometry.isReduced_of_isNormal": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 223,
+      "header_sha256": "caa82d118ca8c35756f7b6e932b82f817253d1ccb231c632af6264666e37ae21",
+      "kind": "instance",
+      "module": "SchemeProperties.Normal",
+      "start": 222
+    },
+    "AlgebraicGeometry.isReduced_stalk_of_specializes": {
+      "display_kind": "theorem",
+      "doc_sha256": "3f32aa1079dec0ddcf755b2fe305f1ead8c88fa3486489c3c1cf9f72d10ec3a2",
+      "end": 106,
+      "header_sha256": "e36d55640e9be63a73d36e384876a0e2158123e90a5b411ebabe12b2c3439d30",
+      "kind": "theorem",
+      "module": "SchemeProperties.Reduced",
+      "start": 75
+    },
+    "AlgebraicGeometry.lftAffineInclusion": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "0820a4bb4816cb9f019e5b650e113e90e2cfe85f127df0e8d31f22e6920ff772",
+      "end": 143,
+      "header_sha256": "61f0e41dc8eee2285db382aaed8144863052cfdb9dbab7969f3d85c3785d2afd",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 137
+    },
+    "AlgebraicGeometry.lftAffineInclusionFullyFaithful": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "a5d5f983ac76ee052935495553f0a72241fa67b42193367770de5ea442f9e95f",
+      "end": 160,
+      "header_sha256": "ee5125696f5d9412ae8fb50f3b3f20a1fc2a9a3f082bc157c4f81f01771050b6",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 145
+    },
+    "AlgebraicGeometry.lftAffineInclusion_isCoverDense": {
+      "display_kind": "instance",
+      "doc_sha256": "7ed9bf3027efad2dbfa47ee0a83c5c25a8e0d7f281b8c6d5513f5565cc9e016a",
+      "end": 190,
+      "header_sha256": "f004402ca94c17c46422d5adecaa5e1d90af26008a2faae0f7dd7b2b025389ef",
+      "kind": "instance",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 168
+    },
+    "AlgebraicGeometry.lftAffineInclusion_isDense": {
+      "display_kind": "theorem",
+      "doc_sha256": "21a2787fe446fc4176e0bf66723d1f5fa33b88b46035a06b79c24b5ef5e49b24",
+      "end": 229,
+      "header_sha256": "8ab75b7a2d0ecbb09aab43fd51a00269bac4980e5b844d757c55904c375de1c1",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 224
+    },
+    "AlgebraicGeometry.lftAffineOver": {
+      "display_kind": "abbrev",
+      "doc_sha256": "438109b7471ed2e6a600d4c62c6ac8f88cc3cbc61b5fcd1579066dc35b06745e",
+      "end": 98,
+      "header_sha256": "5fc3f23e7d179d08c8d59e3dc67a8c650f8feaa691239fafb903fdba5b0932f1",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 96
+    },
+    "AlgebraicGeometry.lftOver_isContinuous": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 213,
+      "header_sha256": "c2d4ecfdd284c87d316b0386e3bb4e354fa3d51aade40858fcd2b150ca25c5a3",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 205
+    },
+    "AlgebraicGeometry.lftOver_locallyCoverDense": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 197,
+      "header_sha256": "91ff096a6aaf0d84f9a8d3194db510a1cebb087362cc0d8e4a6523672b6eb1b5",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 192
+    },
+    "AlgebraicGeometry.lftOver_representablyFlat": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 203,
+      "header_sha256": "6da18fa7a5c5f6b4f2cbb26b62f3a1197c32e34090872f34d697b7efbc603179",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 199
+    },
+    "AlgebraicGeometry.lftPointsFullyFaithful": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "3797ee094ac6cd09372355702533b15b6ec4e0a8276d4790bdb09626e86d0d2b",
+      "end": 353,
+      "header_sha256": "a294fe5640477fb01855aa11455664da9dae241a77e9a6b36c43e1729e11ae6e",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 347
+    },
+    "AlgebraicGeometry.lftPointsPreservesFiniteLimits": {
+      "display_kind": "theorem",
+      "doc_sha256": "15cf47fd6eaa27b9597ba34c6c6261ba8ca0e470be0fc00280e82e3eacdff9d9",
+      "end": 365,
+      "header_sha256": "40340796fd4394d67cab48902cd0cbc34e273bce157f7320b0ad9b7eb0e12e5e",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 355
+    },
+    "AlgebraicGeometry.lftZariskiTopology": {
+      "display_kind": "noncomputable abbrev",
+      "doc_sha256": "035a36d7d0d2b6a50d817ab7e65a11496218d3731e07a8345c55c61eb8b9d194",
+      "end": 104,
+      "header_sha256": "60080752c8148c01f142ee27f34b158f35ba4d6cc7e8aacfc43538f878a34779",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 100
+    },
+    "AlgebraicGeometry.lftZariskiTopology_subcanonical": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 222,
+      "header_sha256": "edd92f6213d56b3cd51efda051321a982c4e1075229e8f38525be06632483f84",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 215
+    },
+    "AlgebraicGeometry.locallyFiniteTypeMorphism": {
+      "display_kind": "abbrev",
+      "doc_sha256": "d9608dc94606a34f8386ee24d02897070a9f162e9f9b8a1296f3af4f6011b1d9",
+      "end": 77,
+      "header_sha256": "ab26c0a18ed42876f21ea3c1cb74f50db6589570b881b3c710c969829efaaacb",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 75
+    },
+    "AlgebraicGeometry.natCard_connectedComponents_schemeBaseChange_eq_of_isSepClosed": {
+      "display_kind": "theorem",
+      "doc_sha256": "366158f2d05df6c7392881e92253d01af498357c835d3091effb3204fc49ebbd",
+      "end": 800,
+      "header_sha256": "5f09ce8bd9217c2d4b842b411a2df0f9d23c9cbde8dd1458e4fcf75ab40917ee",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 788
+    },
+    "AlgebraicGeometry.natCard_connectedComponents_separableClosures_eq": {
+      "display_kind": "theorem",
+      "doc_sha256": "05f318097a59e1b1a023c275c5eae26115d10586533ac91196920d2d72cc7a72",
+      "end": 1119,
+      "header_sha256": "b43d8bf4cb8b5b2a3f4693885184cb32f03197bff56f4963748d1db12bf60b63",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 1078
+    },
+    "AlgebraicGeometry.normalSpec": {
+      "display_kind": "instance",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 192,
+      "header_sha256": "45116eb7426137288029e9825803a1d0cb023221121735b0cc19ae1e3bbb0b63",
+      "kind": "instance",
+      "module": "SchemeProperties.Normal",
+      "start": 181
+    },
+    "AlgebraicGeometry.not_compactSpace_sigma": {
+      "display_kind": "theorem",
+      "doc_sha256": "6c59556f84f33f8df26793e7c5f0ecf8116763ab9ed75e32bde845a590ee6c1f",
+      "end": 73,
+      "header_sha256": "8f29ef8c7d40eebde5c6ba9ee75262004aeca5b21aa32ca900089db46cab2488",
+      "kind": "theorem",
+      "module": "SchemeProperties.CoproductTopology",
+      "start": 61
+    },
+    "AlgebraicGeometry.openImmersionMorphism": {
+      "display_kind": "abbrev",
+      "doc_sha256": "e6c5f5417e5aaddc11de8d1326d13676134cded97581d2227237b06b2192c2be",
+      "end": 81,
+      "header_sha256": "392acef0879590144f129257f0d88f33c82466d55fa9594e0c9c0e4e2d5c6543",
+      "kind": "def",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 79
+    },
+    "AlgebraicGeometry.openImmersionMorphism_le_locallyFiniteTypeMorphism": {
+      "display_kind": "theorem",
+      "doc_sha256": "f93436e26e81289da2649dd97382108400732920f7240ce813d8047df3121132",
+      "end": 88,
+      "header_sha256": "55d3c6d8814e1b75cb6b8c9006da7cb942e6660b2305cef82d6cc41eb0b8686f",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 83
+    },
+    "AlgebraicGeometry.quasiSeparatedSpace_sigma": {
+      "display_kind": "instance",
+      "doc_sha256": "ace3de8a9dd2bf2257e5cc4a972419a553c4784691774d4ca32c75e77f35da0a",
+      "end": 59,
+      "header_sha256": "a2af357c1c01eeff566d08143c89e4b6d5190fdcea6265df680251cd68b57f72",
+      "kind": "instance",
+      "module": "SchemeProperties.CoproductTopology",
+      "start": 35
+    },
+    "AlgebraicGeometry.range_algebraMapOfToSpec_isFiniteEtale": {
+      "display_kind": "theorem",
+      "doc_sha256": "db5487f8720aa00a3141216ed7ebce978606f5a95794f856c85fab1aa1f0f430",
+      "end": 419,
+      "header_sha256": "e26f07ca8c4bb3d6cc24000ffebe826280c1e884ace788b7c0e844c53cd1bf85",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 411
+    },
+    "AlgebraicGeometry.range_algebraMapOfToSpec_le_componentSubalgebra": {
+      "display_kind": "theorem",
+      "doc_sha256": "cb9be92a5654fc0d8aa41cb6293212093bf8d09c2224e430332856ee6b657ced",
+      "end": 429,
+      "header_sha256": "ea0c56a2923f9f918dad87bc781067f8acc6f741d045ae816ead6dbb96cfc921",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 421
+    },
+    "AlgebraicGeometry.range_fiberι_toComponentScheme_eq_connectedComponent": {
+      "display_kind": "theorem",
+      "doc_sha256": "d022a6ba8f5ee01afff2e9528d11c4062a7168185b444c13b98728f2cd09d137",
+      "end": 162,
+      "header_sha256": "f7715b0255cef76a4f0a3315f5b9e27c48551f38bad6103ffa88d27793ffa97b",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 89
+    },
+    "AlgebraicGeometry.schemeBaseChange": {
+      "display_kind": "noncomputable abbrev",
+      "doc_sha256": "dacc42e0821cd0d6d6ed5b6d42604ce8b93083490631d72336414f64f8368aa8",
+      "end": 103,
+      "header_sha256": "defc6e6b2a69aa36818452a71d6f67551493cd37ffb5e1335143aa9b2869ebae",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 99
+    },
+    "AlgebraicGeometry.sourceCompactSpace": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 137,
+      "header_sha256": "087254568fa052c39512a9dc381c0802ac934cc291231b34bf4e6a911a796463",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 135
+    },
+    "AlgebraicGeometry.sourceIsLocallyNoetherian": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 141,
+      "header_sha256": "9f09d0fced2dc363322bc05c16d3ae2f0de4f217a92809f27e41bc881bd2d356",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 139
+    },
+    "AlgebraicGeometry.sourceIsNoetherian": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 144,
+      "header_sha256": "4f56292a69b4a1fff49da1110492313235bd51f8085f0f9b2e78bb04126a86eb",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 143
+    },
+    "AlgebraicGeometry.specOver": {
+      "display_kind": "noncomputable abbrev",
+      "doc_sha256": "502a9f7d03cc7d76e8ba16679319b20fc84d7094da87095f2223449578860c59",
+      "end": 56,
+      "header_sha256": "61c8142e5755b745bf3ff6af2d5730b8ec6561ec5489e1d7cd3ade7f0e3be1cb",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 53
+    },
+    "AlgebraicGeometry.specOverMap": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "ffc9e0ea07bb41ff366f02b9e178cdc31c7b74e304a3aa44c5e161c77909b452",
+      "end": 97,
+      "header_sha256": "05e7da816b2fe4d9a6021ca573d3cdd56f405eb6bef53feb54c9954804763243",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 84
+    },
+    "AlgebraicGeometry.surjective_baseChangeMap": {
+      "display_kind": "theorem",
+      "doc_sha256": "4189e82db1df6f8a8f6d28a9ff0a9a8033254f5bdb3d11cd87bca62742bbc797",
+      "end": 168,
+      "header_sha256": "c1ae8cd417faab0434c554ccf9174033ec93eac48a432ee7777d2a5704d7173d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 163
+    },
+    "AlgebraicGeometry.surjective_baseChangeMap_comp_baseChangeSpecIso": {
+      "display_kind": "theorem",
+      "doc_sha256": "4c43cf9d4bdfc44d0db1b12aec1d8df1a744118debb8f3de2fec9f71004aef39",
+      "end": 181,
+      "header_sha256": "da17a2a459e29a744e61b5155ac7fca828a94db1c3ca5138e9c7409f1d047ddd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 170
+    },
+    "AlgebraicGeometry.surjective_scalarExtension_toSpecOver": {
+      "display_kind": "theorem",
+      "doc_sha256": "f905a78182480ef137721d23db2ef89105df6b48c6f2f97d00ec58536fce66c7",
+      "end": 193,
+      "header_sha256": "bf3dedce938dcb4568444ef13c8e85dfe7f711a8cb70c8cf41d196dda27de0f3",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 183
+    },
+    "AlgebraicGeometry.surjective_toComponentScheme": {
+      "display_kind": "theorem",
+      "doc_sha256": "238c474223f874912d71185d965e84f606a70362a71a021b298b9f8fdf2c0bca",
+      "end": 327,
+      "header_sha256": "70d92c843e990847c95766d5b682e43655d78fc28d3dcfe49b44c2453fb81041",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 318
+    },
+    "AlgebraicGeometry.surjective_toSpecOver": {
+      "display_kind": "theorem",
+      "doc_sha256": "37f92dc549b3e5ce1fbeba9eb1d16549d11a879fe0748707e66b9864c7d1862b",
+      "end": 161,
+      "header_sha256": "dd2a568c2a6b2c457a13a68a6b16f0f5edb2eb2ff308a1089b116449f61d7ec2",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 146
+    },
+    "AlgebraicGeometry.tensorLocallyOfFiniteType": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 51,
+      "header_sha256": "5f4b311467e9630ed52873c94dcecbb2a4ae51ee9da791d3e685a0eff8b8e97d",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 43
+    },
+    "AlgebraicGeometry.tensorProductRightAlgebra": {
+      "display_kind": "def",
+      "doc_sha256": "6ca2f6e700c5869ecb1ecd6db3a01105becef600304f45a7823a8a1d60f540fd",
+      "end": 53,
+      "header_sha256": "1d26f43ac8e13615d67116f41ab67f689852c3a3adabc7f71a1d9f7c7be68335",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 49
+    },
+    "AlgebraicGeometry.tensorProductRightAlgebra'": {
+      "display_kind": "def",
+      "doc_sha256": "1a6f159229f32143d5676d8cc7d3e8cfe88f99c41f16ea77d3eda96c46245fdf",
+      "end": 623,
+      "header_sha256": "4aaed51a8194681a68db07238a7a621e14e4e24d2114abf97c943ce0d8b8c3a1",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 618
+    },
+    "AlgebraicGeometry.tensorQuasiCompact": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 61,
+      "header_sha256": "9801e5582de5d446250bfb8fb71f0dae1cf5f817ac3608eaa9bba081d34b3460",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 53
+    },
+    "AlgebraicGeometry.tildeFunctor_preservesFiniteLimits": {
+      "display_kind": "instance",
+      "doc_sha256": "1085a079aa6dcfd1538cd5932a0ae3323471ec6d0bbe0933e75965ef94d3e831",
+      "end": 258,
+      "header_sha256": "6ebb08972100e0e72f9bc3a4272e8ec9686bc1540478db2120232ae5c31448be",
+      "kind": "instance",
+      "module": "SchemeProperties.QuasicoherentAbelian",
+      "start": 252
+    },
+    "AlgebraicGeometry.toComponentScheme": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f980d9e16890dbbb34cae1f305a2bd93b83907a3cdb8edbf6fbb77de98c87ea9",
+      "end": 316,
+      "header_sha256": "0fd823bd9f5538b044b695f35b10aa21e9e4abf35a761f5502c1571051d05c10",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 311
+    },
+    "AlgebraicGeometry.toComponentSchemeLocallyOfFiniteType": {
+      "display_kind": "instance",
+      "doc_sha256": "5c37ba5fa8e20320949e50881961b33c6cb09167beb3137100d9ec1dfdb43bc8",
+      "end": 184,
+      "header_sha256": "51f0106322634d5a2c8e37d5ac6699c8abe23782459c6656b64e0767653d47a1",
+      "kind": "instance",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 176
+    },
+    "AlgebraicGeometry.toComponentSchemeQuasiCompact": {
+      "display_kind": "instance",
+      "doc_sha256": "679d872e36f2931b1c4708d43727e84e3456c0663960fbe5c29ed1949edeff88",
+      "end": 196,
+      "header_sha256": "56f34ae3e908bae623821f616017f150709c60aedbe918283f1cedee45ce4c6d",
+      "kind": "instance",
+      "module": "SchemeProperties.ComponentFibers",
+      "start": 186
+    },
+    "AlgebraicGeometry.toComponentScheme_comp_componentBaseChangeComparison": {
+      "display_kind": "theorem",
+      "doc_sha256": "fed30ccf877c5c6b8f7df0729eb6bc52f46f31a388f9da9051b038f75cce875b",
+      "end": 601,
+      "header_sha256": "9820da9a63ad9e63d158e6f3bbe442da2933935baecb3e7df6d6d7927391cd57",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 591
+    },
+    "AlgebraicGeometry.toComponentScheme_comp_componentFactor": {
+      "display_kind": "theorem",
+      "doc_sha256": "c93dff3e8bad1d947baf9e97118c1e4df04f4d15b2fa9184b7381cb02ccc3e71",
+      "end": 463,
+      "header_sha256": "240fb5ad767b96f7f868fd88eac7b7b7d056d8ce4922533970ad0fd9b6e383b8",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 451
+    },
+    "AlgebraicGeometry.toComponentScheme_comp_componentProductComparison": {
+      "display_kind": "theorem",
+      "doc_sha256": "4d1ee0a76b2a93b682d5d4ecfd474abd4b8292247531605bbd406bfc02d7bed2",
+      "end": 131,
+      "header_sha256": "e7335bbe48321c3c5919aec542685013778c7d45b03343413ec5469d542d6895",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 118
+    },
+    "AlgebraicGeometry.toComponentScheme_comp_componentSchemeMapOfHom": {
+      "display_kind": "theorem",
+      "doc_sha256": "f35f91bb7fcf53d0d8426610245e6a1b16e8b619e00a12c37c2626d0bbc039b9",
+      "end": 81,
+      "header_sha256": "a6890bff16224c3412e0c3f3b8332cf0ad77960b1ca2de00040272ce1bf7e361",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 72
+    },
+    "AlgebraicGeometry.toComponentScheme_comp_componentSchemeMapOfHom_assoc": {
+      "display_kind": "theorem",
+      "doc_sha256": "f35f91bb7fcf53d0d8426610245e6a1b16e8b619e00a12c37c2626d0bbc039b9",
+      "end": 73,
+      "header_sha256": "ac815253bf5477f8b45b1dd4c9aba13d2b37f28e53e2080921b52eaf5ec1e2cd",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentProduct",
+      "start": 73
+    },
+    "AlgebraicGeometry.toConnectedComponentsSpec": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "f11d1816d088f9d64ad6307fa9531da49022f34ff6f2a8b02d6693dccd5628be",
+      "end": 678,
+      "header_sha256": "9fd90fb6cec64c4eb6d2ff6b050736522d6a400b7ca35dda4f35eaa7dc16f0cd",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 643
+    },
+    "AlgebraicGeometry.toConnectedComponentsSpec_surjective": {
+      "display_kind": "theorem",
+      "doc_sha256": "880e7e6276a0e21b071e909c222e8372231d8e33ba46cba396e660a19f738c2f",
+      "end": 718,
+      "header_sha256": "b1c3579f05235975a32fa154f785270d583628ffdff57b9a1fa17a3c2f4f06cb",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentBaseChange",
+      "start": 680
+    },
+    "AlgebraicGeometry.toSpecOver": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "aef3cdde121c3f51eb1d71e94cbac3c86ebab84e13bd65a4ca63eeaccb4e5a8a",
+      "end": 82,
+      "header_sha256": "3a4e7bb08d2937c59458daadea2938fb92db1f144f1039735f566955dbc5b321",
+      "kind": "def",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 58
+    },
+    "AlgebraicGeometry.toSpecOver_algebraMapOfToSpec": {
+      "display_kind": "theorem",
+      "doc_sha256": "6d09237c49e90dc5c3dcb9864ffddbc80fd248003b90f1c2bbeac77651085c53",
+      "end": 395,
+      "header_sha256": "2eb23d0104304828551ed5b5dfc7d005f91408ecec6cc8ea0f6e8d82bb2ea49f",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 382
+    },
+    "AlgebraicGeometry.toSpecOver_comp_specOverMap": {
+      "display_kind": "theorem",
+      "doc_sha256": "e9e8db94589258b361b5e8a7b796b4bc5458ce0e77532d9db6ff20275952f9c4",
+      "end": 409,
+      "header_sha256": "1278e760b60bc0cbae27d40278edd9e722ba9c8b6f952170114970e8922a3a4e",
+      "kind": "theorem",
+      "module": "SchemeProperties.ComponentScheme",
+      "start": 397
+    },
+    "AlgebraicGeometry.uniqueFactorizationMonoid_stalk_of_specializes": {
+      "display_kind": "theorem",
+      "doc_sha256": "58a7a3a09224d5d7837bd00bde1361fae1766a6dcdfb69159bb586c8f6150760",
+      "end": 163,
+      "header_sha256": "2ffea42b9a78674c24a6f85888c8b0ea4a6664e55c7b9bc36804801a7155705e",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 136
+    },
+    "CategoryTheory.Functor.isDense_of_isCoverDense_of_subcanonical": {
+      "display_kind": "theorem",
+      "doc_sha256": "187b5457c29ec4297550d94a73b59b85de5712357a26b2a25d384cd19370c2dd",
+      "end": 67,
+      "header_sha256": "22544bd4b9de4c0329d8b9a45a92658b75a8079d468691192aa9d119914aca60",
+      "kind": "theorem",
+      "module": "SchemeProperties.FiniteTypePoints",
+      "start": 49
+    },
+    "Ideal.eq_of_mem_minimalPrimes_of_le_of_isDomain_atPrime": {
+      "display_kind": "theorem",
+      "doc_sha256": "3bf2a0e8fa66b7106175797cd86329af1cd39b7fd507b0341781b7e83ba3b2b6",
+      "end": 49,
+      "header_sha256": "2b115b1ea0587a68ec96e9335f95889b229c5553d4a450820f8b453bc21aee22",
+      "kind": "theorem",
+      "module": "SchemeProperties.Integral",
+      "start": 25
+    },
+    "IsLocalization.AtPrime.isDomain_of_le": {
+      "display_kind": "theorem",
+      "doc_sha256": "eab42e0a7dab683abf6e05a9f0d9fc379a8531953f0f9b456e11b8f44243db04",
+      "end": 54,
+      "header_sha256": "5f8047dd506e9592297c0d6de9a51bcf961c9aab084c6873226da8d9c69af215",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 25
+    },
+    "IsLocalization.AtPrime.isIntegrallyClosed_of_le": {
+      "display_kind": "theorem",
+      "doc_sha256": "94cd5c5af96feb863e6bd5fcf9eb6a99ca187a3238eec216e76209d7a11e2242",
+      "end": 86,
+      "header_sha256": "a676f9ca200bed0c353070ed738471d4c4cb7cd48070602ce430a9a8d13c076a",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 56
+    },
+    "IsLocalization.AtPrime.isReduced_of_le": {
+      "display_kind": "theorem",
+      "doc_sha256": "f7ad5e9f6abb458ca85cc37ff870cc02a65c65272245f169b840f15607a8e776",
+      "end": 71,
+      "header_sha256": "56ab88fb9817842997d97d8ff2530891256a333b0303bf7cea17b5b3c7eca523",
+      "kind": "theorem",
+      "module": "SchemeProperties.Reduced",
+      "start": 47
+    },
+    "IsLocalization.AtPrime.uniqueFactorizationMonoid_of_le": {
+      "display_kind": "theorem",
+      "doc_sha256": "5a11ed60f9b2fed5f3971ce517f1774a17fc1d4bf9d740ae5c40f82e3fcb7a57",
+      "end": 48,
+      "header_sha256": "8471649673a7a6fa3b1a1726e645fd9632e12e88f0c46ebe23e32e931d96e0ff",
+      "kind": "theorem",
+      "module": "SchemeProperties.Factorial",
+      "start": 26
+    },
+    "IsLocalization.isReduced": {
+      "display_kind": "theorem",
+      "doc_sha256": "0e5952cf92053b18c0edfb76b20897e7196fdf689c11d35a8e4734ec6572da5b",
+      "end": 45,
+      "header_sha256": "b41905c936e3e04b4104793c39d0c20dadac14b3ede3cc263155039e42e79723",
+      "kind": "theorem",
+      "module": "SchemeProperties.Reduced",
+      "start": 22
+    },
+    "IsLocallyNormalRing": {
+      "display_kind": "class",
+      "doc_sha256": "506b23918ff2a64379080aef3a81d8fb6cf72f907a9b059cfa2d439d0c00759a",
+      "end": 96,
+      "header_sha256": "8cce1269fe7a7e215757c051e84ffefabbedd6823f4df0f7bc1132e08528c6f0",
+      "kind": "class",
+      "module": "SchemeProperties.Normal",
+      "start": 90
+    },
+    "IsLocallyNormalRing.isDomain_atPrime": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 94,
+      "header_sha256": "daf672e487425adc9dd56dd2f8617d1bbc85f1aef2cdb86ffb51363bae69bc39",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 94
+    },
+    "IsLocallyNormalRing.isIntegrallyClosed_atPrime": {
+      "display_kind": "theorem",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 95,
+      "header_sha256": "305157febd60b50a6421a6d40cde095fcb396418480ccf87ae373a2110b3c4f1",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 95
+    },
+    "IsLocallyNormalRing.mk": {
+      "display_kind": "constructor",
+      "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "end": 96,
+      "header_sha256": "59f4a91f3b20f3598697d5f9ea4f1a51eca8d82334f1748b3211e3c83a9874a0",
+      "kind": "ctor",
+      "module": "SchemeProperties.Normal",
+      "start": 90
+    },
+    "IsLocallyNormalRing.of_directed_iSup": {
+      "display_kind": "theorem",
+      "doc_sha256": "9feeeb6cc23e7a9502989ab8d7edac6eb003330cf6635960288bdf769b7f0556",
+      "end": 260,
+      "header_sha256": "7fd346fcedf5c57db38345dd4097f24fb1e8f6513bc4ef2d95c1ecfa0d3fb93c",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalSeparable",
+      "start": 246
+    },
+    "IsLocallyNormalRing.of_finiteEtale": {
+      "display_kind": "theorem",
+      "doc_sha256": "cce2f6d20c0b9bb02586bbab951eb0e810084839861174f5d85cd7bf1b3eb791",
+      "end": 330,
+      "header_sha256": "d4a47b42749ca888158d9381041433475deb46ae91b7268a0a1f96f9ed236969",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalEtale",
+      "start": 275
+    },
+    "IsLocallyNormalRing.of_finiteEtale_of_isDomain": {
+      "display_kind": "theorem",
+      "doc_sha256": "1278904d15d1a3c2b22738575ad2f70f4c416404709bdeda1dfcbfdad80ea50c",
+      "end": 273,
+      "header_sha256": "f72102b5f672ae19d3dcfb4ffc98684cbb81286e076edb205a2d050252e2ebc4",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalEtale",
+      "start": 233
+    },
+    "IsLocallyNormalRing.of_isLocalization": {
+      "display_kind": "theorem",
+      "doc_sha256": "c1eff1fb597ed14331b73dda2af187191a68cdaacec627937a43a13b5f0a50db",
+      "end": 45,
+      "header_sha256": "c021c2fd090900cd9b7aee9f59509cedf16aeed751698dd5a9438bdd05ca7e20",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalLocalization",
+      "start": 19
+    },
+    "IsLocallyNormalRing.of_ringEquiv": {
+      "display_kind": "theorem",
+      "doc_sha256": "4067b247ff7a0a8a15b7fbcc6d85435cfa6574936218564b2c62f19c52c626e6",
+      "end": 125,
+      "header_sha256": "cf289cdf6957b9053a2378155be311f851f84f883a963750de55e8b8b6850d98",
+      "kind": "theorem",
+      "module": "SchemeProperties.Normal",
+      "start": 109
+    },
+    "IsLocallyNormalRing.pi": {
+      "display_kind": "theorem",
+      "doc_sha256": "d88aa6cead8f93bd76bf6d67471c243a65122cef04a848d8eec3250cb2975872",
+      "end": 214,
+      "header_sha256": "1ab7aeb4379672db1879b538f753e220fb8aa3dfb35f9bea4aafce2171023e2d",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalEtale",
+      "start": 190
+    },
+    "IsLocallyNormalRing.tensorProduct_of_isSeparablyGenerated": {
+      "display_kind": "theorem",
+      "doc_sha256": "6f987a3b4eb5d572358b6c72897dd7815478971efd74a434fe1f2faa07d8163e",
+      "end": 460,
+      "header_sha256": "d0c6ba4d7776968351fae6c841fd3b7d50e678d95e12a29f921e251efc31979e",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalSeparable",
+      "start": 366
+    },
+    "IsLocallyNormalRing.tensorProduct_of_isTranscendentalSeparable": {
+      "display_kind": "theorem",
+      "doc_sha256": "f6ac92a451a439007a7e464936097d03f7e1a1f175b37774c4967431758e449f",
+      "end": 498,
+      "header_sha256": "ad4dd61faf33ffa50b0cae38d762b3ef9b65c303136408dad0194b947be82ef1",
+      "kind": "theorem",
+      "module": "SchemeProperties.NormalSeparable",
+      "start": 462
+    },
+    "Localization.isLocallyNormalRing": {
+      "display_kind": "instance",
+      "doc_sha256": "f6fa1220a17132e5cba4195242531022ac00fdd209a907856d5ef97d5903b2e3",
+      "end": 52,
+      "header_sha256": "83d41c983082d174109864dfe8e9da0ac4d32b4162155e801a6de0dea1a315b1",
+      "kind": "instance",
+      "module": "SchemeProperties.NormalLocalization",
+      "start": 47
+    },
+    "Module.isTorsion_iff_subsingleton_fractionRing_tensorProduct": {
+      "display_kind": "theorem",
+      "doc_sha256": "aaffe765869cc8704b7306370206ff3d47020bb15c01d78242b9dbcab976f423",
+      "end": 55,
+      "header_sha256": "165775ffa74fb27cbcc3750861d0477210e07994572a902092511c618e5c0686",
+      "kind": "theorem",
+      "module": "SchemeProperties.Torsion",
+      "start": 48
+    },
+    "Module.isTorsion_iff_subsingleton_tensorProduct": {
+      "display_kind": "theorem",
+      "doc_sha256": "04a9ecf1ebcb4f1633e116566a319583d0be358eef4798266aeef3024d9a71e8",
+      "end": 46,
+      "header_sha256": "fe4225e92a394573429629b938c2ad71cec4e845cc9222a0005ce4ba077bf2d1",
+      "kind": "theorem",
+      "module": "SchemeProperties.Torsion",
+      "start": 29
+    },
+    "MvPolynomial.isLocallyNormalRing_of_isLocallyNormalRing": {
+      "display_kind": "instance",
+      "doc_sha256": "38c1ea22702ff1cf43cf058f01562851e254139589be5c96cf28c954ee6bdeff",
+      "end": 96,
+      "header_sha256": "f5be7f7165ce860fc7c098215aafe24b3e5bf321a82f639ebd5c46c9858dc9c9",
+      "kind": "instance",
+      "module": "SchemeProperties.NormalPolynomial",
+      "start": 84
+    },
+    "NoetherianSpace.isOpen_connectedComponent": {
+      "display_kind": "theorem",
+      "doc_sha256": "bc8488d7854575ed1f28754d55c9430c82c94e34451ffa7ea7554b3257dd703b",
+      "end": 64,
+      "header_sha256": "a4a6d37f4c456f88226a750d7ddf4b714f25868b58d9ed27b3598154d5f43c79",
+      "kind": "theorem",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 38
+    },
+    "NoetherianSpace.toLocallyConnectedSpace": {
+      "display_kind": "instance",
+      "doc_sha256": "c901242a54c22679b9c435e6ad67d1fb0203188b4c343c99f0d41252b5b37872",
+      "end": 149,
+      "header_sha256": "b73735f12471d932e13d7279b9169da18852013692a92be666bfab7b0eeb78f2",
+      "kind": "instance",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 142
+    },
+    "Polynomial.isLocallyNormalRing_of_isLocallyNormalRing": {
+      "display_kind": "instance",
+      "doc_sha256": "bd3f13c70e0a9922581df3a62b3d16cca1aff3607b9e4d50a3d737256027cbce",
+      "end": 82,
+      "header_sha256": "19fd099ae73ae50fc00227285bcd1c64e01236e4e29414f331b882f0b9711881",
+      "kind": "instance",
+      "module": "SchemeProperties.NormalPolynomial",
+      "start": 24
+    },
+    "PresheafOfModulesOfCommRing.stalkMapLinear": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "727a00645e24b235aa290683a96a1462b0df44425a0b2dae90f5d424c8a41490",
+      "end": 610,
+      "header_sha256": "90d87d28e6e995122921eb2d3d634a2b0f192d5b837509bf1856e36c6a59100b",
+      "kind": "def",
+      "module": "SchemeProperties.PresheafModuleTensorStalk",
+      "start": 584
+    },
+    "PresheafOfModulesOfCommRing.stalkMapLinear_apply_stalkFunctor": {
+      "display_kind": "theorem",
+      "doc_sha256": "5de2b79f072b5f8631e88a34d8f4983cdeea8054ad8529d3594a5dc2480888e6",
+      "end": 618,
+      "header_sha256": "0943e300152701bfa37e3b07b2aed30d20404783d3c018d4c4f5858cfc4497a2",
+      "kind": "theorem",
+      "module": "SchemeProperties.PresheafModuleTensorStalk",
+      "start": 612
+    },
+    "PresheafOfModulesOfCommRing.stalkMapLinear_germ": {
+      "display_kind": "theorem",
+      "doc_sha256": "c7763329c834b5cccba06522c9e9d4fd39b4a897f16e14e831533e165124a62e",
+      "end": 625,
+      "header_sha256": "344cd4a2671c2175a4fe57e5a263a11426b3114495dcbdee4b3dc7441ae5be39",
+      "kind": "theorem",
+      "module": "SchemeProperties.PresheafModuleTensorStalk",
+      "start": 620
+    },
+    "PresheafOfModulesOfCommRing.stalkTensorEquiv": {
+      "display_kind": "noncomputable def",
+      "doc_sha256": "1bd1783b4714f0d12d940853a1cdbf21b54a6db9dfbd91ef9895dfd6c1b78684",
+      "end": 548,
+      "header_sha256": "f30e7055a598477c74965b91f78e88b290be05af25e3a7fc170bfc18d41b691f",
+      "kind": "def",
+      "module": "SchemeProperties.PresheafModuleTensorStalk",
+      "start": 536
+    },
+    "PresheafOfModulesOfCommRing.stalkTensorEquiv_germ_tmul": {
+      "display_kind": "theorem",
+      "doc_sha256": "f7ae15b4114580893737281635b24483265926181324e2d29b2055a9f4f0bc46",
+      "end": 564,
+      "header_sha256": "f5795492a790941a0c2b04d33dd622c0751da37a112c6f74540c7005bf90a31c",
+      "kind": "theorem",
+      "module": "SchemeProperties.PresheafModuleTensorStalk",
+      "start": 550
+    },
+    "PresheafOfModulesOfCommRing.stalkTensorEquiv_naturality": {
+      "display_kind": "theorem",
+      "doc_sha256": "fb77aaef4700909283c7ebedb7908da537f8e0a19fedf0e2581b749cb2ff3888",
+      "end": 702,
+      "header_sha256": "dbc81319e5b8186ce039f16f310dce07224aeb2bcfdc3c15a7f3416804822061",
+      "kind": "theorem",
+      "module": "SchemeProperties.PresheafModuleTensorStalk",
+      "start": 632
+    },
+    "PrimeSpectrum.connectedSpace_tensorProduct_fields": {
+      "display_kind": "theorem",
+      "doc_sha256": "4482ac02e2686e53cb8f8f21610f50480aa6ce48c5b1d70b4ab94899c5957c1c",
+      "end": 314,
+      "header_sha256": "62319c5e2b425ad51f118e71214c1cf5cb602f4b773c5c4069618a4a63dbd1c9",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 286
+    },
+    "PrimeSpectrum.connectedSpace_tensorProduct_left_iff_of_isPurelyInseparable": {
+      "display_kind": "theorem",
+      "doc_sha256": "c09bb0b137a7d3f490304c6ad7bd40188f8a82259d86df8322b5ce03241a40b2",
+      "end": 197,
+      "header_sha256": "c501cca9a393fde16f45180510afd90ddf2d0fdf77a349011501d9738cb9c387",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 189
+    },
+    "PrimeSpectrum.connectedSpace_tensorProduct_of_isAlgClosed": {
+      "display_kind": "theorem",
+      "doc_sha256": "58a5938946eaa4bb6a22ead2ed2d418c6c21d98ead7aa4e2e243f6ea4bc0b354",
+      "end": 217,
+      "header_sha256": "f496c275cb8b79ed3763960cf62745b7a6e34aa67b27847620c0f8643df249ed",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 199
+    },
+    "PrimeSpectrum.connectedSpace_tensorProduct_of_isSepClosed_of_finiteType": {
+      "display_kind": "theorem",
+      "doc_sha256": "b935feb6fd640e468d6df02231d2c66542f781c9242cb2e0675dde71c1226f5d",
+      "end": 242,
+      "header_sha256": "5aab131c9b9ba5419f6d996d2c29e8e43ca52bdff6f69a17d89a78aefff00a8e",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 219
+    },
+    "PrimeSpectrum.eq_zero_or_eq_one_of_isIdempotentElem": {
+      "display_kind": "theorem",
+      "doc_sha256": "438cb4ef0543cbf36fc87cd3ad00871ab50328a475df0694cb39ae71311ed5c7",
+      "end": 187,
+      "header_sha256": "6d2d4eab81937d4abf5da53976db4f1cdfd4e7fe49718cca1074b7a1dbe05575",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 171
+    },
+    "PrimeSpectrum.eq_zero_or_eq_one_of_isIdempotentElem_tensorProduct_fields": {
+      "display_kind": "theorem",
+      "doc_sha256": "0802f0c0380f1c876c85b554fa53a1917daf2776f8502a0b63c01e7261b860ec",
+      "end": 284,
+      "header_sha256": "2f721d939ca55558e65b2b20d2c3b44782e60ca64747e82237febb0bf1344970",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 244
+    },
+    "SheafOfModules.LocalGeneratorsData.isFinitePresentation_of_isLocallyFreeData": {
+      "display_kind": "theorem",
+      "doc_sha256": "631f185a328f058943b3838153be1ac87f2f1e9a1c79bf0addb08c8fcb668788",
+      "end": 50,
+      "header_sha256": "c3fd5822757fa581040904a754b1ad3637bba3b00183a0d11c8fc8a3d2892200",
+      "kind": "theorem",
+      "module": "SchemeProperties.SheafFinitePresentation",
+      "start": 40
+    },
+    "connectedSpace_of_isOpenMap_of_closedPoint_fibers": {
+      "display_kind": "theorem",
+      "doc_sha256": "49a061d3aa892c085e4795637f26defbb6caf0821df204699067dc79cf35daf2",
+      "end": 75,
+      "header_sha256": "53635dcaa1b893a14f946efa616f8d3e2da489cf3eddf41c58015347e37b77c4",
+      "kind": "theorem",
+      "module": "SchemeProperties.GeometricConnectedness",
+      "start": 35
+    },
+    "isIrreducible_connectedComponent_of_closedPoints_homogeneous": {
+      "display_kind": "theorem",
+      "doc_sha256": "c2bf5837a7e2e89975ca8db10e105a7f623fc427301a1d465e2fdb9e770b07a4",
+      "end": 140,
+      "header_sha256": "0a9fa4b6677e86340af8ffa298548c43650f42753e7740cc686661a76939b8f4",
+      "kind": "theorem",
+      "module": "SchemeProperties.NoetherianComponents",
+      "start": 66
+    },
+    "isLocallyNormalRing_of_isDomain": {
+      "display_kind": "instance",
+      "doc_sha256": "06d456d4b297fbf315de354d6f212123d80afbca50a62234258427b4a000c3a5",
+      "end": 107,
+      "header_sha256": "40ca17903be1940a7e08594fc681b8830d5d509cccfd7a4452e7ac504c4dd796",
+      "kind": "instance",
+      "module": "SchemeProperties.Normal",
+      "start": 101
+    }
+  },
+  "source": "a05b182aa17ea7cd1a591ec7b60aa7d6f2b6704c",
+  "source_tree": "5a8afee42778b0666e8ecf47ddcc079b1d14ad60"
+}

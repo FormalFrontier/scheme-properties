@@ -1,0 +1,11 @@
+module
+
+import SchemeProperties.CoherentQuasicoherent
+
+#print axioms AlgebraicGeometry.Scheme.Modules.isCoherent_basicOpen_of_qcqs
+#print axioms AlgebraicGeometry.Scheme.Modules.isCoherent_basicOpen_of_qcqs_of_top
+#print axioms AlgebraicGeometry.Scheme.Modules.isCoherent_of_span_basicOpen_of_qcqs
+#print axioms AlgebraicGeometry.Scheme.Modules.isCoherent_of_span_basicOpen_of_qcqs_of_top
+#print axioms AlgebraicGeometry.isCoherentOnSpec
+#print axioms AlgebraicGeometry.isCoherentOnSpec_iff
+#print axioms AlgebraicGeometry.isCoherentOnSpec_tilde_iff

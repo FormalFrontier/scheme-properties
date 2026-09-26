@@ -1,0 +1,26 @@
+module
+
+import SchemeProperties.ComponentFibers
+
+set_option warningAsError true
+
+open AlgebraicGeometry CategoryTheory
+
+universe u
+
+namespace ComponentFibersOrdinaryImport
+
+private noncomputable def checkFiber (K : Type u) [Field K]
+    (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
+    [QuasiCompact X.hom] (x : (componentScheme X).left) :
+    Over (Spec ((componentScheme X).left.residueField x)) :=
+  componentSchemeFiber X x
+
+private theorem checkGeometricallyConnected (K : Type u) [Field K]
+    (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
+    [QuasiCompact X.hom] (x : (componentScheme X).left) :
+    GeometricallyConnected
+      ((toComponentScheme X).left.fiberToSpecResidueField x) :=
+  geometricallyConnected_fiber_toComponentScheme X x
+
+end ComponentFibersOrdinaryImport

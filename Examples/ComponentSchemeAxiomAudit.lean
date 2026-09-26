@@ -1,0 +1,33 @@
+module
+
+import SchemeProperties.ComponentScheme
+
+#print axioms AlgebraicGeometry.specOver
+#print axioms AlgebraicGeometry.toSpecOver
+#print axioms AlgebraicGeometry.specOverMap
+#print axioms AlgebraicGeometry.schemeBaseChange
+#print axioms AlgebraicGeometry.baseChangeSpecIso
+#print axioms AlgebraicGeometry.baseChangeSpecOverIso
+#print axioms AlgebraicGeometry.baseChangeMap
+#print axioms AlgebraicGeometry.surjective_toSpecOver
+#print axioms AlgebraicGeometry.surjective_baseChangeMap
+#print axioms AlgebraicGeometry.surjective_baseChangeMap_comp_baseChangeSpecIso
+#print axioms AlgebraicGeometry.surjective_scalarExtension_toSpecOver
+#print axioms AlgebraicGeometry.finrank_le_natCard_connectedComponents_scalarExtension
+#print axioms AlgebraicGeometry.exists_greatest_isFiniteEtaleSubalgebra_globalSections
+#print axioms AlgebraicGeometry.componentSubalgebra
+#print axioms AlgebraicGeometry.componentSubalgebra_isFiniteEtale
+#print axioms AlgebraicGeometry.isFiniteEtaleSubalgebra_le_componentSubalgebra
+#print axioms AlgebraicGeometry.componentSubalgebra_eq_of_isGreatest
+#print axioms AlgebraicGeometry.componentScheme
+#print axioms AlgebraicGeometry.toComponentScheme
+#print axioms AlgebraicGeometry.surjective_toComponentScheme
+#print axioms AlgebraicGeometry.algebraMapOfToSpec
+#print axioms AlgebraicGeometry.toSpecOver_algebraMapOfToSpec
+#print axioms AlgebraicGeometry.toSpecOver_comp_specOverMap
+#print axioms AlgebraicGeometry.range_algebraMapOfToSpec_isFiniteEtale
+#print axioms AlgebraicGeometry.range_algebraMapOfToSpec_le_componentSubalgebra
+#print axioms AlgebraicGeometry.componentFactorAlgHom
+#print axioms AlgebraicGeometry.componentFactor
+#print axioms AlgebraicGeometry.toComponentScheme_comp_componentFactor
+#print axioms AlgebraicGeometry.componentScheme_universal
