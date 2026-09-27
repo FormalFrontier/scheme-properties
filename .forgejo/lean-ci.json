@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "mode": "strict",
+  "projects": [
+    {
+      "path": ".",
+      "targets": [
+        "SchemeProperties",
+        "SchemePropertiesTest",
+        "SchemePropertiesExamples"
+      ]
+    }
+  ],
+  "docs_only_paths": []
+}
