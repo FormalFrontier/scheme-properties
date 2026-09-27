@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, and tensor constructions."
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, and tensor constructions."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -38,6 +38,20 @@ automation:
       framework: "Formal Frontier agent-assisted Lean development"
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
+status:
+  scope: "Source-independent scheme properties, including five native finite-presentation results transferred from reviewed incubation; this list records the new contribution, not a whole-library census or a source-coverage decision."
+  main_results:
+    - declaration: SheafOfModules.Presentation.isFinite_map
+      file: SchemeProperties/SheafFinitePresentationTransport.lean
+    - declaration: SheafOfModules.Presentation.isFinitePresentation
+      file: SchemeProperties/SheafFinitePresentationTransport.lean
+    - declaration: AlgebraicGeometry.Scheme.Modules.isFinite_presentationRestrict
+      file: SchemeProperties/ModuleFinitePresentation.lean
+    - declaration: AlgebraicGeometry.isFinitePresentation_tilde
+      file: SchemeProperties/ModuleFinitePresentation.lean
+    - declaration: AlgebraicGeometry.Scheme.Modules.exists_isOpenCover_isFinite_presentation
+      file: SchemeProperties/ModuleFinitePresentation.lean
+
 review:
   status: self-assessed
-  notes: "Ordinary development main has earlier exact-source independent reviews. At documentation preparation on September 26, 2026, the frozen 73-module source and official pins had passed source/client compilation and native API generation; complete release proof/axiom intake and independent exact-candidate release review were not yet recorded for this assembly. This self-assessment does not certify proof integrity, release acceptance or source-complete formalization."
+  notes: "The preceding 73-module base has separately accepted, verified-release evidence, and the original finite-presentation leaves have independent review. Destination acceptance and publication are recorded separately for exact revisions. This descriptive metadata is not a review certificate, a publication record or a source-complete formalization claim."

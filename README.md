@@ -8,8 +8,11 @@ and local-to-global criteria.
 are in [CREDITS](docs/CREDITS.md). See the [reader guide](docs/Guide.md) for
 focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
-signatures and links directly to the source in this checkout. Its exact input
-contract and reproduction instructions are in [API generation](docs/README.md).
+signatures for its fixed historical 73-module snapshot, not the new native
+finite-presentation modules or updated aggregate. The added declarations and
+direct imports are explained in [Finite Presentations](docs/FinitePresentations.md)
+and their Lean source. The exact historical input contract and reproduction
+instructions are in [API generation](docs/README.md).
 
 The library's official `coherent-modules` and `finite-etale-algebras` dependencies
 are pinned to **private** GitHub repositories. Users require authorized access
@@ -17,15 +20,22 @@ to fetch them; this is not a public-availability promise.
 
 ## Status
 
-This repository is under active development. At documentation preparation on
-September 26, 2026, the frozen 73-module source and official dependency pins had
-passed a fresh source/client build and native API generation. Complete release
-proof/axiom intake and independent exact-candidate release review were not yet
-recorded for this assembly. Build success and generated documentation are not
-release acceptance. Results on feature branches become accepted library API
-only after independent review and integration into protected `main`.
+This repository is under active development. The existing 73-module base was
+accepted at `ca6d6f41b169bcd57d4e5fa4429fd2203fe5e01a` and its equal-tree
+official release at `6b204a3e49f022e51d78a9f93e77513b99a87e00` was verified.
+The native finite-presentation modules and nine direct clients extend that
+base. The generated reference remains a historical snapshot, with the additions
+documented separately below. Acceptance and publication are recorded for exact
+revisions; neither this descriptive status nor an unmerged feature branch
+establishes them. Official releases are identified by their exact release commits.
 
 ## Intended API
+
+The native finite-presentation additions are available by direct imports
+`SchemeProperties.SheafFinitePresentationTransport` and
+`SchemeProperties.ModuleFinitePresentation`, or through the aggregate
+`SchemeProperties`. See the [standalone guide](docs/FinitePresentations.md) for the
+five declarations, assumptions, zero-ring/empty-index clients and limitations.
 
 The first unit packages three facts:
 

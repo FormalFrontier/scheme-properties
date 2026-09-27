@@ -6,8 +6,11 @@ navigation aid, **not** generated API documentation, a complete declaration
 census, or an assertion of release readiness. The source files, rather than
 this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
-The separate [generated API](API.md) supplies native signatures and source links;
-its [generation contract](README.md) distinguishes display sites from proof bodies.
+The separate [generated API](API.md) supplies native signatures and source links
+for its fixed historical 73-module snapshot, not the new finite-presentation
+modules or changed aggregate. Its [generation contract](README.md) distinguishes
+display sites from proof bodies; see the standalone
+[native finite-presentation guide](FinitePresentations.md) for the added APIs.
 
 ## Imports and conventions
 
@@ -15,7 +18,7 @@ The aggregate import is `import SchemeProperties` (the current
 [root](../SchemeProperties.lean)); focused imports have the form
 `import SchemeProperties.Reduced`, with the names below substituting for
 `Reduced`. Some non-scheme constructions, such as presheaf tensor stalks,
-have their own focused import. All 36 focused mathematical modules, including
+have their own focused import. The original 36 focused mathematical modules, including
 [ComponentFibers](../SchemeProperties/ComponentFibers.lean) and
 [FactorialNormal](../SchemeProperties/FactorialNormal.lean), now have native
 `module` headers and public imports. The older
@@ -98,6 +101,7 @@ ordinary connectedness into geometric connectedness over an arbitrary field.
 | [CoherentQuasicoherent](../SchemeProperties/CoherentQuasicoherent.lean), [CoherentQuasicoherentLocality](../SchemeProperties/CoherentQuasicoherentLocality.lean) | `Scheme.Modules.isCoherent_basicOpen_of_qcqs` and `isCoherent_of_span_basicOpen_of_qcqs` work on compact quasiseparated opens; the converse uses a **set-indexed family** of principal opens whose sections span the unit ideal. `Scheme.Modules.isCoherentQuasicoherent` concerns objects of the native quasicoherent full subcategory; `isCoherentQuasicoherent_iff_affineOpenCover` checks that property on **any fixed affine open cover** without a globally finite cover or a qcqs scheme. |
 | [IdealSheafModule](../SchemeProperties/IdealSheafModule.lean) | `Scheme.IdealSheafData.toModule` packages the kernel submodule of the structure sheaf's quotient by the supplied ideal data; `affineSectionsEquiv`, `toModule_isLocalizedModule_basicOpen`, `toModule_isQuasicoherent` and `Scheme.nilradicalModule` expose affine sections/localization, quasicoherence and nilradical clients. No reducedness or nonempty/finite hypothesis is needed. |
 | [SheafFinitePresentation](../SchemeProperties/SheafFinitePresentation.lean) | `SheafOfModules.LocalGeneratorsData.isFinitePresentation_of_isLocallyFreeData` assumes **the same local-generator datum** has `IsLocallyFreeData` and `IsFiniteType`. Basis sizes can vary (including zero), and the cover can be infinite; two unrelated local covers are not identified by this theorem. This focused module depends on mathlib only. |
+| [SheafFinitePresentationTransport](../SchemeProperties/SheafFinitePresentationTransport.lean), [ModuleFinitePresentation](../SchemeProperties/ModuleFinitePresentation.lean) | Five native finite-presentation APIs transport finite indices through a colimit-preserving functor, obtain local finite presentation from a supplied finite global presentation with site/over-site hypotheses, restrict along open immersions, prove finite presentation for `tilde` of finitely presented modules, and refine to an affine open cover with the same finite quasicoherent witness. These modules depend directly on mathlib, not on the earlier same-local-basis module; see [precise hypotheses and examples](FinitePresentations.md). |
 
 ## Tensor products and their comparison maps
 
@@ -128,8 +132,11 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later
-native-documentation stage compiled all 73 shipped modules against the exact
-official pins and generated the separate API reference. At preparation on
-September 26, 2026, complete release proof/axiom intake and independent
-exact-candidate release review remained outstanding. Native display sites,
-compiled clients, checked proof bodies and release acceptance are distinct.
+native-documentation stage compiled the historical 73-module snapshot against
+the exact official pins and generated the separate API reference. That snapshot
+subsequently reached an independently accepted equal-tree official release;
+the new finite-presentation transfer still awaits independent destination review,
+integration and a verified release. Native display sites, compiled clients,
+checked proof bodies and release acceptance are distinct. The additional
+[finite-presentation client](../Test/FinitePresentationClient.lean) exercises
+nine direct uses, including empty indices, zero module and zero ring.

@@ -1,17 +1,23 @@
 # API documentation and reproduction
 
-[API.md](API.md) is a Markdown rendering of native doc-gen4 records, not a
-source-text declaration scanner. [Guide.md](Guide.md) explains the mathematics;
-[api-manifest.json](api-manifest.json) binds the generated page and inputs.
+[API.md](API.md) is a **fixed historical** Markdown rendering of native doc-gen4
+records from the 73-module snapshot `a05b182aa17ea7cd1a591ec7b60aa7d6f2b6704c`,
+not a current complete library census or a source-text declaration scanner.
+[Guide.md](Guide.md) explains the mathematics; [FinitePresentations.md](FinitePresentations.md)
+and the new Lean source describe the native finite-presentation additions, which
+are absent from this generated reference. [api-manifest.json](api-manifest.json)
+binds only the unchanged historical page and inputs; reproduce its contract
+against the exact frozen snapshot, not the present checkout.
 
 ## What the reference contains
 
-The native input covers all 73 shipped Lean modules: 36 focused library modules,
+The historical native input covered all 73 then-shipped Lean modules: 36 focused library modules,
 the aggregate, 15 examples and 21 tests. There are 381 native display sites in
 the focused library modules: 230 theorems, 99 definitions, 42 instances, five
 classes and five constructors. The other modules have no display sites, which
 does not mean they have no mathematical bodies or generated declarations.
-The complete module inventory is included in the API reference.
+That snapshot's complete module inventory is included in the API reference;
+this statement does not inventory the current checkout.
 
 All visible native signature tokens are retained, including implicit binders,
 class/constructor distinctions and literal noncomputable modifiers. Only

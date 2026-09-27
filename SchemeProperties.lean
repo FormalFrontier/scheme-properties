@@ -16,6 +16,7 @@ public import SchemeProperties.GeometricConnectedness
 public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral
+public import SchemeProperties.ModuleFinitePresentation
 public import SchemeProperties.ModuleProperties
 public import SchemeProperties.ModuleTensor
 public import SchemeProperties.ModuleTensorAffine
@@ -34,5 +35,6 @@ public import SchemeProperties.Quasicoherent
 public import SchemeProperties.QuasicoherentAbelian
 public import SchemeProperties.Reduced
 public import SchemeProperties.SheafFinitePresentation
+public import SchemeProperties.SheafFinitePresentationTransport
 public import SchemeProperties.StructureSheaf
 public import SchemeProperties.Torsion

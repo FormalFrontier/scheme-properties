@@ -4,11 +4,13 @@
 but does not erase, the distinguishable contributors below. It does not
 identify a copyright owner. The original Formal Frontier contributions use
 the project's standing Apache-2.0 authorization and the complete root
-[LICENSE](../LICENSE). This assembly is **not** a completed or independently
-cleared release. See [Guide](Guide.md) for the mathematical API and readiness
-limits. This account covers the assembly based on ordinary accepted development
-commit `04513a56ed7c339875f114b56fcc430e6b753fed`; historical predecessor
-commits below identify expression origin, not present-tense acceptance.
+[LICENSE](../LICENSE). The earlier 73-module assembly reached an independently
+accepted official release; this new finite-presentation transfer awaits its
+own independent destination review, integration and release. See [Guide](Guide.md)
+for mathematical API and readiness limits. The historical account below covers
+the assembly based on ordinary accepted development commit
+`04513a56ed7c339875f114b56fcc430e6b753fed`; historical predecessor
+commits identify expression origin, not present-tense acceptance.
 
 ## Formal contributions
 
@@ -136,6 +138,31 @@ headers, source ranges and statement scope before including them byte-for-byte.
 They are authored explanations, not text emitted by doc-gen4 or new Lean
 declarations. Neither this attribution nor data validation transfers proof,
 independent release-review or source-coverage acceptance.
+
+### Native finite-presentation promotion
+
+The [site-generic transport](../SchemeProperties/SheafFinitePresentationTransport.lean),
+[scheme-module finite presentation](../SchemeProperties/ModuleFinitePresentation.lean),
+[direct clients](../Test/FinitePresentationClient.lean) and
+[standalone guide](FinitePresentations.md) adapt reviewed incubator source at
+`05148a771446f8b00bddf36b6af72f9c430834d9` without importing its Git ancestry.
+**Prism** developed the original generic and tilde constructions and the
+same-finite-quasicoherent-witness affine refinement. **Formalization Worker B**
+adapted the native API, clients and guide in original Task
+`hive-request-889e4f46f3bdf27bdedb362ee6259c9d0564e57e` (UID
+`21a872d7-a565-4f28-b2f8-5eae65e02474`) and transferred the modules and
+documentation in Task `hive-request-c188a7b61cec0b11919933ddbae7367b7e535918`
+(UID `91c509cb-33b1-46e1-a20f-46a2fd73ac50`). This new destination candidate
+still awaits independent promotion review and integration, separately from
+earlier independent review of its incubator origins.
+
+The affine-chart argument adapts mathlib's native
+`Scheme.Modules.exists_isOpenCover_presentation`: retain **Weihong Xu**'s 2024
+copyright and Apache-2.0 notice and the original authors **Kevin Buzzard, Johan
+Commelin, Amelia Livingston, Sophie Morel, Jujian Zhang, Weihong Xu, Andrew
+Yang and Brian Nugent** in the scheme-module source header. Mathlib supplies
+the native presentations, quasicoherent data and tilde construction; no
+collective project credit replaces these notices.
 
 ### Mathematical sources and third-party notices
 
