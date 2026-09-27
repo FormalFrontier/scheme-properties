@@ -135,8 +135,12 @@ matrix. The initial static guide authoring stage ran no Lean commands. The later
 native-documentation stage compiled the historical 73-module snapshot against
 the exact official pins and generated the separate API reference. That snapshot
 subsequently reached an independently accepted equal-tree official release;
-the new finite-presentation transfer still awaits independent destination review,
-integration and a verified release. Native display sites, compiled clients,
+the finite-presentation transfer also completed independent destination review,
+integration and publication in
+[release `193d4fe`](https://github.com/FormalFrontier/scheme-properties/commit/193d4fe284cf1de71b168c198ad7b24a6eb71d39).
+The generated reference remains the explicitly historical 73-module snapshot;
+the later additions are documented in [FinitePresentations.md](FinitePresentations.md).
+Native display sites, compiled clients,
 checked proof bodies and release acceptance are distinct. The additional
 [finite-presentation client](../Test/FinitePresentationClient.lean) exercises
 nine direct uses, including empty indices, zero module and zero ring.

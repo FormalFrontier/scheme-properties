@@ -5,8 +5,10 @@ but does not erase, the distinguishable contributors below. It does not
 identify a copyright owner. The original Formal Frontier contributions use
 the project's standing Apache-2.0 authorization and the complete root
 [LICENSE](../LICENSE). The earlier 73-module assembly reached an independently
-accepted official release; this new finite-presentation transfer awaits its
-own independent destination review, integration and release. See [Guide](Guide.md)
+accepted official release. The finite-presentation transfer also completed
+independent destination review and integration and was published in
+[release `193d4fe`](https://github.com/FormalFrontier/scheme-properties/commit/193d4fe284cf1de71b168c198ad7b24a6eb71d39).
+See [Guide](Guide.md)
 for mathematical API and readiness limits. The historical account below covers
 the assembly based on ordinary accepted development commit
 `04513a56ed7c339875f114b56fcc430e6b753fed`; historical predecessor
@@ -152,9 +154,10 @@ adapted the native API, clients and guide in original Task
 `hive-request-889e4f46f3bdf27bdedb362ee6259c9d0564e57e` (UID
 `21a872d7-a565-4f28-b2f8-5eae65e02474`) and transferred the modules and
 documentation in Task `hive-request-c188a7b61cec0b11919933ddbae7367b7e535918`
-(UID `91c509cb-33b1-46e1-a20f-46a2fd73ac50`). This new destination candidate
-still awaits independent promotion review and integration, separately from
-earlier independent review of its incubator origins.
+(UID `91c509cb-33b1-46e1-a20f-46a2fd73ac50`). The destination contribution
+completed its own independent promotion and release review, integration and
+publication in release `193d4fe284cf1de71b168c198ad7b24a6eb71d39`, separately
+from the earlier independent review of its incubator origins.
 
 The affine-chart argument adapts mathlib's native
 `Scheme.Modules.exists_isOpenCover_presentation`: retain **Weihong Xu**'s 2024
