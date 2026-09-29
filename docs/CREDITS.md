@@ -449,6 +449,39 @@ credited Formal Frontier dense-open predicate and laws above. Neither their
 proof bodies nor book prose are copied, and the existing individual notices
 and rights remain with their respective dependencies.
 
+### Integral dominant rational-map category transfer
+
+The [native integral dominant category and actual equivalence](../SchemeProperties/IntegralDominantRationalCategory.lean),
+[16 private direct-import uses](../Test/IntegralDominantRationalCategoryClient.lean)
+and [standalone guide](IntegralDominantRationalCategory.md) adapt an accepted,
+independently reviewed isolated formalization. Original Lean producer and client:
+**Formalization Worker B**, Hive Task
+`hive-request-6578645040a9541fd367025960140a3d5b3f585c` (UID
+`5c0c2397-ff96-4b8c-a394-f9feffcced91`); fresh independent original
+code reviewer: **Formalization Worker A**, Hive Task
+`hive-request-9e8653485902800ee34995abb3334a18268d10d6` (UID
+`11de8905-8357-477f-baad-feb8ddfd6328`). The destination import/client
+mapping, guide, navigation and metadata are by **Formalization Worker B**,
+Hive Task `hive-request-f31d3ef0a6e40ce3d35f8771cad9aeb4df44e38f`
+(UID `54fbb40b-e876-43de-be4a-e3028bf73628`). These distinct records
+do not themselves certify a destination build, independent destination review,
+acceptance, official publication or source correspondence; **Atlas** owns
+those separate decisions.
+
+This producer reuses the preceding separately credited Formal Frontier
+`DenseOpenRationalScheme` category and pullback/dominance results. Mathlib's
+native partial/quotient rational-map and representative interfaces credit
+**Andrew Yang** (2024, Apache-2.0); native composition/dominance credits
+**Justus Springer** (2026, Apache-2.0). Mathlib's
+`ObjectProperty.FullSubcategory` interface credits **Kim Morrison**,
+**Reid Barton** and **Joël Riou**; its equivalence interface credits
+**Tim Baumann**, **Stephen Morgan**, **Kim Morrison** and
+**Floris van Doorn**. This contribution imports those APIs without copying
+their proof bodies, modifying their individual rights/notices or claiming that
+the transfer author originated those interfaces. No book prose or PDF is
+copied; the collective author header does not assert an individual copyright
+owner.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

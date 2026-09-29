@@ -2,7 +2,8 @@
 
 Reusable Lean theory of scheme properties under specialization, localization,
 and local-to-global criteria, with a distinct category of native rational maps
-pulling back dense opens densely.
+pulling back dense opens densely and its integral-object comparison with
+dominant native rational maps.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -13,7 +14,8 @@ signatures for its fixed historical 73-module snapshot, not the new native
 finite-presentation, rational-map-composition, dense-open-pullback,
 dense-open dominance, controlled-composition, dense-open closure,
 controlled associativity, controlled unit laws, controlled over-base or
-dense-open rational-map category modules or updated aggregate.
+dense-open rational-map category, integral dominant rational-map category
+modules or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
 [Relative Composition](docs/RationalMapComposition.md),
@@ -24,7 +26,8 @@ The later added declarations and direct imports are explained in
 [Controlled Associativity](docs/DenseOpenCompositionAssociativity.md),
 [Controlled Units](docs/DenseOpenCompositionUnits.md),
 [Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), and
-[Dense-Open Rational Category](docs/DenseOpenRationalCategory.md), together
+[Dense-Open Rational Category](docs/DenseOpenRationalCategory.md), and
+[Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
@@ -92,6 +95,13 @@ not by a main merge or this status text. No source coverage is asserted.
 
 ## Headline results
 
+- [Integral dominant rational-map category](docs/IntegralDominantRationalCategory.md):
+  integral same-universe schemes and dominant native quotient rational maps
+  form a category under native identity and composition. An actual equivalence
+  identifies it with the integral-object full subcategory of the distinct
+  `DenseOpenRationalScheme` rational-arrow category, preserving the quotient
+  in both directions with natural unit and counit. It is not a full subcategory
+  of ordinary `Scheme` or a functor to total scheme morphisms.
 - [Dense-open rational-map category](docs/DenseOpenRationalCategory.md): the
   separate category has arbitrary same-universe scheme objects and
   quotient rational-map arrows carrying `PullsDenseOpens`. Composition uses
@@ -156,6 +166,16 @@ not by a main merge or this status text. No source coverage is asserted.
   arbitrary-open sections equivalence or a global monoidal instance.
 
 ## Intended API
+
+Direct import `SchemeProperties.IntegralDominantRationalCategory` (or the
+aggregate root) for `AlgebraicGeometry.IntegralDominantRationalScheme.of`,
+`Hom`, `hom`, `hom_ext`, `toRationalMap_id` and `toRationalMap_comp`.
+`IntegralDenseOpenRationalScheme` is the integral-object full subcategory of
+**rational-arrow** `DenseOpenRationalScheme`; `toNative`, `toDenseOpen` and
+`integralDenseOpenEquivalence` give the quotient-preserving functors and
+equivalence. Both endpoints are integral. See the
+[standalone guide](docs/IntegralDominantRationalCategory.md) and
+[16 private direct-import uses](Test/IntegralDominantRationalCategoryClient.lean).
 
 Direct import `SchemeProperties.DenseOpenRationalCategory` (or the aggregate
 root) for `AlgebraicGeometry.DenseOpenRationalScheme.of`, `Hom`, `hom`,

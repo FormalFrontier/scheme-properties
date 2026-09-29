@@ -11,6 +11,10 @@ against the exact frozen snapshot, not the present checkout.
 The [dense-open rational category guide](DenseOpenRationalCategory.md)
 documents a later separate category and is explicitly **outside** that unchanged
 historical 73-module API snapshot and its generated manifest.
+The [integral dominant rational category guide](IntegralDominantRationalCategory.md)
+documents the later integral-object full-subcategory equivalence with native
+dominant rational-map arrows, also **outside** that unchanged snapshot and
+manifest.
 
 ## What the reference contains
 
