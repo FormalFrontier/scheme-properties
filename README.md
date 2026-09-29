@@ -9,10 +9,12 @@ are in [CREDITS](docs/CREDITS.md). See the [reader guide](docs/Guide.md) for
 focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
-finite-presentation or rational-map-composition modules or updated aggregate.
+finite-presentation, rational-map-composition or dense-open-pullback modules or
+updated aggregate.
 The later added declarations and direct imports are explained in
-[Finite Presentations](docs/FinitePresentations.md) and
-[Relative Composition](docs/RationalMapComposition.md) and their Lean sources.
+[Finite Presentations](docs/FinitePresentations.md),
+[Relative Composition](docs/RationalMapComposition.md) and
+[Dense-Open Pullback](docs/DenseOpenPullback.md), together with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
 
@@ -28,9 +30,35 @@ official release at `6b204a3e49f022e51d78a9f93e77513b99a87e00` was verified.
 The native finite-presentation modules and nine direct clients extend that
 base. The relative-composition module and private direct clients are a separate
 later addition. The generated reference remains a historical snapshot, with the
-additions documented separately below. Acceptance and publication are recorded for exact
+additions documented separately below. The dense-open pullback module and its
+anonymous direct client add another native partial/rational-map interface.
+Acceptance and publication are recorded for exact
 revisions; neither this descriptive status nor an unmerged feature branch
 establishes them. Official releases are identified by their exact release commits.
+
+## Headline results
+
+- [Dense-open pullback](docs/DenseOpenPullback.md) defines when a native partial or
+  rational map pulls back **every** dense target open densely in the whole source.
+  Equivalence and dense restriction preserve the predicate; open underlying maps
+  suffice without dominance, while the separate dominant route assumes a
+  preirreducible source and nonempty target.
+- [Relative rational-map composition](docs/RationalMapComposition.md) preserves
+  being over a common base for a dominant first native partial/rational map and
+  an arbitrary second map, assuming a preirreducible source and nonempty
+  intermediate scheme; this does not give composition without those premises.
+- [Normality and factoriality](SchemeProperties/FactorialNormal.lean) relates
+  stalkwise factorial schemes to normal schemes; the [local-normality
+  interfaces](SchemeProperties/NormalSeparableScheme.lean) also cover base
+  change along transcendental-separable field extensions, not all extensions.
+- [Finite-étale component schemes](SchemeProperties/ComponentScheme.lean)
+  give the universal factorization through finite-étale affine targets for a
+  quasicompact scheme locally of finite type over a field; the construction
+  includes empty and nonreduced schemes.
+- [Module tensors](SchemeProperties/ModuleTensor.lean) sheafify the tensor of
+  arbitrary scheme modules, with a [principal-affine-open section
+  comparison](SchemeProperties/ModuleTensorLocalization.lean), not an
+  arbitrary-open sections equivalence or a global monoidal instance.
 
 ## Intended API
 
@@ -47,6 +75,18 @@ The native relative-composition lemmas are available by direct import
 composition over a common base preserves the base for a dominant first map and
 an arbitrary second map. See the [standalone guide](docs/RationalMapComposition.md)
 for the precise hypotheses, proof route and ordinary-import clients.
+
+The native dense-open pullback predicate is available from direct import
+`SchemeProperties.DenseOpenPullback` or the aggregate root. For arbitrary
+same-universe schemes `X` and `Y`, it asks whether the inverse image of
+**every** dense open of `Y` under a native partial map has dense image in
+ambient `X`, not just in its dense domain. It is invariant under equivalent
+representatives and dense restriction, and has `toRationalMap` and chosen-
+representative equivalences. An open underlying map suffices without dominance;
+the separate dominant route assumes `[PreirreducibleSpace X] [Nonempty Y]`
+and `[IsDominant f.hom]`. See the [standalone guide](docs/DenseOpenPullback.md)
+and [seven anonymous direct-import examples](Test/DenseOpenPullbackClient.lean).
+This is not a generalized composition or category construction.
 
 The first unit packages three facts:
 

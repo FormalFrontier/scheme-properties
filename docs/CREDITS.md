@@ -184,6 +184,31 @@ Yang** and **Justus Springer**, and native composition by **Justus Springer**;
 they do not copy a mathlib proof body. Earlier isolated review is distinct
 from destination review, integration and publication.
 
+### Dense-open pullback transfer
+
+The [native partial- and rational-map dense-open predicate](../SchemeProperties/DenseOpenPullback.lean),
+[seven anonymous direct clients](../Test/DenseOpenPullbackClient.lean) and
+[standalone guide](DenseOpenPullback.md) adapt an isolated, independently
+reviewed incubator contribution without importing incubator Git ancestry.
+**Formalization Worker B** developed the original proofs and clients in Hive
+Task `hive-request-807aa4d70fffcd9d73f486c3fb6e8796148d8e28` (UID
+`f923d027-9e1c-4025-9f69-0d3418cc6cea`); the independent origin reviewer
+was **Formalization Worker A**, Hive Task
+`hive-request-82a5025aa744458004ac1ae3a433b6320c603250` (UID
+`36b2ab84-96a1-4ad4-8e0d-88dbfbe2576e`). The Scheme Properties static
+transfer and destination documentation were prepared by **Formalization
+Worker B**, Hive Task
+`hive-request-e4ef017b9a63b331b0d19e462f22b5ec6fbe5722` (UID
+`e1220436-76eb-4683-9b1c-13e67dadf037`). **Atlas** selected the
+scope and coordinates destination review and acceptance. Accepted isolated
+origins and their checks do not themselves establish destination review,
+integration or release.
+
+The module imports native mathlib partial/rational-map and quotient APIs by
+**Andrew Yang**, native composition by **Justus Springer**, and mathlib's
+topological density and open-map results. No native mathlib proof body or book
+prose is copied; collective author credit is not a new copyright-owner claim.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

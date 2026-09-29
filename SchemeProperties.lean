@@ -9,6 +9,7 @@ public import SchemeProperties.ComponentProduct
 public import SchemeProperties.ComponentScheme
 public import SchemeProperties.CoproductSections
 public import SchemeProperties.CoproductTopology
+public import SchemeProperties.DenseOpenPullback
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints

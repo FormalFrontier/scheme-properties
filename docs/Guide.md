@@ -7,11 +7,12 @@ census, or an assertion of release readiness. The source files, rather than
 this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
 The separate [generated API](API.md) supplies native signatures and source links
-for its fixed historical 73-module snapshot, not the new finite-presentation
-or rational-map-composition modules or changed aggregate. Its
+for its fixed historical 73-module snapshot, not the new finite-presentation,
+rational-map-composition or dense-open-pullback modules or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
-and [relative-composition guide](RationalMapComposition.md) for later APIs.
+and [relative-composition guide](RationalMapComposition.md) and
+[dense-open pullback guide](DenseOpenPullback.md) for later APIs.
 
 ## Imports and conventions
 
@@ -19,7 +20,9 @@ The aggregate import is `import SchemeProperties` (the current
 [root](../SchemeProperties.lean)); focused imports have the form
 `import SchemeProperties.Reduced`, with the names below substituting for
 `Reduced`; use `import SchemeProperties.RationalMapComposition` for the
-[relative-composition lemmas](RationalMapComposition.md). Some non-scheme
+[relative-composition lemmas](RationalMapComposition.md) and
+`import SchemeProperties.DenseOpenPullback` for the
+[all-dense-open predicate](DenseOpenPullback.md). Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
 [ComponentFibers](../SchemeProperties/ComponentFibers.lean) and
@@ -68,6 +71,13 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 | [NormalLocalization](../SchemeProperties/NormalLocalization.lean), [NormalPolynomial](../SchemeProperties/NormalPolynomial.lean), [NormalEtale](../SchemeProperties/NormalEtale.lean) | `IsLocallyNormalRing.of_isLocalization` handles arbitrary localizations; the polynomial instances include finitely many indeterminates; `IsLocallyNormalRing.of_finiteEtale` permits disconnected base rings and independent base/target universes but assumes a **finite étale** algebra, not an arbitrary extension. |
 | [NormalSeparable](../SchemeProperties/NormalSeparable.lean), [NormalSeparableScheme](../SchemeProperties/NormalSeparableScheme.lean) | `IsLocallyNormalRing.of_directed_iSup` requires a nonempty directed family, supremum top, flat inclusions and local normality of every member. `IsLocallyNormalRing.tensorProduct_of_isTranscendentalSeparable` and `AlgebraicGeometry.IsNormal.pullback_specMap_of_isTranscendentalSeparable` require transcendental-separability of the field extension; the latter is a same-universe scheme base-change statement, not preservation under *all* field extensions. |
 | [Factorial](../SchemeProperties/Factorial.lean), [FactorialNormal](../SchemeProperties/FactorialNormal.lean) | `AlgebraicGeometry.IsFactorial` requires unique factorization in **each stalk**; `factorialSpec` assumes a UFD coordinate ring, while `factorialSpec_of_isDedekindDomain` obtains the stalkwise property without demanding global UFD. `AlgebraicGeometry.isNormal_of_isFactorial` is an instance of factorial ⇒ normal, not its converse. Empty schemes satisfy the stalkwise factorial predicate. |
+
+## Partial and rational maps
+
+| Focused module | Entry points and precise scope |
+| --- | --- |
+| [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. No generalized composite or concrete nondominant witness is constructed; see the [standalone guide](DenseOpenPullback.md). |
+| [RationalMapComposition](../SchemeProperties/RationalMapComposition.lean) | `PartialMap.isOver_comp_of_isDominant_first` and `RationalMap.isOver_comp_of_isDominant_first` preserve being over a common base under native composition, with a preirreducible source, nonempty intermediate scheme, dominant first map and over-base hypotheses; they do not use the new all-dense-open predicate. See [precise hypotheses](RationalMapComposition.md). |
 
 ## Components, coproducts and finite-type points
 
@@ -132,6 +142,8 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   and ambient/restricted tensors. Start with the [tensor client](../Test/ModuleTensorClient.lean),
   [restricted-tensor root client](../Test/ModuleTensorRestrictionRootClient.lean),
   and [coherence client](../Test/CoherentQuasicoherentClient.lean).
+  The [dense-open pullback client](../Test/DenseOpenPullbackClient.lean) checks
+  seven anonymous direct-import examples without defining public declarations.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later
@@ -142,7 +154,9 @@ the finite-presentation transfer also completed independent destination review,
 integration and publication in
 [release `193d4fe`](https://github.com/FormalFrontier/scheme-properties/commit/193d4fe284cf1de71b168c198ad7b24a6eb71d39).
 The generated reference remains the explicitly historical 73-module snapshot;
-the later additions are documented in [FinitePresentations.md](FinitePresentations.md).
+the later additions are documented in [FinitePresentations.md](FinitePresentations.md),
+[RationalMapComposition.md](RationalMapComposition.md) and
+[DenseOpenPullback.md](DenseOpenPullback.md).
 Native display sites, compiled clients,
 checked proof bodies and release acceptance are distinct. The additional
 [finite-presentation client](../Test/FinitePresentationClient.lean) exercises

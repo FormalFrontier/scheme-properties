@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, and tensor constructions."
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, and partial/rational-map dense-open pullback."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -31,6 +31,10 @@ sources:
     type: book
     relationship: adapts
     note: "Chapter I section 5 informs local finite-presentation work; the earlier original project research and its extraction are distinguished in CREDITS.md."
+  - title: "mathlib: native partial and rational maps, composition, and topological density"
+    type: software
+    relationship: background
+    note: "Imported native partial/rational-map APIs by Andrew Yang, composition by Justus Springer, and mathlib density/open-map tools; no mathlib proof body or selected-source text is copied."
 
 automation:
   methods:
@@ -39,7 +43,7 @@ automation:
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
 status:
-  scope: "Source-independent scheme properties, including five native finite-presentation results and two native relative-composition results transferred from reviewed incubation; this list records selected contributions, not a whole-library census or a source-coverage decision."
+  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, and eight native dense-open pullback results transferred from reviewed isolated incubation; this list records selected contributions, not a whole-library census or a source-coverage decision."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -55,6 +59,22 @@ status:
       file: SchemeProperties/RationalMapComposition.lean
     - declaration: AlgebraicGeometry.Scheme.RationalMap.isOver_comp_of_isDominant_first
       file: SchemeProperties/RationalMapComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.pullsDenseOpens_iff_of_equiv
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.pullsDenseOpens_restrict_iff
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.pullsDenseOpens_of_isOpenMap
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.pullsDenseOpens_of_isDominant
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.PullsDenseOpens
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.pullsDenseOpens_toRationalMap_iff
+      file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.pullsDenseOpens_representative_iff
+      file: SchemeProperties/DenseOpenPullback.lean
 
 review:
   status: self-assessed

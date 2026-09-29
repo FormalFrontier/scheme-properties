@@ -27,6 +27,14 @@ Native `compHom` remains the existing interface for a total second morphism;
 native composition density still relies on dominance of the first map and the
 stated preirreducibility/nonemptiness assumptions.
 
+The separate [dense-open pullback interface](DenseOpenPullback.md) asks whether
+**every** dense target open pulls back densely in ambient `X`. Its open-map
+sufficiency result needs only `IsOpenMap f.hom`; its dominant route retains a
+preirreducible source and nonempty target. The two relative-composition lemmas
+here keep their stronger native first-map dominance and over-base hypotheses;
+they neither assume the new predicate nor establish a generalized composition
+law from it.
+
 For example, with those scheme and typeclass assumptions in scope:
 
 ```lean
