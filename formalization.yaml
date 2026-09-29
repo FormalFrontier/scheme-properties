@@ -39,7 +39,7 @@ automation:
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
 status:
-  scope: "Source-independent scheme properties, including five native finite-presentation results transferred from reviewed incubation; this list records the new contribution, not a whole-library census or a source-coverage decision."
+  scope: "Source-independent scheme properties, including five native finite-presentation results and two native relative-composition results transferred from reviewed incubation; this list records selected contributions, not a whole-library census or a source-coverage decision."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -51,6 +51,10 @@ status:
       file: SchemeProperties/ModuleFinitePresentation.lean
     - declaration: AlgebraicGeometry.Scheme.Modules.exists_isOpenCover_isFinite_presentation
       file: SchemeProperties/ModuleFinitePresentation.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.isOver_comp_of_isDominant_first
+      file: SchemeProperties/RationalMapComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.isOver_comp_of_isDominant_first
+      file: SchemeProperties/RationalMapComposition.lean
 
 review:
   status: self-assessed

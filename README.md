@@ -9,9 +9,11 @@ are in [CREDITS](docs/CREDITS.md). See the [reader guide](docs/Guide.md) for
 focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
-finite-presentation modules or updated aggregate. The added declarations and
-direct imports are explained in [Finite Presentations](docs/FinitePresentations.md)
-and their Lean source. The exact historical input contract and reproduction
+finite-presentation or rational-map-composition modules or updated aggregate.
+The later added declarations and direct imports are explained in
+[Finite Presentations](docs/FinitePresentations.md) and
+[Relative Composition](docs/RationalMapComposition.md) and their Lean sources.
+The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
 
 The library's official `coherent-modules` and `finite-etale-algebras` dependencies
@@ -24,8 +26,9 @@ This repository is under active development. The existing 73-module base was
 accepted at `ca6d6f41b169bcd57d4e5fa4429fd2203fe5e01a` and its equal-tree
 official release at `6b204a3e49f022e51d78a9f93e77513b99a87e00` was verified.
 The native finite-presentation modules and nine direct clients extend that
-base. The generated reference remains a historical snapshot, with the additions
-documented separately below. Acceptance and publication are recorded for exact
+base. The relative-composition module and private direct clients are a separate
+later addition. The generated reference remains a historical snapshot, with the
+additions documented separately below. Acceptance and publication are recorded for exact
 revisions; neither this descriptive status nor an unmerged feature branch
 establishes them. Official releases are identified by their exact release commits.
 
@@ -36,6 +39,14 @@ The native finite-presentation additions are available by direct imports
 `SchemeProperties.ModuleFinitePresentation`, or through the aggregate
 `SchemeProperties`. See the [standalone guide](docs/FinitePresentations.md) for the
 five declarations, assumptions, zero-ring/empty-index clients and limitations.
+
+The native relative-composition lemmas are available by direct import
+`SchemeProperties.RationalMapComposition` or through `SchemeProperties`:
+`AlgebraicGeometry.Scheme.PartialMap.isOver_comp_of_isDominant_first` and
+`AlgebraicGeometry.Scheme.RationalMap.isOver_comp_of_isDominant_first` show that
+composition over a common base preserves the base for a dominant first map and
+an arbitrary second map. See the [standalone guide](docs/RationalMapComposition.md)
+for the precise hypotheses, proof route and ordinary-import clients.
 
 The first unit packages three facts:
 

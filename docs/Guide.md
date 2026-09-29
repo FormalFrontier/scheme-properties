@@ -8,16 +8,19 @@ this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
 The separate [generated API](API.md) supplies native signatures and source links
 for its fixed historical 73-module snapshot, not the new finite-presentation
-modules or changed aggregate. Its [generation contract](README.md) distinguishes
-display sites from proof bodies; see the standalone
-[native finite-presentation guide](FinitePresentations.md) for the added APIs.
+or rational-map-composition modules or changed aggregate. Its
+[generation contract](README.md) distinguishes display sites from proof bodies;
+see the standalone [native finite-presentation guide](FinitePresentations.md)
+and [relative-composition guide](RationalMapComposition.md) for later APIs.
 
 ## Imports and conventions
 
 The aggregate import is `import SchemeProperties` (the current
 [root](../SchemeProperties.lean)); focused imports have the form
 `import SchemeProperties.Reduced`, with the names below substituting for
-`Reduced`. Some non-scheme constructions, such as presheaf tensor stalks,
+`Reduced`; use `import SchemeProperties.RationalMapComposition` for the
+[relative-composition lemmas](RationalMapComposition.md). Some non-scheme
+constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
 [ComponentFibers](../SchemeProperties/ComponentFibers.lean) and
 [FactorialNormal](../SchemeProperties/FactorialNormal.lean), now have native

@@ -167,6 +167,23 @@ Yang and Brian Nugent** in the scheme-module source header. Mathlib supplies
 the native presentations, quasicoherent data and tilde construction; no
 collective project credit replaces these notices.
 
+### Relative rational-map composition transfer
+
+The [native partial- and rational-map composition lemmas](../SchemeProperties/RationalMapComposition.lean),
+[private direct clients](../Test/RationalMapCompositionClient.lean) and
+[standalone guide](RationalMapComposition.md) transfer an isolated, independently
+reviewed incubator contribution without importing incubator Git ancestry.
+**Formalization Worker B** developed the original proofs and clients in Hive Task
+`hive-request-d04a528c8fefc542b1e53f2a0d565eecd90fde23` (UID
+`94b1be7d-b4fc-4bc6-8fcf-c08d31f48c9e`) and prepared this Scheme Properties
+transfer in Hive Task `hive-request-fb8c186a9915829afa350a73e09f7dfd98df6c89`
+(UID `ccb5a70b-e209-413c-af50-ee0b4a733e97`). **Atlas** supplied scope
+and research guidance and coordinates destination acceptance. These proofs
+reuse mathlib's native rational-map definitions and over-base APIs by **Andrew
+Yang** and **Justus Springer**, and native composition by **Justus Springer**;
+they do not copy a mathlib proof body. Earlier isolated review is distinct
+from destination review, integration and publication.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted
