@@ -13,6 +13,7 @@ public import SchemeProperties.DenseOpenPullback
 public import SchemeProperties.DenseOpenComposition
 public import SchemeProperties.DenseOpenCompositionClosure
 public import SchemeProperties.DenseOpenCompositionAssociativity
+public import SchemeProperties.DenseOpenCompositionUnits
 public import SchemeProperties.DenseOpenCompositionOver
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal

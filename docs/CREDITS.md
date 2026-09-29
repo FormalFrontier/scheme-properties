@@ -347,6 +347,46 @@ image-isomorphism interfaces. The producer retains their authentic individual
 copyright, author and Apache-2.0 notices. No mathlib proof body, book prose
 or source PDF is copied by this transfer.
 
+### Controlled dense-open composition unit laws transfer
+
+The [six native partial- and rational-map identity and unit laws](../SchemeProperties/DenseOpenCompositionUnits.lean),
+[eight private direct-client uses](../Test/DenseOpenCompositionUnitsClient.lean)
+and [standalone guide](DenseOpenCompositionUnits.md) adapt accepted isolated
+incubator donor `8c497c355201861c9e9dcfb761641821efb0d892`
+onto Scheme Properties main `a7981d5e5043e56c2ac249ebc8f1f3d443a87f68`,
+without importing incubator Git ancestry. Original mathematical exposition:
+**Formalization Worker B**, Hive Task
+`hive-request-5a3488b7ca1e4f6997cddc0cb74914632b13f9d7` (UID
+`3d432155-94e0-4c87-972a-5372c288ee82`), commit
+`6ae192dace00fb0b515700569b7fe35d7c517d6f`; its independent bounded
+mathematical reviewer: **Formalization Worker A**, Hive Task
+`hive-request-3cf5607d42071177506a487107669e8c40a4c557` (UID
+`2c014263-9556-4b24-a443-e68f0efc727b`), report
+`03ee6c5624d9dc721bb8d2085be99d17e000610c`. Atlas accepted that
+uncompiled bounded mathematics separately; it does not establish source
+correspondence or coverage. Original Lean proof and direct-client author:
+**Formalization Worker B**, Hive Task
+`hive-request-debf1d41b24dffe995a9c0116d5ab55ce735872a` (UID
+`2663c185-ee34-4a49-9ef8-033eb82d984e`); corrected fresh independent
+isolated reviewer: **Formalization Worker A**, Hive Task
+`hive-request-9b07af21e37ebb5bdfe44c9ea367df0e49b1cd9b` (UID
+`c2b25534-663c-4720-b5f5-3d1fbd55259e`), report
+`79baf3a4e19cf0a9d227c25cf390daf29054e9e6`. Destination static
+transfer: **Formalization Worker B**, Hive Task
+`hive-request-77872a2c8aab42c2f34e60d6845e36e02f879696` (UID
+`308d428c-1a11-4265-af31-e153c2ba1898`). **Atlas** owns separate
+destination review, acceptance, integration and publication; no future
+reviewer, release or source-coverage decision is asserted here.
+
+The partial-map proof **adapts** **Justus Springer**'s native Apache-2.0
+partial-composition **domain and morphism normalization** from mathlib's
+`Mathlib/AlgebraicGeometry/Birational/Composition.lean`. Its producer
+retains Springer's authentic 2026 copyright, license and individual author
+notice. It imports **Andrew Yang**'s native partial/rational quotient and
+representative APIs rather than copying their proof bodies. The existing
+dense-open predicate and controlled-composition operation remain separately
+credited above. No book prose or selected-source PDF is copied.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

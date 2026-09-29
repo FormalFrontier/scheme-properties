@@ -10,8 +10,8 @@ focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
 finite-presentation, rational-map-composition, dense-open-pullback,
-controlled-composition, dense-open closure, controlled associativity or
-controlled over-base modules
+controlled-composition, dense-open closure, controlled associativity, controlled
+unit laws or controlled over-base modules
 or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
@@ -19,7 +19,8 @@ The later added declarations and direct imports are explained in
 [Dense-Open Pullback](docs/DenseOpenPullback.md),
 [Controlled Composition](docs/DenseOpenComposition.md),
 [Dense-Open Closure](docs/DenseOpenCompositionClosure.md),
-[Controlled Associativity](docs/DenseOpenCompositionAssociativity.md) and the
+[Controlled Associativity](docs/DenseOpenCompositionAssociativity.md),
+[Controlled Units](docs/DenseOpenCompositionUnits.md), and the
 [Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
@@ -59,6 +60,10 @@ snapshot said that separate destination review and checks remained. By
 Acceptance and publication are recorded for exact
 revisions; neither this descriptive status nor an unmerged feature branch
 establishes them. Official releases are identified by their exact release commits.
+The separate controlled-units leaf and eight private generic direct-client uses
+add two identity predicates and left/right unit laws for native partial and
+quotient rational maps. The September 29, 2026 transfer preparation is not
+destination acceptance, integration, publication or source coverage.
 
 ## Headline results
 
@@ -83,6 +88,12 @@ establishes them. Official releases are identified by their exact release commit
   partial maps; the rational result is equality in the existing quotient,
   not equality of arbitrary representatives' domains. No third-map predicate,
   category structure or relative-base law is asserted.
+- [Controlled units](docs/DenseOpenCompositionUnits.md) give identity predicates
+  and left/right unit laws for both partial and quotient rational maps over
+  arbitrary same-universe schemes. The left laws impose no predicate on the
+  second map; the right laws require `PullsDenseOpens` on the first. Partial
+  equality is literal (including domains and transported homs), while rational
+  equality is in the quotient, not equality of arbitrary representatives.
 - [Dense-open pullback](docs/DenseOpenPullback.md) defines when a native partial or
   rational map pulls back **every** dense target open densely in the whole source.
   Equivalence and dense restriction preserve the predicate; open underlying maps
@@ -156,6 +167,13 @@ composition and leave the third map unrestricted. See the
 [associativity guide](docs/DenseOpenCompositionAssociativity.md) and
 [five generic private uses](Test/DenseOpenCompositionAssociativityClient.lean),
 including one private definition; these are not constructed exceptional examples.
+Direct import `SchemeProperties.DenseOpenCompositionUnits` (or the aggregate
+root) for `PartialMap.pullsDenseOpens_id`, `RationalMap.pullsDenseOpens_id`,
+and their respective `id_compOfPullsDenseOpens` and
+`compOfPullsDenseOpens_id` laws. The left laws need no predicate on the second
+map, while right units need the first-map predicate; both identity predicates
+measure density in ambient `X`. See the [unit guide](docs/DenseOpenCompositionUnits.md)
+and [eight private direct-client uses](Test/DenseOpenCompositionUnitsClient.lean).
 The [controlled over-base companion](docs/DenseOpenCompositionOver.md), by
 direct import `SchemeProperties.DenseOpenCompositionOver` or through the root,
 adds `PartialMap.isOver_compOfPullsDenseOpens` and
