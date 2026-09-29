@@ -1,7 +1,8 @@
 # scheme-properties
 
 Reusable Lean theory of scheme properties under specialization, localization,
-and local-to-global criteria.
+and local-to-global criteria, with a distinct category of native rational maps
+pulling back dense opens densely.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -11,8 +12,8 @@ The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
 finite-presentation, rational-map-composition, dense-open-pullback,
 dense-open dominance, controlled-composition, dense-open closure,
-controlled associativity, controlled unit laws or controlled over-base modules
-or updated aggregate.
+controlled associativity, controlled unit laws, controlled over-base or
+dense-open rational-map category modules or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
 [Relative Composition](docs/RationalMapComposition.md),
@@ -21,8 +22,9 @@ The later added declarations and direct imports are explained in
 [Controlled Composition](docs/DenseOpenComposition.md),
 [Dense-Open Closure](docs/DenseOpenCompositionClosure.md),
 [Controlled Associativity](docs/DenseOpenCompositionAssociativity.md),
-[Controlled Units](docs/DenseOpenCompositionUnits.md), and the
-[Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), together
+[Controlled Units](docs/DenseOpenCompositionUnits.md),
+[Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), and
+[Dense-Open Rational Category](docs/DenseOpenRationalCategory.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
@@ -70,8 +72,32 @@ add two identity predicates and left/right unit laws for native partial and
 quotient rational maps. The September 29, 2026 transfer preparation is not
 destination acceptance, integration, publication or source coverage.
 
+**Category transfer-time history (September 29, 2026, before acceptance):**
+This proposed category transfer bundles native quotient rational maps with
+`PullsDenseOpens` into arrows between separately wrapped arbitrary schemes;
+its ten-path destination candidate, including the new private client, still
+awaits destination build/audit, independent review and maintainer acceptance.
+It neither changes the ordinary `Scheme` category nor establishes publication
+or source correspondence.
+
+**Dated update, September 29, 2026, 21:58 UTC:** the category code at
+`b919dd2c98fb040e491c1f4d1fc341127b47cd01` passed its destination build
+and complete transitive standard-axiom audit, received independent review and
+maintainer acceptance, and was integrated into development main at 21:47:36 UTC.
+Its separate release/publication was still pending at this update. The
+implemented category and client are available in this tree; the transfer-time
+paragraph above is retained as history, not a current unmet-check claim.
+Official publication is identified by the exact verified release commit,
+not by a main merge or this status text. No source coverage is asserted.
+
 ## Headline results
 
+- [Dense-open rational-map category](docs/DenseOpenRationalCategory.md): the
+  separate category has arbitrary same-universe scheme objects and
+  quotient rational-map arrows carrying `PullsDenseOpens`. Composition uses
+  controlled composition and closure, while `homEquivDominant` needs **both**
+  underlying schemes nonempty and preirreducible. This does not change the
+  ordinary `Scheme` category or give a total-map forgetful functor.
 - [Dense-open pullback and dominance](docs/DenseOpenPullbackDominance.md):
   `PullsDenseOpens` implies dominance for native partial and quotient rational
   maps under `[Nonempty X] [PreirreducibleSpace Y]`. Under
@@ -130,6 +156,16 @@ destination acceptance, integration, publication or source coverage.
   arbitrary-open sections equivalence or a global monoidal instance.
 
 ## Intended API
+
+Direct import `SchemeProperties.DenseOpenRationalCategory` (or the aggregate
+root) for `AlgebraicGeometry.DenseOpenRationalScheme.of`, `Hom`, `hom`,
+`hom_ext`, `toRationalMap_id` and `toRationalMap_comp`; an anonymous category
+instance supplies categorical identities, composition and laws over arbitrary
+same-universe schemes. `homEquivDominant` and its projection theorem require
+nonempty preirreducible **source and target**. See the
+[standalone category guide](docs/DenseOpenRationalCategory.md) and
+[ten private direct-import client uses](Test/DenseOpenRationalCategoryClient.lean).
+This is a separate implemented category, not a new instance on `Scheme`.
 
 The native finite-presentation additions are available by direct imports
 `SchemeProperties.SheafFinitePresentationTransport` and

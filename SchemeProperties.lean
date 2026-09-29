@@ -16,6 +16,7 @@ public import SchemeProperties.DenseOpenCompositionClosure
 public import SchemeProperties.DenseOpenCompositionAssociativity
 public import SchemeProperties.DenseOpenCompositionUnits
 public import SchemeProperties.DenseOpenCompositionOver
+public import SchemeProperties.DenseOpenRationalCategory
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints

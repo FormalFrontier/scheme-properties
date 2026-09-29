@@ -8,6 +8,9 @@ and the new Lean source describe the native finite-presentation additions, which
 are absent from this generated reference. [api-manifest.json](api-manifest.json)
 binds only the unchanged historical page and inputs; reproduce its contract
 against the exact frozen snapshot, not the present checkout.
+The [dense-open rational category guide](DenseOpenRationalCategory.md)
+documents a later separate category and is explicitly **outside** that unchanged
+historical 73-module API snapshot and its generated manifest.
 
 ## What the reference contains
 

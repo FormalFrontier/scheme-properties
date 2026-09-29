@@ -40,8 +40,9 @@ module's previously established `PartialMap.pullsDenseOpens_of_isDominant`
 and quotient transport, retaining that result's `[Nonempty Y]` premise.
 Neither converse needs source preirreducibility or target nonemptiness; neither
 requires reducedness, integrality or an open underlying morphism. The iff is
-deliberately not unrestricted: an empty source or reducible target obstructs
-the converse, and a reducible source can obstruct the forward implication.
+deliberately not unrestricted: an empty source or reducible target can obstruct
+pullback-to-dominance, while a reducible source can obstruct
+dominance-to-pullback.
 These boundaries are not new compiled counterexamples.
 
 ## Reproduction and provenance

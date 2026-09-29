@@ -424,6 +424,31 @@ by **Andrew Yang** (2024, Apache-2.0). It imports these APIs without copying
 mathlib proof bodies, native notices, book prose or selected-source PDFs; its
 collective author header is not a new individual copyright-owner claim.
 
+### Dense-open rational-map category transfer
+
+The [separate dense-open rational-map category](../SchemeProperties/DenseOpenRationalCategory.lean),
+[ten private direct-import uses](../Test/DenseOpenRationalCategoryClient.lean)
+and [standalone guide](DenseOpenRationalCategory.md) originate in an accepted,
+independently reviewed isolated contribution. The original Lean producer and
+client were authored by **Formalization Worker B**, Hive Task
+`hive-request-5dddb84e29ead5285f0f04a3a789ef2bbbba5ab2` (UID
+`98ba3720-425d-446f-b379-5a9923750483`), with fresh independent code
+review by **Formalization Worker A**, Hive Task
+`hive-request-54a8a955252d210ee71b79542316081791f940ec` (UID
+`92b2ab48-068b-4e7a-8deb-3fd75339022e`). The mapped destination transfer
+and its documentation are by **Formalization Worker B**, Hive Task
+`hive-request-f48594a321bf5e61f02b4b51eba77fadcb8f5874` (UID
+`c1a90b5e-8609-4f96-b1ed-740a57277ddc`). This does not itself certify
+destination checks, independent destination review, acceptance, release or
+source correspondence; **Atlas** owns those decisions.
+
+This category reuses mathlib's native partial/quotient rational-map interfaces
+by **Andrew Yang** (2024, Apache-2.0), native composition and dominance
+interfaces by **Justus Springer** (2026, Apache-2.0), and the separately
+credited Formal Frontier dense-open predicate and laws above. Neither their
+proof bodies nor book prose are copied, and the existing individual notices
+and rights remain with their respective dependencies.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback and its dominance companion and controlled-composition closure, controlled partial/rational-map composition and unit laws, and common-base preservation."
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback and its dominance companion and controlled-composition closure, controlled partial/rational-map composition and unit laws, common-base preservation, and a distinct category of dense-open rational maps."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -34,7 +34,7 @@ sources:
   - title: "mathlib: native partial and rational maps, composition, and topological density"
     type: software
     relationship: adapts
-    note: "Imports native partial/rational-map APIs by Andrew Yang, mathlib density/open-map tools and the existing dense-open pullback module without copying their proof bodies; the dense-open dominance companion reuses Justus Springer's native dominance API and Yang's quotient/representative APIs without copying their proof bodies; controlled composition adapts Justus Springer's native Composition proof expression and retains his copyright and Apache-2.0 notice. The common-base proof also adapts original Formal Frontier structure-triangle expression from SchemeProperties/RationalMapComposition.lean at official commit 1af9eb14b0e3a0679cf6eac0ed59e186a4a6c636, with distinct author and transfer credit in CREDITS.md. Dense-open closure adapts Springer's Apache-2.0 partial-composition domain-normalization expression, not his stronger associativity theorem, and retains his individual notice. Controlled associativity adapts Springer's Apache-2.0 partial-composition domain and hom/morphism normalization, retaining his individual notice; its rational-map proof imports Yang's quotient/representative APIs rather than copying their proof bodies. The unit laws adapt Springer's Apache-2.0 partial-composition domain and morphism normalization with his individual notice; their rational-map proofs import Yang's native quotient and representative APIs instead of copying their proof bodies. No book prose or selected-source text is copied."
+    note: "Imports native partial/rational-map APIs by Andrew Yang, mathlib density/open-map tools and the existing dense-open pullback module without copying their proof bodies; the dense-open dominance companion reuses Justus Springer's native dominance API and Yang's quotient/representative APIs without copying their proof bodies; controlled composition adapts Justus Springer's native Composition proof expression and retains his copyright and Apache-2.0 notice. The common-base proof also adapts original Formal Frontier structure-triangle expression from SchemeProperties/RationalMapComposition.lean at official commit 1af9eb14b0e3a0679cf6eac0ed59e186a4a6c636, with distinct author and transfer credit in CREDITS.md. Dense-open closure adapts Springer's Apache-2.0 partial-composition domain-normalization expression, not his stronger associativity theorem, and retains his individual notice. Controlled associativity adapts Springer's Apache-2.0 partial-composition domain and hom/morphism normalization, retaining his individual notice; its rational-map proof imports Yang's quotient/representative APIs rather than copying their proof bodies. The unit laws adapt Springer's Apache-2.0 partial-composition domain and morphism normalization with his individual notice; their rational-map proofs import Yang's native quotient and representative APIs instead of copying their proof bodies. The distinct dense-open rational-map category reuses Yang's native quotient maps and Springer's native composition/dominance interfaces together with the existing controlled dense-open laws, without copying their mathlib proof bodies or changing the ordinary Scheme category. No book prose or selected-source text is copied."
 
 automation:
   methods:
@@ -43,7 +43,7 @@ automation:
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
 status:
-  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results, four partial/rational-map dominance converses and equivalences (the converses require nonempty source and preirreducible target; the equivalences additionally require preirreducible source and nonempty target), eight selected controlled-composition results, two controlled-composition dense-open closure results, two controlled-composition associativity results requiring PullsDenseOpens only on the first two maps, six controlled-composition identity and unit results (left with no second-map predicate, right with a first-map predicate), and two common-base preservation results prepared from reviewed isolated incubation; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision."
+  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results, four partial/rational-map dominance converses and equivalences (the converses require nonempty source and preirreducible target; the equivalences additionally require preirreducible source and nonempty target), eight selected controlled-composition results, two controlled-composition dense-open closure results, two controlled-composition associativity results requiring PullsDenseOpens only on the first two maps, six controlled-composition identity and unit results (left with no second-map predicate, right with a first-map predicate), two common-base preservation results prepared from reviewed isolated incubation, and a distinct dense-open rational-map category on arbitrary same-universe scheme wrappers, with an anonymous Category instance and a dominance equivalence only when both schemes are nonempty and preirreducible; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -123,6 +123,26 @@ status:
       file: SchemeProperties/DenseOpenPullbackDominance.lean
     - declaration: AlgebraicGeometry.Scheme.RationalMap.pullsDenseOpens_iff_isDominant
       file: SchemeProperties/DenseOpenPullbackDominance.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.of
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.Hom
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.hom
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.toRationalMap_hom
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.hom_ext
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.toRationalMap_id
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.toRationalMap_comp
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.homEquivDominant
+      file: SchemeProperties/DenseOpenRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalScheme.homEquivDominant_apply_val
+      file: SchemeProperties/DenseOpenRationalCategory.lean
 
 review:
   status: self-assessed
