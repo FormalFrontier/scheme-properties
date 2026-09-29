@@ -387,6 +387,43 @@ representative APIs rather than copying their proof bodies. The existing
 dense-open predicate and controlled-composition operation remain separately
 credited above. No book prose or selected-source PDF is copied.
 
+### Dense-open pullback and dominance transfer
+
+The [four native partial- and rational-map dominance results](../SchemeProperties/DenseOpenPullbackDominance.lean),
+[four private direct-import examples](../Test/DenseOpenPullbackDominanceClient.lean)
+and [standalone guide](DenseOpenPullbackDominance.md) adapt the independently
+reviewed isolated incubator donor `e115570b05adebd1d4b9b5f8c3cc7fbd4a1025ad`
+onto accepted Scheme Properties parent `3ac7ce0b9fad473f9856e1353c6a9c563f609c0b`
+without importing incubator Git ancestry. The existing
+[dense-open predicate](../SchemeProperties/DenseOpenPullback.lean) is reused
+unchanged; its original contribution and destination transfer have distinct
+credits above.
+
+The original converse mathematics was developed by **Formalization Worker B**,
+Hive Task `hive-request-7cd28f4c844b22e75425fed3fe9d76930b8f1ab7`
+(UID `dc65fd6d-d7e8-400b-ab99-01d2b1ae8971`), and independently reviewed by
+**Formalization Worker A**, Hive Task
+`hive-request-c83093c0267bb0c99bc85cd4fc3a8bb3bfadb402` (UID
+`123f5562-d5c1-4e9f-8f74-f23d9e9fffaa`). Original Lean proofs and direct
+client: **Formalization Worker B**, Hive Task
+`hive-request-79825c8e94f5352c8e75fb6a16c1859618eef289` (UID
+`6a8d0c63-9b1a-4eca-b111-4b8898be6498`); fresh independent isolated
+code review: **Formalization Worker A**, Hive Task
+`hive-request-32455516cc0f7e39cda54d2b9f621859bff7af3c` (UID
+`11d896b5-c1ad-42a3-8fb6-45158421d024`). Destination static transfer:
+**Formalization Worker B**, Hive Task
+`hive-request-ce06b62b5f59999150c88d30d70f9d878166052a` (UID
+`ddece77d-7c0f-4a45-bb62-e8028d116843`). **Atlas** owns separate
+destination review, acceptance, integration and publication. Neither the
+original mathematics review, isolated code review nor this transfer establishes
+destination checks, source correspondence or coverage.
+
+This producer reuses native dominance and composition APIs by **Justus Springer**
+(2026, Apache-2.0) and native partial/rational quotient and representative APIs
+by **Andrew Yang** (2024, Apache-2.0). It imports these APIs without copying
+mathlib proof bodies, native notices, book prose or selected-source PDFs; its
+collective author header is not a new individual copyright-owner claim.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

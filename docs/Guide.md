@@ -8,14 +8,15 @@ this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
 The separate [generated API](API.md) supplies native signatures and source links
 for its fixed historical 73-module snapshot, not the new finite-presentation,
-rational-map-composition, dense-open-pullback, controlled-composition,
-dense-open closure, controlled associativity, controlled unit laws or
-controlled over-base modules
+rational-map-composition, dense-open-pullback, dense-open dominance,
+controlled-composition, dense-open closure, controlled associativity,
+controlled unit laws or controlled over-base modules
 or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
 and [relative-composition guide](RationalMapComposition.md),
 [dense-open pullback guide](DenseOpenPullback.md) and
+[dominance companion](DenseOpenPullbackDominance.md) and
 [controlled-composition guide](DenseOpenComposition.md),
 [closure guide](DenseOpenCompositionClosure.md) and
 [associativity guide](DenseOpenCompositionAssociativity.md) and
@@ -31,6 +32,8 @@ The aggregate import is `import SchemeProperties` (the current
 [relative-composition lemmas](RationalMapComposition.md) and
 `import SchemeProperties.DenseOpenPullback` for the
 [all-dense-open predicate](DenseOpenPullback.md), or
+`import SchemeProperties.DenseOpenPullbackDominance` for its
+[dominance companion](DenseOpenPullbackDominance.md), or
 `import SchemeProperties.DenseOpenComposition` for its
 [conditional composition operations](DenseOpenComposition.md), or
 `import SchemeProperties.DenseOpenCompositionClosure` for the
@@ -95,6 +98,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 | Focused module | Entry points and precise scope |
 | --- | --- |
 | [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. This predicate module alone constructs no composite or concrete nondominant witness; see the [standalone guide](DenseOpenPullback.md). |
+| [DenseOpenPullbackDominance](../SchemeProperties/DenseOpenPullbackDominance.lean) | For native partial and rational maps, `isDominant_of_pullsDenseOpens` needs `[Nonempty X] [PreirreducibleSpace Y]`; `pullsDenseOpens_iff_isDominant` needs `[PreirreducibleSpace X] [Nonempty X] [PreirreducibleSpace Y] [Nonempty Y]`. Pullback density is in ambient `X`; the dominance-to-pullback direction retains the earlier nonempty-target requirement. See the [dominance guide](DenseOpenPullbackDominance.md). |
 | [DenseOpenComposition](../SchemeProperties/DenseOpenComposition.lean) | `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens` compose arbitrary partial and quotient rational maps given an explicit first-map `PullsDenseOpens` proof, with both representative-value bridges and compatibility with native `comp` and total-second `compHom` under the stated premises; this operation module alone proves no closure or category laws. See the [focused guide](DenseOpenComposition.md). |
 | [DenseOpenCompositionClosure](../SchemeProperties/DenseOpenCompositionClosure.lean) | `PartialMap.pullsDenseOpens_compOfPullsDenseOpens` and `RationalMap.pullsDenseOpens_compOfPullsDenseOpens` prove dense-open pullback closure of the controlled composite when **both** factors satisfy `PullsDenseOpens`. The operation still needs only the first predicate; no extra geometry or category laws. See the [closure guide](DenseOpenCompositionClosure.md). |
 | [DenseOpenCompositionAssociativity](../SchemeProperties/DenseOpenCompositionAssociativity.lean) | `PartialMap.compOfPullsDenseOpens_assoc` and `RationalMap.compOfPullsDenseOpens_assoc` associate three controlled composites with `PullsDenseOpens` on only the first **two** maps, using the closure witness on the left; the third map is arbitrary. The first equality is literal partial-map equality, the second quotient rational-map equality, not equality of arbitrary representative domains. No category or relative-base law. See the [associativity guide](DenseOpenCompositionAssociativity.md). |
@@ -167,6 +171,8 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   and [coherence client](../Test/CoherentQuasicoherentClient.lean).
   The [dense-open pullback client](../Test/DenseOpenPullbackClient.lean) checks
   seven anonymous direct-import examples without defining public declarations.
+  The [dominance client](../Test/DenseOpenPullbackDominanceClient.lean) checks
+  four private generic direct-import uses, without exceptional-scheme fixtures.
   The [controlled-composition client](../Test/DenseOpenCompositionClient.lean)
   checks eleven further private direct-import examples, including both
   representative changes and native/total-second compatibility.
@@ -195,6 +201,7 @@ The generated reference remains the explicitly historical 73-module snapshot;
 the later additions are documented in [FinitePresentations.md](FinitePresentations.md),
 [RationalMapComposition.md](RationalMapComposition.md) and
 [DenseOpenPullback.md](DenseOpenPullback.md),
+[DenseOpenPullbackDominance.md](DenseOpenPullbackDominance.md),
 [DenseOpenComposition.md](DenseOpenComposition.md),
 [DenseOpenCompositionClosure.md](DenseOpenCompositionClosure.md),
 [DenseOpenCompositionAssociativity.md](DenseOpenCompositionAssociativity.md) and

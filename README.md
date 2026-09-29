@@ -10,13 +10,14 @@ focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
 finite-presentation, rational-map-composition, dense-open-pullback,
-controlled-composition, dense-open closure, controlled associativity, controlled
-unit laws or controlled over-base modules
+dense-open dominance, controlled-composition, dense-open closure,
+controlled associativity, controlled unit laws or controlled over-base modules
 or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
 [Relative Composition](docs/RationalMapComposition.md),
 [Dense-Open Pullback](docs/DenseOpenPullback.md),
+[Dense-Open Dominance](docs/DenseOpenPullbackDominance.md),
 [Controlled Composition](docs/DenseOpenComposition.md),
 [Dense-Open Closure](docs/DenseOpenCompositionClosure.md),
 [Controlled Associativity](docs/DenseOpenCompositionAssociativity.md),
@@ -40,6 +41,10 @@ base. The relative-composition module and private direct clients are a separate
 later addition. The generated reference remains a historical snapshot, with the
 additions documented separately below. The dense-open pullback module and its
 anonymous direct client add another native partial/rational-map interface.
+The separate dense-open dominance companion and four private generic clients
+relate that ambient-source predicate to native dominance under explicit
+nonemptiness and preirreducibility hypotheses; origin review is distinct from
+destination checks, review, acceptance, official publication and source coverage.
 The controlled-composition module and its private direct clients use that
 predicate to build partial- and quotient-rational-map composites.
 The new dense-open closure leaf and six private direct clients establish that
@@ -67,6 +72,13 @@ destination acceptance, integration, publication or source coverage.
 
 ## Headline results
 
+- [Dense-open pullback and dominance](docs/DenseOpenPullbackDominance.md):
+  `PullsDenseOpens` implies dominance for native partial and quotient rational
+  maps under `[Nonempty X] [PreirreducibleSpace Y]`. Under
+  `[PreirreducibleSpace X] [Nonempty X] [PreirreducibleSpace Y] [Nonempty Y]`,
+  both maps have a pullback–dominance iff; the dominance-to-pullback direction
+  retains the earlier `[Nonempty Y]` requirement. Density is measured in
+  ambient `X`, not only the partial-map domain.
 - [Dense-open controlled composition](docs/DenseOpenComposition.md) composes
   arbitrary native partial or rational maps when the first map explicitly
   pulls back every dense target open densely. Both representative changes
@@ -143,6 +155,12 @@ representative equivalences. An open underlying map suffices without dominance;
 the separate dominant route assumes `[PreirreducibleSpace X] [Nonempty Y]`
 and `[IsDominant f.hom]`. See the [standalone guide](docs/DenseOpenPullback.md)
 and [seven anonymous direct-import examples](Test/DenseOpenPullbackClient.lean).
+Direct import `SchemeProperties.DenseOpenPullbackDominance` (or the aggregate
+root) for the partial/rational-map `isDominant_of_pullsDenseOpens` under
+`[Nonempty X] [PreirreducibleSpace Y]` and `pullsDenseOpens_iff_isDominant`
+under all four nonempty/preirreducible source/target hypotheses. See the
+[dominance guide](docs/DenseOpenPullbackDominance.md) and
+[four private direct-import examples](Test/DenseOpenPullbackDominanceClient.lean).
 The pullback predicate module alone does not define composition; the separate
 controlled-composition module does, without claiming category laws.
 

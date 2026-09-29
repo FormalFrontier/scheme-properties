@@ -57,8 +57,11 @@ The open-map route uses mathlib's `Dense.preimage` for `f.hom`, then density
 of the image under the dense-domain inclusion into `X`. In contrast, the
 dominant route uses the preirreducible/nonempty-open argument available under
 its stated assumptions. Bare dominance for arbitrary schemes does **not**
-follow as a sufficient condition here; neither is dominance asserted as a
-consequence of `PullsDenseOpens`. Pulling back one selected second-map domain
+follow as a sufficient condition here; this predicate module itself does not
+prove dominance from `PullsDenseOpens`. The separately imported
+[dominance companion](DenseOpenPullbackDominance.md) proves that converse under
+`[Nonempty X] [PreirreducibleSpace Y]`, and an iff under four explicit
+nonempty/preirreducible hypotheses. Pulling back one selected second-map domain
 is weaker than the *every* dense-open contract. The predicate module itself
 defines no composition operation. Its [controlled-composition consumer](DenseOpenComposition.md)
 uses an explicit `PullsDenseOpens` proof for partial and rational composition,

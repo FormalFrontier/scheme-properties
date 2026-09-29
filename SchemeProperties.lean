@@ -10,6 +10,7 @@ public import SchemeProperties.ComponentScheme
 public import SchemeProperties.CoproductSections
 public import SchemeProperties.CoproductTopology
 public import SchemeProperties.DenseOpenPullback
+public import SchemeProperties.DenseOpenPullbackDominance
 public import SchemeProperties.DenseOpenComposition
 public import SchemeProperties.DenseOpenCompositionClosure
 public import SchemeProperties.DenseOpenCompositionAssociativity
