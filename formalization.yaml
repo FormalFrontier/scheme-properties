@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, and partial/rational-map dense-open pullback."
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback, and controlled partial/rational-map composition."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -33,8 +33,8 @@ sources:
     note: "Chapter I section 5 informs local finite-presentation work; the earlier original project research and its extraction are distinguished in CREDITS.md."
   - title: "mathlib: native partial and rational maps, composition, and topological density"
     type: software
-    relationship: background
-    note: "Imported native partial/rational-map APIs by Andrew Yang, composition by Justus Springer, and mathlib density/open-map tools; no mathlib proof body or selected-source text is copied."
+    relationship: adapts
+    note: "Imports native partial/rational-map APIs by Andrew Yang, mathlib density/open-map tools and the existing dense-open pullback module without copying their proof bodies; controlled composition adapts Justus Springer's native Composition proof expression and retains his copyright and Apache-2.0 notice. No book prose or selected-source text is copied."
 
 automation:
   methods:
@@ -43,7 +43,7 @@ automation:
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
 status:
-  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, and eight native dense-open pullback results transferred from reviewed isolated incubation; this list records selected contributions, not a whole-library census or a source-coverage decision."
+  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results and eight selected controlled-composition results prepared from reviewed isolated incubation; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -75,6 +75,22 @@ status:
       file: SchemeProperties/DenseOpenPullback.lean
     - declaration: AlgebraicGeometry.Scheme.RationalMap.pullsDenseOpens_representative_iff
       file: SchemeProperties/DenseOpenPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.compOfPullsDenseOpens
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.compOfPullsDenseOpens
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.compOfPullsDenseOpens_equiv_of_equiv
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.toRationalMap_compOfPullsDenseOpens
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.compOfPullsDenseOpens_toPartialMap
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.compOfPullsDenseOpens_toRationalMap
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialMap.compOfPullsDenseOpens_eq_comp
+      file: SchemeProperties/DenseOpenComposition.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.compOfPullsDenseOpens_eq_comp
+      file: SchemeProperties/DenseOpenComposition.lean
 
 review:
   status: self-assessed

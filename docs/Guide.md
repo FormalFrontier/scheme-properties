@@ -8,11 +8,13 @@ this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
 The separate [generated API](API.md) supplies native signatures and source links
 for its fixed historical 73-module snapshot, not the new finite-presentation,
-rational-map-composition or dense-open-pullback modules or changed aggregate. Its
+rational-map-composition, dense-open-pullback or controlled-composition modules
+or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
-and [relative-composition guide](RationalMapComposition.md) and
-[dense-open pullback guide](DenseOpenPullback.md) for later APIs.
+and [relative-composition guide](RationalMapComposition.md),
+[dense-open pullback guide](DenseOpenPullback.md) and
+[controlled-composition guide](DenseOpenComposition.md) for later APIs.
 
 ## Imports and conventions
 
@@ -22,7 +24,9 @@ The aggregate import is `import SchemeProperties` (the current
 `Reduced`; use `import SchemeProperties.RationalMapComposition` for the
 [relative-composition lemmas](RationalMapComposition.md) and
 `import SchemeProperties.DenseOpenPullback` for the
-[all-dense-open predicate](DenseOpenPullback.md). Some non-scheme
+[all-dense-open predicate](DenseOpenPullback.md), or
+`import SchemeProperties.DenseOpenComposition` for its
+[conditional composition operations](DenseOpenComposition.md). Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
 [ComponentFibers](../SchemeProperties/ComponentFibers.lean) and
@@ -76,7 +80,8 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 
 | Focused module | Entry points and precise scope |
 | --- | --- |
-| [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. No generalized composite or concrete nondominant witness is constructed; see the [standalone guide](DenseOpenPullback.md). |
+| [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. This predicate module alone constructs no composite or concrete nondominant witness; see the [standalone guide](DenseOpenPullback.md). |
+| [DenseOpenComposition](../SchemeProperties/DenseOpenComposition.lean) | `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens` compose arbitrary partial and quotient rational maps given an explicit first-map `PullsDenseOpens` proof, with both representative-value bridges and compatibility with native `comp` and total-second `compHom` under the stated premises; no closure or category laws are proved. See the [focused guide](DenseOpenComposition.md). |
 | [RationalMapComposition](../SchemeProperties/RationalMapComposition.lean) | `PartialMap.isOver_comp_of_isDominant_first` and `RationalMap.isOver_comp_of_isDominant_first` preserve being over a common base under native composition, with a preirreducible source, nonempty intermediate scheme, dominant first map and over-base hypotheses; they do not use the new all-dense-open predicate. See [precise hypotheses](RationalMapComposition.md). |
 
 ## Components, coproducts and finite-type points
@@ -144,6 +149,9 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   and [coherence client](../Test/CoherentQuasicoherentClient.lean).
   The [dense-open pullback client](../Test/DenseOpenPullbackClient.lean) checks
   seven anonymous direct-import examples without defining public declarations.
+  The [controlled-composition client](../Test/DenseOpenCompositionClient.lean)
+  checks eleven further private direct-import examples, including both
+  representative changes and native/total-second compatibility.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later

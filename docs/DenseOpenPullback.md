@@ -59,10 +59,12 @@ dominant route uses the preirreducible/nonempty-open argument available under
 its stated assumptions. Bare dominance for arbitrary schemes does **not**
 follow as a sufficient condition here; neither is dominance asserted as a
 consequence of `PullsDenseOpens`. Pulling back one selected second-map domain
-is weaker than the *every* dense-open contract. This module defines no
-generalized composition, associativity, category structure or relative-base
-composite. For the separate, stronger-premise native over-base composition
-lemmas, see [Relative Composition](RationalMapComposition.md).
+is weaker than the *every* dense-open contract. The predicate module itself
+defines no composition operation. Its [controlled-composition consumer](DenseOpenComposition.md)
+uses an explicit `PullsDenseOpens` proof for partial and rational composition,
+but proves no predicate closure, associativity, category structure or general
+relative-base composite. For the separate, stronger-premise native over-base
+composition lemmas, see [Relative Composition](RationalMapComposition.md).
 
 ## Reproduction and provenance
 

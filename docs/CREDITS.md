@@ -209,6 +209,35 @@ The module imports native mathlib partial/rational-map and quotient APIs by
 topological density and open-map results. No native mathlib proof body or book
 prose is copied; collective author credit is not a new copyright-owner claim.
 
+### Dense-open controlled composition transfer
+
+The [partial- and rational-map controlled composition](../SchemeProperties/DenseOpenComposition.lean),
+[eleven private direct clients](../Test/DenseOpenCompositionClient.lean) and
+[focused guide](DenseOpenComposition.md) transport the separately accepted
+isolated incubator donor `b592c13ff04fc9b8b87ef615c622f9a1e8e1ef86`
+without importing incubator Git ancestry. Original proof and client author:
+**Formalization Worker A**, Hive Task
+`hive-request-88f7e0381e230ddb7382fca45acdad9fcaddc87d` (UID
+`7485a247-b32b-4e4b-8676-620b0767d1d4`). Its independent reviewer was
+**Formalization Worker B**, Hive Task
+`hive-request-aa51c817f2d174ce3d4e1bae7a204474b5a8caf3` (UID
+`93c114a8-14c5-4444-8464-543ee2256fb1`). The destination
+preparation of these files is by
+**Formalization Worker B**, Hive Task
+`hive-request-b4b2d2931e4e737ce3ffdaf4a86197647cddb27b` (UID
+`32ab736c-88f7-4102-9d4d-d26e5b324924`). **Atlas** selected the scope and
+coordinates destination review, acceptance, integration and publication;
+origin acceptance is not destination approval.
+
+The original mathlib partial/rational-map and quotient APIs are by **Andrew
+Yang**. This module imports the dense-open predicate instead of copying its
+proof body; unlike that predicate, the controlled-composition implementation
+*adapts native composition proof expression* from mathlib's
+`Birational/Composition.lean` by **Justus Springer**. Its source header retains
+Springer's 2026 copyright, Apache-2.0 license and original author notice,
+alongside Formal Frontier Agents. These credits do not assert collective
+copyright ownership or copying of book prose or source PDFs.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

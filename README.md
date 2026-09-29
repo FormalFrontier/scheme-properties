@@ -9,12 +9,13 @@ are in [CREDITS](docs/CREDITS.md). See the [reader guide](docs/Guide.md) for
 focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
-finite-presentation, rational-map-composition or dense-open-pullback modules or
-updated aggregate.
+finite-presentation, rational-map-composition, dense-open-pullback or
+controlled-composition modules or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
-[Relative Composition](docs/RationalMapComposition.md) and
-[Dense-Open Pullback](docs/DenseOpenPullback.md), together with their Lean sources.
+[Relative Composition](docs/RationalMapComposition.md),
+[Dense-Open Pullback](docs/DenseOpenPullback.md) and
+[Controlled Composition](docs/DenseOpenComposition.md), together with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
 
@@ -32,12 +33,19 @@ base. The relative-composition module and private direct clients are a separate
 later addition. The generated reference remains a historical snapshot, with the
 additions documented separately below. The dense-open pullback module and its
 anonymous direct client add another native partial/rational-map interface.
+The controlled-composition module and its private direct clients use that
+predicate to build partial- and quotient-rational-map composites.
 Acceptance and publication are recorded for exact
 revisions; neither this descriptive status nor an unmerged feature branch
 establishes them. Official releases are identified by their exact release commits.
 
 ## Headline results
 
+- [Dense-open controlled composition](docs/DenseOpenComposition.md) composes
+  arbitrary native partial or rational maps when the first map explicitly
+  pulls back every dense target open densely. Both representative changes
+  preserve the quotient result; total-second and native-dominant compatibility
+  recover existing `compHom` and `comp` under their respective premises.
 - [Dense-open pullback](docs/DenseOpenPullback.md) defines when a native partial or
   rational map pulls back **every** dense target open densely in the whole source.
   Equivalence and dense restriction preserve the predicate; open underlying maps
@@ -46,7 +54,8 @@ establishes them. Official releases are identified by their exact release commit
 - [Relative rational-map composition](docs/RationalMapComposition.md) preserves
   being over a common base for a dominant first native partial/rational map and
   an arbitrary second map, assuming a preirreducible source and nonempty
-  intermediate scheme; this does not give composition without those premises.
+  intermediate scheme; these over-base lemmas require those premises, unlike
+  the separate controlled-composition operation above.
 - [Normality and factoriality](SchemeProperties/FactorialNormal.lean) relates
   stalkwise factorial schemes to normal schemes; the [local-normality
   interfaces](SchemeProperties/NormalSeparableScheme.lean) also cover base
@@ -86,7 +95,18 @@ representative equivalences. An open underlying map suffices without dominance;
 the separate dominant route assumes `[PreirreducibleSpace X] [Nonempty Y]`
 and `[IsDominant f.hom]`. See the [standalone guide](docs/DenseOpenPullback.md)
 and [seven anonymous direct-import examples](Test/DenseOpenPullbackClient.lean).
-This is not a generalized composition or category construction.
+The pullback predicate module alone does not define composition; the separate
+controlled-composition module does, without claiming category laws.
+
+Direct import `SchemeProperties.DenseOpenComposition` or the aggregate root to
+use `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens`.
+Given an explicit first-map `PullsDenseOpens` proof, they compose arbitrary
+same-universe native partial/quotient rational maps without dominance or
+irreducibility. See the [focused guide](docs/DenseOpenComposition.md) and
+[eleven private direct-import clients](Test/DenseOpenCompositionClient.lean)
+for both representative bridges and native/total-second compatibilities.
+No closure of the predicate, category structure or general over-base theorem
+is asserted.
 
 The first unit packages three facts:
 

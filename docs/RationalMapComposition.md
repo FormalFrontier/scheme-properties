@@ -33,7 +33,10 @@ sufficiency result needs only `IsOpenMap f.hom`; its dominant route retains a
 preirreducible source and nonempty target. The two relative-composition lemmas
 here keep their stronger native first-map dominance and over-base hypotheses;
 they neither assume the new predicate nor establish a generalized composition
-law from it.
+law from it. The separate [controlled-composition module](DenseOpenComposition.md)
+does define native partial- and rational-map operations from an explicit
+`PullsDenseOpens` proof, without claiming a general over-base theorem, predicate
+closure, or category laws.
 
 For example, with those scheme and typeclass assumptions in scope:
 
