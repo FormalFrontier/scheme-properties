@@ -9,14 +9,15 @@ For expression provenance and mathematical references, see [Credits](CREDITS.md)
 The separate [generated API](API.md) supplies native signatures and source links
 for its fixed historical 73-module snapshot, not the new finite-presentation,
 rational-map-composition, dense-open-pullback, controlled-composition,
-dense-open closure or controlled over-base modules
+dense-open closure, controlled associativity or controlled over-base modules
 or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
 and [relative-composition guide](RationalMapComposition.md),
 [dense-open pullback guide](DenseOpenPullback.md) and
 [controlled-composition guide](DenseOpenComposition.md),
-[closure guide](DenseOpenCompositionClosure.md), together with the
+[closure guide](DenseOpenCompositionClosure.md) and
+[associativity guide](DenseOpenCompositionAssociativity.md), together with the
 [controlled over-base guide](DenseOpenCompositionOver.md), for later APIs.
 
 ## Imports and conventions
@@ -32,6 +33,8 @@ The aggregate import is `import SchemeProperties` (the current
 [conditional composition operations](DenseOpenComposition.md), or
 `import SchemeProperties.DenseOpenCompositionClosure` for the
 [two-factor pullback closure](DenseOpenCompositionClosure.md), or
+`import SchemeProperties.DenseOpenCompositionAssociativity` for the
+[first-two-controlled associativity laws](DenseOpenCompositionAssociativity.md), or
 `import SchemeProperties.DenseOpenCompositionOver` for the
 [common-base preservation lemmas](DenseOpenCompositionOver.md). Some non-scheme
 constructions, such as presheaf tensor stalks,
@@ -90,6 +93,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 | [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. This predicate module alone constructs no composite or concrete nondominant witness; see the [standalone guide](DenseOpenPullback.md). |
 | [DenseOpenComposition](../SchemeProperties/DenseOpenComposition.lean) | `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens` compose arbitrary partial and quotient rational maps given an explicit first-map `PullsDenseOpens` proof, with both representative-value bridges and compatibility with native `comp` and total-second `compHom` under the stated premises; this operation module alone proves no closure or category laws. See the [focused guide](DenseOpenComposition.md). |
 | [DenseOpenCompositionClosure](../SchemeProperties/DenseOpenCompositionClosure.lean) | `PartialMap.pullsDenseOpens_compOfPullsDenseOpens` and `RationalMap.pullsDenseOpens_compOfPullsDenseOpens` prove dense-open pullback closure of the controlled composite when **both** factors satisfy `PullsDenseOpens`. The operation still needs only the first predicate; no extra geometry or category laws. See the [closure guide](DenseOpenCompositionClosure.md). |
+| [DenseOpenCompositionAssociativity](../SchemeProperties/DenseOpenCompositionAssociativity.lean) | `PartialMap.compOfPullsDenseOpens_assoc` and `RationalMap.compOfPullsDenseOpens_assoc` associate three controlled composites with `PullsDenseOpens` on only the first **two** maps, using the closure witness on the left; the third map is arbitrary. The first equality is literal partial-map equality, the second quotient rational-map equality, not equality of arbitrary representative domains. No category or relative-base law. See the [associativity guide](DenseOpenCompositionAssociativity.md). |
 | [DenseOpenCompositionOver](../SchemeProperties/DenseOpenCompositionOver.lean) | `PartialMap.isOver_compOfPullsDenseOpens` and `RationalMap.isOver_compOfPullsDenseOpens` keep the controlled composite over `S` for arbitrary same-universe `X Y Z S` over `S`, explicit first-map `PullsDenseOpens` and `[f.IsOver S] [g.IsOver S]`. No second predicate, dominance, preirreducibility or nonemptiness is required; no arbitrary whole-domain rational representative is asserted over `S`. See [precise hypotheses and proof route](DenseOpenCompositionOver.md). |
 | [RationalMapComposition](../SchemeProperties/RationalMapComposition.lean) | `PartialMap.isOver_comp_of_isDominant_first` and `RationalMap.isOver_comp_of_isDominant_first` preserve being over a common base under native composition, with a preirreducible source, nonempty intermediate scheme, dominant first map and over-base hypotheses; they do not use the new all-dense-open predicate. See [precise hypotheses](RationalMapComposition.md). |
 
@@ -164,6 +168,9 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   The [dense-open closure client](../Test/DenseOpenCompositionClosureClient.lean)
   checks six private generic uses of two-factor closure and representative
   transfer, without constructing exceptional schemes.
+  The [controlled-associativity client](../Test/DenseOpenCompositionAssociativityClient.lean)
+  checks five generic private uses of both laws, including one private
+  iterated-composition definition; no exceptional schemes are constructed.
   The [controlled over-base client](../Test/DenseOpenCompositionOverClient.lean)
   checks five private generic uses, including the quotient, open-first and
   total-second routes; these are not public theorems or concrete examples.
@@ -181,7 +188,8 @@ the later additions are documented in [FinitePresentations.md](FinitePresentatio
 [RationalMapComposition.md](RationalMapComposition.md) and
 [DenseOpenPullback.md](DenseOpenPullback.md),
 [DenseOpenComposition.md](DenseOpenComposition.md),
-[DenseOpenCompositionClosure.md](DenseOpenCompositionClosure.md) and
+[DenseOpenCompositionClosure.md](DenseOpenCompositionClosure.md),
+[DenseOpenCompositionAssociativity.md](DenseOpenCompositionAssociativity.md) and
 [DenseOpenCompositionOver.md](DenseOpenCompositionOver.md).
 Native display sites, compiled clients,
 checked proof bodies and release acceptance are distinct. The additional

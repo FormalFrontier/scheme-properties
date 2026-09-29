@@ -252,15 +252,21 @@ Worker A**, Hive Task
 review: **Formalization Worker B**, Hive Task
 `hive-request-b637d7d6e6606cd6cfd579411796b175b72dd3bf` (UID
 `3d9e8b64-3947-4cbf-9907-2d7bba95a28f`). **Atlas** accepted only that
-isolated donor and coordinates separate destination review, acceptance,
-integration and release. This static destination transfer is by
+isolated donor at the earlier transfer-preparation stage and coordinated
+separate destination review, acceptance, integration and release. This static
+destination transfer is by
 **Formalization Worker B**, Hive Task
 `hive-request-31b8b3ab25d622527d49e076c72164745c5c17a2` (UID
 `f55e2f85-3d9e-48c1-8475-39cb612988e0`). Its code depends on the
 separately accepted dense-open predicate (#200) and controlled-composition
 operation (#203), whose distinct origin and transfer credits appear above.
-Neither isolated acceptance nor this transfer asserts source coverage or
-destination publication.
+Neither isolated acceptance nor this transfer by itself asserts source coverage
+or destination publication. Subsequently, on 2026-09-29, closure reached
+separate accepted/integrated Scheme Properties main
+`dc40583057f29dda1b9d81394ba10869e2ce6ea2` and the
+[verified official private-GitHub release `2f467da`](https://github.com/FormalFrontier/scheme-properties/commit/2f467da9150694b0c6366cd9125b047a7f7d76cb)
+with the same tree; the preparation-stage wording above is historical, not a
+current pending-review or pending-release claim.
 
 The partial-map domain-normalization proof expression **adapts** the
 Apache-2.0 native partial-composition domain branch by **Justus Springer**
@@ -270,6 +276,43 @@ individual copyright and original author/license notice. The rational-map
 proof uses **Andrew Yang**'s imported native quotient and representative
 interfaces. No book prose, source PDF or complete external proof is copied;
 mathematical inspiration is distinct from this adapted formal expression.
+
+### Dense-open controlled-composition associativity transfer
+
+The [partial- and rational-map associativity laws](../SchemeProperties/DenseOpenCompositionAssociativity.lean),
+[five generic private client uses](../Test/DenseOpenCompositionAssociativityClient.lean)
+and [standalone guide](DenseOpenCompositionAssociativity.md) adapt the accepted
+isolated incubator donor `026707accc8303e154ef50b21af18fe1e3cedeb8`
+onto accepted Scheme Properties main
+`dc40583057f29dda1b9d81394ba10869e2ce6ea2`, without importing
+incubator Git ancestry. The original mathematical proof was developed by
+**Formalization Worker A**, Hive Task
+`hive-request-69616d7fe5460055b4648b613de060b3b9a53707` (UID
+`60c0c692-5e8c-491f-ae71-e425b2f2819b`), with independent mathematical
+review by **Formalization Worker B**, Hive Task
+`hive-request-95e5b178fcb09017bde550b582d7503ccb6236f9` (UID
+`ae05da79-8d09-4687-a940-8751df527c55`). The Lean donor and generic
+private client were authored by **Formalization Worker A**, Hive Task
+`hive-request-91717799a7a2d48c3108e31b5d775c364e892b7d` (UID
+`f7615715-523e-4ffe-9e06-0d72210ffefe`), with fresh independent
+isolated code review by **Formalization Worker B**, Hive Task
+`hive-request-8f45b48b5fb25cf3cf5051995c9e8f073f8fec2c` (UID
+`aaab5a07-79f3-4aa4-b584-7bbaafa33602`). This destination static
+transfer is by **Formalization Worker B**, Hive Task
+`hive-request-a8a05288817501f97ef6e286cb60114c169ae5a8` (UID
+`3029ee1b-883f-4265-9a82-45870f421447`). **Atlas** owns separate
+destination review, acceptance, integration and publication; the donor
+acceptance is not destination certification or source coverage.
+
+The partial-map proof adapts **Justus Springer**'s native Apache-2.0
+partial-composition **domain and hom/morphism normalization** from mathlib's
+`Birational/Composition.lean`, retaining his authentic 2026 copyright,
+individual author and license notice in the producer. It does not import the
+stronger geometric assumptions of native `PartialMap.comp_assoc`. The
+rational-map proof imports **Andrew Yang**'s existing quotient and
+representative interfaces; it does not copy those mathlib proofs. The
+accepted dense-open predicate, operation and closure retain their distinct
+contributor credits above. No selected-source prose or PDF is copied.
 
 ### Controlled dense-open composition over a base transfer
 
