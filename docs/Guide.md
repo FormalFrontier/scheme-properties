@@ -8,13 +8,15 @@ this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
 The separate [generated API](API.md) supplies native signatures and source links
 for its fixed historical 73-module snapshot, not the new finite-presentation,
-rational-map-composition, dense-open-pullback or controlled-composition modules
+rational-map-composition, dense-open-pullback, controlled-composition or
+controlled over-base modules
 or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
 and [relative-composition guide](RationalMapComposition.md),
 [dense-open pullback guide](DenseOpenPullback.md) and
-[controlled-composition guide](DenseOpenComposition.md) for later APIs.
+[controlled-composition guide](DenseOpenComposition.md), together with the
+[controlled over-base guide](DenseOpenCompositionOver.md), for later APIs.
 
 ## Imports and conventions
 
@@ -26,7 +28,9 @@ The aggregate import is `import SchemeProperties` (the current
 `import SchemeProperties.DenseOpenPullback` for the
 [all-dense-open predicate](DenseOpenPullback.md), or
 `import SchemeProperties.DenseOpenComposition` for its
-[conditional composition operations](DenseOpenComposition.md). Some non-scheme
+[conditional composition operations](DenseOpenComposition.md), or
+`import SchemeProperties.DenseOpenCompositionOver` for the
+[common-base preservation lemmas](DenseOpenCompositionOver.md). Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
 [ComponentFibers](../SchemeProperties/ComponentFibers.lean) and
@@ -82,6 +86,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 | --- | --- |
 | [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. This predicate module alone constructs no composite or concrete nondominant witness; see the [standalone guide](DenseOpenPullback.md). |
 | [DenseOpenComposition](../SchemeProperties/DenseOpenComposition.lean) | `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens` compose arbitrary partial and quotient rational maps given an explicit first-map `PullsDenseOpens` proof, with both representative-value bridges and compatibility with native `comp` and total-second `compHom` under the stated premises; no closure or category laws are proved. See the [focused guide](DenseOpenComposition.md). |
+| [DenseOpenCompositionOver](../SchemeProperties/DenseOpenCompositionOver.lean) | `PartialMap.isOver_compOfPullsDenseOpens` and `RationalMap.isOver_compOfPullsDenseOpens` keep the controlled composite over `S` for arbitrary same-universe `X Y Z S` over `S`, explicit first-map `PullsDenseOpens` and `[f.IsOver S] [g.IsOver S]`. No second predicate, dominance, preirreducibility or nonemptiness is required; no arbitrary whole-domain rational representative is asserted over `S`. See [precise hypotheses and proof route](DenseOpenCompositionOver.md). |
 | [RationalMapComposition](../SchemeProperties/RationalMapComposition.lean) | `PartialMap.isOver_comp_of_isDominant_first` and `RationalMap.isOver_comp_of_isDominant_first` preserve being over a common base under native composition, with a preirreducible source, nonempty intermediate scheme, dominant first map and over-base hypotheses; they do not use the new all-dense-open predicate. See [precise hypotheses](RationalMapComposition.md). |
 
 ## Components, coproducts and finite-type points
@@ -152,6 +157,9 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   The [controlled-composition client](../Test/DenseOpenCompositionClient.lean)
   checks eleven further private direct-import examples, including both
   representative changes and native/total-second compatibility.
+  The [controlled over-base client](../Test/DenseOpenCompositionOverClient.lean)
+  checks five private generic uses, including the quotient, open-first and
+  total-second routes; these are not public theorems or concrete examples.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later
@@ -164,7 +172,9 @@ integration and publication in
 The generated reference remains the explicitly historical 73-module snapshot;
 the later additions are documented in [FinitePresentations.md](FinitePresentations.md),
 [RationalMapComposition.md](RationalMapComposition.md) and
-[DenseOpenPullback.md](DenseOpenPullback.md).
+[DenseOpenPullback.md](DenseOpenPullback.md),
+[DenseOpenComposition.md](DenseOpenComposition.md) and
+[DenseOpenCompositionOver.md](DenseOpenCompositionOver.md).
 Native display sites, compiled clients,
 checked proof bodies and release acceptance are distinct. The additional
 [finite-presentation client](../Test/FinitePresentationClient.lean) exercises

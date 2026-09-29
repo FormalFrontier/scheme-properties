@@ -238,6 +238,39 @@ Springer's 2026 copyright, Apache-2.0 license and original author notice,
 alongside Formal Frontier Agents. These credits do not assert collective
 copyright ownership or copying of book prose or source PDFs.
 
+### Controlled dense-open composition over a base transfer
+
+The two [common-base preservation lemmas](../SchemeProperties/DenseOpenCompositionOver.lean),
+[five private generic clients](../Test/DenseOpenCompositionOverClient.lean)
+and [standalone guide](DenseOpenCompositionOver.md) adapt the independently
+accepted *isolated* incubator donor
+`ca314988f69afd77a1e7010678d92917c957134e` onto accepted Scheme
+Properties main `91c8a5621a6410568183b55d60b8bcace832a24c`, without
+importing incubator Git ancestry. Original donor author: **Formalization
+Worker B**, Hive Task
+`hive-request-5661a06674dafb5829660f4b9a743ffdb93c3d80` (UID
+`1d6aee74-dee3-48bc-829f-fb75f94fb841`). Independent isolated review:
+**Formalization Worker A**, Hive Task
+`hive-request-14519b787df658fed3e4d8842cf939ab26a9619b` (UID
+`fa09a5dd-5607-4180-977d-5c04c3847550`). Destination static
+transfer: **Formalization Worker B**, Hive Task
+`hive-request-dcea208125ec931be38b0d72b65e6e1fd842afaf` (UID
+`15a63375-1cd2-4e7c-99c9-14b3c9ac98e3`). **Atlas** owns scope,
+separate destination review, acceptance, integration and publication; the
+isolated acceptance does not certify the destination or source coverage.
+
+The new partial-map structure-triangle proof expression adapts the preceding
+Formal Frontier [RationalMapComposition proof in official Scheme Properties
+`1af9eb14b0e3a0679cf6eac0ed59e186a4a6c636`](https://github.com/FormalFrontier/scheme-properties/blob/1af9eb14b0e3a0679cf6eac0ed59e186a4a6c636/SchemeProperties/RationalMapComposition.lean),
+original **Formalization Worker B** Hive Task
+`hive-request-d04a528c8fefc542b1e53f2a0d565eecd90fde23` (UID
+`94b1be7d-b4fc-4bc6-8fcf-c08d31f48c9e`). This is separate from
+**Andrew Yang**'s imported mathlib native partial/rational-map and
+relative-base interfaces and **Justus Springer**'s imported composition and
+image-isomorphism interfaces. The producer retains their authentic individual
+copyright, author and Apache-2.0 notices. No mathlib proof body, book prose
+or source PDF is copied by this transfer.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

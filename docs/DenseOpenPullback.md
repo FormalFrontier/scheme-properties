@@ -63,7 +63,11 @@ is weaker than the *every* dense-open contract. The predicate module itself
 defines no composition operation. Its [controlled-composition consumer](DenseOpenComposition.md)
 uses an explicit `PullsDenseOpens` proof for partial and rational composition,
 but proves no predicate closure, associativity, category structure or general
-relative-base composite. For the separate, stronger-premise native over-base
+relative-base composite **by itself**. Its
+[controlled over-base companion](DenseOpenCompositionOver.md) proves the
+controlled composite over a common `S` from explicit first-map `PullsDenseOpens`
+and both maps' `IsOver S` hypotheses, without making the predicate closed
+under composition. For the separate, stronger-premise **native** over-base
 composition lemmas, see [Relative Composition](RationalMapComposition.md).
 
 ## Reproduction and provenance

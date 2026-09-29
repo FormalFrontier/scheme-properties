@@ -57,11 +57,13 @@ still has to be supplied: `PartialMap.pullsDenseOpens_of_isOpenMap` gives it
 when `IsOpenMap f.hom`; a separate dominant route has additional hypotheses.
 Neither a concrete nondominant witness nor closure of `PullsDenseOpens` under
 composition is proved. No associativity, category law, generalized dominance
-or general over-base compatibility follows from this module. The separate
-[relative composition](RationalMapComposition.md) lemmas concern preservation
-of being over a common base under native first-map dominance and their
-stronger preirreducibility/nonemptiness hypotheses; they do not supply the
-controlled operation's missing over-base theorem.
+follows from this module alone. Its [controlled over-base companion](DenseOpenCompositionOver.md)
+proves that the partial/rational controlled composite preserves `IsOver S`
+when **both** maps are over `S` and the first has explicit `PullsDenseOpens`;
+it does not prove predicate closure or category laws. The separate
+[relative composition](RationalMapComposition.md) lemmas instead preserve
+the base for native `comp` under first-map dominance and their stronger
+preirreducibility/nonemptiness hypotheses.
 
 ## Reproduction and provenance
 

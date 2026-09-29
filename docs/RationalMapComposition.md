@@ -35,8 +35,12 @@ here keep their stronger native first-map dominance and over-base hypotheses;
 they neither assume the new predicate nor establish a generalized composition
 law from it. The separate [controlled-composition module](DenseOpenComposition.md)
 does define native partial- and rational-map operations from an explicit
-`PullsDenseOpens` proof, without claiming a general over-base theorem, predicate
-closure, or category laws.
+`PullsDenseOpens` proof. Its
+[controlled over-base companion](DenseOpenCompositionOver.md) proves the
+resulting controlled composite over `S` when both maps are over `S`, without
+dominance or the native theorem's preirreducibility/nonemptiness assumptions.
+It does not replace the native `comp` theorem or assert predicate closure or
+category laws.
 
 For example, with those scheme and typeclass assumptions in scope:
 
