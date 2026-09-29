@@ -238,6 +238,39 @@ Springer's 2026 copyright, Apache-2.0 license and original author notice,
 alongside Formal Frontier Agents. These credits do not assert collective
 copyright ownership or copying of book prose or source PDFs.
 
+### Dense-open controlled-composition closure transfer
+
+The [partial- and rational-map pullback closure theorems](../SchemeProperties/DenseOpenCompositionClosure.lean),
+[six private generic clients](../Test/DenseOpenCompositionClosureClient.lean)
+and [standalone guide](DenseOpenCompositionClosure.md) transfer the accepted
+isolated incubator donor `89a5653ef18bbfbb27165c6e5936dca88d2fb65c`
+onto Scheme Properties base `d11ffbbaf064f66593a41425cc21f67132dd3d88`
+without importing incubator Git ancestry. Original author: **Formalization
+Worker A**, Hive Task
+`hive-request-c948f27e37b152b7fb56b55980796bc16ccc3637` (UID
+`eea5b0b3-750d-4571-bae3-e75a6715ce2b`). Fresh independent isolated
+review: **Formalization Worker B**, Hive Task
+`hive-request-b637d7d6e6606cd6cfd579411796b175b72dd3bf` (UID
+`3d9e8b64-3947-4cbf-9907-2d7bba95a28f`). **Atlas** accepted only that
+isolated donor and coordinates separate destination review, acceptance,
+integration and release. This static destination transfer is by
+**Formalization Worker B**, Hive Task
+`hive-request-31b8b3ab25d622527d49e076c72164745c5c17a2` (UID
+`f55e2f85-3d9e-48c1-8475-39cb612988e0`). Its code depends on the
+separately accepted dense-open predicate (#200) and controlled-composition
+operation (#203), whose distinct origin and transfer credits appear above.
+Neither isolated acceptance nor this transfer asserts source coverage or
+destination publication.
+
+The partial-map domain-normalization proof expression **adapts** the
+Apache-2.0 native partial-composition domain branch by **Justus Springer**
+in mathlib's `Birational/Composition.lean`, not his stronger associativity
+theorem or its geometric assumptions. Its producer preserves Springer's
+individual copyright and original author/license notice. The rational-map
+proof uses **Andrew Yang**'s imported native quotient and representative
+interfaces. No book prose, source PDF or complete external proof is copied;
+mathematical inspiration is distinct from this adapted formal expression.
+
 ### Controlled dense-open composition over a base transfer
 
 The two [common-base preservation lemmas](../SchemeProperties/DenseOpenCompositionOver.lean),

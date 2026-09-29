@@ -9,13 +9,15 @@ are in [CREDITS](docs/CREDITS.md). See the [reader guide](docs/Guide.md) for
 focused imports, precise hypotheses and inspected example clients.
 The [generated API reference](docs/API.md) preserves the native display
 signatures for its fixed historical 73-module snapshot, not the new native
-finite-presentation, rational-map-composition, dense-open-pullback or
-controlled-composition or controlled over-base modules or updated aggregate.
+finite-presentation, rational-map-composition, dense-open-pullback,
+controlled-composition, dense-open closure or controlled over-base modules
+or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
 [Relative Composition](docs/RationalMapComposition.md),
 [Dense-Open Pullback](docs/DenseOpenPullback.md) and
-[Controlled Composition](docs/DenseOpenComposition.md), and the
+[Controlled Composition](docs/DenseOpenComposition.md),
+[Dense-Open Closure](docs/DenseOpenCompositionClosure.md) and the
 [Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
@@ -37,10 +39,15 @@ additions documented separately below. The dense-open pullback module and its
 anonymous direct client add another native partial/rational-map interface.
 The controlled-composition module and its private direct clients use that
 predicate to build partial- and quotient-rational-map composites.
-The controlled over-base companion and five private direct clients establish
-preservation of a common scheme base for those composites under both maps'
-over-base hypotheses; its isolated donor was accepted separately, but this
-destination transfer requires its own review and checks.
+The new dense-open closure leaf and six private direct clients establish that
+both partial- and rational-map controlled composites pull back dense opens
+densely when **both** factors do. This is distinct from the first-only premise
+for constructing the composite. The controlled over-base companion and five
+private direct clients establish preservation of a common scheme base for those
+composites under both maps'
+over-base hypotheses; its destination was independently accepted and its
+equal-tree official release verified. The new closure transfer requires its
+own destination review and checks.
 Acceptance and publication are recorded for exact
 revisions; neither this descriptive status nor an unmerged feature branch
 establishes them. Official releases are identified by their exact release commits.
@@ -55,6 +62,11 @@ establishes them. Official releases are identified by their exact release commit
   [controlled over-base companion](docs/DenseOpenCompositionOver.md) also
   preserves `IsOver S` for both maps over `S` without dominance or geometric
   hypotheses, given the first-map dense-open pullback condition.
+- [Dense-open closure](docs/DenseOpenCompositionClosure.md) proves that the
+  controlled composite of arbitrary partial or rational maps pulls back
+  every dense target open densely when **both** maps satisfy `PullsDenseOpens`.
+  The composition operation itself still needs only the first condition;
+  closure adds no associativity, category law or geometric assumptions.
 - [Dense-open pullback](docs/DenseOpenPullback.md) defines when a native partial or
   rational map pulls back **every** dense target open densely in the whole source.
   Equivalence and dense restriction preserve the predicate; open underlying maps
@@ -114,6 +126,12 @@ same-universe native partial/quotient rational maps without dominance or
 irreducibility. See the [focused guide](docs/DenseOpenComposition.md) and
 [eleven private direct-import clients](Test/DenseOpenCompositionClient.lean)
 for both representative bridges and native/total-second compatibilities.
+Direct import `SchemeProperties.DenseOpenCompositionClosure` (or the aggregate
+root) for `PartialMap.pullsDenseOpens_compOfPullsDenseOpens` and
+`RationalMap.pullsDenseOpens_compOfPullsDenseOpens`: each takes both `hf` and
+`hg` to prove that the controlled composite satisfies `PullsDenseOpens`.
+See the [closure guide](docs/DenseOpenCompositionClosure.md) and
+[six private generic clients](Test/DenseOpenCompositionClosureClient.lean).
 The [controlled over-base companion](docs/DenseOpenCompositionOver.md), by
 direct import `SchemeProperties.DenseOpenCompositionOver` or through the root,
 adds `PartialMap.isOver_compOfPullsDenseOpens` and
@@ -122,8 +140,9 @@ maps and `g : Y ⤏ Z` or partial maps, all schemes over the same `S`. Both
 need `hf : f.PullsDenseOpens` and `[f.IsOver S] [g.IsOver S]`, but no
 second-map predicate, dominance, nonemptiness or preirreducibility. Its
 [five private direct-import clients](Test/DenseOpenCompositionOverClient.lean)
-do not establish concrete nondominant examples. Neither module asserts
-predicate closure, category structure or that arbitrary quotient
+do not establish concrete nondominant examples. The original operation and
+over-base modules alone do not assert predicate closure (the new closure leaf
+does), category structure or that arbitrary quotient
 representatives are globally over `S`.
 
 The first unit packages three facts:

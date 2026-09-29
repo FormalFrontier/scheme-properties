@@ -11,6 +11,7 @@ public import SchemeProperties.CoproductSections
 public import SchemeProperties.CoproductTopology
 public import SchemeProperties.DenseOpenPullback
 public import SchemeProperties.DenseOpenComposition
+public import SchemeProperties.DenseOpenCompositionClosure
 public import SchemeProperties.DenseOpenCompositionOver
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
