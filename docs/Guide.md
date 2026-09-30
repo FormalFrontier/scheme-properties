@@ -15,7 +15,8 @@ controlled unit laws, controlled over-base, dense-open rational-map category,
 relative dense-open rational-map category,
 integral dominant rational-map category, integral relative rational-map category,
 function-field pullback, faithfulness, reconstruction and inverse modules,
-the exact rational-inverse partial-isomorphism module, or the changed
+the exact rational-inverse partial-isomorphism and Jacobson birational-obstruction
+modules, or the changed
 aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
@@ -35,7 +36,8 @@ and [relative-composition guide](RationalMapComposition.md),
 [faithfulness guide](RationalFunctionFieldFaithfulness.md) and
 [reconstruction guide](RationalFunctionFieldReconstruction.md) and
 [inverse guide](RationalFunctionFieldInverse.md) and
-[geometric inverse guide](RationalMapPartialIso.md), for later APIs.
+[geometric inverse guide](RationalMapPartialIso.md) and
+[Jacobson obstruction guide](JacobsonBirationalObstruction.md), for later APIs.
 
 ## Imports and conventions
 
@@ -96,6 +98,18 @@ include independent same-carrier structure maps and a six-conjunct converse.
 No local finite type, separatedness, integral base, total-scheme isomorphism,
 field-map inverse criterion or category equivalence is introduced by this
 focused module.
+The separate `import SchemeProperties.JacobsonBirationalObstruction` gives
+`PartialIso.subsingleton_target` with only a subsingleton source and Jacobson
+target, then excludes birationality if the target is nontrivial. It also proves
+nontriviality of every field's polynomial spectrum, yielding the field-spectrum
+obstruction even for finite fields. Its
+[private direct-import client](../Test/JacobsonBirationalObstructionClient.lean)
+includes an empty source and an identity partial iso. The
+[focused guide](JacobsonBirationalObstruction.md) records precise hypotheses;
+these results assert neither canonical field-map `IsIso` nor non-`IsIso` of a
+chosen native rational arrow. At the September 30, 2026 transfer-preparation
+snapshot, isolated donor acceptance was distinct from future destination
+verification, review and publication; this is not a later current status.
 Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
@@ -139,6 +153,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 
 | Focused module | Entry points and precise scope |
 | --- | --- |
+| [JacobsonBirationalObstruction](../SchemeProperties/JacobsonBirationalObstruction.lean) | `PartialIso.subsingleton_target` needs only `[Subsingleton X] [JacobsonSpace Y]`, even for empty `X`; `not_birational_of_subsingleton_of_jacobson` adds `[Nontrivial Y]`. `nontrivial_spec_polynomial` supplies the nontrivial target for **any** field `k`, and `not_birational_spec_field_spec_polynomial` applies to arbitrary fields `K,k` (same universe), including finite fields. No integral, Noetherian, finite-type or infinite-field premise is added to the general obstruction; it is not a specified native-arrow inverse test or a function-field-map theorem. See the [guide](JacobsonBirationalObstruction.md) and [private client](../Test/JacobsonBirationalObstructionClient.lean); outside the historical 73-module API snapshot. |
 | [RationalMapPartialIso](../SchemeProperties/RationalMapPartialIso.lean) | `RationalMap.exists_partialIso_of_inverse` and `exists_partialIso_of_inverse_over` produce a dense-open `PartialIso` with **both specified** quotient readbacks from independently dominant maps on integral `X,Y` satisfying both source-first inverse equations; for arbitrary base `S` and independent `sX,sY`, only the forward `compHom` base equation is assumed for literal `IsOver`. `PartialIso.toRationalMap_isDominant` (instance), `toRationalMap_comp_symm`, `symm_toRationalMap_comp`, `toRationalMap_compHom_of_isOver`, and `symm_toRationalMap_compHom_of_isOver` supply converse dominance, both inverse laws, and both quotient base laws. No target local finite type, separatedness or integral-base requirement; not the function-field criterion, a total isomorphism or a category equivalence. See the [standalone guide](RationalMapPartialIso.md) and [four private clients](../Test/RationalMapPartialIsoClient.lean); absent from the fixed 73-module API reference. |
 | [Reduced](../SchemeProperties/Reduced.lean) | `IsLocalization.isReduced` works across independent ring universes; `IsLocalization.AtPrime.isReduced_of_le` assumes primes `p ≤ q` and reducedness at `q`, then proves it at `p`. `AlgebraicGeometry.isReduced_stalk_of_specializes` takes `x ⤳ y` and a reduced stalk at `y` to a reduced stalk at `x` (generalization), not the converse. |
 | [Integral](../SchemeProperties/Integral.lean) | `AlgebraicGeometry.isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain` needs **connectedness**, local Noetherianity and a domain at **every stalk**; `isIntegral_of_isNoetherian_of_connectedSpace_of_stalk_isDomain` is its Noetherian variant. The intermediate irreducible-component lemmas are local, not a global integrality claim for disconnected schemes. |

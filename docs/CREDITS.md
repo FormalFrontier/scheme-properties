@@ -769,6 +769,52 @@ and other authentic notices remain with the imported mathlib modules; their
 proof bodies are not copied here. No source-book text, source PDF, unsupported
 project copyright claim or new third-party rights clearance is implied.
 
+### Jacobson birational obstruction transfer
+
+The [mathlib-only producer](../SchemeProperties/JacobsonBirationalObstruction.lean),
+[single private client](../Test/JacobsonBirationalObstructionClient.lean) and
+[standalone guide](JacobsonBirationalObstruction.md) adapt the accepted isolated
+geometric donor at `ea0516a947d39c11cbc79696c6fbc76608db2d1f` (tree
+`db62f70f5f0666b54d1460950ada5b89828ed479`) **without importing its Git
+ancestry**. The producer retains the original Apache-2.0 SPDX and collective
+Formal Frontier Agents notice verbatim. The destination client changes only
+the producer import and `IncubatorTest` to `SchemePropertiesTest` namespace.
+The four public results force a Jacobson target to be subsingleton from a
+partial isomorphism with subsingleton (possibly empty) source, exclude
+birationality if that target is nontrivial, prove polynomial spectra over all
+fields are nontrivial, and exclude birationality of a field spectrum with
+the polynomial spectrum over any other same-universe field, even finite fields.
+They do not assert a canonical field-map isomorphism or a specified native
+rational arrow's noninvertibility.
+
+Original proof and client author: **Formalization Worker B**, Hive Task
+`hive-request-b9bc0adfa7b6a92259e85b615edfd85f75296b73` (UID
+`ab7408f2-a4e4-40b7-b790-558218bc29bf`). Original isolated independent
+reviewer: **Formalization Worker A**, Task
+`hive-request-28ab9d8a82363aad56f39f187950fff9bba27d1c` (UID
+`f26cd7a3-a683-4523-baae-d9793a089478`). **Atlas** accepted the isolated
+code; that decision and its original build/complete transitive standard-axiom
+evidence do **not** certify the adapted destination. The distinct transfer of
+the mathlib-only producer, private client, navigation, guide and metadata from
+Scheme Properties parent `89892c5c3cb61f3e125869f7ab822c8437156b7a` is
+by **Formalization Worker B**, Task
+`hive-request-15da982db8ae147e73865a711744772b196448d7` (UID
+`42176d07-1a49-48ee-9763-d3227be0a1f1`). At the September 30, 2026
+transfer-preparation snapshot, the preceding exact-tree geometric release
+[`511fa35`](https://github.com/FormalFrontier/scheme-properties/commit/511fa35b3e7b5f0123d2b408c698888485069dd2)
+was already verified. Fresh destination checks, independent exact-candidate
+review, Atlas's acceptance/integration and **this** addition's separately
+reviewed official release remain distinct; that dated snapshot is not a
+later current verdict or a source-coverage decision.
+
+The proof **imports rather than copies** mathlib's birational interface by
+**Justus Springer**, Jacobson topology and reduced-spectrum result by
+**Andrew Yang**, and the polynomial Jacobson instance in work by **Devon
+Tuma** and other mathlib contributors. Authentic individual notices and
+Apache-2.0 rights remain with the mathlib sources. No upstream proof body,
+selected-source prose or PDF is copied; collective project author credit
+is not an assertion of copyright ownership or new third-party clearance.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

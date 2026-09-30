@@ -49,6 +49,12 @@ explain both prescribed quotient readbacks, literal chosen-base compatibility,
 and the converse laws. They are also **outside** the unchanged historical
 73-module `API.md` snapshot and `api-manifest.json`; their inclusion in the
 current aggregate does not regenerate or expand either historical artifact.
+The [Jacobson birational obstruction guide](JacobsonBirationalObstruction.md)
+and its [direct-import client with five private declarations](../Test/JacobsonBirationalObstructionClient.lean)
+document the subsingleton-source/Jacobson-target `PartialIso` obstruction and
+field-versus-polynomial-spectrum specialization, including finite fields.
+They are likewise **outside** the unchanged historical 73-module `API.md`
+snapshot and `api-manifest.json`; no generated artifact or contract changes.
 
 ## What the reference contains
 

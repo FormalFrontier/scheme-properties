@@ -35,6 +35,10 @@ sources:
     type: software
     relationship: adapts
     note: "The function-field pullback imports mathlib's quotient/representative interfaces by Andrew Yang and native composition/dominance interfaces by Justus Springer, without copying their proof bodies; their Apache-2.0 and individual notices remain with mathlib. Its integral dominant rational-map category prerequisite is imported from this same Scheme Properties project. Original isolated-incubator authorship, independent review and destination-transfer credit are distinguished in CREDITS.md; no selected-source coverage or new rights clearance is inferred. The companion uses this same-project pullback and its existing integral category plus imported native mathlib APIs; its independent donor-code reviewer, original complete transitive axiom evidence and destination transfer are credited distinctly, without inferring destination checking or selected-source coverage. The reconstruction companion imports both same-project predecessors and mathlib native spreading, stalk, quotient and dominance APIs rather than copying their bodies; original isolated author, independent static and code reviewers, and this destination transfer are credited separately in CREDITS.md, without inferring fresh destination review, checking, publication or source coverage. The inverse companion imports the same-project reconstruction and chosen-base integral dominant category with mathlib native quotient, stalk, composition and dominance APIs; original isolated static/code authors and independent reviewers, this destination-transfer Task and separate rights qualifications are credited in CREDITS.md. Donor review and original evidence do not certify the destination or selected-source coverage. The separate geometric partial-isomorphism companion directly imports only native mathlib Birational and Composition; quotient/representative APIs by Andrew Yang and composition/partial-isomorphism APIs by Justus Springer are used with authentic Apache-2.0 notices retained upstream and Springer's original notice also retained in the adapted geometric producer for its composition-domain expression, without copying upstream proof bodies. The original project STATIC/code authors, their reviewers and the separately adapted destination contributor are credited in CREDITS.md; original donor checks/review do not certify destination acceptance or source coverage."
+  - title: "mathlib: birational, Jacobson and reduced-spectrum tools"
+    type: software
+    relationship: adapts
+    note: "The Jacobson birational obstruction imports rather than copies mathlib's partial-isomorphism and birational API by Justus Springer, Jacobson topology and reduced-spectrum tools by Andrew Yang, and the polynomial Jacobson instance in work by Devon Tuma and other mathlib contributors; their notices and Apache-2.0 rights remain upstream. The general theorem needs only a subsingleton source and Jacobson target, permits the empty case, and excludes birationality if the target is nontrivial. The polynomial-spectrum specialization works over arbitrary fields including finite fields. It neither supplies a canonical field-map IsIso nor proves non-IsIso for a specified native rational arrow. Original isolated author/reviewer, distinct transfer credit and dated checking boundaries are recorded in CREDITS.md; no source coverage is inferred."
   - title: "mathlib: native partial and rational maps, composition, and topological density"
     type: software
     relationship: adapts
@@ -259,6 +263,14 @@ status:
       file: SchemeProperties/RationalMapPartialIso.lean
     - declaration: AlgebraicGeometry.Scheme.PartialIso.symm_toRationalMap_compHom_of_isOver
       file: SchemeProperties/RationalMapPartialIso.lean
+    - declaration: AlgebraicGeometry.Scheme.PartialIso.subsingleton_target
+      file: SchemeProperties/JacobsonBirationalObstruction.lean
+    - declaration: AlgebraicGeometry.Scheme.not_birational_of_subsingleton_of_jacobson
+      file: SchemeProperties/JacobsonBirationalObstruction.lean
+    - declaration: AlgebraicGeometry.Scheme.nontrivial_spec_polynomial
+      file: SchemeProperties/JacobsonBirationalObstruction.lean
+    - declaration: AlgebraicGeometry.Scheme.not_birational_spec_field_spec_polynomial
+      file: SchemeProperties/JacobsonBirationalObstruction.lean
 
 review:
   status: self-assessed

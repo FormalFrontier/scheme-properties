@@ -46,6 +46,7 @@ The later added declarations and direct imports are explained in
 [Function-Field Faithfulness](docs/RationalFunctionFieldFaithfulness.md), and
 [Function-Field Reconstruction](docs/RationalFunctionFieldReconstruction.md), and
 [Function-Field Inverses](docs/RationalFunctionFieldInverse.md), and
+[Jacobson Birational Obstruction](docs/JacobsonBirationalObstruction.md), and
 [Exact Rational Inverse Partial Isomorphisms](docs/RationalMapPartialIso.md), together with
 their Lean sources.
 The exact historical input contract and reproduction
@@ -185,8 +186,31 @@ preceding inverse transfer has its own publication obligation; this candidate
 cannot replace it. Neither transfer is selected-source coverage. See the
 [partial-isomorphism guide](docs/RationalMapPartialIso.md).
 
+**Jacobson obstruction transfer preparation, September 30, 2026:** the
+mathlib-only focused producer, five private direct-import client declarations
+and [standalone guide](docs/JacobsonBirationalObstruction.md) adapt an
+independently reviewed and accepted *isolated* geometric contribution onto
+development main `89892c5c3cb61f3e125869f7ab822c8437156b7a`. That base
+already has the separately verified equal-tree official geometric release
+[`511fa35`](https://github.com/FormalFrontier/scheme-properties/commit/511fa35b3e7b5f0123d2b408c698888485069dd2);
+this addition does not reopen it. Donor evidence does not certify the
+renamed destination origins or aggregate; destination native checks, fresh
+review, maintainer acceptance/integration and this addition's own reviewed
+official release are distinct future steps **at this preparation snapshot**,
+not a permanent claim about their later status. No source coverage follows.
+
 ## Headline results
 
+- [Jacobson birational obstruction](docs/JacobsonBirationalObstruction.md):
+  a `PartialIso X Y` with `[Subsingleton X] [JacobsonSpace Y]` forces
+  `Subsingleton Y`, even for empty `X`; `[Nontrivial Y]` thus rules out
+  `Birational X Y`. The spectrum of `k[X]` is nontrivial for **every** field
+  `k`, giving `¬ Birational (Spec K) (Spec k[X])` for arbitrary fields `K,k`
+  in the same universe, including finite fields. No integrality, Noetherian,
+  infinite-field or finite-type premise enters the general theorem. This
+  does not prove a canonical function-field-map isomorphism or noninvertibility
+  of a specified native rational arrow. Direct import:
+  `SchemeProperties.JacobsonBirationalObstruction`; [one direct-import client with five private declarations](Test/JacobsonBirationalObstructionClient.lean).
 - [Exact rational inverses on dense opens](docs/RationalMapPartialIso.md): two
   independently chosen dominant native quotients `X ⤏ Y` and `Y ⤏ X` on
   integral schemes satisfying **both** source-first inverse equations yield a
@@ -317,6 +341,16 @@ cannot replace it. Neither transfer is selected-source coverage. See the
   arbitrary-open sections equivalence or a global monoidal instance.
 
 ## Intended API
+
+Direct import `SchemeProperties.JacobsonBirationalObstruction` (or the
+aggregate root) for `AlgebraicGeometry.Scheme.PartialIso.subsingleton_target`,
+`not_birational_of_subsingleton_of_jacobson`,
+`nontrivial_spec_polynomial` and
+`not_birational_spec_field_spec_polynomial`. The
+[standalone guide](docs/JacobsonBirationalObstruction.md) gives exact
+hypotheses and limits; the
+[private direct-import client](Test/JacobsonBirationalObstructionClient.lean)
+checks empty, rational and finite-field instances without new public results.
 
 Direct import `SchemeProperties.RationalFunctionFieldPullback` or the aggregate
 root for `AlgebraicGeometry.Scheme.RationalMap.fromFunctionField_closedPoint`,
