@@ -14,7 +14,7 @@ controlled-composition, dense-open closure, controlled associativity,
 controlled unit laws, controlled over-base, dense-open rational-map category,
 relative dense-open rational-map category,
 integral dominant rational-map category, integral relative rational-map category,
-function-field pullback, faithfulness and reconstruction modules or changed
+function-field pullback, faithfulness, reconstruction and inverse modules or changed
 aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
@@ -32,7 +32,8 @@ and [relative-composition guide](RationalMapComposition.md),
 [integral relative category guide](IntegralDominantRationalCategoryOver.md) and
 [function-field pullback guide](RationalFunctionFieldPullback.md),
 [faithfulness guide](RationalFunctionFieldFaithfulness.md) and
-[reconstruction guide](RationalFunctionFieldReconstruction.md), for later APIs.
+[reconstruction guide](RationalFunctionFieldReconstruction.md) and
+[inverse guide](RationalFunctionFieldInverse.md), for later APIs.
 
 ## Imports and conventions
 
@@ -66,7 +67,21 @@ The aggregate import is `import SchemeProperties` (the current
 `import SchemeProperties.RationalFunctionFieldPullback` for the
 [contravariant function-field map](RationalFunctionFieldPullback.md), or
 `import SchemeProperties.RationalFunctionFieldReconstruction` for the
-[chosen-base reconstruction](RationalFunctionFieldReconstruction.md).
+[chosen-base reconstruction](RationalFunctionFieldReconstruction.md), or
+`import SchemeProperties.RationalFunctionFieldInverse` for the
+[given-arrow chosen-base inverse criterion](RationalFunctionFieldInverse.md):
+`AlgebraicGeometry.IntegralDominantRationalSchemeOver.isIso_functionFieldMap`
+needs no local finite type, while `isIso_iff_isIso_functionFieldMap` requires
+only `[LocallyOfFiniteType X.toBase]` to reflect a field-map isomorphism.
+The associated [private ordinary-import client](../Test/RationalFunctionFieldInverseClient.lean)
+checks separate chosen structure maps and both native quotient inverse laws;
+there is no target finite-type or separatedness premise and no total-scheme
+isomorphism or geometric `PartialIso` conversion asserted. At the original
+September 30, 2026 transfer preparation before Scheme Properties PR #148's
+later review, the isolated donor was accepted while destination checking,
+fresh review and release were pending. This is preparation history, not a later
+current verdict; the [inverse guide](RationalFunctionFieldInverse.md) distinguishes
+that snapshot from subsequent destination and publication decisions.
 Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including

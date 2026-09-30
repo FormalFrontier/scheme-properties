@@ -9,7 +9,10 @@ pullback along dominant native rational maps of integral schemes. A separate
 faithfulness companion shows that this pullback distinguishes dominant rational
 maps. A reconstruction companion builds a dominant native quotient from a
 compatible reversed function-field map under local finite type on the target's
-chosen base arrow.
+chosen base arrow. An inverse companion reflects isomorphisms of the **given**
+dominant rational arrow from isomorphisms of function-field maps under local
+finite type of its original source map; the reverse implication needs no
+finiteness assumption.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -22,7 +25,8 @@ dense-open dominance, controlled-composition, dense-open closure,
 controlled associativity, controlled unit laws, controlled over-base or
 dense-open rational-map category, relative dense-open rational-map category,
 integral dominant rational-map category, integral relative rational-map category,
-function-field pullback and faithfulness modules or updated aggregate.
+function-field pullback, faithfulness, reconstruction and inverse modules or
+updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
 [Relative Composition](docs/RationalMapComposition.md),
@@ -39,8 +43,9 @@ The later added declarations and direct imports are explained in
 [Integral Dominant Rational Category Over a Base](docs/IntegralDominantRationalCategoryOver.md),
 [Function-Field Pullback](docs/RationalFunctionFieldPullback.md),
 [Function-Field Faithfulness](docs/RationalFunctionFieldFaithfulness.md), and
-[Function-Field Reconstruction](docs/RationalFunctionFieldReconstruction.md), together
-with their Lean sources.
+[Function-Field Reconstruction](docs/RationalFunctionFieldReconstruction.md), and
+[Function-Field Inverses](docs/RationalFunctionFieldInverse.md), together with
+their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
 
@@ -144,8 +149,34 @@ do not certify this destination; native Scheme CI, fresh promotion review,
 maintainer acceptance, integration and official publication are separate.
 See [the reconstruction guide](docs/RationalFunctionFieldReconstruction.md).
 
+**Dated clarification, September 30, 2026:** the reconstruction transfer's
+pending-destination language above describes its preparation stage. Its
+independent destination acceptance and verified official publication later
+reached `5e98363b3a8738544d966d1603ace4df183573d4` (incubator #328).
+That release does not certify the distinct inverse transfer below.
+
+**Rational inverse transfer preparation, September 30, 2026:** the isolated donor
+code had independent review and code-only acceptance under incubator issue #343.
+At the original preparation before Scheme Properties PR #148's later review,
+this destination addition's native build, complete private-inclusive transitive
+axiom audit, independent transfer review, Atlas's acceptance/integration and
+distinct reviewed release/publication were pending. This is a historical
+preparation snapshot, not a later current verdict; consult PR #148 and Atlas's
+incubator #343 for subsequent exact-revision evidence and decisions. Donor or
+destination code acceptance does not itself establish official publication or
+source coverage. See the
+[inverse guide](docs/RationalFunctionFieldInverse.md).
+
 ## Headline results
 
+- [Function-field inverse criterion](docs/RationalFunctionFieldInverse.md):
+  for integral same-universe endpoints over arbitrary independently chosen
+  total maps to `S`, isomorphism of the **given** dominant native quotient
+  rational arrow implies isomorphism of its reversed function-field map
+  **without** a local finite type premise. Reflection, and hence the iff,
+  needs only local finite type of the **original source** structure map, not
+  the target map or separatedness. This is not a total-scheme isomorphism or
+  a supplied `PartialIso`/`BirationalOver` conversion.
 - [Function-field reconstruction](docs/RationalFunctionFieldReconstruction.md):
   for integral same-universe `X` and `Y`, arbitrary chosen `sX : X ⟶ S` and
   `sY : Y ⟶ S` with **only target `sY` locally of finite type**, a reversed
@@ -288,6 +319,18 @@ additional theorems. To reproduce the focused checks, first run
 `lake exe cache get` in the pinned project, then
 `lake build SchemeProperties.RationalFunctionFieldReconstruction` and
 `lake build Test.RationalFunctionFieldReconstructionClient`.
+
+Direct import `SchemeProperties.RationalFunctionFieldInverse` (or the
+aggregate root) for
+`AlgebraicGeometry.IntegralDominantRationalSchemeOver.isIso_functionFieldMap`
+and `isIso_iff_isIso_functionFieldMap`. The [inverse guide](docs/RationalFunctionFieldInverse.md)
+states the source-only finite-type hypothesis and categorical limitations;
+[three private ordinary-import checks](Test/RationalFunctionFieldInverseClient.lean)
+exercise independent chosen maps and both native quotient inverse laws.
+After a successful pinned `lake exe cache get`, reproduce with
+`lake build SchemeProperties.RationalFunctionFieldInverse` and
+`lake build Test.RationalFunctionFieldInverseClient`. These commands are not
+a claim that destination checks have passed.
 
 Direct import `SchemeProperties.IntegralDominantRationalCategory` (or the
 aggregate root) for `AlgebraicGeometry.IntegralDominantRationalScheme.of`,

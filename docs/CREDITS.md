@@ -662,6 +662,52 @@ Apache-2.0` and collective authorship; no source PDF, book prose or imported
 third-party proof body is copied. Collective credit does not assert an
 individual copyright owner or itself establish independent rights clearance.
 
+### Function-field inverse transfer
+
+The [inverse producer](../SchemeProperties/RationalFunctionFieldInverse.lean)
+copies the original project's Apache-2.0 Lean bytes exactly from isolated
+incubator commit `db402a20a6e76ec62720d9b28ce045fa874bf6e1` (true tree
+`f8c599f94e86cb1e6e1e9f36ac9f0522b66762c1`, sole accepted parent
+`ccb5886051c4f6c006e956483c1e983d35144966`). The
+[three-theorem private client](../Test/RationalFunctionFieldInverseClient.lean)
+adapts that donor's ordinary import and adds only a destination namespace;
+the [standalone guide](RationalFunctionFieldInverse.md) adapts its original
+mathematical exposition. No incubator Git ancestry enters this destination.
+
+The frozen static mathematical argument was authored by **Formalization Worker
+B**, Hive Task `hive-request-b7543b20151ccad863ac1811c291a8f92d0b6931`
+(UID `70e238b7-5c9d-4823-b446-107bf789661b`) and independently assessed by
+**Formalization Worker A**, Task
+`hive-request-1ede527b2a9f5a3c079b5ef66dc7ff9ac3258d6f` (UID
+`63800e6d-5cae-4e30-b85e-8b53ffa2c8aa`). The donor producer, client and
+guide were authored by **Formalization Worker B**, Task
+`hive-request-d08fb8e66816eeda60f176adb2a705118712a0bf` (UID
+`20e3853c-7a2c-44db-b98e-e26f5a4cb0f8`) and independently reviewed at
+exact C by **Formalization Worker A**, Task
+`hive-request-b3aa2ab1ace57a60d8225302ef3f5053442efa16` (UID
+`d1e145b8-7bb5-4425-bd3c-be736e2951b5`). **Formalization Worker B**,
+Task `hive-request-50a6b8f62bfe8ef71ff3eebc1e00b9c2fb376413` (UID
+`4b59b8cd-4509-4cc7-a6d8-86aad520a21f`), separately transferred the
+accepted isolated result onto protected Scheme main
+`b23c7766c551a1b3228d6a190cc820f21e65fcc4` (the tree of verified
+official release `5e98363b3a8738544d966d1603ace4df183573d4`). Original
+donor code review is **not** fresh destination review, native destination
+proof checking, release acceptance or selected-source coverage.
+
+This producer imports the same-project
+[reconstruction](../SchemeProperties/RationalFunctionFieldReconstruction.lean),
+[faithfulness](../SchemeProperties/RationalFunctionFieldFaithfulness.lean) and
+[integral chosen-base category](../SchemeProperties/IntegralDominantRationalCategoryOver.lean)
+interfaces rather than duplicating predecessor proofs. It imports mathlib's
+native quotient/representative and generic-stalk APIs by **Andrew Yang** and
+native composition/dominance interfaces by **Justus Springer**, without
+copying their proof bodies; individual notices and Apache-2.0 rights remain
+upstream. The unchanged donor Lean headers retain collective authorship and
+`SPDX-License-Identifier: Apache-2.0`, not an individual copyright assertion.
+No source PDF, book prose or additional third-party proof body is copied.
+These credits do not substitute for independent release rights review or
+assert source correspondence, source coverage or publication of this transfer.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

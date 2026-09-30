@@ -35,6 +35,14 @@ The [function-field reconstruction guide](RationalFunctionFieldReconstruction.md
 and its [six private direct-import checks](../Test/RationalFunctionFieldReconstructionClient.lean)
 document the target-locally-finite-type construction, dominance, readback and
 chosen-base inverse, likewise **outside** that unchanged snapshot and manifest.
+The [function-field inverse guide](RationalFunctionFieldInverse.md) and its
+[three private direct-import checks](../Test/RationalFunctionFieldInverseClient.lean)
+document the given-arrow criterion with only original-source local finite type
+for reflection and no finiteness for the converse; both are **outside** the
+unchanged historical 73-module snapshot and generated manifest. The guide's
+pending-destination language records the original September 30, 2026 preparation
+before Scheme Properties PR #148's later review, not a later current verdict or
+an official-release acceptance.
 
 ## What the reference contains
 

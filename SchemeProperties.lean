@@ -23,6 +23,7 @@ public import SchemeProperties.IntegralDominantRationalCategory
 public import SchemeProperties.RationalFunctionFieldPullback
 public import SchemeProperties.RationalFunctionFieldFaithfulness
 public import SchemeProperties.RationalFunctionFieldReconstruction
+public import SchemeProperties.RationalFunctionFieldInverse
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints
