@@ -22,6 +22,11 @@ The [integral dominant rational category over a base guide](IntegralDominantRati
 documents the later arbitrary-base integral-relative equivalence and its
 [private direct-import client](../Test/IntegralDominantRationalCategoryOverClient.lean),
 likewise **outside** the unchanged 73-module snapshot and manifest.
+The [function-field pullback guide](RationalFunctionFieldPullback.md) and its
+[nine-check private direct-import client](../Test/RationalFunctionFieldPullbackClient.lean)
+document the later contravariant function-field interface, likewise **outside**
+that fixed historical snapshot and manifest; the current aggregate includes
+the focused module, but neither the old reference nor its contract is regenerated.
 
 ## What the reference contains
 

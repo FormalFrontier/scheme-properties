@@ -1,9 +1,10 @@
 # Scheme Properties: reader guide
 
-This guide describes mathematical source assembled from accepted ordinary
-development commit `04513a56ed7c339875f114b56fcc430e6b753fed`. It is a
-navigation aid, **not** generated API documentation, a complete declaration
-census, or an assertion of release readiness. The source files, rather than
+This guide began with mathematical source assembled from accepted ordinary
+development commit `04513a56ed7c339875f114b56fcc430e6b753fed` and now
+also navigates later focused modules, including the function-field pullback
+module. It is a navigation aid, **not** generated API documentation, a complete
+declaration census, or an assertion of release readiness. The source files, rather than
 this summary, determine the exact Lean statements.
 For expression provenance and mathematical references, see [Credits](CREDITS.md).
 The separate [generated API](API.md) supplies native signatures and source links
@@ -12,8 +13,8 @@ rational-map-composition, dense-open-pullback, dense-open dominance,
 controlled-composition, dense-open closure, controlled associativity,
 controlled unit laws, controlled over-base, dense-open rational-map category,
 relative dense-open rational-map category,
-integral dominant rational-map category, integral relative rational-map category
-or changed aggregate. Its
+integral dominant rational-map category, integral relative rational-map category,
+function-field pullback module or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
 and [relative-composition guide](RationalMapComposition.md),
@@ -27,7 +28,8 @@ and [relative-composition guide](RationalMapComposition.md),
 [rational category guide](DenseOpenRationalCategory.md) and
 [relative rational category guide](DenseOpenRationalCategoryOver.md) and
 [integral category guide](IntegralDominantRationalCategory.md) and
-[integral relative category guide](IntegralDominantRationalCategoryOver.md), for later APIs.
+[integral relative category guide](IntegralDominantRationalCategoryOver.md) and
+[function-field pullback guide](RationalFunctionFieldPullback.md), for later APIs.
 
 ## Imports and conventions
 
@@ -57,7 +59,9 @@ The aggregate import is `import SchemeProperties` (the current
 `import SchemeProperties.IntegralDominantRationalCategory` for its
 [integral-object comparison with native dominant arrows](IntegralDominantRationalCategory.md), or
 `import SchemeProperties.IntegralDominantRationalCategoryOver` for the
-[integral-object comparison over an arbitrary base](IntegralDominantRationalCategoryOver.md).
+[integral-object comparison over an arbitrary base](IntegralDominantRationalCategoryOver.md), or
+`import SchemeProperties.RationalFunctionFieldPullback` for the
+[contravariant function-field map](RationalFunctionFieldPullback.md).
 Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
@@ -118,6 +122,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 | [DenseOpenRationalCategoryOver](../SchemeProperties/DenseOpenRationalCategoryOver.lean) | For any base scheme `S`, `DenseOpenRationalSchemeOver S` wraps arbitrary total structure maps. Arrows are native quotient rational maps with `PullsDenseOpens` and existential `IsOver` using each object's explicit chosen map. Controlled composition, quotient category laws and a faithful forgetful functor to the absolute rational-arrow category require no geometric assumptions; this general-relative module alone does not claim fullness or the integral-relative equivalence. See the [relative category guide](DenseOpenRationalCategoryOver.md). |
 | [IntegralDominantRationalCategory](../SchemeProperties/IntegralDominantRationalCategory.lean) | Integral same-universe schemes and dominant **native quotient** rational maps form a category via native identity/composition. `IntegralDenseOpenRationalScheme` is the integral-object full subcategory of **rational-arrow** `DenseOpenRationalScheme`, not ordinary `Scheme`; `toNative`, `toDenseOpen` and `integralDenseOpenEquivalence` give quotient-preserving functors with unit, counit and triangle law. Both endpoints are integral; native composition needs the first arrow's dominance, closure both, associativity the first two. See the [integral category guide](IntegralDominantRationalCategory.md) and [16 private direct-import uses](../Test/IntegralDominantRationalCategoryClient.lean). |
 | [IntegralDominantRationalCategoryOver](../SchemeProperties/IntegralDominantRationalCategoryOver.lean) | For **any** scheme `S`, the integral-object full subcategory `IntegralDenseOpenRationalSchemeOver S` is equivalent to `IntegralDominantRationalSchemeOver S`, whose objects carry arbitrary chosen total maps to `S` and whose arrows are dominant native quotient rational maps with existential `IsOver` witnesses. The `toNative`/`toDenseOpen` equivalence preserves quotients, has natural unit/counit and triangles; two functors forgetting the chosen maps to the **absolute integral** categories are faithful, not asserted full, with natural comparisons. See the [integral relative category guide](IntegralDominantRationalCategoryOver.md) and [private direct-import client](../Test/IntegralDominantRationalCategoryOverClient.lean). |
+| [RationalFunctionFieldPullback](../SchemeProperties/RationalFunctionFieldPullback.lean) | For integral `X` and `Y`, dominant native quotient `r : X ⤏ Y` induces `Y.functionField ⟶ X.functionField`. `RationalMap.fromFunctionField_comp` requires only first-arrow dominance and allows an arbitrary second arrow and target; `functionFieldMap_comp` needs an integral target and both dominances. `IntegralDominantRationalScheme.functionFieldFunctor` has source the **opposite** of the existing integral dominant category, not the relative category. See the [function-field guide](RationalFunctionFieldPullback.md) and [nine private direct-import checks](../Test/RationalFunctionFieldPullbackClient.lean). |
 | [DenseOpenComposition](../SchemeProperties/DenseOpenComposition.lean) | `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens` compose arbitrary partial and quotient rational maps given an explicit first-map `PullsDenseOpens` proof, with both representative-value bridges and compatibility with native `comp` and total-second `compHom` under the stated premises; this operation module alone proves no closure or category laws. See the [focused guide](DenseOpenComposition.md). |
 | [DenseOpenCompositionClosure](../SchemeProperties/DenseOpenCompositionClosure.lean) | `PartialMap.pullsDenseOpens_compOfPullsDenseOpens` and `RationalMap.pullsDenseOpens_compOfPullsDenseOpens` prove dense-open pullback closure of the controlled composite when **both** factors satisfy `PullsDenseOpens`. The operation still needs only the first predicate; no extra geometry or category laws. See the [closure guide](DenseOpenCompositionClosure.md). |
 | [DenseOpenCompositionAssociativity](../SchemeProperties/DenseOpenCompositionAssociativity.lean) | `PartialMap.compOfPullsDenseOpens_assoc` and `RationalMap.compOfPullsDenseOpens_assoc` associate three controlled composites with `PullsDenseOpens` on only the first **two** maps, using the closure witness on the left; the third map is arbitrary. The first equality is literal partial-map equality, the second quotient rational-map equality, not equality of arbitrary representative domains. No category or relative-base law. See the [associativity guide](DenseOpenCompositionAssociativity.md). |
@@ -211,6 +216,9 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   imports the focused module directly and checks chosen-map, quotient,
   category, functor, naturality, triangle and forgetting comparisons without
   introducing public declarations.
+  The [function-field client](../Test/RationalFunctionFieldPullbackClient.lean)
+  directly imports the focused module and checks nine generic private
+  identities, restriction and composition uses without new public declarations.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later

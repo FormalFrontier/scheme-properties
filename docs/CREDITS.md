@@ -536,6 +536,54 @@ Their Apache-2.0 and individual notices are unchanged. No external proof
 bodies, book prose or source PDFs are copied; the collective author header
 does not claim individual copyright ownership.
 
+### Function-field pullback transfer
+
+The [function-field producer](../SchemeProperties/RationalFunctionFieldPullback.lean),
+[private nine-check client](../Test/RationalFunctionFieldPullbackClient.lean)
+and [guide](RationalFunctionFieldPullback.md) adapt the accepted isolated
+incubator donor **C** `b12dd71cc82cf4d7e89be0a7aa17698db25c89bb`.
+Original Lean producer, client and guide: **Formalization Worker B**, Hive Task
+`hive-request-45ec92982fd621dea0c3d8fa7999482383e838e5` (UID
+`9b188db4-3721-41af-9e9e-26e7a2516940`). The original-input computation
+**E** `ed745af5a8c87e298a0892b7b804e2e9b11d25fc` records 20 producer and
+9 client declaration origins, including private/generated ones, under the
+standard-three axiom policy. Original fresh independent review **R**
+`a6fd63a04b64a2462d7f61b8b9c902350cf21f86` is by
+**Formalization Worker A**, Hive Task
+`hive-request-99cd293f130a1929d31b8f0981b3d481e65d5d27` (UID
+`654a911f-88fb-4cf1-bd80-939f4ad9f7cf`). The static first-home assessment
+`d03105cc9cad1b05fb1d0ac39280e8d91f12291d` is by **Formalization Worker B**,
+Hive Task `hive-request-dc780993c7cf56c81a295f0ec45d77c6a03ddb3f`
+(UID `be1f66c6-15fe-4fd0-8f5b-0e7dabe480af`); it is not a proof review.
+
+The source-preserving destination transfer, client import/namespace adaptation,
+guide and registration are by **Formalization Worker B**, Hive Task
+`hive-request-da7bb6e97ffd60b048814e8cd66bc2c396248f9f` (UID
+`a8aa23f8-144b-4dd2-8ab3-aafeab714111`) on integrated Scheme Properties
+parent `72cdc26cef35faf902da1339f41544c1eaa45071`. At the original
+September 30, 2026 transfer preparation before Scheme Properties PR #138's
+later review, destination review, configured build/complete transitive axiom
+evidence, acceptance, integration, separate official publication and source
+correspondence were distinct and pending; **Atlas** makes the destination
+decisions. At that same snapshot, the preceding integral relative category's
+official release was separately pending and not bundled with this transfer.
+These are preparation-time statuses, not a later current verdict; consult
+Scheme Properties PR #138 and Atlas's incubator #285 for subsequent
+exact-revision evidence and decisions.
+
+The new producer imports the existing Scheme Properties integral dominant
+native rational-map category **within the same project**. Its other direct
+imports are mathlib's native composition and function-field/stalk interfaces.
+Mathlib's quotient/representative work by **Andrew Yang** and native
+composition/dominance by **Justus Springer** remain imported rather than
+copied; their individual notices and Apache-2.0 rights remain with mathlib.
+No external proof body, book prose or source PDF is copied here. The original
+donor and the new code have collective Formal Frontier credit and project
+Apache-2.0 headers, not a claim of individual copyright ownership or of
+rights clearance for unrelated expressions. The original source-vakil-foag
+provenance assessment does not itself certify source coverage or destination
+acceptance.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

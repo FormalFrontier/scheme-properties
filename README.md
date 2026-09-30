@@ -4,7 +4,8 @@ Reusable Lean theory of scheme properties under specialization, localization,
 and local-to-global criteria, with a distinct category of native rational maps
 pulling back dense opens densely, its arbitrary-base relative category, and
 its integral-object comparison with dominant native rational maps both
-absolutely and over any chosen base scheme.
+absolutely and over any chosen base scheme, and contravariant function-field
+pullback along dominant native rational maps of integral schemes.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -16,8 +17,8 @@ finite-presentation, rational-map-composition, dense-open-pullback,
 dense-open dominance, controlled-composition, dense-open closure,
 controlled associativity, controlled unit laws, controlled over-base or
 dense-open rational-map category, relative dense-open rational-map category,
-integral dominant rational-map category, integral relative rational-map category
-modules or updated aggregate.
+integral dominant rational-map category, integral relative rational-map category,
+function-field pullback module or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
 [Relative Composition](docs/RationalMapComposition.md),
@@ -29,9 +30,10 @@ The later added declarations and direct imports are explained in
 [Controlled Units](docs/DenseOpenCompositionUnits.md),
 [Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), and
 [Dense-Open Rational Category](docs/DenseOpenRationalCategory.md),
-[Relative Dense-Open Rational Category](docs/DenseOpenRationalCategoryOver.md), and
-[Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md), and
-[Integral Dominant Rational Category Over a Base](docs/IntegralDominantRationalCategoryOver.md), together
+[Relative Dense-Open Rational Category](docs/DenseOpenRationalCategoryOver.md),
+[Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md),
+[Integral Dominant Rational Category Over a Base](docs/IntegralDominantRationalCategoryOver.md), and
+[Function-Field Pullback](docs/RationalFunctionFieldPullback.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
@@ -116,8 +118,29 @@ paragraph above is preserved as transfer-time history, not a current unmet-check
 claim. A development-main merge does not establish official publication or
 source coverage.
 
+**Function-field transfer candidate, September 30, 2026:** the focused
+[function-field pullback](docs/RationalFunctionFieldPullback.md) and nine
+private direct-import checks transfer the accepted isolated incubator result
+onto the integrated Scheme Properties category. Original-donor review and
+proof checks do not certify this destination module. At the original
+September 30, 2026 preparation before Scheme Properties PR #138's later
+review, destination CI, independent review, maintainer acceptance,
+integration and a distinct official release were pending; the preceding
+integral-relative release had to be verified before this contribution's
+public release. This is not a later current verdict: consult Scheme Properties
+PR #138 and Atlas's incubator #285 for subsequent exact-revision evidence and
+decisions. No source coverage or shared-incubator disposition is claimed here.
+
 ## Headline results
 
+- [Function-field pullback](docs/RationalFunctionFieldPullback.md): dominant
+  native quotient rational maps between integral schemes induce reversed
+  unital maps of function fields. The native `fromFunctionField_comp` law
+  assumes only first-arrow dominance (arbitrary second arrow and target);
+  functorial ring-map composition additionally assumes target integrality and
+  both dominances. The existing integral dominant rational-map category thus
+  carries a contravariant functor to commutative rings, without a relative,
+  reconstruction or faithfulness claim.
 - [Integral dominant rational-map category](docs/IntegralDominantRationalCategory.md):
   integral same-universe schemes and dominant native quotient rational maps
   form a category under native identity and composition. An actual equivalence
@@ -205,6 +228,16 @@ source coverage.
   arbitrary-open sections equivalence or a global monoidal instance.
 
 ## Intended API
+
+Direct import `SchemeProperties.RationalFunctionFieldPullback` or the aggregate
+root for `AlgebraicGeometry.Scheme.RationalMap.fromFunctionField_closedPoint`,
+`functionFieldMap`, `functionFieldMap_eq_of_fromFunctionField_eq`,
+`fromFunctionField_comp`, `functionFieldMap_id`, `functionFieldMap_comp` and
+`AlgebraicGeometry.IntegralDominantRationalScheme.functionFieldFunctor`.
+The [standalone guide](docs/RationalFunctionFieldPullback.md) explains the
+different first-only and two-arrow dominance premises; the
+[nine private direct-import checks](Test/RationalFunctionFieldPullbackClient.lean)
+do not add public theorems.
 
 Direct import `SchemeProperties.IntegralDominantRationalCategory` (or the
 aggregate root) for `AlgebraicGeometry.IntegralDominantRationalScheme.of`,

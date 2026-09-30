@@ -20,6 +20,7 @@ public import SchemeProperties.DenseOpenRationalCategory
 public import SchemeProperties.DenseOpenRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategory
+public import SchemeProperties.RationalFunctionFieldPullback
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints

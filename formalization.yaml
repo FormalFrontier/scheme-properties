@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback and its dominance companion and controlled-composition closure, controlled partial/rational-map composition and unit laws, common-base preservation, a distinct category of dense-open rational maps and its arbitrary-base relative category, and an integral dominant native rational-map category equivalent to its integral-object rational-arrow full subcategory, and the corresponding arbitrary-base integral-relative equivalence with explicit chosen maps and faithful forgetful comparisons."
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback and its dominance companion and controlled-composition closure, controlled partial/rational-map composition and unit laws, common-base preservation, a distinct category of dense-open rational maps and its arbitrary-base relative category, and an integral dominant native rational-map category equivalent to its integral-object rational-arrow full subcategory, and the corresponding arbitrary-base integral-relative equivalence with explicit chosen maps and faithful forgetful comparisons. The native function-field pullback gives contravariant field homomorphisms and a functor on the existing integral dominant rational-map category."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -31,6 +31,10 @@ sources:
     type: book
     relationship: adapts
     note: "Chapter I section 5 informs local finite-presentation work; the earlier original project research and its extraction are distinguished in CREDITS.md."
+  - title: "mathlib: function-field stalk maps and native rational composition"
+    type: software
+    relationship: adapts
+    note: "The function-field pullback imports mathlib's quotient/representative interfaces by Andrew Yang and native composition/dominance interfaces by Justus Springer, without copying their proof bodies; their Apache-2.0 and individual notices remain with mathlib. Its integral dominant rational-map category prerequisite is imported from this same Scheme Properties project. Original isolated-incubator authorship, independent review and destination-transfer credit are distinguished in CREDITS.md; no selected-source coverage or new rights clearance is inferred."
   - title: "mathlib: native partial and rational maps, composition, and topological density"
     type: software
     relationship: adapts
@@ -43,7 +47,7 @@ automation:
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
 status:
-  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results, four partial/rational-map dominance converses and equivalences (the converses require nonempty source and preirreducible target; the equivalences additionally require preirreducible source and nonempty target), eight selected controlled-composition results, two controlled-composition dense-open closure results, two controlled-composition associativity results requiring PullsDenseOpens only on the first two maps, six controlled-composition identity and unit results (left with no second-map predicate, right with a first-map predicate), two common-base preservation results prepared from reviewed isolated incubation, a distinct dense-open rational-map category on arbitrary same-universe scheme wrappers, with an anonymous Category instance and a dominance equivalence only when both schemes are nonempty and preirreducible, an arbitrary-base relative category of chosen total scheme maps and quotient rational arrows with PullsDenseOpens and existential IsOver witnesses, an anonymous Category instance and a faithful (not asserted full) functor to the absolute rational-arrow category, and an integral-object full subcategory of that rational-arrow category equivalent to integral schemes with dominant native quotient rational-map arrows via quotient-preserving functors, natural unit/counit and a triangle law, and for any base scheme an integral-object full subcategory of the relative rational-arrow category equivalent to integral schemes with arbitrary chosen total structure maps and dominant native quotient rational arrows satisfying existential IsOver witnesses, via quotient-preserving functors, natural unit/counit and triangles, with faithful (not asserted full) forgetful functors and natural comparisons to the absolute categories; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision."
+  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results, four partial/rational-map dominance converses and equivalences (the converses require nonempty source and preirreducible target; the equivalences additionally require preirreducible source and nonempty target), eight selected controlled-composition results, two controlled-composition dense-open closure results, two controlled-composition associativity results requiring PullsDenseOpens only on the first two maps, six controlled-composition identity and unit results (left with no second-map predicate, right with a first-map predicate), two common-base preservation results prepared from reviewed isolated incubation, a distinct dense-open rational-map category on arbitrary same-universe scheme wrappers, with an anonymous Category instance and a dominance equivalence only when both schemes are nonempty and preirreducible, an arbitrary-base relative category of chosen total scheme maps and quotient rational arrows with PullsDenseOpens and existential IsOver witnesses, an anonymous Category instance and a faithful (not asserted full) functor to the absolute rational-arrow category, and an integral-object full subcategory of that rational-arrow category equivalent to integral schemes with dominant native quotient rational-map arrows via quotient-preserving functors, natural unit/counit and a triangle law, and for any base scheme an integral-object full subcategory of the relative rational-arrow category equivalent to integral schemes with arbitrary chosen total structure maps and dominant native quotient rational arrows satisfying existential IsOver witnesses, via quotient-preserving functors, natural unit/counit and triangles, with faithful (not asserted full) forgetful functors and natural comparisons to the absolute categories; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision. The function-field transfer adds a reversed field homomorphism for dominant native quotient arrows between integral schemes and a functor from the opposite integral dominant category; first-arrow-only geometric composition is distinguished from two-arrow dominant ring-map composition. At the original September 30, 2026 transfer preparation before Scheme Properties PR #138's later review, destination checking, review, acceptance and publication of this transfer were pending. This is a historical snapshot, not a later current verdict; consult Scheme Properties PR #138 and Atlas's incubator #285 for subsequent exact-revision evidence and decisions."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -207,6 +211,20 @@ status:
       file: SchemeProperties/IntegralDominantRationalCategoryOver.lean
     - declaration: AlgebraicGeometry.IntegralDominantRationalSchemeOver.forgetDenseOpenIso
       file: SchemeProperties/IntegralDominantRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.fromFunctionField_closedPoint
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.functionFieldMap
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.functionFieldMap_eq_of_fromFunctionField_eq
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.fromFunctionField_comp
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.functionFieldMap_id
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.functionFieldMap_comp
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
+    - declaration: AlgebraicGeometry.IntegralDominantRationalScheme.functionFieldFunctor
+      file: SchemeProperties/RationalFunctionFieldPullback.lean
 
 review:
   status: self-assessed
