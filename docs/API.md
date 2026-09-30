@@ -5,7 +5,7 @@ This is the historical 73-module native reference from the original
 at published revision `6b204a3e49f022e51d78a9f93e77513b99a87e00`.
 Only this page's historical navigation links and explanatory text have been
 adjusted; its native signatures, docstrings, API notes and source ranges were
-not regenerated. It is not a current 114-module API census or byte-identical
+not regenerated. It is not a current API census or byte-identical
 generated output. Access to the linked published repository currently requires
 authorization; public visibility is a separate decision.
 

@@ -29,6 +29,7 @@ functor of points. It also shows that this functor preserves finite limits.
 
 - `AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver`
 - `AlgebraicGeometry.finiteAlgSpecOver_isDense`
+- `AlgebraicGeometry.algebraicOverPoints_eq`
 - `AlgebraicGeometry.algebraicOverPointsFullyFaithful`
 - `AlgebraicGeometry.lftPointsFullyFaithful`
 - `AlgebraicGeometry.lftPointsPreservesFiniteLimits`
@@ -335,6 +336,13 @@ noncomputable def algebraicOverPoints
     (K : Type u) [Field K] :=
   algebraicOverInclusion K ⋙
     Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K)
+
+/-- Express the finite-type functor of points through its inclusion and restricted Yoneda
+functor, also for clients using only public imports. -/
+theorem algebraicOverPoints_eq (K : Type u) [Field K] :
+    algebraicOverPoints K = algebraicOverInclusion K ⋙
+      Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K) := by
+  rfl
 
 /-- The functor of points on finitely generated algebras is fully faithful on finite-type schemes. -/
 noncomputable def algebraicOverPointsFullyFaithful

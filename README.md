@@ -189,7 +189,7 @@ mathematical guides. Inspect direct-import [Test clients](Test/) and concrete
 `SchemeProperties.ModuleFinitePresentation` directly.
 
 [API.md](docs/API.md) and its [manifest](docs/api-manifest.json) are a **fixed
-historical 73-module** native-doc snapshot, not a current 114-module declaration
+historical 73-module** native-doc snapshot, not a current declaration
 census. The [API reproduction guide](docs/README.md) explains its immutable
 input contract; later results are in focused guides and source files.
 
@@ -215,6 +215,6 @@ On September 26, 2026, a fresh **73-module** build (37 library/root, 21 Test,
 fetch of 104.624 seconds. Under a 15 GiB worker limit, sampled cgroup
 current-memory peaked at 12.86 GiB (largely file cache) and sampled current
 minus inactive file peaked at 1.53 GiB. This is **not** a benchmark of the
-current 114-module checkout, a minimum-RAM requirement or a performance
+current checkout, a minimum-RAM requirement or a performance
 guarantee. CPU model/quota were not recorded. The baseline excludes toolchain
 installation, cloning, doc generation, axiom checks and dependency rebuilding.

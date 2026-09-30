@@ -27,6 +27,9 @@ different original contributions and notices below.
 [FiniteTypePoints](../SchemeProperties/FiniteTypePoints.lean) adapts the
 scheme-level part of Lattice's earlier algebraic-groups construction; it is
 not a byte-identical copy and group-object refinements are outside this file.
+Formal Frontier AI agents added the public `algebraicOverPoints_eq` equation
+and its ordinary-import client as a separate API contribution, without changing
+Lattice's original expression or the group-free extraction credit.
 [ModuleTensorLocalization](../SchemeProperties/ModuleTensorLocalization.lean)
 develops Anchor's earlier basic-open/localization research into a distinct
 reusable project proof. Original prototypes, later production proofs and

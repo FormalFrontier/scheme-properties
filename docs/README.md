@@ -3,7 +3,7 @@
 [Reader guide](Guide.md) indexes the current mathematical modules and examples;
 the [README](../README.md) summarizes headline results and usage. The focused
 guides here explain later APIs. [API.md](API.md) is a navigation-adjusted
-historical **73-module** reference, not a census of the current 114-module
+historical **73-module** reference, not a census of the current
 checkout. Its original byte-identical [generated API page](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/docs/API.md)
 and the unchanged [api-manifest.json](api-manifest.json) belong to the original
 published revision `6b204a3e49f022e51d78a9f93e77513b99a87e00`.
@@ -80,7 +80,7 @@ git checkout --detach 6b204a3e49f022e51d78a9f93e77513b99a87e00
 ```
 
 Run the following commands **in that historical checkout**, with the 73-module
-Lean source and all 76 frozen inputs, not from the current 114-module checkout.
+Lean source and all 76 frozen inputs, not from the current checkout.
 Obtain the native `doc-data` records from a matching authenticated generation
 or reproduce them as below. They are inputs to the adapter, not bundled raw
 execution transcripts. Python 3's standard library suffices for this step:

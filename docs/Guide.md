@@ -5,7 +5,7 @@ the [documentation index](README.md) links focused mathematical guides.
 Use `import SchemeProperties` for the [aggregate](../SchemeProperties.lean),
 or `import SchemeProperties.<Module>` for a smaller focused import below.
 [API.md](API.md) is a fixed historical **73-module** reference, not a current
-114-module declaration census.
+declaration census.
 
 The APIs distinguish a ring from all its local rings, a scheme from one open
 or stalk, and connectedness from geometric connectedness. `Scheme.{u}` uses
@@ -56,7 +56,7 @@ hypotheses in topological results must not be discarded.
 | [NoetherianComponents](../SchemeProperties/NoetherianComponents.lean) | Noetherian schemes have open, finitely indexed connected components; `Scheme.connectedComponentOpenCover` and `IsNormal.iff_connectedComponentOpen` give the cover test, and `Scheme.connectedComponentOpen.isIntegral` needs both Noetherianity **and** normality. `isIrreducible_connectedComponent_of_closedPoints_homogeneous` additionally needs a Noetherian **Jacobson** space and transitive homeomorphisms on closed points. |
 | [CoproductSections](../SchemeProperties/CoproductSections.lean) | `AlgebraicGeometry.Scheme.sigmaPresheafObjIso` identifies sections on **any open** of a same-universe scheme coproduct with the product of sections on summand preimages; `sigmaPresheafObjIso_hom_apply` and `sigmaPresheafObjIso_hom_res_apply` identify pullback and restriction. This is an arbitrary indexed coproduct, not only a finite or component-indexed one. |
 | [CoproductTopology](../SchemeProperties/CoproductTopology.lean) | `AlgebraicGeometry.quasiSeparatedSpace_sigma` transports quasiseparatedness componentwise with no nonemptiness/compactness assumption. `AlgebraicGeometry.not_compactSpace_sigma` has the additional hypotheses **infinite index** and **every summand nonempty**; it is not a converse to quasiseparatedness. |
-| [FiniteTypePoints](../SchemeProperties/FiniteTypePoints.lean) | For a field `K`, `AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver` relates opposite finitely generated `K`-algebras to affine schemes locally of finite type over `K`; `finiteAlgSpecOver_isDense`, `lftPointsFullyFaithful`, and `lftPointsPreservesFiniteLimits` concern the restricted functor of points. `algebraicOver` adds a **quasicompact structure morphism** to locally finite type; this file stops before group-object refinements. |
+| [FiniteTypePoints](../SchemeProperties/FiniteTypePoints.lean) | For a field `K`, `AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver` relates opposite finitely generated `K`-algebras to affine schemes locally of finite type over `K`; `finiteAlgSpecOver_isDense`, `lftPointsFullyFaithful`, and `lftPointsPreservesFiniteLimits` concern the restricted functor of points. `algebraicOverPoints_eq` exposes its composition with the restricted Yoneda functor to ordinary public-import clients. `algebraicOver` adds a **quasicompact structure morphism** to locally finite type; this file stops before group-object refinements. |
 
 ## Geometric connectedness and component schemes
 
