@@ -620,6 +620,48 @@ source PDF or book text is copied by this transfer. Collective author credit
 neither replaces individual provenance nor asserts copyright ownership. No
 selected-source correspondence or coverage follows from this code transfer.
 
+### Function-field reconstruction transfer
+
+The [reconstruction producer](../SchemeProperties/RationalFunctionFieldReconstruction.lean)
+is byte-exact from accepted isolated incubator commit
+`b005883db9858f4c60853bf4a1036c227705cd11` (tree
+`f9a061d839f1b3e7683d3d79159787dffc056483`); the
+[six-theorem private client](../Test/RationalFunctionFieldReconstructionClient.lean)
+changes only its ordinary import and namespace, and the
+[standalone guide](RationalFunctionFieldReconstruction.md) is adapted to this
+project. No incubator Git ancestry enters the destination. Original code and
+guide author: **Formalization Worker B**, Hive Task
+`hive-request-e8eeaa02d1ec40354e7a1da9970e42bd227b87b3` (UID
+`6832e81a-bdb8-4a91-bae8-a9297e7d1cdc`). Frozen static mathematical
+assessment: **Formalization Worker B**, Task
+`hive-request-db5ea915841abb5aa56291ee19084f8ef4c7b513` (UID
+`719eaa9e-19f6-482a-aa29-e809910d452a`); independent static reviewer:
+**Formalization Worker A**, Task
+`hive-request-9cae30e4ecac45b9815bdc86658bd84aca8ea040` (UID
+`d39d7811-f2d5-4052-b6ac-722cde41830b`). Fresh independent exact-code
+reviewer: **Formalization Worker A**, Task
+`hive-request-9162c98d0912c703237c5b31fc764303f7843d52` (UID
+`e22519cb-340e-4781-80d4-8c649a737788`). The separate destination
+transfer, client adaptation, guide, README, metadata and credit are by
+**Formalization Worker B**, Task
+`hive-request-e3f1439c1332a34fcf2912df1b387dd5c858b074` (UID
+`81db2cf9-890e-4696-80fb-899d15f5ebd0`), from accepted Scheme main
+`1852ce8115e020abed87f6f9bf2081ace9341b4d`. This authorship and the
+original isolated review are not a destination CI or fresh promotion review;
+destination acceptance, release and source coverage remain separate.
+
+The producer imports the separately credited same-project
+[pullback](../SchemeProperties/RationalFunctionFieldPullback.lean) and
+[faithfulness](../SchemeProperties/RationalFunctionFieldFaithfulness.lean)
+without duplicating their code. It uses mathlib native spreading, stalk,
+quotient and dominance interfaces; mathlib quotient and representative APIs
+are credited to **Andrew Yang**, and native composition/dominance APIs to
+**Justus Springer**, with their own notices and Apache-2.0 rights retained by
+mathlib. Original producer/client headers retain `SPDX-License-Identifier:
+Apache-2.0` and collective authorship; no source PDF, book prose or imported
+third-party proof body is copied. Collective credit does not assert an
+individual copyright owner or itself establish independent rights clearance.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

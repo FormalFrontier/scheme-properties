@@ -31,6 +31,10 @@ The [function-field faithfulness companion guide](RationalFunctionFieldFaithfuln
 and its [two private direct-import checks](../Test/RationalFunctionFieldFaithfulnessClient.lean)
 document equality reflection and the existing functor's new faithful instance;
 both are **outside** the unchanged historical 73-module snapshot and manifest.
+The [function-field reconstruction guide](RationalFunctionFieldReconstruction.md)
+and its [six private direct-import checks](../Test/RationalFunctionFieldReconstructionClient.lean)
+document the target-locally-finite-type construction, dominance, readback and
+chosen-base inverse, likewise **outside** that unchanged snapshot and manifest.
 
 ## What the reference contains
 

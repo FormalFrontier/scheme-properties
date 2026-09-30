@@ -7,7 +7,9 @@ its integral-object comparison with dominant native rational maps both
 absolutely and over any chosen base scheme, and contravariant function-field
 pullback along dominant native rational maps of integral schemes. A separate
 faithfulness companion shows that this pullback distinguishes dominant rational
-maps.
+maps. A reconstruction companion builds a dominant native quotient from a
+compatible reversed function-field map under local finite type on the target's
+chosen base arrow.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -35,8 +37,9 @@ The later added declarations and direct imports are explained in
 [Relative Dense-Open Rational Category](docs/DenseOpenRationalCategoryOver.md),
 [Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md),
 [Integral Dominant Rational Category Over a Base](docs/IntegralDominantRationalCategoryOver.md),
-[Function-Field Pullback](docs/RationalFunctionFieldPullback.md), and
-[Function-Field Faithfulness](docs/RationalFunctionFieldFaithfulness.md), together
+[Function-Field Pullback](docs/RationalFunctionFieldPullback.md),
+[Function-Field Faithfulness](docs/RationalFunctionFieldFaithfulness.md), and
+[Function-Field Reconstruction](docs/RationalFunctionFieldReconstruction.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
@@ -134,8 +137,25 @@ public release. This is not a later current verdict: consult Scheme Properties
 PR #138 and Atlas's incubator #285 for subsequent exact-revision evidence and
 decisions. No source coverage or shared-incubator disposition is claimed here.
 
+**Reconstruction transfer, September 30, 2026:** this tree adds the accepted
+isolated reconstruction producer, adapted six-private-theorem client and
+standalone guide. Its original independent review and focused proof evidence
+do not certify this destination; native Scheme CI, fresh promotion review,
+maintainer acceptance, integration and official publication are separate.
+See [the reconstruction guide](docs/RationalFunctionFieldReconstruction.md).
+
 ## Headline results
 
+- [Function-field reconstruction](docs/RationalFunctionFieldReconstruction.md):
+  for integral same-universe `X` and `Y`, arbitrary chosen `sX : X ⟶ S` and
+  `sY : Y ⟶ S` with **only target `sY` locally of finite type**, a reversed
+  unital map `φ : Y.functionField ⟶ X.functionField` satisfying the explicit
+  generic-point geometric triangle constructs a dominant native quotient
+  `X ⤏ Y`. Its composite with `sY` equals `sX.toRationalMap`, and its
+  function-field map is `φ`. Conversely an independently dominant quotient
+  satisfying that base equation gives the triangle **without** local finite
+  type and is reconstructed when `sY` is locally of finite type. This does
+  not assert unrestricted fullness, equivalence or all-representative overness.
 - [Function-field pullback](docs/RationalFunctionFieldPullback.md): dominant
   native quotient rational maps between integral schemes induce reversed
   unital maps of function fields. The native `fromFunctionField_comp` law
@@ -147,7 +167,8 @@ decisions. No source coverage or shared-incubator disposition is claimed here.
 - [Function-field faithfulness companion](docs/RationalFunctionFieldFaithfulness.md):
   independently dominant native quotient rational maps between integral schemes
   are equal when their function-field maps agree. The existing opposite integral
-  dominant rational-map functor is faithful; no fullness or reconstruction is asserted.
+  dominant rational-map functor is faithful; that companion alone asserts no
+  fullness or reconstruction.
 - [Integral dominant rational-map category](docs/IntegralDominantRationalCategory.md):
   integral same-universe schemes and dominant native quotient rational maps
   form a category under native identity and composition. An actual equivalence
@@ -253,6 +274,20 @@ and the anonymous `Faithful` instance on the existing
 The [companion guide](docs/RationalFunctionFieldFaithfulness.md) and
 [two private direct-import clients](Test/RationalFunctionFieldFaithfulnessClient.lean)
 explain quotient equality reflection and reversed-arrow injectivity.
+
+Direct import `SchemeProperties.RationalFunctionFieldReconstruction` (or the
+aggregate root) for `AlgebraicGeometry.Scheme.RationalMap.ofFunctionFieldMap`,
+`ofFunctionFieldMap_compHom`, `isDominant_ofFunctionFieldMap`, the inferred
+`ofFunctionFieldMap_isDominant` instance,
+`functionFieldMap_ofFunctionFieldMap`, `functionFieldMap_compatible` and
+`ofFunctionFieldMap_functionFieldMap`. The [reconstruction guide](docs/RationalFunctionFieldReconstruction.md)
+states their exact chosen-base triangle and target-only finite-type hypotheses;
+[six private ordinary-import checks](Test/RationalFunctionFieldReconstructionClient.lean)
+exercise construction, readback, compatibility and inverse laws without exporting
+additional theorems. To reproduce the focused checks, first run
+`lake exe cache get` in the pinned project, then
+`lake build SchemeProperties.RationalFunctionFieldReconstruction` and
+`lake build Test.RationalFunctionFieldReconstructionClient`.
 
 Direct import `SchemeProperties.IntegralDominantRationalCategory` (or the
 aggregate root) for `AlgebraicGeometry.IntegralDominantRationalScheme.of`,
