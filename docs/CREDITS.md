@@ -708,6 +708,67 @@ No source PDF, book prose or additional third-party proof body is copied.
 These credits do not substitute for independent release rights review or
 assert source correspondence, source coverage or publication of this transfer.
 
+### Exact rational-inverse partial-isomorphism transfer
+
+The [geometric producer](../SchemeProperties/RationalMapPartialIso.lean)
+adapts the three-file isolated incubator contribution at
+`465dac5aed5442050f68b5c37a19f80ea4eab3c1` (tree
+`0238319c90f6598d1beabd1550316ba9c1613759`, sole accepted predecessor
+`d008961405585bc555e44b0d63263c3245446491`). The producer preserves
+all seven public mathematical statements, private helpers, namespace and
+proof bodies while adding Scheme Properties' module/public-export envelope,
+warning-fatal option and Apache-2.0/collective author header. The
+[four-theorem private client](../Test/RationalMapPartialIsoClient.lean) adapts
+only its ordinary import, namespace and module envelope; the
+[guide](RationalMapPartialIso.md) adapts its original standalone exposition.
+This is **not** a byte-identical transfer or an import of incubator ancestry.
+
+The STATIC mathematical design was authored by **Formalization Worker A**,
+Hive Task `hive-request-2e1fd02a61b9d5c8531ab957f09d5a25291595e6`
+(UID `4938ad42-dab9-45e3-8607-be1af22b4791`, commit
+`fb7e76d77a702dbd342cbb087ae8a80d12c0b5c4`), and independently
+reviewed by **Formalization Worker B**, Task
+`hive-request-9288fd4177302f9a0ff2c8976fbf76818bb8c8ed`
+(UID `10b57a8f-ee28-45e3-b419-f101f5735772`, commit
+`5ae3029dbedf3732d6a1f2f8b3f1fd91f30a4e59`). The original isolated
+producer/client/guide were authored by **Formalization Worker B**, Task
+`hive-request-1c06cb902ef44f69070e844697c5073c3ea5dcb3` (UID
+`e9f585c0-fce1-462d-87ea-63c1f2e7f47c`), which separately preserved
+five-file original build/axiom evidence at `242b1386af34524ef805e4b766bb22296174e0b9`.
+The exact isolated code was independently reviewed by **Formalization Worker A**,
+Task `hive-request-149bbf92e23f16582f1061cb19c05b9d67692881` (UID
+`2436b3ac-e539-4648-9542-fbd815cc37ae`), with its revision-bound report
+at `9a7d83e23c4dacab8eedd8b1ff5a057a6862841b`.
+
+**Formalization Worker B**, Task
+`hive-request-49bf186b9fd2ccf45f922c77cac0ccde35c4e7e5` (UID
+`1a0882a3-0b82-44df-ab89-230dfb5a1403`), authored this distinct
+destination transfer from accepted development main
+`813359d1e044569284c60c704e31b8c6da3d3fe5`. Original isolated
+checking/review and transfer authorship do not establish fresh destination
+computation, independent transfer review, Atlas's acceptance/integration,
+official publication or selected-source correspondence.
+
+**Formalization Worker B**, Task
+`hive-request-38ef92dbc9ffc192d482d3ca0df728100229a651` (UID
+`91991931-aa94-4d05-981a-90f4e31c29e7`), reconciled that unchanged
+geometric producer and private client onto corrected accepted development main
+`9420b1e51ffd332036529f12a27a0e63a5c6275e` and adjusted the accompanying
+navigation and preparation-dated documentation. This is not authorship of the
+original mathematical argument or proof.
+
+The producer imports native mathlib quotient/representative interfaces by
+**Andrew Yang** and native composition/partial-isomorphism interfaces by
+**Justus Springer**, with other mathlib contributors. Its own argument adapts
+the native composition/restriction proof technique; in particular its
+`partialMapCompFirst` composition-domain expression tracks Springer's
+Apache-2.0 `PartialMap.comp` definition. The producer retains his authentic
+individual copyright/license notice and credits his expression, without
+claiming his authorship of the independent geometric argument. Andrew Yang's
+and other authentic notices remain with the imported mathlib modules; their
+proof bodies are not copied here. No source-book text, source PDF, unsupported
+project copyright claim or new third-party rights clearance is implied.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

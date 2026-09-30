@@ -49,6 +49,7 @@ public import SchemeProperties.QcqsModuleLocalization
 public import SchemeProperties.Quasicoherent
 public import SchemeProperties.QuasicoherentAbelian
 public import SchemeProperties.RationalMapComposition
+public import SchemeProperties.RationalMapPartialIso
 public import SchemeProperties.Reduced
 public import SchemeProperties.SheafFinitePresentation
 public import SchemeProperties.SheafFinitePresentationTransport

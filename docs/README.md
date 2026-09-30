@@ -43,6 +43,12 @@ unchanged historical 73-module snapshot and generated manifest. The guide's
 pending-destination language records the original September 30, 2026 preparation
 before Scheme Properties PR #148's later review, not a later current verdict or
 an official-release acceptance.
+The [exact rational-inverse partial-isomorphism guide](RationalMapPartialIso.md)
+and its [four private direct-import clients](../Test/RationalMapPartialIsoClient.lean)
+explain both prescribed quotient readbacks, literal chosen-base compatibility,
+and the converse laws. They are also **outside** the unchanged historical
+73-module `API.md` snapshot and `api-manifest.json`; their inclusion in the
+current aggregate does not regenerate or expand either historical artifact.
 
 ## What the reference contains
 

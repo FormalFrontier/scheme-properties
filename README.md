@@ -25,7 +25,8 @@ dense-open dominance, controlled-composition, dense-open closure,
 controlled associativity, controlled unit laws, controlled over-base or
 dense-open rational-map category, relative dense-open rational-map category,
 integral dominant rational-map category, integral relative rational-map category,
-function-field pullback, faithfulness, reconstruction and inverse modules or
+function-field pullback, faithfulness, reconstruction and inverse modules, the
+exact rational-inverse partial-isomorphism module, or the
 updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
@@ -44,7 +45,8 @@ The later added declarations and direct imports are explained in
 [Function-Field Pullback](docs/RationalFunctionFieldPullback.md),
 [Function-Field Faithfulness](docs/RationalFunctionFieldFaithfulness.md), and
 [Function-Field Reconstruction](docs/RationalFunctionFieldReconstruction.md), and
-[Function-Field Inverses](docs/RationalFunctionFieldInverse.md), together with
+[Function-Field Inverses](docs/RationalFunctionFieldInverse.md), and
+[Exact Rational Inverse Partial Isomorphisms](docs/RationalMapPartialIso.md), together with
 their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
@@ -167,8 +169,36 @@ destination code acceptance does not itself establish official publication or
 source coverage. See the
 [inverse guide](docs/RationalFunctionFieldInverse.md).
 
+**Geometric rational-inverse transfer, September 30, 2026:** this separate
+candidate adds the focused exact-inverse partial-isomorphism producer and four
+private generic direct-import clients onto accepted development main
+`9420b1e51ffd332036529f12a27a0e63a5c6275e`. The isolated donor
+`465dac5aed5442050f68b5c37a19f80ea4eab3c1` had code-only acceptance;
+its proof/build evidence and review do not certify the adapted destination.
+The original geometric transfer on parent `813359d1e044569284c60c704e31b8c6da3d3fe5`
+has separate native evidence and independent review under Scheme Properties
+PR #151; neither automatically certifies this corrected-parent candidate.
+Applicable native build and complete transitive private-inclusive axiom
+evidence, fresh exact-successor review, Atlas's acceptance/integration and a
+**distinct** reviewed official release/publication remain separate gates. The
+preceding inverse transfer has its own publication obligation; this candidate
+cannot replace it. Neither transfer is selected-source coverage. See the
+[partial-isomorphism guide](docs/RationalMapPartialIso.md).
+
 ## Headline results
 
+- [Exact rational inverses on dense opens](docs/RationalMapPartialIso.md): two
+  independently chosen dominant native quotients `X ⤏ Y` and `Y ⤏ X` on
+  integral schemes satisfying **both** source-first inverse equations yield a
+  partial isomorphism of dense opens whose forward and reverse quotients are
+  precisely those chosen maps. For any base scheme and independently chosen
+  structure maps, **one forward quotient base equation** also makes the
+  partial iso literally over the base; converse dominance, inverse and both
+  quotient base laws are available. No local finite type, separatedness or
+  integral-base hypothesis, total-scheme isomorphism or categorical
+  equivalence is asserted. Direct import:
+  `SchemeProperties.RationalMapPartialIso`; [four private clients](Test/RationalMapPartialIsoClient.lean)
+  check the exact readbacks and six-part converse.
 - [Function-field inverse criterion](docs/RationalFunctionFieldInverse.md):
   for integral same-universe endpoints over arbitrary independently chosen
   total maps to `S`, isomorphism of the **given** dominant native quotient

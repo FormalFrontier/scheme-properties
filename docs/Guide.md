@@ -14,7 +14,8 @@ controlled-composition, dense-open closure, controlled associativity,
 controlled unit laws, controlled over-base, dense-open rational-map category,
 relative dense-open rational-map category,
 integral dominant rational-map category, integral relative rational-map category,
-function-field pullback, faithfulness, reconstruction and inverse modules or changed
+function-field pullback, faithfulness, reconstruction and inverse modules,
+the exact rational-inverse partial-isomorphism module, or the changed
 aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
@@ -33,7 +34,8 @@ and [relative-composition guide](RationalMapComposition.md),
 [function-field pullback guide](RationalFunctionFieldPullback.md),
 [faithfulness guide](RationalFunctionFieldFaithfulness.md) and
 [reconstruction guide](RationalFunctionFieldReconstruction.md) and
-[inverse guide](RationalFunctionFieldInverse.md), for later APIs.
+[inverse guide](RationalFunctionFieldInverse.md) and
+[geometric inverse guide](RationalMapPartialIso.md), for later APIs.
 
 ## Imports and conventions
 
@@ -82,6 +84,18 @@ later review, the isolated donor was accepted while destination checking,
 fresh review and release were pending. This is preparation history, not a later
 current verdict; the [inverse guide](RationalFunctionFieldInverse.md) distinguishes
 that snapshot from subsequent destination and publication decisions.
+The distinct `import SchemeProperties.RationalMapPartialIso` focuses the
+[geometric bridge](RationalMapPartialIso.md): on integral endpoints, both
+source-first quotient inverse laws for independently dominant `forward` and
+`reverse` give an actual `PartialIso` with **both exact readbacks**. For any
+base `S` and separately chosen `sX : X ⟶ S`, `sY : Y ⟶ S`, only
+`forward.compHom sY = sX.toRationalMap` is assumed for literal
+`partialIso.IsOver sX sY`; the reverse base law follows. Its
+[four private direct-import clients](../Test/RationalMapPartialIsoClient.lean)
+include independent same-carrier structure maps and a six-conjunct converse.
+No local finite type, separatedness, integral base, total-scheme isomorphism,
+field-map inverse criterion or category equivalence is introduced by this
+focused module.
 Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
@@ -125,6 +139,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 
 | Focused module | Entry points and precise scope |
 | --- | --- |
+| [RationalMapPartialIso](../SchemeProperties/RationalMapPartialIso.lean) | `RationalMap.exists_partialIso_of_inverse` and `exists_partialIso_of_inverse_over` produce a dense-open `PartialIso` with **both specified** quotient readbacks from independently dominant maps on integral `X,Y` satisfying both source-first inverse equations; for arbitrary base `S` and independent `sX,sY`, only the forward `compHom` base equation is assumed for literal `IsOver`. `PartialIso.toRationalMap_isDominant` (instance), `toRationalMap_comp_symm`, `symm_toRationalMap_comp`, `toRationalMap_compHom_of_isOver`, and `symm_toRationalMap_compHom_of_isOver` supply converse dominance, both inverse laws, and both quotient base laws. No target local finite type, separatedness or integral-base requirement; not the function-field criterion, a total isomorphism or a category equivalence. See the [standalone guide](RationalMapPartialIso.md) and [four private clients](../Test/RationalMapPartialIsoClient.lean); absent from the fixed 73-module API reference. |
 | [Reduced](../SchemeProperties/Reduced.lean) | `IsLocalization.isReduced` works across independent ring universes; `IsLocalization.AtPrime.isReduced_of_le` assumes primes `p ≤ q` and reducedness at `q`, then proves it at `p`. `AlgebraicGeometry.isReduced_stalk_of_specializes` takes `x ⤳ y` and a reduced stalk at `y` to a reduced stalk at `x` (generalization), not the converse. |
 | [Integral](../SchemeProperties/Integral.lean) | `AlgebraicGeometry.isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain` needs **connectedness**, local Noetherianity and a domain at **every stalk**; `isIntegral_of_isNoetherian_of_connectedSpace_of_stalk_isDomain` is its Noetherian variant. The intermediate irreducible-component lemmas are local, not a global integrality claim for disconnected schemes. |
 | [Normal](../SchemeProperties/Normal.lean) | `IsLocallyNormalRing` means every prime localization is an integrally closed domain, allowing disconnected rings. `AlgebraicGeometry.IsNormal` imposes that property on scheme stalks. `isNormal_spec_iff_isLocallyNormalRing`, `IsNormal.iff_of_openCover`, open-immersion/iso and specialization lemmas provide affine and local interfaces; `isReduced_of_isNormal` gives the one-way normal ⇒ reduced implication. |
@@ -244,6 +259,10 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   The [faithfulness client](../Test/RationalFunctionFieldFaithfulnessClient.lean)
   directly imports the distinct companion and privately checks independent-
   dominance quotient equality and injectivity on opposite-category arrows.
+  The [rational-inverse partial-iso client](../Test/RationalMapPartialIsoClient.lean)
+  imports its focused mathlib-only producer and privately checks both exact
+  quotient readbacks, chosen-base existence, the independent same-carrier
+  case and all six converse assertions.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later
