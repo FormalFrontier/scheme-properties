@@ -27,6 +27,10 @@ The [function-field pullback guide](RationalFunctionFieldPullback.md) and its
 document the later contravariant function-field interface, likewise **outside**
 that fixed historical snapshot and manifest; the current aggregate includes
 the focused module, but neither the old reference nor its contract is regenerated.
+The [function-field faithfulness companion guide](RationalFunctionFieldFaithfulness.md)
+and its [two private direct-import checks](../Test/RationalFunctionFieldFaithfulnessClient.lean)
+document equality reflection and the existing functor's new faithful instance;
+both are **outside** the unchanged historical 73-module snapshot and manifest.
 
 ## What the reference contains
 

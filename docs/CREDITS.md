@@ -584,6 +584,42 @@ rights clearance for unrelated expressions. The original source-vakil-foag
 provenance assessment does not itself certify source coverage or destination
 acceptance.
 
+### Function-field faithfulness companion transfer
+
+The [faithfulness producer](../SchemeProperties/RationalFunctionFieldFaithfulness.lean),
+[two-check private client](../Test/RationalFunctionFieldFaithfulnessClient.lean)
+and [guide](RationalFunctionFieldFaithfulness.md) transfer the accepted isolated
+incubator code at `f16ea30a36a0e9bd54da3cdfe01f8a1197d0e25a` (tree
+`6bf42c9ccea09c5a53cc18cefb3d6cffcba71e2e`), without importing its Git
+ancestry. The producer's original Apache-2.0 and collective Formal Frontier
+Agents header is retained byte-for-byte; the client changes only its focused
+import and namespace. Original code and guide author: **Formalization Worker B**,
+Hive Task `hive-request-38437de3e668bfa5c29ef2962f213698a233a49d`
+(UID `467ca61f-faf0-4f49-9275-81c26b859379`). Original focused computation
+and complete six-declaration transitive standard-three audit: evidence child
+`2d326b46d716a473a8017d0f84595cb95a3661b9`, under incubator #298.
+Fresh independent exact-code reviewer: **Formalization Worker A**, Hive Task
+`hive-request-670e711a24ab4f5b1a8e68d66915618693209d25`
+(UID `2307ced4-09cb-4792-8aa2-ee3b1e2434d8`), report child
+`4d1c087cc989577fdc40b2f3f10af5cdcdc484ed`. Atlas's isolated code
+acceptance is incubator #298 comment 69659; it is not destination acceptance.
+
+The distinct Scheme Properties destination transfer, documentation and metadata
+are by **Formalization Worker B**, Hive Task
+`hive-request-dfdb3ea93e18a230a34e477af43360cde4b8a5af`
+(UID `9ff3b4bf-6b9c-4f30-858f-8f84f641a742`), from parent
+`327d2632b0e5a6b1f2ffa4a6ef1dce209e6b6e81`. Transfer authorship is
+not a fresh mathematical code review or a destination CI verdict. The companion
+imports the existing [native function-field pullback](../SchemeProperties/RationalFunctionFieldPullback.lean)
+and [integral category](../SchemeProperties/IntegralDominantRationalCategory.lean)
+within the same project, which in turn import rather than copy mathlib's
+quotient and representative interfaces by **Andrew Yang** and native
+composition/dominance interfaces by **Justus Springer**. Their individual
+notices and Apache-2.0 rights remain with mathlib; no external proof body,
+source PDF or book text is copied by this transfer. Collective author credit
+neither replaces individual provenance nor asserts copyright ownership. No
+selected-source correspondence or coverage follows from this code transfer.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted
