@@ -507,6 +507,35 @@ the transfer author originated those interfaces. No book prose or PDF is
 copied; the collective author header does not assert an individual copyright
 owner.
 
+### Integral dominant rational-map category over a base transfer
+
+The [relative integral equivalence](../SchemeProperties/IntegralDominantRationalCategoryOver.lean),
+[private direct-import client](../Test/IntegralDominantRationalCategoryOverClient.lean)
+and [standalone mathematical guide](IntegralDominantRationalCategoryOver.md)
+transfer the accepted isolated contribution at incubator commit
+`ea10d6a06e6ce3651d928e9249f885b638612d03`. Original Lean producer and
+client: **Formalization Worker B**, Hive Task
+`hive-request-1e345826d9b1d55547053743ab99e34652b29b46` (UID
+`c433c074-b181-4e4d-a7fd-9ee589386335`); fresh independent original
+review: **Formalization Worker A**, Hive Task
+`hive-request-1edf5a1d6f9088338287b1d598b68d64ddc4a187` (UID
+`d5a8dcf3-be40-48b2-abc7-3c06a1aac50e`). The direct-import mapping,
+guide, navigation and metadata are by **Formalization Worker B**, Hive Task
+`hive-request-f9f8be5490fdebc5c1728e3e148e5cbec1cec7ae` (UID
+`66550bc3-abed-405c-9aa1-1a5fac0046fe`). Neither the original review nor
+this transfer is destination review, acceptance, publication or source
+correspondence; **Atlas** owns those separate decisions.
+
+The relative development reuses the separately credited general relative
+category and published absolute integral comparison, as well as native
+mathlib quotient rational maps and representative APIs by **Andrew Yang**,
+composition/dominance by **Justus Springer** and the existing mathlib
+full-subcategory/equivalence interfaces by **Kim Morrison**, **Reid Barton**,
+**Joël Riou**, **Tim Baumann**, **Stephen Morgan** and **Floris van Doorn**.
+Their Apache-2.0 and individual notices are unchanged. No external proof
+bodies, book prose or source PDFs are copied; the collective author header
+does not claim individual copyright ownership.
+
 ### Mathematical sources and third-party notices
 
 Ravi Vakil's *The Rising Sea: Foundations of Algebraic Geometry* (author-hosted

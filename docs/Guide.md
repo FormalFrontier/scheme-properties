@@ -12,7 +12,8 @@ rational-map-composition, dense-open-pullback, dense-open dominance,
 controlled-composition, dense-open closure, controlled associativity,
 controlled unit laws, controlled over-base, dense-open rational-map category,
 relative dense-open rational-map category,
-integral dominant rational-map category or changed aggregate. Its
+integral dominant rational-map category, integral relative rational-map category
+or changed aggregate. Its
 [generation contract](README.md) distinguishes display sites from proof bodies;
 see the standalone [native finite-presentation guide](FinitePresentations.md)
 and [relative-composition guide](RationalMapComposition.md),
@@ -25,7 +26,8 @@ and [relative-composition guide](RationalMapComposition.md),
 [controlled over-base guide](DenseOpenCompositionOver.md) and the
 [rational category guide](DenseOpenRationalCategory.md) and
 [relative rational category guide](DenseOpenRationalCategoryOver.md) and
-[integral category guide](IntegralDominantRationalCategory.md), for later APIs.
+[integral category guide](IntegralDominantRationalCategory.md) and
+[integral relative category guide](IntegralDominantRationalCategoryOver.md), for later APIs.
 
 ## Imports and conventions
 
@@ -53,7 +55,9 @@ The aggregate import is `import SchemeProperties` (the current
 `import SchemeProperties.DenseOpenRationalCategoryOver` for the
 [arbitrary-base relative rational-map category](DenseOpenRationalCategoryOver.md), or
 `import SchemeProperties.IntegralDominantRationalCategory` for its
-[integral-object comparison with native dominant arrows](IntegralDominantRationalCategory.md).
+[integral-object comparison with native dominant arrows](IntegralDominantRationalCategory.md), or
+`import SchemeProperties.IntegralDominantRationalCategoryOver` for the
+[integral-object comparison over an arbitrary base](IntegralDominantRationalCategoryOver.md).
 Some non-scheme
 constructions, such as presheaf tensor stalks,
 have their own focused import. The original 36 focused mathematical modules, including
@@ -111,8 +115,9 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 | [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. This predicate module alone constructs no composite or concrete nondominant witness; see the [standalone guide](DenseOpenPullback.md). |
 | [DenseOpenPullbackDominance](../SchemeProperties/DenseOpenPullbackDominance.lean) | For native partial and rational maps, `isDominant_of_pullsDenseOpens` needs `[Nonempty X] [PreirreducibleSpace Y]`; `pullsDenseOpens_iff_isDominant` needs `[PreirreducibleSpace X] [Nonempty X] [PreirreducibleSpace Y] [Nonempty Y]`. Pullback density is in ambient `X`; the dominance-to-pullback direction retains the earlier nonempty-target requirement. See the [dominance guide](DenseOpenPullbackDominance.md). |
 | [DenseOpenRationalCategory](../SchemeProperties/DenseOpenRationalCategory.lean) | A **distinct** category wraps arbitrary same-universe schemes and bundles native quotient rational maps with `PullsDenseOpens`; `hom`, `hom_ext`, `toRationalMap_id` and `toRationalMap_comp` expose its arrow API. Composition uses the first arrow's predicate, closure uses both, and associativity uses the first two. `homEquivDominant` requires **both** objects nonempty and preirreducible. It does not replace ordinary `Scheme`, assert an unrestricted dominance iff or provide a total-map forgetful functor. See the [category guide](DenseOpenRationalCategory.md). |
-| [DenseOpenRationalCategoryOver](../SchemeProperties/DenseOpenRationalCategoryOver.lean) | For any base scheme `S`, `DenseOpenRationalSchemeOver S` wraps arbitrary total structure maps. Arrows are native quotient rational maps with `PullsDenseOpens` and existential `IsOver` using each object's explicit chosen map. Controlled composition, quotient category laws and a faithful forgetful functor to the absolute rational-arrow category require no geometric assumptions; neither fullness nor an integral-relative equivalence is claimed. See the [relative category guide](DenseOpenRationalCategoryOver.md). |
+| [DenseOpenRationalCategoryOver](../SchemeProperties/DenseOpenRationalCategoryOver.lean) | For any base scheme `S`, `DenseOpenRationalSchemeOver S` wraps arbitrary total structure maps. Arrows are native quotient rational maps with `PullsDenseOpens` and existential `IsOver` using each object's explicit chosen map. Controlled composition, quotient category laws and a faithful forgetful functor to the absolute rational-arrow category require no geometric assumptions; this general-relative module alone does not claim fullness or the integral-relative equivalence. See the [relative category guide](DenseOpenRationalCategoryOver.md). |
 | [IntegralDominantRationalCategory](../SchemeProperties/IntegralDominantRationalCategory.lean) | Integral same-universe schemes and dominant **native quotient** rational maps form a category via native identity/composition. `IntegralDenseOpenRationalScheme` is the integral-object full subcategory of **rational-arrow** `DenseOpenRationalScheme`, not ordinary `Scheme`; `toNative`, `toDenseOpen` and `integralDenseOpenEquivalence` give quotient-preserving functors with unit, counit and triangle law. Both endpoints are integral; native composition needs the first arrow's dominance, closure both, associativity the first two. See the [integral category guide](IntegralDominantRationalCategory.md) and [16 private direct-import uses](../Test/IntegralDominantRationalCategoryClient.lean). |
+| [IntegralDominantRationalCategoryOver](../SchemeProperties/IntegralDominantRationalCategoryOver.lean) | For **any** scheme `S`, the integral-object full subcategory `IntegralDenseOpenRationalSchemeOver S` is equivalent to `IntegralDominantRationalSchemeOver S`, whose objects carry arbitrary chosen total maps to `S` and whose arrows are dominant native quotient rational maps with existential `IsOver` witnesses. The `toNative`/`toDenseOpen` equivalence preserves quotients, has natural unit/counit and triangles; two functors forgetting the chosen maps to the **absolute integral** categories are faithful, not asserted full, with natural comparisons. See the [integral relative category guide](IntegralDominantRationalCategoryOver.md) and [private direct-import client](../Test/IntegralDominantRationalCategoryOverClient.lean). |
 | [DenseOpenComposition](../SchemeProperties/DenseOpenComposition.lean) | `PartialMap.compOfPullsDenseOpens` and `RationalMap.compOfPullsDenseOpens` compose arbitrary partial and quotient rational maps given an explicit first-map `PullsDenseOpens` proof, with both representative-value bridges and compatibility with native `comp` and total-second `compHom` under the stated premises; this operation module alone proves no closure or category laws. See the [focused guide](DenseOpenComposition.md). |
 | [DenseOpenCompositionClosure](../SchemeProperties/DenseOpenCompositionClosure.lean) | `PartialMap.pullsDenseOpens_compOfPullsDenseOpens` and `RationalMap.pullsDenseOpens_compOfPullsDenseOpens` prove dense-open pullback closure of the controlled composite when **both** factors satisfy `PullsDenseOpens`. The operation still needs only the first predicate; no extra geometry or category laws. See the [closure guide](DenseOpenCompositionClosure.md). |
 | [DenseOpenCompositionAssociativity](../SchemeProperties/DenseOpenCompositionAssociativity.lean) | `PartialMap.compOfPullsDenseOpens_assoc` and `RationalMap.compOfPullsDenseOpens_assoc` associate three controlled composites with `PullsDenseOpens` on only the first **two** maps, using the closure witness on the left; the third map is arbitrary. The first equality is literal partial-map equality, the second quotient rational-map equality, not equality of arbitrary representative domains. No category or relative-base law. See the [associativity guide](DenseOpenCompositionAssociativity.md). |
@@ -202,6 +207,10 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   The [controlled over-base client](../Test/DenseOpenCompositionOverClient.lean)
   checks five private generic uses, including the quotient, open-first and
   total-second routes; these are not public theorems or concrete examples.
+  The [integral relative category client](../Test/IntegralDominantRationalCategoryOverClient.lean)
+  imports the focused module directly and checks chosen-map, quotient,
+  category, functor, naturality, triangle and forgetting comparisons without
+  introducing public declarations.
 
 These are persistent source files, not by themselves a complete release test
 matrix. The initial static guide authoring stage ran no Lean commands. The later

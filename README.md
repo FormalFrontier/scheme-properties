@@ -3,7 +3,8 @@
 Reusable Lean theory of scheme properties under specialization, localization,
 and local-to-global criteria, with a distinct category of native rational maps
 pulling back dense opens densely, its arbitrary-base relative category, and
-its integral-object comparison with dominant native rational maps.
+its integral-object comparison with dominant native rational maps both
+absolutely and over any chosen base scheme.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -15,7 +16,7 @@ finite-presentation, rational-map-composition, dense-open-pullback,
 dense-open dominance, controlled-composition, dense-open closure,
 controlled associativity, controlled unit laws, controlled over-base or
 dense-open rational-map category, relative dense-open rational-map category,
-integral dominant rational-map category
+integral dominant rational-map category, integral relative rational-map category
 modules or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
@@ -29,7 +30,8 @@ The later added declarations and direct imports are explained in
 [Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), and
 [Dense-Open Rational Category](docs/DenseOpenRationalCategory.md),
 [Relative Dense-Open Rational Category](docs/DenseOpenRationalCategoryOver.md), and
-[Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md), together
+[Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md), and
+[Integral Dominant Rational Category Over a Base](docs/IntegralDominantRationalCategoryOver.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
 instructions are in [API generation](docs/README.md).
@@ -133,8 +135,18 @@ source coverage.
   over any scheme `S`, arbitrary total structure maps `X ⟶ S` define objects;
   arrows are native quotient rational maps with `PullsDenseOpens` and the
   existential native `IsOver` witness. They form a category with a faithful
-  forgetful functor to the absolute rational-arrow category. No integral-relative
-  equivalence, full forgetful functor or ordinary total-map functor is asserted.
+  forgetful functor to the absolute rational-arrow category. This general-relative
+  module alone does not supply the integral-relative equivalence; see the separate
+  integral-relative module below. Its forgetful functor is faithful, not asserted
+  full, and no total-map functor is defined.
+- [Integral dominant rational-map category over a base](docs/IntegralDominantRationalCategoryOver.md):
+  over any scheme `S`, the integral-object full subcategory of the relative
+  dense-open rational-arrow category is equivalent to the category of integral
+  schemes with chosen total maps to `S` and dominant native quotient rational
+  arrows satisfying existential `IsOver`. Conversion preserves rational
+  quotients; natural unit/counit and both triangle laws compare the categories.
+  Forgetful functors to the absolute integral categories are faithful, not
+  asserted full, with natural comparisons to inclusion and conversion.
 - [Dense-open pullback and dominance](docs/DenseOpenPullbackDominance.md):
   `PullsDenseOpens` implies dominance for native partial and quotient rational
   maps under `[Nonempty X] [PreirreducibleSpace Y]`. Under
@@ -221,6 +233,14 @@ the faithful `forget S` functor. Chosen structure maps are explicit, including
 for three objects on the same carrier. See the
 [standalone relative guide](docs/DenseOpenRationalCategoryOver.md) and
 [parameterized direct-import client](Test/DenseOpenRationalCategoryOverClient.lean).
+
+Direct import `SchemeProperties.IntegralDominantRationalCategoryOver` (or the
+aggregate root) for `AlgebraicGeometry.IntegralDenseOpenRationalSchemeOver S`,
+`IntegralDominantRationalSchemeOver S`, the quotient-preserving `toNative` and
+`toDenseOpen` functors, and `integralDenseOpenEquivalenceOver S`. The base `S`
+need not be integral; chosen object maps and existential over-base witnesses
+remain explicit. See the [standalone integral-relative guide](docs/IntegralDominantRationalCategoryOver.md)
+and [private direct-import client](Test/IntegralDominantRationalCategoryOverClient.lean).
 
 The native finite-presentation additions are available by direct imports
 `SchemeProperties.SheafFinitePresentationTransport` and

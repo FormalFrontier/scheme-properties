@@ -18,6 +18,10 @@ The [integral dominant rational category guide](IntegralDominantRationalCategory
 documents the later integral-object full-subcategory equivalence with native
 dominant rational-map arrows, also **outside** that unchanged snapshot and
 manifest.
+The [integral dominant rational category over a base guide](IntegralDominantRationalCategoryOver.md)
+documents the later arbitrary-base integral-relative equivalence and its
+[private direct-import client](../Test/IntegralDominantRationalCategoryOverClient.lean),
+likewise **outside** the unchanged 73-module snapshot and manifest.
 
 ## What the reference contains
 
