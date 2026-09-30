@@ -2,8 +2,8 @@
 
 Reusable Lean theory of scheme properties under specialization, localization,
 and local-to-global criteria, with a distinct category of native rational maps
-pulling back dense opens densely and its integral-object comparison with
-dominant native rational maps.
+pulling back dense opens densely, its arbitrary-base relative category, and
+its integral-object comparison with dominant native rational maps.
 
 **Authors: Formal Frontier Agents.** Original project work is licensed under
 [Apache-2.0](LICENSE). Distinct contributor and reused-formal-expression credits
@@ -14,7 +14,8 @@ signatures for its fixed historical 73-module snapshot, not the new native
 finite-presentation, rational-map-composition, dense-open-pullback,
 dense-open dominance, controlled-composition, dense-open closure,
 controlled associativity, controlled unit laws, controlled over-base or
-dense-open rational-map category, integral dominant rational-map category
+dense-open rational-map category, relative dense-open rational-map category,
+integral dominant rational-map category
 modules or updated aggregate.
 The later added declarations and direct imports are explained in
 [Finite Presentations](docs/FinitePresentations.md),
@@ -26,7 +27,8 @@ The later added declarations and direct imports are explained in
 [Controlled Associativity](docs/DenseOpenCompositionAssociativity.md),
 [Controlled Units](docs/DenseOpenCompositionUnits.md),
 [Controlled Over-Base Companion](docs/DenseOpenCompositionOver.md), and
-[Dense-Open Rational Category](docs/DenseOpenRationalCategory.md), and
+[Dense-Open Rational Category](docs/DenseOpenRationalCategory.md),
+[Relative Dense-Open Rational Category](docs/DenseOpenRationalCategoryOver.md), and
 [Integral Dominant Rational Category](docs/IntegralDominantRationalCategory.md), together
 with their Lean sources.
 The exact historical input contract and reproduction
@@ -93,6 +95,25 @@ paragraph above is retained as history, not a current unmet-check claim.
 Official publication is identified by the exact verified release commit,
 not by a main merge or this status text. No source coverage is asserted.
 
+**Transfer-time history, before destination acceptance:**
+
+**Relative-category proposal, September 30, 2026:** This branch also contains
+the mathematically unchanged isolated relative dense-open rational-map category
+and an adapted direct-import client. The original incubator code is accepted;
+destination review, applicable build/axiom checks, maintainer acceptance,
+integration, release and source correspondence remain separate. See the
+[relative category guide](docs/DenseOpenRationalCategoryOver.md).
+
+**Dated destination update, September 30, 2026, 02:25:15 UTC:** the corrected
+relative-category code at `855d795b76b6a63b828c54253e69a75ffb60bda8`
+passed the destination build and complete transitive standard-axiom audit,
+including private and generated declarations, received independent review and
+maintainer acceptance, and was integrated into development main. Its separate
+official release/publication was still pending at this update. The proposal
+paragraph above is preserved as transfer-time history, not a current unmet-check
+claim. A development-main merge does not establish official publication or
+source coverage.
+
 ## Headline results
 
 - [Integral dominant rational-map category](docs/IntegralDominantRationalCategory.md):
@@ -108,6 +129,12 @@ not by a main merge or this status text. No source coverage is asserted.
   controlled composition and closure, while `homEquivDominant` needs **both**
   underlying schemes nonempty and preirreducible. This does not change the
   ordinary `Scheme` category or give a total-map forgetful functor.
+- [Relative dense-open rational-map category](docs/DenseOpenRationalCategoryOver.md):
+  over any scheme `S`, arbitrary total structure maps `X ⟶ S` define objects;
+  arrows are native quotient rational maps with `PullsDenseOpens` and the
+  existential native `IsOver` witness. They form a category with a faithful
+  forgetful functor to the absolute rational-arrow category. No integral-relative
+  equivalence, full forgetful functor or ordinary total-map functor is asserted.
 - [Dense-open pullback and dominance](docs/DenseOpenPullbackDominance.md):
   `PullsDenseOpens` implies dominance for native partial and quotient rational
   maps under `[Nonempty X] [PreirreducibleSpace Y]`. Under
@@ -186,6 +213,14 @@ nonempty preirreducible **source and target**. See the
 [standalone category guide](docs/DenseOpenRationalCategory.md) and
 [ten private direct-import client uses](Test/DenseOpenRationalCategoryClient.lean).
 This is a separate implemented category, not a new instance on `Scheme`.
+
+Direct import `SchemeProperties.DenseOpenRationalCategoryOver` (or the aggregate
+root) for `AlgebraicGeometry.DenseOpenRationalSchemeOver.of`, `Hom`, `hom`,
+`isOver_iff_compHom`, `hom_ext`, quotient identity/composition projections and
+the faithful `forget S` functor. Chosen structure maps are explicit, including
+for three objects on the same carrier. See the
+[standalone relative guide](docs/DenseOpenRationalCategoryOver.md) and
+[parameterized direct-import client](Test/DenseOpenRationalCategoryOverClient.lean).
 
 The native finite-presentation additions are available by direct imports
 `SchemeProperties.SheafFinitePresentationTransport` and

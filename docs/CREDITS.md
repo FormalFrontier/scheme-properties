@@ -449,6 +449,31 @@ credited Formal Frontier dense-open predicate and laws above. Neither their
 proof bodies nor book prose are copied, and the existing individual notices
 and rights remain with their respective dependencies.
 
+### Relative dense-open rational-map category transfer
+
+The [arbitrary-base relative category](../SchemeProperties/DenseOpenRationalCategoryOver.lean),
+[parameterized private direct-import client](../Test/DenseOpenRationalCategoryOverClient.lean)
+and [standalone guide](DenseOpenRationalCategoryOver.md) transfer mathematically
+unchanged from accepted isolated incubator commit
+`dd5a565615cebfedda5782f81b031fa6f86426f6`. Original code and client
+were authored by **Formalization Worker B**, Hive Task
+`hive-request-6d6b2ce9689faeb78ffe46a43d9ee825f518a883` (UID
+`f5a73c6c-7142-4861-9425-4f029a6c2531`), with fresh independent code
+review by **Formalization Worker A**, Hive Task
+`hive-request-502dd6aec7bbea7778dfaccd1af6bab82ee21e81` (UID
+`d96178c1-f41e-464d-8e83-eac2fb730a60`). The destination transfer and
+documentation are by **Formalization Worker B**, Hive Task
+`hive-request-19a08a0a2be9ed8de115c36f507f890f64e5b1d2` (UID
+`b91d3b22-1c39-4ca2-9613-cf1b2c871f09`). This credit does not establish
+destination review, acceptance, publication or source correspondence; Atlas
+owns those decisions.
+
+The category imports mathlib's native quotient rational maps by **Andrew Yang**
+and composition/dominance interfaces by **Justus Springer**, together with
+separately credited Formal Frontier Scheme Properties prerequisites. Existing
+Apache-2.0 and individual notices remain intact; no native third-party proof
+body or book prose is copied.
+
 ### Integral dominant rational-map category transfer
 
 The [native integral dominant category and actual equivalence](../SchemeProperties/IntegralDominantRationalCategory.lean),

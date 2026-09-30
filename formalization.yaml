@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback and its dominance companion and controlled-composition closure, controlled partial/rational-map composition and unit laws, common-base preservation, and a distinct category of dense-open rational maps, and an integral dominant native rational-map category equivalent to its integral-object rational-arrow full subcategory."
+  description: "Lean APIs for local properties of schemes, connected components, finite-étale component schemes, quasicoherent modules, native finite presentations, tensor constructions, dense-open pullback and its dominance companion and controlled-composition closure, controlled partial/rational-map composition and unit laws, common-base preservation, a distinct category of dense-open rational maps and its arbitrary-base relative category, and an integral dominant native rational-map category equivalent to its integral-object rational-arrow full subcategory."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -43,7 +43,7 @@ automation:
       notes: "AI agents and maintainers developed Lean code, clients and documentation with mathlib; no uniform model, wall-time or dollar cost is asserted."
 
 status:
-  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results, four partial/rational-map dominance converses and equivalences (the converses require nonempty source and preirreducible target; the equivalences additionally require preirreducible source and nonempty target), eight selected controlled-composition results, two controlled-composition dense-open closure results, two controlled-composition associativity results requiring PullsDenseOpens only on the first two maps, six controlled-composition identity and unit results (left with no second-map predicate, right with a first-map predicate), two common-base preservation results prepared from reviewed isolated incubation, and a distinct dense-open rational-map category on arbitrary same-universe scheme wrappers, with an anonymous Category instance and a dominance equivalence only when both schemes are nonempty and preirreducible, and an integral-object full subcategory of that rational-arrow category equivalent to integral schemes with dominant native quotient rational-map arrows via quotient-preserving functors, natural unit/counit and a triangle law; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision."
+  scope: "Source-independent scheme properties, including five native finite-presentation results, two native relative-composition results, eight native dense-open pullback results, four partial/rational-map dominance converses and equivalences (the converses require nonempty source and preirreducible target; the equivalences additionally require preirreducible source and nonempty target), eight selected controlled-composition results, two controlled-composition dense-open closure results, two controlled-composition associativity results requiring PullsDenseOpens only on the first two maps, six controlled-composition identity and unit results (left with no second-map predicate, right with a first-map predicate), two common-base preservation results prepared from reviewed isolated incubation, a distinct dense-open rational-map category on arbitrary same-universe scheme wrappers, with an anonymous Category instance and a dominance equivalence only when both schemes are nonempty and preirreducible, an arbitrary-base relative category of chosen total scheme maps and quotient rational arrows with PullsDenseOpens and existential IsOver witnesses, an anonymous Category instance and a faithful (not asserted full) functor to the absolute rational-arrow category, and an integral-object full subcategory of that rational-arrow category equivalent to integral schemes with dominant native quotient rational-map arrows via quotient-preserving functors, natural unit/counit and a triangle law; this list records selected contributions, not a whole-library census, a destination acceptance or a source-coverage decision."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -159,6 +159,30 @@ status:
       file: SchemeProperties/IntegralDominantRationalCategory.lean
     - declaration: AlgebraicGeometry.integralDenseOpenEquivalence
       file: SchemeProperties/IntegralDominantRationalCategory.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.of
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.Hom
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.hom
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.toRationalMap_hom
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.isOver_iff_compHom
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.hom_ext
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.toRationalMap_id
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.toRationalMap_comp
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.forget
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.forget_obj_toScheme
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
+    - declaration: AlgebraicGeometry.DenseOpenRationalSchemeOver.forget_map_toRationalMap
+      file: SchemeProperties/DenseOpenRationalCategoryOver.lean
 
 review:
   status: self-assessed
