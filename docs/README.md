@@ -1,60 +1,12 @@
-# API documentation and reproduction
+# Documentation and API reproduction
 
-[API.md](API.md) is a **fixed historical** Markdown rendering of native doc-gen4
-records from the 73-module snapshot `a05b182aa17ea7cd1a591ec7b60aa7d6f2b6704c`,
-not a current complete library census or a source-text declaration scanner.
-[Guide.md](Guide.md) explains the mathematics; [FinitePresentations.md](FinitePresentations.md)
-and the new Lean source describe the native finite-presentation additions, which
-are absent from this generated reference. [api-manifest.json](api-manifest.json)
-binds only the unchanged historical page and inputs; reproduce its contract
-against the exact frozen snapshot, not the present checkout.
-The [dense-open rational category guide](DenseOpenRationalCategory.md)
-documents a later separate category and is explicitly **outside** that unchanged
-historical 73-module API snapshot and its generated manifest.
-The [relative dense-open rational category guide](DenseOpenRationalCategoryOver.md)
-documents the later arbitrary-base relative category and its private client,
-also **outside** that fixed historical snapshot and manifest.
-The [integral dominant rational category guide](IntegralDominantRationalCategory.md)
-documents the later integral-object full-subcategory equivalence with native
-dominant rational-map arrows, also **outside** that unchanged snapshot and
-manifest.
-The [integral dominant rational category over a base guide](IntegralDominantRationalCategoryOver.md)
-documents the later arbitrary-base integral-relative equivalence and its
-[private direct-import client](../Test/IntegralDominantRationalCategoryOverClient.lean),
-likewise **outside** the unchanged 73-module snapshot and manifest.
-The [function-field pullback guide](RationalFunctionFieldPullback.md) and its
-[nine-check private direct-import client](../Test/RationalFunctionFieldPullbackClient.lean)
-document the later contravariant function-field interface, likewise **outside**
-that fixed historical snapshot and manifest; the current aggregate includes
-the focused module, but neither the old reference nor its contract is regenerated.
-The [function-field faithfulness companion guide](RationalFunctionFieldFaithfulness.md)
-and its [two private direct-import checks](../Test/RationalFunctionFieldFaithfulnessClient.lean)
-document equality reflection and the existing functor's new faithful instance;
-both are **outside** the unchanged historical 73-module snapshot and manifest.
-The [function-field reconstruction guide](RationalFunctionFieldReconstruction.md)
-and its [six private direct-import checks](../Test/RationalFunctionFieldReconstructionClient.lean)
-document the target-locally-finite-type construction, dominance, readback and
-chosen-base inverse, likewise **outside** that unchanged snapshot and manifest.
-The [function-field inverse guide](RationalFunctionFieldInverse.md) and its
-[three private direct-import checks](../Test/RationalFunctionFieldInverseClient.lean)
-document the given-arrow criterion with only original-source local finite type
-for reflection and no finiteness for the converse; both are **outside** the
-unchanged historical 73-module snapshot and generated manifest. The guide's
-pending-destination language records the original September 30, 2026 preparation
-before Scheme Properties PR #148's later review, not a later current verdict or
-an official-release acceptance.
-The [exact rational-inverse partial-isomorphism guide](RationalMapPartialIso.md)
-and its [four private direct-import clients](../Test/RationalMapPartialIsoClient.lean)
-explain both prescribed quotient readbacks, literal chosen-base compatibility,
-and the converse laws. They are also **outside** the unchanged historical
-73-module `API.md` snapshot and `api-manifest.json`; their inclusion in the
-current aggregate does not regenerate or expand either historical artifact.
-The [Jacobson birational obstruction guide](JacobsonBirationalObstruction.md)
-and its [direct-import client with five private declarations](../Test/JacobsonBirationalObstructionClient.lean)
-document the subsingleton-source/Jacobson-target `PartialIso` obstruction and
-field-versus-polynomial-spectrum specialization, including finite fields.
-They are likewise **outside** the unchanged historical 73-module `API.md`
-snapshot and `api-manifest.json`; no generated artifact or contract changes.
+[Reader guide](Guide.md) indexes the current mathematical modules and examples;
+the [README](../README.md) summarizes headline results and usage. The focused
+guides here explain later APIs. [API.md](API.md) is a navigation-adjusted
+historical **73-module** reference, not a census of the current 114-module
+checkout. Its original byte-identical [generated API page](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/docs/API.md)
+and the unchanged [api-manifest.json](api-manifest.json) belong to the original
+published revision `6b204a3e49f022e51d78a9f93e77513b99a87e00`.
 
 ## What the reference contains
 
@@ -73,15 +25,15 @@ namespaces, notation, universes and inferred types; fragments are not promised
 to elaborate by themselves. Source-docstring text is preserved. The 77 sites
 without one have separately authored, explicitly labeled API notes; constructor,
 field and reassociated-lemma notes do not pretend to be source docstrings.
-Source ranges come from native records; a generated reassociation lemma may
-point to its parent's attribute line, and a field may point to only its starting
-line. Consult the surrounding source for the complete definition.
+Source ranges come from historical native records and link to the original
+published source, not the shifted line numbers in this checkout. A generated
+reassociation lemma may point to its parent's attribute line, and a field may
+point to only its starting line. Consult the surrounding source for the
+complete definition.
 
 Display sites are not a complete raw/private declaration or stored-value census.
 Neither the generator nor its manifest certifies proofs, source coverage or
-release acceptance. At this documentation preparation on September 26, 2026,
-the native source/client build was complete; the separate complete proof intake
-and fresh exact-candidate release review were not yet recorded.
+release acceptance.
 
 ## Fixed input contract
 
@@ -99,15 +51,36 @@ new native evidence and review, not learning hashes from a modified checkout.
 The manifest additionally hashes the adapter, tests, contract and authored notes.
 
 When the analyzed Git object is present, every source/configuration byte is
-compared with it. An independent public-history checkout or source archive can
-instead use the committed manifest and the same fixed hashes. Only an explicit
-missing Git object or a source tree without Git permits that fallback; a broken
-Git repository is refused. Relative source links work in either history.
+compared with it. The original published revision has an independent Git
+history: when the private analyzed-source object is absent, the adapter uses
+its committed manifest and requires the same fixed **76** source/configuration
+hashes and **73** module paths. This is verification, not permission to repin
+or learn hashes from changed files. Only an explicit missing Git object or a
+source tree without Git permits that fallback; a broken Git repository is
+refused. Fetching the private analyzed-source object is not required.
+Historical source-range links here target the matching original published
+revision; the reader guide and current module links remain local.
 The original native GitHub linker is validated as provenance, not claimed to be
 a publicly fetchable development commit or emitted as the reader's source link.
 
 ## Data-only reproduction from native records
 
+For **both** adapter checks and optional native generation below, use a
+**separate checkout** of the exact original published revision. It contains
+the original generated API, the fixed contract, manifest, adapter and tests.
+Access to the published GitHub repository currently requires authorization;
+its public visibility is a separate decision. From a parent directory outside
+this current checkout, for example:
+
+```sh
+cd /path/to/parent-directory
+git clone https://github.com/FormalFrontier/scheme-properties.git scheme-properties-historical
+cd scheme-properties-historical
+git checkout --detach 6b204a3e49f022e51d78a9f93e77513b99a87e00
+```
+
+Run the following commands **in that historical checkout**, with the 73-module
+Lean source and all 76 frozen inputs, not from the current 114-module checkout.
 Obtain the native `doc-data` records from a matching authenticated generation
 or reproduce them as below. They are inputs to the adapter, not bundled raw
 execution transcripts. Python 3's standard library suffices for this step:
@@ -119,8 +92,10 @@ python -B -O scripts/test_generate_api.py --native-data /path/to/rendered/doc-da
 python -B -OO scripts/test_generate_api.py --native-data /path/to/rendered/doc-data --check-committed
 ```
 
-Omit `--check` only when intentionally regenerating `docs/API.md` and its
-manifest. The tests use explicitly synthetic notes in temporary fixtures for
+Here `--check` checks the **original** `docs/API.md` at the historical revision,
+not the navigation-adjusted current page. Omit it only when intentionally
+regenerating that historical checkout's `docs/API.md` and its manifest.
+The tests use explicitly synthetic notes in temporary fixtures for
 refusal/layout checks; `--check-committed` additionally verifies the assembled
 real notes and generated files. Neither test mode approves mathematical note
 semantics. Full headers, missing/extra/duplicate records, altered signatures,
@@ -129,8 +104,9 @@ modules, damaged Git state and independent-history fallback are exercised.
 
 ## Native generation procedure
 
-Use the pinned Lean toolchain and declared dependency access. Before any new
-Scheme build, successfully fetch its matching mathlib cache from this checkout:
+Stay in that separate historical Scheme checkout for optional native generation.
+Use its pinned Lean toolchain and declared dependency access. Before any new
+Scheme build, successfully fetch its matching mathlib cache there:
 
 ```sh
 lake exe cache get
@@ -141,7 +117,7 @@ In a separate clean checkout of [doc-gen4](https://github.com/leanprover/doc-gen
 at the exact revision above, use its pinned toolchain and manifest, ensure the
 toolchain's `cc` is on PATH, and run `lake build doc-gen4`. This core-only tool
 has no mathlib dependency. Use the resulting absolute executable path from the
-Scheme checkout through `lake env`, so it sees the Scheme project's artifacts.
+historical Scheme checkout through `lake env`, so it sees that project's artifacts.
 For each exact `module_paths` entry `(module, path)` in the contract, run:
 
 ```text

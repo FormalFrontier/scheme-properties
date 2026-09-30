@@ -51,10 +51,9 @@ These parameterized clients do not construct exceptional schemes.
 copyright, Apache-2.0 and author notice for the adapted mathlib
 `Mathlib/AlgebraicGeometry/Birational/Composition.lean` expression.
 Yang's native partial/rational quotient and representative APIs are imported,
-not copied. The isolated Lean donor is commit
-`026707accc8303e154ef50b21af18fe1e3cedeb8`; this library adaptation
-has separate [contributor credits](CREDITS.md). Neither these theorems nor
-their private examples assert source-specific coverage or an eventual release.
+not copied. The Formal Frontier adaptation has separate
+[contributor credits](CREDITS.md). Neither these theorems nor their private
+examples assert source-specific coverage.
 
 Use the repository's pinned Lean `leanprover/lean4:v4.34.0-rc2`, mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and exact
@@ -64,9 +63,9 @@ mathlib-cache fetch **must succeed before any build**:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
-LAKE_JOBS=2 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.DenseOpenCompositionAssociativity
-LAKE_JOBS=2 lake --wfail build SchemePropertiesTest SchemeProperties
+lake exe cache get
+lake --wfail build SchemeProperties.DenseOpenCompositionAssociativity
+lake --wfail build SchemePropertiesTest SchemeProperties
 ```
 
 Completeness requires an applicable successful build and a transitive axiom

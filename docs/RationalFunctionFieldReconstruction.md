@@ -68,10 +68,6 @@ lake build SchemeProperties.RationalFunctionFieldReconstruction
 lake build Test.RationalFunctionFieldReconstructionClient
 ```
 
-The original isolated code was accepted for transfer; this destination's
-review, checks, integration and publication are separate. Original authors,
-reviewers, transfer contributors, predecessor credits and expression provenance
-are distinguished in [CREDITS](CREDITS.md). The same-project pullback and
-faithfulness modules provide the imported API; Lean/mathlib supply the native
-spreading, quotient, stalk and scheme APIs. Existing Apache-2.0 notices remain
-intact; source-specific correspondence belongs in source records, not this guide.
+The proof imports this library's pullback and faithfulness modules and
+mathlib's native spreading, quotient, stalk and scheme APIs. Adapted
+expression is credited in [Credits](CREDITS.md).

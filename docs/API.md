@@ -1,4 +1,13 @@
-# Generated API reference
+# Historical API reference (navigation-adjusted)
+
+This is the historical 73-module native reference from the original
+[generated API page](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/docs/API.md)
+at published revision `6b204a3e49f022e51d78a9f93e77513b99a87e00`.
+Only this page's historical navigation links and explanatory text have been
+adjusted; its native signatures, docstrings, API notes and source ranges were
+not regenerated. It is not a current 114-module API census or byte-identical
+generated output. Access to the linked published repository currently requires
+authorization; public visibility is a separate decision.
 
 This reference contains 381 native display sites in 36 library modules:
 230 theorems, 99 definitions, 42 instances, five classes and five constructors.
@@ -14,7 +23,10 @@ Displayed fragments need not elaborate alone in a fresh namespace.
 
 Display counts are not a raw/private declaration census or proof certification.
 This documentation generator does not determine release or source-coverage acceptance.
-Source links refer to this same checkout; no development history is needed to follow them.
+Source-range links refer to the matching original published source, **not**
+the source lines in this checkout, where later headers have moved some ranges.
+For current modules and usage, use the local [reader guide](Guide.md) and
+[README](../README.md); the original generated page remains linked above.
 See [generation instructions](README.md), the [mathematical guide](Guide.md) and
 [exact input manifest](api-manifest.json). Authored notes are labeled separately from source docstrings.
 
@@ -109,7 +121,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isCoherent_basicOpen_of_qcqs {X : Schem
 Coherence of quasicoherent sections is preserved by restriction to a basic
 open of a compact quasiseparated open.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L40-L59) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L40-L59) (native source range).
 
 <a id="api-4a4619ae4eda4de6"></a>
 
@@ -121,7 +133,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isCoherent_basicOpen_of_qcqs_of_top {X 
 
 The global-sections specialization of `isCoherent_basicOpen_of_qcqs`.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L61-L67) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L61-L67) (native source range).
 
 <a id="api-9393a71217e6d95d"></a>
 
@@ -134,7 +146,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isCoherent_of_span_basicOpen_of_qcqs {X
 Coherence of the section module on a compact quasiseparated open descends
 from any set-indexed spanning family of its basic opens.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L69-L89) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L69-L89) (native source range).
 
 <a id="api-240a655468577efb"></a>
 
@@ -147,7 +159,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isCoherent_of_span_basicOpen_of_qcqs_of
 The global-sections specialization of
 `isCoherent_of_span_basicOpen_of_qcqs`.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L91-L100) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L91-L100) (native source range).
 
 <a id="api-81d2de6251c02297"></a>
 
@@ -164,7 +176,7 @@ This is literally the inverse image of `ModuleCat.isCoherent` under the inverse
 of `tildeEquiv`; it does not introduce a new notion of quasicoherence or identify
 coherence with finite presentation.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L108-L117) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L108-L117) (native source range).
 
 <a id="api-11b895ff8c0278ab"></a>
 
@@ -177,7 +189,7 @@ theorem AlgebraicGeometry.isCoherentOnSpec_iff (R : CommRingCat) (Q : (SheafOfMo
 Membership in `isCoherentOnSpec` is literally coherence of the module
 obtained from affine global sections by `tildeEquiv.inverse`.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L119-L126) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L119-L126) (native source range).
 
 <a id="api-7256cd2d800e8811"></a>
 
@@ -191,7 +203,7 @@ A literal affine sheaf `tilde M` has the coherent affine property exactly
 when `M` is a coherent module.  The statement follows the same-universe
 boundary of mathlib's `tildeEquiv`.
 
-[Source](../SchemeProperties/CoherentQuasicoherent.lean#L128-L143) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherent.lean#L128-L143) (native source range).
 
 
 ## SchemeProperties.CoherentQuasicoherentLocality
@@ -207,7 +219,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isCoherentOnSpec_restrict_affineOpen_if
 On an affine open, the native affine coherent property is equivalent to
 coherence of the module of sections on that open.
 
-[Source](../SchemeProperties/CoherentQuasicoherentLocality.lean#L33-L45) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherentLocality.lean#L33-L45) (native source range).
 
 <a id="api-325935b00ff57402"></a>
 
@@ -222,7 +234,7 @@ The object property of being a coherent quasicoherent module on a scheme.
 The definition uses the existing native category of quasicoherent modules and
 requires the corresponding affine module to be coherent on every affine open.
 
-[Source](../SchemeProperties/CoherentQuasicoherentLocality.lean#L47-L63) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherentLocality.lean#L47-L63) (native source range).
 
 <a id="api-ffd69c3a5dc28510"></a>
 
@@ -235,7 +247,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isCoherentQuasicoherent_iff_affineOpenC
 Coherence of a quasicoherent module can be checked on any fixed affine open
 cover.
 
-[Source](../SchemeProperties/CoherentQuasicoherentLocality.lean#L65-L109) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoherentQuasicoherentLocality.lean#L65-L109) (native source range).
 
 
 ## SchemeProperties.ComponentBaseChange
@@ -250,7 +262,7 @@ noncomputable def AlgebraicGeometry.componentGlobalSectionsAlgebra {F : Type u} 
 
 The structure algebra on global sections used throughout this module.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L43-L47) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L43-L47) (native source range).
 
 <a id="api-558d7571d1f7caf1"></a>
 
@@ -262,7 +274,7 @@ def AlgebraicGeometry.tensorProductRightAlgebra {k K : Type u} [Field k] [Field 
 
 The algebra structure on the right-oriented tensor model.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L49-L53) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L49-L53) (native source range).
 
 <a id="api-d065cde2bc6c6dee"></a>
 
@@ -274,7 +286,7 @@ theorem AlgebraicGeometry.baseChangeLocallyOfFiniteType {k K : Type u} [Field k]
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.baseChangeLocallyOfFiniteType` in `ComponentBaseChange` provides `LocallyOfFiniteType` for the structure morphism of `schemeBaseChange X` over `K`, from the corresponding assumption on `X.hom` over `k`. This is a field-extension pullback stability input for component schemes, not a finite-type assertion about an unrelated map.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L55-L61) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L55-L61) (native source range).
 
 <a id="api-f8b052a9ed163b2c"></a>
 
@@ -286,7 +298,7 @@ theorem AlgebraicGeometry.baseChangeQuasiCompact {k K : Type u} [Field k] [Field
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.baseChangeQuasiCompact` in `ComponentBaseChange` makes the structure morphism of a field-base-changed `X` quasi-compact when `X.hom` was quasi-compact over `k`. Its proof identifies the new structure morphism with a pullback projection and invokes preservation under base change; it supplies an input for the component-scheme comparisons in the first part of this module.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L63-L69) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L63-L69) (native source range).
 
 <a id="api-ac7eb03c8de48de5"></a>
 
@@ -304,7 +316,7 @@ The source is `componentSubalgebra X ⊗[k] K`, matching
 `baseChangeSpecOverIso`; internally the accepted global-sections equivalence
 uses the factor-reversed tensor product.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L98-L113) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L98-L113) (native source range).
 
 <a id="api-cf8e032278bb966b"></a>
 
@@ -316,7 +328,7 @@ noncomputable abbrev AlgebraicGeometry.baseChangedComponentSubalgebra {k K : Typ
 
 The literal range of the scalar-extended selected component algebra.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L115-L120) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L115-L120) (native source range).
 
 <a id="api-81e2ab06b08495d8"></a>
 
@@ -329,7 +341,7 @@ noncomputable def AlgebraicGeometry.componentBaseChangeComparisonAlgHom {k K : T
 The contravariant algebra map defining the canonical comparison of
 component schemes.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L257-L267) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L257-L267) (native source range).
 
 <a id="api-573d085dd1c5cda5"></a>
 
@@ -341,7 +353,7 @@ theorem AlgebraicGeometry.componentBaseChangeComparisonAlgHom_injective {k K : T
 
 The contravariant algebra comparison is always injective.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L295-L302) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L295-L302) (native source range).
 
 <a id="api-c5bd2e29d22de645"></a>
 
@@ -355,7 +367,7 @@ The literal comparison from the selected component scheme of the
 base-changed source to the categorical base change of the selected component
 scheme.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L557-L566) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L557-L566) (native source range).
 
 <a id="api-446f30095ff32d87"></a>
 
@@ -367,7 +379,7 @@ theorem AlgebraicGeometry.toComponentScheme_comp_componentBaseChangeComparison {
 
 The literal comparison commutes with the base-changed canonical map.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L591-L601) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L591-L601) (native source range).
 
 <a id="api-b02eb45c66f5256c"></a>
 
@@ -379,7 +391,7 @@ noncomputable def AlgebraicGeometry.componentGlobalSectionsAlgebra' {F : Type u}
 
 The base-field algebra structure on global sections used in this module.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L612-L616) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L612-L616) (native source range).
 
 <a id="api-2cab626c5010d593"></a>
 
@@ -391,7 +403,7 @@ def AlgebraicGeometry.tensorProductRightAlgebra' {F L A : Type u} [CommRing F] [
 
 The extension-field algebra structure on a right-oriented tensor product.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L618-L623) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L618-L623) (native source range).
 
 <a id="api-526ff2b3c8f4c6a4"></a>
 
@@ -403,7 +415,7 @@ theorem AlgebraicGeometry.baseChangeLocallyOfFiniteType' {k K : Type u} [Field k
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.baseChangeLocallyOfFiniteType'` in `ComponentBaseChange` retains local finite type for the structure morphism of `schemeBaseChange X` along a field extension `k → K`, assuming the original structure morphism has that property. Its implementation recognizes the new map as the second projection of a pullback; the instance is local to the later connected-component construction.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L625-L631) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L625-L631) (native source range).
 
 <a id="api-05ed23177b299572"></a>
 
@@ -415,7 +427,7 @@ theorem AlgebraicGeometry.baseChangeQuasiCompact' {k K : Type u} [Field k] [Fiel
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.baseChangeQuasiCompact'` in `ComponentBaseChange` supplies quasi-compactness of the structure morphism of `schemeBaseChange X` to the extension field `K`, provided the structure morphism of `X` over `k` is quasi-compact. It applies the pullback stability of quasi-compact morphisms; this is a statement about the base-changed morphism, not an assertion about arbitrary schemes without the original quasi-compactness hypothesis.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L633-L639) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L633-L639) (native source range).
 
 <a id="api-1044698a71b0cc41"></a>
 
@@ -428,7 +440,7 @@ noncomputable def AlgebraicGeometry.toConnectedComponentsSpec {k : Type u} [Fiel
 A qc locally-finite-type scheme maps canonically to one copy of the base
 point for each of its connected components.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L643-L678) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L643-L678) (native source range).
 
 <a id="api-05e03eae10c5f26f"></a>
 
@@ -441,7 +453,7 @@ theorem AlgebraicGeometry.toConnectedComponentsSpec_surjective {k : Type u} [Fie
 The map to the split finite-etale scheme of connected components is
 surjective on the underlying spaces.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L680-L718) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L680-L718) (native source range).
 
 <a id="api-dcf2ea33c01ad4ea"></a>
 
@@ -454,7 +466,7 @@ theorem AlgebraicGeometry.componentSubalgebra_finrank_eq_natCard_connectedCompon
 Over a separably closed field, the selected component algebra has exactly
 one basis vector for each connected component.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L754-L784) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L754-L784) (native source range).
 
 <a id="api-415631cd0c717635"></a>
 
@@ -467,7 +479,7 @@ theorem AlgebraicGeometry.natCard_connectedComponents_schemeBaseChange_eq_of_isS
 Base change from a separably closed field preserves the connected-component
 set, including for arbitrary transcendental extensions.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L788-L800) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L788-L800) (native source range).
 
 <a id="api-681ed4eee8afc4bb"></a>
 
@@ -480,7 +492,7 @@ theorem AlgebraicGeometry.componentSubalgebra_finrank_eq_natCard_separableClosur
 The rank of the selected component algebra over an arbitrary field is the
 number of connected components after passage to its separable closure.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1045-L1076) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1045-L1076) (native source range).
 
 <a id="api-deff7d65eb653370"></a>
 
@@ -494,7 +506,7 @@ Geometric connected-component counts are unchanged by an arbitrary field
 extension.  Both separable closures are compared inside an algebraic closure
 of the larger field.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1078-L1119) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1078-L1119) (native source range).
 
 <a id="api-c2948c5ba61807bd"></a>
 
@@ -507,7 +519,7 @@ theorem AlgebraicGeometry.componentBaseChangeComparisonAlgHom_surjective {k K : 
 The canonical component-algebra comparison is surjective for every field
 extension, with no algebraicity or separability assumption.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1162-L1197) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1162-L1197) (native source range).
 
 <a id="api-b060e7dabc241483"></a>
 
@@ -520,7 +532,7 @@ theorem AlgebraicGeometry.baseChangedComponentSubalgebra_eq {k K : Type u} [Fiel
 The scalar-extended and newly selected component subalgebras are literally
 equal in the global-sections ring.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1213-L1221) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1213-L1221) (native source range).
 
 <a id="api-a7720945cb24691d"></a>
 
@@ -533,7 +545,7 @@ noncomputable def AlgebraicGeometry.componentBaseChangeComparisonAlgEquiv {k K :
 The canonical algebra equivalence for arbitrary field extension.  Its
 forward map is definitionally the accepted literal comparison.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1223-L1232) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1223-L1232) (native source range).
 
 <a id="api-1f8fc7a54fc15064"></a>
 
@@ -546,7 +558,7 @@ noncomputable def AlgebraicGeometry.componentBaseChangeIso {k K : Type u} [Field
 The literal categorical base-change isomorphism for arbitrary field
 extension.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1253-L1261) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1253-L1261) (native source range).
 
 <a id="api-17c2a7137108f26f"></a>
 
@@ -559,7 +571,7 @@ theorem AlgebraicGeometry.componentBaseChangeIso_hom {k K : Type u} [Field k] [F
 The forward map of the categorical base-change isomorphism is exactly the
 canonical `componentBaseChangeComparison`.
 
-[Source](../SchemeProperties/ComponentBaseChange.lean#L1263-L1272) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1263-L1272) (native source range).
 
 
 ## SchemeProperties.ComponentFibers
@@ -575,7 +587,7 @@ noncomputable def AlgebraicGeometry.componentFibersGlobalSectionsAlgebra {F : Ty
 The scalar algebra structure on global sections used by the component
 construction.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L42-L47) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L42-L47) (native source range).
 
 <a id="api-420ee64a59dff856"></a>
 
@@ -589,7 +601,7 @@ The underlying range of the scheme-theoretic fibre of the canonical map
 to the component scheme is the connected component containing any point that
 maps to the chosen target point.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L89-L162) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L89-L162) (native source range).
 
 <a id="api-ccd08ea141519870"></a>
 
@@ -601,7 +613,7 @@ instance AlgebraicGeometry.toComponentSchemeLocallyOfFiniteType {K : Type u} [Fi
 
 The canonical map to the component scheme is locally of finite type.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L176-L184) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L176-L184) (native source range).
 
 <a id="api-a96c98432e59bf5d"></a>
 
@@ -613,7 +625,7 @@ instance AlgebraicGeometry.toComponentSchemeQuasiCompact {K : Type u} [Field K] 
 
 The canonical map to the component scheme is quasi-compact.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L186-L196) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L186-L196) (native source range).
 
 <a id="api-a39495f1b3164f5f"></a>
 
@@ -626,7 +638,7 @@ noncomputable def AlgebraicGeometry.componentSchemeFiber {K : Type u} [Field K] 
 The scheme-theoretic fibre of the component map, regarded over the
 residue field of the selected component point.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L198-L205) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L198-L205) (native source range).
 
 <a id="api-789e83bbd8f843d0"></a>
 
@@ -639,7 +651,7 @@ instance AlgebraicGeometry.fiberToComponentSchemeLocallyOfFiniteType {K : Type u
 A component-scheme fibre is locally of finite type over its residue
 field.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L207-L215) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L207-L215) (native source range).
 
 <a id="api-2814f250436df743"></a>
 
@@ -651,7 +663,7 @@ instance AlgebraicGeometry.fiberToComponentSchemeQuasiCompact {K : Type u} [Fiel
 
 A component-scheme fibre is quasi-compact over its residue field.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L217-L224) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L217-L224) (native source range).
 
 <a id="api-4e20f51b5d8a0992"></a>
 
@@ -664,7 +676,7 @@ theorem AlgebraicGeometry.geometricallyConnected_fiber_toComponentScheme {K : Ty
 A scheme-theoretic fibre of the component map is geometrically connected
 over its residue field.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L289-L447) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L289-L447) (native source range).
 
 <a id="api-3285b9940b346ccd"></a>
 
@@ -677,7 +689,7 @@ theorem AlgebraicGeometry.geometricallyConnected_of_connectedSpace_of_section {K
 A connected scheme, locally of finite type and quasi-compact over a field,
 is geometrically connected if its structure morphism has a section.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L449-L509) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L449-L509) (native source range).
 
 <a id="api-df53c8dd6c62d9f8"></a>
 
@@ -690,7 +702,7 @@ theorem AlgebraicGeometry.componentSubalgebra_fiber_eq_bot {K : Type u} [Field K
 The greatest finite-etale subalgebra of the global functions on a
 component-map fibre is exactly the scalar subalgebra.
 
-[Source](../SchemeProperties/ComponentFibers.lean#L511-L554) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentFibers.lean#L511-L554) (native source range).
 
 
 ## SchemeProperties.ComponentProduct
@@ -705,7 +717,7 @@ theorem AlgebraicGeometry.tensorLocallyOfFiniteType {K : Type u} [Field K] (X Y 
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.tensorLocallyOfFiniteType` in `ComponentProduct` establishes local finite type for the structure map of the fibre product `X ⊗ Y` over `Spec K`, assuming local finite type of both factor structure maps. It uses the first pullback projection and closure under composition, not a claim that all products of arbitrary over-field schemes have this property.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L43-L51) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L43-L51) (native source range).
 
 <a id="api-486c9f4b7091dd52"></a>
 
@@ -717,7 +729,7 @@ theorem AlgebraicGeometry.tensorQuasiCompact {K : Type u} [Field K] (X Y : Categ
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.tensorQuasiCompact` in `ComponentProduct` gives a quasi-compact structure morphism for the fibre product `X ⊗ Y` in `Over (Spec K)` when each factor's structure morphism is quasi-compact. It factors the product map through a pullback projection and uses quasi-compactness under pullback and composition; both factor assumptions are material.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L53-L61) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L53-L61) (native source range).
 
 <a id="api-43093b00c10b7622"></a>
 
@@ -730,7 +742,7 @@ noncomputable def AlgebraicGeometry.componentSchemeMapOfHom {K : Type u} [Field 
 The map on finite-etale component schemes induced by a morphism of
 quasi-compact schemes locally of finite type over a field.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L63-L70) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L63-L70) (native source range).
 
 <a id="api-099d1d8fa39177ad"></a>
 
@@ -742,7 +754,7 @@ theorem AlgebraicGeometry.toComponentScheme_comp_componentSchemeMapOfHom {K : Ty
 
 The map on component schemes makes the canonical triangle commute.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L72-L81) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L72-L81) (native source range).
 
 <a id="api-1d04258d1c7bdcc7"></a>
 
@@ -754,7 +766,7 @@ theorem AlgebraicGeometry.toComponentScheme_comp_componentSchemeMapOfHom_assoc {
 
 The map on component schemes makes the canonical triangle commute.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L73-L73) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L73-L73) (native source range).
 
 <a id="api-4d06cdfe7c90d1a4"></a>
 
@@ -766,7 +778,7 @@ theorem AlgebraicGeometry.componentSchemeMapOfHom_id {K : Type u} [Field K] (X :
 
 The component-scheme map of an identity is the identity.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L83-L92) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L83-L92) (native source range).
 
 <a id="api-9f35483b30e626fc"></a>
 
@@ -778,7 +790,7 @@ theorem AlgebraicGeometry.componentSchemeMapOfHom_comp {K : Type u} [Field K] {X
 
 Component-scheme maps preserve composition.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L94-L108) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L94-L108) (native source range).
 
 <a id="api-0e7c473f98309295"></a>
 
@@ -790,7 +802,7 @@ theorem AlgebraicGeometry.componentSchemeMapOfHom_comp_assoc {K : Type u} [Field
 
 Component-scheme maps preserve composition.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L95-L95) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L95-L95) (native source range).
 
 <a id="api-d0215d466a5b59f6"></a>
 
@@ -803,7 +815,7 @@ noncomputable def AlgebraicGeometry.componentProductComparison {K : Type u} [Fie
 The canonical comparison from the component scheme of a binary product
 to the binary product of the component schemes.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L110-L116) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L110-L116) (native source range).
 
 <a id="api-50794f209cf99756"></a>
 
@@ -816,7 +828,7 @@ theorem AlgebraicGeometry.toComponentScheme_comp_componentProductComparison {K :
 The product comparison is characterized by its canonical triangle with
 the two product projections.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L118-L131) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L118-L131) (native source range).
 
 <a id="api-e21408224b579bd6"></a>
 
@@ -828,7 +840,7 @@ theorem AlgebraicGeometry.sourceCompactSpace {K : Type u} [Field K] (Z : Categor
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.sourceCompactSpace` in `ComponentProduct` equips the underlying topological space of `Z.left` with `CompactSpace` when its structure morphism to `Spec K` is quasi-compact. It uses compactness of the spectrum of a field; it does not independently establish local Noetherianity or finite type.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L135-L137) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L135-L137) (native source range).
 
 <a id="api-cc194a9687f0c5f6"></a>
 
@@ -840,7 +852,7 @@ theorem AlgebraicGeometry.sourceIsLocallyNoetherian {K : Type u} [Field K] (Z : 
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.sourceIsLocallyNoetherian` in `ComponentProduct` derives local Noetherianity of `Z.left` from `LocallyOfFiniteType Z.hom` over the spectrum of a field `K`. The field base matters, and unlike `sourceIsNoetherian`, this instance does not assume quasi-compactness or assert global Noetherianity.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L139-L141) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L139-L141) (native source range).
 
 <a id="api-4b7d6b6e888397e7"></a>
 
@@ -852,7 +864,7 @@ theorem AlgebraicGeometry.sourceIsNoetherian {K : Type u} [Field K] (Z : Categor
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.sourceIsNoetherian` in `ComponentProduct` makes the underlying scheme `Z.left` Noetherian when its map to `Spec K` is both locally of finite type and quasi-compact, with `K` a field. It combines the neighboring local-Noetherian and compactness instances; it is not a Noetherianity theorem for arbitrary base schemes or locally-finite-type maps alone.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L143-L144) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L143-L144) (native source range).
 
 <a id="api-376636fe7f2ead36"></a>
 
@@ -864,7 +876,7 @@ theorem AlgebraicGeometry.baseChangeLocallyOfFiniteTypeProduct {k L : Type u} [F
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.baseChangeLocallyOfFiniteTypeProduct` in `ComponentProduct` transports local finite type of an over-field scheme's structure morphism from `k` to `L` through pullback. This hypothesis is used when applying product/component-scheme constructions to base-changed over-category objects; it does not replace the original local-finite-type assumption.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L495-L502) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L495-L502) (native source range).
 
 <a id="api-dbe24f110d7ec2a1"></a>
 
@@ -876,7 +888,7 @@ theorem AlgebraicGeometry.baseChangeQuasiCompactProduct {k L : Type u} [Field k]
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.baseChangeQuasiCompactProduct` in `ComponentProduct` preserves quasi-compactness of `X.hom` under base change from a field `k` to a field `L`. It identifies the base-changed structure morphism with the pullback's second projection; the result supplies the quasi-compactness hypothesis required by product and component-scheme comparisons after extension.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L504-L511) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L504-L511) (native source range).
 
 <a id="api-b1960fd59ca497cd"></a>
 
@@ -889,7 +901,7 @@ noncomputable def AlgebraicGeometry.componentProductIso {K : Type u} [Field K] (
 The canonical component scheme of a binary fibre product is the fibre
 product of the component schemes.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L589-L596) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L589-L596) (native source range).
 
 <a id="api-88789c40a83ab134"></a>
 
@@ -902,7 +914,7 @@ theorem AlgebraicGeometry.componentProductIso_hom {K : Type u} [Field K] (X Y : 
 The forward map of `componentProductIso` is exactly the canonical product
 comparison.
 
-[Source](../SchemeProperties/ComponentProduct.lean#L598-L608) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentProduct.lean#L598-L608) (native source range).
 
 
 ## SchemeProperties.ComponentScheme
@@ -918,7 +930,7 @@ noncomputable def AlgebraicGeometry.globalSectionsAlgebraInstance {K : Type u} [
 The algebra of global sections of a scheme over `K`, inferred locally
 from its structure morphism.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L47-L51) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L47-L51) (native source range).
 
 <a id="api-37885db0d6a4a5fd"></a>
 
@@ -930,7 +942,7 @@ noncomputable abbrev AlgebraicGeometry.specOver (K A : Type u) [CommRing K] [Com
 
 The affine scheme over `Spec K` associated to a `K`-algebra.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L53-L56) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L53-L56) (native source range).
 
 <a id="api-716bc5c9185a33b6"></a>
 
@@ -943,7 +955,7 @@ noncomputable def AlgebraicGeometry.toSpecOver {K : Type u} [Field K] (X : Categ
 The map to an affine scheme over `K` corresponding to an algebra map into
 global sections.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L58-L82) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L58-L82) (native source range).
 
 <a id="api-1e3f5ba9cdbba8ca"></a>
 
@@ -956,7 +968,7 @@ noncomputable def AlgebraicGeometry.specOverMap {K : Type u} [Field K] {A B : Ty
 The contravariant map of affine schemes over `K` induced by an algebra
 homomorphism.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L84-L97) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L84-L97) (native source range).
 
 <a id="api-60fa5e3287108c9e"></a>
 
@@ -968,7 +980,7 @@ noncomputable abbrev AlgebraicGeometry.schemeBaseChange {K L : Type u} [CommRing
 
 Scalar extension of a scheme over `Spec K` along `K → L`.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L99-L103) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L99-L103) (native source range).
 
 <a id="api-9d0d0ffbedce75f3"></a>
 
@@ -981,7 +993,7 @@ noncomputable def AlgebraicGeometry.baseChangeSpecIso (K A L : Type u) [CommRing
 The standard affine identification of the scalar extension of `Spec A`
 with the spectrum of `A ⊗[K] L`.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L105-L113) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L105-L113) (native source range).
 
 <a id="api-589e14984521bea2"></a>
 
@@ -993,7 +1005,7 @@ noncomputable def AlgebraicGeometry.baseChangeSpecOverIso (K A L : Type u) [Comm
 
 The standard affine scalar-extension identification in the over category.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L115-L124) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L115-L124) (native source range).
 
 <a id="api-feac77067a1a87ca"></a>
 
@@ -1005,7 +1017,7 @@ noncomputable abbrev AlgebraicGeometry.baseChangeMap {K L : Type u} [CommRing K]
 
 Scalar extension of a morphism over `Spec K`.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L126-L131) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L126-L131) (native source range).
 
 <a id="api-ae2ac0cb11474be7"></a>
 
@@ -1018,7 +1030,7 @@ theorem AlgebraicGeometry.surjective_toSpecOver {K : Type u} [Field K] (X : Cate
 If `A` is finite over a field, an injective algebra map from `A` into
 global sections induces a surjective map to `Spec A`.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L146-L161) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L146-L161) (native source range).
 
 <a id="api-fcdb9d18e5de7e65"></a>
 
@@ -1030,7 +1042,7 @@ theorem AlgebraicGeometry.surjective_baseChangeMap {K L : Type u} [CommRing K] [
 
 Surjectivity is preserved by scalar extension in the over category.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L163-L168) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L163-L168) (native source range).
 
 <a id="api-738b472003d3e42a"></a>
 
@@ -1043,7 +1055,7 @@ theorem AlgebraicGeometry.surjective_baseChangeMap_comp_baseChangeSpecIso {K A L
 After the standard affine identification, a surjective base-changed map
 still is surjective.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L170-L181) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L170-L181) (native source range).
 
 <a id="api-0ecd58cb033a8fe8"></a>
 
@@ -1055,7 +1067,7 @@ theorem AlgebraicGeometry.surjective_scalarExtension_toSpecOver {K : Type u} [Fi
 
 A finite-algebra spectrum map remains surjective after scalar extension.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L183-L193) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L183-L193) (native source range).
 
 <a id="api-75cfd05a4d704f50"></a>
 
@@ -1069,7 +1081,7 @@ After extension to a separably closed field, the rank of a finite-etale
 subalgebra of global sections is bounded by the number of connected components
 of the base-changed scheme.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L195-L228) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L195-L228) (native source range).
 
 <a id="api-3d06c5983fd6151e"></a>
 
@@ -1081,7 +1093,7 @@ theorem AlgebraicGeometry.exists_greatest_isFiniteEtaleSubalgebra_globalSections
 
 The global sections have a greatest finite-etale `K`-subalgebra.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L244-L268) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L244-L268) (native source range).
 
 <a id="api-9fa80089085bbd6b"></a>
 
@@ -1093,7 +1105,7 @@ noncomputable def AlgebraicGeometry.componentSubalgebra {K : Type u} [Field K] (
 
 A selected greatest finite-etale subalgebra of the global sections.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L270-L275) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L270-L275) (native source range).
 
 <a id="api-da907bde866d0584"></a>
 
@@ -1105,7 +1117,7 @@ theorem AlgebraicGeometry.componentSubalgebra_isFiniteEtale {K : Type u} [Field 
 
 The selected component subalgebra is finite etale.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L277-L282) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L277-L282) (native source range).
 
 <a id="api-31c1abb633ac10a2"></a>
 
@@ -1117,7 +1129,7 @@ theorem AlgebraicGeometry.isFiniteEtaleSubalgebra_le_componentSubalgebra {K : Ty
 
 Every finite-etale subalgebra of global sections lies in the selected one.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L284-L290) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L284-L290) (native source range).
 
 <a id="api-2bb3a7e6fefcadf3"></a>
 
@@ -1130,7 +1142,7 @@ theorem AlgebraicGeometry.componentSubalgebra_eq_of_isGreatest {K : Type u} [Fie
 The selected subalgebra agrees with any other greatest finite-etale
 subalgebra.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L292-L303) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L292-L303) (native source range).
 
 <a id="api-b3888993b52517bc"></a>
 
@@ -1142,7 +1154,7 @@ noncomputable abbrev AlgebraicGeometry.componentScheme {K : Type u} [Field K] (X
 
 The affine finite-etale component object selected from global sections.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L305-L309) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L305-L309) (native source range).
 
 <a id="api-c489d5959c93a82a"></a>
 
@@ -1154,7 +1166,7 @@ noncomputable def AlgebraicGeometry.toComponentScheme {K : Type u} [Field K] (X 
 
 The canonical map from a scheme to its finite-etale component scheme.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L311-L316) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L311-L316) (native source range).
 
 <a id="api-c91c5e098b62e33a"></a>
 
@@ -1166,7 +1178,7 @@ theorem AlgebraicGeometry.surjective_toComponentScheme {K : Type u} [Field K] (X
 
 The canonical map to the component scheme is surjective.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L318-L327) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L318-L327) (native source range).
 
 <a id="api-8dea64cb5b64360c"></a>
 
@@ -1178,7 +1190,7 @@ instance AlgebraicGeometry.flat_toComponentScheme {K : Type u} [Field K] (X : Ca
 
 The canonical map to the component scheme is flat.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L329-L364) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L329-L364) (native source range).
 
 <a id="api-1392770cb201df54"></a>
 
@@ -1191,7 +1203,7 @@ noncomputable def AlgebraicGeometry.algebraMapOfToSpec {K : Type u} [Field K] (X
 The algebra map on global sections induced by a map to an affine scheme
 over `K`.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L366-L380) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L366-L380) (native source range).
 
 <a id="api-66b38ec20fd52db1"></a>
 
@@ -1204,7 +1216,7 @@ theorem AlgebraicGeometry.toSpecOver_algebraMapOfToSpec {K : Type u} [Field K] (
 Recovering an affine-target map from its map on global sections gives the
 original map.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L382-L395) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L382-L395) (native source range).
 
 <a id="api-ae16e2628441a44c"></a>
 
@@ -1217,7 +1229,7 @@ theorem AlgebraicGeometry.toSpecOver_comp_specOverMap {K : Type u} [Field K] (X 
 Composition with a contravariant `Spec` map corresponds to composition of
 algebra maps.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L397-L409) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L397-L409) (native source range).
 
 <a id="api-f9255011718c5a7f"></a>
 
@@ -1230,7 +1242,7 @@ theorem AlgebraicGeometry.range_algebraMapOfToSpec_isFiniteEtale {K : Type u} [F
 The range of the algebra map induced by a finite-etale target is finite
 etale.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L411-L419) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L411-L419) (native source range).
 
 <a id="api-cea8f6e540a73ba4"></a>
 
@@ -1243,7 +1255,7 @@ theorem AlgebraicGeometry.range_algebraMapOfToSpec_le_componentSubalgebra {K : T
 The range of a map from a finite-etale algebra lies in the selected
 component subalgebra.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L421-L429) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L421-L429) (native source range).
 
 <a id="api-8220f9652cf8e34e"></a>
 
@@ -1255,7 +1267,7 @@ noncomputable def AlgebraicGeometry.componentFactorAlgHom {K : Type u} [Field K]
 
 The algebra map defining the universal factor.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L431-L440) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L431-L440) (native source range).
 
 <a id="api-126ecf9abda87bb5"></a>
 
@@ -1267,7 +1279,7 @@ noncomputable def AlgebraicGeometry.componentFactor {K : Type u} [Field K] (X : 
 
 The factor from the component scheme to a finite-etale affine target.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L442-L449) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L442-L449) (native source range).
 
 <a id="api-b69c9440b2dc6ac2"></a>
 
@@ -1279,7 +1291,7 @@ theorem AlgebraicGeometry.toComponentScheme_comp_componentFactor {K : Type u} [F
 
 The universal factor makes the canonical triangle commute.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L451-L463) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L451-L463) (native source range).
 
 <a id="api-eb1f76c1239f843e"></a>
 
@@ -1292,7 +1304,7 @@ theorem AlgebraicGeometry.componentScheme_universal {K : Type u} [Field K] (X : 
 Every map to a finite-etale affine scheme factors uniquely through the
 component scheme.
 
-[Source](../SchemeProperties/ComponentScheme.lean#L472-L499) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentScheme.lean#L472-L499) (native source range).
 
 
 ## SchemeProperties.ConnectedComponents
@@ -1309,7 +1321,7 @@ The open subscheme underlying one connected component of a locally
 connected scheme. It is defined canonically as the inverse image of the
 corresponding singleton under the connected-component quotient map.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L32-L39) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L32-L39) (native source range).
 
 <a id="api-ba7b90fd7e968415"></a>
 
@@ -1321,7 +1333,7 @@ theorem AlgebraicGeometry.Scheme.mem_connectedComponentOpen (X : Scheme) [Locall
 
 **API note (not a source docstring):** The simplification lemma `AlgebraicGeometry.Scheme.mem_connectedComponentOpen` characterizes membership of a point `x` in the component open indexed by `c`: precisely `ConnectedComponents.mk x = c`. Its source owner `ConnectedComponents` defines that open as the inverse image of a singleton under the component quotient, requiring `LocallyConnectedSpace X` so it is open; the lemma unfolds that specific construction.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L41-L45) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L41-L45) (native source range).
 
 <a id="api-70180cfd6287ef74"></a>
 
@@ -1333,7 +1345,7 @@ theorem AlgebraicGeometry.Scheme.connectedComponentOpen_mk (X : Scheme) [Locally
 
 The component open indexed by a point has the expected underlying set.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L47-L52) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L47-L52) (native source range).
 
 <a id="api-786d88f09f0bd17c"></a>
 
@@ -1345,7 +1357,7 @@ theorem AlgebraicGeometry.Scheme.iSup_connectedComponentOpen (X : Scheme) [Local
 
 The connected-component opens cover a locally connected scheme.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L54-L58) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L54-L58) (native source range).
 
 <a id="api-ad6b6f136ab13b2d"></a>
 
@@ -1357,7 +1369,7 @@ theorem AlgebraicGeometry.Scheme.connectedComponentOpen_disjoint (X : Scheme) [L
 
 Distinct connected components give disjoint open subschemes.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L60-L70) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L60-L70) (native source range).
 
 <a id="api-cb3f9931f8edbcab"></a>
 
@@ -1370,7 +1382,7 @@ noncomputable def AlgebraicGeometry.Scheme.connectedComponentSigmaIso (X : Schem
 A locally connected scheme is canonically the coproduct of the open
 subschemes carried by its connected components.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L72-L87) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L72-L87) (native source range).
 
 <a id="api-254104d49276973d"></a>
 
@@ -1383,7 +1395,7 @@ theorem AlgebraicGeometry.Scheme.connectedComponentSigmaIso_hom_ι (X : Scheme) 
 On each coproduct summand, the component decomposition isomorphism is the
 canonical open immersion.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L89-L97) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L89-L97) (native source range).
 
 <a id="api-bb780ae49b3ab4f7"></a>
 
@@ -1396,7 +1408,7 @@ theorem AlgebraicGeometry.Scheme.connectedComponentSigmaIso_hom_ι_assoc (X : Sc
 On each coproduct summand, the component decomposition isomorphism is the
 canonical open immersion.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L91-L91) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L91-L91) (native source range).
 
 <a id="api-3484c63eddb57210"></a>
 
@@ -1409,7 +1421,7 @@ noncomputable def AlgebraicGeometry.Scheme.toConnectedComponentCoproduct {X S : 
 A morphism out of a locally connected scheme, separated into one copy of
 the target for every connected component of the source.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L99-L106) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L99-L106) (native source range).
 
 <a id="api-69bf6e5bfee24242"></a>
 
@@ -1422,7 +1434,7 @@ theorem AlgebraicGeometry.Scheme.connectedComponentOpen_ι_toConnectedComponentC
 On one connected component, `toConnectedComponentCoproduct` is the
 original morphism followed by the corresponding coproduct inclusion.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L108-L119) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L108-L119) (native source range).
 
 <a id="api-9043955b32f496da"></a>
 
@@ -1435,7 +1447,7 @@ theorem AlgebraicGeometry.Scheme.connectedComponentOpen_ι_toConnectedComponentC
 On one connected component, `toConnectedComponentCoproduct` is the
 original morphism followed by the corresponding coproduct inclusion.
 
-[Source](../SchemeProperties/ConnectedComponents.lean#L110-L110) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ConnectedComponents.lean#L110-L110) (native source range).
 
 
 ## SchemeProperties.CoproductSections
@@ -1451,7 +1463,7 @@ noncomputable def AlgebraicGeometry.Scheme.sigmaPresheafObjIso {ι : Type u} (X 
 Sections on an indexed coproduct of schemes are the dependent product of
 the sections over the component preimages.
 
-[Source](../SchemeProperties/CoproductSections.lean#L94-L148) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoproductSections.lean#L94-L148) (native source range).
 
 <a id="api-7f8d60aabdb9dff0"></a>
 
@@ -1464,7 +1476,7 @@ theorem AlgebraicGeometry.Scheme.sigmaPresheafObjIso_hom_apply {ι : Type u} (X 
 The `i`-th coordinate of `sigmaPresheafObjIso` is pullback to the `i`-th
 summand.
 
-[Source](../SchemeProperties/CoproductSections.lean#L157-L163) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoproductSections.lean#L157-L163) (native source range).
 
 <a id="api-d5599ed546e4a54b"></a>
 
@@ -1477,7 +1489,7 @@ theorem AlgebraicGeometry.Scheme.sigmaPresheafObjIso_hom_res_apply {ι : Type u}
 Restriction of a coproduct section is coordinatewise restriction on every
 summand.
 
-[Source](../SchemeProperties/CoproductSections.lean#L165-L176) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoproductSections.lean#L165-L176) (native source range).
 
 
 ## SchemeProperties.CoproductTopology
@@ -1494,7 +1506,7 @@ An indexed coproduct of quasiseparated schemes is quasiseparated.
 
 The empty family and families with empty components are included.
 
-[Source](../SchemeProperties/CoproductTopology.lean#L35-L59) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoproductTopology.lean#L35-L59) (native source range).
 
 <a id="api-f1c8d4895097e02b"></a>
 
@@ -1506,7 +1518,7 @@ theorem AlgebraicGeometry.not_compactSpace_sigma {ι : Type u} (X : ι → Schem
 
 An infinite indexed coproduct of nonempty schemes is not compact.
 
-[Source](../SchemeProperties/CoproductTopology.lean#L61-L73) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/CoproductTopology.lean#L61-L73) (native source range).
 
 
 ## SchemeProperties.Factorial
@@ -1522,7 +1534,7 @@ theorem IsLocalization.AtPrime.uniqueFactorizationMonoid_of_le {R : Type u} (S :
 Let `S` and `T` be localizations of `R` at prime ideals `q` and `p`
 respectively. If `p ≤ q` and `S` has unique factorization, then so does `T`.
 
-[Source](../SchemeProperties/Factorial.lean#L26-L48) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L26-L48) (native source range).
 
 <a id="api-133c35fe5d29eda1"></a>
 
@@ -1534,7 +1546,7 @@ class AlgebraicGeometry.IsFactorial (X : Scheme) : Prop
 
 A scheme is factorial if every local ring has unique factorization.
 
-[Source](../SchemeProperties/Factorial.lean#L56-L59) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L56-L59) (native source range).
 
 <a id="api-9c1cc89ae84f4b5a"></a>
 
@@ -1546,7 +1558,7 @@ constructor AlgebraicGeometry.IsFactorial.mk : ∀ {X : AlgebraicGeometry.Scheme
 
 **API note (not a source docstring):** The class constructor `AlgebraicGeometry.IsFactorial.mk` in `Factorial` packages a proof assigning `UniqueFactorizationMonoid (X.presheaf.stalk x)` to each point `x` into `IsFactorial X`. Its sole supplied field is this stalkwise property; the constructor does not need a separate connectedness, global UFD, or quasi-compactness hypothesis.
 
-[Source](../SchemeProperties/Factorial.lean#L56-L59) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L56-L59) (native source range).
 
 <a id="api-c2a69d1589e20cb7"></a>
 
@@ -1558,7 +1570,7 @@ theorem AlgebraicGeometry.IsFactorial.stalk_uniqueFactorizationMonoid {X : Schem
 
 **API note (not a source docstring):** The field `AlgebraicGeometry.IsFactorial.stalk_uniqueFactorizationMonoid` extracts a `UniqueFactorizationMonoid` structure on the local ring `X.presheaf.stalk x` for every point of an `IsFactorial X` scheme. Declared in `Factorial` and registered as a typeclass instance, it is stalkwise and gives no direct unique-factorization instance for `Γ(X, ⊤)`.
 
-[Source](../SchemeProperties/Factorial.lean#L58-L58) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L58-L58) (native source range).
 
 <a id="api-34b3682486f23959"></a>
 
@@ -1570,7 +1582,7 @@ instance AlgebraicGeometry.IsFactorial.stalk_isDomain (X : Scheme) [IsFactorial 
 
 Every stalk of a factorial scheme is a domain.
 
-[Source](../SchemeProperties/Factorial.lean#L63-L66) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L63-L66) (native source range).
 
 <a id="api-cfa4fed30d24eb7d"></a>
 
@@ -1582,7 +1594,7 @@ theorem AlgebraicGeometry.isFactorial_of_stalk (X : Scheme) [∀ (x : ↥X), Uni
 
 Factoriality can be proved directly on all stalks.
 
-[Source](../SchemeProperties/Factorial.lean#L68-L72) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L68-L72) (native source range).
 
 <a id="api-fef952bf8949823f"></a>
 
@@ -1594,7 +1606,7 @@ instance AlgebraicGeometry.instIsFactorialOfIsEmptyCarrierCarrierCommRingCat (X 
 
 Empty schemes are factorial.
 
-[Source](../SchemeProperties/Factorial.lean#L74-L76) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L74-L76) (native source range).
 
 <a id="api-675337d22eceeba1"></a>
 
@@ -1606,7 +1618,7 @@ theorem AlgebraicGeometry.isFactorial_of_isOpenImmersion {X Y : Scheme} (f : X �
 
 Factoriality is preserved by open immersions.
 
-[Source](../SchemeProperties/Factorial.lean#L78-L84) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L78-L84) (native source range).
 
 <a id="api-9fb7b7eb99c214b5"></a>
 
@@ -1618,7 +1630,7 @@ instance AlgebraicGeometry.instIsFactorialToScheme {X : Scheme} {U : X.Opens} [I
 
 **API note (not a source docstring):** The generated open-subscheme instance `AlgebraicGeometry.instIsFactorialToScheme` in `Factorial` inherits factoriality from `X` to a specified open `U : X.Opens`. The proof applies `isFactorial_of_isOpenImmersion` to `U.ι`, since its stalks agree with stalks in `X`; this does not assert factoriality of arbitrary closed subschemes.
 
-[Source](../SchemeProperties/Factorial.lean#L86-L87) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L86-L87) (native source range).
 
 <a id="api-574f0ab575ce5465"></a>
 
@@ -1630,7 +1642,7 @@ instance AlgebraicGeometry.instIsFactorialXScheme (X : Scheme) {𝒰 : X.OpenCov
 
 **API note (not a source docstring):** The generated open-cover instance `AlgebraicGeometry.instIsFactorialXScheme` in `Factorial` gives `IsFactorial (𝒰.X i)` for an indexed member of `X.OpenCover 𝒰` when `X` is factorial. It specializes preservation under the cover map's open immersion; factoriality is asserted of that particular open subscheme, not of every source over `X`.
 
-[Source](../SchemeProperties/Factorial.lean#L89-L91) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L89-L91) (native source range).
 
 <a id="api-19a0405b966671ea"></a>
 
@@ -1642,7 +1654,7 @@ instance AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsFactorial : Cate
 
 **API note (not a source docstring):** The `ObjectProperty.IsClosedUnderIsomorphisms` instance `AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsFactorial` says factoriality of schemes is invariant under isomorphism. Its source owner `Factorial` establishes the property via the inverse isomorphism as an open immersion and the induced stalk isomorphisms; this concerns factorial scheme stalks, not UFDs of arbitrary global-section rings.
 
-[Source](../SchemeProperties/Factorial.lean#L93-L95) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L93-L95) (native source range).
 
 <a id="api-892b01bcb243ecb5"></a>
 
@@ -1654,7 +1666,7 @@ theorem AlgebraicGeometry.IsFactorial.of_openCover (X : Scheme) (𝒰 : X.OpenCo
 
 Factoriality is local on an open cover.
 
-[Source](../SchemeProperties/Factorial.lean#L97-L104) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L97-L104) (native source range).
 
 <a id="api-ea1510f939fdc6a1"></a>
 
@@ -1666,7 +1678,7 @@ theorem AlgebraicGeometry.IsFactorial.iff_of_openCover (X : Scheme) (𝒰 : X.Op
 
 **API note (not a source docstring):** For an open cover `𝒰` of a scheme `X`, `AlgebraicGeometry.IsFactorial.iff_of_openCover` identifies factoriality of `X` with factoriality of every cover member `𝒰.X i`. The forward direction restricts to open subschemes; the converse transfers stalkwise unique factorization across the cover's open immersions. No finite or nonempty cover condition is added.
 
-[Source](../SchemeProperties/Factorial.lean#L106-L108) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L106-L108) (native source range).
 
 <a id="api-c825b324a4dfa7e1"></a>
 
@@ -1678,7 +1690,7 @@ instance AlgebraicGeometry.factorialSpec {R : CommRingCat} [UniqueFactorizationM
 
 **API note (not a source docstring):** The instance `AlgebraicGeometry.factorialSpec` makes `Spec R` factorial when the commutative ring `R` has `UniqueFactorizationMonoid`. Factoriality here means unique factorization in every scheme stalk; the proof localizes `R` at each prime and transfers the property across the canonical stalk isomorphism. It does not conclude that an arbitrary coordinate ring is a UFD from factoriality of its spectrum.
 
-[Source](../SchemeProperties/Factorial.lean#L111-L118) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L111-L118) (native source range).
 
 <a id="api-ab8ccb320d1c667a"></a>
 
@@ -1691,7 +1703,7 @@ theorem AlgebraicGeometry.factorialSpec_of_isDedekindDomain {R : CommRingCat} [I
 The spectrum of a Dedekind domain is factorial, even when the domain itself
 does not have unique factorization.
 
-[Source](../SchemeProperties/Factorial.lean#L121-L132) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L121-L132) (native source range).
 
 <a id="api-69c4e8c762e27d1b"></a>
 
@@ -1703,7 +1715,7 @@ theorem AlgebraicGeometry.uniqueFactorizationMonoid_stalk_of_specializes (X : Sc
 
 Unique factorization of stalks is preserved under generalization.
 
-[Source](../SchemeProperties/Factorial.lean#L136-L163) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Factorial.lean#L136-L163) (native source range).
 
 
 ## SchemeProperties.FactorialNormal
@@ -1718,7 +1730,7 @@ instance AlgebraicGeometry.isNormal_of_isFactorial (X : Scheme) [IsFactorial X] 
 
 Every factorial scheme is normal.
 
-[Source](../SchemeProperties/FactorialNormal.lean#L27-L29) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FactorialNormal.lean#L27-L29) (native source range).
 
 
 ## SchemeProperties.FiniteTypePoints
@@ -1733,7 +1745,7 @@ theorem CategoryTheory.Functor.isDense_of_isCoverDense_of_subcanonical {C : Type
 
 A fully faithful, locally full, cover-dense functor into a subcanonical site is dense.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L49-L67) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L49-L67) (native source range).
 
 <a id="api-d45bfa3bb58c464c"></a>
 
@@ -1745,7 +1757,7 @@ abbrev AlgebraicGeometry.locallyFiniteTypeMorphism : CategoryTheory.MorphismProp
 
 The morphism property of being locally of finite type, with its universe made explicit.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L75-L77) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L75-L77) (native source range).
 
 <a id="api-53fd047ed93612bd"></a>
 
@@ -1757,7 +1769,7 @@ abbrev AlgebraicGeometry.openImmersionMorphism : CategoryTheory.MorphismProperty
 
 The morphism property of being an open immersion, with its universe made explicit.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L79-L81) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L79-L81) (native source range).
 
 <a id="api-551b3aa2d51965ac"></a>
 
@@ -1769,7 +1781,7 @@ theorem AlgebraicGeometry.openImmersionMorphism_le_locallyFiniteTypeMorphism : o
 
 An open immersion is locally of finite type.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L83-L88) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L83-L88) (native source range).
 
 <a id="api-8970580df93ece8b"></a>
 
@@ -1781,7 +1793,7 @@ instance AlgebraicGeometry.instHasOfPostcompPropertySchemeLocallyFiniteTypeMorph
 
 Local finite type can be cancelled from a composite on the right.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L90-L94) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L90-L94) (native source range).
 
 <a id="api-807a0ec593c597e4"></a>
 
@@ -1793,7 +1805,7 @@ abbrev AlgebraicGeometry.lftAffineOver (K : Type u) [Field K] : Type (u + 1)
 
 Affine schemes locally of finite type over a field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L96-L98) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L96-L98) (native source range).
 
 <a id="api-d75e93262a6d4aa9"></a>
 
@@ -1805,7 +1817,7 @@ noncomputable abbrev AlgebraicGeometry.lftZariskiTopology (K : Type u) [Field K]
 
 The small Zariski topology on schemes locally of finite type over a field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L100-L104) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L100-L104) (native source range).
 
 <a id="api-061eff8f761d8246"></a>
 
@@ -1817,7 +1829,7 @@ noncomputable def AlgebraicGeometry.finiteAlgSpec (K : Type u) [Field K] : Categ
 
 The affine spectrum over a field, restricted to finitely generated algebras.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L106-L109) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L106-L109) (native source range).
 
 <a id="api-a20c2d0174351e5b"></a>
 
@@ -1829,7 +1841,7 @@ noncomputable def AlgebraicGeometry.finiteAlgSpecFullyFaithful (K : Type u) [Fie
 
 The affine spectrum functor on finitely generated algebras is fully faithful.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L111-L114) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L111-L114) (native source range).
 
 <a id="api-742c56933397845d"></a>
 
@@ -1841,7 +1853,7 @@ noncomputable def AlgebraicGeometry.finiteAlgSpecOver (K : Type u) [Field K] : C
 
 The spectrum of a finitely generated algebra as a locally-finite-type scheme over its field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L116-L125) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L116-L125) (native source range).
 
 <a id="api-5c7a0bd37ad9a106"></a>
 
@@ -1853,7 +1865,7 @@ noncomputable def AlgebraicGeometry.finiteAlgSpecOverFullyFaithful (K : Type u) 
 
 The locally-finite-type refinement of finite-algebra spectrum is fully faithful.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L127-L135) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L127-L135) (native source range).
 
 <a id="api-2a17db77f84c5f01"></a>
 
@@ -1866,7 +1878,7 @@ noncomputable def AlgebraicGeometry.lftAffineInclusion (K : Type u) [Field K] : 
 The inclusion of affine locally-finite-type schemes into all locally-finite-type schemes over a
 field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L137-L143) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L137-L143) (native source range).
 
 <a id="api-e253606390b55d55"></a>
 
@@ -1878,7 +1890,7 @@ noncomputable def AlgebraicGeometry.lftAffineInclusionFullyFaithful (K : Type u)
 
 The inclusion of affine locally-finite-type schemes is fully faithful.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L145-L160) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L145-L160) (native source range).
 
 <a id="api-6b740bf6119d220e"></a>
 
@@ -1890,7 +1902,7 @@ theorem AlgebraicGeometry.instFullLftAffineOverOverSchemeLocallyFiniteTypeMorphi
 
 **API note (not a source docstring):** The generated `Full` instance for `lftAffineInclusion K` in `FiniteTypePoints` says morphisms in the locally-finite-type over-category between affine objects lift through the affine inclusion. It uses the full half of `lftAffineInclusionFullyFaithful K`, itself based on full faithfulness of the affine spectrum; this remains a statement over the field `K` and on the indicated subcategory. Its elaborated name is `AlgebraicGeometry.instFullLftAffineOverOverSchemeLocallyFiniteTypeMorphismTopMorphismPropertySpecOfLftAffineInclusion`.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L162-L163) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L162-L163) (native source range).
 
 <a id="api-e2a2f450441d774c"></a>
 
@@ -1902,7 +1914,7 @@ theorem AlgebraicGeometry.instFaithfulLftAffineOverOverSchemeLocallyFiniteTypeMo
 
 **API note (not a source docstring):** The generated `Faithful` instance for `lftAffineInclusion K` in `FiniteTypePoints` says its map on morphisms between affine locally-finite-type schemes over `Spec K` is injective. It extracts the faithful half of the specifically constructed `lftAffineInclusionFullyFaithful K`; the inclusion is not asserted faithful for an unspecified category or base ring. Its elaborated name is `AlgebraicGeometry.instFaithfulLftAffineOverOverSchemeLocallyFiniteTypeMorphismTopMorphismPropertySpecOfLftAffineInclusion`.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L165-L166) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L165-L166) (native source range).
 
 <a id="api-40311727d4eb068d"></a>
 
@@ -1914,7 +1926,7 @@ instance AlgebraicGeometry.lftAffineInclusion_isCoverDense (K : Type u) [Field K
 
 Affine locally-finite-type schemes are cover-dense for the small Zariski topology.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L168-L190) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L168-L190) (native source range).
 
 <a id="api-a0c8444de0ecb6a4"></a>
 
@@ -1926,7 +1938,7 @@ theorem AlgebraicGeometry.lftOver_locallyCoverDense (K : Type u) [Field K] : (Ca
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.lftOver_locallyCoverDense` in `FiniteTypePoints` makes the functor forgetting locally finite type over `Spec K` locally cover-dense for the ambient open-immersion Zariski topology. Its construction uses that open immersions are locally of finite type; it does not assert that every scheme over a field is globally locally of finite type.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L192-L197) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L192-L197) (native source range).
 
 <a id="api-40acafd9c31820a0"></a>
 
@@ -1938,7 +1950,7 @@ theorem AlgebraicGeometry.lftOver_representablyFlat (K : Type u) [Field K] : Cat
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.lftOver_representablyFlat` in `FiniteTypePoints` supplies `RepresentablyFlat` for the functor forgetting the locally-finite-type morphism property over `Spec K`. The proof derives it from preservation of finite limits for that functor; the claim is about a functor of over-categories, not flatness of every individual locally-finite-type scheme morphism.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L199-L203) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L199-L203) (native source range).
 
 <a id="api-28ca2542a072de03"></a>
 
@@ -1950,7 +1962,7 @@ theorem AlgebraicGeometry.lftOver_isContinuous (K : Type u) [Field K] : (Categor
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.lftOver_isContinuous` in `FiniteTypePoints` makes the forgetful functor from locally-finite-type schemes over `Spec K` to all schemes over `Spec K` continuous for the restricted small Zariski topology and the ambient over-Zariski topology. It uses preservation of covering families by that particular restricted-topology construction; continuity here is categorical, not continuity of a point-set map.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L205-L213) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L205-L213) (native source range).
 
 <a id="api-577928c3d2c3b523"></a>
 
@@ -1962,7 +1974,7 @@ theorem AlgebraicGeometry.lftZariskiTopology_subcanonical (K : Type u) [Field K]
 
 **API note (not a source docstring):** The local instance `AlgebraicGeometry.lftZariskiTopology_subcanonical` in `FiniteTypePoints` states that the small Zariski topology restricted to schemes locally of finite type over the field `K` is subcanonical. Representable presheaves on that restricted over-category are sheaves; the proof uses the full and faithful forgetful functor and subcanonicity of the ambient open-immersion topology, not a statement about arbitrary Grothendieck topologies.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L215-L222) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L215-L222) (native source range).
 
 <a id="api-378e9a328a198d23"></a>
 
@@ -1975,7 +1987,7 @@ theorem AlgebraicGeometry.lftAffineInclusion_isDense (K : Type u) [Field K] : (l
 Affine locally-finite-type schemes are categorically dense among locally-finite-type schemes
 over a field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L224-L229) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L224-L229) (native source range).
 
 <a id="api-1b75687af93d1a4e"></a>
 
@@ -1987,7 +1999,7 @@ theorem AlgebraicGeometry.finiteAlgSpecOver_mem_lftAffineInclusion (K : Type u) 
 
 Each finite-algebra spectrum belongs to the essential image of the affine inclusion.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L231-L237) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L231-L237) (native source range).
 
 <a id="api-42eefd1da0b6da06"></a>
 
@@ -1999,7 +2011,7 @@ noncomputable def AlgebraicGeometry.fgAlgToLftAffine (K : Type u) [Field K] : Ca
 
 The factorization of finite-algebra spectrum through affine locally-finite-type schemes.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L239-L243) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L239-L243) (native source range).
 
 <a id="api-8c8ff33271a2026f"></a>
 
@@ -2011,7 +2023,7 @@ noncomputable def AlgebraicGeometry.fgAlgToLftAffineCompIso (K : Type u) [Field 
 
 Factoring through affine locally-finite-type schemes recovers finite-algebra spectrum.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L245-L250) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L245-L250) (native source range).
 
 <a id="api-30bddb98e47f33ad"></a>
 
@@ -2023,7 +2035,7 @@ noncomputable def AlgebraicGeometry.fgAlgToLftAffineFullyFaithful (K : Type u) [
 
 The factorization of finite-algebra spectrum is fully faithful.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L252-L259) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L252-L259) (native source range).
 
 <a id="api-7412205b5be8e41b"></a>
 
@@ -2036,7 +2048,7 @@ theorem AlgebraicGeometry.finiteAlgSpecOver_covers_affine (K : Type u) [Field K]
 Every affine locally-finite-type scheme over a field is the spectrum of a finitely generated
 algebra.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L261-L285) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L261-L285) (native source range).
 
 <a id="api-5828e9fa3cf45cf9"></a>
 
@@ -2048,7 +2060,7 @@ theorem AlgebraicGeometry.fgAlgToLftAffineEssSurj (K : Type u) [Field K] : (fgAl
 
 The factorization of finite-algebra spectrum is essentially surjective.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L287-L293) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L287-L293) (native source range).
 
 <a id="api-6f0b11d6d4deedf7"></a>
 
@@ -2061,7 +2073,7 @@ noncomputable def AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver (K : Type u) [F
 Finitely generated algebras over a field, oppositely, are equivalent to affine
 locally-finite-type schemes over that field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L295-L305) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L295-L305) (native source range).
 
 <a id="api-91e3a14dc1ffc21e"></a>
 
@@ -2074,7 +2086,7 @@ theorem AlgebraicGeometry.finiteAlgSpecOver_isDense (K : Type u) [Field K] : (fi
 Spectra of finitely generated algebras are dense among locally-finite-type schemes over a
 field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L307-L319) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L307-L319) (native source range).
 
 <a id="api-b8b7b0eb8f8cc6bc"></a>
 
@@ -2087,7 +2099,7 @@ abbrev AlgebraicGeometry.algebraicOver (K : Type u) [Field K] : Type (u + 1)
 Finite-type schemes over a field, expressed as locally-finite-type schemes with quasi-compact
 structure morphism.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L321-L325) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L321-L325) (native source range).
 
 <a id="api-e75b880b501a2442"></a>
 
@@ -2099,7 +2111,7 @@ noncomputable def AlgebraicGeometry.algebraicOverInclusion (K : Type u) [Field K
 
 The inclusion of finite-type schemes into locally-finite-type schemes over a field.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L327-L331) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L327-L331) (native source range).
 
 <a id="api-362658bf3008870d"></a>
 
@@ -2111,7 +2123,7 @@ noncomputable def AlgebraicGeometry.algebraicOverPoints (K : Type u) [Field K] :
 
 The set-valued functor of points of a finite-type scheme on finitely generated algebras.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L333-L337) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L333-L337) (native source range).
 
 <a id="api-99ec5f4f6c85312f"></a>
 
@@ -2123,7 +2135,7 @@ noncomputable def AlgebraicGeometry.algebraicOverPointsFullyFaithful (K : Type u
 
 The functor of points on finitely generated algebras is fully faithful on finite-type schemes.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L339-L345) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L339-L345) (native source range).
 
 <a id="api-7e28eecdb91abcb8"></a>
 
@@ -2136,7 +2148,7 @@ noncomputable def AlgebraicGeometry.lftPointsFullyFaithful (K : Type u) [Field K
 The functor of points on finitely generated algebras is fully faithful on locally-finite-type
 schemes.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L347-L353) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L347-L353) (native source range).
 
 <a id="api-635fcb987f86026a"></a>
 
@@ -2148,7 +2160,7 @@ theorem AlgebraicGeometry.lftPointsPreservesFiniteLimits (K : Type u) [Field K] 
 
 The functor of points on finitely generated algebras preserves finite limits.
 
-[Source](../SchemeProperties/FiniteTypePoints.lean#L355-L365) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/FiniteTypePoints.lean#L355-L365) (native source range).
 
 
 ## SchemeProperties.GeometricConnectedness
@@ -2164,7 +2176,7 @@ theorem connectedSpace_of_isOpenMap_of_closedPoint_fibers {X : Type u_1} {Y : Ty
 An open surjection onto a connected Jacobson space is connected when its
 closed-point fibers are connected.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L35-L75) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L35-L75) (native source range).
 
 <a id="api-71e8fff56cb6cfe0"></a>
 
@@ -2177,7 +2189,7 @@ theorem AlgebraicGeometry.connectedSpace_pullback_of_isAlgClosed {K : Type u} [F
 The fiber product of a connected scheme locally of finite type over an algebraically
 closed field with any connected scheme over that field is connected.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L129-L140) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L129-L140) (native source range).
 
 <a id="api-a2735c43e8ebffdc"></a>
 
@@ -2189,7 +2201,7 @@ noncomputable def Algebra.TensorProduct.baseChangeTensorProductEquiv (k K A B : 
 
 Base change commutes with tensor products.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L148-L155) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L148-L155) (native source range).
 
 <a id="api-1629b7c5f7a34a17"></a>
 
@@ -2201,7 +2213,7 @@ theorem PrimeSpectrum.eq_zero_or_eq_one_of_isIdempotentElem {R : Type u} [CommRi
 
 Idempotents are trivial when the prime spectrum is connected.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L171-L187) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L171-L187) (native source range).
 
 <a id="api-2cf891f03b2b49c0"></a>
 
@@ -2213,7 +2225,7 @@ theorem PrimeSpectrum.connectedSpace_tensorProduct_left_iff_of_isPurelyInseparab
 
 Purely inseparable scalar extension does not change connectedness of an affine spectrum.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L189-L197) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L189-L197) (native source range).
 
 <a id="api-4cb766a6ec4e77f5"></a>
 
@@ -2226,7 +2238,7 @@ theorem PrimeSpectrum.connectedSpace_tensorProduct_of_isAlgClosed (k A B : Type 
 Tensor products of connected finite-type algebras over an algebraically closed field have
 connected spectrum.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L199-L217) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L199-L217) (native source range).
 
 <a id="api-d9e086ff8878a8bb"></a>
 
@@ -2239,7 +2251,7 @@ theorem PrimeSpectrum.connectedSpace_tensorProduct_of_isSepClosed_of_finiteType 
 Tensor products of finite-type domains over a separably closed field have connected
 spectrum. The scalar extensions may be nonreduced when the base field is imperfect.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L219-L242) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L219-L242) (native source range).
 
 <a id="api-ea093f42942d2041"></a>
 
@@ -2252,7 +2264,7 @@ theorem PrimeSpectrum.eq_zero_or_eq_one_of_isIdempotentElem_tensorProduct_fields
 Every idempotent in the tensor product of two extension fields of a separably closed field is
 trivial. The extension fields may be arbitrary, including transcendental extensions.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L244-L284) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L244-L284) (native source range).
 
 <a id="api-9d25b170584e4c80"></a>
 
@@ -2265,7 +2277,7 @@ theorem PrimeSpectrum.connectedSpace_tensorProduct_fields (k : Type u) [Field k]
 The tensor product of any two extension fields of a separably closed field has connected
 prime spectrum. No algebraicity or finite-generation hypothesis is required.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L286-L314) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L286-L314) (native source range).
 
 <a id="api-cd04a7edb852c3ff"></a>
 
@@ -2278,7 +2290,7 @@ theorem AlgebraicGeometry.geometricallyConnected_SpecMap_of_isSepClosed (k K : T
 The spectrum of an arbitrary extension field of a separably closed field is geometrically
 connected over the base.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L324-L333) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L324-L333) (native source range).
 
 <a id="api-14a7d0504a072df0"></a>
 
@@ -2294,7 +2306,7 @@ No finite-type, reducedness, irreducibility, separation, properness, algebraicit
 rational-point hypothesis is required. The statement uses the same universe for the base field,
 its extension fields and the scheme, following mathlib's current geometric API.
 
-[Source](../SchemeProperties/GeometricConnectedness.lean#L337-L349) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GeometricConnectedness.lean#L337-L349) (native source range).
 
 
 ## SchemeProperties.GlobalSectionsBaseChange
@@ -2312,7 +2324,7 @@ The `k`-algebra structure on the global sections of a scheme over `k`.
 This is kept as an explicit definition because the structure morphism is data,
 not a typeclass parameter of the scheme.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L32-L39) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L32-L39) (native source range).
 
 <a id="api-64ad1aa8387e4e65"></a>
 
@@ -2325,7 +2337,7 @@ noncomputable def AlgebraicGeometry.Scheme.Hom.baseChangeGlobalSectionsAlgebra (
 The `K`-algebra structure on the global sections of the base change of a
 scheme along `k → K`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L41-L48) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L41-L48) (native source range).
 
 <a id="api-637864e0dac4c094"></a>
 
@@ -2342,7 +2354,7 @@ The source is oriented with the extension field on the left.  The algebra
 structures occurring in the type are the canonical structures defined by the
 structure morphism and the second pullback projection.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L101-L169) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L101-L169) (native source range).
 
 <a id="api-6b0c7fc234dca7fd"></a>
 
@@ -2355,7 +2367,7 @@ theorem AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_tmul_one (k K : T
 On the scalar generator, the base-change equivalence is the map induced by
 the projection to `Spec K`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L190-L210) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L190-L210) (native source range).
 
 <a id="api-8efb41f3078948d4"></a>
 
@@ -2368,7 +2380,7 @@ theorem AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_one_tmul (k K : T
 On the global-section generator, the base-change equivalence is the map
 induced by the projection to `X`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L212-L230) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L212-L230) (native source range).
 
 <a id="api-601b3845d5a6bc19"></a>
 
@@ -2381,7 +2393,7 @@ theorem AlgebraicGeometry.Scheme.globalSectionsBaseChangeEquiv_tmul (k K : Type 
 Formula for the canonical base-change equivalence on an arbitrary pure
 tensor.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L232-L249) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L232-L249) (native source range).
 
 <a id="api-10aa74861c5d2f73"></a>
 
@@ -2394,7 +2406,7 @@ noncomputable def AlgebraicGeometry.Scheme.baseChangeIdentityIso (k : Type u) [F
 Base change along the identity extension is canonically isomorphic to the
 original scheme.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L251-L260) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L251-L260) (native source range).
 
 <a id="api-022575ef1a51f4b9"></a>
 
@@ -2406,7 +2418,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom (k : Type u) [Field k
 
 **API note (not a source docstring):** The projection equation `AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom` identifies the forward morphism of the canonical identity-base-change isomorphism with the first pullback projection to `X`. Its input is a scheme map `p : X ⟶ Spec k` for a field `k`; the equality holds without compactness or quasi-separatedness, conditions needed elsewhere for the tensor global-sections comparison.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L262-L267) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L262-L267) (native source range).
 
 <a id="api-e36b3603ff011ebb"></a>
 
@@ -2418,7 +2430,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom_assoc (k : Type u) [F
 
 **API note (not a source docstring):** The generated reassociation theorem `AlgebraicGeometry.Scheme.baseChangeIdentityIso_hom_assoc` says that after composing with any `h : X ⟶ Z`, the forward identity-base-change isomorphism followed by `h` is the pullback's first projection followed by `h`. This `@[reassoc]` form is owned by `baseChangeIdentityIso_hom` in `GlobalSectionsBaseChange`, not an additional geometric isomorphism.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L262-L262) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L262-L262) (native source range).
 
 <a id="api-a0222b4436cdca25"></a>
 
@@ -2430,7 +2442,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst (k : Type u) [Fie
 
 **API note (not a source docstring):** The equation `AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst` says that the inverse identity-field-base-change isomorphism followed by the first pullback projection to `X` is `𝟙 X`. The scheme isomorphism is constructed because base change along `k → k` is a pullback along an isomorphism; no quasi-compactness or quasi-separatedness is needed for this projection identity.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L271-L277) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L271-L277) (native source range).
 
 <a id="api-68297503433617d5"></a>
 
@@ -2442,7 +2454,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst_assoc (k : Type u
 
 **API note (not a source docstring):** The generated reassociation theorem `AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_fst_assoc` appends a morphism `h : X ⟶ Z` to the first-projection inverse identity. The inverse identity-base-change isomorphism followed by the first projection and then `h` is simply `h`; `GlobalSectionsBaseChange` generates this from `baseChangeIdentityIso_inv_fst` for any scheme over the field `k`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L271-L271) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L271-L271) (native source range).
 
 <a id="api-4e9ca947cc66c99a"></a>
 
@@ -2454,7 +2466,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd (k : Type u) [Fie
 
 **API note (not a source docstring):** The equation `AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd` says that the inverse of the identity-field-base-change isomorphism, followed by the pullback's projection to `Spec k`, equals the original structure morphism `p : X ⟶ Spec k`. It is a projection identity for the identity pullback, not a global-sections base-change claim requiring qcqs.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L279-L291) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L279-L291) (native source range).
 
 <a id="api-224d0cab05d542fd"></a>
 
@@ -2466,7 +2478,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd_assoc (k : Type u
 
 **API note (not a source docstring):** The generated reassociation theorem `AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_snd_assoc` in `GlobalSectionsBaseChange` appends `h : Spec k ⟶ Z` to the second-projection equation. From `X`, the inverse identity-base-change isomorphism followed by the pullback's second projection and `h` is `p ≫ h`; the extension is the identity on the field `k`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L279-L279) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L279-L279) (native source range).
 
 <a id="api-fff991eaa5abf57e"></a>
 
@@ -2478,7 +2490,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_fst (k : Type 
 
 **API note (not a source docstring):** The section-level equation `AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_fst` says the inverse of the identity-base-change isomorphism sends a top-open section originally pulled from `X` along the first pullback projection back to that original section. This is the induced top-open consequence of `baseChangeIdentityIso_inv_fst`, for a scheme over a field `k` without a qcqs condition.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L293-L301) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L293-L301) (native source range).
 
 <a id="api-21c5a781d1111336"></a>
 
@@ -2490,7 +2502,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_snd (k : Type 
 
 **API note (not a source docstring):** The section-level equation `AlgebraicGeometry.Scheme.baseChangeIdentityIso_inv_appTop_snd` sends a section `x` of `Spec k` first along the identity-base-change second projection and then through the inverse scheme isomorphism; the result is `p.appTop x` on `X`. It follows from `baseChangeIdentityIso_inv_snd` and applies to an arbitrary scheme map `p : X ⟶ Spec k` with `k` a field.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L303-L311) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L303-L311) (native source range).
 
 <a id="api-2856899d971572ec"></a>
 
@@ -2502,7 +2514,7 @@ noncomputable def AlgebraicGeometry.Scheme.globalSectionsBaseChangeIdentityEquiv
 
 Transport of global sections along identity base change.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L313-L337) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L313-L337) (native source range).
 
 <a id="api-36b82553d2c54201"></a>
 
@@ -2514,7 +2526,7 @@ theorem AlgebraicGeometry.Scheme.globalSectionsBaseChangeIdentityEquiv_apply (k 
 
 **API note (not a source docstring):** The evaluation rule `AlgebraicGeometry.Scheme.globalSectionsBaseChangeIdentityEquiv_apply` says that transporting a top-open section of the identity field-base-changed scheme back to `X` uses `(baseChangeIdentityIso k p).inv.appTop`. The underlying equivalence is of `k`-algebras induced by the identity pullback isomorphism; unlike the tensor base-change theorem, this transport does not require `X` to be qcqs.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L339-L346) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L339-L346) (native source range).
 
 <a id="api-6596d781f89c53ad"></a>
 
@@ -2528,7 +2540,7 @@ The canonical global-sections equivalence for the identity field extension
 is the tensor-product left unitor after transporting along
 `baseChangeIdentityIso`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L348-L370) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L348-L370) (native source range).
 
 <a id="api-6d53ddb199d4b9a3"></a>
 
@@ -2541,7 +2553,7 @@ noncomputable def AlgebraicGeometry.Scheme.baseChangeTowerIso (k K L : Type u) [
 The canonical identification between successive base change through
 `k → K → L` and direct base change from `k` to `L`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L396-L427) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L396-L427) (native source range).
 
 <a id="api-094a757b4253588a"></a>
 
@@ -2553,7 +2565,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst (k K L : Type u) [Fi
 
 **API note (not a source docstring):** The projection identity `AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst` says the forward isomorphism between successive and direct field base change, followed by the direct first projection to `X`, equals the composition of first projections of the two successive pullbacks. It belongs to `GlobalSectionsBaseChange` and assumes compatible `k → K → L` algebra structures; no qcqs assumption occurs in this scheme-level identity.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L438-L450) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L438-L450) (native source range).
 
 <a id="api-b4fea25aeca23e46"></a>
 
@@ -2565,7 +2577,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst_assoc (k K L : Type 
 
 **API note (not a source docstring):** The generated reassociation lemma `AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_fst_assoc` appends a morphism `h : X ⟶ Z` to the equation for the forward tower isomorphism and first projections. Its left path goes through the direct `k → L` projection to `X`; the right path goes through both successive first projections to `X`, then `h`. It is generated from `baseChangeTowerIso_hom_fst` under the field scalar-tower hypotheses.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L438-L438) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L438-L438) (native source range).
 
 <a id="api-978992ba9cb93386"></a>
 
@@ -2577,7 +2589,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd (k K L : Type u) [Fi
 
 **API note (not a source docstring):** The projection identity `AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd` says the forward tower isomorphism from successive `k → K → L` base change to direct `k → L` base change, followed by the direct second projection, is the iterated pullback's final projection to `Spec L`. Only the fields, their algebra structures, `IsScalarTower`, and the original structure map are needed.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L452-L463) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L452-L463) (native source range).
 
 <a id="api-f1f15ac20fa36187"></a>
 
@@ -2589,7 +2601,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd_assoc (k K L : Type 
 
 **API note (not a source docstring):** The generated reassociation lemma `AlgebraicGeometry.Scheme.baseChangeTowerIso_hom_snd_assoc` states the `baseChangeTowerIso_hom_snd` equation after right-composition with `h : Spec L ⟶ Z`. Thus the forward isomorphism followed by the direct `Spec L` projection and `h` equals the iterated pullback's final projection and `h`; it is owned by `GlobalSectionsBaseChange` and assumes a compatible field tower.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L452-L452) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L452-L452) (native source range).
 
 <a id="api-9d3b46dc76ca8a3a"></a>
 
@@ -2601,7 +2613,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd (k K L : Type u) [Fi
 
 **API note (not a source docstring):** The equation `AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd` identifies the inverse tower isomorphism followed by the second projection of successive base change `k → K → L` with the second projection of direct base change `k → L`, both landing in `Spec L`. It uses the compatible field algebras and `IsScalarTower k K L`, not a compactness or separatedness condition on `X`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L465-L475) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L465-L475) (native source range).
 
 <a id="api-125bbc45f185dab3"></a>
 
@@ -2613,7 +2625,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd_assoc (k K L : Type 
 
 **API note (not a source docstring):** The generated reassociation lemma `AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_snd_assoc` extends `baseChangeTowerIso_inv_snd` in `GlobalSectionsBaseChange` by a morphism `h : Spec L ⟶ Z` composed on the right. Following the inverse tower isomorphism and the final iterated second projection, then `h`, agrees with the direct second projection followed by `h`; it uses the field scalar-tower assumptions.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L465-L465) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L465-L465) (native source range).
 
 <a id="api-5e723d61b7123853"></a>
 
@@ -2625,7 +2637,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst (k K L : Type u) [Fi
 
 **API note (not a source docstring):** The equation `AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst` says that the inverse of the canonical tower isomorphism, followed by the first projection from the iterated pullback and then the first `k → K` projection, equals the first projection from the direct `k → L` pullback to `X`. Its owner is the tower construction in `GlobalSectionsBaseChange`, under compatible field algebras and `IsScalarTower`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L477-L489) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L477-L489) (native source range).
 
 <a id="api-fb0c69a49011dad8"></a>
 
@@ -2637,7 +2649,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst_assoc (k K L : Type 
 
 **API note (not a source docstring):** The generated reassociation lemma `AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_fst_assoc` comes from `baseChangeTowerIso_inv_fst` in `GlobalSectionsBaseChange`. After composing both sides on the right with a morphism `h : X ⟶ Z`, the inverse tower isomorphism followed by both successive first projections agrees with the direct first projection followed by `h`; it assumes a compatible field tower, not qcqs.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L477-L477) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L477-L477) (native source range).
 
 <a id="api-74fc248581100a5f"></a>
 
@@ -2649,7 +2661,7 @@ theorem AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_appTop_fst_fst (k K L : 
 
 **API note (not a source docstring):** The simplification lemma `AlgebraicGeometry.Scheme.baseChangeTowerIso_inv_appTop_fst_fst` evaluates the inverse tower isomorphism on a global section of `X` pulled back by both first projections: it equals pullback of that section by the direct `k → L` first projection. It is the section-level form of `baseChangeTowerIso_inv_fst`, assuming compatible field algebras and `IsScalarTower k K L`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L491-L504) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L491-L504) (native source range).
 
 <a id="api-942eff84cfdb2851"></a>
 
@@ -2662,7 +2674,7 @@ noncomputable def AlgebraicGeometry.Scheme.globalSectionsBaseChangeTowerEquiv (k
 Transport of global sections along `baseChangeTowerIso`, as an
 `L`-algebra equivalence.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L506-L535) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L506-L535) (native source range).
 
 <a id="api-68a0478247a2e487"></a>
 
@@ -2674,7 +2686,7 @@ theorem AlgebraicGeometry.Scheme.globalSectionsBaseChangeTowerEquiv_apply (k K L
 
 **API note (not a source docstring):** The evaluation rule `AlgebraicGeometry.Scheme.globalSectionsBaseChangeTowerEquiv_apply` identifies the transport of a global section from successive field base change `k → K → L` to direct base change `k → L` with the map on top-open sections induced by the inverse of `baseChangeTowerIso`. The fields carry a compatible `IsScalarTower`; this transport rule itself imposes no qcqs hypothesis.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L537-L550) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L537-L550) (native source range).
 
 <a id="api-be09e74402e150e9"></a>
 
@@ -2689,7 +2701,7 @@ extensions.  The left side performs the two extensions successively; the
 right side first uses the canonical tensor cancellation and then extends
 directly from `k` to `L`.
 
-[Source](../SchemeProperties/GlobalSectionsBaseChange.lean#L552-L603) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/GlobalSectionsBaseChange.lean#L552-L603) (native source range).
 
 
 ## SchemeProperties.IdealSheafModule
@@ -2704,7 +2716,7 @@ noncomputable def AlgebraicGeometry.Scheme.IdealSheafData.toSubmodule {X : Schem
 
 An ideal sheaf as a submodule of the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L65-L95) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L65-L95) (native source range).
 
 <a id="api-c47995698d057cd6"></a>
 
@@ -2716,7 +2728,7 @@ noncomputable def AlgebraicGeometry.Scheme.IdealSheafData.toModule {X : Scheme} 
 
 The sheaf of modules underlying an ideal sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L102-L105) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L102-L105) (native source range).
 
 <a id="api-b013e8a3eecab144"></a>
 
@@ -2728,7 +2740,7 @@ noncomputable def AlgebraicGeometry.Scheme.IdealSheafData.toModuleι {X : Scheme
 
 The canonical inclusion of an ideal sheaf module into the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L107-L111) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L107-L111) (native source range).
 
 <a id="api-be081c221a863c63"></a>
 
@@ -2740,7 +2752,7 @@ instance AlgebraicGeometry.Scheme.IdealSheafData.toModuleι_mono {X : Scheme} (I
 
 The canonical inclusion of an ideal sheaf module is a monomorphism.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L113-L121) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L113-L121) (native source range).
 
 <a id="api-6855d111720cea9d"></a>
 
@@ -2752,7 +2764,7 @@ noncomputable def AlgebraicGeometry.Scheme.IdealSheafData.toModuleSubobject {X :
 
 An ideal sheaf as a subobject of the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L123-L129) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L123-L129) (native source range).
 
 <a id="api-05ece5f346be5ca1"></a>
 
@@ -2764,7 +2776,7 @@ noncomputable def AlgebraicGeometry.Scheme.IdealSheafData.affineSectionsEquiv {X
 
 On an affine open, sections of the ideal sheaf module are the specified ideal.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L132-L148) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L132-L148) (native source range).
 
 <a id="api-6e6609f669741107"></a>
 
@@ -2777,7 +2789,7 @@ theorem AlgebraicGeometry.Scheme.IdealSheafData.affineSectionsEquiv_apply {X : S
 The affine-sections equivalence is literally compatible with inclusion into
 the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L150-L156) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L150-L156) (native source range).
 
 <a id="api-372552781b67938e"></a>
 
@@ -2790,7 +2802,7 @@ theorem AlgebraicGeometry.Scheme.IdealSheafData.toModule_isLocalizedModule_basic
 Restriction of an ideal sheaf module from an affine open to a basic open is
 localization away from the section defining the basic open.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L159-L227) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L159-L227) (native source range).
 
 <a id="api-8584359b3185c0f2"></a>
 
@@ -2802,7 +2814,7 @@ theorem AlgebraicGeometry.Scheme.IdealSheafData.toModule_isQuasicoherent {X : Sc
 
 The module associated to any ideal sheaf data is quasicoherent.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L321-L380) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L321-L380) (native source range).
 
 <a id="api-66fbe13a25d9737b"></a>
 
@@ -2814,7 +2826,7 @@ noncomputable def AlgebraicGeometry.Scheme.nilradicalModule (X : Scheme) : X.Mod
 
 The nilradical ideal sheaf as a module over the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L384-L387) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L384-L387) (native source range).
 
 <a id="api-57d0c086f71c524c"></a>
 
@@ -2826,7 +2838,7 @@ noncomputable def AlgebraicGeometry.Scheme.nilradicalModuleι (X : Scheme) : X.n
 
 The inclusion of the nilradical module into the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L389-L392) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L389-L392) (native source range).
 
 <a id="api-da987c0fb151745c"></a>
 
@@ -2838,7 +2850,7 @@ noncomputable def AlgebraicGeometry.Scheme.nilradicalModuleSubobject (X : Scheme
 
 The nilradical ideal sheaf as a subobject of the structure sheaf.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L394-L398) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L394-L398) (native source range).
 
 <a id="api-1363676451c3eb79"></a>
 
@@ -2850,7 +2862,7 @@ theorem AlgebraicGeometry.Scheme.nilradicalModule_isQuasicoherent (X : Scheme) :
 
 The nilradical module is quasicoherent.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L400-L403) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L400-L403) (native source range).
 
 <a id="api-271ae3296c2b2099"></a>
 
@@ -2863,7 +2875,7 @@ noncomputable def AlgebraicGeometry.Scheme.nilradicalModuleAffineSections (X : S
 Sections of the nilradical module on an affine open are the nilradical of
 the ring of functions on that open.
 
-[Source](../SchemeProperties/IdealSheafModule.lean#L405-L410) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/IdealSheafModule.lean#L405-L410) (native source range).
 
 
 ## SchemeProperties.Integral
@@ -2879,7 +2891,7 @@ theorem Ideal.eq_of_mem_minimalPrimes_of_le_of_isDomain_atPrime {R : Type u_1} {
 Two minimal primes contained in a prime are equal when the localization at
 that prime is a domain.
 
-[Source](../SchemeProperties/Integral.lean#L25-L49) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L25-L49) (native source range).
 
 <a id="api-f9f39edeb7e66999"></a>
 
@@ -2892,7 +2904,7 @@ theorem AlgebraicGeometry.eq_irreducibleComponents_of_mem_of_isDomain_stalk (X :
 A point whose local ring is a domain lies on a unique irreducible
 component.
 
-[Source](../SchemeProperties/Integral.lean#L55-L127) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L55-L127) (native source range).
 
 <a id="api-b45adb154610679c"></a>
 
@@ -2905,7 +2917,7 @@ theorem AlgebraicGeometry.isOpen_of_mem_irreducibleComponents_of_isLocallyNoethe
 If a locally Noetherian scheme has domain local rings, then its
 irreducible components are open.
 
-[Source](../SchemeProperties/Integral.lean#L154-L178) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L154-L178) (native source range).
 
 <a id="api-3207f341141a1b01"></a>
 
@@ -2918,7 +2930,7 @@ theorem AlgebraicGeometry.irreducibleSpace_of_isLocallyNoetherian_of_connectedSp
 A connected locally Noetherian scheme with domain local rings is
 irreducible.
 
-[Source](../SchemeProperties/Integral.lean#L180-L196) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L180-L196) (native source range).
 
 <a id="api-a325dcddba1638f1"></a>
 
@@ -2931,7 +2943,7 @@ theorem AlgebraicGeometry.isIntegral_of_isLocallyNoetherian_of_connectedSpace_of
 A connected locally Noetherian scheme with domain local rings is
 integral.
 
-[Source](../SchemeProperties/Integral.lean#L198-L205) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L198-L205) (native source range).
 
 <a id="api-5a79f2f5b8cb7e8a"></a>
 
@@ -2943,7 +2955,7 @@ theorem AlgebraicGeometry.irreducibleSpace_of_isNoetherian_of_connectedSpace_of_
 
 A connected Noetherian scheme with domain local rings is irreducible.
 
-[Source](../SchemeProperties/Integral.lean#L207-L211) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L207-L211) (native source range).
 
 <a id="api-6d8c5e1d65e4a575"></a>
 
@@ -2955,7 +2967,7 @@ theorem AlgebraicGeometry.isIntegral_of_isNoetherian_of_connectedSpace_of_stalk_
 
 A connected Noetherian scheme with domain local rings is integral.
 
-[Source](../SchemeProperties/Integral.lean#L213-L217) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Integral.lean#L213-L217) (native source range).
 
 
 ## SchemeProperties.ModuleProperties
@@ -2970,7 +2982,7 @@ noncomputable instance AlgebraicGeometry.Scheme.Modules.stalkModule {X : Scheme}
 
 The stalk of a module on a scheme is a module over the scheme's stalk.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L40-L44) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L40-L44) (native source range).
 
 <a id="api-48b7bbf3909f0906"></a>
 
@@ -2983,7 +2995,7 @@ class AlgebraicGeometry.Scheme.Modules.IsTorsionFree {X : Scheme} (P : X.Modules
 A module on a scheme is torsion-free if each stalk is torsion-free over the
 corresponding stalk of the structure sheaf.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L87-L90) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L87-L90) (native source range).
 
 <a id="api-7edee59480f4bb86"></a>
 
@@ -2995,7 +3007,7 @@ constructor AlgebraicGeometry.Scheme.Modules.IsTorsionFree.mk : ∀ {X : Algebra
 
 **API note (not a source docstring):** The constructor `AlgebraicGeometry.Scheme.Modules.IsTorsionFree.mk` in `ModuleProperties` builds a stalkwise torsion-free scheme-module instance from a proof of `Module.IsTorsionFree` at every point over its structure-sheaf stalk. Its input ranges over the points of a fixed scheme `X` and an arbitrary `X.Modules` object `P`; it does not require an integral scheme or global-sections torsion-freeness.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L87-L90) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L87-L90) (native source range).
 
 <a id="api-7bb70d69d555b804"></a>
 
@@ -3007,7 +3019,7 @@ theorem AlgebraicGeometry.Scheme.Modules.IsTorsionFree.stalk {X : Scheme} {P : X
 
 **API note (not a source docstring):** The registered field `AlgebraicGeometry.Scheme.Modules.IsTorsionFree.stalk` retrieves `Module.IsTorsionFree` for `P.presheaf.stalk x` over the corresponding local ring `X.presheaf.stalk x` at every point `x`. Its owner `ModuleProperties` defines the scheme-module class stalkwise; the property is not stated for every open's section module, and no integral or quasicoherent assumption is implicit.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L90-L90) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L90-L90) (native source range).
 
 <a id="api-10415feccd871ecd"></a>
 
@@ -3019,7 +3031,7 @@ theorem AlgebraicGeometry.Scheme.Modules.IsTorsionFree.ofIso {X : Scheme} {P Q :
 
 Torsion-freeness is preserved by isomorphisms of modules on a scheme.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L94-L102) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L94-L102) (native source range).
 
 <a id="api-b36f14be6f61dac9"></a>
 
@@ -3031,7 +3043,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isTorsionFree_iff_of_iso {X : Scheme} {
 
 Isomorphic modules on a scheme are simultaneously torsion-free.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L104-L107) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L104-L107) (native source range).
 
 <a id="api-ab8cb70de4bffa15"></a>
 
@@ -3044,7 +3056,7 @@ class AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints {X : Scheme} (P :
 A module on a scheme vanishes at generic points if its stalk is zero at the
 generic point of every irreducible component.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L109-L112) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L109-L112) (native source range).
 
 <a id="api-00e65520555931d7"></a>
 
@@ -3056,7 +3068,7 @@ constructor AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.mk : ∀ {X
 
 **API note (not a source docstring):** The constructor `AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.mk` in `ModuleProperties` packages a `Subsingleton` proof for each module stalk indexed by `genericPoints X` into `VanishesAtGenericPoints P`. Its own field is the generic-point stalk condition, not vanishing of every section or every stalk; the associated module need not be quasicoherent.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L109-L112) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L109-L112) (native source range).
 
 <a id="api-7651b720e1a0cd5c"></a>
 
@@ -3068,7 +3080,7 @@ theorem AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.stalk {X : Sche
 
 **API note (not a source docstring):** The field `AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.stalk` of the class in `ModuleProperties` supplies `Subsingleton (P.presheaf.stalk x.1)` at every `x : genericPoints X`, i.e. the module stalk at each irreducible-component generic point is zero. It is registered as an instance and requires neither quasicoherence nor finiteness; it says nothing about stalks at arbitrary nongeneric points.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L112-L112) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L112-L112) (native source range).
 
 <a id="api-a2abd4df30ac5923"></a>
 
@@ -3080,7 +3092,7 @@ theorem AlgebraicGeometry.Scheme.Modules.VanishesAtGenericPoints.ofIso {X : Sche
 
 Vanishing at generic points is preserved by isomorphisms of modules.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L116-L121) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L116-L121) (native source range).
 
 <a id="api-8a8992f3c4f12bed"></a>
 
@@ -3092,7 +3104,7 @@ theorem AlgebraicGeometry.Scheme.Modules.vanishesAtGenericPoints_iff_of_iso {X :
 
 Isomorphic modules simultaneously vanish at all component generic points.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L123-L127) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L123-L127) (native source range).
 
 <a id="api-e0b8c8e670d604e3"></a>
 
@@ -3105,7 +3117,7 @@ theorem AlgebraicGeometry.Scheme.Modules.vanishesAtGenericPoints_iff_irreducible
 Generic-point vanishing can equivalently be indexed by irreducible
 components.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L129-L141) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L129-L141) (native source range).
 
 <a id="api-019a0449c7a6c0a9"></a>
 
@@ -3117,7 +3129,7 @@ instance AlgebraicGeometry.Scheme.Modules.empty_isTorsionFree {X : Scheme} [IsEm
 
 Every module on an empty scheme is torsion-free.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L143-L146) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L143-L146) (native source range).
 
 <a id="api-100b4aa3387d4dd3"></a>
 
@@ -3129,7 +3141,7 @@ instance AlgebraicGeometry.Scheme.Modules.empty_vanishesAtGenericPoints {X : Sch
 
 Every module on an empty scheme vanishes at all generic points.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L148-L151) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L148-L151) (native source range).
 
 <a id="api-14f9ad628362bfaf"></a>
 
@@ -3141,7 +3153,7 @@ instance AlgebraicGeometry.Scheme.Modules.zeroStalkSubsingleton {X : Scheme} (x 
 
 Every stalk of the zero module on a scheme is zero.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L153-L162) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L153-L162) (native source range).
 
 <a id="api-5694dcb8c147dbd2"></a>
 
@@ -3153,7 +3165,7 @@ instance AlgebraicGeometry.Scheme.Modules.zeroIsTorsionFree {X : Scheme} : IsTor
 
 The zero module on a scheme is torsion-free.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L164-L166) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L164-L166) (native source range).
 
 <a id="api-f74739007dbd9c00"></a>
 
@@ -3165,7 +3177,7 @@ instance AlgebraicGeometry.Scheme.Modules.zeroVanishesAtGenericPoints {X : Schem
 
 The zero module on a scheme vanishes at every component generic point.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L168-L171) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L168-L171) (native source range).
 
 <a id="api-b5dfe63f74131881"></a>
 
@@ -3179,7 +3191,7 @@ For a module over an integral domain, its associated module on the affine
 spectrum vanishes at the generic point exactly when the original module is
 torsion.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L173-L215) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L173-L215) (native source range).
 
 <a id="api-fb04beeb8b91eae7"></a>
 
@@ -3193,7 +3205,7 @@ For a module over an integral domain, its associated module on the affine
 spectrum vanishes at the generic point exactly when its fraction-ring base
 change is zero.
 
-[Source](../SchemeProperties/ModuleProperties.lean#L217-L225) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleProperties.lean#L217-L225) (native source range).
 
 
 ## SchemeProperties.ModuleTensor
@@ -3209,7 +3221,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.pointwiseMonoidalCategoryStru
 The pointwise monoidal tensor structure on presheaves of modules, used
 locally to define the ambient sheaf tensor product.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L34-L38) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L34-L38) (native source range).
 
 <a id="api-b274e6c533256b51"></a>
 
@@ -3222,7 +3234,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.pointwiseMonoidalCategory (X 
 The pointwise monoidal category on presheaves of modules; its instance
 scope is confined to this module.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L40-L44) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L40-L44) (native source range).
 
 <a id="api-3a240690627995fd"></a>
 
@@ -3235,7 +3247,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.pointwiseSymmetricCategory (X
 The pointwise symmetric structure on presheaves of modules, registered
 locally for the tensor bifunctor and its symmetry.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L46-L50) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L46-L50) (native source range).
 
 <a id="api-aee925729455a4db"></a>
 
@@ -3248,7 +3260,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.tensorFunctor (X : Scheme) : 
 The ambient tensor bifunctor on modules over `X`, obtained by pointwise
 presheaf tensor followed by sheafification.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L52-L65) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L52-L65) (native source range).
 
 <a id="api-3be40cb6015090de"></a>
 
@@ -3260,7 +3272,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.tensor {X : Scheme} (M N : X.
 
 The ambient tensor product of two modules on a scheme.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L74-L77) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L74-L77) (native source range).
 
 <a id="api-4d494ddc916bade1"></a>
 
@@ -3272,7 +3284,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorFunctor_obj {X : Scheme} (M N : X
 
 The tensor bifunctor evaluates to `tensor`.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L79-L81) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L79-L81) (native source range).
 
 <a id="api-8c061f4b26587b69"></a>
 
@@ -3285,7 +3297,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.tensorUnit {X : Scheme} (M N 
 The sheafification-unit morphism from the pointwise presheaf tensor to the
 underlying presheaf of the ambient tensor product.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L83-L89) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L83-L89) (native source range).
 
 <a id="api-5fe8b91ff9416af9"></a>
 
@@ -3297,7 +3309,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.tmul {X : Scheme} (M N : X.Mo
 
 The pure tensor of two sections over the same open.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L91-L96) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L91-L96) (native source range).
 
 <a id="api-4d6216248686d568"></a>
 
@@ -3309,7 +3321,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorUnit_app_tmul {X : Scheme} (M N :
 
 The pointwise sheafification unit sends an algebraic pure tensor to `tmul`.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L98-L102) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L98-L102) (native source range).
 
 <a id="api-0e7939f2c76f35b2"></a>
 
@@ -3321,7 +3333,7 @@ theorem AlgebraicGeometry.Scheme.Modules.zero_tmul {X : Scheme} (M N : X.Modules
 
 A pure tensor with zero on the left is zero.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L104-L108) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L104-L108) (native source range).
 
 <a id="api-54231bd77a066e0e"></a>
 
@@ -3333,7 +3345,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tmul_zero {X : Scheme} (M N : X.Modules
 
 A pure tensor with zero on the right is zero.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L110-L114) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L110-L114) (native source range).
 
 <a id="api-a9d03cabb4bbd3b1"></a>
 
@@ -3345,7 +3357,7 @@ theorem AlgebraicGeometry.Scheme.Modules.add_tmul {X : Scheme} (M N : X.Modules)
 
 Pure tensors are additive in the left variable.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L116-L121) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L116-L121) (native source range).
 
 <a id="api-2780bfc53db139f9"></a>
 
@@ -3357,7 +3369,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tmul_add {X : Scheme} (M N : X.Modules)
 
 Pure tensors are additive in the right variable.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L123-L128) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L123-L128) (native source range).
 
 <a id="api-da2b7a93306d5cf6"></a>
 
@@ -3369,7 +3381,7 @@ theorem AlgebraicGeometry.Scheme.Modules.smul_tmul {X : Scheme} (M N : X.Modules
 
 Scalars may be applied to the left factor of a pure tensor.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L130-L145) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L130-L145) (native source range).
 
 <a id="api-763a9bd17aaad8a2"></a>
 
@@ -3381,7 +3393,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tmul_smul {X : Scheme} (M N : X.Modules
 
 Scalars may be applied to the right factor of a pure tensor.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L147-L162) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L147-L162) (native source range).
 
 <a id="api-5d51b11d3b478307"></a>
 
@@ -3393,7 +3405,7 @@ theorem AlgebraicGeometry.Scheme.Modules.map_tmul {X : Scheme} (M N : X.Modules)
 
 Restriction of sections commutes with pure tensors.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L164-L173) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L164-L173) (native source range).
 
 <a id="api-8040b993f1ea91a5"></a>
 
@@ -3406,7 +3418,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.tensorHomEquiv {X : Scheme} (
 The sheafification universal property for the ambient tensor product, with
 the exact presheaf-morphism codomain of `sheafificationHomEquiv`.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L175-L182) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L175-L182) (native source range).
 
 <a id="api-4566c4b632b14ea0"></a>
 
@@ -3419,7 +3431,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_apply {X : Scheme} (M N 
 The Hom equivalence sends a morphism to the unit followed by its underlying
 presheaf morphism.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L184-L194) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L184-L194) (native source range).
 
 <a id="api-c3175837d07cd81d"></a>
 
@@ -3432,7 +3444,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_symm_apply_apply {X : Sc
 Applying the Hom equivalence after its inverse returns the original
 presheaf morphism.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L196-L202) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L196-L202) (native source range).
 
 <a id="api-604bbd004d72ff87"></a>
 
@@ -3445,7 +3457,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_apply_symm_apply {X : Sc
 Applying the inverse Hom equivalence after the Hom equivalence returns the
 original sheaf morphism.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L204-L209) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L204-L209) (native source range).
 
 <a id="api-b73eab73af0604f7"></a>
 
@@ -3458,7 +3470,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_app_tmul {X : Scheme} (M
 The presheaf morphism corresponding to a sheaf morphism acts on a pure
 tensor by first forming `tmul`.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L211-L219) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L211-L219) (native source range).
 
 <a id="api-c8d26faa5d9719a0"></a>
 
@@ -3471,7 +3483,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorHomEquiv_symm_app_tmul {X : Schem
 The inverse Hom equivalence acts on `tmul` by the supplied presheaf
 morphism's action on the algebraic pure tensor.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L221-L229) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L221-L229) (native source range).
 
 <a id="api-821eed53337c8bf3"></a>
 
@@ -3484,7 +3496,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorFunctor_map_app_tmul {X : Scheme}
 The tensor bifunctor applies a pair of morphisms factorwise to pure
 tensors.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L231-L266) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L231-L266) (native source range).
 
 <a id="api-f0c5f9f026d4ded2"></a>
 
@@ -3496,7 +3508,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.tensorSymm {X : Scheme} (M N 
 
 The canonical symmetry isomorphism for the ambient tensor product.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L268-L272) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L268-L272) (native source range).
 
 <a id="api-849fe575b6340c90"></a>
 
@@ -3508,7 +3520,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorSymm_hom_app_tmul {X : Scheme} (M
 
 The symmetry isomorphism exchanges the factors of a pure tensor.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L274-L314) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L274-L314) (native source range).
 
 <a id="api-51f0003c1386d8b8"></a>
 
@@ -3520,7 +3532,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorSymm_naturality {X : Scheme} {M N
 
 The symmetry is natural with respect to the tensor bifunctor.
 
-[Source](../SchemeProperties/ModuleTensor.lean#L316-L329) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensor.lean#L316-L329) (native source range).
 
 
 ## SchemeProperties.ModuleTensorAffine
@@ -3537,7 +3549,7 @@ On an affine scheme, tensoring the associated sheaves agrees naturally with
 associating a sheaf to the tensor product of modules. This compares with the
 existing sheafified presheaf tensor, for arbitrary modules and any commutative ring.
 
-[Source](../SchemeProperties/ModuleTensorAffine.lean#L706-L712) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorAffine.lean#L706-L712) (native source range).
 
 <a id="api-a5b024ca1c92b464"></a>
 
@@ -3550,7 +3562,7 @@ theorem AlgebraicGeometry.Scheme.Modules.affineTensorNatIso_inv_app_top_tmul (R 
 On global pure tensors, the inverse affine comparison is the tensor of the
 corresponding top-open sections.
 
-[Source](../SchemeProperties/ModuleTensorAffine.lean#L714-L721) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorAffine.lean#L714-L721) (native source range).
 
 
 ## SchemeProperties.ModuleTensorLocalization
@@ -3567,7 +3579,7 @@ The canonical `R`-linear localization map from `M ⊗[R] N` to the tensor of
 associated-module sections over `Γ(Spec R, D(f))`. It uses native module
 localization rather than a chosen inverse of the sheaf-tensor comparison.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L76-L88) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L76-L88) (native source range).
 
 <a id="api-1445b23fe97ead74"></a>
 
@@ -3579,7 +3591,7 @@ theorem AlgebraicGeometry.Scheme.Modules.locTensor_tmul (R : CommRingCat) (M N :
 
 **API note (not a source docstring):** The generator formula `AlgebraicGeometry.Scheme.Modules.locTensor_tmul` says `locTensor R M N f` sends `m ⊗ₜ[R] n` to the tensor, over `Γ(Spec R,D(f))`, of the canonical `tilde M` and `tilde N` sections induced by `m` and `n` on `D(f)`. The ambient map is `R`-linear; this result addresses principal-open localization of affine associated modules.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L90-L97) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L90-L97) (native source range).
 
 <a id="api-0bfc87b4ca2fc854"></a>
 
@@ -3592,7 +3604,7 @@ theorem AlgebraicGeometry.Scheme.Modules.locTensor_isLocalized (R : CommRingCat)
 The native section tensor is a localization of `M ⊗[R] N` at powers of
 `f`, establishing the universal-property uniqueness of `locTensor`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L99-L106) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L99-L106) (native source range).
 
 <a id="api-69550bf32373b33b"></a>
 
@@ -3604,7 +3616,7 @@ theorem AlgebraicGeometry.Scheme.Modules.tensorUnit_basicOpen_isIso (R : CommRin
 
 **API note (not a source docstring):** The instance-level theorem `AlgebraicGeometry.Scheme.Modules.tensorUnit_basicOpen_isIso` says the component of the sheafification tensor-unit map at `D(f)` is an isomorphism for `tilde M` and `tilde N` on `Spec R`. It obtains bijectivity via the affine tensor comparison and the localization universal property; the hypothesis is this affine associated-module situation, not arbitrary modules or arbitrary opens.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L152-L164) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L152-L164) (native source range).
 
 <a id="api-d6fb265f087d7290"></a>
 
@@ -3617,7 +3629,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.basicTensorEquiv (R : CommRin
 The canonical equivalence whose forward map **is** the actual `tensorUnit`
 component at `D(f)`, over the native section ring `Γ(Spec R, D(f))`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L166-L175) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L166-L175) (native source range).
 
 <a id="api-f6329d18b0c623a5"></a>
 
@@ -3630,7 +3642,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_tmul (R : CommRingCat)
 The forward basic-open equivalence sends pure section tensors by the
 actual `tensorUnit` component, not by an independently chosen comparison.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L177-L187) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L177-L187) (native source range).
 
 <a id="api-e83c2f29ff50aa45"></a>
 
@@ -3643,7 +3655,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.topTensorEquiv (R : CommRingC
 The global affine tensor comparison, followed by the inverse of the actual
 top-open `tilde.isoTop`; this takes sheaf-tensor sections to `M ⊗[R] N`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L189-L194) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L189-L194) (native source range).
 
 <a id="api-9b8a2211fb5354aa"></a>
 
@@ -3656,7 +3668,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.resTop (R : CommRingCat) (M N
 Restriction of sheaf-tensor sections from `⊤` to `D(f)`, made `R`-linear
 using the native `R`-action and `map_smul_Spec`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L196-L204) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L196-L204) (native source range).
 
 <a id="api-3b5df10daa77e8c6"></a>
 
@@ -3668,7 +3680,7 @@ theorem AlgebraicGeometry.Scheme.Modules.topTensorEquiv_symm_tmul (R : CommRingC
 
 **API note (not a source docstring):** The generator formula `AlgebraicGeometry.Scheme.Modules.topTensorEquiv_symm_tmul` sends `m ⊗ₜ[R] n` through the inverse global affine equivalence `topTensorEquiv R M N` to the top-open pure section tensor of `tilde M` and `tilde N`. The proof uses the affine `tilde` tensor isomorphism on `Spec R`; it does not extend the formula to modules on an unrelated scheme.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L206-L210) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L206-L210) (native source range).
 
 <a id="api-223a86e742dd8946"></a>
 
@@ -3680,7 +3692,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_locTensor (R : CommRin
 
 **API note (not a source docstring):** The compatibility equation `AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_locTensor` evaluates the basic-open tensor equivalence on `locTensor` of a pure `R`-tensor `m ⊗ n`. It yields the native pure sheaf-tensor section on `D(f)` formed from `(tilde.toOpen M D(f)) m` and `(tilde.toOpen N D(f)) n`. This is specific to associated modules over the affine spectrum and its principal open.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L212-L217) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L212-L217) (native source range).
 
 <a id="api-222e5d010a2d2a5a"></a>
 
@@ -3694,7 +3706,7 @@ Equality of **actual** `R`-linear maps: inverse tensor-unit equivalence
 after top-to-`D(f)` restriction equals native module localization after the
 accepted top-open affine comparison.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L240-L252) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L240-L252) (native source range).
 
 <a id="api-150db665d3404b2b"></a>
 
@@ -3707,7 +3719,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.sectionTensorRes (R : CommRin
 Tensor restriction from `V` to `U` is semilinear along the actual
 structure-sheaf map `Γ(Spec R, V) → Γ(Spec R, U)`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L254-L262) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L254-L262) (native source range).
 
 <a id="api-91385b8535a42e7d"></a>
 
@@ -3719,7 +3731,7 @@ theorem AlgebraicGeometry.Scheme.Modules.sectionTensorRes_tmul (R : CommRingCat)
 
 **API note (not a source docstring):** The generator rule `AlgebraicGeometry.Scheme.Modules.sectionTensorRes_tmul` for an inclusion `U ⊆ V` of affine-spectrum opens sends the pure tensor of sections `m ⊗ n` over `Γ(Spec R,V)` to the tensor of their separate restrictions over `Γ(Spec R,U)`. Its map is semilinear along the actual structure-sheaf restriction, and the formula concerns the tensor of sections, not an arbitrary-open sheaf-tensor equivalence.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L264-L268) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L264-L268) (native source range).
 
 <a id="api-b5b98464632131e5"></a>
 
@@ -3732,7 +3744,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_restriction (R : CommR
 The actual tensor-unit equivalence commutes with *every* inclusion
 `D(g) ≤ D(f)`, not only multiplication or divisibility inclusions.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L270-L279) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L270-L279) (native source range).
 
 <a id="api-5ec783b0c22dadbf"></a>
 
@@ -3744,7 +3756,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_symm_restriction (R : 
 
 **API note (not a source docstring):** For an inclusion `D(g) ⊆ D(f)` and a tensor-sheaf section on `D(f)`, `AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_symm_restriction` says applying the inverse basic-open comparison after sheaf restriction equals first applying the inverse comparison on `D(f)` and then semilinearly restricting the tensor of associated-module sections. It is the inverse counterpart of naturality of `tensorUnit` on principal opens.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L281-L289) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L281-L289) (native source range).
 
 <a id="api-fd95c33486babc28"></a>
 
@@ -3756,7 +3768,7 @@ theorem AlgebraicGeometry.Scheme.Modules.sectionTensorRes_id (R : CommRingCat) (
 
 **API note (not a source docstring):** The identity law `AlgebraicGeometry.Scheme.Modules.sectionTensorRes_id` says semilinear restriction of a tensor of `tilde M,tilde N` sections along the identity of any open `U` of `Spec R` fixes every tensor section. Its source owner `ModuleTensorLocalization` defines `sectionTensorRes` using the pointwise tensor presheaf; this law does not identify that presheaf with a tensor sheaf on every open.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L291-L296) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L291-L296) (native source range).
 
 <a id="api-a5d081774712d73d"></a>
 
@@ -3768,7 +3780,7 @@ theorem AlgebraicGeometry.Scheme.Modules.sectionTensorRes_comp (R : CommRingCat)
 
 **API note (not a source docstring):** For composable inclusions of opens `U → V → W` in `Spec R`, `AlgebraicGeometry.Scheme.Modules.sectionTensorRes_comp` equates restriction of a tensor of associated-module sections from `W` directly to `U` with restriction via `V`. This is functoriality of the semilinear tensor-section restriction map on arbitrary opens; it is not a claim that `basicTensorEquiv` exists on all such opens.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L298-L304) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L298-L304) (native source range).
 
 <a id="api-da8fef5ec568cee4"></a>
 
@@ -3780,7 +3792,7 @@ theorem AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor (R : CommRin
 
 **API note (not a source docstring):** The pure-tensor rule `AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor` says that restricting `locTensor R M N f (m ⊗ₜ[R] n)` from `D(f)` to an included `D(g)` agrees with localizing the same pure tensor directly at `g`. It relies on the natural restriction maps for `tilde M` and `tilde N` and does not require divisibility of `f` and `g` beyond the specified open inclusion.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L306-L319) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L306-L319) (native source range).
 
 <a id="api-f62048ae4ea7a318"></a>
 
@@ -3792,7 +3804,7 @@ theorem AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor_apply (R : C
 
 **API note (not a source docstring):** For every `x : M ⊗[R] N` and inclusion `D(g) ⊆ D(f)`, `AlgebraicGeometry.Scheme.Modules.sectionTensorRes_locTensor_apply` says restricting `locTensor R M N f x` along that inclusion gives `locTensor R M N g x`. This extends the earlier pure-tensor rule by tensor-product induction, with the tensor of sections taken over each principal open's own structure-sheaf ring.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L321-L327) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L321-L327) (native source range).
 
 <a id="api-0502c21dfbdc9fdf"></a>
 
@@ -3804,7 +3816,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_restriction_square (R 
 
 **API note (not a source docstring):** The map equality `AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_restriction_square` states that for any inclusion `D(g) ⊆ D(f)`, restricting a tensor-sheaf section and then applying `basicTensorEquiv g` backward equals first applying `basicTensorEquiv f` backward and then the semilinear `sectionTensorRes`. The two composites have their native section-ring scalar map; it is the inverse-comparison square for these principal opens.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L329-L336) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L329-L336) (native source range).
 
 <a id="api-6ab699bdac444812"></a>
 
@@ -3816,7 +3828,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_product_paths (R : Com
 
 **API note (not a source docstring):** The compatibility rule `AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_product_paths` starts with a top-open tensor-sheaf section, restricts separately to `D(f)` and `D(g)`, applies the inverse basic tensor comparisons, and then restricts both results to `D(fg)`; the resulting native section tensors agree. It uses the two principal-open inclusions and naturality, not an equivalence on arbitrary opens.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L338-L352) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L338-L352) (native source range).
 
 <a id="api-2c3ab6444c06b645"></a>
 
@@ -3828,7 +3840,7 @@ theorem AlgebraicGeometry.Scheme.Modules.basicTensorEquiv_naturality (R : CommRi
 
 The canonical basic-open comparison is natural in both module maps.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L354-L369) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L354-L369) (native source range).
 
 <a id="api-6689c4787ecfc9af"></a>
 
@@ -3842,7 +3854,7 @@ Canonical equivalence from the localized module over `Localization.Away f`
 to native sections on `D(f)`. It is semilinear over the native
 `IsLocalization.algEquiv` from `Away f` to `Γ(Spec R, D(f))`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L406-L443) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L406-L443) (native source range).
 
 <a id="api-67a719b8ec6c8e10"></a>
 
@@ -3854,7 +3866,7 @@ theorem AlgebraicGeometry.Scheme.Modules.awayModuleEquiv_mk (R : CommRingCat) (L
 
 **API note (not a source docstring):** For an `R`-module `L`, `AlgebraicGeometry.Scheme.Modules.awayModuleEquiv_mk` evaluates the semilinear equivalence from `L` localized at powers of `f` to sections of `tilde L` on `D(f)` at `LocalizedModule.mk m 1`. The image is the canonical section `(tilde.toOpen L D(f)).hom m`, with scalars transported from `Localization.Away f` to the native section ring.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L445-L449) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L445-L449) (native source range).
 
 <a id="api-f316ca4122898162"></a>
 
@@ -3868,7 +3880,7 @@ The semilinear comparison from the tensor of explicit localized modules
 over `Localization.Away f` to the tensor of native sections over
 `Γ(Spec R, D(f))`, along the native `IsLocalization.algEquiv`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L451-L479) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L451-L479) (native source range).
 
 <a id="api-a5436d1ce7c6a564"></a>
 
@@ -3880,7 +3892,7 @@ theorem AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_mk_tmul (R : CommRingCa
 
 **API note (not a source docstring):** Under the semilinear `awayTensorEquiv` comparing explicit `Away f` tensors to tensors of associated-module sections on `D(f)`, `AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_mk_tmul` sends `mk m 1 ⊗ mk n 1` to `locTensor R M N f (m ⊗ₜ[R] n)`. The proof uses the `awayModuleEquiv_mk` and `locTensor_tmul` generator formulas over the affine spectrum of `R`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L481-L487) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L481-L487) (native source range).
 
 <a id="api-b368adcaf53912a5"></a>
 
@@ -3894,7 +3906,7 @@ Canonical `R`-linear tensor localization in the explicit `Away f`
 presentation, built from native `LocalizedModule.mkLinearMap` and
 `IsLocalization.moduleTensorEquiv`, independently of the restriction square.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L489-L501) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L489-L501) (native source range).
 
 <a id="api-429b2f1a7ff7e856"></a>
 
@@ -3906,7 +3918,7 @@ theorem AlgebraicGeometry.Scheme.Modules.awayLocTensor_tmul (R : CommRingCat) (M
 
 **API note (not a source docstring):** The generator rule `AlgebraicGeometry.Scheme.Modules.awayLocTensor_tmul` maps `m ⊗ₜ[R] n` under the canonical `R`-linear localization to `LocalizedModule.mk m 1 ⊗ₜ[Localization.Away f] LocalizedModule.mk n 1`. Its owner `ModuleTensorLocalization` uses the explicit away-localization of the two modules on the principal open `D(f)`; it is not a formula for arbitrary sheaf modules on an arbitrary scheme.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L503-L505) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L503-L505) (native source range).
 
 <a id="api-f407285ed032b996"></a>
 
@@ -3919,7 +3931,7 @@ theorem AlgebraicGeometry.Scheme.Modules.awayLocTensor_isLocalized (R : CommRing
 The explicit Away tensor localization has the native module-localization
 universal property, in addition to its pure-tensor generator law.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L507-L514) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L507-L514) (native source range).
 
 <a id="api-08fd41f1c3d0e6ac"></a>
 
@@ -3931,7 +3943,7 @@ theorem AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_awayLocTensor (R : Comm
 
 **API note (not a source docstring):** The equation `AlgebraicGeometry.Scheme.Modules.awayTensorEquiv_awayLocTensor` says that localizing any `x : M ⊗[R] N` into the explicit `Away f` tensor and then applying `awayTensorEquiv` equals the native-section localization `locTensor R M N f x`. In `ModuleTensorLocalization` it extends the pure-tensor generator equation additively; the native section ring is `Γ(Spec R, D(f))`.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L516-L520) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L516-L520) (native source range).
 
 <a id="api-e8c7f5d3fd67e4fa"></a>
 
@@ -3943,7 +3955,7 @@ theorem AlgebraicGeometry.Scheme.Modules.away_actual_restriction_square (R : Com
 
 **API note (not a source docstring):** For a top-open section `x` of the tensor sheaf associated to `M,N` on `Spec R`, `AlgebraicGeometry.Scheme.Modules.away_actual_restriction_square` identifies two paths to a tensor over `Localization.Away f`: first restrict to `D(f)` and invert the native basic-open tensor comparison, then apply `awayTensorEquiv.symm`; or first use `topTensorEquiv` and then `awayLocTensor`. This square concerns a principal affine open, not arbitrary scheme opens.
 
-[Source](../SchemeProperties/ModuleTensorLocalization.lean#L522-L529) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L522-L529) (native source range).
 
 
 ## SchemeProperties.ModuleTensorRestriction
@@ -3959,7 +3971,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.restrictTensorNatIso {X Y : S
 Restriction along an open immersion commutes with the ambient module tensor,
 naturally in both module arguments.
 
-[Source](../SchemeProperties/ModuleTensorRestriction.lean#L412-L417) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorRestriction.lean#L412-L417) (native source range).
 
 <a id="api-fc660dd17ca5f361"></a>
 
@@ -3973,7 +3985,7 @@ The inverse tensor-restriction comparison sends a pure tensor to the
 restricted pure tensor, with section and scalar identifications explicit.
 This is its compatibility with the ambient tensor's sheafification unit.
 
-[Source](../SchemeProperties/ModuleTensorRestriction.lean#L419-L429) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorRestriction.lean#L419-L429) (native source range).
 
 
 ## SchemeProperties.NoetherianComponents
@@ -3988,7 +4000,7 @@ theorem NoetherianSpace.isOpen_connectedComponent {X : Type u} [TopologicalSpace
 
 Connected components of a Noetherian space are open.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L38-L64) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L38-L64) (native source range).
 
 <a id="api-de8b55c2ed14e619"></a>
 
@@ -4001,7 +4013,7 @@ theorem isIrreducible_connectedComponent_of_closedPoints_homogeneous {X : Type u
 Every connected component of a closed-point homogeneous Noetherian Jacobson
 space is irreducible.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L66-L140) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L66-L140) (native source range).
 
 <a id="api-fa72d6ee93e52ea8"></a>
 
@@ -4013,7 +4025,7 @@ instance NoetherianSpace.toLocallyConnectedSpace {X : Type u} [TopologicalSpace 
 
 Every Noetherian topological space is locally connected.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L142-L149) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L142-L149) (native source range).
 
 <a id="api-33acea4533caaab5"></a>
 
@@ -4025,7 +4037,7 @@ instance AlgebraicGeometry.Scheme.connectedComponentOpen.connectedSpace (X : Sch
 
 A connected-component open subscheme of a Noetherian scheme is connected.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L153-L162) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L153-L162) (native source range).
 
 <a id="api-02fdfc9788334ef9"></a>
 
@@ -4037,7 +4049,7 @@ instance AlgebraicGeometry.Scheme.connectedComponentOpen.isNoetherian (X : Schem
 
 A connected-component open subscheme of a Noetherian scheme is Noetherian.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L164-L172) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L164-L172) (native source range).
 
 <a id="api-a644d3c7120638b0"></a>
 
@@ -4049,7 +4061,7 @@ def AlgebraicGeometry.Scheme.connectedComponentOpenCover (X : Scheme) [IsNoether
 
 The open cover of a Noetherian scheme by its connected components.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L174-L184) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L174-L184) (native source range).
 
 <a id="api-212d9350ffe801a5"></a>
 
@@ -4062,7 +4074,7 @@ theorem AlgebraicGeometry.IsNormal.iff_connectedComponentOpen (X : Scheme) [IsNo
 A Noetherian scheme is normal if and only if all its connected-component
 open subschemes are normal.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L186-L199) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L186-L199) (native source range).
 
 <a id="api-f9a347c03f004fd1"></a>
 
@@ -4074,7 +4086,7 @@ instance AlgebraicGeometry.Scheme.connectedComponentOpen.isIntegral (X : Scheme)
 
 Every connected component of a normal Noetherian scheme is integral.
 
-[Source](../SchemeProperties/NoetherianComponents.lean#L201-L205) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NoetherianComponents.lean#L201-L205) (native source range).
 
 
 ## SchemeProperties.Normal
@@ -4090,7 +4102,7 @@ theorem IsLocalization.AtPrime.isDomain_of_le {R : Type u} (S : Type v) (T : Typ
 Let `S` and `T` be localizations of `R` at prime ideals `q` and `p`
 respectively. If `p ≤ q` and `S` is a domain, then `T` is a domain.
 
-[Source](../SchemeProperties/Normal.lean#L25-L54) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L25-L54) (native source range).
 
 <a id="api-cc8d160cdf339a5d"></a>
 
@@ -4104,7 +4116,7 @@ Let `S` and `T` be localizations of `R` at prime ideals `q` and `p`
 respectively. If `p ≤ q` and `S` is an integrally closed domain, then `T` is
 integrally closed.
 
-[Source](../SchemeProperties/Normal.lean#L56-L86) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L56-L86) (native source range).
 
 <a id="api-ca0e0011509ab912"></a>
 
@@ -4118,7 +4130,7 @@ A commutative ring is locally normal if every localization at a prime ideal
 is a domain and integrally closed. Unlike the conjunction of `IsDomain` and
 `IsIntegrallyClosed`, this interface also accommodates disconnected rings.
 
-[Source](../SchemeProperties/Normal.lean#L90-L96) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L90-L96) (native source range).
 
 <a id="api-f785d154b0e9d022"></a>
 
@@ -4130,7 +4142,7 @@ constructor IsLocallyNormalRing.mk : ∀ {R : Type u} [inst : CommRing R], (∀ 
 
 **API note (not a source docstring):** The constructor `IsLocallyNormalRing.mk` in `Normal` assembles local normality of a commutative ring from two per-prime proofs: each `Localization.AtPrime p.asIdeal` is a domain and is integrally closed. Because it quantifies over prime localizations rather than requiring `IsDomain R`, it accommodates disconnected rings; the corresponding scheme statement is `IsNormal (Spec R)`.
 
-[Source](../SchemeProperties/Normal.lean#L90-L96) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L90-L96) (native source range).
 
 <a id="api-e12ee61e96d82cb9"></a>
 
@@ -4142,7 +4154,7 @@ theorem IsLocallyNormalRing.isDomain_atPrime {R : Type u} {inst✝ : CommRing R}
 
 **API note (not a source docstring):** The field `IsLocallyNormalRing.isDomain_atPrime` in `Normal` gives an integral-domain instance for the localization of a fixed commutative ring `R` at each prime-spectrum point `p`. The companion field requires integral closedness of each localization; the pointwise condition permits a disconnected original ring and is not a global `IsDomain R` assertion.
 
-[Source](../SchemeProperties/Normal.lean#L94-L94) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L94-L94) (native source range).
 
 <a id="api-e8dc80aa2290ff19"></a>
 
@@ -4154,7 +4166,7 @@ theorem IsLocallyNormalRing.isIntegrallyClosed_atPrime {R : Type u} {inst✝ : C
 
 **API note (not a source docstring):** The field `IsLocallyNormalRing.isIntegrallyClosed_atPrime` in `Normal` supplies an integrally closed localization `Localization.AtPrime p.asIdeal` for each `p : PrimeSpectrum R` of the fixed commutative ring `R`. The class also requires that each localization be a domain; this field does not by itself make a disconnected `R` an integrally closed domain.
 
-[Source](../SchemeProperties/Normal.lean#L95-L95) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L95-L95) (native source range).
 
 <a id="api-5d3d6c89e308e90c"></a>
 
@@ -4166,7 +4178,7 @@ instance isLocallyNormalRing_of_isDomain (R : Type u) [CommRing R] [IsDomain R] 
 
 An integrally closed domain is locally normal.
 
-[Source](../SchemeProperties/Normal.lean#L101-L107) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L101-L107) (native source range).
 
 <a id="api-e8ea9142c28f68e2"></a>
 
@@ -4178,7 +4190,7 @@ theorem IsLocallyNormalRing.of_ringEquiv {R : Type u} {S : Type v} [CommRing R] 
 
 Local normality is preserved by ring equivalences.
 
-[Source](../SchemeProperties/Normal.lean#L109-L125) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L109-L125) (native source range).
 
 <a id="api-15d1371f2e27f45a"></a>
 
@@ -4190,7 +4202,7 @@ class AlgebraicGeometry.IsNormal (X : Scheme) : Prop
 
 A scheme is normal if every local ring is a domain and integrally closed.
 
-[Source](../SchemeProperties/Normal.lean#L131-L135) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L131-L135) (native source range).
 
 <a id="api-0f1e42fbc10c9ac1"></a>
 
@@ -4202,7 +4214,7 @@ constructor AlgebraicGeometry.IsNormal.mk : ∀ {X : AlgebraicGeometry.Scheme}, 
 
 **API note (not a source docstring):** The constructor `AlgebraicGeometry.IsNormal.mk` in `Normal` packages two indexed families into normality of a scheme `X`: every structure-sheaf stalk is a domain and every such stalk is integrally closed. No global irreducibility or connectedness requirement appears, so the conditions must be understood pointwise, including the vacuous empty-scheme case.
 
-[Source](../SchemeProperties/Normal.lean#L131-L135) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L131-L135) (native source range).
 
 <a id="api-3a5577388941cd2a"></a>
 
@@ -4214,7 +4226,7 @@ theorem AlgebraicGeometry.IsNormal.stalk_isDomain {X : Scheme} [self : IsNormal 
 
 **API note (not a source docstring):** The registered field `AlgebraicGeometry.IsNormal.stalk_isDomain` of the `IsNormal X` class in `Normal` provides an integral-domain structure on the structure-sheaf stalk at every point `x : X`. Scheme normality also requires integrally closed stalks via its other field; this result is local to each point rather than a global-domain conclusion for a possibly disconnected scheme.
 
-[Source](../SchemeProperties/Normal.lean#L133-L133) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L133-L133) (native source range).
 
 <a id="api-6510d7eb92d5bfd8"></a>
 
@@ -4226,7 +4238,7 @@ theorem AlgebraicGeometry.IsNormal.stalk_isIntegrallyClosed {X : Scheme} [self :
 
 **API note (not a source docstring):** The registered field `AlgebraicGeometry.IsNormal.stalk_isIntegrallyClosed` of the `IsNormal X` class in `Normal` supplies integral closedness of `X.presheaf.stalk x` at each scheme point `x`. The companion field supplies that same stalk's domain condition; one must not read this field alone as asserting that `Γ(X, ⊤)` is an integrally closed domain.
 
-[Source](../SchemeProperties/Normal.lean#L134-L134) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L134-L134) (native source range).
 
 <a id="api-862b0663b5487542"></a>
 
@@ -4238,7 +4250,7 @@ theorem AlgebraicGeometry.isNormal_of_stalk (X : Scheme) [∀ (x : ↥X), IsDoma
 
 Normality can be proved directly on all stalks.
 
-[Source](../SchemeProperties/Normal.lean#L139-L143) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L139-L143) (native source range).
 
 <a id="api-95114a078cdf1a8f"></a>
 
@@ -4250,7 +4262,7 @@ theorem AlgebraicGeometry.isNormal_of_isOpenImmersion {X Y : Scheme} (f : X ⟶ 
 
 Normality is preserved by open immersions.
 
-[Source](../SchemeProperties/Normal.lean#L145-L153) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L145-L153) (native source range).
 
 <a id="api-ad3e3580870e5972"></a>
 
@@ -4262,7 +4274,7 @@ instance AlgebraicGeometry.instIsNormalToScheme {X : Scheme} {U : X.Opens} [IsNo
 
 **API note (not a source docstring):** The generated open-subscheme instance `AlgebraicGeometry.instIsNormalToScheme` in `Normal` inherits `IsNormal U` for a chosen open `U : X.Opens` from `IsNormal X`. It invokes `isNormal_of_isOpenImmersion` for the canonical inclusion `U.ι`, whose stalk maps are isomorphisms. It does not assert normality of closed subschemes.
 
-[Source](../SchemeProperties/Normal.lean#L155-L156) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L155-L156) (native source range).
 
 <a id="api-7146027550098ba9"></a>
 
@@ -4274,7 +4286,7 @@ instance AlgebraicGeometry.instIsNormalXScheme (X : Scheme) {𝒰 : X.OpenCover}
 
 **API note (not a source docstring):** The generated instance `AlgebraicGeometry.instIsNormalXScheme` gives `IsNormal (𝒰.X i)` to each member of an open cover `𝒰` of a normal scheme `X`. The source owner `Normal` applies stalkwise preservation along the member's open immersion into `X`; normality need not descend along an arbitrary scheme morphism.
 
-[Source](../SchemeProperties/Normal.lean#L158-L159) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L158-L159) (native source range).
 
 <a id="api-0803ef1870a8cf7d"></a>
 
@@ -4286,7 +4298,7 @@ instance AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsNormal : Categor
 
 **API note (not a source docstring):** The object-property instance `AlgebraicGeometry.instIsClosedUnderIsomorphismsSchemeIsNormal` in `Normal` says normality of schemes is invariant under scheme isomorphisms. It uses preservation under open immersions applied to the inverse isomorphism, transferring both the domain and integrally-closed conditions on corresponding stalks; it is not an assertion about all morphisms.
 
-[Source](../SchemeProperties/Normal.lean#L161-L162) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L161-L162) (native source range).
 
 <a id="api-9a037bfdc6a1db80"></a>
 
@@ -4298,7 +4310,7 @@ theorem AlgebraicGeometry.IsNormal.of_openCover (X : Scheme) (𝒰 : X.OpenCover
 
 Normality is local on an open cover.
 
-[Source](../SchemeProperties/Normal.lean#L164-L174) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L164-L174) (native source range).
 
 <a id="api-13728f133fe848f1"></a>
 
@@ -4310,7 +4322,7 @@ theorem AlgebraicGeometry.IsNormal.iff_of_openCover (X : Scheme) (𝒰 : X.OpenC
 
 **API note (not a source docstring):** For any open cover `𝒰` of `X`, `AlgebraicGeometry.IsNormal.iff_of_openCover` says `X` is normal precisely when every open-cover member is normal. Its source `Normal` defines scheme normality by integral-domain and integrally-closed stalks; these transfer through the cover's open immersions. It adds no finite-cover condition and does not equate normality with global integrally closedness of disconnected rings.
 
-[Source](../SchemeProperties/Normal.lean#L176-L178) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L176-L178) (native source range).
 
 <a id="api-205641b9cb2e599f"></a>
 
@@ -4322,7 +4334,7 @@ instance AlgebraicGeometry.normalSpec {R : CommRingCat} [IsLocallyNormalRing ↑
 
 **API note (not a source docstring):** The instance `AlgebraicGeometry.normalSpec` in `Normal` proves `IsNormal (Spec R)` from `IsLocallyNormalRing R`, meaning that every prime localization of the commutative ring is a domain and integrally closed. It transfers those two properties across the canonical stalk isomorphism. The ring `R` itself need not be globally an integral domain; locally normal disconnected rings are allowed.
 
-[Source](../SchemeProperties/Normal.lean#L181-L192) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L181-L192) (native source range).
 
 <a id="api-81b0934edf4c4d2d"></a>
 
@@ -4336,7 +4348,7 @@ If an affine spectrum is normal, then its coordinate ring is locally
 normal. This is deliberately a theorem rather than an instance, to avoid a
 typeclass loop with `normalSpec`.
 
-[Source](../SchemeProperties/Normal.lean#L194-L208) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L194-L208) (native source range).
 
 <a id="api-5749b1ea38be65d9"></a>
 
@@ -4349,7 +4361,7 @@ theorem AlgebraicGeometry.isNormal_spec_iff_isLocallyNormalRing (R : CommRingCat
 A commutative ring is locally normal exactly when its affine spectrum is a
 normal scheme.
 
-[Source](../SchemeProperties/Normal.lean#L210-L220) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L210-L220) (native source range).
 
 <a id="api-0aa925c3138f8d8d"></a>
 
@@ -4361,7 +4373,7 @@ instance AlgebraicGeometry.isReduced_of_isNormal (X : Scheme) [IsNormal X] : IsR
 
 **API note (not a source docstring):** The instance `AlgebraicGeometry.isReduced_of_isNormal` in `Normal` makes a normal scheme reduced: normality supplies integral-domain, integrally-closed local rings at every point, and reducedness is checked stalkwise. This is the one-way implication for `IsNormal X` and does not assert that every reduced scheme is normal.
 
-[Source](../SchemeProperties/Normal.lean#L222-L223) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L222-L223) (native source range).
 
 <a id="api-358bd9c990fe67b0"></a>
 
@@ -4373,7 +4385,7 @@ theorem AlgebraicGeometry.isDomain_stalk_of_specializes (X : Scheme) {x y : ↥X
 
 Being a domain is preserved from a scheme stalk to a generalization.
 
-[Source](../SchemeProperties/Normal.lean#L225-L252) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L225-L252) (native source range).
 
 <a id="api-dde205a6c1f6461e"></a>
 
@@ -4386,7 +4398,7 @@ theorem AlgebraicGeometry.isIntegrallyClosed_stalk_of_specializes (X : Scheme) {
 Integral closedness is preserved from a scheme stalk to a
 generalization.
 
-[Source](../SchemeProperties/Normal.lean#L254-L283) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Normal.lean#L254-L283) (native source range).
 
 
 ## SchemeProperties.NormalEtale
@@ -4401,7 +4413,7 @@ theorem IsLocallyNormalRing.pi {I : Type u_1} (S : I → Type u_2) [(i : I) → 
 
 A finite product of locally normal rings is locally normal.
 
-[Source](../SchemeProperties/NormalEtale.lean#L190-L214) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalEtale.lean#L190-L214) (native source range).
 
 <a id="api-0fc411e5ee034a33"></a>
 
@@ -4414,7 +4426,7 @@ theorem IsLocallyNormalRing.of_finiteEtale_of_isDomain {R : Type u_1} {S : Type 
 A finite etale algebra over an integrally closed domain is locally normal.
 The algebra itself may be disconnected.
 
-[Source](../SchemeProperties/NormalEtale.lean#L233-L273) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalEtale.lean#L233-L273) (native source range).
 
 <a id="api-4cd1c14aabd626d2"></a>
 
@@ -4426,7 +4438,7 @@ theorem IsLocallyNormalRing.of_finiteEtale {R : Type u} {S : Type v} [CommRing R
 
 A finite etale algebra over a locally normal ring is locally normal.
 
-[Source](../SchemeProperties/NormalEtale.lean#L275-L330) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalEtale.lean#L275-L330) (native source range).
 
 
 ## SchemeProperties.NormalLocalization
@@ -4441,7 +4453,7 @@ theorem IsLocallyNormalRing.of_isLocalization {R : Type u} [CommRing R] (M : Sub
 
 Any localization of a locally normal ring is locally normal.
 
-[Source](../SchemeProperties/NormalLocalization.lean#L19-L45) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalLocalization.lean#L19-L45) (native source range).
 
 <a id="api-74c0f5bc3fdb18a1"></a>
 
@@ -4454,7 +4466,7 @@ instance Localization.isLocallyNormalRing {R : Type u} [CommRing R] [IsLocallyNo
 The canonical localization at any submonoid of a locally normal ring is
 locally normal.
 
-[Source](../SchemeProperties/NormalLocalization.lean#L47-L52) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalLocalization.lean#L47-L52) (native source range).
 
 
 ## SchemeProperties.NormalPolynomial
@@ -4469,7 +4481,7 @@ instance Polynomial.isLocallyNormalRing_of_isLocallyNormalRing {R : Type u} [Com
 
 A polynomial ring over a locally normal ring is locally normal.
 
-[Source](../SchemeProperties/NormalPolynomial.lean#L24-L82) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalPolynomial.lean#L24-L82) (native source range).
 
 <a id="api-754713169858d4d8"></a>
 
@@ -4482,7 +4494,7 @@ instance MvPolynomial.isLocallyNormalRing_of_isLocallyNormalRing {R : Type u} [C
 A multivariate polynomial ring in finitely many variables over a locally
 normal ring is locally normal.
 
-[Source](../SchemeProperties/NormalPolynomial.lean#L84-L96) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalPolynomial.lean#L84-L96) (native source range).
 
 
 ## SchemeProperties.NormalSeparable
@@ -4497,7 +4509,7 @@ theorem IsLocallyNormalRing.of_directed_iSup {R : Type u_1} [CommRing R] {ι : T
 
 A nonempty directed supremum of flat locally normal subrings is locally normal.
 
-[Source](../SchemeProperties/NormalSeparable.lean#L246-L260) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalSeparable.lean#L246-L260) (native source range).
 
 <a id="api-920bf7dcf6528bc2"></a>
 
@@ -4510,7 +4522,7 @@ theorem IsLocallyNormalRing.tensorProduct_of_isSeparablyGenerated {k : Type u_1}
 Tensoring a locally normal algebra with an essentially finite-type,
 separably generated field extension preserves local normality.
 
-[Source](../SchemeProperties/NormalSeparable.lean#L366-L460) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalSeparable.lean#L366-L460) (native source range).
 
 <a id="api-8788fc42eb25e6b0"></a>
 
@@ -4523,7 +4535,7 @@ theorem IsLocallyNormalRing.tensorProduct_of_isTranscendentalSeparable {k : Type
 Tensoring a locally normal algebra with a transcendental-separable field
 extension preserves local normality.
 
-[Source](../SchemeProperties/NormalSeparable.lean#L462-L498) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalSeparable.lean#L462-L498) (native source range).
 
 
 ## SchemeProperties.NormalSeparableScheme
@@ -4539,7 +4551,7 @@ theorem AlgebraicGeometry.IsNormal.pullback_specMap_of_isTranscendentalSeparable
 A normal scheme over a field remains normal after base change along a
 transcendental-separable field extension.
 
-[Source](../SchemeProperties/NormalSeparableScheme.lean#L52-L73) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/NormalSeparableScheme.lean#L52-L73) (native source range).
 
 
 ## SchemeProperties.PresheafModuleTensorStalk
@@ -4555,7 +4567,7 @@ noncomputable def PresheafOfModulesOfCommRing.stalkTensorEquiv {X : TopCat} (A :
 Canonical tensor product comparison for stalks of modules over a commutative-ring
 presheaf. No sheaf condition on the modules or assumption on the space is required.
 
-[Source](../SchemeProperties/PresheafModuleTensorStalk.lean#L536-L548) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/PresheafModuleTensorStalk.lean#L536-L548) (native source range).
 
 <a id="api-86f26b1d430169b9"></a>
 
@@ -4567,7 +4579,7 @@ theorem PresheafOfModulesOfCommRing.stalkTensorEquiv_germ_tmul {X : TopCat} (A :
 
 A pure tensor section at a common neighborhood maps to the tensor of germs.
 
-[Source](../SchemeProperties/PresheafModuleTensorStalk.lean#L550-L564) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/PresheafModuleTensorStalk.lean#L550-L564) (native source range).
 
 <a id="api-5a7ca793b69cb634"></a>
 
@@ -4579,7 +4591,7 @@ noncomputable def PresheafOfModulesOfCommRing.stalkMapLinear {X : TopCat} (A : T
 
 The map on native module stalks, linear over the unchanged ring stalk.
 
-[Source](../SchemeProperties/PresheafModuleTensorStalk.lean#L584-L610) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/PresheafModuleTensorStalk.lean#L584-L610) (native source range).
 
 <a id="api-e4f74df5e3ae0fcc"></a>
 
@@ -4591,7 +4603,7 @@ theorem PresheafOfModulesOfCommRing.stalkMapLinear_apply_stalkFunctor {X : TopCa
 
 The underlying additive map of the linear stalk map.
 
-[Source](../SchemeProperties/PresheafModuleTensorStalk.lean#L612-L618) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/PresheafModuleTensorStalk.lean#L612-L618) (native source range).
 
 <a id="api-e66c7e2624de525b"></a>
 
@@ -4603,7 +4615,7 @@ theorem PresheafOfModulesOfCommRing.stalkMapLinear_germ {X : TopCat} (A : TopCat
 
 A stalk map acts on a germ by applying the presheaf morphism to its section.
 
-[Source](../SchemeProperties/PresheafModuleTensorStalk.lean#L620-L625) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/PresheafModuleTensorStalk.lean#L620-L625) (native source range).
 
 <a id="api-287ccd2bcbb7cd61"></a>
 
@@ -4615,7 +4627,7 @@ theorem PresheafOfModulesOfCommRing.stalkTensorEquiv_naturality {X : TopCat} (A 
 
 The stalk tensor comparison is natural in both module arguments.
 
-[Source](../SchemeProperties/PresheafModuleTensorStalk.lean#L632-L702) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/PresheafModuleTensorStalk.lean#L632-L702) (native source range).
 
 
 ## SchemeProperties.QcqsModuleLocalization
@@ -4631,7 +4643,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.basicOpenRestriction {X : Sch
 Restriction of module sections to a basic open, as a linear map over the
 ring of sections on the ambient open.
 
-[Source](../SchemeProperties/QcqsModuleLocalization.lean#L37-L49) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QcqsModuleLocalization.lean#L37-L49) (native source range).
 
 <a id="api-e95d4f9015cd6488"></a>
 
@@ -4644,7 +4656,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.affineOpenSectionsLinearEquiv
 Sections of a module on an affine open agree with the global sections of its
 double restriction to the corresponding spectrum.
 
-[Source](../SchemeProperties/QcqsModuleLocalization.lean#L88-L96) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QcqsModuleLocalization.lean#L88-L96) (native source range).
 
 <a id="api-67ad44c8cf9c1736"></a>
 
@@ -4657,7 +4669,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isLocalizedModule_basicOpen_of_qcqs {X 
 Restriction of sections of a quasicoherent module to a basic open of a
 compact quasiseparated open is localization away from the defining section.
 
-[Source](../SchemeProperties/QcqsModuleLocalization.lean#L494-L523) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QcqsModuleLocalization.lean#L494-L523) (native source range).
 
 <a id="api-e6690c9d82d297c2"></a>
 
@@ -4670,7 +4682,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isLocalizedModule_basicOpen_of_qcqs_of_
 The global-sections specialization of
 `isLocalizedModule_basicOpen_of_qcqs`.
 
-[Source](../SchemeProperties/QcqsModuleLocalization.lean#L525-L534) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QcqsModuleLocalization.lean#L525-L534) (native source range).
 
 
 ## SchemeProperties.Quasicoherent
@@ -4687,7 +4699,7 @@ A quasicoherent module, restricted to an affine open and transported to
 the literal spectrum of the ring of sections on that open, is recovered from
 its global sections by the affine `fromTildeΓ` map.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L27-L35) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L27-L35) (native source range).
 
 <a id="api-448264ed82baad24"></a>
 
@@ -4700,7 +4712,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.presentationOfIsIsoFromTilde�
 An affine module recovered from its global sections has a global
 presentation.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L37-L47) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L37-L47) (native source range).
 
 <a id="api-43ab40c4b3b412d1"></a>
 
@@ -4713,7 +4725,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.presentationRestrictAffineOpe
 The affine `fromTildeΓ` condition gives a presentation of the original
 restriction to the affine open, before transport to the over-site.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L49-L66) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L49-L66) (native source range).
 
 <a id="api-362eacd937bf174d"></a>
 
@@ -4726,7 +4738,7 @@ noncomputable def AlgebraicGeometry.Scheme.Modules.presentationOverOfPresentatio
 A presentation of the scheme-theoretic restriction to an open gives a
 presentation on the corresponding over-site.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L68-L85) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L68-L85) (native source range).
 
 <a id="api-02362aea12bffd94"></a>
 
@@ -4739,7 +4751,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isOpenCover_presenta
 Quasicoherence glues from presentations on an open cover, expressed in
 the scheme-facing restriction API.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L87-L99) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L87-L99) (native source range).
 
 <a id="api-912555b5de2e4633"></a>
 
@@ -4752,7 +4764,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_affineOpenCover_isIs
 It suffices to verify the affine `fromTildeΓ` condition on one affine
 open cover.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L101-L113) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L101-L113) (native source range).
 
 <a id="api-150007e846c9795a"></a>
 
@@ -4765,7 +4777,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isQuasicoherent_iff_affineOpenCover_isI
 On a fixed affine open cover, quasicoherence is equivalent to the affine
 `fromTildeΓ` condition on every member of the cover.
 
-[Source](../SchemeProperties/Quasicoherent.lean#L115-L129) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Quasicoherent.lean#L115-L129) (native source range).
 
 
 ## SchemeProperties.QuasicoherentAbelian
@@ -4780,7 +4792,7 @@ instance AlgebraicGeometry.tildeFunctor_preservesFiniteLimits (R : CommRingCat) 
 
 The affine tilde functor preserves finite limits.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L252-L258) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L252-L258) (native source range).
 
 <a id="api-4b23e55917f5790a"></a>
 
@@ -4792,7 +4804,7 @@ instance AlgebraicGeometry.Scheme.Modules.restrictFunctor_preservesFiniteLimits 
 
 Restriction of modules along an open immersion preserves finite limits.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L263-L288) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L263-L288) (native source range).
 
 <a id="api-48e6c3b66cdb0468"></a>
 
@@ -4805,7 +4817,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isLimit (X : Scheme)
 A finite limit of quasicoherent modules on an arbitrary scheme is
 quasicoherent.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L292-L320) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L292-L320) (native source range).
 
 <a id="api-cbca89d76f1a2e12"></a>
 
@@ -4818,7 +4830,7 @@ theorem AlgebraicGeometry.Scheme.Modules.isQuasicoherent_of_isColimit (X : Schem
 A finite colimit of quasicoherent modules on an arbitrary scheme is
 quasicoherent.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L324-L352) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L324-L352) (native source range).
 
 <a id="api-4501d794d36e9162"></a>
 
@@ -4831,7 +4843,7 @@ instance AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderFiniteLim
 Quasicoherent modules on an arbitrary scheme are closed under finite
 limits.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L354-L361) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L354-L361) (native source range).
 
 <a id="api-ecb491a1394acac4"></a>
 
@@ -4844,7 +4856,7 @@ instance AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderFiniteCol
 Quasicoherent modules on an arbitrary scheme are closed under finite
 colimits.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L363-L370) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L363-L370) (native source range).
 
 <a id="api-ef866e6bc2ce3d4c"></a>
 
@@ -4857,7 +4869,7 @@ instance AlgebraicGeometry.Scheme.Modules.isQuasicoherent_containsZero (X : Sche
 The quasicoherent-module property on an arbitrary scheme contains a zero
 object.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L372-L379) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L372-L379) (native source range).
 
 <a id="api-2f6fd83aebac6ab9"></a>
 
@@ -4869,7 +4881,7 @@ instance AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderKernels (
 
 Quasicoherent modules on an arbitrary scheme are closed under kernels.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L381-L389) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L381-L389) (native source range).
 
 <a id="api-a04b7ddca616197f"></a>
 
@@ -4881,7 +4893,7 @@ instance AlgebraicGeometry.Scheme.Modules.isQuasicoherent_isClosedUnderCokernels
 
 Quasicoherent modules on an arbitrary scheme are closed under cokernels.
 
-[Source](../SchemeProperties/QuasicoherentAbelian.lean#L391-L399) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/QuasicoherentAbelian.lean#L391-L399) (native source range).
 
 
 ## SchemeProperties.Reduced
@@ -4899,7 +4911,7 @@ An arbitrary localization of a reduced commutative ring is reduced.
 Unlike `isReduced_localizationPreserves`, this form permits the source and
 target rings to live in independent universes.
 
-[Source](../SchemeProperties/Reduced.lean#L22-L45) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Reduced.lean#L22-L45) (native source range).
 
 <a id="api-d7a603e0698c364a"></a>
 
@@ -4915,7 +4927,7 @@ respectively. If `p ≤ q` and `S` is reduced, then `T` is reduced.
 Indeed, `q.primeCompl ≤ p.primeCompl`, so `T` is a further localization of
 `S`.
 
-[Source](../SchemeProperties/Reduced.lean#L47-L71) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Reduced.lean#L47-L71) (native source range).
 
 <a id="api-699dfc50cdf2338a"></a>
 
@@ -4929,7 +4941,7 @@ Reducedness of scheme stalks is preserved under generalization: if `x`
 specializes to `y` and the stalk at `y` is reduced, then the stalk at `x` is
 reduced.
 
-[Source](../SchemeProperties/Reduced.lean#L75-L106) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Reduced.lean#L75-L106) (native source range).
 
 
 ## SchemeProperties.SheafFinitePresentation
@@ -4946,7 +4958,7 @@ A local basis with finitely many generators on each chart gives local finite
 presentation. The covering family need not be finite, and the numbers of generators
 may vary between charts. Both hypotheses concern the same local generator datum.
 
-[Source](../SchemeProperties/SheafFinitePresentation.lean#L40-L50) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/SheafFinitePresentation.lean#L40-L50) (native source range).
 
 
 ## SchemeProperties.StructureSheaf
@@ -4962,7 +4974,7 @@ theorem AlgebraicGeometry.Scheme.Modules.unit_isQuasicoherent (X : Scheme) : (Sh
 The structure sheaf of any scheme is quasicoherent as a module over
 itself.
 
-[Source](../SchemeProperties/StructureSheaf.lean#L26-L45) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/StructureSheaf.lean#L26-L45) (native source range).
 
 
 ## SchemeProperties.Torsion
@@ -4978,7 +4990,7 @@ theorem Module.isTorsion_iff_subsingleton_tensorProduct {R : Type u} {K : Type v
 A module over a commutative ring is torsion if and only if its base change
 to any localization at the non-zero-divisors is zero.
 
-[Source](../SchemeProperties/Torsion.lean#L29-L46) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Torsion.lean#L29-L46) (native source range).
 
 <a id="api-0c5fae1fdfea2e83"></a>
 
@@ -4992,4 +5004,4 @@ A module over a commutative ring is torsion if and only if its base change
 to the canonical localization at the non-zero-divisors is zero. For domains,
 this is the usual fraction ring.
 
-[Source](../SchemeProperties/Torsion.lean#L48-L55) (native source range).
+[Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/Torsion.lean#L48-L55) (native source range).

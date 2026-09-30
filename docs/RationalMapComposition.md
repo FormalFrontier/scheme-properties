@@ -61,8 +61,8 @@ Fetch the matching mathlib cache **successfully** before building:
 
 ```sh
 lake exe cache get
-LAKE_JOBS=2 lake build SchemeProperties.RationalMapComposition
-LAKE_JOBS=2 lake build SchemePropertiesTest
+lake build SchemeProperties.RationalMapComposition
+lake build SchemePropertiesTest
 ```
 
 The project's default targets also include `SchemeProperties` and
@@ -70,11 +70,6 @@ The project's default targets also include `SchemeProperties` and
 `warningAsError`. Reproduction instructions are not a verification receipt,
 acceptance or source-coverage claim.
 
-The proof reuses native rational-map definitions and over-base APIs by Andrew
-Yang and Justus Springer and native composition by Justus Springer. Scope and
-research guidance: Atlas. Original Lean proofs and client: Formal Frontier
-Agents, Hive Task `hive-request-d04a528c8fefc542b1e53f2a0d565eecd90fde23`,
-UID `94b1be7d-b4fc-4bc6-8fcf-c08d31f48c9e`. Scheme Properties transfer:
-Formalization Worker B, Hive Task
-`hive-request-fb8c186a9915829afa350a73e09f7dfd98df6c89`, UID
-`ccb5a70b-e209-413c-af50-ee0b4a733e97`.
+The proof imports native rational-map and chosen-base APIs by Andrew Yang
+and Justus Springer and composition by Justus Springer; original project
+arguments and their adaptation are credited in [Credits](CREDITS.md).

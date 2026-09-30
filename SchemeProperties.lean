@@ -1,3 +1,7 @@
+/-
+SPDX-License-Identifier: Apache-2.0
+Authors: Formal Frontier Agents
+-/
 module
 
 public import SchemeProperties.ConnectedComponents
@@ -29,6 +33,7 @@ public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints
 public import SchemeProperties.GeometricConnectedness
+public import SchemeProperties.GenericPointFunctionField
 public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral

@@ -58,26 +58,8 @@ the matching precompiled mathlib cache successfully **before** any build:
 
 ```sh
 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.DenseOpenRationalCategory SchemePropertiesTest SchemeProperties
+lake --wfail build SchemeProperties.DenseOpenRationalCategory SchemePropertiesTest SchemeProperties
 ```
 
-**Transfer-time record (September 29, 2026, before destination acceptance):**
-The two new Lean files use `warningAsError true`. Their proofs and private
-client originated in an independently reviewed contribution, but the mapped
-destination imports and root are **new inputs**: the destination still needs
-its own applicable build and complete actual transitive standard-three-axiom
-audit, including private and generated declarations, plus independent review
-of this exact candidate. This proposed destination transfer is not yet
-accepted, merged or officially published, and makes no source-coverage claim.
-
-**Dated update, September 29, 2026, 21:58 UTC:** those destination requirements
-were subsequently satisfied for code revision
-`b919dd2c98fb040e491c1f4d1fc341127b47cd01`: its build and complete
-actual transitive audit, including private and generated declarations, passed
-with only `propext`, `Classical.choice` and `Quot.sound`; independent review and
-maintainer acceptance preceded its development-main integration at 21:47:36 UTC.
-The category and private client are implemented in this tree. The preceding
-paragraph is historical, not an outstanding build/review/acceptance requirement.
-Separate release/publication remained pending at this dated update; official
-publication is identified by its exact verified release commit. Neither code
-acceptance nor publication establishes a source-coverage claim.
+The category is implemented in the focused module and tested by its
+direct-import client. See [Credits](CREDITS.md) for adapted expression.

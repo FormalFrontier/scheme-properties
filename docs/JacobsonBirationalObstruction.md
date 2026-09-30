@@ -50,19 +50,6 @@ arrow's non-`IsIso`, a full function-field criterion or source coverage. A
 native categorical rational-map inverse is not identified here with a
 `Scheme.PartialIso`.
 
-At the September 30, 2026 transfer-preparation snapshot, the isolated donor
-had independent review and acceptance, and the destination's preceding
-geometric release was already verified. Destination-specific checks, fresh
-review, acceptance and separate official publication of *this addition*
-remain distinct; this dated snapshot is not a later current verdict.
-Original proof author: worker-b Hive Task
-`hive-request-b9bc0adfa7b6a92259e85b615edfd85f75296b73` (UID
-`ab7408f2-a4e4-40b7-b790-558218bc29bf`); independent original reviewer:
-worker-a Task `hive-request-28ab9d8a82363aad56f39f187950fff9bba27d1c`
-(UID `f26cd7a3-a683-4523-baae-d9793a089478`). Destination adaptation:
-worker-b Task `hive-request-15da982db8ae147e73865a711744772b196448d7`
-(UID `42176d07-1a49-48ee-9763-d3227be0a1f1`). The project code is
-Apache-2.0 and retains its collective author notice. It imports rather
-than copies mathlib's birational API by Justus Springer, Jacobson topology
-and reduced-spectrum results by Andrew Yang, and polynomial Jacobson
-instance work by Devon Tuma and other contributors; see [Credits](CREDITS.md).
+The proofs import mathlib's birational interface by Justus Springer,
+Jacobson topology and reduced-spectrum results by Andrew Yang and polynomial
+Jacobson work by Devon Tuma. See [Credits](CREDITS.md).

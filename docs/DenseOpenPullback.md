@@ -86,26 +86,9 @@ targets:
 
 ```sh
 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.DenseOpenPullback SchemePropertiesTest SchemeProperties
+lake --wfail build SchemeProperties.DenseOpenPullback SchemePropertiesTest SchemeProperties
 ```
 
-For completed-result checks, audit the transitive axioms of **all** actual
-origin declarations, including private/generated ones, allowing only
-`propext`, `Classical.choice` and `Quot.sound`. The isolated incubator origin
-at `aa3709064e8706ff816bc5e2ebb5ceeb58435432` received its own
-independent review and acceptance; those facts do not establish the checks,
-review, integration, official publication or source coverage of any destination
-revision. Exact destination evidence and decisions must be bound separately
-to the corresponding revision.
-
-The original proofs and seven anonymous clients were developed by Formal
-Frontier Agents (worker-b Hive Task
-`hive-request-807aa4d70fffcd9d73f486c3fb6e8796148d8e28`, UID
-`f923d027-9e1c-4025-9f69-0d3418cc6cea`). The static destination transfer
-was prepared by worker-b Hive Task
-`hive-request-e4ef017b9a63b331b0d19e462f22b5ec6fbe5722` (UID
-`e1220436-76eb-4683-9b1c-13e67dadf037`); Atlas supplied scope and
-coordinates destination acceptance. The separately reviewed origin is credited
-in [CREDITS](CREDITS.md). This work imports rather than copies mathlib's native
-partial/rational-map APIs (Andrew Yang), composition (Justus Springer) and
-topological density tools; it copies no book prose or selected-source text.
+The proofs import mathlib native partial/rational maps by Andrew Yang,
+composition by Justus Springer and topological-density tools; no upstream
+proof body is copied. See [Credits](CREDITS.md).

@@ -53,10 +53,8 @@ category or subtype structure, identity functor, or over-base theorem.
 **domain and morphism** normalization from mathlib's
 `Mathlib/AlgebraicGeometry/Birational/Composition.lean`. Andrew Yang's native
 partial-map and rational-quotient/representative APIs are imported, not copied.
-The accepted isolated donor is `8c497c355201861c9e9dcfb761641821efb0d892`;
-this Scheme Properties adaptation has separate [contributor credits](CREDITS.md).
-An independently reviewed mathematical exposition remains uncompiled and is
-neither a source-coverage decision nor a substitute for destination checks.
+The Formal Frontier adaptation and individual upstream authors are distinguished
+in [Credits](CREDITS.md) and the Lean header.
 
 For reproducibility, use the repository's pinned Lean
 `leanprover/lean4:v4.34.0-rc2`, mathlib
@@ -67,14 +65,10 @@ the matching mathlib cache before building**:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
-LAKE_JOBS=2 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.DenseOpenCompositionUnits
-LAKE_JOBS=2 lake --wfail build SchemePropertiesTest SchemeProperties
+lake exe cache get
+lake --wfail build SchemeProperties.DenseOpenCompositionUnits
+lake --wfail build SchemePropertiesTest SchemeProperties
 ```
 
-Both transferred Lean modules set `warningAsError true`. The checked donor
-evidence does not by itself certify a destination revision; destination
-acceptance requires an applicable successful build and complete transitive
-standard-three-axiom audit of actual public, generated and private origins,
-fresh independent review and maintainer acceptance. The preparation snapshot
-on September 29, 2026 establishes none of those later decisions or publication.
+The focused modules set `warningAsError true`. For adapted mathlib expression
+and original project contributions, see [Credits](CREDITS.md).

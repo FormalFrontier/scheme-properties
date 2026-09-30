@@ -1,153 +1,18 @@
 # Scheme Properties: reader guide
 
-This guide began with mathematical source assembled from accepted ordinary
-development commit `04513a56ed7c339875f114b56fcc430e6b753fed` and now
-also navigates later focused modules, including the function-field pullback
-module. It is a navigation aid, **not** generated API documentation, a complete
-declaration census, or an assertion of release readiness. The source files, rather than
-this summary, determine the exact Lean statements.
-For expression provenance and mathematical references, see [Credits](CREDITS.md).
-The separate [generated API](API.md) supplies native signatures and source links
-for its fixed historical 73-module snapshot, not the new finite-presentation,
-rational-map-composition, dense-open-pullback, dense-open dominance,
-controlled-composition, dense-open closure, controlled associativity,
-controlled unit laws, controlled over-base, dense-open rational-map category,
-relative dense-open rational-map category,
-integral dominant rational-map category, integral relative rational-map category,
-function-field pullback, faithfulness, reconstruction and inverse modules,
-the exact rational-inverse partial-isomorphism and Jacobson birational-obstruction
-modules, or the changed
-aggregate. Its
-[generation contract](README.md) distinguishes display sites from proof bodies;
-see the standalone [native finite-presentation guide](FinitePresentations.md)
-and [relative-composition guide](RationalMapComposition.md),
-[dense-open pullback guide](DenseOpenPullback.md) and
-[dominance companion](DenseOpenPullbackDominance.md) and
-[controlled-composition guide](DenseOpenComposition.md),
-[closure guide](DenseOpenCompositionClosure.md) and
-[associativity guide](DenseOpenCompositionAssociativity.md) and
-[unit guide](DenseOpenCompositionUnits.md), together with the
-[controlled over-base guide](DenseOpenCompositionOver.md) and the
-[rational category guide](DenseOpenRationalCategory.md) and
-[relative rational category guide](DenseOpenRationalCategoryOver.md) and
-[integral category guide](IntegralDominantRationalCategory.md) and
-[integral relative category guide](IntegralDominantRationalCategoryOver.md) and
-[function-field pullback guide](RationalFunctionFieldPullback.md),
-[faithfulness guide](RationalFunctionFieldFaithfulness.md) and
-[reconstruction guide](RationalFunctionFieldReconstruction.md) and
-[inverse guide](RationalFunctionFieldInverse.md) and
-[geometric inverse guide](RationalMapPartialIso.md) and
-[Jacobson obstruction guide](JacobsonBirationalObstruction.md), for later APIs.
+The [README](../README.md) presents headline results and build instructions;
+the [documentation index](README.md) links focused mathematical guides.
+Use `import SchemeProperties` for the [aggregate](../SchemeProperties.lean),
+or `import SchemeProperties.<Module>` for a smaller focused import below.
+[API.md](API.md) is a fixed historical **73-module** reference, not a current
+114-module declaration census.
 
-## Imports and conventions
-
-The aggregate import is `import SchemeProperties` (the current
-[root](../SchemeProperties.lean)); focused imports have the form
-`import SchemeProperties.Reduced`, with the names below substituting for
-`Reduced`; use `import SchemeProperties.RationalMapComposition` for the
-[relative-composition lemmas](RationalMapComposition.md) and
-`import SchemeProperties.DenseOpenPullback` for the
-[all-dense-open predicate](DenseOpenPullback.md), or
-`import SchemeProperties.DenseOpenPullbackDominance` for its
-[dominance companion](DenseOpenPullbackDominance.md), or
-`import SchemeProperties.DenseOpenComposition` for its
-[conditional composition operations](DenseOpenComposition.md), or
-`import SchemeProperties.DenseOpenCompositionClosure` for the
-[two-factor pullback closure](DenseOpenCompositionClosure.md), or
-`import SchemeProperties.DenseOpenCompositionAssociativity` for the
-[first-two-controlled associativity laws](DenseOpenCompositionAssociativity.md), or
-`import SchemeProperties.DenseOpenCompositionUnits` for the
-[two identity predicates and four unit laws](DenseOpenCompositionUnits.md), or
-`import SchemeProperties.DenseOpenCompositionOver` for the
-[common-base preservation lemmas](DenseOpenCompositionOver.md), or
-`import SchemeProperties.DenseOpenRationalCategory` for the
-[distinct rational-map category](DenseOpenRationalCategory.md), or
-`import SchemeProperties.DenseOpenRationalCategoryOver` for the
-[arbitrary-base relative rational-map category](DenseOpenRationalCategoryOver.md), or
-`import SchemeProperties.IntegralDominantRationalCategory` for its
-[integral-object comparison with native dominant arrows](IntegralDominantRationalCategory.md), or
-`import SchemeProperties.IntegralDominantRationalCategoryOver` for the
-[integral-object comparison over an arbitrary base](IntegralDominantRationalCategoryOver.md), or
-`import SchemeProperties.RationalFunctionFieldPullback` for the
-[contravariant function-field map](RationalFunctionFieldPullback.md), or
-`import SchemeProperties.RationalFunctionFieldReconstruction` for the
-[chosen-base reconstruction](RationalFunctionFieldReconstruction.md), or
-`import SchemeProperties.RationalFunctionFieldInverse` for the
-[given-arrow chosen-base inverse criterion](RationalFunctionFieldInverse.md):
-`AlgebraicGeometry.IntegralDominantRationalSchemeOver.isIso_functionFieldMap`
-needs no local finite type, while `isIso_iff_isIso_functionFieldMap` requires
-only `[LocallyOfFiniteType X.toBase]` to reflect a field-map isomorphism.
-The associated [private ordinary-import client](../Test/RationalFunctionFieldInverseClient.lean)
-checks separate chosen structure maps and both native quotient inverse laws;
-there is no target finite-type or separatedness premise and no total-scheme
-isomorphism or geometric `PartialIso` conversion asserted. At the original
-September 30, 2026 transfer preparation before Scheme Properties PR #148's
-later review, the isolated donor was accepted while destination checking,
-fresh review and release were pending. This is preparation history, not a later
-current verdict; the [inverse guide](RationalFunctionFieldInverse.md) distinguishes
-that snapshot from subsequent destination and publication decisions.
-The distinct `import SchemeProperties.RationalMapPartialIso` focuses the
-[geometric bridge](RationalMapPartialIso.md): on integral endpoints, both
-source-first quotient inverse laws for independently dominant `forward` and
-`reverse` give an actual `PartialIso` with **both exact readbacks**. For any
-base `S` and separately chosen `sX : X ⟶ S`, `sY : Y ⟶ S`, only
-`forward.compHom sY = sX.toRationalMap` is assumed for literal
-`partialIso.IsOver sX sY`; the reverse base law follows. Its
-[four private direct-import clients](../Test/RationalMapPartialIsoClient.lean)
-include independent same-carrier structure maps and a six-conjunct converse.
-No local finite type, separatedness, integral base, total-scheme isomorphism,
-field-map inverse criterion or category equivalence is introduced by this
-focused module.
-The separate `import SchemeProperties.JacobsonBirationalObstruction` gives
-`PartialIso.subsingleton_target` with only a subsingleton source and Jacobson
-target, then excludes birationality if the target is nontrivial. It also proves
-nontriviality of every field's polynomial spectrum, yielding the field-spectrum
-obstruction even for finite fields. Its
-[private direct-import client](../Test/JacobsonBirationalObstructionClient.lean)
-includes an empty source and an identity partial iso. The
-[focused guide](JacobsonBirationalObstruction.md) records precise hypotheses;
-these results assert neither canonical field-map `IsIso` nor non-`IsIso` of a
-chosen native rational arrow. At the September 30, 2026 transfer-preparation
-snapshot, isolated donor acceptance was distinct from future destination
-verification, review and publication; this is not a later current status.
-Some non-scheme
-constructions, such as presheaf tensor stalks,
-have their own focused import. The original 36 focused mathematical modules, including
-[ComponentFibers](../SchemeProperties/ComponentFibers.lean) and
-[FactorialNormal](../SchemeProperties/FactorialNormal.lean), now have native
-`module` headers and public imports. The older
-`ComponentFibers` consumer at `86f5ec67f52cc571cf1f2222fa8468363e8c7984`
-does not establish compatibility with the current file:
-`fbf96d925efa4eb54b27fa3e605cc6f33d9166d9` added a private
-étale-section/open-immersion helper and the public theorem
-`AlgebraicGeometry.geometricallyConnected_of_connectedSpace_of_section`.
-`ComponentBaseChange` was identical in that *historical* comparison but changed
-subsequently at `49a3c7e71850f5e7913c1423f33ccbcc7c89703e`: it now has a
-native module/public-import header, a public section and `@[expose]` on
-`toConnectedComponentsSpec`. The later native-documentation build of the exact
-73-module source at `a05b182aa17ea7cd1a591ec7b60aa7d6f2b6704c` included every
-shipped example and test module; the older historical client is not its evidence.
-
-The [toolchain](../lean-toolchain), [Lake requirements](../lakefile.toml) and
-[resolved manifest](../lake-manifest.json) record this assembly's Lean
-v4.34.0-rc2, mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`,
-and official **private GitHub** `coherent-modules` and `finite-etale-algebras`
-release inputs. Those URLs are not public-access promises; builds require
-access. These exact URL/revision substitutions were used by that later
-source/client build and native generation. This does not transfer an old
-consumer's proof check or promise general source compatibility. The examples
-below were compiled in that source build; their selected axiom printouts do not
-constitute the separate complete release proof audit.
-
-The APIs distinguish a ring from all of its local rings, a scheme from one
-open or one stalk, and connectedness from geometric connectedness. `Scheme.{u}`
-and `Over (Spec (.of K))` use the displayed universe of mathlib's scheme
-interfaces; some ring/algebra results allow independent source/target universes.
-Short names such as `Scheme.Modules.*` below assume
-`open AlgebraicGeometry`; their fully qualified prefix is
-`AlgebraicGeometry.Scheme.Modules`.
-An empty scheme often satisfies stalkwise properties vacuously, whereas a
-*nonempty* hypothesis in a topological theorem must not be silently removed.
+The APIs distinguish a ring from all its local rings, a scheme from one open
+or stalk, and connectedness from geometric connectedness. `Scheme.{u}` uses
+mathlib's displayed universe. Short names such as `Scheme.Modules.*` assume
+`open AlgebraicGeometry`; their prefix is `AlgebraicGeometry.Scheme.Modules`.
+An empty scheme can satisfy stalkwise properties vacuously; nonemptiness
+hypotheses in topological results must not be discarded.
 
 ## Local algebra and scheme properties
 
@@ -166,6 +31,7 @@ An empty scheme often satisfies stalkwise properties vacuously, whereas a
 
 | Focused module | Entry points and precise scope |
 | --- | --- |
+| [GenericPointFunctionField](../SchemeProperties/GenericPointFunctionField.lean) | For integral `Y`, the canonical `j : Spec Y.functionField ⟶ Y` and its native quotient are dominant; the actual reversed `j.toRationalMap.functionFieldMap` has `Spec.map` equal to the field spectrum's generic stalk morphism and is `IsIso`, without local finite type. For `[JacobsonSpace Y] [Nontrivial Y]`, `j` and `j ≫ sY` for **any independent** `sY : Y ⟶ S` are not locally of finite type. This is not a total-scheme isomorphism, rational-inverse theorem or literal `RatFunc ℚ` identification. See the [guide](GenericPointFunctionField.md) and [nine private direct-import clients](../Test/GenericPointFunctionFieldClient.lean); outside the fixed 73-module API snapshot. |
 | [DenseOpenPullback](../SchemeProperties/DenseOpenPullback.lean) | `AlgebraicGeometry.Scheme.PartialMap.PullsDenseOpens` asks that the pullback of **every** dense target open be dense in **ambient `X`** for arbitrary same-universe schemes. Native equivalence, dense restriction and rational-map representatives preserve the condition. `pullsDenseOpens_of_isOpenMap` needs only `IsOpenMap f.hom`; the distinct dominant route requires `[PreirreducibleSpace X] [Nonempty Y] [IsDominant f.hom]`. This predicate module alone constructs no composite or concrete nondominant witness; see the [standalone guide](DenseOpenPullback.md). |
 | [DenseOpenPullbackDominance](../SchemeProperties/DenseOpenPullbackDominance.lean) | For native partial and rational maps, `isDominant_of_pullsDenseOpens` needs `[Nonempty X] [PreirreducibleSpace Y]`; `pullsDenseOpens_iff_isDominant` needs `[PreirreducibleSpace X] [Nonempty X] [PreirreducibleSpace Y] [Nonempty Y]`. Pullback density is in ambient `X`; the dominance-to-pullback direction retains the earlier nonempty-target requirement. See the [dominance guide](DenseOpenPullbackDominance.md). |
 | [DenseOpenRationalCategory](../SchemeProperties/DenseOpenRationalCategory.lean) | A **distinct** category wraps arbitrary same-universe schemes and bundles native quotient rational maps with `PullsDenseOpens`; `hom`, `hom_ext`, `toRationalMap_id` and `toRationalMap_comp` expose its arrow API. Composition uses the first arrow's predicate, closure uses both, and associativity uses the first two. `homEquivDominant` requires **both** objects nonempty and preirreducible. It does not replace ordinary `Scheme`, assert an unrestricted dominance iff or provide a total-map forgetful functor. See the [category guide](DenseOpenRationalCategory.md). |
@@ -279,25 +145,5 @@ section ring** on a principal affine open from tensoring on an arbitrary open.
   quotient readbacks, chosen-base existence, the independent same-carrier
   case and all six converse assertions.
 
-These are persistent source files, not by themselves a complete release test
-matrix. The initial static guide authoring stage ran no Lean commands. The later
-native-documentation stage compiled the historical 73-module snapshot against
-the exact official pins and generated the separate API reference. That snapshot
-subsequently reached an independently accepted equal-tree official release;
-the finite-presentation transfer also completed independent destination review,
-integration and publication in
-[release `193d4fe`](https://github.com/FormalFrontier/scheme-properties/commit/193d4fe284cf1de71b168c198ad7b24a6eb71d39).
-The generated reference remains the explicitly historical 73-module snapshot;
-the later additions are documented in [FinitePresentations.md](FinitePresentations.md),
-[RationalMapComposition.md](RationalMapComposition.md) and
-[DenseOpenPullback.md](DenseOpenPullback.md),
-[DenseOpenPullbackDominance.md](DenseOpenPullbackDominance.md),
-[DenseOpenComposition.md](DenseOpenComposition.md),
-[DenseOpenCompositionClosure.md](DenseOpenCompositionClosure.md),
-[DenseOpenCompositionAssociativity.md](DenseOpenCompositionAssociativity.md) and
-[DenseOpenCompositionUnits.md](DenseOpenCompositionUnits.md), and
-[DenseOpenCompositionOver.md](DenseOpenCompositionOver.md).
-Native display sites, compiled clients,
-checked proof bodies and release acceptance are distinct. The additional
-[finite-presentation client](../Test/FinitePresentationClient.lean) exercises
-nine direct uses, including empty indices, zero module and zero ring.
+The clients illustrate specific uses, not a complete declaration census or
+selected-source coverage. Consult Lean source for exact hypotheses.

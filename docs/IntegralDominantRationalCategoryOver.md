@@ -77,7 +77,7 @@ matching precompiled mathlib cache **before** any build:
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.IntegralDominantRationalCategoryOver SchemePropertiesTest
+lake --wfail build SchemeProperties.IntegralDominantRationalCategoryOver SchemePropertiesTest
 ```
 
 The configured repository checks also cover the aggregate, examples and

@@ -44,35 +44,6 @@ First successfully run `lake exe cache get`, then run
 `lake build Test.RationalFunctionFieldInverseClient`. These are destination
 commands, **not** records of a destination run.
 
-**Original preparation snapshot, September 30, 2026, before Scheme Properties
-PR #148's later review:** the isolated incubator donor code
-`db402a20a6e76ec62720d9b28ce045fa874bf6e1` had independent code review
-and Atlas's code-only acceptance under incubator issue #343; it was never
-merged into shared incubator main. The predecessor reconstruction had a
-separate verified official Scheme Properties release
-`5e98363b3a8738544d966d1603ace4df183573d4`, whose tree equals the original
-destination transfer's parent tree. At that preparation stage, destination
-build, complete transitive axiom
-audit including private and generated declarations, fresh transfer review,
-Atlas's destination acceptance and integration, distinct reviewed release,
-publication and source-specific correspondence/coverage were **pending**, not
-inferred from the donor's checks or review. This is a historical snapshot, not
-a later current verdict; consult Scheme Properties PR #148 and Atlas's incubator
-#343 for subsequent exact-revision evidence and decisions. Destination code
-acceptance and integration do not themselves establish official publication or
-source coverage.
-
-Original static argument: worker-b Task
-`hive-request-b7543b20151ccad863ac1811c291a8f92d0b6931` (UID
-`70e238b7-5c9d-4823-b446-107bf789661b`), independently assessed by worker-a
-Task `hive-request-1ede527b2a9f5a3c079b5ef66dc7ff9ac3258d6f` (UID
-`63800e6d-5cae-4e30-b85e-8b53ffa2c8aa`). Original [producer](../SchemeProperties/RationalFunctionFieldInverse.lean),
-client and guide: worker-b Task
-`hive-request-d08fb8e66816eeda60f176adb2a705118712a0bf` (UID
-`20e3853c-7a2c-44db-b98e-e26f5a4cb0f8`), independently reviewed by
-worker-a Task `hive-request-b3aa2ab1ace57a60d8225302ef3f5053442efa16`
-(UID `d1e145b8-7bb5-4425-bd3c-be736e2951b5`). The separate transfer and
-adapted documentation are by worker-b Task
-`hive-request-50a6b8f62bfe8ef71ff3eebc1e00b9c2fb376413` (UID
-`4b59b8cd-4509-4cc7-a6d8-86aad520a21f`). See [Credits](CREDITS.md)
-for distinct expression provenance and rights qualifications.
+The focused module uses this library's native reconstruction and function-field
+pullback interfaces. Its original project proof expression is credited in
+[Credits](CREDITS.md); it does not establish a total-scheme isomorphism.

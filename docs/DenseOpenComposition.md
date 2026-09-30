@@ -79,19 +79,17 @@ mathlib cache before building**:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
-LAKE_JOBS=2 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.DenseOpenComposition SchemePropertiesTest SchemeProperties
+lake exe cache get
+lake --wfail build SchemeProperties.DenseOpenComposition SchemePropertiesTest SchemeProperties
 ```
 
 Completion also requires an applicable build and transitive standard-axiom
 audit of all actual public, private and generated origin declarations,
 allowing only `propext`, `Classical.choice` and `Quot.sound`.
 Commands here are reproduction instructions, not a receipt for this destination.
-This transfer derives from the separately accepted isolated contribution
-`b592c13ff04fc9b8b87ef615c622f9a1e8e1ef86` in incubator issue #203;
-that origin's review and checks do not certify a destination revision or
-source correspondence. [CREDITS](CREDITS.md) distinguishes the original
-Formal Frontier author and independent reviewer from the destination transfer.
+The adapted Formal Frontier proof expression and upstream notices are credited
+in [Credits](CREDITS.md) and the Lean header. Source-specific correspondence
+is separate from this reusable interface.
 The source uses native quotient and partial-map APIs by Andrew Yang, and
 adapts native composition proof expression by Justus Springer, retaining
 his copyright/Apache-2.0/author notice. No book prose or source PDF is copied.

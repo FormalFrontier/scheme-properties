@@ -55,20 +55,10 @@ mathlib cache before building, and compile the focused module and client:
 
 ```sh
 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.IntegralDominantRationalCategory
-LAKE_JOBS=2 lake --wfail build SchemePropertiesTest
+lake --wfail build SchemeProperties.IntegralDominantRationalCategory
+lake --wfail build SchemePropertiesTest
 ```
 
-Build success alone is not a complete transitive standard-axiom audit (including
-private and generated declarations). The repository's configured CI and
-independent review can supply revision-specific destination evidence; neither
-the originally checked incubator inputs nor this guide alone establishes
-destination acceptance, official publication or selected-source coverage.
-The original proof expression and actual contributor identities are recorded
-in [Credits](CREDITS.md).
-
-**Preparation history (September 29, 2026):** This module was mapped from an
-independently reviewed isolated category contribution to the already accepted
-`DenseOpenRationalScheme` interface. Its direct import and the aggregate root
-are distinct destination inputs, requiring destination-specific checks and
-review. Publication and source correspondence are separate owner decisions.
+The formal expression adapts earlier original project rational-map
+interfaces; see [Credits](CREDITS.md). The source and client provide the
+exact API, not a selected-source coverage decision.

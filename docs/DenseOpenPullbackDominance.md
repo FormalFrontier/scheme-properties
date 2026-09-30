@@ -58,34 +58,9 @@ before** building a fresh checkout, or after changing pins/removing `.lake`:
 
 ```sh
 lake exe cache get
-LAKE_JOBS=2 lake --wfail build SchemeProperties.DenseOpenPullbackDominance SchemePropertiesTest SchemeProperties
+lake --wfail build SchemeProperties.DenseOpenPullbackDominance SchemePropertiesTest SchemeProperties
 ```
 
-Completion evidence additionally requires a successful applicable destination
-build and the full transitive axiom audit of actual origin declarations,
-including private/generated ones, permitting only `propext`,
-`Classical.choice` and `Quot.sound`. The separately reviewed isolated donor
-`e115570b05adebd1d4b9b5f8c3cc7fbd4a1025ad` supplied the proofs and client;
-its original checks and review do **not** establish destination checks,
-acceptance, publication, or source coverage. Exact destination evidence and
-decisions belong to the revision to which they apply.
-
-The original converse exposition was by Hive Task
-`hive-request-7cd28f4c844b22e75425fed3fe9d76930b8f1ab7` (UID
-`dc65fd6d-d7e8-400b-ab99-01d2b1ae8971`), independently reviewed by Task
-`hive-request-c83093c0267bb0c99bc85cd4fc3a8bb3bfadb402` (UID
-`123f5562-d5c1-4e9f-8f74-f23d9e9fffaa`); mathematical review does not
-establish source correspondence. The donor Lean implementation is by Task
-`hive-request-79825c8e94f5352c8e75fb6a16c1859618eef289` (UID
-`6a8d0c63-9b1a-4eca-b111-4b8898be6498`) with fresh donor code review by
-Task `hive-request-32455516cc0f7e39cda54d2b9f621859bff7af3c` (UID
-`11d896b5-c1ad-42a3-8fb6-45158421d024`). This destination transfer is
-by Task `hive-request-ce06b62b5f59999150c88d30d70f9d878166052a`
-(UID `ddece77d-7c0f-4a45-bb62-e8028d116843`); separate destination review
-and responsible-maintainer acceptance are revision-specific.
-
-The imported mathlib native dominance and composition APIs are by **Justus
-Springer** (2026, Apache-2.0); native partial/rational quotient and
-representative APIs are by **Andrew Yang** (2024, Apache-2.0). Their proof
-bodies are not copied, and no source-specific correspondence is necessary to
-use these theorems.
+The proofs use imported mathlib dominance and composition by Justus
+Springer and partial/rational-map quotients by Andrew Yang. Their original
+notices remain upstream; see [Credits](CREDITS.md).

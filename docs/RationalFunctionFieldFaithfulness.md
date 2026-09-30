@@ -34,10 +34,8 @@ additional mathematical API.
 
 The underlying pullback is supplied by the existing
 `SchemeProperties.RationalFunctionFieldPullback` module in this same project.
-This companion adapts the accepted isolated incubator contribution at
-`f16ea30a36a0e9bd54da3cdfe01f8a1197d0e25a`; original computation,
-independent code review and transfer credit are distinguished in
-[CREDITS](CREDITS.md). It proves injectivity, **not** fullness,
+This companion adapts original Formal Frontier proof expression; see
+[Credits](CREDITS.md). It proves injectivity, **not** fullness,
 an existence or reconstruction theorem, an equivalence, a birational result,
 or a relative/base-change claim. No locally finite-type, separatedness, or
 common-base assumption is required for this injectivity result. Faithfulness

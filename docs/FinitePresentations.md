@@ -55,18 +55,8 @@ module, identify a restriction with a tilde module, or identify native finite
 presentation with `Module.IsCoherent` or categorical finite-presentability. It
 does not imply projectivity, positive rank, nonzero ring or a finite affine cover.
 
-The generic finite-index/global proof and tilde presentation proof adapt Prism's
-native construction. The affine-chart construction adapts the pinned mathlib
-`Scheme.Modules.exists_isOpenCover_presentation` (2024 Weihong Xu copyright;
-original file authors Kevin Buzzard, Johan Commelin, Amelia Livingston, Sophie
-Morel, Jujian Zhang, Weihong Xu, Andrew Yang and Brian Nugent, Apache-2.0).
-Prism supplied the finite-witness refinement; the API, clients and guide were
-adapted by Worker B Hive Task
-`hive-request-889e4f46f3bdf27bdedb362ee6259c9d0564e57e`, UID
-`21a872d7-a565-4f28-b2f8-5eae65e02474`. Mathlib supplies the native
-presentations, quasi-coherent data, open refinement and tilde construction.
-Worker B Hive Task `hive-request-c188a7b61cec0b11919933ddbae7367b7e535918`,
-UID `91c509cb-33b1-46e1-a20f-46a2fd73ac50`, transferred the reviewed
-incubator APIs into the scheme-properties modules, adapting imports and clients.
-Source-specific mathematical correspondence and coverage are separate from
-this reusable API.
+The finite-index and tilde constructions adapt Prism's original Formal
+Frontier proof. The affine-chart construction adapts mathlib's
+`Scheme.Modules.exists_isOpenCover_presentation`, retaining Weihong Xu's
+2024 notice and the eight original authors in the Lean header. The native
+interface and clients are Formal Frontier contributions; see [Credits](CREDITS.md).

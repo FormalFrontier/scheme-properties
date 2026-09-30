@@ -3,7 +3,7 @@ Copyright (c) 2024 Weihong Xu. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors of the adapted mathlib affine-cover construction: Kevin Buzzard, Johan Commelin,
   Amelia Livingston, Sophie Morel, Jujian Zhang, Weihong Xu, Andrew Yang, Brian Nugent.
-Finite-witness refinement: Prism, 2026. Native API adaptation: Worker B, 2026.
+Finite-witness refinement: Prism, 2026. Native API adaptation: Formal Frontier Agents, 2026.
 -/
 module
 
