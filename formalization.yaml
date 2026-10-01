@@ -55,7 +55,7 @@ automation:
       notes: "AI-assisted Lean proofs, examples and documentation, with mathematical review; no uniform model or cost claim."
 
 status:
-  scope: "Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; Jacobson obstruction needs a nontrivial target. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md."
+  scope: "Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; the chosen-base generic-point rational arrow is noninvertible for a nontrivial Jacobson integral target despite its reversed field-map isomorphism. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md."
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -287,6 +287,14 @@ status:
       file: SchemeProperties/GenericPointFunctionField.lean
     - declaration: AlgebraicGeometry.Scheme.not_locallyOfFiniteType_fromSpecStalk_genericPoint_comp
       file: SchemeProperties/GenericPointFunctionField.lean
+    - declaration: AlgebraicGeometry.Scheme.RationalMap.not_twoSidedInverse_of_subsingleton_of_jacobson
+      file: SchemeProperties/GenericPointRationalNoninvertibility.lean
+    - declaration: AlgebraicGeometry.Scheme.genericPointRationalHom
+      file: SchemeProperties/GenericPointRationalNoninvertibility.lean
+    - declaration: AlgebraicGeometry.Scheme.genericPointRationalHom_toRationalMap
+      file: SchemeProperties/GenericPointRationalNoninvertibility.lean
+    - declaration: AlgebraicGeometry.Scheme.genericPointRationalHom_boundary
+      file: SchemeProperties/GenericPointRationalNoninvertibility.lean
 
 review:
   status: self-assessed

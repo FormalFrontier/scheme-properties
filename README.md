@@ -34,6 +34,21 @@ not by themselves claim coverage of any selected source.
   does not prove a canonical function-field-map isomorphism or noninvertibility
   of a specified native rational arrow. Direct import:
   `SchemeProperties.JacobsonBirationalObstruction`; [one direct-import client with five private declarations](Test/JacobsonBirationalObstructionClient.lean).
+- [Generic-point rational noninvertibility](docs/GenericPointRationalNoninvertibility.md):
+  independently dominant native quotients between integral schemes cannot
+  satisfy both source-first inverse laws when the source is subsingleton and
+  the target is nontrivial Jacobson. For integral `Y` and any chosen
+  `sY : Y ⟶ S`, the generic inclusion `g` yields a rational arrow whose
+  source structure is exactly `g ≫ sY`: under the Jacobson/nontrivial
+  hypotheses its actual reversed function-field map is `IsIso`, but the
+  chosen-base rational arrow is not. The `Spec ℚ[X]` client has a locally
+  finite-type target structure, non-locally-finite-type induced source,
+  field-map isomorphism and noninvertible arrow; a `ZMod 2` client rules out
+  an implicit infinite-field premise. No extra finite-type, Noetherian or
+  separatedness condition, literal `RatFunc` identification, universal
+  converse or category equivalence is asserted. Direct import:
+  `SchemeProperties.GenericPointRationalNoninvertibility`; the earlier two
+  module-specific noninverse disclaimers do not constrain this composition.
 - [Exact rational inverses on dense opens](docs/RationalMapPartialIso.md): two
   independently chosen dominant native quotients `X ⤏ Y` and `Y ⤏ X` on
   integral schemes satisfying **both** source-first inverse equations yield a
@@ -185,6 +200,7 @@ tables](docs/Guide.md); the [documentation index](docs/README.md) links focused
 mathematical guides. Inspect direct-import [Test clients](Test/) and concrete
 [Examples](Examples/) for use cases. For instance, import
 `SchemeProperties.GenericPointFunctionField`,
+`SchemeProperties.GenericPointRationalNoninvertibility`,
 `SchemeProperties.RationalMapPartialIso` or
 `SchemeProperties.ModuleFinitePresentation` directly.
 

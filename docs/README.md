@@ -2,7 +2,9 @@
 
 [Reader guide](Guide.md) indexes the current mathematical modules and examples;
 the [README](../README.md) summarizes headline results and usage. The focused
-guides here explain later APIs. [API.md](API.md) is a navigation-adjusted
+guides here explain later APIs, including
+[generic-point rational noninvertibility](GenericPointRationalNoninvertibility.md).
+[API.md](API.md) is a navigation-adjusted
 historical **73-module** reference, not a census of the current
 checkout. Its original byte-identical [generated API page](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/docs/API.md)
 and the unchanged [api-manifest.json](api-manifest.json) belong to the original

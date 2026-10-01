@@ -55,7 +55,9 @@ Collective Formal Frontier contributions also include the
 [given-arrow inverses](RationalFunctionFieldInverse.md),
 [exact partial-isomorphism realization](RationalMapPartialIso.md),
 [Jacobson obstruction](JacobsonBirationalObstruction.md) and
-[generic-point maps](GenericPointFunctionField.md). The same-project proof
+[generic-point maps](GenericPointFunctionField.md) and
+[their chosen-base rational noninvertibility composition](GenericPointRationalNoninvertibility.md).
+The same-project proof
 expression reused in some of these modules is adapted rather than created
 independently in this repository. The [reader guide](Guide.md) and module
 headers explain mathematical use without private research records; original

@@ -34,6 +34,7 @@ public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints
 public import SchemeProperties.GeometricConnectedness
 public import SchemeProperties.GenericPointFunctionField
+public import SchemeProperties.GenericPointRationalNoninvertibility
 public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral
