@@ -29,6 +29,7 @@ functor of points. It also shows that this functor preserves finite limits.
 
 - `AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver`
 - `AlgebraicGeometry.finiteAlgSpecOver_isDense`
+- `AlgebraicGeometry.algebraicOverInclusion_obj`
 - `AlgebraicGeometry.algebraicOverPoints_eq`
 - `AlgebraicGeometry.algebraicOverPointsFullyFaithful`
 - `AlgebraicGeometry.lftPointsFullyFaithful`
@@ -330,6 +331,12 @@ abbrev algebraicOver (K : Type u) [Field K] :=
     (K : Type u) [Field K] :
     algebraicOver K ⥤ locallyFiniteTypeMorphism.Over ⊤ (Spec (.of K)) :=
   ObjectProperty.ι _
+
+/-- The inclusion of a finite-type scheme over a field has the same underlying
+locally-finite-type scheme, also for clients using only public imports. -/
+theorem algebraicOverInclusion_obj (K : Type u) [Field K]
+    (X : algebraicOver K) : (algebraicOverInclusion K).obj X = X.obj := by
+  rfl
 
 /-- The set-valued functor of points of a finite-type scheme on finitely generated algebras. -/
 noncomputable def algebraicOverPoints
