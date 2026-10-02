@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Reusable Lean theory of local scheme properties, components, modules and native rational maps. See README.md and docs/Guide.md for exact hypotheses."
+  description: "Reusable Lean theory of local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -13,6 +13,10 @@ sources:
     type: original-proof
     relationship: independently-proves
     note: "Original formal arguments and API design; this entry does not assert complete formalization of any external source."
+  - title: "Formal Frontier ring-pullback proof expression"
+    type: original-proof
+    relationship: adapts
+    note: "Adapts earlier Formal Frontier research proofs of the kernel identities and subsequent project proofs of localization, chart descent and restricted Spec arrows, preserving collective contributor credit rather than claiming independent proof authorship. See docs/CREDITS.md and docs/PullbackOpenImmersion.md. No book prose or source-specific coverage is imported."
   - title: "The Rising Sea: Foundations of Algebraic Geometry"
     authors:
       - Ravi Vakil
@@ -55,7 +59,13 @@ automation:
       notes: "AI-assisted Lean proofs, examples and documentation, with mathematical review; no uniform model or cost claim."
 
 status:
-  scope: "Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; the chosen-base generic-point rational arrow is noninvertible for a nontrivial Jacobson integral target despite its reversed field-map isomorphism. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md."
+  scope: >-
+    Ring-pullback restricted Spec arrows over arbitrary commutative-ring maps,
+    with exact opposite-kernel ranges forming a possibly empty disjoint cover
+    of the common-kernel complement. No surjectivity, nontriviality, field or
+    finite-type assumption; not unrestricted Spec-map immersions or connected
+    components.
+    Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; the chosen-base generic-point rational arrow is noninvertible for a nontrivial Jacobson integral target despite its reversed field-map isomorphism. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md.
   main_results:
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
@@ -295,6 +305,30 @@ status:
       file: SchemeProperties/GenericPointRationalNoninvertibility.lean
     - declaration: AlgebraicGeometry.Scheme.genericPointRationalHom_boundary
       file: SchemeProperties/GenericPointRationalNoninvertibility.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.ker_fst_mul_ker_snd
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.ker_toBase
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.awayMap_fst_bijective
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.awayMap_snd_bijective
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.fstTarget_inf_sndTarget
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.fstTarget_sup_sndTarget
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.isOpenImmersion_fstOpenMap
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.isOpenImmersion_sndOpenMap
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.range_fstOpenMap
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.range_sndOpenMap
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.disjoint_ranges
+      file: SchemeProperties/PullbackOpenImmersion.lean
+    - declaration: AlgebraicGeometry.PullbackOpenImmersion.union_ranges
+      file: SchemeProperties/PullbackOpenImmersion.lean
 
 review:
   status: self-assessed

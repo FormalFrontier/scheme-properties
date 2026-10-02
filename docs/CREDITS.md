@@ -63,6 +63,19 @@ independently in this repository. The [reader guide](Guide.md) and module
 headers explain mathematical use without private research records; original
 contributor and review details remain in history and the owning private records.
 
+[PullbackOpenImmersion](../SchemeProperties/PullbackOpenImmersion.lean) preserves
+original Formal Frontier project proof expression, rather than independently
+inventing it in Scheme Properties. Earlier Formal Frontier research proofs
+supplied the generic kernel-product and common-kernel arguments; a subsequent
+Formal Frontier contribution developed the localization, chart descent,
+native open-immersion and exact-range proofs. The module preserves that
+original expression, its statements and argument order, under the collective
+project credit above. Module integration and the direct-import client are
+separate adaptations, not claims of independent proof authorship. Imported
+mathlib APIs are used, not copied, and no book prose is reproduced. The
+[mathematical guide](PullbackOpenImmersion.md) explains the construction without
+requiring access to the original research records.
+
 ## Mathematical sources and upstream notices
 
 Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry*; J. S. Milne,

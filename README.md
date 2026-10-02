@@ -11,6 +11,18 @@ not by themselves claim coverage of any selected source.
 
 ## Headline results
 
+### Ring-pullback open immersions
+
+- [Open immersions on ring-pullback complements](docs/PullbackOpenImmersion.md):
+  for arbitrary commutative-ring maps `R → T ← S`, the actual maps from
+  `Spec R \ V(ker f)` and `Spec S \ V(ker g)` to the spectrum of their ring
+  pullback are open immersions. Their respective ranges are the complements
+  of the *opposite* projection kernels; they are disjoint and cover the
+  complement of the common-map kernel. These opens may be empty; no total
+  Spec-map immersion or connected-component claim follows. Direct import:
+  `SchemeProperties.PullbackOpenImmersion`; the [direct-import client](Test/PullbackOpenImmersionClient.lean)
+  is included.
+
 ### Generic points and birational geometry
 
 - [Canonical generic-point function-field map](docs/GenericPointFunctionField.md):
