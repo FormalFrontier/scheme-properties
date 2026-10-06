@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Reusable Lean theory of single-cover subfunctor extensions, local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
+  description: "Reusable Lean theory of single-cover subfunctor and group-object extensions, local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -28,7 +28,7 @@ sources:
       - J. S. Milne
     type: book
     relationship: adapts
-    note: "Definition 5.6 supplies the fat-subfunctor condition using one faithfully flat algebra extension, generalized here to a category and morphism property. Lemma 5.9 and Proposition 5.10 directly inform the single-cover extension statements and Čech-gluing proof idea; the example following Definition 5.6 motivates the unit-power image. Proposition 5.7 is the finite-type antecedent for flat-image density, extended here to locally finite-type field schemes and, for the affine-lifting lemma, arbitrary schemes and base rings under local finite presentation. Corollary 5.11 informs extension of isomorphisms from two dense subfunctors; both inverse laws follow from extension uniqueness. The generic categorical extension strengthens the finite-type field formulation. No complete source correspondence or coverage is claimed; reused Formal Frontier and Mathlib expression is credited separately in docs/CREDITS.md."
+    note: "Definition 5.6 supplies the fat-subfunctor condition using one faithfully flat algebra extension, generalized here to a category and morphism property. Lemma 5.9 and Proposition 5.10 directly inform the single-cover extension statements and Čech-gluing proof idea; the example following Definition 5.6 motivates the unit-power image. Proposition 5.7 is the finite-type antecedent for flat-image density, extended here to locally finite-type field schemes and, for the affine-lifting lemma, arbitrary schemes and base rings under local finite presentation. Corollary 5.11 informs extension of isomorphisms from two dense subfunctors; both inverse laws follow from extension uniqueness. Proposition 5.12 motivates the conditional group-object construction on an exact presheaf, not a represented finite-type group-scheme theorem. The generic categorical extension strengthens the finite-type field formulation. No complete source correspondence or coverage is claimed; reused Formal Frontier and Mathlib expression is credited separately in docs/CREDITS.md."
   - title: "The K-book: An Introduction to Algebraic K-theory"
     authors:
       - Charles A. Weibel
@@ -66,6 +66,12 @@ status:
     Isomorphisms between two one-cover dense subfunctors extend uniquely when
     both ambient presheaves satisfy singleton descent, with prescribed
     restrictions and compatibility with identities, inverses and composition.
+    A group law on a one-cover-dense subfunctor extends uniquely to a group-object
+    law on the exact target presheaf, compatible with inclusion, when the cover
+    class admits relative pullbacks and is stable under base change and
+    composition and the target satisfies singleton descent. The proper dense
+    two-point fixture tests the operations and recovery; no represented group
+    scheme or source correspondence is asserted.
     The represented specialization concerns finite-type schemes over a field,
     tested on finitely generated algebras with faithfully flat covers, using
     Mathlib fpqc descent rather than a full induced-site equivalence or Milne's
@@ -87,6 +93,12 @@ status:
       file: SchemeProperties/SingleCoverExtension.lean
     - declaration: CategoryTheory.Subfunctor.oneCoverExtensionEquiv
       file: SchemeProperties/SingleCoverExtension.lean
+    - declaration: CategoryTheory.Subfunctor.IsOneCoverDense.grpObj
+      file: SchemeProperties/SingleCoverGroup.lean
+    - declaration: CategoryTheory.Subfunctor.IsOneCoverDense.grpObj_isMonHom
+      file: SchemeProperties/SingleCoverGroup.lean
+    - declaration: CategoryTheory.Subfunctor.IsOneCoverDense.grpObj_unique
+      file: SchemeProperties/SingleCoverGroup.lean
     - declaration: CategoryTheory.Subfunctor.extendOneCoverIso
       file: SchemeProperties/SingleCoverExtension.lean
     - declaration: AlgebraicGeometry.algebraicOverPoints_isSheafFor_faithfullyFlat

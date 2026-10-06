@@ -9,7 +9,9 @@ but do not replace, mathlib's scheme and native rational-map APIs.
 formal expression, original contributors, mathematical sources and upstream
 notices. The [references](#references) identify the published arguments and
 prior formalizations used throughout the library; the credits explain their
-different roles in the Lean constructions.
+different roles in the Lean constructions. The group-object construction uses
+the existing single-cover extension API and Mathlib's Cartesian group-object
+infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form.
 
 ## Headline results
 
@@ -26,6 +28,17 @@ different roles in the Lean constructions.
   extension preserves the prescribed restrictions, identity, inverses and
   composition. Neither subfunctor needs descent.
   Direct import: `SchemeProperties.SingleCoverExtension`.
+- [Group objects from one-cover-dense subfunctors](SchemeProperties/SingleCoverGroup.lean):
+  if a group-valued subfunctor `D ⊆ F` is one-cover dense for a morphism class
+  with relative pullbacks and stability under base change and composition, and
+  the target presheaf `F` satisfies singleton-cover descent, its multiplication,
+  unit and inversion extend to a group-object law on the **exact given** `F`.
+  This is the unique such law making inclusion a monoid homomorphism. No ambient
+  group law, descent for `D`, topology, or arbitrary finite limits on test
+  objects are assumed. A proper dense `Bool` example recovers an independently
+  specified group law and computes nonunit operations. This does not establish
+  the corresponding represented finite-type group-scheme claim. Direct import:
+  `SchemeProperties.SingleCoverGroup`.
 - [Finite-type represented targets](SchemeProperties/FiniteTypeSingleCover.lean):
   over a field `K`, for finite-type `K`-schemes `X` and `Y`, maps from a one-cover
   dense subfunctor of the restricted points of `X` into those of `Y` correspond
@@ -308,9 +321,10 @@ installation, cloning, doc generation, axiom checks and dependency rebuilding.
   power-image example, Lemma 5.9 and Proposition 5.10 inform one-cover density
   and extension; Proposition 5.7 is the finite-type antecedent for flat-image
   density. Corollary 5.11 informs the isomorphism extension from two dense
-  subfunctors, whose inverse laws follow from extension uniqueness. Mathlib
-  fpqc descent supplies the represented-target proof, while finite affine
-  refinement supplies the flat-image lifting proof.
+  subfunctors, whose inverse laws follow from extension uniqueness. Proposition
+  5.12 motivates the generic group-object extension, not a represented-scheme
+  group-law theorem. Mathlib fpqc descent supplies the represented-target proof,
+  while finite affine refinement supplies the flat-image lifting proof.
 - Charles A. Weibel, *The K-book: An Introduction to Algebraic K-theory*,
   Chapter I, §5: motivation for affine finite-presentation work.
 - [The Stacks Project](https://stacks.math.columbia.edu/), tags 037U, 0386,
