@@ -23,11 +23,16 @@ functor. The target condition is `Presieve.IsSheafFor` on each singleton presiev
 includes both separatedness and existence of a glue. Neither the ambient functor nor its
 subfunctor is assumed to be a sheaf.
 
+An isomorphism of two dense subfunctors extends to their ambient presheaves when
+both ambient presheaves satisfy singleton descent. No descent condition is imposed
+on either subfunctor.
+
 ## References
 
 - J. S. Milne, *Algebraic Groups*, Definition 5.6 for the fat-subfunctor
-  condition, and Lemma 5.9 and Proposition 5.10 for the single faithfully flat
-  extension argument.
+  condition, Lemma 5.9 and Proposition 5.10 for the single faithfully flat
+  extension argument, and Corollary 5.11 for the isomorphism of two fat
+  subfunctors.
 - Mathlib's `Subfunctor` and `Presieve.IsSheafFor` for the categorical formulation.
 - Scheme Properties' restricted functor-of-points API for the finite-type specialization.
 -/
@@ -352,5 +357,133 @@ theorem extendOneCover_unique
   apply (oneCoverExtensionEquiv hD hY).injective
   rw [oneCoverExtensionEquiv_apply, hψ]
   exact (oneCoverExtensionEquiv hD hY).apply_symm_apply φ |>.symm
+
+/-- Extend an isomorphism of two one-cover dense subfunctors to their ambient
+presheaves. Each ambient presheaf satisfies singleton descent; neither
+subfunctor is required to satisfy descent. This abstracts the
+finite-type faithfully flat setting of Milne, *Algebraic Groups*, Corollary 5.11. -/
+noncomputable def extendOneCoverIso
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {G : Cᵒᵖ ⥤ Type w} {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    {E : Subfunctor G} (hE : E.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f))
+    (hG : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor G (Presieve.singleton f))
+    (e : D.toFunctor ≅ E.toFunctor) : F ≅ G where
+  hom := extendOneCover hD hG (e.hom ≫ E.ι)
+  inv := extendOneCover hE hF (e.inv ≫ D.ι)
+  hom_inv_id := by
+    apply (oneCoverExtensionEquiv hD hF).injective
+    rw [oneCoverExtensionEquiv_apply, oneCoverExtensionEquiv_apply]
+    calc
+      D.ι ≫ (extendOneCover hD hG (e.hom ≫ E.ι) ≫
+          extendOneCover hE hF (e.inv ≫ D.ι)) =
+          e.hom ≫ E.ι ≫ extendOneCover hE hF (e.inv ≫ D.ι) := by
+            rw [← Category.assoc, ι_comp_extendOneCover, Category.assoc]
+      _ = e.hom ≫ e.inv ≫ D.ι := by
+            rw [ι_comp_extendOneCover]
+      _ = D.ι ≫ 𝟙 F := by simp
+  inv_hom_id := by
+    apply (oneCoverExtensionEquiv hE hG).injective
+    rw [oneCoverExtensionEquiv_apply, oneCoverExtensionEquiv_apply]
+    calc
+      E.ι ≫ (extendOneCover hE hF (e.inv ≫ D.ι) ≫
+          extendOneCover hD hG (e.hom ≫ E.ι)) =
+          e.inv ≫ D.ι ≫ extendOneCover hD hG (e.hom ≫ E.ι) := by
+            rw [← Category.assoc, ι_comp_extendOneCover, Category.assoc]
+      _ = e.inv ≫ e.hom ≫ E.ι := by
+            rw [ι_comp_extendOneCover]
+      _ = E.ι ≫ 𝟙 G := by simp
+
+/-- The forward ambient isomorphism restricts to the specified map. -/
+@[reassoc (attr := simp)]
+theorem ι_comp_extendOneCoverIso_hom
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {G : Cᵒᵖ ⥤ Type w} {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    {E : Subfunctor G} (hE : E.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f))
+    (hG : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor G (Presieve.singleton f))
+    (e : D.toFunctor ≅ E.toFunctor) :
+    D.ι ≫ (extendOneCoverIso hD hE hF hG e).hom = e.hom ≫ E.ι :=
+  ι_comp_extendOneCover hD hG (e.hom ≫ E.ι)
+
+/-- The inverse ambient isomorphism restricts to the specified inverse. -/
+@[reassoc (attr := simp)]
+theorem ι_comp_extendOneCoverIso_inv
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {G : Cᵒᵖ ⥤ Type w} {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    {E : Subfunctor G} (hE : E.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f))
+    (hG : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor G (Presieve.singleton f))
+    (e : D.toFunctor ≅ E.toFunctor) :
+    E.ι ≫ (extendOneCoverIso hD hE hF hG e).inv = e.inv ≫ D.ι :=
+  ι_comp_extendOneCover hE hF (e.inv ≫ D.ι)
+
+/-- An ambient isomorphism with the prescribed forward restriction is unique. -/
+theorem extendOneCoverIso_unique
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {G : Cᵒᵖ ⥤ Type w} {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    {E : Subfunctor G} (hE : E.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f))
+    (hG : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor G (Presieve.singleton f))
+    (e : D.toFunctor ≅ E.toFunctor) (i : F ≅ G)
+    (hi : D.ι ≫ i.hom = e.hom ≫ E.ι) :
+    i = extendOneCoverIso hD hE hF hG e := by
+  apply Iso.ext
+  exact extendOneCover_unique hD hG (e.hom ≫ E.ι) i.hom hi
+
+/-- Extending the identity on a dense subfunctor gives the identity. -/
+theorem extendOneCoverIso_refl
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f)) :
+    extendOneCoverIso hD hD hF hF (Iso.refl D.toFunctor) = Iso.refl F := by
+  symm
+  apply extendOneCoverIso_unique hD hD hF hF (Iso.refl D.toFunctor)
+  simp
+
+/-- Extending an inverse agrees with inverting the extended isomorphism. -/
+theorem extendOneCoverIso_symm
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {G : Cᵒᵖ ⥤ Type w} {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    {E : Subfunctor G} (hE : E.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f))
+    (hG : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor G (Presieve.singleton f))
+    (e : D.toFunctor ≅ E.toFunctor) :
+    (extendOneCoverIso hD hE hF hG e).symm =
+      extendOneCoverIso hE hD hG hF e.symm := by
+  apply extendOneCoverIso_unique hE hD hG hF e.symm
+  exact ι_comp_extendOneCoverIso_inv hD hE hF hG e
+
+/-- Extension preserves composition through a shared dense subfunctor. -/
+theorem extendOneCoverIso_comp
+    {W : MorphismProperty C} [W.HasPullbacks] [W.IsStableUnderBaseChange]
+    {G H : Cᵒᵖ ⥤ Type w} {D : Subfunctor F} (hD : D.IsOneCoverDense W)
+    {E : Subfunctor G} (hE : E.IsOneCoverDense W)
+    {T : Subfunctor H} (hT : T.IsOneCoverDense W)
+    (hF : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor F (Presieve.singleton f))
+    (hG : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor G (Presieve.singleton f))
+    (hH : ∀ {X U : C} (f : U ⟶ X), W f →
+      Presieve.IsSheafFor H (Presieve.singleton f))
+    (e : D.toFunctor ≅ E.toFunctor) (e' : E.toFunctor ≅ T.toFunctor) :
+    extendOneCoverIso hD hT hF hH (e ≪≫ e') =
+      extendOneCoverIso hD hE hF hG e ≪≫ extendOneCoverIso hE hT hG hH e' := by
+  symm
+  apply extendOneCoverIso_unique hD hT hF hH (e ≪≫ e')
+  simp only [Iso.trans_hom, Category.assoc, ι_comp_extendOneCoverIso_hom_assoc]
+  exact congrArg (fun φ : E.toFunctor ⟶ H ↦ e.hom ≫ φ)
+    (ι_comp_extendOneCoverIso_hom hE hT hG hH e')
 
 end CategoryTheory.Subfunctor

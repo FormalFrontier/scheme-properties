@@ -21,6 +21,10 @@ different roles in the Lean constructions.
   satisfies descent for each singleton `W`-cover, restriction is an equivalence
   between natural transformations `F ⟶ Y` and `D ⟶ Y`. Neither identities nor
   composition stability in `W` nor a sheaf condition on `F` or `D` is required.
+  If both ambient presheaves satisfy singleton descent, an isomorphism of two
+  one-cover dense subfunctors extends uniquely to an ambient isomorphism;
+  extension preserves the prescribed restrictions, identity, inverses and
+  composition. Neither subfunctor needs descent.
   Direct import: `SchemeProperties.SingleCoverExtension`.
 - [Finite-type represented targets](SchemeProperties/FiniteTypeSingleCover.lean):
   over a field `K`, for finite-type `K`-schemes `X` and `Y`, maps from a one-cover
@@ -30,6 +34,21 @@ different roles in the Lean constructions.
   Mathlib fpqc descent and pullback comparison, not a full induced-site
   equivalence or a translation of Milne's ring-level proof. Direct import:
   `SchemeProperties.FiniteTypeSingleCover`.
+- [Finite-type isomorphism extension](SchemeProperties/FiniteTypeSingleCover.lean):
+  over any field, an isomorphism of two one-cover dense subfunctors of restricted
+  points of finite-type schemes extends uniquely to a scheme isomorphism,
+  with both prescribed restriction triangles. Neither scheme needs affineness,
+  separatedness or group structure. Tests and covers are as above; no transport
+  to Milne's chosen small test category is asserted.
+- [Faithfully flat image density](SchemeProperties/FlatImageDensity.lean): a
+  flat, surjective, locally finitely presented map of arbitrary schemes lifts
+  every affine test after one faithfully flat *finitely presented* algebra
+  map, with a commuting triangle. Over a field, flat surjections of locally
+  finite-type schemes are one-cover dense on finitely generated algebra
+  points; finite-type schemes specialize this result. Neither the schemes nor
+  the morphism need be quasi-compact. The finite-type case extends Milne's
+  Proposition 5.7 via Mathlib's finite affine refinement and coproduct.
+  Direct import: `SchemeProperties.FlatImageDensity`.
 - [Unit-power images and boundaries](SchemeProperties/PowerImage.lean): over any
   commutative base ring, including the zero ring, the image of the power map on
   units is one-cover dense for `0 < n`, using one finite-free root algebra.
@@ -287,7 +306,11 @@ installation, cloning, doc generation, axiom checks and dependency rebuilding.
   inform finite-étale components and their fibres. Appendix A.14 supplies the
   Noetherian finite/clopen-component antecedent. Definition 5.6, its following
   power-image example, Lemma 5.9 and Proposition 5.10 inform one-cover density
-  and extension; Mathlib fpqc descent supplies the represented-target proof.
+  and extension; Proposition 5.7 is the finite-type antecedent for flat-image
+  density. Corollary 5.11 informs the isomorphism extension from two dense
+  subfunctors, whose inverse laws follow from extension uniqueness. Mathlib
+  fpqc descent supplies the represented-target proof, while finite affine
+  refinement supplies the flat-image lifting proof.
 - Charles A. Weibel, *The K-book: An Introduction to Algebraic K-theory*,
   Chapter I, §5: motivation for affine finite-presentation work.
 - [The Stacks Project](https://stacks.math.columbia.edu/), tags 037U, 0386,

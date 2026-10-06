@@ -30,6 +30,14 @@ not a byte-identical copy and group-object refinements are outside this file.
 Formal Frontier AI agents added the public `algebraicOverPoints_eq` equation
 and its ordinary-import client as a separate API contribution, without changing
 Lattice's original expression or the group-free extraction credit.
+The [flat-image density](../SchemeProperties/FlatImageDensity.lean) proof uses
+Mathlib's finite affine refinement of a quasi-compact cover and finite affine
+coproduct to turn an open flat pullback over an affine test into a single
+faithfully flat finitely presented algebra cover. Milne's Proposition 5.7 is
+the finite-type antecedent; the locally finite-type field statement and the
+field-free affine-lifting statement are generalizations, not translations of
+his proof. Mathlib's restricted-points fullness supplies the finite-type test
+comparison; no book prose or Mathlib proof expression is copied here.
 [ModuleTensorLocalization](../SchemeProperties/ModuleTensorLocalization.lean)
 develops Anchor's earlier basic-open/localization research into a distinct
 reusable project proof. Original prototypes, later production proofs and
@@ -86,6 +94,13 @@ statement follows his example after Definition 5.6. Mathlib's fpqc singleton
 descent supplies the proof for finite-type represented targets instead of
 Milne's ring-level argument. The zero-additive nonfat boundary is derived
 independently, not attributed to his example.
+
+Milne's Corollary 5.11 supplies the finite-type antecedent for extending an
+isomorphism of two dense subfunctors. The generic presheaf construction uses
+the existing one-cover extension and its uniqueness to prove both inverse
+laws. The scheme specialization follows from represented singleton descent
+and Mathlib's fully faithful preimage of an isomorphism; it does not construct
+transport to Milne's chosen small test category.
 
 Milne's item 1.4 and Appendix A.33 supply finite-type **set-valued**
 functor-of-points full faithfulness, without separatedness; the

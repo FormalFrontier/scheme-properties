@@ -28,7 +28,7 @@ sources:
       - J. S. Milne
     type: book
     relationship: adapts
-    note: "Definition 5.6 supplies the fat-subfunctor condition using one faithfully flat algebra extension, generalized here to a category and morphism property. Lemma 5.9 and Proposition 5.10 directly inform the single-cover extension statements and Čech-gluing proof idea; the example following Definition 5.6 motivates the unit-power image. The generic categorical extension strengthens the finite-type field formulation. No completed source correspondence or coverage is claimed; reused Formal Frontier expression is credited separately in docs/CREDITS.md."
+    note: "Definition 5.6 supplies the fat-subfunctor condition using one faithfully flat algebra extension, generalized here to a category and morphism property. Lemma 5.9 and Proposition 5.10 directly inform the single-cover extension statements and Čech-gluing proof idea; the example following Definition 5.6 motivates the unit-power image. Proposition 5.7 is the finite-type antecedent for flat-image density, extended here to locally finite-type field schemes and, for the affine-lifting lemma, arbitrary schemes and base rings under local finite presentation. Corollary 5.11 informs extension of isomorphisms from two dense subfunctors; both inverse laws follow from extension uniqueness. The generic categorical extension strengthens the finite-type field formulation. No complete source correspondence or coverage is claimed; reused Formal Frontier and Mathlib expression is credited separately in docs/CREDITS.md."
   - title: "The K-book: An Introduction to Algebraic K-theory"
     authors:
       - Charles A. Weibel
@@ -63,10 +63,16 @@ status:
     Extension from one-cover dense subfunctors for morphism classes with relative pullbacks
     and base-change stability, assuming singleton descent only for the target;
     no identity or composition stability or source/subfunctor sheaf condition.
+    Isomorphisms between two one-cover dense subfunctors extend uniquely when
+    both ambient presheaves satisfy singleton descent, with prescribed
+    restrictions and compatibility with identities, inverses and composition.
     The represented specialization concerns finite-type schemes over a field,
     tested on finitely generated algebras with faithfully flat covers, using
     Mathlib fpqc descent rather than a full induced-site equivalence or Milne's
-    ring-level proof. Unit-power images are one-cover dense over any commutative
+    ring-level proof. Isomorphisms of two such dense restricted-points subfunctors
+    extend uniquely to isomorphisms of finite-type schemes, without affine,
+    separated or group hypotheses or a chosen-small-category identification.
+    Unit-power images are one-cover dense over any commutative
     base ring for positive exponents; Laurent nonmembership and failure of
     singleton descent require a field and exponent at least two. The zero
     additive subfunctor is not one-cover dense over a field.
@@ -81,9 +87,13 @@ status:
       file: SchemeProperties/SingleCoverExtension.lean
     - declaration: CategoryTheory.Subfunctor.oneCoverExtensionEquiv
       file: SchemeProperties/SingleCoverExtension.lean
+    - declaration: CategoryTheory.Subfunctor.extendOneCoverIso
+      file: SchemeProperties/SingleCoverExtension.lean
     - declaration: AlgebraicGeometry.algebraicOverPoints_isSheafFor_faithfullyFlat
       file: SchemeProperties/FiniteTypeSingleCover.lean
     - declaration: AlgebraicGeometry.algebraicOverOneCoverEquiv
+      file: SchemeProperties/FiniteTypeSingleCover.lean
+    - declaration: AlgebraicGeometry.extendAlgebraicOverIso
       file: SchemeProperties/FiniteTypeSingleCover.lean
     - declaration: AlgebraicGeometry.powerImage_isOneCoverDense
       file: SchemeProperties/PowerImage.lean

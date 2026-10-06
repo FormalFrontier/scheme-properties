@@ -28,7 +28,8 @@ ring-level proof.
 ## References
 
 - J. S. Milne, *Algebraic Groups*, Lemma 5.9 for the faithfully flat equalizer
-  and Proposition 5.10 for the represented extension on finite-type field tests.
+  and Proposition 5.10 for the represented extension on finite-type field tests,
+  and Corollary 5.11 for two dense subfunctors.
 - Mathlib's fpqc singleton precoverage and subcanonical topology.
 - `SchemeProperties.FiniteTypePoints` for restricted fully faithful points.
 -/
@@ -277,5 +278,84 @@ theorem extendAlgebraicOver_unique (X Y : algebraicOver K)
   apply (algebraicOverOneCoverEquiv K X Y D hD).injective
   rw [algebraicOverOneCoverEquiv_apply, hf]
   exact ((algebraicOverOneCoverEquiv K X Y D hD).apply_symm_apply φ).symm
+
+/-- An isomorphism of two one-cover dense subfunctors of restricted finite-type
+scheme points extends to an isomorphism of the schemes. The generic extension
+uses singleton faithfully flat descent of represented points, and restricted
+Yoneda fully faithfulness reflects the resulting isomorphism. This is the
+finite-type affine-test form of Milne, *Algebraic Groups*, Corollary 5.11;
+it does not identify these tests with Milne's chosen small category. -/
+noncomputable def extendAlgebraicOverIso (X Y : algebraicOver K)
+    (D : Subfunctor ((algebraicOverPoints K).obj X))
+    (E : Subfunctor ((algebraicOverPoints K).obj Y))
+    (hD : D.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (hE : E.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (e : D.toFunctor ≅ E.toFunctor) : X ≅ Y := by
+  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  letI : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
+    faithfullyFlatTestMorphisms_isStableUnderBaseChange K
+  exact (algebraicOverPointsFullyFaithful K).preimageIso
+    (Subfunctor.extendOneCoverIso hD hE
+      (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K X f hf)
+      (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K Y f hf) e)
+
+/-- The forward scheme isomorphism restricts to the given subfunctor map. -/
+@[reassoc (attr := simp)]
+theorem ι_comp_extendAlgebraicOverIso_hom (X Y : algebraicOver K)
+    (D : Subfunctor ((algebraicOverPoints K).obj X))
+    (E : Subfunctor ((algebraicOverPoints K).obj Y))
+    (hD : D.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (hE : E.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (e : D.toFunctor ≅ E.toFunctor) :
+    D.ι ≫ (algebraicOverPoints K).map (extendAlgebraicOverIso K X Y D E hD hE e).hom =
+      e.hom ≫ E.ι := by
+  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  letI : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
+    faithfullyFlatTestMorphisms_isStableUnderBaseChange K
+  change D.ι ≫ (algebraicOverPoints K).map ((algebraicOverPointsFullyFaithful K).preimageIso
+    (Subfunctor.extendOneCoverIso hD hE
+      (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K X f hf)
+      (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K Y f hf) e)).hom = _
+  rw [Functor.FullyFaithful.preimageIso_hom, (algebraicOverPointsFullyFaithful K).map_preimage]
+  exact Subfunctor.ι_comp_extendOneCoverIso_hom hD hE
+    (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K X f hf)
+    (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K Y f hf) e
+
+/-- The inverse scheme isomorphism restricts to the given inverse. -/
+@[reassoc (attr := simp)]
+theorem ι_comp_extendAlgebraicOverIso_inv (X Y : algebraicOver K)
+    (D : Subfunctor ((algebraicOverPoints K).obj X))
+    (E : Subfunctor ((algebraicOverPoints K).obj Y))
+    (hD : D.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (hE : E.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (e : D.toFunctor ≅ E.toFunctor) :
+    E.ι ≫ (algebraicOverPoints K).map (extendAlgebraicOverIso K X Y D E hD hE e).inv =
+      e.inv ≫ D.ι := by
+  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  letI : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
+    faithfullyFlatTestMorphisms_isStableUnderBaseChange K
+  change E.ι ≫ (algebraicOverPoints K).map ((algebraicOverPointsFullyFaithful K).preimageIso
+    (Subfunctor.extendOneCoverIso hD hE
+      (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K X f hf)
+      (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K Y f hf) e)).inv = _
+  rw [Functor.FullyFaithful.preimageIso_inv, (algebraicOverPointsFullyFaithful K).map_preimage]
+  exact Subfunctor.ι_comp_extendOneCoverIso_inv hD hE
+    (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K X f hf)
+    (fun f hf ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K Y f hf) e
+
+/-- An isomorphism of finite-type schemes extending the given subfunctor map
+agrees with the canonical extension. -/
+theorem extendAlgebraicOverIso_unique (X Y : algebraicOver K)
+    (D : Subfunctor ((algebraicOverPoints K).obj X))
+    (E : Subfunctor ((algebraicOverPoints K).obj Y))
+    (hD : D.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (hE : E.IsOneCoverDense (faithfullyFlatTestMorphisms K))
+    (e : D.toFunctor ≅ E.toFunctor) (i : X ≅ Y)
+    (hi : D.ι ≫ (algebraicOverPoints K).map i.hom = e.hom ≫ E.ι) :
+    i = extendAlgebraicOverIso K X Y D E hD hE e := by
+  apply Iso.ext
+  apply (algebraicOverOneCoverEquiv K X Y D hD).injective
+  rw [algebraicOverOneCoverEquiv_apply, algebraicOverOneCoverEquiv_apply, hi]
+  exact (ι_comp_extendAlgebraicOverIso_hom K X Y D E hD hE e).symm
 
 end AlgebraicGeometry
