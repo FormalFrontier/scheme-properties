@@ -23,10 +23,28 @@ structure-sheaf restriction and is natural in both module arguments. Explicit
 semilinear equivalences transport this comparison to the native
 `Localization.Away f` and `LocalizedModule (.powers f)` presentations.
 
+The principal-open proof combines the affine tensor comparison with Mathlib's
+localization of `tilde` sections and tensor products; the canonical localization
+maps are constructed independently of the comparison with restriction.
+
 The statements work also for `f = 0`, `f = 1`, zero rings and zero modules;
 they make no finiteness, regularity or nonemptiness assumption. They do not
 identify tensor products of sections with sections of the tensor on arbitrary
 opens.
+
+## References
+
+- Mathlib's `Mathlib/AlgebraicGeometry/Modules/Tilde.lean` supplies the actual
+  `tilde.toOpen` maps and localization of sections on basic opens.
+- Mathlib's `Mathlib/RingTheory/Localization/BaseChange.lean` supplies
+  `IsLocalization.moduleTensorEquiv`; its
+  `Mathlib/RingTheory/Localization/Basic.lean` supplies
+  `IsLocalization.algEquiv` for the Away-to-sections ring transport.
+- Mathlib's `Mathlib/Algebra/Module/LocalizedModule/Basic.lean` supplies
+  `IsLocalizedModule` localization uniqueness and canonical localized modules.
+- `SchemeProperties.ModuleTensorAffine` and
+  `SchemeProperties.ModuleTensorRestriction` supply the project affine tensor
+  and open-restriction comparisons combined here.
 -/
 
 set_option warningAsError true

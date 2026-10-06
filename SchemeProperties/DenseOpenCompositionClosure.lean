@@ -15,6 +15,13 @@ public import SchemeProperties.DenseOpenComposition
 Composing two maps that pull back dense opens densely preserves the property,
 without irreducibility, dominance, nonemptiness, or reducedness hypotheses.
 The underlying composition operation still requires the first condition only.
+
+## References
+
+- [Mathlib, `AlgebraicGeometry/Birational/Composition.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Composition.lean#L46-L55):
+  the domain normalization used by controlled composition adapts
+  `Scheme.PartialMap.comp`. The dense-open pullback closure argument is a
+  separate project proof, not an adaptation of a closure theorem there.
 -/
 
 set_option warningAsError true
@@ -60,7 +67,8 @@ theorem pullsDenseOpens_compOfPullsDenseOpens (f : X ⤏ Y)
     f.pullsDenseOpens_representative_iff.mpr hf
   have hsecond : g.representative.PullsDenseOpens :=
     g.pullsDenseOpens_representative_iff.mpr hg
-  have hcomp := (f.representative.compOfPullsDenseOpens hfirst g.representative).pullsDenseOpens_toRationalMap_iff.mpr
+  let comp := f.representative.compOfPullsDenseOpens hfirst g.representative
+  have hcomp := comp.pullsDenseOpens_toRationalMap_iff.mpr
     (f.representative.pullsDenseOpens_compOfPullsDenseOpens hfirst g.representative hsecond)
   rw [← g.toRationalMap_representative, compOfPullsDenseOpens_def]
   exact hcomp

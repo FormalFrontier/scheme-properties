@@ -21,6 +21,17 @@ of their associated sheaves is naturally isomorphic to the associated sheaf
 of their algebraic tensor product. The proof cancels the sheafification unit on
 stalks, uses the canonical tensor-of-stalks comparison, and identifies the
 remaining map via the universal property of module localization.
+
+## References
+
+- Mathlib's `Mathlib/AlgebraicGeometry/Modules/Tilde.lean` supplies `tilde`,
+  `tilde.toOpen`, and localization of its sections and stalks.
+- Mathlib's `Mathlib/Topology/Sheaves/Sheafify.lean` supplies the stalkwise
+  isomorphism of the sheafification unit; its
+  `Mathlib/Algebra/Module/LocalizedModule/Basic.lean` supplies uniqueness of
+  module localization.
+- `SchemeProperties.PresheafModuleTensorStalk` supplies the tensor-of-stalks
+  comparison constructed in this library.
 -/
 
 

@@ -6,10 +6,38 @@ but do not replace, mathlib's scheme and native rational-map APIs.
 
 **Authors: Formal Frontier Agents.** Original project work is
 [Apache-2.0 licensed](LICENSE). [Credits](docs/CREDITS.md) distinguish adapted
-formal expression and upstream notices. These source-independent results do
-not by themselves claim coverage of any selected source.
+formal expression, original contributors, mathematical sources and upstream
+notices. The [references](#references) identify the published arguments and
+prior formalizations used throughout the library; the credits explain their
+different roles in the Lean constructions.
 
 ## Headline results
+
+### Single-cover subfunctors
+
+- [Single-cover extension](SchemeProperties/SingleCoverExtension.lean): in an
+  arbitrary category, let `W` admit pullbacks along its morphisms and be stable
+  under base change. If a subfunctor `D` of `F` is one-cover dense and `Y`
+  satisfies descent for each singleton `W`-cover, restriction is an equivalence
+  between natural transformations `F ⟶ Y` and `D ⟶ Y`. Neither identities nor
+  composition stability in `W` nor a sheaf condition on `F` or `D` is required.
+  Direct import: `SchemeProperties.SingleCoverExtension`.
+- [Finite-type represented targets](SchemeProperties/FiniteTypeSingleCover.lean):
+  over a field `K`, for finite-type `K`-schemes `X` and `Y`, maps from a one-cover
+  dense subfunctor of the restricted points of `X` into those of `Y` correspond
+  to `K`-morphisms `X ⟶ Y`. Tests are finitely generated `K`-algebras and
+  density is witnessed by one faithfully flat algebra map. Target descent uses
+  Mathlib fpqc descent and pullback comparison, not a full induced-site
+  equivalence or a translation of Milne's ring-level proof. Direct import:
+  `SchemeProperties.FiniteTypeSingleCover`.
+- [Unit-power images and boundaries](SchemeProperties/PowerImage.lean): over any
+  commutative base ring, including the zero ring, the image of the power map on
+  units is one-cover dense for `0 < n`, using one finite-free root algebra.
+  Over a field and for `2 ≤ n`, the Laurent unit lies outside this image, which
+  also fails singleton descent on its root cover. The zero additive subfunctor
+  is not one-cover dense over a field. These distinguish density from pointwise
+  fullness and from descent for the subfunctor. Direct import:
+  `SchemeProperties.PowerImage`.
 
 ### Ring-pullback open immersions
 
@@ -246,3 +274,33 @@ minus inactive file peaked at 1.53 GiB. This is **not** a benchmark of the
 current checkout, a minimum-RAM requirement or a performance
 guarantee. CPU model/quota were not recorded. The baseline excludes toolchain
 installation, cloning, doc generation, axiom checks and dependency rebuilding.
+
+## References
+
+- Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry*: Exercise
+  5.3.C informs the integrality criterion; the aside to Exercise 5.4.M informs
+  separable-base-change normality; Definition 6.1.1, Theorem 6.1.2 and the
+  opening of §6.3 inform affine-cover quasicoherence and its abelian structure.
+- J. S. Milne, *Algebraic Groups: The Theory of Group Schemes of Finite Type over
+  a Field*: item 1.4/Appendix A.33 informs finite-type set-valued points;
+  Propositions 1.29–1.31, the paragraph before 1.30 and Corollary 1.32(a)
+  inform finite-étale components and their fibres. Appendix A.14 supplies the
+  Noetherian finite/clopen-component antecedent. Definition 5.6, its following
+  power-image example, Lemma 5.9 and Proposition 5.10 inform one-cover density
+  and extension; Mathlib fpqc descent supplies the represented-target proof.
+- Charles A. Weibel, *The K-book: An Introduction to Algebraic K-theory*,
+  Chapter I, §5: motivation for affine finite-presentation work.
+- [The Stacks Project](https://stacks.math.columbia.edu/), tags 037U, 0386,
+  0385 and 0363: a proof route from field-extension geometric connectedness
+  to connected schemes over separably closed fields.
+- [Mathlib](https://github.com/leanprover-community/mathlib4): reused scheme,
+  rational-map, restricted-Yoneda, flat-sections, tensor, sheaf and descent
+  methods, as well as adapted constructions detailed in
+  [Credits](docs/CREDITS.md), with authentic upstream notices preserved.
+- [Coherent Modules](https://github.com/FormalFrontier/coherent-modules) and
+  [Finite Étale Algebras](https://github.com/FormalFrontier/finite-etale-algebras):
+  prior formalizations used for coherent-module localization and finite-étale
+  component algebras and descent.
+
+The [credits](docs/CREDITS.md) distinguish mathematical antecedents, followed
+proof patterns, imported APIs, adapted expression and original project work.

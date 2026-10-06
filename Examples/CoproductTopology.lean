@@ -20,15 +20,15 @@ noncomputable section
 
 variable {ι : Type u} (X : ι → Scheme.{u})
 
-private theorem check_1 [∀ i, QuasiSeparatedSpace (X i)] :
+example [∀ i, QuasiSeparatedSpace (X i)] :
     QuasiSeparatedSpace (∐ X : Scheme.{u}) := inferInstance
 
-private theorem check_2 [Infinite ι] [∀ i, Nonempty (X i)] :
+example [Infinite ι] [∀ i, Nonempty (X i)] :
     ¬ CompactSpace (∐ X : Scheme.{u}) :=
   not_compactSpace_sigma X
 
 -- Empty indexing families are covered by the quasiseparated instance.
-private theorem check_3 :
+example :
     QuasiSeparatedSpace
       (∐ (fun _ : Empty ↦ (∅ : Scheme.{0})) : Scheme.{0}) := by
   let X₀ : Empty → Scheme.{0} := fun _ ↦ ∅
@@ -36,12 +36,12 @@ private theorem check_3 :
   exact @quasiSeparatedSpace_sigma Empty X₀ (fun i ↦ i.elim)
 
 -- Empty components require no artificial nonemptiness hypothesis.
-private theorem check_4 :
+example :
     QuasiSeparatedSpace
       (∐ (fun _ : ι ↦ (∅ : Scheme.{u})) : Scheme.{u}) := inferInstance
 
 -- A concrete infinite family exercises the literal nonemptiness boundary.
-private theorem check_5 :
+example :
     ¬ CompactSpace
       (∐ (fun _ : ℕ ↦ Spec (.of ℤ)) : Scheme.{0}) :=
   not_compactSpace_sigma _

@@ -21,6 +21,15 @@ pullback projections.
 The proof specializes mathlib's flat base-change theorem for sections on qcqs
 opens.  In particular, `X` is not assumed affine, separated, reduced,
 connected, or nonempty, and the extension is not assumed finite.
+
+The canonical equivalence below also satisfies identity and tower coherence.
+
+## References
+
+- Mathlib, `Mathlib.AlgebraicGeometry.Morphisms.Flat`,
+  `isIso_pushoutSection_of_isQuasiSeparated_of_flat_right`: flat base change
+  for sections on a quasi-compact quasiseparated source open over affine base
+  opens, specialized here to global sections after a field extension.
 -/
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace
@@ -107,7 +116,9 @@ extension of the base field.
 
 The source is oriented with the extension field on the left.  The algebra
 structures occurring in the type are the canonical structures defined by the
-structure morphism and the second pullback projection. -/
+structure morphism and the second pullback projection. The proof specializes
+Mathlib's `isIso_pushoutSection_of_isQuasiSeparated_of_flat_right` to global
+sections and identifies the resulting pushout with the tensor product. -/
 @[expose]
 noncomputable def globalSectionsBaseChangeEquiv
     (k K : Type u) [Field k] [Field K] [Algebra k K]

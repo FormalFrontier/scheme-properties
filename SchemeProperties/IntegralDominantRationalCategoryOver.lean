@@ -20,7 +20,6 @@ morphisms of objects are arbitrary total morphisms, not necessarily dominant.
 -/
 
 set_option warningAsError true
-set_option maxHeartbeats 400000
 
 universe u
 

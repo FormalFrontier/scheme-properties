@@ -13,11 +13,20 @@ public import Mathlib.AlgebraicGeometry.GammaSpecAdjunction
 /-!
 # Function fields and dominant rational maps
 
-Dominant native quotient rational maps of integral schemes induce homomorphisms of
-function fields in the opposite direction. The image of the field's closed point
-under the native `RationalMap.fromFunctionField` identifies the target generic
-stalk. Composition is proved for native rational maps through their actual
-dense-open inverse-image domains, without a finite-type or separatedness premise.
+Dominant quotient rational maps of integral schemes induce homomorphisms of
+function fields in the opposite direction. The generic-point image of Mathlib's
+`RationalMap.fromFunctionField` lets its closed-point stalk map construct the
+reversed homomorphism. Composition uses the inverse-image dense-open domain of
+rational composition, without a finite-type or separatedness premise.
+
+## References
+
+* Mathlib, `Mathlib.AlgebraicGeometry.Birational.RationalMap` (Andrew Yang) and
+  `Mathlib.AlgebraicGeometry.Birational.Composition` (Justus Springer): the
+  quotient-invariant map from a function-field spectrum and partial-map
+  composition on inverse-image domains.
+* Mathlib, `Mathlib.AlgebraicGeometry.Stalk` (Andrew Yang, Fangming Li): the
+  closed-point stalk map and its factorization through the stalk spectrum.
 -/
 
 set_option warningAsError true
@@ -61,7 +70,7 @@ private theorem partial_generic_image (p : X.PartialMap Y) [IsDominant p.hom] :
   rw [Hom.comp_apply, hdomain]
   exact himage
 
-/-- The native map from the source function field sends its closed point to the
+/-- The map from the source function field sends its closed point to the
 generic point of the target of a dominant rational map. -/
 theorem RationalMap.fromFunctionField_closedPoint (r : X ⤏ Y) [r.IsDominant] :
     r.fromFunctionField (closedPoint X.functionField) = genericPoint Y := by
@@ -69,7 +78,8 @@ theorem RationalMap.fromFunctionField_closedPoint (r : X ⤏ Y) [r.IsDominant] :
   haveI : IsDominant p.hom := (p.isDominant_toRationalMap_iff).mp inferInstance
   exact partial_generic_image p
 
-/-- The homomorphism of function fields induced by a dominant rational map. -/
+/-- The reversed homomorphism of function fields induced by a dominant rational
+map, using Mathlib's closed-point stalk map on `r.fromFunctionField`. -/
 noncomputable def RationalMap.functionFieldMap (r : X ⤏ Y) [r.IsDominant] :
     Y.functionField ⟶ X.functionField :=
   (Y.presheaf.stalkCongr (.of_eq r.fromFunctionField_closedPoint.symm)).hom ≫
@@ -150,8 +160,9 @@ private theorem partial_comp_fromFunctionField {Z : Scheme.{u}}
       (q.domain.fromSpecStalkOfMem (genericPoint Y) hq ≫ q.hom)
   simp only [← Category.assoc, hleft]
 
-/-- Native rational composition on the source function-field spectrum factors
-through the reversed function-field homomorphism of its first arrow. -/
+/-- Rational composition on the source function-field spectrum factors through
+the reversed function-field homomorphism of its first arrow, using Mathlib's
+inverse-image dense-open composition of partial maps. -/
 theorem RationalMap.fromFunctionField_comp {Z : Scheme.{u}}
     (r : X ⤏ Y) [r.IsDominant] (s : Y ⤏ Z) :
     (r.comp s).fromFunctionField =
@@ -163,7 +174,7 @@ theorem RationalMap.fromFunctionField_comp {Z : Scheme.{u}}
     RationalMap.fromFunctionField_toRationalMap] using
     partial_comp_fromFunctionField p q
 
-/-- Pullback reverses native rational composition. -/
+/-- Pullback reverses composition of quotient rational maps. -/
 @[simp] theorem RationalMap.functionFieldMap_comp {Z : Scheme.{u}} [IsIntegral Z]
     (r : X ⤏ Y) [r.IsDominant] (s : Y ⤏ Z) [s.IsDominant] :
     (r.comp s).functionFieldMap = s.functionFieldMap ≫ r.functionFieldMap := by

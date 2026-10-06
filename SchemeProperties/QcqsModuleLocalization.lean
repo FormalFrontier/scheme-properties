@@ -20,9 +20,21 @@ This file proves the module-valued qcqs lemma: for a quasicoherent module on a
 scheme, restriction from a compact quasiseparated open to a basic open is
 localization away from the section defining that basic open.
 
-The proof reduces the affine case to the standard `fromTildeΓ` localization
-theorem, clears kernels on compact opens using finite affine covers, and uses
-compact-open induction and the sheaf condition for existence.
+The proof reduces the affine case to Mathlib's `fromTildeΓ` comparison and
+basic-open `tilde.toOpen` localization, clears kernels on compact opens using
+finite affine covers, and uses compact-open induction and the sheaf condition
+for existence.
+
+## References
+
+- Mathlib's `Mathlib/AlgebraicGeometry/Modules/Tilde.lean` supplies the affine
+  `fromTildeΓ` comparison and basic-open module-section localization.
+- Mathlib's `Mathlib/AlgebraicGeometry/Morphisms/QuasiSeparated.lean` supplies
+  the qcqs basic-open ring localization; its
+  `Mathlib/AlgebraicGeometry/Morphisms/QuasiCompact.lean` supplies compact-open
+  induction.
+- Mathlib's `Mathlib/Algebra/Module/LocalizedModule/Away.lean` supplies the
+  `IsLocalizedModule.Away` criterion used after the project module argument.
 -/
 
 open CategoryTheory TopologicalSpace

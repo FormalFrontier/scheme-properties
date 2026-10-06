@@ -20,6 +20,14 @@ the sheafification unit, pure tensor sections and their elementary laws, the
 sheafification Hom equivalence, and the canonical symmetry.
 
 No quasicoherence or finiteness hypothesis is used.
+
+## References
+
+- Mathlib's `Mathlib/Algebra/Category/ModuleCat/Presheaf/Monoidal.lean` supplies
+  pointwise tensor products and symmetry for presheaves of modules.
+- Mathlib's `Mathlib/Algebra/Category/ModuleCat/Presheaf/Sheafification.lean`
+  supplies the module sheafification adjunction and Hom equivalence. The
+  scheme-module tensor bifunctor and its pure-tensor API are assembled here.
 -/
 
 open CategoryTheory MonoidalCategory BraidedCategory TopologicalSpace

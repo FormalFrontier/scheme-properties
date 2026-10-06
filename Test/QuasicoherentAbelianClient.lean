@@ -20,26 +20,30 @@ universe u
 
 variable (X : Scheme.{u})
 
-abbrev QCoh :=
-  (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory
-
 #synth (SheafOfModules.isQuasicoherent X.ringCatSheaf).ContainsZero
 #synth (SheafOfModules.isQuasicoherent X.ringCatSheaf).IsClosedUnderFiniteProducts
 #synth (SheafOfModules.isQuasicoherent X.ringCatSheaf).IsClosedUnderKernels
 #synth (SheafOfModules.isQuasicoherent X.ringCatSheaf).IsClosedUnderCokernels
-#synth Abelian (QCoh X)
+#synth Abelian ((SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory)
 
-private def check_1 : QCoh X := 0
+example : (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory := 0
 
-private def check_2 (M N : QCoh X) : QCoh X := M ⨯ N
+example (M N : (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory) :
+    (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory := M ⨯ N
 
-private def check_3 {M N : QCoh X} (f : M ⟶ N) : QCoh X := kernel f
+example {M N : (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory}
+    (f : M ⟶ N) :
+    (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory := kernel f
 
-private def check_4 {M N : QCoh X} (f : M ⟶ N) : QCoh X := cokernel f
+example {M N : (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory}
+    (f : M ⟶ N) :
+    (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory := cokernel f
 
-private def check_5 (M N : QCoh X) : QCoh X := kernel (0 : M ⟶ N)
+example (M N : (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory) :
+    (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory := kernel (0 : M ⟶ N)
 
-private def check_6 (M N : QCoh X) : QCoh X := cokernel (0 : M ⟶ N)
+example (M N : (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory) :
+    (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory := cokernel (0 : M ⟶ N)
 
 end
 

@@ -19,6 +19,15 @@ set_option warningAsError true
 This file proves that a connected locally Noetherian scheme whose local rings
 are domains is integral. The main local step shows that a point with a domain
 local ring lies on a unique irreducible component.
+
+The locally Noetherian result applies the Noetherian component argument on
+affine neighborhoods, rather than requiring the whole scheme to be Noetherian.
+
+## References
+
+* R. Vakil, *The Rising Sea: Foundations of Algebraic Geometry* (October 21,
+  2025 draft), Exercise 5.3.C (the component argument and its locally
+  Noetherian extension).
 -/
 
 open Set Topology TopologicalSpace CategoryTheory
@@ -200,7 +209,8 @@ theorem irreducibleSpace_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDom
   exact isIrreducible_irreducibleComponent
 
 /-- A connected locally Noetherian scheme with domain local rings is
-integral. -/
+integral. This extends the Noetherian criterion in Vakil, *The Rising Sea*,
+Exercise 5.3.C. -/
 theorem isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain
     (X : Scheme) [IsLocallyNoetherian X] [ConnectedSpace X]
     [∀ x : X, IsDomain (X.presheaf.stalk x)] : IsIntegral X := by
@@ -214,7 +224,8 @@ theorem irreducibleSpace_of_isNoetherian_of_connectedSpace_of_stalk_isDomain
     [∀ x : X, IsDomain (X.presheaf.stalk x)] : IrreducibleSpace X := by
   exact irreducibleSpace_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain X
 
-/-- A connected Noetherian scheme with domain local rings is integral. -/
+/-- A connected Noetherian scheme with domain local rings is integral, as in
+Vakil, *The Rising Sea*, Exercise 5.3.C. -/
 theorem isIntegral_of_isNoetherian_of_connectedSpace_of_stalk_isDomain
     (X : Scheme) [IsNoetherian X] [ConnectedSpace X]
     [∀ x : X, IsDomain (X.presheaf.stalk x)] : IsIntegral X := by

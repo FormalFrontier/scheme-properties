@@ -16,7 +16,7 @@ universe u
 
 namespace SchemePropertiesTest.RationalFunctionFieldInverse
 
-private theorem chosen_base_inverse_laws {X Y S : Scheme.{u}}
+example {X Y S : Scheme.{u}}
     [IsIntegral X] [IsIntegral Y] (sX : X ⟶ S) (sY : Y ⟶ S)
     [LocallyOfFiniteType sX]
     (f : IntegralDominantRationalSchemeOver.of sX ⟶
@@ -32,14 +32,14 @@ private theorem chosen_base_inverse_laws {X Y S : Scheme.{u}}
   exact ((@IntegralDominantRationalSchemeOver.isIso_iff_isIso_functionFieldMap
     _ _ _ f hsource).2 inferInstance).out
 
-private theorem chosen_base_converse_without_finiteness {X Y S : Scheme.{u}}
+example {X Y S : Scheme.{u}}
     [IsIntegral X] [IsIntegral Y] (sX : X ⟶ S) (sY : Y ⟶ S)
     (f : IntegralDominantRationalSchemeOver.of sX ⟶
       IntegralDominantRationalSchemeOver.of sY) [IsIso f] :
     IsIso f.toRationalMap.functionFieldMap :=
   IntegralDominantRationalSchemeOver.isIso_functionFieldMap f
 
-private theorem chosen_base_native_quotient {X Y S : Scheme.{u}}
+example {X Y S : Scheme.{u}}
     [IsIntegral X] [IsIntegral Y] (sX : X ⟶ S) (sY : Y ⟶ S)
     [LocallyOfFiniteType sX]
     (r : X ⤏ Y) [hrdominant : r.IsDominant]
@@ -62,7 +62,13 @@ private theorem chosen_base_native_quotient {X Y S : Scheme.{u}}
   have hfield : IsIso f.toRationalMap.functionFieldMap := by
     change IsIso r.functionFieldMap
     infer_instance
-  obtain ⟨g, hfg, hgf⟩ := chosen_base_inverse_laws sX sY f
+  have hsource : LocallyOfFiniteType
+      (IntegralDominantRationalSchemeOver.of sX).toBase := by
+    change LocallyOfFiniteType sX
+    infer_instance
+  obtain ⟨g, hfg, hgf⟩ :=
+    ((@IntegralDominantRationalSchemeOver.isIso_iff_isIso_functionFieldMap
+      _ _ _ f hsource).2 inferInstance).out
   refine ⟨g, ?_, ?_, ?_⟩
   · exact IntegralDominantRationalSchemeOver.isOver_iff_compHom.mp g.isOver
   · have h := congrArg (fun h : IntegralDominantRationalSchemeOver.of sX ⟶

@@ -28,6 +28,19 @@ The key affine input is that `AlgebraicGeometry.tilde.functor R` preserves finit
 limits. Its essential image is the quasicoherent modules on `Spec R`. The result
 is then transported over the affine opens of an arbitrary scheme using the
 affine-open-cover criterion from `SchemeProperties.Quasicoherent`.
+
+The categorical finite-product condition plays the role of finite sums in the
+abelian-subcategory argument; finite-limit and finite-colimit closure are the
+stronger form used to obtain the kernel and cokernel instances.
+
+## References
+
+* R. Vakil, *The Rising Sea: Foundations of Algebraic Geometry* (October 21,
+  2025 draft), §6.3 (the opening abelian-subcategory argument, pp. 178–179).
+* Mathlib, `Mathlib/AlgebraicGeometry/Modules/Tilde.lean` (affine tilde
+  formalization).
+* Mathlib, `Mathlib/CategoryTheory/Abelian/Subcategory.lean` (the generic
+  abelian full-subcategory criterion).
 -/
 
 open CategoryTheory Limits TopologicalSpace ZeroObject
@@ -307,8 +320,8 @@ theorem isQuasicoherent_of_isLimit (X : Scheme.{u}) {J : Type w}
     letI : (SheafOfModules.isQuasicoherent
         (Spec Γ(X, U i)).ringCatSheaf).IsClosedUnderLimitsOfShape J := by
       rw [← AlgebraicGeometry.essImage_tilde]
-      exact instIsClosedUnderLimitsOfShapeEssImageOfHasLimitsOfShapeOfPreservesLimitsOfShapeOfFullOfFaithful
-        (tilde.functor Γ(X, U i))
+      exact ObjectProperty.isClosedUnderLimitsOfShape_of_preservesLimitsOfShape_ι
+        (tilde.functor Γ(X, U i)).essImage J
     change (SheafOfModules.isQuasicoherent (Spec Γ(X, U i)).ringCatSheaf) (G.obj c.pt)
     apply (SheafOfModules.isQuasicoherent (Spec Γ(X, U i)).ringCatSheaf).prop_of_isLimit
       (isLimitOfPreserves G hc)
@@ -339,8 +352,8 @@ theorem isQuasicoherent_of_isColimit (X : Scheme.{u}) {J : Type w}
     letI : (SheafOfModules.isQuasicoherent
         (Spec Γ(X, U i)).ringCatSheaf).IsClosedUnderColimitsOfShape J := by
       rw [← AlgebraicGeometry.essImage_tilde]
-      exact instIsClosedUnderColimitsOfShapeEssImageOfHasColimitsOfShapeOfPreservesColimitsOfShapeOfFullOfFaithful
-        (tilde.functor Γ(X, U i))
+      exact ObjectProperty.isClosedUnderColimitsOfShape_of_preservesColimitsOfShape_ι
+        (tilde.functor Γ(X, U i)).essImage J
     change (SheafOfModules.isQuasicoherent (Spec Γ(X, U i)).ringCatSheaf) (G.obj c.pt)
     apply (SheafOfModules.isQuasicoherent (Spec Γ(X, U i)).ringCatSheaf).prop_of_isColimit
       (isColimitOfPreserves G hc)
@@ -352,7 +365,8 @@ theorem isQuasicoherent_of_isColimit (X : Scheme.{u}) {J : Type w}
     X c.pt X.affineOpens U hU hUaff inferInstance
 
 /-- Quasicoherent modules on an arbitrary scheme are closed under finite
-limits. -/
+limits. The finite-product case supplies the finite sums in Vakil,
+*The Rising Sea*, §6.3's abelian-subcategory argument. -/
 noncomputable instance isQuasicoherent_isClosedUnderFiniteLimits (X : Scheme.{u}) :
     (SheafOfModules.isQuasicoherent X.ringCatSheaf).IsClosedUnderFiniteLimits where
   isClosedUnderLimitsOfShape J _ _ := by
@@ -370,7 +384,7 @@ noncomputable instance isQuasicoherent_isClosedUnderFiniteColimits (X : Scheme.{
     exact isQuasicoherent_of_isColimit X p.isColimit p.prop_diag_obj
 
 /-- The quasicoherent-module property on an arbitrary scheme contains a zero
-object. -/
+object, as in Vakil, *The Rising Sea*, §6.3. -/
 noncomputable instance isQuasicoherent_containsZero (X : Scheme.{u}) :
     (SheafOfModules.isQuasicoherent X.ringCatSheaf).ContainsZero where
   exists_zero :=
@@ -378,7 +392,8 @@ noncomputable instance isQuasicoherent_containsZero (X : Scheme.{u}) :
       (SheafOfModules.isQuasicoherent X.ringCatSheaf).prop_of_isTerminal
         0 (isZero_zero _).isTerminal⟩
 
-/-- Quasicoherent modules on an arbitrary scheme are closed under kernels. -/
+/-- Quasicoherent modules on an arbitrary scheme are closed under kernels, as
+in Vakil, *The Rising Sea*, §6.3. -/
 noncomputable instance isQuasicoherent_isClosedUnderKernels (X : Scheme.{u}) :
     (SheafOfModules.isQuasicoherent X.ringCatSheaf).IsClosedUnderKernels where
   kernels_le := by
@@ -388,7 +403,8 @@ noncomputable instance isQuasicoherent_isClosedUnderKernels (X : Scheme.{u}) :
     · exact hX
     · exact hY
 
-/-- Quasicoherent modules on an arbitrary scheme are closed under cokernels. -/
+/-- Quasicoherent modules on an arbitrary scheme are closed under cokernels,
+as in Vakil, *The Rising Sea*, §6.3. -/
 noncomputable instance isQuasicoherent_isClosedUnderCokernels (X : Scheme.{u}) :
     (SheafOfModules.isQuasicoherent X.ringCatSheaf).IsClosedUnderCokernels where
   cokernels_le := by

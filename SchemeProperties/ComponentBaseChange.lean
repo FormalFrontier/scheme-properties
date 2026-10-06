@@ -22,11 +22,24 @@ is an isomorphism for every extension field.
 The comparison is stated first on coordinate algebras, with the tensor factors
 oriented exactly as in the standard pullback of an affine scheme.  Its range is
 finite etale and therefore lies in the selected component subalgebra after
-base change.  The corresponding map of spectra is the literal canonical
+base change.  The corresponding map of spectra is the canonical
 comparison.  No algebraicity, finite-dimensionality, separability,
 perfectness, reducedness, connectedness, nonemptiness, or separatedness
 assumption is imposed.  In particular, the result applies to transcendental
 and mixed extensions and to schemes with subsingleton global sections.
+
+## References
+
+- J. S. Milne, *Algebraic Groups* (2017), Proposition 1.30(a) and the
+  following compatibility sentence: the component scheme and its canonical
+  map commute with arbitrary extensions of the base field.
+- `finite-etale-algebras`, `FiniteEtaleAlgebras/PurelyInseparableDescent.lean`:
+  `PurelyInseparableDescent.package` and `package_range` are applied to the
+  selected subalgebra in the purely inseparable comparison step.
+- `finite-etale-algebras`, `FiniteEtaleAlgebras/SeparableClosureDescent.lean`:
+  `SeparableClosureDescent.package` and `package_range` supply the descent
+  step after separable closure. The canonical comparison for arbitrary field
+  extensions is constructed here, not supplied by either upstream module.
 -/
 
 open CategoryTheory Limits Opposite
@@ -95,12 +108,12 @@ private noncomputable def componentGlobalSectionsBaseChangeEquiv
     LocallyOfFiniteType.isLocallyNoetherian X.hom
   exact Scheme.globalSectionsBaseChangeEquiv k K X.hom
 
-/-- The literal scalar-extension map from the coordinate algebra of the
+/-- The canonical scalar-extension map from the coordinate algebra of the
 base-changed component scheme to the global sections of the base-changed
 source scheme.
 
 The source is `componentSubalgebra X ⊗[k] K`, matching
-`baseChangeSpecOverIso`; internally the accepted global-sections equivalence
+`baseChangeSpecOverIso`; internally the global-sections equivalence
 uses the factor-reversed tensor product. -/
 noncomputable def componentScalarExtensionAlgHom
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -112,7 +125,7 @@ noncomputable def componentScalarExtensionAlgHom
       (K := K) (componentSubalgebra X)).comp
         (Algebra.TensorProduct.commRight k K (componentSubalgebra X)).symm.toAlgHom)
 
-/-- The literal range of the scalar-extended selected component algebra. -/
+/-- The range of the scalar-extended selected component algebra. -/
 abbrev baseChangedComponentSubalgebra
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -161,7 +174,7 @@ private theorem baseChangedComponentSubalgebra_le
     (baseChangedComponentSubalgebra_isFiniteEtale (K := K) X)
 
 /-- The selected component algebra after base change, transported back to the
-literal tensor-product model of global sections. -/
+tensor-product model of global sections. -/
 private noncomputable def pulledBackComponentSubalgebra
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -186,7 +199,7 @@ private theorem pulledBackComponentSubalgebra_isFiniteEtale
   exact ⟨Module.Finite.equiv eA.toLinearEquiv, Algebra.Etale.of_equiv eA⟩
 
 /-- Purely inseparable base change to a separably closed field creates no new
-selected finite-etale global sections.  This is the literal reverse inclusion
+selected finite-etale global sections.  This is the reverse inclusion
 in the ambient global-sections ring, not merely an abstract equivalence. -/
 private theorem componentSubalgebra_le_baseChangedComponentSubalgebra_of_purelyInseparable
     [IsPurelyInseparable k K] [IsSepClosed K]
@@ -243,7 +256,7 @@ private theorem componentSubalgebra_le_baseChangedComponentSubalgebra_of_purelyI
     _ = x := e.apply_symm_apply x
 
 /-- In the purely inseparable/separably-closed case, the two canonical
-finite-etale subalgebras are literally equal inside the global-sections ring. -/
+finite-etale subalgebras are equal inside the global-sections ring. -/
 private theorem baseChangedComponentSubalgebra_eq_of_purelyInseparable
     [IsPurelyInseparable k K] [IsSepClosed K]
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -319,7 +332,7 @@ private theorem componentBaseChangeComparisonAlgHom_surjective_of_purelyInsepara
 
 /-- The canonical algebra equivalence in the purely
 inseparable/separably-closed case.  Its forward map is definitionally the
-literal comparison map. -/
+canonical comparison map. -/
 private noncomputable def componentBaseChangeComparisonAlgEquiv_of_purelyInseparable
     [IsPurelyInseparable k K] [IsSepClosed K]
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -431,7 +444,7 @@ private noncomputable def componentBaseChangeComparisonModelFromAlgHom
 
 /-- The canonical comparison, with its target written as the explicit affine
 model of the base-changed component scheme.  It is the unique factor of the
-base-changed canonical source map through the accepted finite-etale
+base-changed canonical source map through the finite-etale
 reflection. -/
 private noncomputable def componentBaseChangeComparisonModel
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -455,7 +468,7 @@ private theorem toComponentScheme_comp_componentBaseChangeComparisonModel
     (componentAlgebraTensor_isFiniteEtale (K := K) X)
     (baseChangedToComponentSchemeModel (K := K) X)
 
-/-- The universal-property factor uses the literal scalar-extension algebra
+/-- The universal-property factor uses the canonical scalar-extension algebra
 map packaged above. -/
 private theorem componentFactorAlgHom_baseChangedToComponentSchemeModel
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -518,10 +531,10 @@ private theorem componentFactorAlgHom_baseChangedToComponentSchemeModel
       rw [hp, ha]
       simp [componentScalarExtensionAlgHom,
         componentGlobalSectionsBaseChangeEquiv]
-  | add x y hx hy => simpa only [map_add] using congrArg₂ (.+.) hx hy
+  | add x y hx hy => simpa only [map_add] using congrArg₂ (· + ·) hx hy
 
 /-- The universal-property construction of the model comparison is exactly
-the map obtained by applying `Spec` to the literal scalar-extension algebra
+the map obtained by applying `Spec` to the canonical scalar-extension algebra
 map. -/
 private theorem componentBaseChangeComparisonModel_eq_fromAlgHom
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -554,9 +567,10 @@ private theorem componentBaseChangeComparisonModelIso_hom_of_purelyInseparable
   rw [componentBaseChangeComparisonModel_eq_fromAlgHom (K := K) X]
   rfl
 
-/-- The literal comparison from the selected component scheme of the
+/-- The canonical comparison from the selected component scheme of the
 base-changed source to the categorical base change of the selected component
-scheme. -/
+scheme. This is the canonical comparison of J. S. Milne, *Algebraic Groups*
+(2017), Proposition 1.30(a), for an arbitrary field extension. -/
 noncomputable def componentBaseChangeComparison
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -565,7 +579,7 @@ noncomputable def componentBaseChangeComparison
   componentBaseChangeComparisonModel (K := K) X ≫
     (componentSchemeBaseChangeModelIso (K := K) X).inv
 
-/-- The literal categorical base-change isomorphism in the purely
+/-- The canonical categorical base-change isomorphism in the purely
 inseparable/separably-closed case. -/
 private noncomputable def componentBaseChangeIso_of_purelyInseparable
     [IsPurelyInseparable k K] [IsSepClosed K]
@@ -577,7 +591,7 @@ private noncomputable def componentBaseChangeIso_of_purelyInseparable
     (K := K) X).trans (componentSchemeBaseChangeModelIso (K := K) X).symm
 
 /-- The forward map of the purely inseparable categorical isomorphism is the
-literal canonical comparison. -/
+canonical comparison. -/
 private theorem componentBaseChangeIso_hom_of_purelyInseparable
     [IsPurelyInseparable k K] [IsSepClosed K]
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -588,7 +602,9 @@ private theorem componentBaseChangeIso_hom_of_purelyInseparable
     componentBaseChangeComparisonModelIso_hom_of_purelyInseparable]
   rfl
 
-/-- The literal comparison commutes with the base-changed canonical map. -/
+/-- The canonical comparison commutes with the base-changed canonical map,
+as in the sentence following J. S. Milne, *Algebraic Groups* (2017),
+Proposition 1.30(a). -/
 theorem toComponentScheme_comp_componentBaseChangeComparison
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -966,7 +982,7 @@ private theorem pulledBackComponentSubalgebra_isStable_of_isSepClosure
     ((GaloisDescent.coefficientwise (R := Γ(X.left, ⊤)) σ).toRingHom.comp
       P.val.toRingHom)
 
-/-- Separable-closure descent gives the literal reverse inclusion between the
+/-- Separable-closure descent gives the reverse inclusion between the
 two embedded component subalgebras. -/
 private theorem componentSubalgebra_le_baseChangedComponentSubalgebra_of_isSepClosure
     [IsSepClosure k K]
@@ -1196,7 +1212,7 @@ theorem componentBaseChangeComparisonAlgHom_surjective
   exact (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
     (f := f.toLinearMap) hfinrank).mp hinjective
 
-/-- The hard reverse literal inclusion of component subalgebras for an
+/-- The reverse inclusion of component subalgebras for an
 arbitrary field extension. -/
 private theorem componentSubalgebra_le_baseChangedComponentSubalgebra
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -1210,7 +1226,7 @@ private theorem componentSubalgebra_le_baseChangedComponentSubalgebra
   refine ⟨x, ?_⟩
   exact congrArg Subtype.val hx
 
-/-- The scalar-extended and newly selected component subalgebras are literally
+/-- The scalar-extended and newly selected component subalgebras are
 equal in the global-sections ring. -/
 theorem baseChangedComponentSubalgebra_eq
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -1221,7 +1237,9 @@ theorem baseChangedComponentSubalgebra_eq
     (componentSubalgebra_le_baseChangedComponentSubalgebra (K := K) X)
 
 /-- The canonical algebra equivalence for arbitrary field extension.  Its
-forward map is definitionally the accepted literal comparison. -/
+forward map is definitionally the canonical comparison. This is the
+algebraic counterpart of J. S. Milne, *Algebraic Groups* (2017),
+Proposition 1.30(a). -/
 noncomputable def componentBaseChangeComparisonAlgEquiv
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -1240,7 +1258,7 @@ private noncomputable def componentBaseChangeComparisonModelIso
       componentSchemeBaseChangeModel (K := K) X :=
   specOverIsoOfAlgEquiv (componentBaseChangeComparisonAlgEquiv (K := K) X)
 
-/-- The forward map of the model isomorphism is exactly the accepted canonical
+/-- The forward map of the model isomorphism is the canonical
 comparison model. -/
 private theorem componentBaseChangeComparisonModelIso_hom
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
@@ -1250,8 +1268,9 @@ private theorem componentBaseChangeComparisonModelIso_hom
   rw [componentBaseChangeComparisonModel_eq_fromAlgHom (K := K) X]
   rfl
 
-/-- The literal categorical base-change isomorphism for arbitrary field
-extension. -/
+/-- The canonical categorical base-change isomorphism for arbitrary field
+extension, as in J. S. Milne, *Algebraic Groups* (2017),
+Proposition 1.30(a). -/
 noncomputable def componentBaseChangeIso
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -1261,7 +1280,8 @@ noncomputable def componentBaseChangeIso
     (componentSchemeBaseChangeModelIso (K := K) X).symm
 
 /-- The forward map of the categorical base-change isomorphism is exactly the
-canonical `componentBaseChangeComparison`. -/
+canonical `componentBaseChangeComparison`, giving the canonical map of
+J. S. Milne, *Algebraic Groups* (2017), Proposition 1.30(a). -/
 theorem componentBaseChangeIso_hom
     (X : Over (Spec (.of k))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :

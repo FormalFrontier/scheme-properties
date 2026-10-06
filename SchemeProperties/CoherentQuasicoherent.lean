@@ -25,6 +25,17 @@ The section module on a basic open is regarded both as a module over its own
 structure ring and, by restriction of scalars, as a module over the ambient
 section ring.  No finiteness or nonemptiness condition is imposed on the
 spanning set.
+
+## References
+
+- `coherent-modules`, `CoherentModules/Localization.lean`:
+  `Module.IsCoherent.of_isLocalizedModule` and
+  `Module.IsCoherent.of_localizationSpan'` are applied to the project-local
+  qcqs section-localization comparisons; the upstream theorems are used
+  rather than their proofs being reproduced.
+- `coherent-modules`, `CoherentModules/ModuleCat.lean`:
+  `ModuleCat.isCoherent` supplies the object property transported to native
+  quasicoherent modules on an affine spectrum.
 -/
 
 open CategoryTheory TopologicalSpace
@@ -37,7 +48,8 @@ universe u
 variable {X : Scheme.{u}}
 
 /-- Coherence of quasicoherent sections is preserved by restriction to a basic
-open of a compact quasiseparated open. -/
+open of a compact quasiseparated open, using `coherent-modules`'s
+`Module.IsCoherent.of_isLocalizedModule` after the qcqs localization comparison. -/
 theorem isCoherent_basicOpen_of_qcqs
     (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens} (hU : IsCompact U.1)
     (hU' : IsQuasiSeparated U.1) (f : Γ(X, U))
@@ -66,7 +78,8 @@ theorem isCoherent_basicOpen_of_qcqs_of_top
     isQuasiSeparated_univ f hM
 
 /-- Coherence of the section module on a compact quasiseparated open descends
-from any set-indexed spanning family of its basic opens. -/
+from any set-indexed spanning family of its basic opens, using
+`coherent-modules`'s `Module.IsCoherent.of_localizationSpan'`. -/
 theorem isCoherent_of_span_basicOpen_of_qcqs
     (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens} (hU : IsCompact U.1)
     (hU' : IsQuasiSeparated U.1) (s : Set Γ(X, U)) (hs : Ideal.span s = ⊤)

@@ -22,6 +22,19 @@ Finite presentations restrict along open immersions. A finitely presented module
 over a commutative ring gives a natively finitely presented associated sheaf.
 Every natively finitely presented sheaf on a scheme admits finite presentations
 on an affine open cover; the cover itself need not be finite.
+
+## References
+
+- Charles A. Weibel, *The K-book*, Chapter I, §5, the affine finite-presentation
+  discussion preceding Lemma I.5.1.3: motivation for the module-to-sheaf
+  preservation direction and the affine-cover prerequisite with finite
+  presentations on each chart. The cover need not be finite. Neither result
+  reproduces a proof from the book or establishes the full comparison.
+- [Mathlib, `AlgebraicGeometry/Modules/Tilde.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Modules/Tilde.lean#L591-L613):
+  `Scheme.Modules.exists_isOpenCover_presentation` supplies the adapted
+  affine-chart construction. Weihong Xu's copyright and all upstream authors
+  remain credited in the file header; the finite-index refinement also adapts
+  Prism's project construction.
 -/
 
 noncomputable section
@@ -57,7 +70,10 @@ private theorem isFinite_presentationTilde (s : Set M) [Finite s]
   isFiniteType_relations := ⟨by change Finite t; infer_instance⟩
 
 /-- A finitely presented module has a natively finitely presented associated
-sheaf, without an additional coherence or projectivity hypothesis. -/
+sheaf, without an additional coherence or projectivity hypothesis. This is the
+preservation direction motivated by Weibel's affine finite-presentation
+discussion in *The K-book*, Chapter I, §5; its proof uses Mathlib's
+`presentationTilde`, not an argument copied from the book. -/
 theorem isFinitePresentation_tilde [Module.FinitePresentation R M] :
     (tilde M).IsFinitePresentation := by
   obtain ⟨s, hs, t, ht⟩ := Module.FinitePresentation.out (R := R) (M := M)
@@ -72,7 +88,11 @@ namespace AlgebraicGeometry.Scheme.Modules
 set_option backward.isDefEq.respectTransparency false in
 /-- A locally finitely presented sheaf has finite generator and relation
 presentations on affine opens. The affine cover is not required to be finite;
-its finite presentations come from the same finite quasicoherent datum. -/
+its finite presentations come from the same finite quasicoherent datum.
+The affine-chart argument adapts Mathlib's
+`Scheme.Modules.exists_isOpenCover_presentation`, refined with finite indices.
+This is a prerequisite toward Weibel's affine finite-presentation comparison,
+not a proof that each affine chart's coordinate-section module is finitely presented. -/
 theorem exists_isOpenCover_isFinite_presentation {X : Scheme.{u}}
     (M : X.Modules) [M.IsFinitePresentation] :
     ∃ (ι : Type u) (U : ι → X.Opens)

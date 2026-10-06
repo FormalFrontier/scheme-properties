@@ -21,7 +21,17 @@ internally: an idempotent in a tensor product is captured in tensor products of 
 generated subalgebras. Passing from a separably closed field to its algebraic closure is purely
 inseparable, so the relevant prime spectra are homeomorphic even over an imperfect base.
 
-The scheme-facing declarations use one universe, matching mathlib's current geometric API.
+The scheme-facing declarations use one universe, matching Mathlib's geometric API.
+
+## References
+
+- The Stacks Project, tag 037U for geometric connectedness of field extensions
+  over separably closed fields; tags 0386, 0385 and 0363 for the scheme-level
+  passage via connected fibers and open projections.
+- Mathlib's `LocallyOfFiniteType.jacobsonSpace` and `residueFieldIsoBase` for
+  closed-point fibers, `PrimeSpectrum.isHomeomorph_comap_of_isPurelyInseparable`
+  for purely inseparable scalar extension, and `GeometricallyConnected` for
+  the geometric-connectedness pullback API.
 -/
 
 public section
@@ -284,7 +294,9 @@ lemma eq_zero_or_eq_one_of_isIdempotentElem_tensorProduct_fields [IsSepClosed k]
     exact hFy.symm.trans (by simpa only [map_one] using congrArg F hy1)
 
 /-- The tensor product of any two extension fields of a separably closed field has connected
-prime spectrum. No algebraicity or finite-generation hypothesis is required. -/
+prime spectrum. No algebraicity or finite-generation hypothesis is required. This is the
+field-extension case underlying the Stacks Project's tag 037U; it does not assert the
+corresponding result for arbitrary connected algebras. -/
 lemma connectedSpace_tensorProduct_fields [IsSepClosed k]
     (K L : Type u) [Field K] [Field L] [Algebra k K] [Algebra k L] :
     ConnectedSpace (PrimeSpectrum (K ⊗[k] L)) := by
@@ -322,7 +334,7 @@ universe u
 variable (k K : Type u) [Field k] [Field K] [Algebra k K]
 
 /-- The spectrum of an arbitrary extension field of a separably closed field is geometrically
-connected over the base. -/
+connected over the base, as in the Stacks Project, tag 037U. -/
 lemma geometricallyConnected_SpecMap_of_isSepClosed [IsSepClosed k] :
     GeometricallyConnected (Spec.map (CommRingCat.ofHom (algebraMap k K))) := by
   refine ⟨?_⟩
@@ -338,7 +350,9 @@ variable {X : Scheme.{u}} (f : X ⟶ Spec (.of k))
 
 No finite-type, reducedness, irreducibility, separation, properness, algebraicity or
 rational-point hypothesis is required. The statement uses the same universe for the base field,
-its extension fields and the scheme, following mathlib's current geometric API. -/
+its extension fields and the scheme, following Mathlib's geometric API. The scheme-level
+argument follows the Stacks Project's connected-fiber and open-projection route (tags 0386,
+0385 and 0363), using the field-extension case of tag 037U. -/
 lemma geometricallyConnected_of_isSepClosed [IsSepClosed k] [ConnectedSpace X] :
     GeometricallyConnected f := by
   refine ⟨?_⟩

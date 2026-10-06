@@ -12,10 +12,22 @@ public section
 /-!
 # Inverses of integral dominant rational maps over a chosen base
 
-An isomorphism of function fields induces an inverse to a dominant rational map
-over independently chosen structure morphisms, provided the structure morphism
-of the original source is locally of finite type. The reverse implication needs
-no finiteness hypothesis. All rational maps below are native quotient maps.
+If the field map induced by a given dominant rational arrow is an isomorphism,
+it induces an inverse over independently chosen structure morphisms, provided
+the structure morphism of the original source is locally of finite type. The
+reverse implication needs no finiteness hypothesis. These are isomorphisms of
+dominant quotient rational arrows, not isomorphisms of total schemes. The
+construction adapts an earlier Formal Frontier proof of this criterion.
+
+## References
+
+* Formal Frontier, earlier formalization of the chosen-base dominant rational
+  inverse criterion: inverse field homomorphism, compatibility triangle and
+  reconstruction with target the original source; the proof expression here
+  is adapted from that contribution.
+* Scheme Properties, `RationalFunctionFieldReconstruction`,
+  `RationalFunctionFieldPullback` and `RationalFunctionFieldFaithfulness`:
+  reconstruction, composition and identity readback, and equality reflection.
 -/
 
 set_option warningAsError true
@@ -65,7 +77,8 @@ private theorem inverse_functionFieldMap (f : X ⟶ Y) [LocallyOfFiniteType X.to
     (inv f.toRationalMap.functionFieldMap) (inverse_compatible f)
 
 /-- The function-field map of an invertible chosen-base rational arrow is
-invertible, with no local finite type hypothesis. -/
+invertible by contravariant composition and identity readback, with no local
+finite type hypothesis. -/
 theorem isIso_functionFieldMap (f : X ⟶ Y) [IsIso f] :
     IsIso f.toRationalMap.functionFieldMap := by
   let g := inv f
@@ -91,9 +104,11 @@ theorem isIso_functionFieldMap (f : X ⟶ Y) [IsIso f] :
         simp only [h₂, Scheme.RationalMap.functionFieldMap_id]
   exact ⟨⟨g.toRationalMap.functionFieldMap, hψφ, hφψ⟩⟩
 
-/-- For an arrow over arbitrary chosen maps to `S`, local finite type of the
-source map suffices to reflect isomorphisms of function fields back to
-isomorphisms of the *given* dominant rational arrow. -/
+/-- For an arrow over independently chosen maps to `S`, local finite type of
+the original source map suffices to reflect a function-field isomorphism to
+an isomorphism of the given dominant rational arrow. The construction adapts
+the earlier Formal Frontier inverse-field-map argument via reconstruction and
+faithfulness; the converse requires no finite-type hypothesis. -/
 theorem isIso_iff_isIso_functionFieldMap (f : X ⟶ Y)
     [LocallyOfFiniteType X.toBase] :
     IsIso f ↔ IsIso f.toRationalMap.functionFieldMap := by

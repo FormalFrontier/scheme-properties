@@ -15,6 +15,14 @@ public import SchemeProperties.DenseOpenPullback
 The first partial or rational map need only pull back every dense open in its target
 to a dense open in its ambient source. No dominance or irreducibility is required.
 The construction uses the domain and morphism of mathlib's native composition.
+
+## References
+
+- [Mathlib, `AlgebraicGeometry/Birational/Composition.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Composition.lean#L44-L55):
+  `Scheme.PartialMap.comp` supplies the adapted domain and morphism construction;
+  its restriction and equivalence lemmas inform the corresponding controlled proofs.
+  The dense-open pullback condition and its use in place of dominance are project
+  constructions.
 -/
 
 set_option warningAsError true

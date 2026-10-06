@@ -16,10 +16,10 @@ the canonical comparison from the component scheme of a binary fibre product
 to the fibre product of the component schemes, and proves that comparison is
 an isomorphism.
 
-Over a separably closed field, products of the actual connected-component
+Over a separably closed field, products of the connected-component
 opens give the component-pair equivalence, with the empty scheme included.
 Over an arbitrary field, the rank calculation is transported to a separable
-closure; pullback preserves the cartesian product, and the accepted component-
+closure; pullback preserves the cartesian product, and the component-
 algebra rank formula identifies the two finite-etale algebras.
 
 The public API uses the cartesian tensor product in `Over (Spec (.of K))`, whose
@@ -27,6 +27,13 @@ underlying scheme is definitionally the fibre product over `Spec K`.  All
 schemes and rings remain in the same universe, and
 no reducedness, connectedness, separatedness, or nonemptiness assumption is
 made.
+
+## References
+
+- J. S. Milne, *Algebraic Groups* (2017), Proposition 1.30(b), together with
+  the preceding component-scheme canonical-map paragraph: the canonical
+  comparison identifies the component scheme of a binary fibre product over
+  the field with the fibre product of the two component schemes.
 -/
 
 open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory
@@ -108,7 +115,9 @@ theorem componentSchemeMapOfHom_comp
       toComponentScheme_comp_componentSchemeMapOfHom]
 
 /-- The canonical comparison from the component scheme of a binary product
-to the binary product of the component schemes. -/
+to the binary product of the component schemes. It is the forward comparison
+of J. S. Milne, *Algebraic Groups* (2017), Proposition 1.30(b), for the
+fibre product over the base field. -/
 noncomputable def componentProductComparison
     (X Y : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] [LocallyOfFiniteType Y.hom] [QuasiCompact Y.hom] :
@@ -116,7 +125,8 @@ noncomputable def componentProductComparison
   lift (componentSchemeMapOfHom (fst X Y)) (componentSchemeMapOfHom (snd X Y))
 
 /-- The product comparison is characterized by its canonical triangle with
-the two product projections. -/
+the two product projections. This specifies the canonical comparison of
+J. S. Milne, *Algebraic Groups* (2017), Proposition 1.30(b). -/
 theorem toComponentScheme_comp_componentProductComparison
     (X Y : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] [LocallyOfFiniteType Y.hom] [QuasiCompact Y.hom] :
@@ -130,7 +140,7 @@ theorem toComponentScheme_comp_componentProductComparison
   · simp [componentProductComparison,
       toComponentScheme_comp_componentSchemeMapOfHom]
 
-/-! ## Products of actual connected-component opens -/
+/-! ## Products of connected-component opens -/
 
 local instance sourceCompactSpace (Z : Over (Spec (.of K)))
     [QuasiCompact Z.hom] : CompactSpace Z.left :=
@@ -259,7 +269,7 @@ private noncomputable def componentProductEquiv [IsSepClosed K]
     (componentProductSet_isClopen X Y) (componentProductSet_pairwise X Y)
       (iUnion_componentProductSet X Y) (componentProductSet_isConnected X Y)
 
-/-- The component equivalence records the two projection labels literally. -/
+/-- The component equivalence records the two projection labels. -/
 private theorem componentProductEquiv_mk [IsSepClosed K]
     (X Y : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] [LocallyOfFiniteType Y.hom] [QuasiCompact Y.hom]
@@ -587,7 +597,8 @@ private noncomputable def productFactorAlgEquiv
     ⟨productFactorAlgHom_injective X Y, productFactorAlgHom_surjective X Y⟩
 
 /-- The canonical component scheme of a binary fibre product is the fibre
-product of the component schemes. -/
+product of the component schemes, as in J. S. Milne, *Algebraic Groups*
+(2017), Proposition 1.30(b). -/
 noncomputable def componentProductIso
     (X Y : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] [LocallyOfFiniteType Y.hom] [QuasiCompact Y.hom] :
@@ -596,7 +607,7 @@ noncomputable def componentProductIso
     (componentProductModelIso X Y).symm
 
 /-- The forward map of `componentProductIso` is exactly the canonical product
-comparison. -/
+comparison of J. S. Milne, *Algebraic Groups* (2017), Proposition 1.30(b). -/
 theorem componentProductIso_hom
     (X Y : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] [LocallyOfFiniteType Y.hom] [QuasiCompact Y.hom] :

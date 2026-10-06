@@ -25,6 +25,21 @@ no reducedness, separatedness, connectedness, nonemptiness, or rational-point
 hypothesis on the source. The whole-scheme consequence assumes only
 connectedness and the displayed section in addition to the finiteness
 hypotheses of the component construction.
+
+The geometric-connectedness proof uses component-scheme base change first and
+then derives the fibre's component-algebra identity. Milne's proof instead
+uses that identity to obtain geometric connectedness.
+
+## References
+
+- J. S. Milne, *Algebraic Groups* (2017), Proposition 1.31(a,b): the
+  scheme-theoretic fibres over points of the component scheme are connected
+  components and are geometrically connected over the corresponding residue
+  fields. The proof here also uses the canonical base-change comparison for
+  component schemes.
+- J. S. Milne, *Algebraic Groups* (2017), Corollary 1.32(a): the
+  geometric-connectedness conclusion for a connected finite-type scheme with
+  a rational point, expressed here as a section over the base field.
 -/
 
 set_option warningAsError true
@@ -88,7 +103,9 @@ private theorem toConnectedComponentsSpec_apply_eq_iff
 
 /-- The underlying range of the scheme-theoretic fibre of the canonical map
 to the component scheme is the connected component containing any point that
-maps to the chosen target point. -/
+maps to the chosen target point. This is J. S. Milne, *Algebraic Groups*
+(2017), Proposition 1.31(a); the point must map to the specified component
+point. -/
 theorem range_fiberι_toComponentScheme_eq_connectedComponent
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (x : (componentScheme X).left)
@@ -131,10 +148,10 @@ theorem range_fiberι_toComponentScheme_eq_connectedComponent
         isPreconnected_connectedComponent.image _
           (toComponentScheme X).left.continuous.continuousOn
       apply himage.subsingleton
-      exact ⟨a', mem_connectedComponent, rfl⟩
-      refine ⟨b', ?_, rfl⟩
-      exact connectedComponent_eq_iff_mem.mp
-        (ConnectedComponents.coe_eq_coe.mp hcc).symm
+      · exact ⟨a', mem_connectedComponent, rfl⟩
+      · refine ⟨b', ?_, rfl⟩
+        exact connectedComponent_eq_iff_mem.mp
+          (ConnectedComponents.coe_eq_coe.mp hcc).symm
     exact ha'.symm.trans (ht.trans hb')
   rw [(toComponentScheme X).left.range_fiberι]
   ext z
@@ -287,7 +304,8 @@ private theorem connectedSpace_pullback_toComponentScheme
   exact isConnected_connectedComponent
 
 /-- A scheme-theoretic fibre of the component map is geometrically connected
-over its residue field. -/
+over its residue field, as in J. S. Milne, *Algebraic Groups* (2017),
+Proposition 1.31(b). -/
 theorem geometricallyConnected_fiber_toComponentScheme
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (x : (componentScheme X).left) :
@@ -447,7 +465,9 @@ theorem geometricallyConnected_fiber_toComponentScheme
   exact connectedSpace_pullback_toComponentScheme XL q
 
 /-- A connected scheme, locally of finite type and quasi-compact over a field,
-is geometrically connected if its structure morphism has a section. -/
+is geometrically connected if its structure morphism has a section. This is
+the geometric-connectedness conclusion of J. S. Milne, *Algebraic Groups*
+(2017), Corollary 1.32(a). -/
 theorem geometricallyConnected_of_connectedSpace_of_section
     {K : Type u} [Field K]
     (X : Over (Spec (.of K)))
@@ -509,7 +529,9 @@ theorem geometricallyConnected_of_connectedSpace_of_section
   exact hcomp
 
 /-- The greatest finite-etale subalgebra of the global functions on a
-component-map fibre is exactly the scalar subalgebra. -/
+component-map fibre is exactly the scalar subalgebra. This is the identity
+used in J. S. Milne, *Algebraic Groups* (2017), in the proof of Proposition
+1.31; here it follows from geometric connectedness of the fibre. -/
 theorem componentSubalgebra_fiber_eq_bot
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (x : (componentScheme X).left) :

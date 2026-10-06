@@ -17,9 +17,19 @@ This file defines coherent quasicoherent modules on a scheme using the native
 quasicoherent-module category.  It proves that the property can be checked on
 any fixed affine open cover.
 
-The reverse implication uses the affine communication lemma together with
-coherence on basic opens.  In particular, the cover need not be finite and no
-global compactness, quasiseparatedness, or nonemptiness assumption is imposed.
+The reverse implication uses Mathlib's affine communication lemma together
+with the Coherent Modules localization criteria for coherence on basic opens.
+In particular, the cover need not be finite and no global compactness,
+quasiseparatedness, or nonemptiness assumption is imposed.
+
+## References
+
+- Coherent Modules' `CoherentModules/Basic.lean`,
+  `CoherentModules/ModuleCat.lean` and `CoherentModules/Localization.lean`
+  supply the coherent-module predicate, affine object property and localization
+  criteria used through `SchemeProperties.CoherentQuasicoherent`.
+- Mathlib's `Mathlib/AlgebraicGeometry/AffineScheme.lean` supplies the affine
+  communication lemma `of_affine_open_cover`.
 -/
 
 open CategoryTheory TopologicalSpace

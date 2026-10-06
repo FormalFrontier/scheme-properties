@@ -20,11 +20,11 @@ noncomputable section
 
 variable {ι : Type u} (X : ι → Scheme.{u})
 
-private def check_1 (U : (∐ X : Scheme.{u}).Opens) :
+example (U : (∐ X : Scheme.{u}).Opens) :
     Γ(∐ X, U) ≅ ↧((i : ι) → Γ(X i, Sigma.ι X i ⁻¹ᵁ U)) :=
   Scheme.sigmaPresheafObjIso X U
 
-private theorem check_2 {V U : (∐ X : Scheme.{u}).Opens} (hVU : V ≤ U)
+example {V U : (∐ X : Scheme.{u}).Opens} (hVU : V ≤ U)
     (s : Γ(∐ X, U)) (i : ι) :
     (Scheme.sigmaPresheafObjIso X V).hom
         ((∐ X : Scheme.{u}).presheaf.map (homOfLE hVU).op s) i =

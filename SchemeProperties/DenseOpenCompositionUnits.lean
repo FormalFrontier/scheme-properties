@@ -15,6 +15,16 @@ public import SchemeProperties.DenseOpenComposition
 The identity partial and rational maps pull back dense opens densely. The left
 unit laws impose no predicate on the second map; the right unit laws use only
 the existing predicate on the first map.
+
+## References
+
+- [Mathlib, `AlgebraicGeometry/Birational/Composition.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Composition.lean#L138-L146):
+  Justus Springer's native partial-composition normalization is adapted to
+  controlled composition; the predicate and unit laws here have their own proofs.
+- [Mathlib, `AlgebraicGeometry/Birational/RationalMap.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/RationalMap.lean#L137-L155):
+  Andrew Yang's `Scheme.PartialMap.id` is an imported API; the rational-map
+  [quotient and identity](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/RationalMap.lean#L374-L395)
+  are likewise used rather than redefined here.
 -/
 
 set_option warningAsError true

@@ -20,10 +20,10 @@ namespace AlgebraicGeometry.Scheme.Modules
 variable {X Y : Scheme.{u}} (f : X ⟶ Y) [IsOpenImmersion f]
   (M N : Y.Modules)
 
-private def check_1 : (tensor M N).restrict f ≅ tensor (M.restrict f) (N.restrict f) :=
+example : (tensor M N).restrict f ≅ tensor (M.restrict f) (N.restrict f) :=
   (restrictTensorNatIso f).app (M, N)
 
-private theorem check_2 (U : X.Opens) (s : Γ(M.restrict f, U)) (t : Γ(N.restrict f, U)) :
+example (U : X.Opens) (s : Γ(M.restrict f, U)) (t : Γ(N.restrict f, U)) :
     ((restrictTensorNatIso f).inv.app (M, N)).app U
         (tmul (M.restrict f) (N.restrict f) U s t) =
       ((tensor M N).restrictAppIso f U).inv
@@ -31,7 +31,7 @@ private theorem check_2 (U : X.Opens) (s : Γ(M.restrict f, U)) (t : Γ(N.restri
           ((N.restrictAppIso f U).hom t)) :=
   restrictTensorNatIso_inv_app_tmul f M N U s t
 
-private def check_3 : (tensor (0 : Y.Modules) 0).restrict f ≅
+example : (tensor (0 : Y.Modules) 0).restrict f ≅
     tensor ((0 : Y.Modules).restrict f) ((0 : Y.Modules).restrict f) :=
   (restrictTensorNatIso f).app (0, 0)
 

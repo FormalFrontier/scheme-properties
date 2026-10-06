@@ -15,6 +15,17 @@ public import SchemeProperties.DenseOpenComposition
 
 Dense-open controlled composition preserves a common base for arbitrary schemes.
 Neither map needs to be dominant, and no geometric hypotheses on the schemes are needed.
+
+## References
+
+- [Mathlib, `AlgebraicGeometry/Birational/RationalMap.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/RationalMap.lean#L163-L170):
+  Andrew Yang's `Scheme.PartialMap.IsOver` and `Scheme.PartialMap.isOver_iff`
+  are the native over-base interfaces used here; the relative-composition
+  proof is given for the project operation.
+- [Mathlib, `AlgebraicGeometry/Birational/Composition.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Composition.lean#L46-L55):
+  Justus Springer's composition and image-isomorphism expression is adapted
+  through the controlled composition operation. Preservation of the base
+  without dominance is proved for that project operation.
 -/
 
 set_option warningAsError true

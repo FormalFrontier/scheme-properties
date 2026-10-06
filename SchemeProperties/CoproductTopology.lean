@@ -16,9 +16,14 @@ This file packages two elementary topological properties of arbitrary
 same-universe indexed coproducts of schemes. Quasiseparatedness is inherited
 componentwise, while an infinite coproduct of nonempty schemes is not compact.
 
-Both results use the native homeomorphism from the underlying space of a
+Both results use Mathlib's homeomorphism from the underlying space of a
 scheme coproduct to the corresponding Sigma type. No finiteness, compactness,
 nonemptiness, or separation assumption is needed for quasiseparatedness.
+
+## References
+
+- Mathlib's `AlgebraicGeometry.Limits` (`sigmaMk`) and Sigma-type topology,
+  open-embedding, compactness and quasiseparatedness results used in the proofs.
 -/
 
 set_option warningAsError true

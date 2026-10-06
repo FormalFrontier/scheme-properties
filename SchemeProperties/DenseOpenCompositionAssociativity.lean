@@ -15,6 +15,13 @@ public import SchemeProperties.DenseOpenCompositionClosure
 The existing partial-map and rational-map composition operations are associative
 when the first two maps pull back dense opens densely. No hypothesis is imposed
 on the third map.
+
+## References
+
+- [Mathlib, `AlgebraicGeometry/Birational/Composition.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Composition.lean#L120-L135):
+  `Scheme.PartialMap.comp_assoc` supplies the adapted domain and morphism
+  proof pattern. The dense-open hypotheses and the rational-map bridge belong
+  to the controlled project construction.
 -/
 
 set_option warningAsError true
@@ -31,7 +38,8 @@ namespace PartialMap
 
 set_option backward.isDefEq.respectTransparency false in
 set_option backward.defeqAttrib.useBackward true in
-/-- Controlled composition is associative with the first two dense-open pullback conditions. -/
+/-- Controlled composition is associative with the first two dense-open pullback conditions.
+The domain and morphism proof adapts Mathlib's `Scheme.PartialMap.comp_assoc`. -/
 theorem compOfPullsDenseOpens_assoc (f : X.PartialMap Y) (hf : f.PullsDenseOpens)
     (g : Y.PartialMap Z) (hg : g.PullsDenseOpens) (h : Z.PartialMap T) :
     (f.compOfPullsDenseOpens hf g).compOfPullsDenseOpens

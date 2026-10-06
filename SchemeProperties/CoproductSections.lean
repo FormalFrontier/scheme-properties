@@ -14,8 +14,14 @@ public section
 
 This file identifies sections on an open of an arbitrary same-universe indexed
 coproduct of schemes with the dependent product of the sections on its
-component preimages. The forward map is literally pullback to each coproduct
+component preimages. The forward map is pullback to each coproduct
 summand, and restriction is componentwise.
+
+## References
+
+- Mathlib's `AlgebraicGeometry.Limits` (`sigmaOpenCover`) and
+  `AlgebraicGeometry.OpenImmersion` (`IsOpenImmersion.ΓIso`), together with
+  sheaf local equality and gluing, for sections on indexed open covers.
 -/
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace

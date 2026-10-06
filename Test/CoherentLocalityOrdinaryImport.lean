@@ -14,7 +14,7 @@ universe u
 
 namespace CoherentLocalityOrdinaryImport
 
-private def checkProperty (X : Scheme.{u}) :
+example (X : Scheme.{u}) :
     ObjectProperty
       (SheafOfModules.isQuasicoherent X.ringCatSheaf).FullSubcategory :=
   Scheme.Modules.isCoherentQuasicoherent X

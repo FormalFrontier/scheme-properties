@@ -11,9 +11,18 @@ public section
 /-!
 # Faithfulness of function-field pullback
 
-On integral schemes, the action of a dominant native rational map on function fields
-determines the rational map itself. Consequently the existing contravariant
-function-field functor on integral schemes and dominant rational maps is faithful.
+On integral schemes, the action of a dominant quotient rational map on function
+fields determines the rational map itself. The proof factors through the source
+function-field spectrum and uses Mathlib's equality reflection for quotient
+rational maps. Consequently the contravariant function-field functor is faithful.
+
+## References
+
+* Mathlib, `Mathlib.AlgebraicGeometry.Birational.RationalMap` (Andrew Yang):
+  `RationalMap.eq_of_fromFunctionField_eq` reflects equality of the geometric
+  maps from the source function-field spectrum.
+* Scheme Properties, `RationalFunctionFieldPullback`: function-field maps and
+  generic-point factorization for dominant quotient rational maps.
 -/
 
 set_option warningAsError true
@@ -42,8 +51,9 @@ private theorem fromFunctionField_eq_specMap (t : X ⤏ Y) [t.IsDominant] :
     _ = Spec.map t.functionFieldMap ≫ Y.fromSpecStalk (genericPoint Y) := by
       rw [fromFunctionField_id]
 
-/-- Equality of the function-field homomorphisms induced by independently dominant
-native quotient rational maps reflects equality of the rational maps. -/
+/-- Equality of function-field homomorphisms induced by independently dominant
+quotient rational maps reflects equality via Mathlib's
+`RationalMap.eq_of_fromFunctionField_eq`. -/
 theorem eq_of_functionFieldMap_eq (r s : X ⤏ Y) [r.IsDominant] [s.IsDominant]
     (h : r.functionFieldMap = s.functionFieldMap) : r = s := by
   apply RationalMap.eq_of_fromFunctionField_eq r s

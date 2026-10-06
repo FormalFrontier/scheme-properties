@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Reusable Lean theory of local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
+  description: "Reusable Lean theory of single-cover subfunctor extensions, local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0
@@ -27,14 +27,14 @@ sources:
     authors:
       - J. S. Milne
     type: book
-    relationship: background
-    note: "Mathematical context for finite-type points and component schemes; reused Formal Frontier expression is credited separately in CREDITS.md."
+    relationship: adapts
+    note: "Definition 5.6 supplies the fat-subfunctor condition using one faithfully flat algebra extension, generalized here to a category and morphism property. Lemma 5.9 and Proposition 5.10 directly inform the single-cover extension statements and Čech-gluing proof idea; the example following Definition 5.6 motivates the unit-power image. The generic categorical extension strengthens the finite-type field formulation. No completed source correspondence or coverage is claimed; reused Formal Frontier expression is credited separately in docs/CREDITS.md."
   - title: "The K-book: An Introduction to Algebraic K-theory"
     authors:
       - Charles A. Weibel
     type: book
     relationship: adapts
-    note: "Chapter I section 5 informs local finite-presentation work; the earlier original project research and its extraction are distinguished in CREDITS.md."
+    note: "Chapter I section 5 informs local finite-presentation work; the earlier original project research and its extraction are distinguished in docs/CREDITS.md."
   - title: "mathlib: function-field stalk maps and native rational composition"
     type: software
     relationship: adapts
@@ -60,6 +60,16 @@ automation:
 
 status:
   scope: >-
+    Extension from one-cover dense subfunctors for morphism classes with relative pullbacks
+    and base-change stability, assuming singleton descent only for the target;
+    no identity or composition stability or source/subfunctor sheaf condition.
+    The represented specialization concerns finite-type schemes over a field,
+    tested on finitely generated algebras with faithfully flat covers, using
+    Mathlib fpqc descent rather than a full induced-site equivalence or Milne's
+    ring-level proof. Unit-power images are one-cover dense over any commutative
+    base ring for positive exponents; Laurent nonmembership and failure of
+    singleton descent require a field and exponent at least two. The zero
+    additive subfunctor is not one-cover dense over a field.
     Ring-pullback restricted Spec arrows over arbitrary commutative-ring maps,
     with exact opposite-kernel ranges forming a possibly empty disjoint cover
     of the common-kernel complement. No surjectivity, nontriviality, field or
@@ -67,6 +77,22 @@ status:
     components.
     Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; the chosen-base generic-point rational arrow is noninvertible for a nontrivial Jacobson integral target despite its reversed field-map isomorphism. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md.
   main_results:
+    - declaration: CategoryTheory.Subfunctor.IsOneCoverDense
+      file: SchemeProperties/SingleCoverExtension.lean
+    - declaration: CategoryTheory.Subfunctor.oneCoverExtensionEquiv
+      file: SchemeProperties/SingleCoverExtension.lean
+    - declaration: AlgebraicGeometry.algebraicOverPoints_isSheafFor_faithfullyFlat
+      file: SchemeProperties/FiniteTypeSingleCover.lean
+    - declaration: AlgebraicGeometry.algebraicOverOneCoverEquiv
+      file: SchemeProperties/FiniteTypeSingleCover.lean
+    - declaration: AlgebraicGeometry.powerImage_isOneCoverDense
+      file: SchemeProperties/PowerImage.lean
+    - declaration: AlgebraicGeometry.laurentUnit_not_mem_powerImage
+      file: SchemeProperties/PowerImage.lean
+    - declaration: AlgebraicGeometry.powerImage_not_isSheafFor_root
+      file: SchemeProperties/PowerImage.lean
+    - declaration: AlgebraicGeometry.zeroAdditiveSubfunctor_not_oneCoverDense
+      file: SchemeProperties/PowerImage.lean
     - declaration: SheafOfModules.Presentation.isFinite_map
       file: SchemeProperties/SheafFinitePresentationTransport.lean
     - declaration: SheafOfModules.Presentation.isFinitePresentation

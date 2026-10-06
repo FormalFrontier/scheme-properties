@@ -16,6 +16,18 @@ set_option warningAsError true
 This file connects the scheme-facing restriction API with the over-site API in
 the definition of quasicoherence. It proves that quasicoherence can be checked
 by the affine `fromTildeΓ` maps on any fixed affine open cover.
+
+The proof uses Mathlib's tilde presentations and cover-gluing API rather than
+the finite basic-open kernel construction; it does not establish the explicit
+compatibility triangle of Exercise 6.1.A.
+
+## References
+
+* R. Vakil, *The Rising Sea: Foundations of Algebraic Geometry* (October 21,
+  2025 draft), Definition 6.1.1 and Theorem 6.1.2 (the affine-local
+  characterization of quasicoherence).
+* Mathlib, `Mathlib/AlgebraicGeometry/Modules/Tilde.lean` (affine tilde and
+  presentation APIs).
 -/
 
 open CategoryTheory TopologicalSpace
@@ -113,7 +125,9 @@ theorem isQuasicoherent_of_affineOpenCover_isIso_fromTildeΓ
     X M (U i) (hUaff i) (hFrom i)
 
 /-- On a fixed affine open cover, quasicoherence is equivalent to the affine
-`fromTildeΓ` condition on every member of the cover. -/
+`fromTildeΓ` condition on every member of the cover. This is the affine-local
+characterization of Vakil, *The Rising Sea*, Definition 6.1.1 and Theorem
+6.1.2, expressed through Mathlib's affine tilde map. -/
 theorem isQuasicoherent_iff_affineOpenCover_isIso_fromTildeΓ
     (X : Scheme.{u}) (M : X.Modules) {I : Type u}
     (U : I → X.Opens) (hU : IsOpenCover U)

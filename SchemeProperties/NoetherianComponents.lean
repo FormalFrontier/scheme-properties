@@ -25,6 +25,14 @@ components.
 
 The component coproduct isomorphism itself is the more general
 `Scheme.connectedComponentSigmaIso` from `SchemeProperties.ConnectedComponents`.
+
+## References
+
+- J. S. Milne, *Algebraic Groups* (2017), Appendix A.14, for the Noetherian
+  finite-clopen-component fact used in component-algebra arguments.
+- Mathlib's `NoetherianSpace.finite_irreducibleComponents`,
+  `IsClopen.connectedComponent_subset` and `nonempty_inter_closedPoints` for
+  the finite-component and closed-point methods used here.
 -/
 
 open Set Topology TopologicalSpace CategoryTheory
@@ -35,7 +43,9 @@ universe u
 
 variable {X : Type u} [TopologicalSpace X]
 
-/-- Connected components of a Noetherian space are open. -/
+/-- Connected components of a Noetherian space are open. This is the openness
+part of the finite-clopen-component fact in Milne, *Algebraic Groups* (2017),
+Appendix A.14. The proof here uses Mathlib's finite irreducible components. -/
 theorem NoetherianSpace.isOpen_connectedComponent [NoetherianSpace X]
     (x : X) : IsOpen (connectedComponent x) := by
   let S : Set (Set X) :=

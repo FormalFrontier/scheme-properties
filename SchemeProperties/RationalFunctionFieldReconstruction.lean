@@ -11,10 +11,24 @@ public section
 /-!
 # Reconstructing dominant rational maps from function-field homomorphisms
 
-For integral schemes over chosen maps to a common base, a compatible homomorphism
-of function fields determines a dominant rational map when the target structure
-map is locally of finite type. The readback and uniqueness are statements about
-native quotient rational maps, not particular representatives.
+For integral schemes with independently chosen maps to a common base, a
+function-field homomorphism satisfying the generic-point compatibility triangle
+determines a dominant quotient rational map when the target structure map is
+locally of finite type. Mathlib's spreading-out construction supplies the map;
+the readback and uniqueness concern quotients, not particular representatives.
+Dominance follows from the generic-point image of the constructed map, not
+from a claim that every geometric map from a field spectrum is dominant.
+
+## References
+
+* Mathlib, `Mathlib.AlgebraicGeometry.Birational.RationalMap` and
+  `Mathlib.AlgebraicGeometry.SpreadingOut` (Andrew Yang): `ofFunctionField`,
+  `equivFunctionField`, and `PartialMap.ofFromSpecStalk` spread compatible
+  geometric maps from a source generic stalk when the target is locally of
+  finite type over the chosen base.
+* Scheme Properties, `RationalFunctionFieldPullback` and
+  `RationalFunctionFieldFaithfulness`: reversed field maps, generic factorization
+  and equality reflection used for readback and uniqueness.
 -/
 
 set_option warningAsError true
@@ -27,8 +41,9 @@ namespace AlgebraicGeometry.Scheme.RationalMap
 
 variable {X Y S : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
 
-/-- A compatible reversed function-field homomorphism spreads out to a native
-quotient rational map. Local finite type is required only of the target map. -/
+/-- A compatible reversed function-field homomorphism spreads out via Mathlib's
+`RationalMap.ofFunctionField` to a quotient rational map. Local finite type is
+required only of the target structure map. -/
 noncomputable def ofFunctionFieldMap (sX : X ⟶ S) (sY : Y ⟶ S)
     [LocallyOfFiniteType sY] (φ : Y.functionField ⟶ X.functionField)
     (hφ : (Spec.map φ ≫ Y.fromSpecStalk (genericPoint Y)) ≫ sY =

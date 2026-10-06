@@ -12,6 +12,6 @@ open scoped AlgebraicGeometry
 
 universe u
 
-private theorem check_1 (X : AlgebraicGeometry.Scheme.{u}) :
+example (X : AlgebraicGeometry.Scheme.{u}) :
     X.nilradicalModule.IsQuasicoherent :=
   X.nilradicalModule_isQuasicoherent

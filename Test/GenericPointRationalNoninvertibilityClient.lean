@@ -16,16 +16,10 @@ open CategoryTheory AlgebraicGeometry TopologicalSpace
 
 namespace SchemePropertiesTest.GenericPointRationalNoninvertibility
 
-private abbrev affineLine := Spec (CommRingCat.of (Polynomial ℚ))
+attribute [local instance] AlgebraicGeometry.Scheme.nontrivial_spec_polynomial
 
-private instance affineLine_nontrivial : Nontrivial affineLine :=
-  Scheme.nontrivial_spec_polynomial ℚ
-
-private def affineLineToPoint : affineLine ⟶ Spec (CommRingCat.of ℚ) :=
-  Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))
-
-private theorem affineLineToPoint_finiteType : LocallyOfFiniteType affineLineToPoint := by
-  unfold affineLineToPoint
+example : LocallyOfFiniteType
+    (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))) := by
   apply (HasRingHomProperty.Spec_iff).2
   change (Polynomial.C : ℚ →+* Polynomial ℚ).FiniteType
   have hC : (Polynomial.C : ℚ →+* Polynomial ℚ) =
@@ -34,26 +28,49 @@ private theorem affineLineToPoint_finiteType : LocallyOfFiniteType affineLineToP
   rw [hC, RingHom.finiteType_algebraMap]
   infer_instance
 
-private theorem affineLine_boundary :
-    LocallyOfFiniteType affineLineToPoint ∧
+example :
+    LocallyOfFiniteType
+      (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))) ∧
       ¬ LocallyOfFiniteType
-        (affineLine.fromSpecStalk (genericPoint affineLine) ≫ affineLineToPoint) ∧
-      IsIso (Scheme.genericPointRationalHom affineLine affineLineToPoint).toRationalMap.functionFieldMap ∧
-      ¬ IsIso (Scheme.genericPointRationalHom affineLine affineLineToPoint) := by
-  exact ⟨affineLineToPoint_finiteType,
+        ((Spec (CommRingCat.of (Polynomial ℚ))).fromSpecStalk
+          (genericPoint (Spec (CommRingCat.of (Polynomial ℚ)))) ≫
+          Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))) ∧
+      IsIso (Scheme.genericPointRationalHom
+        (Spec (CommRingCat.of (Polynomial ℚ)))
+        (Spec.map (CommRingCat.ofHom
+          (Polynomial.C : ℚ →+* Polynomial ℚ)))).toRationalMap.functionFieldMap ∧
+      ¬ IsIso (Scheme.genericPointRationalHom
+        (Spec (CommRingCat.of (Polynomial ℚ)))
+        (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ)))) := by
+  have hFiniteType : LocallyOfFiniteType
+      (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))) := by
+    apply (HasRingHomProperty.Spec_iff).2
+    change (Polynomial.C : ℚ →+* Polynomial ℚ).FiniteType
+    have hC : (Polynomial.C : ℚ →+* Polynomial ℚ) =
+        algebraMap ℚ (Polynomial ℚ) :=
+      RingHom.ext fun element => Polynomial.C_eq_algebraMap element
+    rw [hC, RingHom.finiteType_algebraMap]
+    infer_instance
+  exact ⟨hFiniteType,
     Scheme.not_locallyOfFiniteType_fromSpecStalk_genericPoint_comp
-      affineLine affineLineToPoint,
-    (Scheme.genericPointRationalHom_boundary affineLine affineLineToPoint).1,
-    (Scheme.genericPointRationalHom_boundary affineLine affineLineToPoint).2⟩
+      (Spec (CommRingCat.of (Polynomial ℚ)))
+      (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))),
+    (Scheme.genericPointRationalHom_boundary
+      (Spec (CommRingCat.of (Polynomial ℚ)))
+      (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ)))).1,
+    (Scheme.genericPointRationalHom_boundary
+      (Spec (CommRingCat.of (Polynomial ℚ)))
+      (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ)))).2⟩
 
-private abbrev finiteLine := Spec (CommRingCat.of (Polynomial (ZMod 2)))
-
-private instance finiteLine_nontrivial : Nontrivial finiteLine :=
-  Scheme.nontrivial_spec_polynomial (ZMod 2)
-
-private theorem finite_field_boundary :
-    IsIso (Scheme.genericPointRationalHom finiteLine (𝟙 finiteLine)).toRationalMap.functionFieldMap ∧
-      ¬ IsIso (Scheme.genericPointRationalHom finiteLine (𝟙 finiteLine)) :=
-  Scheme.genericPointRationalHom_boundary finiteLine (𝟙 finiteLine)
+example :
+    IsIso (Scheme.genericPointRationalHom
+      (Spec (CommRingCat.of (Polynomial (ZMod 2))))
+      (𝟙 (Spec (CommRingCat.of (Polynomial (ZMod 2)))))).toRationalMap.functionFieldMap ∧
+      ¬ IsIso (Scheme.genericPointRationalHom
+        (Spec (CommRingCat.of (Polynomial (ZMod 2))))
+        (𝟙 (Spec (CommRingCat.of (Polynomial (ZMod 2)))))) :=
+  Scheme.genericPointRationalHom_boundary
+    (Spec (CommRingCat.of (Polynomial (ZMod 2))))
+    (𝟙 (Spec (CommRingCat.of (Polynomial (ZMod 2)))))
 
 end SchemePropertiesTest.GenericPointRationalNoninvertibility

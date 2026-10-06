@@ -317,6 +317,7 @@ private noncomputable def affineBasicOpenSectionsLinearEquiv (M : X.Modules)
       (ConcreteCategory.bijective_of_isIso (M.restrictAppIso hU.fromSpec V).hom)
 
 set_option maxHeartbeats 800000 in
+-- The affine-cover quasicoherence proof involves expensive sheaf computations.
 set_option backward.isDefEq.respectTransparency false in
 /-- The module associated to any ideal sheaf data is quasicoherent. -/
 theorem toModule_isQuasicoherent (I : X.IdealSheafData) :

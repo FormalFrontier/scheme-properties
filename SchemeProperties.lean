@@ -32,6 +32,9 @@ public import SchemeProperties.RationalFunctionFieldInverse
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints
+public import SchemeProperties.SingleCoverExtension
+public import SchemeProperties.FiniteTypeSingleCover
+public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
 public import SchemeProperties.GenericPointFunctionField
 public import SchemeProperties.GenericPointRationalNoninvertibility

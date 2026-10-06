@@ -17,6 +17,13 @@ This file proves that a normal scheme remains normal after base change along a
 transcendental-separable field extension. The affine calculation uses local
 normality of the corresponding tensor product, and the general result descends
 from an affine open cover.
+
+Normality here does not imply that the base change is integral or connected.
+
+## References
+
+* R. Vakil, *The Rising Sea: Foundations of Algebraic Geometry* (October 21,
+  2025 draft), Exercise 5.4.M (the separable-base-change aside).
 -/
 
 noncomputable section
@@ -54,7 +61,8 @@ private theorem isNormal_pullback_specMap_of_isAffine
     (e₁ ≪≫ pullbackSpecIso k (Γ(X, ⊤)) K).symm (by infer_instance)
 
 /-- A normal scheme over a field remains normal after base change along a
-transcendental-separable field extension. -/
+transcendental-separable field extension, as in the aside to Vakil,
+*The Rising Sea*, Exercise 5.4.M. -/
 theorem IsNormal.pullback_specMap_of_isTranscendentalSeparable
     {k K : Type u} [Field k] [Field K] [Algebra k K]
     [Algebra.IsTranscendentalSeparable k K]

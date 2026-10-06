@@ -17,6 +17,17 @@ A tensor product of presheaves of modules commutes with taking stalks at a suppl
 point. The comparison uses the existing module structures over the ring stalk.
 It applies to arbitrary presheaves over an arbitrary topological space and is
 natural in both module arguments; no sheaf or finiteness assumption is needed.
+
+The comparison is constructed here using Mathlib's filtered module-colimit
+structures and pointwise presheaf tensor product.
+
+## References
+
+- Mathlib's `Mathlib/Algebra/Category/ModuleCat/Presheaf/ColimitFunctor.lean`
+  supplies module colimits and common-representative lemmas used at the stalk.
+- Mathlib's `Mathlib/Algebra/Category/ModuleCat/Stalk.lean` and
+  `Mathlib/Algebra/Category/ModuleCat/Presheaf/Monoidal.lean` supply the stalk
+  scalar/germ operations and pointwise presheaf tensor product.
 -/
 
 

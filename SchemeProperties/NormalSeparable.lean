@@ -25,6 +25,15 @@ set_option warningAsError true
 This file proves that flat directed unions of locally normal subrings are
 locally normal. It applies this to tensor products with separably generated and
 transcendental-separable field extensions.
+
+The tensor-product results concern local normality; they do not assert that
+the tensor product is a domain. The proof passes through a separating
+transcendence basis, localization, finite étale extensions, and directed unions.
+
+## References
+
+* R. Vakil, *The Rising Sea: Foundations of Algebraic Geometry* (October 21,
+  2025 draft), Exercise 5.4.M (normality under separable field base change).
 -/
 
 noncomputable section
@@ -75,8 +84,8 @@ private theorem isIntegrallyClosed_iSup_of_directed
   have hs : (s : Set R) ⊆ ⋃ i, (S i : Set R) := by
     rw [← Subring.coe_iSup_of_directed hS, hTop]
     exact Set.subset_univ _
-  obtain ⟨i, hi⟩ :=
-    (show Directed (· ⊆ ·) fun i ↦ (S i : Set R) from hS).exists_mem_subset_of_finset_subset_biUnion hs
+  have hDirected : Directed (· ⊆ ·) (fun i ↦ (S i : Set R)) := hS
+  obtain ⟨i, hi⟩ := hDirected.exists_mem_subset_of_finset_subset_biUnion hs
   let T := S i
   have haT : a ∈ T := hi (by simp [s])
   have hbT : b ∈ T := hi (by simp [s])
@@ -464,7 +473,9 @@ theorem IsLocallyNormalRing.tensorProduct_of_isSeparablyGenerated
   exact IsLocallyNormalRing.of_ringEquiv e.toRingEquiv
 
 /-- Tensoring a locally normal algebra with a transcendental-separable field
-extension preserves local normality. -/
+extension preserves local normality. This is the affine local-normality step
+for the separable-base-change assertion in Vakil, *The Rising Sea*, Exercise
+5.4.M. -/
 theorem IsLocallyNormalRing.tensorProduct_of_isTranscendentalSeparable
     {k A K : Type*} [Field k] [CommRing A] [Field K]
     [Algebra k A] [Algebra k K] [IsLocallyNormalRing A]

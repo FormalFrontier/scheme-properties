@@ -21,20 +21,20 @@ namespace AlgebraicGeometry.Scheme
 variable {X Y Z S : Scheme.{u}} [PreirreducibleSpace X] [Nonempty Y]
 variable [X.Over S] [Y.Over S] [Z.Over S]
 
-private theorem partialMap_over (f : X.PartialMap Y) [IsDominant f.hom] (g : Y.PartialMap Z)
+example (f : X.PartialMap Y) [IsDominant f.hom] (g : Y.PartialMap Z)
     [f.IsOver S] [g.IsOver S] : (f.comp g).IsOver S :=
   PartialMap.isOver_comp_of_isDominant_first f g
 
-private theorem rationalMap_over (f : X ⤏ Y) [f.IsDominant] (g : Y ⤏ Z)
+example (f : X ⤏ Y) [f.IsDominant] (g : Y ⤏ Z)
     [f.IsOver S] [g.IsOver S] : (f.comp g).IsOver S :=
   RationalMap.isOver_comp_of_isDominant_first f g
 
-private theorem partialMap_total_second (f : X.PartialMap Y) [IsDominant f.hom] (h : Y ⟶ Z)
+example (f : X.PartialMap Y) [IsDominant f.hom] (h : Y ⟶ Z)
     [f.IsOver S] [h.IsOver S] :
     f.comp h.toPartialMap = f.compHom h ∧ (f.comp h.toPartialMap).IsOver S :=
   ⟨PartialMap.comp_toPartialMap f h, PartialMap.isOver_comp_of_isDominant_first f _⟩
 
-private theorem rationalMap_total_second (f : X ⤏ Y) [f.IsDominant] (h : Y ⟶ Z)
+example (f : X ⤏ Y) [f.IsDominant] (h : Y ⟶ Z)
     [f.IsOver S] [h.IsOver S] :
     f.comp h.toRationalMap = f.compHom h ∧ (f.comp h.toRationalMap).IsOver S :=
   ⟨RationalMap.comp_toRationalMap f h, RationalMap.isOver_comp_of_isDominant_first f _⟩

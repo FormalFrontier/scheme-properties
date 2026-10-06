@@ -43,12 +43,12 @@ namespace AlgebraicGeometry.Scheme.Modules
 
 variable {X : Scheme.{u}} (M N : X.Modules) (U : X.Opens)
 
-private def check_1 : X.Modules := tensor M N
-private def check_2 : X.Modules := tensor (0 : X.Modules) 0
-private def check_3 : (Spec (.of PUnit.{u + 1})).Modules :=
+example : X.Modules := tensor M N
+example : X.Modules := tensor (0 : X.Modules) 0
+example : (Spec (.of PUnit.{u + 1})).Modules :=
   tensor (0 : (Spec (.of PUnit.{u + 1})).Modules) 0
-private def check_4 : Scheme.empty.Modules := tensor (0 : Scheme.empty.Modules) 0
-private def check_5 (s : Γ(M, (⊥ : X.Opens))) (t : Γ(N, (⊥ : X.Opens))) :
+example : Scheme.empty.Modules := tensor (0 : Scheme.empty.Modules) 0
+example (s : Γ(M, (⊥ : X.Opens))) (t : Γ(N, (⊥ : X.Opens))) :
     Γ(tensor M N, (⊥ : X.Opens)) := tmul M N ⊥ s t
 
 end AlgebraicGeometry.Scheme.Modules

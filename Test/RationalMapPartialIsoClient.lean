@@ -16,7 +16,7 @@ open CategoryTheory AlgebraicGeometry
 
 namespace SchemePropertiesTest.RationalMapPartialIso
 
-private theorem exact_inverse_client {X Y : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
+example {X Y : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
     (forward : X ⤏ Y) (reverse : Y ⤏ X)
     [forward.IsDominant] [reverse.IsDominant]
     (hforward : forward.comp reverse = Scheme.RationalMap.id X)
@@ -25,7 +25,7 @@ private theorem exact_inverse_client {X Y : Scheme.{u}} [IsIntegral X] [IsIntegr
       partialIso.toRationalMap = forward ∧ partialIso.symm.toRationalMap = reverse :=
   Scheme.RationalMap.exists_partialIso_of_inverse forward reverse hforward hreverse
 
-private theorem chosen_base_client {X Y S : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
+example {X Y S : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
     (sourceMap : X ⟶ S) (targetMap : Y ⟶ S)
     (forward : X ⤏ Y) (reverse : Y ⤏ X)
     [forward.IsDominant] [reverse.IsDominant]
@@ -39,7 +39,7 @@ private theorem chosen_base_client {X Y S : Scheme.{u}} [IsIntegral X] [IsIntegr
   Scheme.RationalMap.exists_partialIso_of_inverse_over
     sourceMap targetMap forward reverse hforward hreverse hbase
 
-private theorem same_carrier_client {X S : Scheme.{u}} [IsIntegral X]
+example {X S : Scheme.{u}} [IsIntegral X]
     (sourceMap targetMap : X ⟶ S)
     (hbase : (Scheme.RationalMap.id X).compHom targetMap = sourceMap.toRationalMap) :
     ∃ partialIso : X.PartialIso X,
@@ -52,7 +52,7 @@ private theorem same_carrier_client {X S : Scheme.{u}} [IsIntegral X]
   · simp
   · exact hbase
 
-private theorem converse_client {X Y S : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
+example {X Y S : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
     (sourceMap : X ⟶ S) (targetMap : Y ⟶ S)
     (partialIso : X.PartialIso Y) (hover : partialIso.IsOver sourceMap targetMap) :
     partialIso.toRationalMap.IsDominant ∧

@@ -16,13 +16,13 @@ universe u
 
 namespace SchemePropertiesTest.RationalFunctionFieldFaithfulness
 
-private theorem quotient_reflection {X Y : AlgebraicGeometry.Scheme.{u}}
+example {X Y : AlgebraicGeometry.Scheme.{u}}
     [AlgebraicGeometry.IsIntegral X] [AlgebraicGeometry.IsIntegral Y]
     (r s : X ⤏ Y) [r.IsDominant] [s.IsDominant]
     (h : r.functionFieldMap = s.functionFieldMap) : r = s :=
   AlgebraicGeometry.Scheme.RationalMap.eq_of_functionFieldMap_eq r s h
 
-private theorem opposite_arrow_injective
+example
     {A B : AlgebraicGeometry.IntegralDominantRationalScheme.{u}ᵒᵖ}
     (f g : A ⟶ B)
     (h : AlgebraicGeometry.IntegralDominantRationalScheme.functionFieldFunctor.map f =

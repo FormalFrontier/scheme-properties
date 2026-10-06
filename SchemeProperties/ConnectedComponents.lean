@@ -17,6 +17,13 @@ scheme with the coproduct of those open subschemes.
 The construction is independent of group schemes and does not require the
 scheme to be nonempty, quasicompact, or locally of finite type. Finiteness of
 the component set is likewise not needed.
+
+## References
+
+- Mathlib's `Topology.Connected.LocallyConnected` for the connected-component
+  quotient and open components of locally connected spaces.
+- Mathlib's `AlgebraicGeometry.Limits` for the disjoint open-cover colimit
+  and `Sigma.desc` used to identify the indexed coproduct.
 -/
 
 public section
@@ -115,7 +122,8 @@ lemma Scheme.connectedComponentOpen_ι_toConnectedComponentCoproduct
       (X.connectedComponentOpen c).ι ≫ f ≫
         Sigma.ι (fun _ : ConnectedComponents X ↦ S) c := by
   rw [← X.connectedComponentSigmaIso_hom_ι c]
-  simp [Scheme.toConnectedComponentCoproduct]
+  simp only [Scheme.toConnectedComponentCoproduct, Category.assoc,
+    Iso.hom_inv_id_assoc, Limits.Sigma.ι_map]
   rw [X.connectedComponentSigmaIso_hom_ι_assoc c]
 
 end AlgebraicGeometry

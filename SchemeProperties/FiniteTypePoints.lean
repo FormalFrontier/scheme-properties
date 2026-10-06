@@ -25,15 +25,40 @@ locally of finite type over that field. It proves that these affine tests are de
 locally of finite type over the field and derives full faithfulness of the resulting restricted
 functor of points. It also shows that this functor preserves finite limits.
 
+The finite-type, set-valued full-faithfulness statement uses no separatedness
+assumption. `FGAlgCat K` is a presentation by finitely generated algebras,
+not literally Milne's small category `Alg⁰ₖ`; the source identifies the
+relevant categories up to equivalence. Full faithfulness on all
+locally-finite-type schemes and preservation of finite limits go beyond the
+finite-type statement cited below.
+
 ## Main results
 
 - `AlgebraicGeometry.fgAlgCatOpEquivLftAffineOver`
 - `AlgebraicGeometry.finiteAlgSpecOver_isDense`
 - `AlgebraicGeometry.algebraicOverInclusion_obj`
+- `AlgebraicGeometry.finiteAlgSpecOver_obj_left`
+- `AlgebraicGeometry.finiteAlgSpecOver_obj_hom`
+- `AlgebraicGeometry.finiteAlgSpecOver_map_left`
 - `AlgebraicGeometry.algebraicOverPoints_eq`
+- `AlgebraicGeometry.algebraicOverPoints_obj_obj`
+- `AlgebraicGeometry.algebraicOverPoints_map_apply`
 - `AlgebraicGeometry.algebraicOverPointsFullyFaithful`
 - `AlgebraicGeometry.lftPointsFullyFaithful`
 - `AlgebraicGeometry.lftPointsPreservesFiniteLimits`
+
+## References
+
+- J. S. Milne, *Algebraic Groups* (2017), item 1.4 and Appendix A.33:
+  full faithfulness of the set-valued finite-type functor of points on
+  finitely generated affine tests and its restricted Yoneda formulation.
+- Mathlib, `Mathlib.CategoryTheory.Limits.Presheaf`
+  (`Presheaf.restrictedULiftYoneda`),
+  `Mathlib.CategoryTheory.Functor.KanExtension.Dense`
+  (`Functor.IsDense.of_fullyFaithful_restrictedULiftYoneda`), and
+  `Mathlib.CategoryTheory.Sites.Subcanonical` / `SubcanonicalOver`
+  (representable sheaves and over-site subcanonicality): the restricted
+  Yoneda and density methods used for the affine tests.
 -/
 
 public section
@@ -116,7 +141,7 @@ noncomputable def finiteAlgSpecFullyFaithful
   (ObjectProperty.fullyFaithfulι _).op.comp algSpec.fullyFaithful
 
 /-- The spectrum of a finitely generated algebra as a locally-finite-type scheme over its field. -/
-@[implicit_reducible] noncomputable def finiteAlgSpecOver
+@[expose, implicit_reducible] noncomputable def finiteAlgSpecOver
     (K : Type u) [Field K] :
     (FGAlgCat K)ᵒᵖ ⥤ locallyFiniteTypeMorphism.Over ⊤ (Spec (.of K)) where
   obj A := MorphismProperty.Over.mk ⊤ ((algSpec (.of K)).obj
@@ -125,6 +150,29 @@ noncomputable def finiteAlgSpecFullyFaithful
       infer_instance)
   map f := MorphismProperty.Over.Hom.mk
     ((algSpec (.of K)).map ((ObjectProperty.ι _).op.map f)) trivial
+
+/-- The underlying scheme of the spectrum of a finite-type algebra is its affine spectrum. -/
+@[simp] theorem finiteAlgSpecOver_obj_left (K : Type u) [Field K]
+    (A : (FGAlgCat K)ᵒᵖ) :
+    ((finiteAlgSpecOver K).obj A).left = Spec (.of A.unop.obj) := rfl
+
+/-- The structure morphism of a finite-type affine spectrum is induced by the algebra map. -/
+@[simp] theorem finiteAlgSpecOver_obj_hom (K : Type u) [Field K]
+    (testAlgebra : (FGAlgCat K)ᵒᵖ) :
+    ((finiteAlgSpecOver K).obj testAlgebra).hom =
+      Spec.map (CommRingCat.ofHom (algebraMap K testAlgebra.unop.obj)) := by
+  change ((algSpec (.of K)).obj ((ObjectProperty.ι _).op.obj testAlgebra)).hom = _
+  rw [algSpec_obj_hom]
+
+/-- On underlying schemes, finite-algebra spectrum sends an algebra map to the
+contravariant map of affine spectra. -/
+@[simp] theorem finiteAlgSpecOver_map_left (K : Type u) [Field K]
+    {X U : (FGAlgCat K)ᵒᵖ} (f : U ⟶ X) :
+    ((finiteAlgSpecOver K).map f).left =
+      Spec.map (CommRingCat.ofHom f.unop.hom.hom.toRingHom) := by
+  change ((algSpec (.of K)).map ((ObjectProperty.ι _).op.map f)).left = _
+  rw [algSpec_map_left]
+  rfl
 
 /-- The locally-finite-type refinement of finite-algebra spectrum is fully faithful. -/
 noncomputable def finiteAlgSpecOverFullyFaithful
@@ -216,7 +264,8 @@ local instance lftOver_isContinuous
 
 local instance lftZariskiTopology_subcanonical
     (K : Type u) [Field K] : (lftZariskiTopology K).Subcanonical := by
-  change ((MorphismProperty.Over.forget locallyFiniteTypeMorphism ⊤ (Spec (.of K))).restrictedTopology
+  change ((MorphismProperty.Over.forget locallyFiniteTypeMorphism ⊤
+    (Spec (.of K))).restrictedTopology
     (Scheme.overGrothendieckTopology openImmersionMorphism (Spec (.of K)))).Subcanonical
   apply GrothendieckTopology.subcanonical_of_full_of_faithful
     (MorphismProperty.Over.forget locallyFiniteTypeMorphism ⊤ (Spec (.of K)))
@@ -327,7 +376,7 @@ abbrev algebraicOver (K : Type u) [Field K] :=
     (fun X : locallyFiniteTypeMorphism.Over ⊤ (Spec (.of K)) ↦ QuasiCompact X.hom)
 
 /-- The inclusion of finite-type schemes into locally-finite-type schemes over a field. -/
-@[implicit_reducible] noncomputable def algebraicOverInclusion
+@[expose, implicit_reducible] noncomputable def algebraicOverInclusion
     (K : Type u) [Field K] :
     algebraicOver K ⥤ locallyFiniteTypeMorphism.Over ⊤ (Spec (.of K)) :=
   ObjectProperty.ι _
@@ -339,7 +388,7 @@ theorem algebraicOverInclusion_obj (K : Type u) [Field K]
   rfl
 
 /-- The set-valued functor of points of a finite-type scheme on finitely generated algebras. -/
-noncomputable def algebraicOverPoints
+@[expose] noncomputable def algebraicOverPoints
     (K : Type u) [Field K] :=
   algebraicOverInclusion K ⋙
     Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K)
@@ -351,7 +400,23 @@ theorem algebraicOverPoints_eq (K : Type u) [Field K] :
       Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K) := by
   rfl
 
-/-- The functor of points on finitely generated algebras is fully faithful on finite-type schemes. -/
+/-- A point on a finite-type affine test is a lifted morphism over the base field. -/
+@[simp] theorem algebraicOverPoints_obj_obj (K : Type u) [Field K]
+    (Y : algebraicOver K) (A : (FGAlgCat K)ᵒᵖ) :
+    ((algebraicOverPoints K).obj Y).obj (op A) =
+      ULift.{0} ((finiteAlgSpecOver K).obj A ⟶ Y.obj) := rfl
+
+/-- Restriction of a represented point along a test morphism is precomposition. -/
+@[simp] theorem algebraicOverPoints_map_apply (K : Type u) [Field K]
+    (Y : algebraicOver K) {X U : (FGAlgCat K)ᵒᵖ} (f : U ⟶ X)
+    (x : ULift.{0} ((finiteAlgSpecOver K).obj X ⟶ Y.obj)) :
+    ((algebraicOverPoints K).obj Y).map f.op x =
+      ULift.up ((finiteAlgSpecOver K).map f ≫ x.down) := rfl
+
+/-- The functor of points on finitely generated algebras is fully faithful on
+finite-type schemes, with no separatedness hypothesis. This is the
+set-valued claim of J. S. Milne, *Algebraic Groups* (2017), item 1.4;
+Appendix A.33 supplies the restricted Yoneda formulation. -/
 noncomputable def algebraicOverPointsFullyFaithful
     (K : Type u) [Field K] : (algebraicOverPoints K).FullyFaithful := by
   letI : (finiteAlgSpecOver K).IsDense := finiteAlgSpecOver_isDense K
@@ -360,7 +425,8 @@ noncomputable def algebraicOverPointsFullyFaithful
       (Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K)))
 
 /-- The functor of points on finitely generated algebras is fully faithful on locally-finite-type
-schemes. -/
+schemes. This extends the finite-type claim of J. S. Milne,
+*Algebraic Groups* (2017), item 1.4, beyond quasi-compact schemes. -/
 noncomputable def lftPointsFullyFaithful
     (K : Type u) [Field K] :
     (Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K)).FullyFaithful := by

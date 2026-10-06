@@ -26,12 +26,10 @@ noncomputable section
 
 variable {K B : Type u} [Field K] [CommRing B] [Algebra K B]
 
-local instance globalSectionsAlgebraInstance
-    (X : Over (Spec (.of K))) : Algebra K Γ(X.left, ⊤) :=
-  X.hom.globalSectionsAlgebra K
+attribute [local instance] AlgebraicGeometry.globalSectionsAlgebraInstance
 
 /-- Ordinary downstream use of the universal property. -/
-private theorem check_1 (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
+example (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (hB : Algebra.IsFiniteEtale K B)
     (f : X ⟶ specOver K B) :
     ∃! g : componentScheme X ⟶ specOver K B,
@@ -39,7 +37,7 @@ private theorem check_1 (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
   componentScheme_universal X hB f
 
 /-- The theorem applies to the disconnected algebra `Fin 2 → K`. -/
-private theorem check_2 (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
+example (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (f : X ⟶ specOver K (Fin 2 → K)) :
     ∃! g : componentScheme X ⟶ specOver K (Fin 2 → K),
       toComponentScheme X ≫ g = f := by
@@ -47,7 +45,7 @@ private theorem check_2 (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
   exact ⟨inferInstance, inferInstance⟩
 
 /-- No reducedness hypothesis is needed for the dual-number source. -/
-private theorem check_3 [LocallyOfFiniteType (specOver K (DualNumber K)).hom]
+example [LocallyOfFiniteType (specOver K (DualNumber K)).hom]
     [QuasiCompact (specOver K (DualNumber K)).hom]
     (hB : Algebra.IsFiniteEtale K B)
     (f : specOver K (DualNumber K) ⟶ specOver K B) :
@@ -56,7 +54,7 @@ private theorem check_3 [LocallyOfFiniteType (specOver K (DualNumber K)).hom]
   componentScheme_universal _ hB f
 
 /-- A subsingleton algebra has empty affine spectrum; this case is included. -/
-private theorem check_4 {Z : Type u} [CommRing Z] [Algebra K Z] [Subsingleton Z]
+example {Z : Type u} [CommRing Z] [Algebra K Z] [Subsingleton Z]
     [LocallyOfFiniteType (specOver K Z).hom]
     [QuasiCompact (specOver K Z).hom]
     (h0 : Algebra.IsFiniteEtale K Z)
@@ -66,7 +64,7 @@ private theorem check_4 {Z : Type u} [CommRing Z] [Algebra K Z] [Subsingleton Z]
   componentScheme_universal _ h0 f
 
 /-- The chosen object agrees literally with any other greatest witness. -/
-private theorem check_5 (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
+example (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (A : Subalgebra K Γ(X.left, ⊤))
     (hA : A.IsFiniteEtale)
     (hgreatest : ∀ C : Subalgebra K Γ(X.left, ⊤),

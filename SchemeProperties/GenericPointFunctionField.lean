@@ -17,6 +17,17 @@ The canonical morphism from the spectrum of an integral scheme's function field
 is dominant and induces an isomorphism on function fields, although it need not
 be locally of finite type. The latter obstruction persists after composition
 with any independently chosen structure morphism.
+
+## References
+
+* Mathlib, `Mathlib.AlgebraicGeometry.FunctionField` (Andrew Yang) and
+  `Mathlib.AlgebraicGeometry.Stalk` (Andrew Yang, Fangming Li): the
+  generic-point stalk, canonical spectrum map and closed-point stalk isomorphism.
+* Mathlib, `Mathlib.AlgebraicGeometry.Morphisms.Finite` (Christian Merten,
+  Andrew Yang) and `Mathlib.AlgebraicGeometry.GammaSpecAdjunction` (Junyan Xu):
+  closed-point behavior of locally finite-type maps and full faithfulness of `Spec`.
+* Scheme Properties, `RationalFunctionFieldReconstruction`: the compatible
+  function-field map of a dominant quotient rational map.
 -/
 
 set_option warningAsError true
@@ -40,13 +51,14 @@ instance fromSpecStalk_genericPoint_isDominant :
   exact closure_mono (Set.singleton_subset_iff.mpr ⟨closedPoint Y.functionField,
     Y.fromSpecStalk_closedPoint⟩)
 
-/-- The native rational quotient of the generic-point morphism is dominant. -/
+/-- The rational quotient of the generic-point morphism is dominant. -/
 instance fromSpecStalk_genericPoint_toRationalMap_isDominant :
     (Y.fromSpecStalk (genericPoint Y)).toRationalMap.IsDominant := by
   infer_instance
 
-/-- The actual reversed field map of the generic-point rational quotient,
-read back on spectra, is the canonical stalk map of the field spectrum. -/
+/-- The reversed field map of the generic-point rational quotient, read back
+on spectra via `RationalMap.functionFieldMap_compatible`, is the canonical
+stalk map of the field spectrum. -/
 theorem genericPoint_functionFieldMap_specMap :
     Spec.map (Y.fromSpecStalk (genericPoint Y)).toRationalMap.functionFieldMap =
       (Spec Y.functionField).fromSpecStalk (genericPoint (Spec Y.functionField)) := by
@@ -64,7 +76,8 @@ theorem genericPoint_functionFieldMap_specMap :
   rw [← cancel_mono (Y.fromSpecStalk (genericPoint Y))]
   exact hcompat
 
-/-- The actual native reversed function-field map is an isomorphism. -/
+/-- The reversed function-field map is an isomorphism via Mathlib's field-stalk
+isomorphism and full faithfulness of `Spec`. -/
 instance genericPoint_functionFieldMap_isIso :
     IsIso (Y.fromSpecStalk (genericPoint Y)).toRationalMap.functionFieldMap := by
   have hspec : IsIso
@@ -88,7 +101,8 @@ instance genericPoint_functionFieldMap_isIso :
   exact (isIso_op_iff _).mp hopp
 
 /-- A nontrivial integral Jacobson scheme cannot receive its generic-point
-field spectrum by a locally finite-type morphism. -/
+field spectrum by a locally finite-type morphism: Mathlib's closed-point image
+property would make the dense generic point closed. -/
 theorem not_locallyOfFiniteType_fromSpecStalk_genericPoint
     [JacobsonSpace Y] [Nontrivial Y] :
     ¬ LocallyOfFiniteType (Y.fromSpecStalk (genericPoint Y)) := by

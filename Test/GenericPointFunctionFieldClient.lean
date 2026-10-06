@@ -16,9 +16,7 @@ open CategoryTheory AlgebraicGeometry TopologicalSpace
 
 namespace SchemePropertiesTest.GenericPointFunctionField
 
-private abbrev affineLine := Spec (CommRingCat.of (Polynomial ℚ))
-
-private instance affineLine_nontrivial : Nontrivial affineLine := by
+example : Nontrivial (Spec (CommRingCat.of (Polynomial ℚ))) := by
   change Nontrivial (PrimeSpectrum (Polynomial ℚ))
   let generic : PrimeSpectrum (Polynomial ℚ) := ⟨⊥, inferInstance⟩
   let origin : PrimeSpectrum (Polynomial ℚ) :=
@@ -33,25 +31,43 @@ private instance affineLine_nontrivial : Nontrivial affineLine := by
     exact Ideal.subset_span (Set.mem_singleton _)
   simp at hX
 
-private theorem affineLine_functionFieldMap_isIso :
-    IsIso (affineLine.fromSpecStalk (genericPoint affineLine)).toRationalMap.functionFieldMap :=
+example :
+    IsIso ((Spec (CommRingCat.of (Polynomial ℚ))).fromSpecStalk
+      (genericPoint (Spec (CommRingCat.of (Polynomial ℚ))))).toRationalMap.functionFieldMap :=
   inferInstance
 
-private theorem affineLine_canonical_readback :
-    Spec.map (affineLine.fromSpecStalk (genericPoint affineLine)).toRationalMap.functionFieldMap =
-      (Spec affineLine.functionField).fromSpecStalk
-        (genericPoint (Spec affineLine.functionField)) :=
-  Scheme.genericPoint_functionFieldMap_specMap affineLine
+example :
+    Spec.map ((Spec (CommRingCat.of (Polynomial ℚ))).fromSpecStalk
+      (genericPoint (Spec (CommRingCat.of (Polynomial ℚ))))).toRationalMap.functionFieldMap =
+      (Spec (Spec (CommRingCat.of (Polynomial ℚ))).functionField).fromSpecStalk
+        (genericPoint (Spec (Spec (CommRingCat.of (Polynomial ℚ))).functionField)) :=
+  Scheme.genericPoint_functionFieldMap_specMap (Spec (CommRingCat.of (Polynomial ℚ)))
 
-private theorem affineLine_generic_not_lft :
-    ¬ LocallyOfFiniteType (affineLine.fromSpecStalk (genericPoint affineLine)) :=
-  Scheme.not_locallyOfFiniteType_fromSpecStalk_genericPoint affineLine
+example :
+    ¬ LocallyOfFiniteType ((Spec (CommRingCat.of (Polynomial ℚ))).fromSpecStalk
+      (genericPoint (Spec (CommRingCat.of (Polynomial ℚ))))) := by
+  let : Nontrivial (Spec (CommRingCat.of (Polynomial ℚ))) := by
+    change Nontrivial (PrimeSpectrum (Polynomial ℚ))
+    let generic : PrimeSpectrum (Polynomial ℚ) := ⟨⊥, inferInstance⟩
+    let origin : PrimeSpectrum (Polynomial ℚ) :=
+      ⟨Ideal.span {Polynomial.X},
+        (Ideal.span_singleton_prime Polynomial.X_ne_zero).mpr Polynomial.prime_X⟩
+    refine ⟨⟨generic, origin, ?_⟩⟩
+    intro heq
+    have hideals : (⊥ : Ideal (Polynomial ℚ)) = Ideal.span {Polynomial.X} :=
+      congrArg PrimeSpectrum.asIdeal heq
+    have hX : (Polynomial.X : Polynomial ℚ) ∈ (⊥ : Ideal (Polynomial ℚ)) := by
+      rw [hideals]
+      exact Ideal.subset_span (Set.mem_singleton _)
+    simp at hX
+  exact Scheme.not_locallyOfFiniteType_fromSpecStalk_genericPoint
+    (Spec (CommRingCat.of (Polynomial ℚ)))
 
-private def affineLineToPoint : affineLine ⟶ Spec (CommRingCat.of ℚ) :=
+example : Spec (CommRingCat.of (Polynomial ℚ)) ⟶ Spec (CommRingCat.of ℚ) :=
   Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))
 
-private theorem affineLineToPoint_finiteType : LocallyOfFiniteType affineLineToPoint := by
-  unfold affineLineToPoint
+example : LocallyOfFiniteType
+    (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))) := by
   apply (HasRingHomProperty.Spec_iff).2
   change (Polynomial.C : ℚ →+* Polynomial ℚ).FiniteType
   have hC : (Polynomial.C : ℚ →+* Polynomial ℚ) =
@@ -60,12 +76,30 @@ private theorem affineLineToPoint_finiteType : LocallyOfFiniteType affineLineToP
   rw [hC, RingHom.finiteType_algebraMap]
   infer_instance
 
-private theorem affineLine_generic_relative_not_lft :
+example :
     ¬ LocallyOfFiniteType
-      (affineLine.fromSpecStalk (genericPoint affineLine) ≫ affineLineToPoint) :=
-  Scheme.not_locallyOfFiniteType_fromSpecStalk_genericPoint_comp affineLine affineLineToPoint
+      ((Spec (CommRingCat.of (Polynomial ℚ))).fromSpecStalk
+        (genericPoint (Spec (CommRingCat.of (Polynomial ℚ)))) ≫
+        Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ))) := by
+  let : Nontrivial (Spec (CommRingCat.of (Polynomial ℚ))) := by
+    change Nontrivial (PrimeSpectrum (Polynomial ℚ))
+    let generic : PrimeSpectrum (Polynomial ℚ) := ⟨⊥, inferInstance⟩
+    let origin : PrimeSpectrum (Polynomial ℚ) :=
+      ⟨Ideal.span {Polynomial.X},
+        (Ideal.span_singleton_prime Polynomial.X_ne_zero).mpr Polynomial.prime_X⟩
+    refine ⟨⟨generic, origin, ?_⟩⟩
+    intro heq
+    have hideals : (⊥ : Ideal (Polynomial ℚ)) = Ideal.span {Polynomial.X} :=
+      congrArg PrimeSpectrum.asIdeal heq
+    have hX : (Polynomial.X : Polynomial ℚ) ∈ (⊥ : Ideal (Polynomial ℚ)) := by
+      rw [hideals]
+      exact Ideal.subset_span (Set.mem_singleton _)
+    simp at hX
+  exact Scheme.not_locallyOfFiniteType_fromSpecStalk_genericPoint_comp
+    (Spec (CommRingCat.of (Polynomial ℚ)))
+    (Spec.map (CommRingCat.ofHom (Polynomial.C : ℚ →+* Polynomial ℚ)))
 
-private theorem point_functionFieldMap_isIso :
+example :
     IsIso ((Spec (CommRingCat.of ℚ)).fromSpecStalk
       (genericPoint (Spec (CommRingCat.of ℚ)))).toRationalMap.functionFieldMap :=
   inferInstance

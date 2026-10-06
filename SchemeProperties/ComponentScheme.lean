@@ -31,6 +31,18 @@ All schemes and rings in the public reflection API live in one universe.  The
 construction does not assume that the source is reduced, connected, separated,
 or nonempty; in particular it also applies when its global-sections ring is the
 zero ring.
+
+## References
+
+- J. S. Milne, *Algebraic Groups* (2017), Proposition 1.29 (the greatest
+  finite-etale subalgebra of global sections), and the component-scheme
+  definition and universal-property paragraph immediately before Proposition
+  1.30 (its spectrum and the canonical factorization through it).
+- `finite-etale-algebras`, `FiniteEtaleAlgebras/MaximalSubalgebra.lean`:
+  `Subalgebra.exists_greatest_isFiniteEtale_of_finrank_le` provides the
+  finite-etale subalgebra selection used here. The scheme-level reflection,
+  universal property and surjectivity are project constructions, not results
+  claimed from that dependency.
 -/
 
 open CategoryTheory Limits Opposite Topology
@@ -241,7 +253,10 @@ private theorem exists_greatest_isFiniteEtaleSubalgebra_globalSections_of_extens
   exact finrank_le_natCard_connectedComponents_scalarExtension X A.val
     Subtype.val_injective
 
-/-- The global sections have a greatest finite-etale `K`-subalgebra. -/
+/-- The global sections have a greatest finite-etale `K`-subalgebra, using
+`finite-etale-algebras`'s `Subalgebra.exists_greatest_isFiniteEtale_of_finrank_le`
+after the scheme-specific rank bound. This is the assertion of J. S. Milne,
+*Algebraic Groups* (2017), Proposition 1.29. -/
 theorem exists_greatest_isFiniteEtaleSubalgebra_globalSections
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] :
@@ -267,7 +282,8 @@ theorem exists_greatest_isFiniteEtaleSubalgebra_globalSections
   exact exists_greatest_isFiniteEtaleSubalgebra_globalSections_of_extension
     (L := AlgebraicClosure K) X
 
-/-- A selected greatest finite-etale subalgebra of the global sections. -/
+/-- A selected greatest finite-etale subalgebra of the global sections, as in
+J. S. Milne, *Algebraic Groups* (2017), Proposition 1.29. -/
 @[expose]
 def componentSubalgebra
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
@@ -302,13 +318,17 @@ theorem componentSubalgebra_eq_of_isGreatest
   · exact hgreatest _ (componentSubalgebra_isFiniteEtale X)
   · exact isFiniteEtaleSubalgebra_le_componentSubalgebra X A hA
 
-/-- The affine finite-etale component object selected from global sections. -/
+/-- The affine finite-etale component object selected from global sections.
+It is the spectrum of the component algebra in J. S. Milne, *Algebraic
+Groups* (2017), in the paragraph immediately before Proposition 1.30. -/
 abbrev componentScheme
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] : Over (Spec (.of K)) :=
   specOver K (componentSubalgebra X)
 
-/-- The canonical map from a scheme to its finite-etale component scheme. -/
+/-- The canonical map from a scheme to its finite-etale component scheme,
+as in J. S. Milne, *Algebraic Groups* (2017), in the paragraph immediately
+before Proposition 1.30. -/
 @[expose]
 def toComponentScheme
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
@@ -470,7 +490,9 @@ private theorem toComponentScheme_appTop_injective
     Subtype.val_injective
 
 /-- Every map to a finite-etale affine scheme factors uniquely through the
-component scheme. -/
+component scheme. This is the universal property in J. S. Milne,
+*Algebraic Groups* (2017), in the paragraph immediately before Proposition
+1.30; the target may be the spectrum of any finite-etale `K`-algebra. -/
 theorem componentScheme_universal
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] {B : Type u} [CommRing B] [Algebra K B]

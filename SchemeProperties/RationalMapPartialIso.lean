@@ -19,6 +19,17 @@ set_option warningAsError true
 Two independently chosen dominant rational maps inverse to one another admit a
 partial isomorphism representing both exact quotient classes. Compatibility with
 independently chosen structure maps requires only the forward quotient equation.
+
+## References
+
+- [Mathlib, `AlgebraicGeometry/Birational/Composition.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Composition.lean#L46-L55):
+  Justus Springer's partial-composition domain expression is adapted when
+  constructing the exact inverse on dense opens.
+- [Mathlib, `AlgebraicGeometry/Birational/RationalMap.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/RationalMap.lean#L370-L415):
+  Andrew Yang's partial-map quotient and representative contracts are used.
+- [Mathlib, `AlgebraicGeometry/Birational/Birational.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Birational/Birational.lean#L37-L49):
+  the native `Scheme.PartialIso` is the target interface, not an adapted proof
+  of the exact two-sided realization.
 -/
 
 universe u

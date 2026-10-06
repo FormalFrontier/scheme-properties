@@ -14,13 +14,13 @@ universe u
 
 namespace ComponentFibersOrdinaryImport
 
-private noncomputable def checkFiber (K : Type u) [Field K]
+noncomputable example (K : Type u) [Field K]
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (x : (componentScheme X).left) :
     Over (Spec ((componentScheme X).left.residueField x)) :=
   componentSchemeFiber X x
 
-private theorem checkGeometricallyConnected (K : Type u) [Field K]
+example (K : Type u) [Field K]
     (X : Over (Spec (.of K))) [LocallyOfFiniteType X.hom]
     [QuasiCompact X.hom] (x : (componentScheme X).left) :
     GeometricallyConnected

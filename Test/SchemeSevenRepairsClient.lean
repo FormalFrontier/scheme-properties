@@ -16,36 +16,36 @@ open scoped TensorProduct
 
 universe u
 
-private theorem connectedPullbackOneSided {K : Type u} [Field K] [IsAlgClosed K]
+example {K : Type u} [Field K] [IsAlgClosed K]
     {X Y : Scheme.{u}} (f : X ⟶ Spec (.of K)) (g : Y ⟶ Spec (.of K))
     [LocallyOfFiniteType f] [ConnectedSpace X] [ConnectedSpace Y] :
     ConnectedSpace ↥(pullback f g) :=
   connectedSpace_pullback_of_isAlgClosed f g
 
-private theorem connectedPullbackTwoSided {K : Type u} [Field K] [IsAlgClosed K]
+example {K : Type u} [Field K] [IsAlgClosed K]
     {X Y : Scheme.{u}} (f : X ⟶ Spec (.of K)) (g : Y ⟶ Spec (.of K))
     [LocallyOfFiniteType f] [LocallyOfFiniteType g]
     [ConnectedSpace X] [ConnectedSpace Y] :
     ConnectedSpace ↥(pullback f g) :=
   connectedSpace_pullback_of_isAlgClosed f g
 
-private theorem torsionForArbitraryCommRing {R K M : Type*} [CommRing R]
+example {R K M : Type*} [CommRing R]
     [CommRing K] [Algebra R K] [IsFractionRing R K]
     [AddCommGroup M] [Module R M] :
     Module.IsTorsion R M ↔ Subsingleton (K ⊗[R] M) :=
   Module.isTorsion_iff_subsingleton_tensorProduct
 
-private theorem torsionForDomain {R M : Type*} [CommRing R] [IsDomain R]
+example {R M : Type*} [CommRing R] [IsDomain R]
     [AddCommGroup M] [Module R M] :
     Module.IsTorsion R M ↔ Subsingleton (FractionRing R ⊗[R] M) :=
   Module.isTorsion_iff_subsingleton_fractionRing_tensorProduct
 
-private theorem canonicalLocalizationForArbitraryCommRing
+example
     {R M : Type*} [CommRing R] [AddCommGroup M] [Module R M] :
     Module.IsTorsion R M ↔ Subsingleton (FractionRing R ⊗[R] M) :=
   Module.isTorsion_iff_subsingleton_fractionRing_tensorProduct
 
-private theorem torsionWithZeroDivisors :
+example :
     Module.IsTorsion (ZMod 6) (ZMod 6) ↔
       Subsingleton (FractionRing (ZMod 6) ⊗[ZMod 6] ZMod 6) :=
   Module.isTorsion_iff_subsingleton_tensorProduct

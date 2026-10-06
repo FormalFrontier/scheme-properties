@@ -21,18 +21,18 @@ open AlgebraicGeometry
 variable {X Y Z W : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
   [IsIntegral Z] [IsIntegral W]
 
-private theorem generic_image (r : X ⤏ Y) [r.IsDominant] :
+example (r : X ⤏ Y) [r.IsDominant] :
     r.fromFunctionField (closedPoint X.functionField) = genericPoint Y :=
   Scheme.RationalMap.fromFunctionField_closedPoint r
 
-private theorem representative (p : X.PartialMap Y) [IsDominant p.hom] :
+example (p : X.PartialMap Y) [IsDominant p.hom] :
     p.toRationalMap.functionFieldMap =
       (Y.presheaf.stalkCongr (.of_eq
         (Scheme.RationalMap.fromFunctionField_closedPoint p.toRationalMap).symm)).hom ≫
         Scheme.stalkClosedPointTo p.fromFunctionField := by
   rfl
 
-private theorem dense_restriction (p : X.PartialMap Y) [IsDominant p.hom]
+example (p : X.PartialMap Y) [IsDominant p.hom]
     (U : X.Opens) (hU : Dense (U : Set X)) (hU' : U ≤ p.domain) :
     (p.restrict U hU hU').toRationalMap.functionFieldMap =
       p.toRationalMap.functionFieldMap := by
@@ -40,16 +40,16 @@ private theorem dense_restriction (p : X.PartialMap Y) [IsDominant p.hom]
   simpa only [Scheme.RationalMap.fromFunctionField_toRationalMap] using
     p.fromFunctionField_restrict hU hU'
 
-private theorem identity :
+example :
     (Scheme.RationalMap.id X).functionFieldMap = 𝟙 X.functionField := by
   exact Scheme.RationalMap.functionFieldMap_id
 
-private theorem reversed_two (r : X ⤏ Y) [r.IsDominant]
+example (r : X ⤏ Y) [r.IsDominant]
     (s : Y ⤏ Z) [s.IsDominant] :
     (r.comp s).functionFieldMap = s.functionFieldMap ≫ r.functionFieldMap := by
   exact Scheme.RationalMap.functionFieldMap_comp r s
 
-private theorem reversed_three (r : X ⤏ Y) [r.IsDominant]
+example (r : X ⤏ Y) [r.IsDominant]
     (s : Y ⤏ Z) [s.IsDominant] (t : Z ⤏ W) [t.IsDominant] :
     ((r.comp s).comp t).functionFieldMap =
       t.functionFieldMap ≫ s.functionFieldMap ≫ r.functionFieldMap := by
@@ -58,16 +58,16 @@ private theorem reversed_three (r : X ⤏ Y) [r.IsDominant]
 
 variable {A B C : IntegralDominantRationalScheme.{u}}
 
-private theorem category_identity :
+example :
     IntegralDominantRationalScheme.functionFieldFunctor.map
       (𝟙 (Opposite.op A)) = 𝟙 A.toScheme.functionField := by
   exact IntegralDominantRationalScheme.functionFieldFunctor.map_id _
 
-private theorem category_arrow (f : A ⟶ B) :
+example (f : A ⟶ B) :
     IntegralDominantRationalScheme.functionFieldFunctor.map f.op =
       f.toRationalMap.functionFieldMap := rfl
 
-private theorem category_composition (f : A ⟶ B) (g : B ⟶ C) :
+example (f : A ⟶ B) (g : B ⟶ C) :
     IntegralDominantRationalScheme.functionFieldFunctor.map (g.op ≫ f.op) =
       IntegralDominantRationalScheme.functionFieldFunctor.map g.op ≫
         IntegralDominantRationalScheme.functionFieldFunctor.map f.op := by

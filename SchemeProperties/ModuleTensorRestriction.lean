@@ -27,6 +27,23 @@ unit is preserved by open restriction, so the induced sheaf morphism is an
 isomorphism.
 
 No quasicoherence, finiteness, nonemptiness, or separation hypothesis is used.
+
+## References
+
+- Mathlib's `Mathlib/Algebra/Category/ModuleCat/Monoidal/Adjunction.lean` and
+  `Mathlib/Algebra/Category/ModuleCat/Monoidal/Basic.lean` supply lax-monoidal
+  restriction of scalars, its pure-tensor law and tensor lifting.
+- Mathlib's `Mathlib/Algebra/Category/ModuleCat/Presheaf/OfCommRing.lean` and
+  `Mathlib/Algebra/Category/ModuleCat/Presheaf/Pushforward.lean` supply `isoMk`
+  and `pushforward`, used here to build the sectionwise presheaf comparison
+  with the actual open-immersion scalar maps.
+- Mathlib's `Mathlib/CategoryTheory/Sites/PreservesLocallyBijective.lean`,
+  `Mathlib/CategoryTheory/Sites/LocallyInjective.lean`,
+  `Mathlib/CategoryTheory/Sites/LocallySurjective.lean` and
+  `Mathlib/CategoryTheory/Sites/LocallyBijective.lean` supply preservation and
+  cancellation of local bijectivity and reflection to a sheaf isomorphism.
+- `SchemeProperties.ModuleTensor` supplies the ambient tensor's sheafification
+  Hom equivalence used to assemble the project comparison.
 -/
 
 open CategoryTheory MonoidalCategory TopologicalSpace
@@ -145,6 +162,7 @@ private noncomputable def restrictPresheafFunctor :
 
 set_option backward.isDefEq.respectTransparency false in
 set_option maxHeartbeats 800000 in
+-- Constructing the tensor-presheaf isomorphism requires expensive categorical reduction.
 private noncomputable def restrictPresheafTensorIso (M N : Y.PresheafOfModules) :
     (restrictPresheafFunctor f).obj M ⊗ (restrictPresheafFunctor f).obj N ≅
       (restrictPresheafFunctor f).obj (M ⊗ N) :=

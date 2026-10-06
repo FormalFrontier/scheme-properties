@@ -18,27 +18,27 @@ universe u
 
 variable {X : Scheme.{u}}
 
-private theorem check_1 (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
+example (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
     (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1) (f : Γ(X, U))
     [Module.IsCoherent Γ(X, U) Γ(M, U)] :
     Module.IsCoherent Γ(X, X.basicOpen f) Γ(M, X.basicOpen f) :=
   isCoherent_basicOpen_of_qcqs M hU hU' f inferInstance
 
-private theorem check_2 (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
+example (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
     (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1)
     [Module.IsCoherent Γ(X, U) Γ(M, U)] :
     Module.IsCoherent Γ(X, X.basicOpen (0 : Γ(X, U)))
       Γ(M, X.basicOpen (0 : Γ(X, U))) :=
   isCoherent_basicOpen_of_qcqs M hU hU' 0 inferInstance
 
-private theorem check_3 (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
+example (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
     (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1)
     [Module.IsCoherent Γ(X, U) Γ(M, U)] :
     Module.IsCoherent Γ(X, X.basicOpen (1 : Γ(X, U)))
       Γ(M, X.basicOpen (1 : Γ(X, U))) :=
   isCoherent_basicOpen_of_qcqs M hU hU' 1 inferInstance
 
-private theorem check_4 {U : X.Opens} (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1)
+example {U : X.Opens} (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1)
     (f : Γ(X, U)) :
     Module.IsCoherent Γ(X, X.basicOpen f)
       Γ((0 : X.Modules), X.basicOpen f) := by
@@ -52,7 +52,7 @@ private theorem check_4 {U : X.Opens} (hU : IsCompact U.1) (hU' : IsQuasiSeparat
     AddCommGrpCat.subsingleton_of_isZero hzero
   infer_instance
 
-private theorem check_5 (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
+example (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
     (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1)
     (s : Set Γ(X, U)) (hs : Ideal.span s = ⊤)
     (h : ∀ g : s,
@@ -62,7 +62,7 @@ private theorem check_5 (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
 
 /-- The empty spanning family is valid when the ambient section ring is the
 zero ring; no artificial `Nonempty` premise is needed. -/
-private theorem check_6 (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
+example (M : X.Modules) [M.IsQuasicoherent] {U : X.Opens}
     (hU : IsCompact U.1) (hU' : IsQuasiSeparated U.1)
     [Subsingleton Γ(X, U)] : Module.IsCoherent Γ(X, U) Γ(M, U) := by
   apply isCoherent_of_span_basicOpen_of_qcqs M hU hU'
@@ -76,14 +76,14 @@ namespace AlgebraicGeometry
 
 universe u
 
-private theorem check_7 (R : CommRingCat.{u})
+example (R : CommRingCat.{u})
     (Q : (SheafOfModules.isQuasicoherent
       (Spec R).ringCatSheaf).FullSubcategory) :
     isCoherentOnSpec R Q ↔
       Module.IsCoherent R ((tildeEquiv (R := R)).inverse.obj Q) :=
   isCoherentOnSpec_iff R Q
 
-private theorem check_8 (R : CommRingCat.{u}) (M : ModuleCat.{u} R) :
+example (R : CommRingCat.{u}) (M : ModuleCat.{u} R) :
     isCoherentOnSpec R
         (⟨tilde M, by
           change (tilde M).IsQuasicoherent
