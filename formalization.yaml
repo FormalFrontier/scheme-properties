@@ -87,8 +87,20 @@ status:
     of the common-kernel complement. No surjectivity, nontriviality, field or
     finite-type assumption; not unrestricted Spec-map immersions or connected
     components.
+    Ring equivalences of independently universed commutative semirings preserve
+    reducedness at corresponding prime localizations and openness of the full
+    reduced-localization locus. For an injective family of points over an
+    arbitrary field, that locus in the square-zero polynomial point quotient
+    is open precisely when the family has finite image; no criterion for
+    nonseparated families or identification with a particular source ring is asserted.
     Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; the chosen-base generic-point rational arrow is noninvertible for a nontrivial Jacobson integral target despite its reversed field-map isomorphism. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md.
   main_results:
+    - declaration: PrimeSpectrum.isReduced_atPrime_homeomorphOfRingEquiv_iff
+      file: SchemeProperties/ReducedLocusEquiv.lean
+    - declaration: PrimeSpectrum.isOpen_isReduced_atPrime_iff_ringEquiv
+      file: SchemeProperties/ReducedLocusEquiv.lean
+    - declaration: MvPolynomial.isOpen_reduced_atPrime_pointSquareZeroQuotient_iff_finite_range
+      file: SchemeProperties/PolynomialPointSquareZeroReducedLocus.lean
     - declaration: CategoryTheory.Subfunctor.IsOneCoverDense
       file: SchemeProperties/SingleCoverExtension.lean
     - declaration: CategoryTheory.Subfunctor.oneCoverExtensionEquiv

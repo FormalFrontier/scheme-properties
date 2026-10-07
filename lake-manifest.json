@@ -2,6 +2,17 @@
  "packagesDir": ".lake/packages",
  "packages":
  [{"url":
+   "https://github.com/FormalFrontier/multivariate-polynomials.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "0a93db475d7a36434c3926f604b638f0d58f8142",
+   "name": "«multivariate-polynomials»",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "0a93db475d7a36434c3926f604b638f0d58f8142",
+   "inherited": false,
+   "configFile": "lakefile.toml"},
+  {"url":
    "https://github.com/FormalFrontier/finite-etale-algebras.git",
    "type": "git",
    "subDir": null,

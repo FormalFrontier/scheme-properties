@@ -23,6 +23,11 @@ name = "finiteEtaleAlgebras"
 git = "https://github.com/FormalFrontier/finite-etale-algebras.git"
 rev = "79575f65c9edec560f27756917761eed78331a2a"
 
+[[require]]
+name = "multivariate-polynomials"
+git = "https://github.com/FormalFrontier/multivariate-polynomials.git"
+rev = "0a93db475d7a36434c3926f604b638f0d58f8142"
+
 [[lean_lib]]
 name = "SchemeProperties"
 

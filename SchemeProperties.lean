@@ -60,6 +60,7 @@ public import SchemeProperties.NormalSeparable
 public import SchemeProperties.NormalSeparableScheme
 public import SchemeProperties.PolynomialPointPrime
 public import SchemeProperties.PolynomialPointReducedLocus
+public import SchemeProperties.PolynomialPointSquareZeroReducedLocus
 public import SchemeProperties.PresheafModuleTensorStalk
 public import SchemeProperties.PullbackOpenImmersion
 public import SchemeProperties.PullbackSpectrumPushout
@@ -70,6 +71,7 @@ public import SchemeProperties.RationalMapComposition
 public import SchemeProperties.RationalMapPartialIso
 public import SchemeProperties.Reduced
 public import SchemeProperties.ReducedLocus
+public import SchemeProperties.ReducedLocusEquiv
 public import SchemeProperties.TrivSqZeroExtReducedLocus
 public import SchemeProperties.SheafFinitePresentation
 public import SchemeProperties.SheafFinitePresentationTransport

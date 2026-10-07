@@ -36,6 +36,11 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   open, without a quasi-compactness assumption. The proofs use Mathlib's
   localization of radicals, module support and affine stalk descriptions.
   Direct import: `SchemeProperties.ReducedLocus`.
+- [Ring-equivalence reduced loci](SchemeProperties/ReducedLocusEquiv.lean):
+  an equivalence of commutative semirings with independent universes preserves
+  reducedness of localizations at corresponding primes and openness of the
+  **entire** reduced prime-localization locus. No finiteness or reducedness
+  hypothesis is needed. Direct import: `SchemeProperties.ReducedLocusEquiv`.
 - [Square-zero reduced localizations](SchemeProperties/TrivSqZeroExtReducedLocus.lean):
   for any commutative ring `R`, any `R`-module `M` and a prime `p` of `R`, an
   arbitrary prime-localization model of the square-zero extension at the prime
@@ -56,6 +61,14 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   Even an infinite family constantly repeating one point satisfies the
   criterion. Direct imports: `SchemeProperties.PolynomialPointPrime` and
   `SchemeProperties.PolynomialPointReducedLocus`.
+- [Polynomial point quotients](SchemeProperties/PolynomialPointSquareZeroReducedLocus.lean):
+  for an injective family of points over any field, the reduced-localization
+  locus at **all** primes of its square-zero polynomial quotient is open exactly
+  when the point family's image is finite. Injectivity supplies pairwise unit
+  differences for the canonical quotient presentation; this does not classify
+  nonseparated point families. The singleton quotient can be nonreduced while
+  its reduced-localization locus is open. Direct import:
+  `SchemeProperties.PolynomialPointSquareZeroReducedLocus`.
 
 ### Single-cover subfunctors
 
@@ -336,7 +349,10 @@ mathematical guides. Inspect direct-import [Test clients](Test/) and concrete
 `SchemeProperties.GenericPointFunctionField`,
 `SchemeProperties.GenericPointRationalNoninvertibility`,
 `SchemeProperties.RationalMapPartialIso` or
-`SchemeProperties.ModuleFinitePresentation` directly.
+`SchemeProperties.ModuleFinitePresentation` directly. The ring-equivalence
+reduced-locus theorems are in `SchemeProperties.ReducedLocusEquiv`; the
+polynomial quotient theorem uses the released Multivariate Polynomials
+presentation in `SchemeProperties.PolynomialPointSquareZeroReducedLocus`.
 
 [API.md](docs/API.md) and its [manifest](docs/api-manifest.json) are a **fixed
 historical 73-module** native-doc snapshot, not a current declaration
@@ -345,10 +361,10 @@ input contract; later results are in focused guides and source files.
 
 ## Build
 
-[Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the two official
+[Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the three official
 dependencies have exact revisions in [Lake](lakefile.toml) and the
 [manifest](lake-manifest.json). `coherent-modules` and `finite-etale-algebras`
-are **private GitHub dependencies** requiring authorized access. Install
+and `multivariate-polynomials` are **private GitHub dependencies** requiring authorized access. Install
 [elan](https://github.com/leanprover/elan), fetch the matching mathlib cache
 successfully for this checkout (again after changing pins or `.lake`), then
 build the library, tests and examples:
@@ -398,10 +414,11 @@ installation, cloning, doc generation, axiom checks and dependency rebuilding.
   rational-map, restricted-Yoneda, flat-sections, tensor, sheaf and descent
   methods, as well as adapted constructions detailed in
   [Credits](docs/CREDITS.md), with authentic upstream notices preserved.
-- [Coherent Modules](https://github.com/FormalFrontier/coherent-modules) and
-  [Finite Étale Algebras](https://github.com/FormalFrontier/finite-etale-algebras):
-  prior formalizations used for coherent-module localization and finite-étale
-  component algebras and descent.
+- [Coherent Modules](https://github.com/FormalFrontier/coherent-modules),
+  [Finite Étale Algebras](https://github.com/FormalFrontier/finite-etale-algebras)
+  and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials):
+  prior formalizations used for coherent-module localization, finite-étale
+  component algebras and descent, and the polynomial point-quotient presentation.
 
 The [credits](docs/CREDITS.md) distinguish mathematical antecedents, followed
 proof patterns, imported APIs, adapted expression and original project work.

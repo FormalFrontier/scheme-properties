@@ -201,6 +201,13 @@ and `FiniteEtaleAlgebras.PurelyInseparableDescent` and
 [ComponentBaseChange](../SchemeProperties/ComponentBaseChange.lean).
 Neither direct dependency supplies the scheme-level construction or the
 arbitrary-extension comparison as a finished result.
+The pinned `multivariate-polynomials` formalization (`0a93db475d7a36434c3926f604b638f0d58f8142`)
+supplies the square-zero polynomial point quotient, its evaluation-module
+presentation and the generator-prescribed algebra equivalence under pairwise
+unit differences. Its quotient presentation uses only squares and
+point-linear relations; the reduced-locus comparison is proved separately in
+Scheme Properties using its square-zero criterion and Mathlib's localization
+and spectrum equivalence APIs, rather than imported from that library.
 Coherent Modules' coherence and localization criteria together with Mathlib's
 affine communication lemma support the project
 [any-affine-cover locality criterion](../SchemeProperties/CoherentQuasicoherentLocality.lean),
@@ -238,5 +245,5 @@ Other proofs import rather than copy mathlib's native rational-map, scheme,
 birational, Jacobson and generic-stalk APIs, including work by **Andrew Yang**,
 **Justus Springer**, **Fangming Li** and **Devon Tuma**. Authentic individual
 notices remain in the upstream files, with their own applicable license terms;
-this project does not replace them or relicense mathlib, `coherent-modules` or
-`finite-etale-algebras`. No book prose or source PDF is shipped.
+this project does not replace them or relicense mathlib, `coherent-modules`,
+`finite-etale-algebras` or `multivariate-polynomials`. No book prose or source PDF is shipped.
