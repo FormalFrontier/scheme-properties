@@ -50,7 +50,7 @@ The [pinned toolchain](../lean-toolchain) is
 [resolved manifest](../lake-manifest.json) pin mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and the official
 private-GitHub `coherent-modules` release
-`fc30df937c7476f1c01f7cb39005f8cae37f8f34` and
+`408a52bd54df17ccc928ce970942f1313ff10d5c` and
 `finite-etale-algebras` release
 `79575f65c9edec560f27756917761eed78331a2a`. Authorized access to
 those dependencies is required. With the pinned toolchain installed, fetch

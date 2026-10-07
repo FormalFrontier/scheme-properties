@@ -189,7 +189,7 @@ follows Anchor's localization method, not an arbitrary-open sections formula.
 Mathlib's **ring-valued** qcqs localization and compact-open induction feed
 the project **module-valued** [extension](../SchemeProperties/QcqsModuleLocalization.lean).
 
-The pinned `coherent-modules` formalization (`fc30df937c7476f1c01f7cb39005f8cae37f8f34`) supplies
+The pinned `coherent-modules` formalization (`408a52bd54df17ccc928ce970942f1313ff10d5c`) supplies
 `CoherentModules.Localization`'s coherence-under-localization and spanning
 lemmas and `ModuleCat.isCoherent` from `CoherentModules/ModuleCat.lean`, used in
 [CoherentQuasicoherent](../SchemeProperties/CoherentQuasicoherent.lean).

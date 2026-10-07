@@ -67,7 +67,7 @@ The producer and client are under
 and the client path above. The pinned Lean toolchain is
 `leanprover/lean4:v4.34.0-rc2`, with mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and official
-`coherent-modules` `fc30df937c7476f1c01f7cb39005f8cae37f8f34`
+`coherent-modules` `408a52bd54df17ccc928ce970942f1313ff10d5c`
 and `finite-etale-algebras` `79575f65c9edec560f27756917761eed78331a2a`
 GitHub dependencies in the [exact manifest](../lake-manifest.json). The
 latter two repositories require authorized private GitHub access. To reproduce

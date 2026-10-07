@@ -47,7 +47,7 @@ The [toolchain](../lean-toolchain) is `leanprover/lean4:v4.34.0-rc2`;
 the [Lake requirements](../lakefile.toml) and [resolved manifest](../lake-manifest.json)
 pin mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5` and official
 private-GitHub `coherent-modules`
-`fc30df937c7476f1c01f7cb39005f8cae37f8f34` and
+`408a52bd54df17ccc928ce970942f1313ff10d5c` and
 `finite-etale-algebras` `79575f65c9edec560f27756917761eed78331a2a`.
 Authorized access to private dependencies is needed. In a fresh checkout,
 install the pinned Lean toolchain, successfully fetch the matching precompiled

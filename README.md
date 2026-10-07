@@ -36,6 +36,18 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   open, without a quasi-compactness assumption. The proofs use Mathlib's
   localization of radicals, module support and affine stalk descriptions.
   Direct import: `SchemeProperties.ReducedLocus`.
+- [Square-zero reduced localizations](SchemeProperties/TrivSqZeroExtReducedLocus.lean):
+  for any commutative ring `R`, any `R`-module `M` and a prime `p` of `R`, an
+  arbitrary prime-localization model of the square-zero extension at the prime
+  over `p` is reduced precisely when an arbitrary prime-localization model of
+  `R` at `p` is reduced **and** `p` lies outside the module support of `M`.
+  If `R` is reduced, the pullback of the reduced-localization locus is exactly
+  the complement of that support; the full extension locus is open if and only
+  if the support itself is closed. Neither finite generation nor a Noetherian
+  hypothesis is required. The criterion uses Mathlib's prime-localization,
+  support and square-zero projection-kernel APIs, together with Coherent Modules'
+  canonical actions on the extension.
+  Direct import: `SchemeProperties.TrivSqZeroExtReducedLocus`.
 
 ### Single-cover subfunctors
 
