@@ -71,7 +71,18 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   fullness and from descent for the subfunctor. Direct import:
   `SchemeProperties.PowerImage`.
 
-### Ring-pullback open immersions
+### Ring-pullback spectra
+
+- [Whole prime-spectrum pushout of a surjective ring pullback](SchemeProperties/PullbackSpectrumPushout.lean):
+  for commutative rings `A → C ← B`, with only `A → C` surjective and
+  `B → C` arbitrary, the whole `Spec (A ×_C B)` is the pushout of
+  `Spec A ← Spec C → Spec B` as **topological spaces**, including the closed
+  gluing locus and zero-ring cases. Ring carriers may live in independent
+  universes. A subset of the pullback spectrum is open exactly when its
+  preimages in `Spec A` and `Spec B` are open; continuous maps from these
+  spectra that agree on `Spec C` descend uniquely to any target topological
+  space, regardless of its universe. This does not assert a scheme pushout.
+  Direct import: `SchemeProperties.PullbackSpectrumPushout`.
 
 - [Open immersions on ring-pullback complements](docs/PullbackOpenImmersion.md):
   for arbitrary commutative-ring maps `R → T ← S`, the actual maps from
