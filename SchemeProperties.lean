@@ -58,6 +58,8 @@ public import SchemeProperties.NormalEtale
 public import SchemeProperties.NormalPolynomial
 public import SchemeProperties.NormalSeparable
 public import SchemeProperties.NormalSeparableScheme
+public import SchemeProperties.PolynomialPointPrime
+public import SchemeProperties.PolynomialPointReducedLocus
 public import SchemeProperties.PresheafModuleTensorStalk
 public import SchemeProperties.PullbackOpenImmersion
 public import SchemeProperties.PullbackSpectrumPushout

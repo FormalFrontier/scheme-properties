@@ -48,6 +48,14 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   support and square-zero projection-kernel APIs, together with Coherent Modules'
   canonical actions on the extension.
   Direct import: `SchemeProperties.TrivSqZeroExtReducedLocus`.
+- [Polynomial point modules](SchemeProperties/PolynomialPointReducedLocus.lean):
+  for any family of points over a field, the support of the direct sum of
+  evaluation quotients is exactly the image of their evaluation primes. This
+  support is closed, and the full reduced prime-localization locus of its
+  square-zero extension is open, precisely when the family has finite image.
+  Even an infinite family constantly repeating one point satisfies the
+  criterion. Direct imports: `SchemeProperties.PolynomialPointPrime` and
+  `SchemeProperties.PolynomialPointReducedLocus`.
 
 ### Single-cover subfunctors
 
