@@ -15,6 +15,18 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ## Headline results
 
+### Reduced local rings
+
+- [Reduced-localization locus](SchemeProperties/ReducedLocus.lean): over any
+  commutative ring, a prime localization is reduced exactly when its prime is
+  outside the **module** support of the nilradical. Consequently the nonreduced
+  locus equals that support, and finite generation of the nilradical as a module
+  suffices for the reduced locus to be open; this finiteness is not necessary.
+  On any locally Noetherian scheme the locus of points with reduced stalks is
+  open, without a quasi-compactness assumption. The proofs use Mathlib's
+  localization of radicals, module support and affine stalk descriptions.
+  Direct import: `SchemeProperties.ReducedLocus`.
+
 ### Single-cover subfunctors
 
 - [Single-cover extension](SchemeProperties/SingleCoverExtension.lean): in an
@@ -331,8 +343,10 @@ installation, cloning, doc generation, axiom checks and dependency rebuilding.
 
 - Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry*: Exercise
   5.3.C informs the integrality criterion; the aside to Exercise 5.4.M informs
-  separable-base-change normality; Definition 6.1.1, Theorem 6.1.2 and the
-  opening of §6.3 inform affine-cover quasicoherence and its abelian structure.
+  separable-base-change normality; the discussion of reduced local rings and
+  their locus informs the reduced-stalk openness result; Definition 6.1.1,
+  Theorem 6.1.2 and the opening of §6.3 inform affine-cover quasicoherence and
+  its abelian structure.
 - J. S. Milne, *Algebraic Groups: The Theory of Group Schemes of Finite Type over
   a Field*: item 1.4/Appendix A.33 informs finite-type set-valued points;
   Propositions 1.29–1.31, the paragraph before 1.30 and Corollary 1.32(a)

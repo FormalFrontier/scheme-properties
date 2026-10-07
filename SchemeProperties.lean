@@ -66,6 +66,7 @@ public import SchemeProperties.QuasicoherentAbelian
 public import SchemeProperties.RationalMapComposition
 public import SchemeProperties.RationalMapPartialIso
 public import SchemeProperties.Reduced
+public import SchemeProperties.ReducedLocus
 public import SchemeProperties.SheafFinitePresentation
 public import SchemeProperties.SheafFinitePresentationTransport
 public import SchemeProperties.StructureSheaf
