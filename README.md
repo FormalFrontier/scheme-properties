@@ -28,6 +28,15 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   extension preserves the prescribed restrictions, identity, inverses and
   composition. Neither subfunctor needs descent.
   Direct import: `SchemeProperties.SingleCoverExtension`.
+- [Change of test category](SchemeProperties/SingleCoverTransport.lean): for a
+  full, essentially surjective functor `J` and a morphism class `W` respecting
+  isomorphisms, a subfunctor is one-cover dense exactly when its precomposition
+  is dense for `W.inverseImage J`. Reflection needs only essential surjectivity,
+  not fullness; in particular density is invariant under equivalences of test
+  categories. No faithfulness, sheaf condition, pullbacks, identity covers or
+  composition stability is required. The witnesses use a single covering
+  arrow, not a covering family. Direct import:
+  `SchemeProperties.SingleCoverTransport`.
 - [Group objects from one-cover-dense subfunctors](SchemeProperties/SingleCoverGroup.lean):
   if a group-valued subfunctor `D ⊆ F` is one-cover dense for a morphism class
   with relative pullbacks and stability under base change and composition, and

@@ -33,6 +33,7 @@ public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints
 public import SchemeProperties.SingleCoverExtension
+public import SchemeProperties.SingleCoverTransport
 public import SchemeProperties.SingleCoverGroup
 public import SchemeProperties.FiniteTypeSingleCover
 public import SchemeProperties.FlatImageDensity

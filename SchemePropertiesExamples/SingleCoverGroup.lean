@@ -5,7 +5,10 @@ Authors: Formal Frontier Agents
 module
 
 public import SchemeProperties.SingleCoverGroup
+public import SchemeProperties.SingleCoverTransport
 import Mathlib.CategoryTheory.Limits.Preorder
+import Mathlib.CategoryTheory.Products.Unitor
+import Mathlib.CategoryTheory.SingleObj
 import Mathlib.Data.Fintype.Order
 public import Mathlib.Data.ZMod.Basic
 
@@ -26,6 +29,7 @@ It does not identify a group law on a represented multiplicative-group scheme.
 @[expose] public section
 
 open CategoryTheory Limits Opposite MonoidalCategory
+open scoped CategoryTheory.Prod
 
 namespace CategoryTheory.Subfunctor
 
@@ -340,5 +344,108 @@ example : ¬ (⊥ : Subfunctor twoPoints).IsOneCoverDense
   intro h
   obtain ⟨U, f, _, hx⟩ := h false (1 : twoGroup)
   simp at hx
+
+private theorem unitAtTop_productUnit_proper :
+    unitAtTop.precomp (prod.rightUnitorEquivalence Bool).functor.op ≠ ⊤ := by
+  intro h
+  have hx : (Multiplicative.ofAdd (1 : ZMod 2)) ∈
+      (unitAtTop.precomp (prod.rightUnitorEquivalence Bool).functor.op).obj
+        (op ⟨true, ⟨PUnit.unit⟩⟩) := by
+    rw [h]
+    trivial
+  change (Multiplicative.ofAdd (1 : ZMod 2)) = (1 : twoGroup) at hx
+  have heq : (1 : ZMod 2) = 0 := congrArg Multiplicative.toAdd hx
+  exact (by decide : (1 : ZMod 2) ≠ 0) heq
+
+/-- A change from product-with-terminal tests to ordered `Bool` tests retains a
+proper dense subfunctor. The original density and properness are established
+independently of the transport statement. -/
+example :
+    (unitAtTop.precomp (prod.rightUnitorEquivalence Bool).functor.op).IsOneCoverDense
+      ((⊤ : MorphismProperty Bool).inverseImage
+        (prod.rightUnitorEquivalence Bool).functor) ∧
+    unitAtTop.precomp (prod.rightUnitorEquivalence Bool).functor.op ≠ ⊤ := by
+  exact ⟨(isOneCoverDense_equivalence_iff unitAtTop (⊤ : MorphismProperty Bool)
+    (prod.rightUnitorEquivalence Bool)).2 unitAtTop_dense, unitAtTop_productUnit_proper⟩
+
+/-- Even after changing the test category, the empty subfunctor misses the
+nonempty section at `false` and cannot be one-cover dense. -/
+example :
+    ¬ ((⊥ : Subfunctor twoPoints).precomp
+      (prod.rightUnitorEquivalence Bool).functor.op).IsOneCoverDense
+      ((⊤ : MorphismProperty Bool).inverseImage
+        (prod.rightUnitorEquivalence Bool).functor) := by
+  intro h
+  obtain ⟨U, f, _, hx⟩ := h ⟨false, ⟨PUnit.unit⟩⟩ (1 : twoGroup)
+  simp [precomp_obj] at hx
+
+private def discreteBoolTests : Discrete Bool ⥤ Bool := Discrete.functor id
+
+/-- Essential surjectivity alone cannot replace fullness: the discrete tests
+have the same objects as `Bool` but cannot lift the nonidentity covering arrow
+from `false` to `true`. -/
+example :
+    discreteBoolTests.EssSurj ∧ ¬ discreteBoolTests.Full ∧
+    unitAtTop.IsOneCoverDense (⊤ : MorphismProperty Bool) ∧
+    ¬ (unitAtTop.precomp discreteBoolTests.op).IsOneCoverDense
+      ((⊤ : MorphismProperty Bool).inverseImage discreteBoolTests) := by
+  refine ⟨Functor.essSurj_of_surj (fun X => ⟨⟨X⟩, rfl⟩), ?_,
+    unitAtTop_dense, ?_⟩
+  · intro hFull
+    have f : (⟨false⟩ : Discrete Bool) ⟶ ⟨true⟩ :=
+      (hFull.map_surjective (homOfLE (by decide : false ≤ true))).choose
+    cases f.eq
+  · intro h
+    obtain ⟨U, f, _, hx⟩ := h ⟨true⟩ (Multiplicative.ofAdd (1 : ZMod 2))
+    have hu : U.as = true := f.eq
+    cases U with
+    | mk value =>
+      cases hu
+      change (Multiplicative.ofAdd (1 : ZMod 2)) = (1 : twoGroup) at hx
+      have heq : (1 : ZMod 2) = 0 := congrArg Multiplicative.toAdd hx
+      exact (by decide : (1 : ZMod 2) ≠ 0) heq
+
+private def loopTests : Bool × SingleObj twoGroup ⥤ Bool :=
+  CategoryTheory.Prod.fst Bool (SingleObj twoGroup)
+
+private instance : loopTests.Full where
+  map_surjective := by
+    intro X Y morphism
+    exact ⟨morphism ×ₘ (1 : twoGroup), rfl⟩
+
+private instance : loopTests.EssSurj :=
+  Functor.essSurj_of_surj fun X => ⟨(X, SingleObj.star twoGroup), rfl⟩
+
+private theorem loopTests_not_faithful : ¬ loopTests.Faithful := by
+  intro hFaithful
+  let X : Bool × SingleObj twoGroup := (false, SingleObj.star twoGroup)
+  have h : ((𝟙 false) ×ₘ (1 : twoGroup) : X ⟶ X) =
+      ((𝟙 false) ×ₘ Multiplicative.ofAdd (1 : ZMod 2) : X ⟶ X) :=
+    hFaithful.map_injective (by rfl)
+  have hgroup : (1 : twoGroup) = Multiplicative.ofAdd (1 : ZMod 2) :=
+    congrArg (fun (morphism : X ⟶ X) => morphism.2) h
+  have heq : (0 : ZMod 2) = 1 := congrArg Multiplicative.toAdd hgroup
+  exact (by decide : (0 : ZMod 2) ≠ 1) heq
+
+/-- The projection forgetting nontrivial automorphisms is full and essentially
+surjective but not faithful. It transports the existing proper dense subfunctor
+because single-arrow density does not require lifting arrows uniquely. -/
+example :
+    loopTests.Full ∧ loopTests.EssSurj ∧ ¬ loopTests.Faithful ∧
+    (unitAtTop.precomp loopTests.op).IsOneCoverDense
+      ((⊤ : MorphismProperty Bool).inverseImage loopTests) ∧
+    unitAtTop.precomp loopTests.op ≠ ⊤ := by
+  refine ⟨inferInstance, inferInstance, loopTests_not_faithful,
+    (isOneCoverDense_precomp_iff unitAtTop (⊤ : MorphismProperty Bool) loopTests).2
+      unitAtTop_dense, ?_⟩
+  intro h
+  have hx : (Multiplicative.ofAdd (1 : ZMod 2)) ∈
+      (unitAtTop.precomp loopTests.op).obj
+        (op (true, SingleObj.star twoGroup)) := by
+    rw [h]
+    trivial
+  change (Multiplicative.ofAdd (1 : ZMod 2)) = (1 : twoGroup) at hx
+  have heq : (1 : ZMod 2) = 0 := congrArg Multiplicative.toAdd hx
+  exact (by decide : (1 : ZMod 2) ≠ 0) heq
 
 end CategoryTheory.Subfunctor
