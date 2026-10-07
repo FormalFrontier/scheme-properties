@@ -32,6 +32,7 @@ public import SchemeProperties.RationalFunctionFieldInverse
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
 public import SchemeProperties.FiniteTypePoints
+public import SchemeProperties.FiniteTypeUniverseLift
 public import SchemeProperties.SingleCoverExtension
 public import SchemeProperties.SingleCoverTransport
 public import SchemeProperties.SingleCoverGroup

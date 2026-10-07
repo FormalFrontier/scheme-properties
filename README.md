@@ -15,6 +15,16 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ## Headline results
 
+### Finitely generated algebras
+
+- [Universe lifting](SchemeProperties/FiniteTypeUniverseLift.lean): for a
+  commutative ring `R : Type u` with `[Small.{v} R]`, Mathlib's existing
+  `FGAlgCat.uliftFunctor R : FGAlgCat.{v} R ⥤ FGAlgCat.{max v w} R` is an
+  equivalence, with independent universes `u`, `v` and `w`. Zero algebras are
+  included; no global universe-order assumption is needed. This compares
+  the categories of finitely generated algebras themselves, not a chosen
+  presentation category. Direct import: `SchemeProperties.FiniteTypeUniverseLift`.
+
 ### Reduced local rings
 
 - [Reduced-localization locus](SchemeProperties/ReducedLocus.lean): over any
