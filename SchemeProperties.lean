@@ -59,6 +59,7 @@ public import SchemeProperties.NormalPolynomial
 public import SchemeProperties.NormalSeparable
 public import SchemeProperties.NormalSeparableScheme
 public import SchemeProperties.PolynomialPointPrime
+public import SchemeProperties.PolynomialQuotientClosedPoints
 public import SchemeProperties.PolynomialPointReducedLocus
 public import SchemeProperties.PolynomialPointSquareZeroReducedLocus
 public import SchemeProperties.PresheafModuleTensorStalk

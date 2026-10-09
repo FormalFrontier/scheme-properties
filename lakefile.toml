@@ -26,7 +26,7 @@ rev = "79575f65c9edec560f27756917761eed78331a2a"
 [[require]]
 name = "multivariate-polynomials"
 git = "https://github.com/FormalFrontier/multivariate-polynomials.git"
-rev = "0a93db475d7a36434c3926f604b638f0d58f8142"
+rev = "45c90b8753e0470d40f6c050f9616f484afd0120"
 
 [[lean_lib]]
 name = "SchemeProperties"

@@ -85,6 +85,14 @@ requiring access to the original research records.
 
 ## Mathematical sources and upstream notices
 
+The polynomial-quotient scheme-point comparisons follow Vakil, *The Rising
+Sea*, §3.6.9 and the discussion after Exercise 5.1.E, extended to possibly
+nonreduced quotients. They use Mathlib's `Spec.map`, `Spec.homEquivAlgHom`,
+`pointEquivClosedPoint` and generic finite-type affine-spectrum instance,
+and the canonical quotient-evaluation and closed-point constructions from
+Multivariate Polynomials. The scheme comparison requires a common universe;
+the polynomial point-set correspondence itself does not.
+
 J. S. Milne, *Algebraic Groups: The Theory of Group Schemes of Finite Type over
 a Field*, Definition 5.6 supplies the fat-subfunctor condition using one
 faithfully flat algebra extension, generalized here to a category and morphism
@@ -201,7 +209,7 @@ and `FiniteEtaleAlgebras.PurelyInseparableDescent` and
 [ComponentBaseChange](../SchemeProperties/ComponentBaseChange.lean).
 Neither direct dependency supplies the scheme-level construction or the
 arbitrary-extension comparison as a finished result.
-The pinned `multivariate-polynomials` formalization (`0a93db475d7a36434c3926f604b638f0d58f8142`)
+The pinned `multivariate-polynomials` formalization (`45c90b8753e0470d40f6c050f9616f484afd0120`)
 supplies the square-zero polynomial point quotient, its evaluation-module
 presentation and the generator-prescribed algebra equivalence under pairwise
 unit differences. Its quotient presentation uses only squares and

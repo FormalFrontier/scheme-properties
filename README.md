@@ -25,6 +25,18 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   the categories of finitely generated algebras themselves, not a chosen
   presentation category. Direct import: `SchemeProperties.FiniteTypeUniverseLift`.
 
+### Polynomial quotient points
+
+- [Polynomial-quotient scheme points](SchemeProperties/PolynomialQuotientClosedPoints.lean):
+  at a common universe, quotient evaluation at a zero over any field and any
+  variable type gives a base-compatible affine scheme point whose image of the
+  field's closed point is the evaluation-kernel prime. For an algebraically
+  closed field and finitely many variables, Mathlib's base-compatible
+  scheme-point/closed-point equivalence agrees with the polynomial zero-locus
+  equivalence for every ideal, including nonreduced quotients. These are
+  point-set comparisons, not topology, sheaf or cross-universe statements.
+  Direct import: `SchemeProperties.PolynomialQuotientClosedPoints`.
+
 ### Reduced local rings
 
 - [Reduced-localization locus](SchemeProperties/ReducedLocus.lean): over any
