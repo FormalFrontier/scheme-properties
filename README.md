@@ -172,6 +172,15 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ### Generic points and birational geometry
 
+- [Compatible partial-map gluing](SchemeProperties/PartialMapGluing.lean):
+  a dense-open partial map and a morphism on any open, agreeing as scheme
+  morphisms on their intersection, glue on exactly the union. Both whole-open
+  restrictions characterize the glued morphism uniquely; it preserves the
+  anchor's rational-map class and the structure over any common base when both
+  inputs are over that base. Gluing two partial maps specializes this construction
+  and recovers both partial maps and rational classes. The added open need not
+  be dense; reducedness and separatedness are not required. Direct import:
+  `SchemeProperties.PartialMapGluing`.
 - [Canonical generic-point function-field map](docs/GenericPointFunctionField.md):
   for integral `Y`, its total map `j : Spec Y.functionField ⟶ Y` and native
   rational quotient are dominant; the actual reversed

@@ -74,6 +74,7 @@ public import SchemeProperties.Quasicoherent
 public import SchemeProperties.QuasicoherentAbelian
 public import SchemeProperties.RationalMapComposition
 public import SchemeProperties.RationalMapPartialIso
+public import SchemeProperties.PartialMapGluing
 public import SchemeProperties.Reduced
 public import SchemeProperties.ReducedLocus
 public import SchemeProperties.ReducedLocusEquiv
