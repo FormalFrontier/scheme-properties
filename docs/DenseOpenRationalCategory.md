@@ -48,17 +48,17 @@ bounded dominance equivalence.
 The [pinned toolchain](../lean-toolchain) is
 `leanprover/lean4:v4.34.0-rc2`. The [Lake requirements](../lakefile.toml) and
 [resolved manifest](../lake-manifest.json) pin mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and the official
-private-GitHub `coherent-modules` release
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and public GitHub releases,
+including `coherent-modules`
 `408a52bd54df17ccc928ce970942f1313ff10d5c` and
 `finite-etale-algebras` release
-`79575f65c9edec560f27756917761eed78331a2a`. Authorized access to
-those dependencies is required. With the pinned toolchain installed, fetch
+`79575f65c9edec560f27756917761eed78331a2a`.
+With the pinned toolchain installed, fetch
 the matching precompiled mathlib cache successfully **before** any build:
 
 ```sh
 lake exe cache get
-lake --wfail build SchemeProperties.DenseOpenRationalCategory SchemePropertiesTest SchemeProperties
+lake build SchemeProperties.DenseOpenRationalCategory SchemePropertiesTest SchemeProperties
 ```
 
 The category is implemented in the focused module and tested by its

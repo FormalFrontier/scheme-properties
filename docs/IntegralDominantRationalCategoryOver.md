@@ -66,26 +66,23 @@ The producer and client are under
 [`SchemeProperties/IntegralDominantRationalCategoryOver.lean`](../SchemeProperties/IntegralDominantRationalCategoryOver.lean)
 and the client path above. The pinned Lean toolchain is
 `leanprover/lean4:v4.34.0-rc2`, with mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and official
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and public GitHub releases
+in the [exact manifest](../lake-manifest.json), including
 `coherent-modules` `408a52bd54df17ccc928ce970942f1313ff10d5c`
-and `finite-etale-algebras` `79575f65c9edec560f27756917761eed78331a2a`
-GitHub dependencies in the [exact manifest](../lake-manifest.json). The
-latter two repositories require authorized private GitHub access. To reproduce
-the focused verification in this project's pinned environment, fetch the
+and `finite-etale-algebras` `79575f65c9edec560f27756917761eed78331a2a`.
+To reproduce the focused checks in this project's pinned environment, fetch the
 matching precompiled mathlib cache **before** any build:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
-lake --wfail build SchemeProperties.IntegralDominantRationalCategoryOver SchemePropertiesTest
+lake build SchemeProperties.IntegralDominantRationalCategoryOver SchemePropertiesTest
 ```
 
 The configured repository checks also cover the aggregate, examples and
-transitive axiom dependencies, including private declarations. These
-reproduction commands are not a claim of a successful destination build,
-independent destination review or release; those require separate exact-input
-evidence. No total-map functor, fullness of forgetting, dominant structure
+transitive axiom dependencies, including private declarations.
+No total-map functor, fullness of forgetting, dominant structure
 maps, categorical slice, unrestricted reduced-source composition, base-change
-or source-formalization result is asserted. Original contributors, reviewed
+or source-formalization result is asserted. Original contributors, adapted
 expression and imported mathlib interfaces are distinguished in
 [Credits](CREDITS.md); no book text or third-party proof bodies are copied.

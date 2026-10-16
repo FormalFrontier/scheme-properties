@@ -5,8 +5,7 @@ closure theorems on mathlib's existing partial maps and rational-map quotient.
 The producer imports `SchemeProperties.DenseOpenComposition` directly;
 the private [direct-import client](../Test/DenseOpenCompositionClosureClient.lean)
 exercises six generic uses. The aggregate `SchemeProperties` also imports this
-leaf. These APIs use the repository's declared private GitHub dependencies,
-which require authorized access.
+leaf. These APIs use the repository's declared public GitHub dependencies.
 
 For arbitrary same-universe schemes `X Y Z : Scheme.{u}` and maps
 `f : X.PartialMap Y`, `g : Y.PartialMap Z`, the theorem

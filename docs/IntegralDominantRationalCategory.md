@@ -45,18 +45,17 @@ contains the reusable API.
 
 The [toolchain](../lean-toolchain) is `leanprover/lean4:v4.34.0-rc2`;
 the [Lake requirements](../lakefile.toml) and [resolved manifest](../lake-manifest.json)
-pin mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5` and official
-private-GitHub `coherent-modules`
-`408a52bd54df17ccc928ce970942f1313ff10d5c` and
+pin mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5` and public GitHub releases,
+including `coherent-modules` `408a52bd54df17ccc928ce970942f1313ff10d5c` and
 `finite-etale-algebras` `79575f65c9edec560f27756917761eed78331a2a`.
-Authorized access to private dependencies is needed. In a fresh checkout,
+In a fresh checkout,
 install the pinned Lean toolchain, successfully fetch the matching precompiled
 mathlib cache before building, and compile the focused module and client:
 
 ```sh
 lake exe cache get
 lake --wfail build SchemeProperties.IntegralDominantRationalCategory
-lake --wfail build SchemePropertiesTest
+lake build SchemePropertiesTest
 ```
 
 The formal expression adapts earlier original project rational-map

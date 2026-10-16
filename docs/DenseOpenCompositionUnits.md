@@ -30,7 +30,7 @@ actual pullback-image open domain and the hom after transport through
 native `PartialMap.compHom_id`. Rational laws are **equalities in the native
 quotient**, valid for arbitrary representatives; they do not equate arbitrary
 representatives' literal open domains or homs. The rational left proof uses
-the accepted first-representative bridge. It does **not** identify the
+the first-representative bridge. It does **not** identify the
 quotient's chosen identity representative with the literal `PartialMap.id X`.
 The rational right proof uses an arbitrary representative, the total-second
 bridge and `PartialMap.compHom_id` via `RationalMap.compHom_toRationalMap`;
@@ -59,15 +59,15 @@ in [Credits](CREDITS.md) and the Lean header.
 For reproducibility, use the repository's pinned Lean
 `leanprover/lean4:v4.34.0-rc2`, mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and the exact
-`lake-manifest.json` graph. Authorized access to the two pinned private
-GitHub dependencies is required. From the project root, **successfully fetch
+`lake-manifest.json` graph, using public GitHub releases.
+From the project root, **successfully fetch
 the matching mathlib cache before building**:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
 lake --wfail build SchemeProperties.DenseOpenCompositionUnits
-lake --wfail build SchemePropertiesTest SchemeProperties
+lake build SchemePropertiesTest SchemeProperties
 ```
 
 The focused modules set `warningAsError true`. For adapted mathlib expression

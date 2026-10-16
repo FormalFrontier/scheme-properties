@@ -57,19 +57,13 @@ examples assert source-specific coverage.
 
 Use the repository's pinned Lean `leanprover/lean4:v4.34.0-rc2`, mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and exact
-`lake-manifest.json` dependencies. Authorized access to the pinned private
-GitHub dependencies is required. From the repository root, the matching
+`lake-manifest.json` dependencies, using public GitHub releases.
+From the repository root, the matching
 mathlib-cache fetch **must succeed before any build**:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
 lake --wfail build SchemeProperties.DenseOpenCompositionAssociativity
-lake --wfail build SchemePropertiesTest SchemeProperties
+lake build SchemePropertiesTest SchemeProperties
 ```
-
-Completeness requires an applicable successful build and a transitive axiom
-audit of the actual public, generated and private declarations, with only
-`propext`, `Classical.choice` and `Quot.sound`, plus independent destination
-review and maintainer acceptance. This guide itself is not evidence of those
-checks or of publication.

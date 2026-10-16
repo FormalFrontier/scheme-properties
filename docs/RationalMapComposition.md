@@ -56,7 +56,7 @@ morphism. Its four theorems are private tests, not public API; they do not
 construct a nondominant example.
 
 For project reproduction, use the pinned `lean-toolchain`, `lakefile.toml` and
-`lake-manifest.json` with access to the declared private GitHub dependencies.
+`lake-manifest.json` with the declared public GitHub dependency revisions.
 Fetch the matching mathlib cache **successfully** before building:
 
 ```sh
@@ -67,8 +67,7 @@ lake build SchemePropertiesTest
 
 The project's default targets also include `SchemeProperties` and
 `SchemePropertiesExamples`. The producer and client both enable
-`warningAsError`. Reproduction instructions are not a verification receipt,
-acceptance or source-coverage claim.
+`warningAsError`.
 
 The proof imports native rational-map and chosen-base APIs by Andrew Yang
 and Justus Springer and composition by Justus Springer; original project

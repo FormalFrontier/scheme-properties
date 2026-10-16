@@ -375,16 +375,20 @@ input contract; later results are in focused guides and source files.
 
 [Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the three official
 dependencies have exact revisions in [Lake](lakefile.toml) and the
-[manifest](lake-manifest.json). `coherent-modules` and `finite-etale-algebras`
-and `multivariate-polynomials` are **private GitHub dependencies** requiring authorized access. Install
+[manifest](lake-manifest.json). `coherent-modules`, `finite-etale-algebras`
+and `multivariate-polynomials` use public GitHub releases. Install
 [elan](https://github.com/leanprover/elan), fetch the matching mathlib cache
 successfully for this checkout (again after changing pins or `.lake`), then
 build the library, tests and examples:
 
 ```sh
 lake exe cache get
-lake --wfail build SchemeProperties SchemePropertiesTest SchemePropertiesExamples
+lake build SchemeProperties SchemePropertiesTest SchemePropertiesExamples
 ```
+
+An optional `lake --wfail build ...` check makes warnings fatal. These targets
+currently emit linter warnings, so that check can fail even when the normal
+build succeeds.
 
 ### Historical measured cost
 

@@ -103,14 +103,14 @@ selected-source correspondence or coverage.
 
 The [toolchain](../lean-toolchain), [Lake configuration](../lakefile.toml)
 and [exact dependency manifest](../lake-manifest.json) pin Lean, mathlib and
-the two official Scheme Properties dependencies. With authorized access to
-the private dependency repositories and an installed `elan`, fetch the
+the public GitHub releases of Scheme Properties' dependencies.
+With `elan` installed, fetch the
 matching precompiled mathlib cache **before** any build (and again after
 changing pins or replacing `.lake`):
 
 ```sh
 lake exe cache get
-lake --wfail build SchemeProperties SchemePropertiesTest SchemePropertiesExamples
+lake build SchemeProperties SchemePropertiesTest SchemePropertiesExamples
 ```
 
 For original-expression credit, see [CREDITS.md](CREDITS.md); no source

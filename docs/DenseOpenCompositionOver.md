@@ -47,16 +47,15 @@ scheme, with their own native `comp` operation.
 
 Use the pinned `lean-toolchain` (`leanprover/lean4:v4.34.0-rc2`),
 `lakefile.toml` and `lake-manifest.json` (mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`). Official
-`coherent-modules` and `finite-etale-algebras` dependencies are private
-GitHub repositories and require authorized access. From a fresh checkout,
+`83abb3e776bdefcbc447a1e44d0debe4010039e5`). The declared
+Formal Frontier dependencies use public GitHub releases. From a fresh checkout,
 install the pinned toolchain and successfully fetch the matching mathlib
 cache **before** building:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
-lake --wfail build SchemeProperties.DenseOpenCompositionOver SchemePropertiesTest SchemeProperties
+lake build SchemeProperties.DenseOpenCompositionOver SchemePropertiesTest SchemeProperties
 ```
 
 The producer adapts imported native partial/rational-map and over-base

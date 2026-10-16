@@ -25,8 +25,10 @@ All visible native signature tokens are retained, including implicit binders,
 class/constructor distinctions and literal noncomputable modifiers. Only
 whitespace is normalized. Native pretty-printing depends on each source's
 namespaces, notation, universes and inferred types; fragments are not promised
-to elaborate by themselves. Source-docstring text is preserved. The 77 sites
-without one have separately authored, explicitly labeled API notes; constructor,
+to elaborate by themselves. The original generated page preserves source-docstring
+text; the current navigation-adjusted page editorially normalizes mathematical
+descriptions, including source-docstring prose. The 77 sites without a source
+docstring have separately authored, explicitly labeled API notes; constructor,
 field and reassociated-lemma notes do not pretend to be source docstrings.
 Source ranges come from historical native records and link to the original
 published source, not the shifted line numbers in this checkout. A generated
@@ -35,22 +37,23 @@ point to only its starting line. Consult the surrounding source for the
 complete definition.
 
 Display sites are not a complete raw/private declaration or stored-value census.
-Neither the generator nor its manifest certifies proofs, source coverage or
-release acceptance.
+Neither the generator nor its manifest certifies proofs or source coverage.
 
 ## Fixed input contract
 
 Native analysis used source `a05b182aa17ea7cd1a591ec7b60aa7d6f2b6704c`, tree
 `5a8afee42778b0666e8ecf47ddcc079b1d14ad60`, and doc-gen4
-`97d4ecdfc8e09e7f511724c25e303d448de6a3db`. It used the exact current official
-GitHub dependency configurations: there is no historical-config translation
-or allowed pin drift in this adapter.
+`97d4ecdfc8e09e7f511724c25e303d448de6a3db`. It used the exact official GitHub
+dependency configurations of the original published revision, not this checkout's
+current pins: there is no historical-config translation or allowed pin drift in
+this adapter.
 
 The immutable checksum in [generate_api.py](../scripts/generate_api.py) binds
 [api_contract.json](../scripts/api_contract.json): all 73 module paths, 76
 source/configuration hashes, 73 normalized native records, 381 names/kinds,
-header/docstring hashes and source ranges. Updating this contract requires
-new native evidence and review, not learning hashes from a modified checkout.
+header/docstring hashes and source ranges. These hashes describe the original
+records, not the editorially normalized prose in the current API page.
+The adapter refuses modified inputs rather than learning replacement hashes.
 The manifest additionally hashes the adapter, tests, contract and authored notes.
 
 When the analyzed Git object is present, every source/configuration byte is
@@ -71,9 +74,7 @@ a publicly fetchable development commit or emitted as the reader's source link.
 For **both** adapter checks and optional native generation below, use a
 **separate checkout** of the exact original published revision. It contains
 the original generated API, the fixed contract, manifest, adapter and tests.
-Access to the published GitHub repository currently requires authorization;
-its public visibility is a separate decision. From a parent directory outside
-this current checkout, for example:
+From a parent directory outside this current checkout, for example:
 
 ```sh
 cd /path/to/parent-directory
@@ -100,15 +101,15 @@ not the navigation-adjusted current page. Omit it only when intentionally
 regenerating that historical checkout's `docs/API.md` and its manifest.
 The tests use explicitly synthetic notes in temporary fixtures for
 refusal/layout checks; `--check-committed` additionally verifies the assembled
-real notes and generated files. Neither test mode approves mathematical note
-semantics. Full headers, missing/extra/duplicate records, altered signatures,
+real notes and generated files. Neither test mode verifies the mathematical
+meaning of the notes. Full headers, missing/extra/duplicate records, altered signatures,
 all 76 changed inputs, forged manifests, invalid source URLs/ranges, hidden Lean
 modules, damaged Git state and independent-history fallback are exercised.
 
 ## Native generation procedure
 
 Stay in that separate historical Scheme checkout for optional native generation.
-Use its pinned Lean toolchain and declared dependency access. Before any new
+Use its pinned Lean toolchain and declared dependency revisions. Before any new
 Scheme build, successfully fetch its matching mathlib cache there:
 
 ```sh
@@ -132,13 +133,10 @@ lake env /absolute/path/to/doc-gen4 fromDb --build /absolute/path/to/rendered --
 Substitute `MODULE` and `PATH` for every one of the 73 entries; `single` runs
 once per module, then bibliography/render once. Use fresh output directories.
 The source hashes must still match the fixed contract even if the development
-commit is absent from the checkout's independent history. Retain command exits,
-complete streams, source/pin checks, output hashes and resource evidence when
-using a new run for review. These command templates describe native generation,
-not an automatic resource supervisor or a reason to repeat accepted evidence.
+commit is absent from the checkout's independent history. These command templates
+describe generation; they do not monitor resource use automatically.
 
-The retained native run replayed cached ProofWidgets npm warnings, two old
-vulnerability summaries (each 4 moderate and 6 high), and circular-dependency
-notices. An initial zero-warning regex missed those forms and was corrected in
-the evidence. This is not a new security scan or a warning-free claim. No npm
-audit/fix or dependency substitution is part of the reproduction procedure.
+Documentation tools can emit cached ProofWidgets/npm warnings, vulnerability
+summaries and circular-dependency notices. Generating documentation is not a
+new security scan and does not imply warning-free output. No npm audit/fix or
+dependency substitution is part of the reproduction procedure.

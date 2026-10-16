@@ -37,12 +37,11 @@ condition on the original source is false in general. No separatedness or
 target local finite type is assumed.
 
 Reproduce in this project's root with pinned `leanprover/lean4:v4.34.0-rc2`,
-mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`, and the unchanged
-Scheme Properties graph of 11 resolved packages and three direct requirements.
+mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`, and the exact
+dependency graph in [lake-manifest.json](../lake-manifest.json).
 First successfully run `lake exe cache get`, then run
 `lake build SchemeProperties.RationalFunctionFieldInverse` and
-`lake build Test.RationalFunctionFieldInverseClient`. These are destination
-commands, **not** records of a destination run.
+`lake build Test.RationalFunctionFieldInverseClient`.
 
 The focused module uses this library's native reconstruction and function-field
 pullback interfaces. Its original project proof expression is credited in

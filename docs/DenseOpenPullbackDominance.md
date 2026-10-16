@@ -50,15 +50,14 @@ These boundaries are not new compiled counterexamples.
 The [pinned toolchain](../lean-toolchain) is `leanprover/lean4:v4.34.0-rc2`;
 the [Lake requirements](../lakefile.toml) and
 [manifest](../lake-manifest.json) pin mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and exact official
-private-GitHub `coherent-modules` and `finite-etale-algebras` releases.
-Authorized access to those private dependencies is needed. With the pinned
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and exact public
+GitHub releases of the Formal Frontier dependencies. With the pinned
 toolchain installed, fetch the matching precompiled mathlib cache **successfully
 before** building a fresh checkout, or after changing pins/removing `.lake`:
 
 ```sh
 lake exe cache get
-lake --wfail build SchemeProperties.DenseOpenPullbackDominance SchemePropertiesTest SchemeProperties
+lake build SchemeProperties.DenseOpenPullbackDominance SchemePropertiesTest SchemeProperties
 ```
 
 The proofs use imported mathlib dominance and composition by Justus

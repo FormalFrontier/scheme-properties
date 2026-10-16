@@ -47,9 +47,7 @@ prove fullness/faithfulness, or assert a relative or birational result.
 
 The [pinned toolchain](../lean-toolchain), [Lake requirements](../lakefile.toml)
 and [resolved manifest](../lake-manifest.json) give the exact Lean 4, mathlib
-and 11-package dependency graph; `coherent-modules` and
-`finite-etale-algebras` are official **private** GitHub dependencies requiring
-authorized access. After obtaining access, fetch the matching precompiled
+and public GitHub dependency revisions. Fetch the matching precompiled
 mathlib cache (`lake exe cache get`) before building the focused module, its
 private client or the aggregate. This guide and client are outside the
 [fixed historical 73-module API snapshot](README.md).

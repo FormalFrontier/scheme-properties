@@ -40,8 +40,10 @@ public import SchemeProperties.FiniteTypeSingleCover
 public import SchemeProperties.FlatImageDensity
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
+public import SchemeProperties.GeometricallyIntegral
 public import SchemeProperties.GenericPointFunctionField
 public import SchemeProperties.GenericPointRationalNoninvertibility
+public import SchemeProperties.GlobalSections
 public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral

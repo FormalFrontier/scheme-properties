@@ -34,8 +34,8 @@ with `k = ℚ`, `K = k = ZMod 2`, an empty-source obstruction, and a positive
 identity `PartialIso` of a field spectrum.
 
 To reproduce with the pinned `leanprover/lean4:v4.34.0-rc2`, mathlib4
-`83abb3e776bdefcbc447a1e44d0debe4010039e5` and the exact official
-private dependency revisions in the project manifest (access required):
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and the exact public GitHub
+dependency revisions in the [project manifest](../lake-manifest.json):
 
 ```sh
 lake exe cache get

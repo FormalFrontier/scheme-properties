@@ -77,16 +77,15 @@ composition lemmas, see [Relative Composition](RationalMapComposition.md).
 
 Use the repository-pinned `lean-toolchain` (Lean v4.34.0-rc2),
 `lakefile.toml` and `lake-manifest.json` (mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`). The declared official
-`coherent-modules` and `finite-etale-algebras` dependencies live in private
-GitHub repositories and require authorized access. Install the pinned
+`83abb3e776bdefcbc447a1e44d0debe4010039e5`). The declared
+Formal Frontier dependencies use public GitHub releases. Install the pinned
 toolchain, fetch its matching precompiled mathlib cache **successfully before**
 building in a fresh checkout, and build the producer, client and aggregate
 targets:
 
 ```sh
 lake exe cache get
-lake --wfail build SchemeProperties.DenseOpenPullback SchemePropertiesTest SchemeProperties
+lake build SchemeProperties.DenseOpenPullback SchemePropertiesTest SchemeProperties
 ```
 
 The proofs import mathlib native partial/rational maps by Andrew Yang,

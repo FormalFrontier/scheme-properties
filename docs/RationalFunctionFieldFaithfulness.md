@@ -43,9 +43,8 @@ alone establishes no particular source's formal coverage.
 
 With the [pinned Lean toolchain](../lean-toolchain),
 [Lake requirements](../lakefile.toml) and [resolved manifest](../lake-manifest.json)
-(Lean 4.34.0-rc2, mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`,
-11 packages, three direct requirements), obtain access to the official private
-`coherent-modules` and `finite-etale-algebras` dependencies. First fetch the
+(Lean 4.34.0-rc2, mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`
+and exact public GitHub dependency revisions), first fetch the
 matching precompiled mathlib cache using `lake exe cache get`, then run focused
 checks with `lake build SchemeProperties.RationalFunctionFieldFaithfulness` and
 `lake build Test.RationalFunctionFieldFaithfulnessClient`. The focused modules

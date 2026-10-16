@@ -57,10 +57,10 @@ on `X`, no separatedness assumption on `Y`, no unrestricted `Full` instance
 or assertion that all geometric maps from a function-field spectrum are dominant.
 
 Reproduce the focused producer/client checks with the repository's pinned Lean
-toolchain (`leanprover/lean4:v4.34.0-rc2`) and exact `lake-manifest.json`
-(mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`, 11 resolved
-packages and three direct GitHub dependencies). From this project root, after
-obtaining access to its private official dependencies:
+toolchain (`leanprover/lean4:v4.34.0-rc2`) and exact
+[lake-manifest.json](../lake-manifest.json) (mathlib
+`83abb3e776bdefcbc447a1e44d0debe4010039e5` and public GitHub dependency
+revisions). From this project root:
 
 ```sh
 lake exe cache get

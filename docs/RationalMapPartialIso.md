@@ -74,7 +74,7 @@ categorical equivalence, reducible extension, or total isomorphism is asserted.
 ## Reproduction and provenance
 
 The focused producer uses mathlib's native birational and composition APIs.
-With authorized access to the pinned dependencies, fetch the matching mathlib
+Using the pinned public GitHub dependencies, fetch the matching mathlib
 cache successfully from this repository before building:
 
 ```sh

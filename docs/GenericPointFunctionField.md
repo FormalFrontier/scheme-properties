@@ -45,7 +45,7 @@ Reproduction with the repository's `leanprover/lean4:v4.34.0-rc2`, mathlib
 `83abb3e776bdefcbc447a1e44d0debe4010039e5` and its exact official
 GitHub dependencies: first run `lake exe cache get` successfully under the
 current manifest, then run
-`lake --wfail build SchemeProperties SchemePropertiesTest SchemePropertiesExamples`.
+`lake build SchemeProperties SchemePropertiesTest SchemePropertiesExamples`.
 Alternatively focus on `lake --wfail build SchemeProperties.GenericPointFunctionField`
 and `lake --wfail build Test.GenericPointFunctionFieldClient`.
 The dependency on reconstruction is a **local** library import, not an extra

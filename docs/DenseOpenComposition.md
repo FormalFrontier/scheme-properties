@@ -71,22 +71,17 @@ preirreducibility/nonemptiness hypotheses.
 
 Use the repository's pinned Lean `leanprover/lean4:v4.34.0-rc2`, exact
 `lakefile.toml` and `lake-manifest.json` (mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`). The declared official
-`coherent-modules` and `finite-etale-algebras` dependencies are private
-GitHub repositories, requiring authorized access. From the project root,
+`83abb3e776bdefcbc447a1e44d0debe4010039e5`). The declared
+Formal Frontier dependencies use public GitHub releases. From the project root,
 install the toolchain and **successfully fetch the matching precompiled
 mathlib cache before building**:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
-lake --wfail build SchemeProperties.DenseOpenComposition SchemePropertiesTest SchemeProperties
+lake build SchemeProperties.DenseOpenComposition SchemePropertiesTest SchemeProperties
 ```
 
-Completion also requires an applicable build and transitive standard-axiom
-audit of all actual public, private and generated origin declarations,
-allowing only `propext`, `Classical.choice` and `Quot.sound`.
-Commands here are reproduction instructions, not a receipt for this destination.
 The adapted Formal Frontier proof expression and upstream notices are credited
 in [Credits](CREDITS.md) and the Lean header. Source-specific correspondence
 is separate from this reusable interface.

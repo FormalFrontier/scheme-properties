@@ -3,11 +3,11 @@
 This is the historical 73-module native reference from the original
 [generated API page](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/docs/API.md)
 at published revision `6b204a3e49f022e51d78a9f93e77513b99a87e00`.
-Only this page's historical navigation links and explanatory text have been
-adjusted; its native signatures, docstrings, API notes and source ranges were
-not regenerated. It is not a current API census or byte-identical
-generated output. Access to the linked published repository currently requires
-authorization; public visibility is a separate decision.
+This page's navigation and mathematical descriptions, including source-docstring
+prose, are editorially normalized; its native signatures, separately labeled API
+notes and source ranges are preserved. The fixed header/docstring hashes describe
+the original records, not this page's normalized prose. This is not a current API
+census or byte-identical generated output.
 
 This reference contains 381 native display sites in 36 library modules:
 230 theorems, 99 definitions, 42 instances, five classes and five constructors.
@@ -21,8 +21,8 @@ only whitespace is normalized. Pretty-printing uses source namespaces, notation 
 inference; consult the source for suppressed inferred types and universe conventions.
 Displayed fragments need not elaborate alone in a fresh namespace.
 
-Display counts are not a raw/private declaration census or proof certification.
-This documentation generator does not determine release or source-coverage acceptance.
+Display counts are not a raw/private declaration census, proof certification
+or source-coverage check.
 Source-range links refer to the matching original published source, **not**
 the source lines in this checkout, where later headers have moved some ranges.
 For current modules and usage, use the local [reader guide](Guide.md) and
@@ -313,7 +313,7 @@ base-changed component scheme to the global sections of the base-changed
 source scheme.
 
 The source is `componentSubalgebra X ⊗[k] K`, matching
-`baseChangeSpecOverIso`; internally the accepted global-sections equivalence
+`baseChangeSpecOverIso`; internally the global-sections equivalence
 uses the factor-reversed tensor product.
 
 [Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L98-L113) (native source range).
@@ -543,7 +543,7 @@ noncomputable def AlgebraicGeometry.componentBaseChangeComparisonAlgEquiv {k K :
 ```
 
 The canonical algebra equivalence for arbitrary field extension.  Its
-forward map is definitionally the accepted literal comparison.
+forward map is definitionally the literal comparison.
 
 [Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ComponentBaseChange.lean#L1223-L1232) (native source range).
 
@@ -3704,7 +3704,7 @@ theorem AlgebraicGeometry.Scheme.Modules.actual_restriction_square (R : CommRing
 
 Equality of **actual** `R`-linear maps: inverse tensor-unit equivalence
 after top-to-`D(f)` restriction equals native module localization after the
-accepted top-open affine comparison.
+top-open affine comparison.
 
 [Source](https://github.com/FormalFrontier/scheme-properties/blob/6b204a3e49f022e51d78a9f93e77513b99a87e00/SchemeProperties/ModuleTensorLocalization.lean#L240-L252) (native source range).
 
