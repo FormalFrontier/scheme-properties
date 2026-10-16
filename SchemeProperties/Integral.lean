@@ -4,6 +4,9 @@ Authors: Formal Frontier Agents
 -/
 module
 
+public import SchemeProperties.ReducedLocus
+public import Mathlib.AlgebraicGeometry.FunctionField
+public import Mathlib.AlgebraicGeometry.IdealSheaf.IrreducibleComponent
 public import Mathlib.AlgebraicGeometry.Noetherian
 public import Mathlib.AlgebraicGeometry.Properties
 public import Mathlib.RingTheory.Ideal.MinimalPrime.Localization
@@ -22,16 +25,26 @@ local ring lies on a unique irreducible component.
 
 The locally Noetherian result applies the Noetherian component argument on
 affine neighborhoods, rather than requiring the whole scheme to be Noetherian.
+A point with a domain local ring has an integral open neighborhood: remove the
+other irreducible components in a Noetherian affine neighborhood, then intersect
+with the open locus of reduced local rings. The component-deletion construction
+follows Mathlib's dense smooth-locus argument and its AlgebraicGroups
+generalization to geometrically reduced schemes.
 
 ## References
 
 * R. Vakil, *The Rising Sea: Foundations of Algebraic Geometry* (October 21,
   2025 draft), Exercise 5.3.C (the component argument and its locally
   Noetherian extension).
+* Mathlib's `Scheme.Hom.dense_smoothLocus_of_perfectField` and the AlgebraicGroups
+  formalization of `Scheme.Hom.dense_smoothLocus_of_geometricallyReduced`, for
+  the construction obtained by deleting all but one irreducible component.
 -/
 
 open Set Topology TopologicalSpace CategoryTheory
 open AlgebraicGeometry
+
+universe u
 
 namespace Ideal
 
@@ -139,30 +152,105 @@ theorem eq_irreducibleComponents_of_mem_of_isDomain_stalk
   · exact hxZ
   · exact hxW
 
+/-- The component open has closure `Z` and contains every point that lies
+on no component other than `Z`. -/
+private theorem exists_open_with_closure_eq_of_mem_irreducibleComponents
+    (X : Scheme.{u}) [IsNoetherian X]
+    {Z : Set X} (hZ : Z ∈ irreducibleComponents X) :
+    ∃ U : X.Opens, closure (U : Set X) = Z ∧
+      ∀ x : X, (∀ W : Set X, W ∈ irreducibleComponents X → x ∈ W → W = Z) →
+        x ∈ U := by
+  refine ⟨X.irreducibleComponentOpen Z,
+    closure_sUnion_irreducibleComponents_sdiff_singleton
+      (finite_irreducibleComponents_of_isNoetherian (X := X)) Z hZ, ?_⟩
+  intro x hx
+  change x ∉ ⋃₀ (irreducibleComponents X \ {Z})
+  intro hxU
+  obtain ⟨W, hW, hxW⟩ := Set.mem_sUnion.mp hxU
+  exact hW.2 (Set.mem_singleton_iff.mpr (hx W hW.1 hxW))
+
+/-- A point of a locally Noetherian scheme whose local ring is a domain has
+an integral open neighborhood. No reducedness is required away from the point. -/
+theorem exists_isIntegral_open_of_isDomain_stalk
+    (X : Scheme.{u}) [IsLocallyNoetherian X] (x : X)
+    [IsDomain (X.presheaf.stalk x)] :
+    ∃ U : X.Opens, x ∈ U ∧ IsIntegral U.toScheme := by
+  obtain ⟨i, y, rfl⟩ := X.affineCover.exists_eq x
+  let Y := X.affineCover.X i
+  let f : Y ⟶ X := X.affineCover.f i
+  let : IsNoetherian Y :=
+    { toIsLocallyNoetherian := inferInstance
+      toCompactSpace := inferInstance }
+  let : IsDomain (Y.presheaf.stalk y) :=
+    (asIso (f.stalkMap y)).symm.commRingCatIsoToRingEquiv.toMulEquiv.isDomain
+      (X.presheaf.stalk (f y))
+  obtain ⟨V, hclosure, hV⟩ :=
+    exists_open_with_closure_eq_of_mem_irreducibleComponents Y
+      (irreducibleComponent_mem_irreducibleComponents y)
+  have hyV : y ∈ V := hV y fun W hW hyW ↦
+    eq_irreducibleComponents_of_mem_of_isDomain_stalk Y y hW
+      (irreducibleComponent_mem_irreducibleComponents y) hyW mem_irreducibleComponent
+  have hVirr : IsIrreducible (V : Set Y) := by
+    apply isIrreducible_iff_closure.mp
+    rw [hclosure]
+    exact isIrreducible_irreducibleComponent
+  let R : Y.Opens :=
+    ⟨{z : Y | _root_.IsReduced (Y.presheaf.stalk z)}, isOpen_setOf_isReduced_stalk Y⟩
+  let U : Y.Opens := V ⊓ R
+  have hyU : y ∈ U := by
+    refine ⟨hyV, ?_⟩
+    change _root_.IsReduced (Y.presheaf.stalk y)
+    infer_instance
+  have hUirr : IsIrreducible (U : Set Y) :=
+    ⟨⟨y, hyU⟩, hVirr.2.open_subset U.isOpen (fun _ hz ↦ hz.1)⟩
+  let : IrreducibleSpace U.toScheme := isIrreducible_iff_irreducibleSpace.mp hUirr
+  let : ∀ z : U.toScheme, _root_.IsReduced (U.toScheme.presheaf.stalk z) := fun z ↦ by
+    let : _root_.IsReduced (Y.presheaf.stalk z.1) := z.2.2
+    exact isReduced_of_injective (U.stalkIso z).hom.hom
+      (U.stalkIso z).commRingCatIsoToRingEquiv.injective
+  let : IsReduced U.toScheme := isReduced_of_isReduced_stalk U.toScheme
+  let : IsIntegral U.toScheme := isIntegral_of_irreducibleSpace_of_isReduced U.toScheme
+  let g : U.toScheme ⟶ X := U.ι ≫ f
+  refine ⟨g.opensRange, ?_, IsIntegral.of_isIso g.isoOpensRange.hom⟩
+  refine ⟨⟨y, hyU⟩, ?_⟩
+  change (U.ι ≫ f) (⟨y, hyU⟩ : U.toScheme) = f y
+  exact Scheme.Hom.comp_apply U.ι f ⟨y, hyU⟩
+
+/-- On a locally Noetherian scheme, having a domain local ring is an open
+condition. -/
+theorem isOpen_setOf_isDomain_stalk
+    (X : Scheme.{u}) [IsLocallyNoetherian X] :
+    IsOpen {x : X | IsDomain (X.presheaf.stalk x)} := by
+  rw [isOpen_iff_forall_mem_open]
+  intro x hx
+  let : IsDomain (X.presheaf.stalk x) := hx
+  obtain ⟨U, hxU, hU⟩ := exists_isIntegral_open_of_isDomain_stalk X x
+  let : IsIntegral U.toScheme := hU
+  refine ⟨U, ?_, U.isOpen, hxU⟩
+  intro y hy
+  -- Synthesize the integral-stalk instance before specializing to the open subscheme.
+  have hstalk (Y : Scheme.{u}) [IsIntegral Y] (z : Y) :
+      IsDomain (Y.presheaf.stalk z) := by infer_instance
+  let : IsDomain (U.toScheme.presheaf.stalk ⟨y, hy⟩) :=
+    hstalk U.toScheme ⟨y, hy⟩
+  exact (U.stalkIso ⟨y, hy⟩).symm.commRingCatIsoToRingEquiv.toMulEquiv.isDomain
+    (U.toScheme.presheaf.stalk ⟨y, hy⟩)
+
 /-- If a Noetherian scheme has domain local rings, then its irreducible
 components are open. -/
 private theorem isOpen_of_mem_irreducibleComponents_of_isNoetherian_of_stalk_isDomain
     (X : Scheme) [IsNoetherian X] [∀ x : X, IsDomain (X.presheaf.stalk x)]
     {Z : Set X} (hZ : Z ∈ irreducibleComponents X) : IsOpen Z := by
-  rw [← isClosed_compl_iff]
-  have hcompl : Zᶜ = ⋃₀ (irreducibleComponents X \ {Z}) := by
-    ext y
-    constructor
-    · intro hy
-      have hy' : y ∈ irreducibleComponent y := mem_irreducibleComponent
-      refine Set.mem_sUnion_of_mem hy' ?_
-      refine ⟨irreducibleComponent_mem_irreducibleComponents y, ?_⟩
-      intro hEq
-      apply hy
-      exact (Set.mem_singleton_iff.mp hEq) ▸ hy'
-    · intro hy hyZ
-      obtain ⟨W, hW, hyW⟩ := Set.mem_sUnion.mp hy
-      have hWZ := eq_irreducibleComponents_of_mem_of_isDomain_stalk X y
-        hZ hW.1 hyZ hyW
-      exact hW.2 (by simp [hWZ])
-  rw [hcompl]
-  exact (finite_irreducibleComponents_of_isNoetherian (X := X)).sdiff.isClosed_sUnion
-    fun W hW ↦ isClosed_of_mem_irreducibleComponents W hW.1
+  obtain ⟨U, hclosure, hU⟩ :=
+    exists_open_with_closure_eq_of_mem_irreducibleComponents X hZ
+  have hEq : (U : Set X) = Z := by
+    refine Set.Subset.antisymm ?_ ?_
+    · rw [← hclosure]
+      exact subset_closure
+    · intro x hxZ
+      exact hU x fun W hW hxW ↦
+        eq_irreducibleComponents_of_mem_of_isDomain_stalk X x hW hZ hxW hxZ
+  exact hEq ▸ U.isOpen
 
 /-- If a locally Noetherian scheme has domain local rings, then its
 irreducible components are open. -/

@@ -82,6 +82,15 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   its reduced-localization locus is open. Direct import:
   `SchemeProperties.PolynomialPointSquareZeroReducedLocus`.
 
+### Integral neighborhoods
+
+- [Integral neighborhoods](SchemeProperties/Integral.lean): on a locally
+  Noetherian scheme, every point with a domain local ring has an integral open
+  neighborhood, and the locus of such points is open. No global reducedness or
+  quasi-compactness assumption is required. In particular, a connected locally
+  Noetherian scheme whose local rings are domains is integral.
+  Direct import: `SchemeProperties.Integral`.
+
 ### Single-cover subfunctors
 
 - [Single-cover extension](SchemeProperties/SingleCoverExtension.lean): in an
@@ -229,6 +238,16 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   equivalence is asserted. Direct import:
   `SchemeProperties.RationalMapPartialIso`; [four private clients](Test/RationalMapPartialIsoClient.lean)
   check the exact readbacks and six-part converse.
+- [Valuation-stalk extension](SchemeProperties/RationalMapValuativeExtension.lean):
+  for integral `X` over an arbitrary base `S` and a relatively proper map
+  `sY : Y ⟶ S`, a native partial map `p` over `S` has a chosen compatible
+  representative defined at any point `x` whose stalk is a valuation ring.
+  `Scheme.PartialMap.extensionOfValuationRingStalk` preserves the rational-map
+  quotient and agrees with `p` as a full scheme morphism on their entire domain
+  intersection. No old-domain containment, uniqueness or absolute separatedness
+  of `Y` or `S` is asserted or assumed. This is the local valuative ingredient,
+  not a global normal-source or codimension theorem. Direct import:
+  `SchemeProperties.RationalMapValuativeExtension`.
 ### Function fields
 
 - [Function-field inverse criterion](docs/RationalFunctionFieldInverse.md):
