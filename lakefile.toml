@@ -33,7 +33,7 @@ name = "SchemeProperties"
 
 [[lean_lib]]
 name = "SchemePropertiesTest"
-globs = ["Test.+"]
+globs = ["Test.+", "SchemePropertiesTest.+"]
 
 [[lean_lib]]
 name = "SchemePropertiesExamples"

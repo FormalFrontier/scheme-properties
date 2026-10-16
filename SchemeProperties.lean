@@ -25,6 +25,7 @@ public import SchemeProperties.DenseOpenRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategory
 public import SchemeProperties.JacobsonBirationalObstruction
+public import SchemeProperties.JacobsonConnectedness
 public import SchemeProperties.RationalFunctionFieldPullback
 public import SchemeProperties.RationalFunctionFieldFaithfulness
 public import SchemeProperties.RationalFunctionFieldReconstruction
@@ -40,6 +41,7 @@ public import SchemeProperties.FiniteTypeSingleCover
 public import SchemeProperties.FlatImageDensity
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
+public import SchemeProperties.GeometricallyConnected
 public import SchemeProperties.GeometricallyIntegral
 public import SchemeProperties.GenericPointFunctionField
 public import SchemeProperties.GenericPointRationalNoninvertibility

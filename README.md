@@ -330,6 +330,17 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   premises, unlike the separate controlled over-base companion above.
 ### Local properties, components and modules
 
+- [Geometric irreducibility implies geometric connectedness](SchemeProperties/GeometricallyConnected.lean):
+  every geometrically irreducible morphism of arbitrary same-universe schemes
+  is geometrically connected, by typeclass synthesis. No finite-type or
+  nonempty-target assumption is needed. Direct import:
+  `SchemeProperties.GeometricallyConnected`.
+- [Connectedness through closed points](SchemeProperties/JacobsonConnectedness.lean):
+  any Jacobson topological space is connected if and only if its induced subspace
+  of closed points is connected, with no separation, Noetherianity, compactness
+  or nonemptiness assumption. The [affine-line example](SchemePropertiesTest/JacobsonConnectedness.lean)
+  has a connected proper closed-point subspace. Direct import:
+  `SchemeProperties.JacobsonConnectedness`.
 - [Normality and factoriality](SchemeProperties/FactorialNormal.lean) relates
   stalkwise factorial schemes to normal schemes; the [local-normality
   interfaces](SchemeProperties/NormalSeparableScheme.lean) also cover base
@@ -421,6 +432,9 @@ installation, cloning, doc generation, axiom checks and dependency rebuilding.
   5.12 motivates the generic group-object extension, not a represented-scheme
   group-law theorem. Mathlib fpqc descent supplies the represented-target proof,
   while finite affine refinement supplies the flat-image lifting proof.
+- J. S. Milne, *Abelian Varieties*, version 2.00, Conventions, p. v:
+  motivation for the independent Jacobson-space comparison between
+  closed-point and whole-space connectedness, not a named theorem of that text.
 - Charles A. Weibel, *The K-book: An Introduction to Algebraic K-theory*,
   Chapter I, §5: motivation for affine finite-presentation work.
 - [The Stacks Project](https://stacks.math.columbia.edu/), tags 037U, 0386,

@@ -7,6 +7,7 @@ module
 public import Mathlib.AlgebraicGeometry.AlgClosed.Basic
 public import Mathlib.AlgebraicGeometry.Geometrically.Connected
 public import Mathlib.RingTheory.Spectrum.Prime.Homeomorph
+public import SchemeProperties.GeometricallyConnected
 
 /-!
 # Geometric connectedness over separably closed fields
