@@ -82,6 +82,21 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   its reduced-localization locus is open. Direct import:
   `SchemeProperties.PolynomialPointSquareZeroReducedLocus`.
 
+### Flat quasi-finite dimension preservation
+
+- [Prime heights and local rings](SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean):
+  a quasi-finite algebra with going down preserves the height of each prime
+  under contraction. A flat quasi-finite local homomorphism of commutative
+  local rings therefore preserves Krull dimension, with independent ring
+  universes. No Noetherian or finite-type hypothesis is required.
+  Direct import: `SchemeProperties.RingTheory.KrullDimension.QuasiFinite`.
+- [Full scheme stalks](SchemeProperties/FlatQuasiFinite.lean): for a scheme
+  morphism `f : X ⟶ Y` and a point `x`, flatness and quasi-finiteness of the
+  stalk map imply equality of the Krull dimensions of the full stalks at
+  `x` and `f x`. The assumptions are pointwise, not global morphism classes;
+  these are not fibre-stalk dimensions.
+  Direct import: `SchemeProperties.FlatQuasiFinite`.
+
 ### Integral neighborhoods
 
 - [Integral neighborhoods](SchemeProperties/Integral.lean): on a locally
@@ -463,6 +478,12 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   and tensors have distinct hypotheses indexed in the reader guide.
 
 ## Navigation and imports
+
+The Mathlib-only algebra leaf
+`SchemeProperties.RingTheory.KrullDimension.QuasiFinite` supplies prime-height
+and local-ring dimension preservation. `SchemeProperties.FlatQuasiFinite`
+adds the pointwise full-stalk application; the affine-line double-cover use is
+maintained in `SchemePropertiesTest.FlatQuasiFinite`.
 
 `import SchemeProperties` loads the [aggregate](SchemeProperties.lean). For
 focused imports use `SchemeProperties.<Module>` from the [reader guide's module

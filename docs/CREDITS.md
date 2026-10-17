@@ -85,6 +85,14 @@ requiring access to the original research records.
 
 ## Mathematical sources and upstream notices
 
+[Quasi-finite prime heights](../SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean)
+and [full stalk dimensions](../SchemeProperties/FlatQuasiFinite.lean) use Mathlib's
+existing order-height theorem, quasi-finite incomparability, going-down lifting,
+maximal-ideal height formulas and local stalk-map APIs. Applied to prime
+contraction, the order-height theorem yields the local-ring and stalk results.
+The double-cover calculation uses Mathlib's polynomial PID, localization and
+component-open-immersion constructions.
+
 The polynomial-quotient scheme-point comparisons follow Vakil, *The Rising
 Sea*, §3.6.9 and the discussion after Exercise 5.1.E, extended to possibly
 nonreduced quotients. They use Mathlib's `Spec.map`, `Spec.homEquivAlgHom`,

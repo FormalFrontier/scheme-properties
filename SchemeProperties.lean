@@ -40,6 +40,7 @@ public import SchemeProperties.SingleCoverTransport
 public import SchemeProperties.SingleCoverGroup
 public import SchemeProperties.FiniteTypeSingleCover
 public import SchemeProperties.FlatImageDensity
+public import SchemeProperties.FlatQuasiFinite
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
 public import SchemeProperties.GeometricallyConnected
@@ -85,6 +86,7 @@ public import SchemeProperties.PartialMapGluing
 public import SchemeProperties.Reduced
 public import SchemeProperties.ReducedLocus
 public import SchemeProperties.ReducedLocusEquiv
+public import SchemeProperties.RingTheory.KrullDimension.QuasiFinite
 public import SchemeProperties.TrivSqZeroExtReducedLocus
 public import SchemeProperties.SheafFinitePresentation
 public import SchemeProperties.SheafFinitePresentationTransport
