@@ -33,6 +33,7 @@ name = "SchemeProperties"
 
 [[lean_lib]]
 name = "SchemePropertiesTest"
+roots = ["SchemePropertiesTest.RelativeValuativeExtension"]
 globs = ["Test.+", "SchemePropertiesTest.+"]
 
 [[lean_lib]]

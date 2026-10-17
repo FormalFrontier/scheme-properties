@@ -268,6 +268,19 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   of `Y` or `S` is asserted or assumed. This is the local valuative ingredient,
   not a global normal-source or codimension theorem. Direct import:
   `SchemeProperties.RationalMapValuativeExtension`.
+- [Relative valuative extension](SchemeProperties/RelativeValuativeExtension.lean):
+  for a locally Noetherian source `X` over any base `S` and a relatively proper
+  `sY : Y ⟶ S`, an over-base partial map extends across any point whose domain
+  stalk is a valuation ring. The extension contains the point and the **whole
+  original domain**, preserves its full scheme morphism and rational-map class,
+  agrees on the full domain intersection, and remains over `S`. For normal `X`,
+  the rational map is defined at every point of coheight at most one; if `X` has
+  absolute dimension at most one, the partial map extends uniquely over `S` to
+  all of `X`, using arbitrary open covers. The valuation-stalk result requires
+  no global integrality or reducedness away from the point. No absolute
+  separatedness of `S` or `Y`, quasi-compactness, global Noetherianity,
+  nonemptiness or finite-cover hypothesis is imposed. Direct import:
+  `SchemeProperties.RelativeValuativeExtension`.
 ### Function fields
 
 - [Function-field inverse criterion](docs/RationalFunctionFieldInverse.md):
