@@ -29,6 +29,7 @@ public import SchemeProperties.JacobsonConnectedness
 public import SchemeProperties.RationalFunctionFieldPullback
 public import SchemeProperties.RationalFunctionFieldFaithfulness
 public import SchemeProperties.RationalFunctionFieldReconstruction
+public import SchemeProperties.RationalFunctionFieldNaturality
 public import SchemeProperties.RationalFunctionFieldInverse
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
