@@ -25,6 +25,23 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   the categories of finitely generated algebras themselves, not a chosen
   presentation category. Direct import: `SchemeProperties.FiniteTypeUniverseLift`.
 
+### Finite-field points
+
+- [Finite-field lifts](SchemeProperties/FiniteFieldPoints.lean): for a finite
+  field `K`, a locally-finite-type, quasi-compact `p : X ⟶ S` has finitely many
+  lifts of any `q : Spec K ⟶ S`, expressed as the over-category Hom-set
+  `Over.mk q ⟶ Over.mk p`. The base is arbitrary; no properness, separatedness,
+  reducedness, integrality or group structure is assumed. The
+  [affine-line client](SchemePropertiesTest/FiniteFieldPointsModel.lean) uses
+  `Spec (Polynomial (ZMod 2)) → Spec (ZMod 2)` with distinct evaluation sections.
+- [Finite-target algebra homomorphisms](SchemeProperties/FiniteAlgHom.lean):
+  `Algebra.FiniteType.finite_algHom` proves `Finite (A →ₐ[R] B)` for a finite-type
+  `R`-algebra `A` and finite `R`-algebra `B`. Only `R` is a commutative semiring;
+  `A` and `B` may be noncommutative semirings in independent universes. This
+  Mathlib-only leaf exports an explicit theorem, not a global instance, and
+  does not require a module-finite or finite source. The geometric proof uses
+  it chartwise. Neither leaf asserts an exact point count or Frobenius formula.
+
 ### Polynomial quotient points
 
 - [Polynomial-quotient scheme points](SchemeProperties/PolynomialQuotientClosedPoints.lean):

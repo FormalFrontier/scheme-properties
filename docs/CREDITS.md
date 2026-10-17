@@ -83,6 +83,18 @@ mathlib APIs are used, not copied, and no book prose is reproduced. The
 [mathematical guide](PullbackOpenImmersion.md) explains the construction without
 requiring access to the original research records.
 
+The [finite-target algebra](../SchemeProperties/FiniteAlgHom.lean) and
+[finite-field points](../SchemeProperties/FiniteFieldPoints.lean) modules adapt
+earlier Formal Frontier proof expression for the standard finite-generator
+restriction argument and finite-affine-cover argument. Mathlib supplies
+finite algebra generators, extensionality on their adjoin, finite function
+spaces, finite affine subcovers, the affine-spectrum algebra-Hom equivalence,
+open-immersion lifting and the pullback/over-category adjunction. The
+[affine-line model](../SchemePropertiesTest/FiniteFieldPointsModel.lean) retains
+the original polynomial evaluation sections and their independent distinctness
+argument. These results establish finiteness only, not a point-count formula
+or a Frobenius identification.
+
 ## Mathematical sources and upstream notices
 
 [Quasi-finite prime heights](../SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean)

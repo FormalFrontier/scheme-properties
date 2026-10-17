@@ -30,6 +30,27 @@ For current modules and usage, use the local [reader guide](Guide.md) and
 See [generation instructions](README.md), the [mathematical guide](Guide.md) and
 [exact input manifest](api-manifest.json). Authored notes are labeled separately from source docstrings.
 
+## Current finite-point interfaces (authored note)
+
+The following additions are outside the historical inventory below. Direct
+import `SchemeProperties.FiniteAlgHom` for
+`Algebra.FiniteType.finite_algHom`: a finite-type algebra over a commutative
+semiring has finitely many algebra homomorphisms into any finite algebra.
+The source and target need only be semirings, with independent universes;
+this is an explicit theorem, not a global instance. For local inference, use
+`letI := Algebra.FiniteType.finite_algHom (R := R) (A := A) (B := B)`.
+
+Direct import `SchemeProperties.FiniteFieldPoints` for
+`AlgebraicGeometry.finite_overHom_of_finiteField`: if `K` is a finite field,
+`p : X ⟶ S` is locally of finite type and quasi-compact, and
+`q : Spec (CommRingCat.of K) ⟶ S`, then `Finite (Over.mk q ⟶ Over.mk p)`.
+The field and schemes share Mathlib's scheme universe; the base scheme is
+arbitrary. Both leaves are publicly imported by `SchemeProperties`.
+The [affine-line model](../SchemePropertiesTest/FiniteFieldPointsModel.lean)
+provides the concrete polynomial-over-`ZMod 2` applications and independent
+distinct evaluation sections. These interfaces add no public definitions;
+see the [reader guide](Guide.md) for their scope.
+
 ## Complete module inventory
 
 | Module | Scope | Display sites |

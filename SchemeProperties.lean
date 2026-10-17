@@ -33,6 +33,8 @@ public import SchemeProperties.RationalFunctionFieldNaturality
 public import SchemeProperties.RationalFunctionFieldInverse
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
+public import SchemeProperties.FiniteAlgHom
+public import SchemeProperties.FiniteFieldPoints
 public import SchemeProperties.FiniteTypePoints
 public import SchemeProperties.FiniteTypeUniverseLift
 public import SchemeProperties.SingleCoverExtension
