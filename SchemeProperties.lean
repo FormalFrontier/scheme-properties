@@ -58,6 +58,7 @@ public import SchemeProperties.ModuleTensorLocalization
 public import SchemeProperties.NoetherianComponents
 public import SchemeProperties.Normal
 public import SchemeProperties.NormalLocalization
+public import SchemeProperties.LocallyNormalRing.Product
 public import SchemeProperties.NormalEtale
 public import SchemeProperties.NormalPolynomial
 public import SchemeProperties.NormalSeparable

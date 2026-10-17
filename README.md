@@ -373,6 +373,11 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   stalkwise factorial schemes to normal schemes; the [local-normality
   interfaces](SchemeProperties/NormalSeparableScheme.lean) also cover base
   change along transcendental-separable field extensions, not all extensions.
+- [Locally normal binary products](SchemeProperties/LocallyNormalRing/Product.lean):
+  for commutative rings `R : Type u` and `S : Type v`, `R × S` is locally
+  normal if and only if both factors are locally normal. The universes are
+  independent, zero-ring factors are allowed, and no domain or Noetherian
+  hypothesis is needed. Direct import: `SchemeProperties.LocallyNormalRing.Product`.
 - [Finite-étale component schemes](SchemeProperties/ComponentScheme.lean)
   give the universal factorization through finite-étale affine targets for a
   quasicompact scheme locally of finite type over a field; the construction
