@@ -49,6 +49,7 @@ public import SchemeProperties.GlobalSections
 public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral
+public import SchemeProperties.LocallyNormalRing.Pi
 public import SchemeProperties.ModuleFinitePresentation
 public import SchemeProperties.ModuleProperties
 public import SchemeProperties.ModuleTensor
@@ -57,6 +58,7 @@ public import SchemeProperties.ModuleTensorRestriction
 public import SchemeProperties.ModuleTensorLocalization
 public import SchemeProperties.NoetherianComponents
 public import SchemeProperties.Normal
+public import SchemeProperties.LocallyNormalRing.Maximal
 public import SchemeProperties.NormalLocalization
 public import SchemeProperties.LocallyNormalRing.Product
 public import SchemeProperties.NormalEtale
@@ -68,6 +70,7 @@ public import SchemeProperties.PolynomialQuotientClosedPoints
 public import SchemeProperties.PolynomialPointReducedLocus
 public import SchemeProperties.PolynomialPointSquareZeroReducedLocus
 public import SchemeProperties.PresheafModuleTensorStalk
+public import SchemeProperties.ProjectiveSpectrum
 public import SchemeProperties.PullbackOpenImmersion
 public import SchemeProperties.PullbackSpectrumPushout
 public import SchemeProperties.QcqsModuleLocalization

@@ -5,6 +5,7 @@ Authors: Formal Frontier Agents
 module
 
 public import SchemeProperties.Normal
+public import SchemeProperties.LocallyNormalRing.Pi
 public import Mathlib.RingTheory.Etale.Field
 public import Mathlib.RingTheory.Idempotents
 public import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
@@ -14,16 +15,20 @@ public import Mathlib.RingTheory.Localization.LocalizationLocalization
 public import Mathlib.RingTheory.Smooth.IntegralClosure
 public import Mathlib.RingTheory.Spectrum.Prime.RingHom
 
-public section
+@[expose] public section
 
 set_option warningAsError true
 
 /-!
-# Finite etale algebras over locally normal rings
+# Étale algebras over locally normal rings
 
-This file proves that finite etale algebras over locally normal rings are
-locally normal. The base and target may live in independent universes, and the
-base may be disconnected.
+This file proves that étale algebras over locally normal rings are locally
+normal. The base and target may live in independent universes, and both may
+be disconnected. Étale includes finite presentation, not merely formal étaleness.
+
+The proof reuses Mathlib's smooth integral-closure base change and decomposition
+of étale algebras over a field into finite products of fields. The historical
+finite-étale theorem names remain as deprecated compatibility bridges.
 -/
 
 open Polynomial
@@ -191,32 +196,6 @@ private theorem coordinateRange_isIntegrallyClosed
     IsIntegrallyClosedIn.of_isIntegralClosure R
   exact IsIntegrallyClosed.of_isIntegrallyClosedIn f.range (S i)
 
-/-- A finite product of locally normal rings is locally normal. -/
-theorem IsLocallyNormalRing.pi
-    {I : Type*} (S : I → Type*) [∀ i, CommRing (S i)] [Finite I]
-    [∀ i, IsLocallyNormalRing (S i)] : IsLocallyNormalRing (∀ i, S i) := by
-  constructor
-  · intro p
-    obtain ⟨i, q, hp⟩ := PrimeSpectrum.exists_comap_evalRingHom_eq p
-    subst p
-    let e : Localization.AtPrime (q.asIdeal.comap (Pi.evalRingHom S i)) ≃+*
-        Localization.AtPrime q.asIdeal :=
-      RingEquiv.ofBijective (Localization.AtPrime.mapPiEvalRingHom q.asIdeal)
-        (Localization.AtPrime.mapPiEvalRingHom_bijective q.asIdeal)
-    let _ : IsDomain (Localization.AtPrime q.asIdeal) :=
-      IsLocallyNormalRing.isDomain_atPrime q
-    exact e.toMulEquiv.isDomain _
-  · intro p
-    obtain ⟨i, q, hp⟩ := PrimeSpectrum.exists_comap_evalRingHom_eq p
-    subst p
-    let e : Localization.AtPrime (q.asIdeal.comap (Pi.evalRingHom S i)) ≃+*
-        Localization.AtPrime q.asIdeal :=
-      RingEquiv.ofBijective (Localization.AtPrime.mapPiEvalRingHom q.asIdeal)
-        (Localization.AtPrime.mapPiEvalRingHom_bijective q.asIdeal)
-    let _ : IsIntegrallyClosed (Localization.AtPrime q.asIdeal) :=
-      IsLocallyNormalRing.isIntegrallyClosed_atPrime q
-    exact IsIntegrallyClosed.of_equiv e.symm
-
 private theorem integralClosure_pi_fields_isLocallyNormal
     {R A I : Type*} (S : I → Type*) [CommRing R] [CommRing A]
     [∀ i, Field (S i)] [Algebra R A] [∀ i, Algebra R (S i)]
@@ -234,18 +213,20 @@ private theorem integralClosure_pi_fields_isLocallyNormal
   let _ : IsLocallyNormalRing (∀ i, (fi i).range) := IsLocallyNormalRing.pi _
   exact IsLocallyNormalRing.of_ringEquiv e.symm.toRingEquiv
 
-/-- A finite etale algebra over an integrally closed domain is locally normal.
+/-- An étale algebra over an integrally closed domain is locally normal.
 The algebra itself may be disconnected. -/
-theorem IsLocallyNormalRing.of_finiteEtale_of_isDomain
-    {R : Type*} {S : Type u} [CommRing R] [CommRing S] [Algebra R S]
-    [IsDomain R] [IsIntegrallyClosed R] [Algebra.Etale R S] [Module.Finite R S] :
+theorem IsLocallyNormalRing.of_etale_of_isDomain
+    {R : Type u} {S : Type v} [CommRing R] [CommRing S] [Algebra R S]
+    [IsDomain R] [IsIntegrallyClosed R] [Algebra.Etale R S] :
     IsLocallyNormalRing S := by
   let K := FractionRing R
   let P := S ⊗[R] K
-  let _ : IsIntegrallyClosedIn S P :=
+  -- Keep the left S-action separate from the right K-action of the generic fibre.
+  let leftAlgebra : Algebra S P := inferInstance
+  let rightAlgebra : Algebra K P := Algebra.TensorProduct.rightAlgebra
+  have hclosed : @IsIntegrallyClosedIn S P _ _ leftAlgebra :=
     smooth_isIntegrallyClosedIn_baseChange_fraction
-  let _ : IsIntegralClosure S R P := IsIntegralClosure.of_isIntegrallyClosedIn
-  let _ : Algebra K P := Algebra.TensorProduct.rightAlgebra
+  let _ : Algebra K P := rightAlgebra
   let ecomm : (K ⊗[R] S) ≃ₐ[K] P :=
     AlgEquiv.ofRingEquiv (f := (Algebra.TensorProduct.comm R K S).toRingEquiv) <| by
       intro k
@@ -259,27 +240,24 @@ theorem IsLocallyNormalRing.of_finiteEtale_of_isDomain
   let _ : Finite I := hI
   let _ (i : I) : Field (L i) := hLfield i
   let _ (i : I) : Algebra K (L i) := hLalg i
-  let _ (i : I) : Algebra R (L i) :=
-    ((algebraMap K (L i)).comp (algebraMap R K)).toAlgebra
-  let _ (i : I) : IsScalarTower R K (L i) :=
-    IsScalarTower.of_algebraMap_eq' rfl
-  let eR : P ≃ₐ[R] (∀ i, L i) := e.restrictScalars R
-  let _ : Algebra S (∀ i, L i) :=
-    (eR.toRingEquiv.toRingHom.comp (algebraMap S P)).toAlgebra
-  let _ : IsScalarTower R S (∀ i, L i) :=
-    IsScalarTower.of_algebraMap_eq fun r ↦ by
-      calc
-        algebraMap R (∀ i, L i) r = eR (algebraMap R P r) := (eR.commutes r).symm
-        _ = eR (algebraMap S P (algebraMap R S r)) :=
-          congr_arg eR (IsScalarTower.algebraMap_apply R S P r)
-  let _ : IsIntegralClosure S R (∀ i, L i) :=
-    IsIntegralClosure.of_algEquiv (A := S) (R := R) (B := P) eR fun _ ↦ rfl
-  exact integralClosure_pi_fields_isLocallyNormal (R := R) (A := S) (I := I) L
+  -- Each coordinate receives its S-action from S → P → Π i, L i.
+  let _ (i : I) : Algebra S (L i) :=
+    ((Pi.evalRingHom L i).comp
+      (e.toRingEquiv.toRingHom.comp (@algebraMap S P _ _ leftAlgebra))).toAlgebra
+  let _ : Algebra S P := leftAlgebra
+  let E : P ≃ₐ[S] (∀ i, L i) :=
+    AlgEquiv.ofRingEquiv (f := e.toRingEquiv) <| by
+      intro s
+      ext i
+      rfl
+  -- Closedness already means integral closure over S itself: no integrality of S/R.
+  let _ : IsIntegralClosure S S (∀ i, L i) := E.isIntegrallyClosedIn.mp hclosed
+  exact integralClosure_pi_fields_isLocallyNormal (R := S) (A := S) (I := I) L
 
-/-- A finite etale algebra over a locally normal ring is locally normal. -/
-theorem IsLocallyNormalRing.of_finiteEtale
+/-- An étale algebra over a locally normal ring is locally normal. -/
+theorem IsLocallyNormalRing.of_etale
     {R : Type u} {S : Type v} [CommRing R] [CommRing S] [Algebra R S]
-    [IsLocallyNormalRing R] [Algebra.Etale R S] [Module.Finite R S] :
+    [IsLocallyNormalRing R] [Algebra.Etale R S] :
     IsLocallyNormalRing S := by
   constructor <;> intro q
   all_goals
@@ -293,9 +271,8 @@ theorem IsLocallyNormalRing.of_finiteEtale
     let _ : IsIntegrallyClosed Rₚ :=
       IsLocallyNormalRing.isIntegrallyClosed_atPrime ⟨p, inferInstance⟩
     let _ : Algebra.Etale Rₚ B := inferInstance
-    let _ : Module.Finite Rₚ B := inferInstance
     let _ : IsLocallyNormalRing B :=
-      IsLocallyNormalRing.of_finiteEtale_of_isDomain (R := Rₚ) (S := B)
+      IsLocallyNormalRing.of_etale_of_isDomain (R := Rₚ) (S := B)
     let e : B ≃ₐ[Rₚ] A := Localization.tensorRightAlgEquiv p.primeCompl S
     let _ : IsLocallyNormalRing A := IsLocallyNormalRing.of_ringEquiv e.toRingEquiv
     have hdisj :
@@ -332,3 +309,21 @@ theorem IsLocallyNormalRing.of_finiteEtale
   · let _ : IsIntegrallyClosed (Localization.AtPrime Q) :=
       IsLocallyNormalRing.isIntegrallyClosed_atPrime ⟨Q, inferInstance⟩
     exact IsIntegrallyClosed.of_equiv eQ.symm
+
+/-- Historical finite-étale interface for local normality over an integrally closed domain.
+The finiteness parameter is retained solely for compatibility. -/
+@[deprecated IsLocallyNormalRing.of_etale_of_isDomain (since := "2026-10-17")]
+theorem IsLocallyNormalRing.of_finiteEtale_of_isDomain
+    {R : Type*} {S : Type u} [CommRing R] [CommRing S] [Algebra R S]
+    [IsDomain R] [IsIntegrallyClosed R] [Algebra.Etale R S] [Module.Finite R S] :
+    IsLocallyNormalRing S :=
+  IsLocallyNormalRing.of_etale_of_isDomain (R := R) (S := S)
+
+/-- Historical finite-étale interface for local normality.
+The finiteness parameter is retained solely for compatibility. -/
+@[deprecated IsLocallyNormalRing.of_etale (since := "2026-10-17")]
+theorem IsLocallyNormalRing.of_finiteEtale
+    {R : Type u} {S : Type v} [CommRing R] [CommRing S] [Algebra R S]
+    [IsLocallyNormalRing R] [Algebra.Etale R S] [Module.Finite R S] :
+    IsLocallyNormalRing S :=
+  IsLocallyNormalRing.of_etale (R := R) (S := S)

@@ -456,7 +456,7 @@ theorem IsLocallyNormalRing.tensorProduct_of_isSeparablyGenerated
   let hFiniteBC : Module.Finite B C := Module.Finite.base_change F B L
   let _ : Module.Finite B C := hFiniteBC
   let _ : IsLocallyNormalRing C :=
-    IsLocallyNormalRing.of_finiteEtale (R := B) (S := C)
+    IsLocallyNormalRing.of_etale (R := B) (S := C)
   let aAlg : Algebra A C :=
     Algebra.TensorProduct.leftAlgebra (R := F) (S := A) (A := B) (B := L)
   let _ : Algebra A C := aAlg

@@ -91,6 +91,26 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   Noetherian scheme whose local rings are domains is integral.
   Direct import: `SchemeProperties.Integral`.
 
+### Projective spectra
+
+- [Reducedness and integrality](SchemeProperties/ProjectiveSpectrum.lean): for an
+  `ℕ`-grading `𝒜` of a commutative ring `A`, `Proj 𝒜` is reduced if `A` is
+  reduced, and preirreducible if `A` is a domain, including when it is empty.
+  A nonempty projective spectrum of a domain is integral. No finite generation
+  or generation in degree one is required.
+  Direct import: `SchemeProperties.ProjectiveSpectrum`.
+
+### Local normality
+
+- [Faithfully flat descent](SchemeProperties/NormalFaithfullyFlat.lean): for
+  commutative rings `R` and `S` in independent universes, an `R`-algebra `S`
+  that is faithfully flat as its canonical `R`-module and locally normal
+  implies that `R` is locally normal. Here local normality means that every
+  prime localization is an integrally closed domain; disconnected and zero
+  rings are allowed. No Noetherian, finite or global-domain hypothesis is
+  needed. The entry point is `IsLocallyNormalRing.of_faithfullyFlat`, a theorem
+  rather than an instance. Direct import: `SchemeProperties.NormalFaithfullyFlat`.
+
 ### Single-cover subfunctors
 
 - [Single-cover extension](SchemeProperties/SingleCoverExtension.lean): in an
@@ -358,6 +378,10 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   premises, unlike the separate controlled over-base companion above.
 ### Local properties, components and modules
 
+- [Local normality under étale algebras](SchemeProperties/NormalEtale.lean):
+  an étale algebra over a locally normal commutative ring is locally normal,
+  with independent base and target universes. Neither module-finiteness nor
+  Noetherianity is assumed; the algebra itself may be disconnected.
 - [Geometric irreducibility implies geometric connectedness](SchemeProperties/GeometricallyConnected.lean):
   every geometrically irreducible morphism of arbitrary same-universe schemes
   is geometrically connected, by typeclass synthesis. No finite-type or
@@ -369,6 +393,17 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   or nonemptiness assumption. The [affine-line example](SchemePropertiesTest/JacobsonConnectedness.lean)
   has a connected proper closed-point subspace. Direct import:
   `SchemeProperties.JacobsonConnectedness`.
+- [Products of locally normal rings](SchemeProperties/LocallyNormalRing/Pi.lean):
+  local normality of an arbitrary product descends to each factor, and a finite
+  product is locally normal if and only if all its factors are. The index and
+  coefficient universes are independent; empty products and zero factors are
+  included. The finite-product theorem is also available from
+  `SchemeProperties.NormalEtale`.
+- [Local normality at maximal ideals](SchemeProperties/LocallyNormalRing/Maximal.lean):
+  a commutative ring is locally normal exactly when its localizations at all
+  maximal ideals are domains and integrally closed. This includes zero and
+  disconnected rings, with no Noetherian or global-domain assumption.
+  Direct import: `SchemeProperties.LocallyNormalRing.Maximal`.
 - [Normality and factoriality](SchemeProperties/FactorialNormal.lean) relates
   stalkwise factorial schemes to normal schemes; the [local-normality
   interfaces](SchemeProperties/NormalSeparableScheme.lean) also cover base
