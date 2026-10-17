@@ -102,6 +102,13 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ### Local normality
 
+- [Normality under scheme morphisms](SchemeProperties/NormalMorphisms.lean):
+  for a morphism `f : X ⟶ Y` of schemes, a normal target and smooth `f`
+  imply a normal source (`AlgebraicGeometry.isNormal_of_smooth`). A normal
+  source and flat, point-surjective `f` imply a normal target
+  (`AlgebraicGeometry.isNormal_of_surjective_of_flat`), without a
+  quasi-compactness assumption. Étale ascent follows from étale ⇒ smooth.
+  Direct import: `SchemeProperties.NormalMorphisms`.
 - [Faithfully flat descent](SchemeProperties/NormalFaithfullyFlat.lean): for
   commutative rings `R` and `S` in independent universes, an `R`-algebra `S`
   that is faithfully flat as its canonical `R`-module and locally normal
@@ -283,6 +290,13 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   `SchemeProperties.RelativeValuativeExtension`.
 ### Function fields
 
+- [Function-field naturality](SchemeProperties/RationalFunctionFieldNaturality.lean):
+  for a dominant morphism between integral same-universe schemes, pullback of
+  sections on any nonempty target open commutes with the canonical maps to
+  function fields. Dominance also ensures that the inverse-image open is
+  nonempty. The [affine-line example](SchemePropertiesExamples/FunctionFieldNaturality.lean)
+  applies this to the structure morphism `Spec ℚ[X] → Spec ℚ`.
+  Direct import: `SchemeProperties.RationalFunctionFieldNaturality`.
 - [Function-field inverse criterion](docs/RationalFunctionFieldInverse.md):
   for integral same-universe endpoints over arbitrary independently chosen
   total maps to `S`, isomorphism of the **given** dominant native quotient
@@ -418,7 +432,12 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   disconnected rings, with no Noetherian or global-domain assumption.
   Direct import: `SchemeProperties.LocallyNormalRing.Maximal`.
 - [Normality and factoriality](SchemeProperties/FactorialNormal.lean) relates
-  stalkwise factorial schemes to normal schemes; the [local-normality
+  stalkwise factorial schemes to normal schemes. The
+  [normality criteria](SchemeProperties/Normal.lean) characterize normality of an
+  affine scheme by local normality of its global sections, of an affine open by
+  local normality of its ambient ring of sections, and of a scheme by local
+  normality of every coordinate ring of any affine open cover. The cover's index
+  universe may be independent of the scheme universe. The [local-normality
   interfaces](SchemeProperties/NormalSeparableScheme.lean) also cover base
   change along transcendental-separable field extensions, not all extensions.
 - [Locally normal binary products](SchemeProperties/LocallyNormalRing/Product.lean):

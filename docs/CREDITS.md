@@ -249,6 +249,13 @@ and author notice in their respective Lean headers;
 also retains **Andrew Yang's** 2024 copyright and author notice. Those
 notices credit adapted upstream expression, not authorship of every new proof.
 
+The [scheme-normality morphism results](../SchemeProperties/NormalMorphisms.lean)
+combine the project's finite-polynomial and étale normality ascent with
+faithfully flat ring descent. Mathlib supplies standard-smooth affine
+neighborhoods, their étale polynomial factorizations, local flat stalk maps
+and stalk isomorphisms. These APIs are used rather than copied; the two
+canonical affine-line applications use the same standard spectrum dictionaries.
+
 Other proofs import rather than copy mathlib's native rational-map, scheme,
 birational, Jacobson and generic-stalk APIs, including work by **Andrew Yang**,
 **Justus Springer**, **Fangming Li** and **Devon Tuma**. Authentic individual

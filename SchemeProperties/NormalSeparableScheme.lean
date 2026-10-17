@@ -51,10 +51,8 @@ private theorem isNormal_pullback_specMap_of_isAffine
     asIso (pullback.map f (Spec.map (CommRingCat.ofHom (algebraMap k K)))
       (Spec.map φ.unop) (Spec.map (CommRingCat.ofHom (algebraMap k K)))
       eX.hom (𝟙 _) (𝟙 _) (by simp [hf]) (by simp))
-  let _ : IsNormal (Spec Γ(X, ⊤)) :=
-    ObjectProperty.prop_of_iso (fun Y : Scheme => IsNormal Y) eX (by infer_instance)
   let _ : IsLocallyNormalRing (Γ(X, ⊤)) :=
-    isLocallyNormalRing_of_isNormal_spec (Γ(X, ⊤))
+    (isNormal_iff_isLocallyNormalRing X).mp inferInstance
   let _ : IsLocallyNormalRing (TensorProduct k (Γ(X, ⊤)) K) :=
     IsLocallyNormalRing.tensorProduct_of_isTranscendentalSeparable
   exact ObjectProperty.prop_of_iso (fun Y : Scheme => IsNormal Y)

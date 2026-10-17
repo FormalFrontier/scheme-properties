@@ -63,6 +63,7 @@ public import SchemeProperties.LocallyNormalRing.Maximal
 public import SchemeProperties.NormalLocalization
 public import SchemeProperties.LocallyNormalRing.Product
 public import SchemeProperties.NormalEtale
+public import SchemeProperties.NormalMorphisms
 public import SchemeProperties.NormalPolynomial
 public import SchemeProperties.NormalSeparable
 public import SchemeProperties.NormalSeparableScheme

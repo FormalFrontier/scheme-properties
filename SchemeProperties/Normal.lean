@@ -16,8 +16,9 @@ set_option warningAsError true
 # Normal schemes
 
 This file defines a normal scheme by requiring every local ring to be a
-domain and integrally closed. It proves the basic localization, open-local,
-and affine-spectrum API for this property.
+domain and integrally closed. It proves localization and open-local properties,
+and characterizes normality using the coordinate rings of affine schemes,
+affine opens, and affine open covers.
 -/
 
 open AlgebraicGeometry CategoryTheory TopologicalSpace
@@ -222,6 +223,26 @@ theorem isNormal_spec_iff_isLocallyNormalRing (R : CommRingCat.{u}) :
   · intro h
     let _ := h
     infer_instance
+
+/-- An affine scheme is normal exactly when its ring of global sections is locally normal. -/
+theorem isNormal_iff_isLocallyNormalRing [IsAffine X] :
+    IsNormal X ↔ IsLocallyNormalRing Γ(X, ⊤) :=
+  (ObjectProperty.prop_iff_of_iso (IsNormal ·) X.isoSpec).trans
+    (isNormal_spec_iff_isLocallyNormalRing Γ(X, ⊤))
+
+/-- An affine open subscheme is normal exactly when its ring of sections is locally normal. -/
+theorem IsAffineOpen.isNormal_iff_isLocallyNormalRing
+    {X : Scheme.{u}} {U : X.Opens} (hU : IsAffineOpen U) :
+    IsNormal U ↔ IsLocallyNormalRing Γ(X, U) :=
+  (ObjectProperty.prop_iff_of_iso (IsNormal ·) hU.isoSpec).trans
+    (isNormal_spec_iff_isLocallyNormalRing Γ(X, U))
+
+/-- A scheme is normal exactly when all coordinate rings of an affine open cover are locally
+normal. -/
+theorem IsNormal.iff_of_affineOpenCover (𝒰 : Scheme.AffineOpenCover.{v} X) :
+    IsNormal X ↔ ∀ i, IsLocallyNormalRing (𝒰.X i) :=
+  (IsNormal.iff_of_openCover X 𝒰.openCover).trans
+    (forall_congr' fun i ↦ isNormal_spec_iff_isLocallyNormalRing (𝒰.X i))
 
 instance (priority := 900) isReduced_of_isNormal [IsNormal X] : IsReduced X := by
   exact isReduced_of_isReduced_stalk X
