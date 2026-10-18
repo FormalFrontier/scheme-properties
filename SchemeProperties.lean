@@ -88,6 +88,7 @@ public import SchemeProperties.Quasicoherent
 public import SchemeProperties.QuasicoherentAbelian
 public import SchemeProperties.RationalMapComposition
 public import SchemeProperties.RationalMapPartialIso
+public import SchemeProperties.RationalPointExtensionality
 public import SchemeProperties.RelativeValuativeExtension
 public import SchemeProperties.PartialMapGluing
 public import SchemeProperties.Reduced

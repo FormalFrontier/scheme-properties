@@ -89,6 +89,34 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   Direct import: `SchemeProperties.ReducedHomExt`; see the
   [affine-line application](SchemePropertiesTest/ReducedHomExt.lean).
 
+### Sections and dense closed-point tests
+
+For any field `K : Type u`, any scheme `Y : Scheme.{u}`, and morphisms
+`f g : Spec ↧K ⟶ Y`, the section criterion
+[`Scheme.Hom.ext_of_apply_closedPoint_eq_of_comp_eq_id`](SchemeProperties/RationalPointExtensionality.lean)
+uses a specified `i : Y ⟶ Spec ↧K`, both identities `f ≫ i = 𝟙 _` and
+`g ≫ i = 𝟙 _`, and agreement at `IsLocalRing.closedPoint K` to conclude
+`f = g` as scheme morphisms. Neither algebraic closedness of `K` nor separatedness,
+finite type or reducedness of `Y`, nor a monomorphism hypothesis on `i`, is needed.
+The section identities control the residue-field embeddings, not just the image points; see
+Mathlib's [residue-field classification](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/ResidueField.lean).
+The [coordinate-section application](SchemePropertiesTest/RationalPointExtensionality.lean)
+uses independently constructed sections of the affine line over `ℚ` to recover
+equality of their rational parameters from agreement of their image points.
+
+For schemes `X Y : Scheme.{u}` over an algebraically closed field `K : Type u`,
+[`Scheme.Hom.ext_of_apply_eq_on_dense_closedPoints`](SchemeProperties/RationalPointExtensionality.lean)
+compares `f g : X ⟶ Y` with a specified separated morphism `i : Y ⟶ Spec ↧K`.
+It assumes `X` is reduced, `f ≫ i` is locally of finite type, a subset `S : Set X`
+is dense and locally closed, `f x = g x` for each `x ∈ S` whose singleton is closed,
+and the base compatibility `f ≫ i = g ≫ i`; it concludes `f = g`.
+There is no locally finite type assumption on `i`. This generalizes Mathlib's
+[closed-point criterion](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/AlgClosed/Basic.lean).
+The [affine-line application](SchemePropertiesTest/RationalPointExtensionality.lean)
+uses closed-point sections to determine the coordinate pullback of endomorphisms
+compatible with the structure map. Direct import for both criteria:
+`SchemeProperties.RationalPointExtensionality`.
+
 ### Geometric-point lifting
 
 - [Surjectivity and geometric points](SchemeProperties/GeometricPointLifting.lean):
