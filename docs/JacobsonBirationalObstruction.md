@@ -29,7 +29,7 @@ polynomial Jacobson instance provides the target hypothesis.
 
 The direct-import [client](../SchemePropertiesTest/JacobsonBirationalObstructionClient.lean)
 uses namespace `SchemePropertiesTest.JacobsonBirationalObstruction` and
-contains only private declarations: the general result, `K = RatFunc ℚ`
+contains five anonymous examples: the general result, `K = RatFunc ℚ`
 with `k = ℚ`, `K = k = ZMod 2`, an empty-source obstruction, and a positive
 identity `PartialIso` of a field spectrum.
 

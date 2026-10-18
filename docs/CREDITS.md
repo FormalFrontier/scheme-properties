@@ -97,6 +97,81 @@ or a Frobenius identification.
 
 ## Mathematical sources and upstream notices
 
+The [algebraically closed field-valued point criterion](UniversallyInjectiveGeometricPoints.md)
+uses Mathlib's `AlgebraicGeometry.tfae_universallyInjective`, by Andrew Yang and
+Justus Springer, as its all-field antecedent. Mathlib's
+`AlgebraicGeometry.Flat.epi_of_flat_of_surjective`, in the flat-morphism
+development by Christian Merten and Andrew Yang, supplies the relevant
+field-extension epimorphism API. The upstream mathematical references are
+Stacks Project Tags 01S4 and 02VW. The proof uses Mathlib's algebraic closure
+construction by Kenny Lau. Its origin application uses the closed-immersion
+API by Amelia Livingston, Christian Merten and Jonas van der Schaaf.
+No Mathlib proof expression is copied. The new proof and explanatory examples
+are original project expression under Apache-2.0, with the collective
+AI-assistance credit above. Upstream notices remain in the imported Mathlib files.
+
+[Affine test objects](../SchemeProperties/AffineTestObjects.lean) follows
+Mathlib's affine-open-cover and gluing approach to equality of scheme
+morphisms, and its generic separating-family monomorphism criterion.
+At the pinned Mathlib revision `83abb3e776bdefcbc447a1e44d0debe4010039e5`,
+`AlgebraicGeometry/Cover/Open.lean`, `Gluing.lean` and `AffineScheme.lean`
+credit **Andrew Yang**; `Cover/MorphismProperty.lean` credits
+**Christian Merten and Andrew Yang**; and
+`CategoryTheory/Generator/Basic.lean` credits **Markus Himmel**.
+The affine spectrum comparison also uses **Junyan Xu**'s Γ–Spec
+adjunction formalization. The
+[line-in-plane example](../SchemePropertiesTest/AffineTestObjects.lean)
+uses the closed-immersion API of **Amelia Livingston, Christian Merten and
+Jonas van der Schaaf**, polynomial evaluation by **Chris Hughes, Johannes
+Hölzl, Kim Morrison and Jens Wagemaker**, and the rational-field API of
+**Johannes Hölzl and Mario Carneiro**. These are followed formalization
+methods and imported APIs, not copied proof expression. Original project
+statements, applications and documentation have the collective project
+credit above; upstream Apache-2.0 notices remain with their source files.
+No third-party prose, source PDF or new redistribution permission is included
+or asserted by these citations.
+
+The [affine-generator interfaces](../SchemeProperties/AffineGenerators.lean)
+use Mathlib's strong-generator method from colimit presentations (Joël Riou)
+and its locally directed affine-open colimit construction (Christian Merten).
+The latter refines overlaps by affine opens; it does not require intersections
+themselves to be affine. Mathlib's Γ–Spec comparison and elementary
+bijection/unique-lifting APIs supply the ring-valued characterization. The
+[examples](../SchemePropertiesTest/AffineGenerators.lean) use polynomial
+evaluation, closed immersions from surjective ring maps, Γ–Spec full
+faithfulness and the initiality of empty schemes. These are original project
+statements and example expression using upstream APIs, not copies of upstream
+proof bodies. Milne, *Algebraic Groups* (2017), §I.1 supplies functor-of-points
+intuition, not a literal statement of these arbitrary-scheme results or a
+claim of full coverage of that section.
+
+The [affine-density results](../SchemeProperties/AffineDensity.lean) reuse the generic
+cover-dense/subcanonical density bridge already in
+[FiniteTypePoints](../SchemeProperties/FiniteTypePoints.lean), whose scheme-level
+formalization was adapted from Lattice's earlier work.
+The specialization uses Mathlib's affine covers (Andrew Yang), big Zariski
+subcanonicality (Joël Riou and Adam Topaz), dense-subsite and covering-sieve methods
+(Andrew Yang and Joël Riou), and functor density (Joël Riou). Mathlib also supplies
+the restricted Yoneda construction (Bhavik Mehta and Joël Riou), fully faithful
+reconstruction data and inverse equations (Kim Morrison), and Γ–Spec full faithfulness
+(Junyan Xu). The [examples](../SchemePropertiesTest/AffineDensity.lean) use polynomial
+evaluation and Andrew Yang's empty-spectrum/initial-scheme API. These are API uses,
+not copied Mathlib proof expression. The all-ring, all-scheme density statements
+are not a literal correspondence to Milne's finite-type, field-based
+functor-of-points statement. No book prose or Mathlib proof expression is copied
+for this addition.
+
+[Global ring dimension](../SchemeProperties/RingTheory/KrullDimension/GeneralizingMap.lean)
+uses Mathlib's finite prime-chain lifting under going down and its
+surjective generalizing-spectrum/faithful-flatness interfaces.
+[Global scheme dimension](../SchemeProperties/FlatKrullDimension.lean) uses
+flat local stalk maps, their faithful flatness, and the expression of global
+dimension as the supremum of full stalk dimensions. The
+[canonical private client](../SchemePropertiesTest/FlatKrullDimension.lean)
+uses Mathlib's free polynomial modules, localization flatness, unit reflection,
+field and polynomial dimensions, and the Spec order-duality dictionary.
+These stock APIs are used rather than their proof bodies copied.
+
 [Quasi-finite prime heights](../SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean)
 and [full stalk dimensions](../SchemeProperties/FlatQuasiFinite.lean) use Mathlib's
 existing order-height theorem, quasi-finite incomparability, going-down lifting,
@@ -104,6 +179,38 @@ maximal-ideal height formulas and local stalk-map APIs. Applied to prime
 contraction, the order-height theorem yields the local-ring and stalk results.
 The double-cover calculation uses Mathlib's polynomial PID, localization and
 component-open-immersion constructions.
+
+The [reduced-source morphism criteria](../SchemeProperties/ReducedHomExt.lean)
+are project constructions using Mathlib's residue-field maps, localization and
+local-to-global morphism interfaces. Mathlib's
+[`ext_of_fromSpecResidueField_eq`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Morphisms/Separated.lean)
+(Christian Merten and Andrew Yang) supplies the related dense-residue-point
+criterion with a separated relative target; it is not the arbitrary-target
+statement. Mathlib's
+[`Scheme.hom_ext_of_forall`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Gluing.lean)
+(Andrew Yang) supplies equality from open-neighborhood comparisons.
+
+[Quasi-finite ring dimensions and prime heights](../SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean)
+use Mathlib's quasi-finite incomparability and order-dimension theorem: contraction
+is strict on comparable primes, which suffices for the global upper bound.
+For prime-height and local-ring preservation, Mathlib supplies going-down lifting,
+the order-height theorem and maximal-ideal height formulas. The [global scheme bound](../SchemeProperties/QuasiFiniteKrullDimension.lean)
+uses Mathlib's discrete-fiber API, the reverse-specialization order on schemes,
+T0 separation and order dimension. The [full-stalk application](../SchemeProperties/FlatQuasiFinite.lean)
+uses the local stalk-map APIs. The [closed-origin example](../SchemePropertiesTest/QuasiFiniteKrullDimension.lean)
+uses stock evaluation, finite and closed-immersion dictionaries, flat-module
+torsion-freeness, polynomial transcendence and field/PID dimensions, independently
+of the global bounds. The double-cover calculation uses Mathlib's polynomial
+PID, localization and component-open-immersion constructions.
+
+The [going-down height bounds](../SchemeProperties/RingTheory/KrullDimension/GoingDown.lean)
+follow Mathlib's finite-chain lifting (`Ideal.exists_ltSeries_of_hasGoingDown`),
+order-height bounds and minimal-prime infimum, without a separate chain argument.
+The local-dimension passage uses Mathlib's generalizing-map dictionary, maximal-ideal
+contraction and height formula. The [stalk bounds](../SchemeProperties/FlatStalkDimension.lean)
+use its canonical local stalk maps and flatness theorem. The formal-DVR examples
+use Mathlib's power-series DVR and independent field/PID dimension computations.
+These proofs compose imported results; no Mathlib proof expression is copied.
 
 The polynomial-quotient scheme-point comparisons follow Vakil, *The Rising
 Sea*, §3.6.9 and the discussion after Exercise 5.1.E, extended to possibly

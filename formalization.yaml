@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Scheme Properties"
-  description: "Reusable Lean theory of single-cover subfunctor and group-object extensions, local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
+  description: "Reusable Lean theory of ring-valued point criteria, affine density, dimension bounds, single-cover subfunctor and group-object extensions, local scheme properties, components, modules, native rational maps and ring-pullback open immersions. See README.md and docs/Guide.md for exact hypotheses."
   authors:
     - Formal Frontier Agents
   license: Apache-2.0

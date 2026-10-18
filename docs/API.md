@@ -30,6 +30,34 @@ For current modules and usage, use the local [reader guide](Guide.md) and
 See [generation instructions](README.md), the [mathematical guide](Guide.md) and
 [exact input manifest](api-manifest.json). Authored notes are labeled separately from source docstrings.
 
+## Affine test objects (authored note)
+
+Direct import `SchemeProperties.AffineTestObjects` for:
+
+```lean
+AlgebraicGeometry.Scheme.isSeparating_isAffine :
+  CategoryTheory.ObjectProperty.IsSeparating
+    (fun T : AlgebraicGeometry.Scheme.{u} ↦ AlgebraicGeometry.IsAffine T)
+
+AlgebraicGeometry.Scheme.mono_iff_injective_spec
+  {X Y : AlgebraicGeometry.Scheme.{u}} (f : X ⟶ Y) :
+  CategoryTheory.Mono f ↔ ∀ (R : Type u) [CommRing R],
+    Function.Injective (fun g : AlgebraicGeometry.Spec (.of R) ⟶ X ↦ g ≫ f)
+```
+
+These additions are outside the historical inventory below. The first is a
+proposition-valued theorem, not a new class or global instance. It supplies
+Mathlib's generic `ObjectProperty.IsSeparating` API; the second specializes
+its `mono_iff` using the affine spectrum isomorphism. The morphism is arbitrary
+and all commutative rings in the scheme universe are tested, including the
+zero ring. No finiteness, reducedness or separatedness is assumed. This does
+not assert detecting objects, density, full faithfulness or an isomorphism
+criterion. Field-valued tests alone do not detect monomorphisms, as explained
+in the module documentation. The
+[line-in-plane application](../SchemePropertiesTest/AffineTestObjects.lean)
+uses the generic separating-family API and ring-point injectivity on a
+closed immersion with distinct rational source points.
+
 ## Current finite-point interfaces (authored note)
 
 The following additions are outside the historical inventory below. Direct
@@ -50,6 +78,193 @@ The [affine-line model](../SchemePropertiesTest/FiniteFieldPointsModel.lean)
 provides the concrete polynomial-over-`ZMod 2` applications and independent
 distinct evaluation sections. These interfaces add no public definitions;
 see the [reader guide](Guide.md) for their scope.
+
+For injectivity on field-valued points, see the
+[universal injectivity criterion](UniversallyInjectiveGeometricPoints.md).
+
+## Additional API note: reduced-source morphisms
+
+Outside the historical inventory below,
+[`SchemeProperties.ReducedHomExt`](../SchemeProperties/ReducedHomExt.lean) provides
+`AlgebraicGeometry.Scheme.Hom.ext_of_fromSpecResidueField` and
+`AlgebraicGeometry.Scheme.Hom.ext_of_field_valued_points`.
+For a reduced `X : Scheme.{u}` and arbitrary `Y : Scheme.{u}`, agreement after
+all canonical residue-field maps, or after every `Spec (CommRingCat.of K) ⟶ X`
+for **all** fields `K : Type u`, implies equality of morphisms `X ⟶ Y`.
+Empty sources are allowed; separatedness and finiteness are not required.
+See the [reader guide](Guide.md#reduced-source-morphism-tests) for the distinction
+from point-set equality and Mathlib's dense separated-target criterion.
+
+## Geometric-point lifting (authored note)
+
+| Module | Interface |
+| --- | --- |
+| [`SchemeProperties.GeometricPointLifting`](../SchemeProperties/GeometricPointLifting.lean) | Surjectivity and lifting geometric points over the same field |
+
+For `X Y : Scheme.{u}` and `f : X ⟶ Y`, the following theorems use fields
+`K : Type u` with `[Field K] [IsAlgClosed K]`, not one fixed test field.
+Direct import: `SchemeProperties.GeometricPointLifting`.
+
+- [`AlgebraicGeometry.Scheme.Hom.exists_lift_of_isAlgClosed`](../SchemeProperties/GeometricPointLifting.lean#L40-L42):
+  under `[LocallyOfFiniteType f] [Surjective f]`, every `p : Spec (.of K) ⟶ Y`
+  has `q : Spec (.of K) ⟶ X` with `q ≫ f = p`, over the same `K`.
+- [`AlgebraicGeometry.Scheme.Hom.surjective_of_lifts_from_isAlgClosed`](../SchemeProperties/GeometricPointLifting.lean#L57-L59):
+  lifting every such `p` for **every** algebraically closed `K : Type u`
+  implies `Surjective f`, without a local finite type hypothesis.
+- [`AlgebraicGeometry.Scheme.Hom.surjective_iff_lifts_from_isAlgClosed`](../SchemeProperties/GeometricPointLifting.lean#L72-L74):
+  under `[LocallyOfFiniteType f]`, `Surjective f` is equivalent to this
+  same-field lifting condition for all algebraically closed fields.
+
+## Current quasi-finite point interfaces (authored note)
+
+Direct import `SchemeProperties.QuasiFinitePoints`; read the
+[module](../SchemeProperties/QuasiFinitePoints.lean) for these theorems, which
+are separate from the historical inventory below. Let `X Y : Scheme.{u}`,
+`f : X ⟶ Y`, `K : Type u` with `[Field K]`, and
+`g : Spec (CommRingCat.of K) ⟶ Y`. The finiteness statement uses exactly
+
+```lean
+Set.Finite {q : Spec (CommRingCat.of K) ⟶ X | q ≫ f = g}
+```
+
+- `AlgebraicGeometry.Scheme.Hom.finite_field_valued_fiber` proves this for
+  `[LocallyQuasiFinite f] [QuasiCompact f]` and **any** field `K`.
+  Neither `[IsAlgClosed K]` nor `[LocallyOfFiniteType f]` is assumed.
+- `AlgebraicGeometry.Scheme.Hom.locallyQuasiFinite_of_finite_geometric_point_fibers`
+  assumes `[LocallyOfFiniteType f]` and finiteness of this set for **every**
+  `K : Type u` with `[Field K] [IsAlgClosed K]` and **every** such `g`, and
+  concludes `LocallyQuasiFinite f`. No `[QuasiCompact f]` is required.
+- `AlgebraicGeometry.Scheme.Hom.locallyQuasiFinite_iff_finite_geometric_point_fibers`
+  assumes `[LocallyOfFiniteType f] [QuasiCompact f]` and identifies
+  `LocallyQuasiFinite f` with finiteness of these lift fibers for **all**
+  algebraically closed fields `K : Type u` and **all** such `g`.
+
+Mathlib's `LocallyQuasiFinite` is a fiberwise condition and does not by itself
+require local finite type or quasi-compactness. Local finite type is used for
+the converse, and quasi-compactness for the forward implication. These
+interfaces add no public definitions or point carriers: the fibers are sets
+of ordinary scheme morphisms with the existing `Set.Finite` predicate, and
+the ordinary `Scheme` category is unchanged.
+
+## Field-extension lifting
+
+Direct import [`SchemeProperties.FieldExtensionLifting`](../SchemeProperties/FieldExtensionLifting.lean).
+For `X Y : Scheme.{u}` and `f : X ⟶ Y`, the namespace
+`AlgebraicGeometry.Scheme.Hom` provides:
+
+- `exists_lift_after_field_extension`: given `[Surjective f]`, any
+  `K : Type u` with `[Field K]` and any `g : Spec (CommRingCat.of K) ⟶ Y`, returns
+  ```lean
+  ∃ L : CommRingCat.{u}, IsField L ∧
+    ∃ (ι : CommRingCat.of K ⟶ L) (q : Spec L ⟶ X),
+      q ≫ f = Spec.map ι ≫ g
+  ```
+- `surjective_of_lifts_after_field_extension`: if such lifts exist for **all**
+  fields `K : Type u` and **all** supplied points `g`, then `Surjective f`.
+- `surjective_iff_lifts_after_field_extension`: the equivalence of surjectivity
+  with this universally quantified lifting condition.
+
+`IsField L` is a proposition about the existing commutative ring `L`, not a
+new carrier or a chosen `Field L` structure. The ring morphism `ι` records the
+extension; `Spec.map ι` has domain `Spec L`. The API uses Mathlib's `Spec` and
+residue-field point constructions without introducing a point or extension type.
+No local finite type, quasi-compactness, algebraic closedness, nonemptiness or
+chosen ground field is required. The extension need not be finite or algebraic,
+and a lift over `K` itself is not asserted.
+
+## Affine generators and isomorphism detection
+
+Direct import `SchemeProperties.AffineGenerators` for the three results in
+`AlgebraicGeometry.Scheme`:
+
+- `isStrongGenerator_isAffine` gives
+  `ObjectProperty.IsStrongGenerator (fun T : Scheme.{u} => IsAffine T)`.
+- `isDetecting_isAffine` gives
+  `ObjectProperty.IsDetecting (fun T : Scheme.{u} => IsAffine T)`.
+- `isIso_iff_bijective_spec f` characterizes `IsIso f` by bijectivity of
+  `(fun g : Spec (.of R) ⟶ X => g ≫ f)` for every commutative ring
+  `R : Type u`, when `f : X ⟶ Y` is a morphism of `Scheme.{u}`.
+
+Here `ObjectProperty` is `CategoryTheory.ObjectProperty`. Its strong-generator
+API supplies `isSeparating`, `subobject_eq_top`, `isIso_of_mono` and
+`exists_of_mono_not_isIso`. Detection means that every affine-source map into
+`Y` has a unique lift to `X`; it is a proposition, not an additional scheme
+class. The ring-point criterion requires neither a monomorphism premise nor
+nontriviality of `R`. The [direct-import examples](../SchemePropertiesTest/AffineGenerators.lean)
+use `Spec ℚ[X]` and the empty spectrum of `ZMod 1`. These additions lie outside
+the historical inventory below.
+
+## Affine density
+
+Direct import [`SchemeProperties.AffineDensity`](../SchemeProperties/AffineDensity.lean)
+for the two universe-polymorphic Prop instances
+`AlgebraicGeometry.Spec.isCoverDense` and `AlgebraicGeometry.Spec.isDense`:
+
+```lean
+(Scheme.Spec : CommRingCat.{u}ᵒᵖ ⥤ Scheme.{u}).IsCoverDense Scheme.zariskiTopology
+(Scheme.Spec : CommRingCat.{u}ᵒᵖ ⥤ Scheme.{u}).IsDense
+```
+
+They quantify over all same-universe commutative rings and schemes, including the
+zero ring and empty or nonreduced schemes. There are no field, finiteness, separatedness
+or smallness assumptions. The specialization uses the existing `Scheme.affineCover`,
+Mathlib's big Zariski subcanonicality and
+`CategoryTheory.Functor.isDense_of_isCoverDense_of_subcanonical` from
+[`FiniteTypePoints`](../SchemeProperties/FiniteTypePoints.lean); the generic bridge
+is reused rather than copied.
+
+The points functor is already
+`Presheaf.restrictedULiftYoneda.{0} Scheme.Spec :
+Scheme.{u} ⥤ (CommRingCat.{u}ᵒᵖ)ᵒᵖ ⥤ Type u`.
+At `X` and `op (op R)` it is `ULift.{0} (Spec R ⟶ X)`.
+The natural-transformation Hom types are in `Type (u + 1)`, not `Type u`.
+Mathlib derives its `Full` and `Faithful` Prop instances from density.
+`Functor.FullyFaithful.ofFullyFaithful` gives the existing reconstruction **data**,
+not a Prop: use its `preimage`, `homEquiv`, `map_preimage` and `preimage_map`.
+`Functor.denseAt` and `Functor.IsDense.leftKanExtensionIso` are also existing data
+APIs, not new declarations here. No alias or replacement functor is introduced.
+The [affine example](../SchemePropertiesTest/AffineDensity.lean) identifies the
+reconstructed map with evaluation at an affine identity point. Its polynomial
+nonvacuity witness and zero-ring boundary use only independent Mathlib providers.
+This note is outside the historical inventory below.
+
+## Current navigation note: global dimension bounds
+
+The following additions are outside this historical inventory. For commutative
+rings in independent universes,
+`RingHom.ringKrullDim_le_of_generalizingMap_comap_of_surjective` requires both
+**generalizing** and **surjective** prime contraction;
+`RingHom.FaithfullyFlat.ringKrullDim_le` requires faithful flatness. Both bound
+`ringKrullDim R ≤ ringKrullDim S` for `R →+* S`. For schemes in a common universe,
+`AlgebraicGeometry.Flat.krullDim_le_of_surjective f` requires `[Flat f]` and
+`[Surjective f]` and bounds the global target dimension by the global source
+dimension, not a stalk-dimension equality. These `WithBot ℕ∞` bounds include
+`⊥` and `∞` without Noetherianity or finiteness assumptions. See the
+[reader guide](Guide.md#local-algebra-and-scheme-properties) and
+[concrete affine-line client](../SchemePropertiesTest/FlatKrullDimension.lean).
+
+## Current API note: quasi-finite dimension
+
+The following direct-import entry points are outside the historical inventory below:
+
+- `SchemeProperties.RingTheory.KrullDimension.QuasiFinite`:
+  `RingHom.QuasiFinite.strictMono_comap hf` is strict on **comparable** primes
+  under contraction, not injective on all primes;
+  `RingHom.QuasiFinite.ringKrullDim_le hf` gives `ringKrullDim S ≤ ringKrullDim R`
+  for `f : R →+* S`, with independent ring universes.
+- `SchemeProperties.QuasiFiniteKrullDimension`:
+  `AlgebraicGeometry.LocallyQuasiFinite.krullDim_le f` gives
+  `Order.krullDim X ≤ Order.krullDim Y` for a locally quasi-finite `f : X ⟶ Y`,
+  in a common scheme universe and with the reverse-specialization order.
+
+Both global bounds lie in `WithBot ℕ∞` (including `⊥` and infinite dimension).
+Quasi-finiteness here is Mathlib's finite-dimensional residue-field-fiber
+condition; no local finite type, quasi-compactness, Noetherianity or flatness
+hypothesis is imposed. These are not full-stalk dimension equalities. The existing
+`Algebra.QuasiFinite.height_eq_of_hasGoingDown` additionally requires going down;
+`RingHom.Flat.ringKrullDim_eq_of_quasiFinite` requires a flat local homomorphism
+between local rings. See the [reader guide](Guide.md) and
+[closed-origin example](../SchemePropertiesTest/QuasiFiniteKrullDimension.lean).
 
 ## Complete module inventory
 

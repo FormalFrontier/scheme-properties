@@ -32,6 +32,4 @@ variable (X : Scheme.{u})
 instance (priority := 900) isNormal_of_isFactorial [IsFactorial X] : IsNormal X := by
   exact isNormal_of_stalk X
 
-#print axioms isNormal_of_isFactorial
-
 end AlgebraicGeometry

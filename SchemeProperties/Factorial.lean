@@ -135,8 +135,6 @@ theorem factorialSpec_of_isDedekindDomain
   exact (Spec.stalkIso R x).symm.commRingCatIsoToRingEquiv.toMulEquiv
     |>.uniqueFactorizationMonoid inferInstance
 
-#print axioms factorialSpec_of_isDedekindDomain
-
 /-- Unique factorization of stalks is preserved under generalization. -/
 theorem uniqueFactorizationMonoid_stalk_of_specializes {x y : X} (hxy : x ⤳ y)
     [UniqueFactorizationMonoid (X.presheaf.stalk y)] :

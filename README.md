@@ -15,6 +15,57 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ## Headline results
 
+### Going down and flat stalk dimensions
+
+- [Going down](SchemeProperties/RingTheory/KrullDimension/GoingDown.lean) bounds
+  the height of the contraction of **any** ideal by its height, including infinite
+  heights. A generalizing local ring map with local target bounds the source
+  dimension by the target dimension; flat local maps specialize this result.
+- [Flat stalk dimensions](SchemeProperties/FlatStalkDimension.lean): at any point
+  where the canonical stalk map is flat, the full target-stalk dimension is at
+  most the source-stalk dimension. Flat scheme morphisms satisfy this everywhere.
+  Neither bound requires Noetherianity or finite dimension.
+
+### Affine test objects
+
+- [Affine schemes separate morphisms](SchemeProperties/AffineTestObjects.lean):
+  affine schemes form a separating family in Mathlib's `ObjectProperty` API.
+  For arbitrary `f : X ⟶ Y` in `Scheme.{u}`, `Mono f` is equivalent to
+  injectivity of `g ↦ g ≫ f` on `Spec (CommRingCat.of R) ⟶ X` for every
+  commutative ring `R : Type u`. No reducedness, finite-type, quasi-compactness
+  or separatedness hypothesis is needed; zero rings and empty schemes are
+  included. This is a monomorphism criterion, not an isomorphism criterion,
+  and field-valued points alone do not suffice. The
+  [line-in-plane example](SchemePropertiesTest/AffineTestObjects.lean) has
+  two distinct rational source points with distinct images.
+  Direct import: `SchemeProperties.AffineTestObjects`.
+
+### Affine tests for isomorphisms
+
+- [Affine generators](SchemeProperties/AffineGenerators.lean): affine schemes form
+  a strong generator of `Scheme.{u}` and detect isomorphisms. For arbitrary
+  `f : X ⟶ Y`, `IsIso f` is equivalent to bijectivity of `g ↦ g ≫ f` on maps
+  `Spec R ⟶ X` for **every** commutative ring `R : Type u`, including the zero
+  ring. No finiteness, separatedness or monomorphism premise is required.
+  Direct import: `SchemeProperties.AffineGenerators`; the
+  [affine-line examples](SchemePropertiesTest/AffineGenerators.lean) contrast
+  the identity with the zero section, which misses the rational point at one.
+
+### Affine density
+
+- [Affine density](SchemeProperties/AffineDensity.lean) shows that
+  `Scheme.Spec : CommRingCat.{u}ᵒᵖ ⥤ Scheme.{u}` is cover-dense for the big
+  Zariski topology and dense among all schemes in that universe. All commutative
+  rings, including the zero ring, are tests; empty and nonreduced schemes are included.
+  No field, finite-type, separatedness or small-test-category hypothesis is imposed.
+  Full faithfulness and reconstruction for the existing
+  `Presheaf.restrictedULiftYoneda.{0} Scheme.Spec` are supplied by Mathlib from
+  density, not by a new points functor or separate theorem here.
+  Its values are `ULift.{0} (Spec R ⟶ X) : Type u`; natural-transformation Homs
+  lie in `Type (u + 1)`. See the [API note](docs/API.md#affine-density)
+  and [affine reconstruction example](SchemePropertiesTest/AffineDensity.lean).
+  Direct import: `SchemeProperties.AffineDensity`.
+
 ### Finitely generated algebras
 
 - [Universe lifting](SchemeProperties/FiniteTypeUniverseLift.lean): for a
@@ -24,6 +75,68 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   included; no global universe-order assumption is needed. This compares
   the categories of finitely generated algebras themselves, not a chosen
   presentation category. Direct import: `SchemeProperties.FiniteTypeUniverseLift`.
+
+### Morphisms from reduced schemes
+
+- [Reduced-source extensionality](SchemeProperties/ReducedHomExt.lean): for
+  morphisms `f g : X ⟶ Y` with reduced source, agreement after every canonical
+  residue-field map implies `f = g`
+  (`Scheme.Hom.ext_of_fromSpecResidueField`). Equivalently, it suffices to agree
+  after **all** field-valued points (`Scheme.Hom.ext_of_field_valued_points`),
+  with fields in the common scheme universe. The target is arbitrary: no
+  separatedness, finite-type or Noetherian hypothesis is imposed. Empty sources
+  are allowed. These tests compare scheme morphisms, not just maps of points.
+  Direct import: `SchemeProperties.ReducedHomExt`; see the
+  [affine-line application](SchemePropertiesTest/ReducedHomExt.lean).
+
+### Geometric-point lifting
+
+- [Surjectivity and geometric points](SchemeProperties/GeometricPointLifting.lean):
+  a locally finite type morphism `f : X ⟶ Y` is surjective exactly when,
+  for every algebraically closed field `K` in the schemes' common universe and
+  every `p : Spec K ⟶ Y`, there is `q : Spec K ⟶ X` with `q ≫ f = p`.
+  The lift uses the same `K`, without a field extension; the implication from
+  lifting to surjectivity does not require local finite type.
+  Direct import: `SchemeProperties.GeometricPointLifting`; see the
+  [three lifting theorems](docs/API.md#geometric-point-lifting-authored-note).
+
+### Quasi-finite point fibers
+
+- [Field-valued lift fibers](SchemeProperties/QuasiFinitePoints.lean): for
+  `f : X ⟶ Y` and any field `K` in the schemes' universe,
+  `[LocallyQuasiFinite f] [QuasiCompact f]` gives
+  `Set.Finite {q : Spec (CommRingCat.of K) ⟶ X | q ≫ f = g}`
+  for every `g : Spec (CommRingCat.of K) ⟶ Y`. Neither algebraic closedness
+  of `K` nor local finite type of `f` is assumed in this direction.
+  Conversely, for `[LocallyOfFiniteType f]`, finiteness of these lift fibers
+  for **every** algebraically closed `K` and **every** such `g` implies
+  `LocallyQuasiFinite f`, without quasi-compactness. With local finite type
+  and quasi-compactness, this is an equivalence. Mathlib's
+  `LocallyQuasiFinite` is fiberwise and does not itself require local finite
+  type. The fibers use ordinary scheme morphisms, with no new point carrier.
+  Direct import: `SchemeProperties.QuasiFinitePoints`; see the
+  [authored API note](docs/API.md#current-quasi-finite-point-interfaces-authored-note).
+
+### Field-extension lifting
+
+- [Lifting field-valued points](SchemeProperties/FieldExtensionLifting.lean):
+  an arbitrary morphism `f : X ⟶ Y` is surjective exactly when, for every
+  field `K` in the schemes' universe, every `g : Spec K ⟶ Y` lifts to
+  `q : Spec L ⟶ X` after some field extension `ι : K → L`, with
+  `q ≫ f = Spec.map ι ≫ g`. No local finite type, quasi-compactness,
+  algebraic closedness, nonemptiness or chosen ground field is assumed.
+  The extension may be transcendental; a lift over `K` itself is not guaranteed.
+  Direct import: `SchemeProperties.FieldExtensionLifting`.
+
+### Universal injectivity and field-valued points
+
+- [Algebraically closed field-valued points](SchemeProperties/UniversallyInjectiveGeometricPoints.lean):
+  universal injectivity of an arbitrary scheme morphism is equivalent to
+  injectivity on `Spec K`-valued points for every algebraically closed field.
+  No finiteness, reducedness or separation hypothesis is imposed. The
+  [guide](docs/UniversallyInjectiveGeometricPoints.md) relates this to Mathlib's
+  all-field criterion and distinguishes it from underlying injectivity and monomorphisms.
+  Direct import: `SchemeProperties.UniversallyInjectiveGeometricPoints`.
 
 ### Finite-field points
 
@@ -98,6 +211,46 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   nonseparated point families. The singleton quotient can be nonreduced while
   its reduced-localization locus is open. Direct import:
   `SchemeProperties.PolynomialPointSquareZeroReducedLocus`.
+
+### Global dimension under flat surjections
+
+- [Ring dimension](SchemeProperties/RingTheory/KrullDimension/GeneralizingMap.lean):
+  a ring homomorphism `R →+* S` whose prime contraction is **generalizing and
+  surjective** satisfies `ringKrullDim R ≤ ringKrullDim S`. In particular,
+  faithful flatness suffices; the commutative rings may have independent universes.
+- [Scheme dimension](SchemeProperties/FlatKrullDimension.lean): a **flat,
+  point-surjective** morphism `f : X ⟶ Y` of schemes in a common universe gives
+  `Order.krullDim Y ≤ Order.krullDim X`. This is a global bound, not equality
+  of a chosen pair of stalk dimensions. No Noetherianity, quasi-compactness,
+  finite-type or quasi-finiteness assumption is needed. Dimensions lie in
+  `WithBot ℕ∞`, including `⊥` for zero rings/empty schemes and `∞`.
+  The [private affine-line client](SchemePropertiesTest/FlatKrullDimension.lean)
+  applies all three bounds to `ℚ → ℚ[X]` and `Spec ℚ[X] → Spec ℚ`, with
+  independent dimensions `0 < 1`; the flat fraction-ring map shows why
+  surjectivity cannot simply be omitted. Direct imports:
+  `SchemeProperties.RingTheory.KrullDimension.GeneralizingMap` and
+  `SchemeProperties.FlatKrullDimension`.
+
+### Quasi-finite dimension bounds and local preservation
+
+- [Global ring bounds](SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean):
+  `RingHom.QuasiFinite.strictMono_comap hf` makes contraction strict on
+  **comparable** primes, not globally injective on all primes.
+  `RingHom.QuasiFinite.ringKrullDim_le hf` gives `ringKrullDim S ≤ ringKrullDim R`
+  for `f : R →+* S`, with independent ring universes.
+- [Global scheme bounds](SchemeProperties/QuasiFiniteKrullDimension.lean):
+  `AlgebraicGeometry.LocallyQuasiFinite.krullDim_le f` gives
+  `Order.krullDim X ≤ Order.krullDim Y` for `f : X ⟶ Y` between schemes in
+  a common universe. The scheme order reverses specialization. Both global
+  bounds take values in `WithBot ℕ∞`, including empty spectra of dimension
+  `⊥` and infinite dimension. They need no flatness, Noetherianity, local
+  finite type or quasi-compactness: quasi-finiteness means Mathlib's
+  finite-dimensional residue-field fibers. These are upper bounds for whole
+  spaces, not equalities of stalk dimensions. The [closed-origin example](SchemePropertiesTest/QuasiFiniteKrullDimension.lean)
+  uses the finite, nonflat evaluation `ℚ[X] →+* ℚ` and its Spec map, with
+  dimensions independently computed as `0 < 1`; the opposite coefficient
+  inclusion and affine-line projection fail the respective quasi-finiteness
+  hypotheses.
 
 ### Flat quasi-finite dimension preservation
 
@@ -497,10 +650,13 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 ## Navigation and imports
 
 The Mathlib-only algebra leaf
-`SchemeProperties.RingTheory.KrullDimension.QuasiFinite` supplies prime-height
-and local-ring dimension preservation. `SchemeProperties.FlatQuasiFinite`
-adds the pointwise full-stalk application; the affine-line double-cover use is
-maintained in `SchemePropertiesTest.FlatQuasiFinite`.
+`SchemeProperties.RingTheory.KrullDimension.QuasiFinite` supplies global ring
+dimension bounds, prime-height preservation and local-ring dimension preservation.
+`SchemeProperties.QuasiFiniteKrullDimension` supplies the global scheme bound;
+these two modules can be imported directly. The closed-origin use is in
+`SchemePropertiesTest.QuasiFiniteKrullDimension`. `SchemeProperties.FlatQuasiFinite`
+adds the distinct pointwise full-stalk equality application; the affine-line
+double-cover use is maintained in `SchemePropertiesTest.FlatQuasiFinite`.
 
 `import SchemeProperties` loads the [aggregate](SchemeProperties.lean). For
 focused imports use `SchemeProperties.<Module>` from the [reader guide's module
@@ -539,17 +695,6 @@ lake build SchemeProperties SchemePropertiesTest SchemePropertiesExamples
 An optional `lake --wfail build ...` check makes warnings fatal. These targets
 currently emit linter warnings, so that check can fail even when the normal
 build succeeds.
-
-### Historical measured cost
-
-On September 26, 2026, a fresh **73-module** build (37 library/root, 21 Test,
-15 Examples) on x86_64 Linux took 353.895 seconds *after* a matching cache
-fetch of 104.624 seconds. Under a 15 GiB worker limit, sampled cgroup
-current-memory peaked at 12.86 GiB (largely file cache) and sampled current
-minus inactive file peaked at 1.53 GiB. This is **not** a benchmark of the
-current checkout, a minimum-RAM requirement or a performance
-guarantee. CPU model/quota were not recorded. The baseline excludes toolchain
-installation, cloning, doc generation, axiom checks and dependency rebuilding.
 
 ## References
 

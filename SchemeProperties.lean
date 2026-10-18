@@ -4,6 +4,7 @@ Authors: Formal Frontier Agents
 -/
 module
 
+public import SchemeProperties.AffineGenerators
 public import SchemeProperties.ConnectedComponents
 public import SchemeProperties.CoherentQuasicoherent
 public import SchemeProperties.CoherentQuasicoherentLocality
@@ -33,9 +34,11 @@ public import SchemeProperties.RationalFunctionFieldNaturality
 public import SchemeProperties.RationalFunctionFieldInverse
 public import SchemeProperties.Factorial
 public import SchemeProperties.FactorialNormal
+public import SchemeProperties.FieldExtensionLifting
 public import SchemeProperties.FiniteAlgHom
 public import SchemeProperties.FiniteFieldPoints
 public import SchemeProperties.FiniteTypePoints
+public import SchemeProperties.AffineDensity
 public import SchemeProperties.FiniteTypeUniverseLift
 public import SchemeProperties.SingleCoverExtension
 public import SchemeProperties.SingleCoverTransport
@@ -45,6 +48,7 @@ public import SchemeProperties.FlatImageDensity
 public import SchemeProperties.FlatQuasiFinite
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
+public import SchemeProperties.GeometricPointLifting
 public import SchemeProperties.GeometricallyConnected
 public import SchemeProperties.GeometricallyIntegral
 public import SchemeProperties.GenericPointFunctionField
@@ -79,6 +83,7 @@ public import SchemeProperties.ProjectiveSpectrum
 public import SchemeProperties.PullbackOpenImmersion
 public import SchemeProperties.PullbackSpectrumPushout
 public import SchemeProperties.QcqsModuleLocalization
+public import SchemeProperties.QuasiFinitePoints
 public import SchemeProperties.Quasicoherent
 public import SchemeProperties.QuasicoherentAbelian
 public import SchemeProperties.RationalMapComposition
@@ -86,6 +91,7 @@ public import SchemeProperties.RationalMapPartialIso
 public import SchemeProperties.RelativeValuativeExtension
 public import SchemeProperties.PartialMapGluing
 public import SchemeProperties.Reduced
+public import SchemeProperties.ReducedHomExt
 public import SchemeProperties.ReducedLocus
 public import SchemeProperties.ReducedLocusEquiv
 public import SchemeProperties.RingTheory.KrullDimension.QuasiFinite
@@ -94,3 +100,4 @@ public import SchemeProperties.SheafFinitePresentation
 public import SchemeProperties.SheafFinitePresentationTransport
 public import SchemeProperties.StructureSheaf
 public import SchemeProperties.Torsion
+public import SchemeProperties.UniversallyInjectiveGeometricPoints
