@@ -269,7 +269,7 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   infinite-field or finite-type premise enters the general theorem. This
   does not prove a canonical function-field-map isomorphism or noninvertibility
   of a specified native rational arrow. Direct import:
-  `SchemeProperties.JacobsonBirationalObstruction`; [one direct-import client with five private declarations](SchemePropertiesTest/JacobsonBirationalObstructionClient.lean).
+  `SchemeProperties.JacobsonBirationalObstruction`; [one direct-import client with five anonymous examples](SchemePropertiesTest/JacobsonBirationalObstructionClient.lean).
 - [Generic-point rational noninvertibility](docs/GenericPointRationalNoninvertibility.md):
   independently dominant native quotients between integral schemes cannot
   satisfy both source-first inverse laws when the source is subsingleton and
