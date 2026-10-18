@@ -700,6 +700,13 @@ reduced-locus theorems are in `SchemeProperties.ReducedLocusEquiv`; the
 polynomial quotient theorem uses the released Multivariate Polynomials
 presentation in `SchemeProperties.PolynomialPointSquareZeroReducedLocus`.
 
+`SchemeProperties.Reduced` re-exports
+`MinimalPrimes.RingTheory.Localization.Reduced`. Its theorem
+`IsReduced.of_isLocalization` preserves reducedness under arbitrary localization
+of commutative semirings in independent universes. The prime-localization and
+scheme-stalk results use this theorem; `IsLocalization.isReduced` retains the
+commutative-ring interface as a deprecated specialization.
+
 [API.md](docs/API.md) and its [manifest](docs/api-manifest.json) are a **fixed
 historical 73-module** native-doc snapshot, not a current declaration
 census. The [API reproduction guide](docs/README.md) explains its immutable
@@ -707,10 +714,10 @@ input contract; later results are in focused guides and source files.
 
 ## Build
 
-[Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the three official
+[Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the four official
 dependencies have exact revisions in [Lake](lakefile.toml) and the
-[manifest](lake-manifest.json). `coherent-modules`, `finite-etale-algebras`
-and `multivariate-polynomials` use public GitHub releases. Install
+[manifest](lake-manifest.json). `coherent-modules`, `finite-etale-algebras`,
+`multivariate-polynomials` and `minimal-primes` use public GitHub releases. Install
 [elan](https://github.com/leanprover/elan), fetch the matching mathlib cache
 successfully for this checkout (again after changing pins or `.lake`), then
 build the library, tests and examples:
@@ -761,6 +768,13 @@ build succeeds.
   and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials):
   prior formalizations used for coherent-module localization, finite-étale
   component algebras and descent, and the polynomial point-quotient presentation.
+
+- [Minimal Primes](https://github.com/FormalFrontier/minimal-primes) supplies
+  `IsReduced.of_isLocalization`, the canonical independent-universe
+  commutative-semiring theorem used for reducedness under localization. It
+  generalizes Andrew Yang's Mathlib `isReduced_localizationPreserves` and the
+  earlier commutative-ring formulation in `SchemeProperties.Reduced`; its proof
+  uses Mathlib's radical-localization and nilradical APIs.
 
 The [credits](docs/CREDITS.md) distinguish mathematical antecedents, followed
 proof patterns, imported APIs, adapted expression and original project work.

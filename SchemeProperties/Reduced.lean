@@ -6,6 +6,7 @@ module
 
 public import Mathlib.AlgebraicGeometry.Properties
 public import Mathlib.RingTheory.Localization.LocalizationLocalization
+public import MinimalPrimes.RingTheory.Localization.Reduced
 
 public section
 
@@ -17,6 +18,13 @@ set_option warningAsError true
 This file proves that reducedness passes from a localization at a larger prime
 to a localization at a smaller prime. Geometrically, it shows that reducedness
 of scheme stalks is preserved under generalization.
+
+## References
+
+* `IsReduced.of_isLocalization`, in
+  [Minimal Primes](https://github.com/FormalFrontier/minimal-primes/blob/d2d9212d49d32d5918fe060725b694183698e5bd/MinimalPrimes/RingTheory/Localization/Reduced.lean).
+* Andrew Yang's Mathlib theorem `isReduced_localizationPreserves`, in
+  [LocalProperties.Reduced](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/RingTheory/LocalProperties/Reduced.lean).
 -/
 
 open AlgebraicGeometry TopologicalSpace
@@ -25,28 +33,15 @@ universe u v w
 
 /-- An arbitrary localization of a reduced commutative ring is reduced.
 
-Unlike `isReduced_localizationPreserves`, this form permits the source and
-target rings to live in independent universes. -/
+This specialization of `IsReduced.of_isLocalization` permits the source and
+target rings to live in independent universes. Use that theorem for the
+commutative-semiring form. -/
+@[deprecated IsReduced.of_isLocalization (since := "2026-10-18")]
 theorem IsLocalization.isReduced
     {R : Type u} [CommRing R] (M : Submonoid R) (S : Type v)
     [CommRing S] [Algebra R S] [IsLocalization M S] [IsReduced R] :
     IsReduced S := by
-  constructor
-  rintro x ⟨_ | n, e⟩
-  · simpa using congr_arg (· * x) e
-  obtain ⟨⟨y, m⟩, hx⟩ := IsLocalization.surj M x
-  dsimp only at hx
-  let hx' := congr_arg (· ^ n.succ) hx
-  simp only [mul_pow, e, zero_mul, ← map_pow] at hx'
-  rw [← (algebraMap R S).map_zero] at hx'
-  obtain ⟨m', hm'⟩ := (IsLocalization.eq_iff_exists M S).mp hx'
-  apply_fun (· * (m' : R) ^ n) at hm'
-  simp only [mul_assoc, zero_mul, mul_zero] at hm'
-  rw [← mul_left_comm, ← pow_succ', ← mul_pow] at hm'
-  replace hm' := IsNilpotent.eq_zero ⟨_, hm'.symm⟩
-  rw [← (IsLocalization.map_units S m).mul_left_inj, hx, zero_mul,
-    IsLocalization.map_eq_zero_iff M]
-  exact ⟨m', by rw [← hm', mul_comm]⟩
+  exact IsReduced.of_isLocalization M S
 
 /-- Let `S` and `T` be localizations of `R` at prime ideals `q` and `p`
 respectively. If `p ≤ q` and `S` is reduced, then `T` is reduced.
@@ -71,7 +66,7 @@ theorem IsLocalization.AtPrime.isReduced_of_le
   let _ : IsLocalization (p.primeCompl.map (algebraMap R S)) T :=
     IsLocalization.isLocalization_of_submonoid_le
       S T q.primeCompl p.primeCompl hcompl
-  exact IsLocalization.isReduced
+  exact IsReduced.of_isLocalization
     (p.primeCompl.map (algebraMap R S)) T
 
 namespace AlgebraicGeometry

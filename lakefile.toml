@@ -28,6 +28,11 @@ name = "multivariate-polynomials"
 git = "https://github.com/FormalFrontier/multivariate-polynomials.git"
 rev = "45c90b8753e0470d40f6c050f9616f484afd0120"
 
+[[require]]
+name = "minimal-primes"
+git = "https://github.com/FormalFrontier/minimal-primes.git"
+rev = "d2d9212d49d32d5918fe060725b694183698e5bd"
+
 [[lean_lib]]
 name = "SchemeProperties"
 

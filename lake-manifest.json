@@ -2,6 +2,17 @@
  "packagesDir": ".lake/packages",
  "packages":
  [{"url":
+   "https://github.com/FormalFrontier/minimal-primes.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "d2d9212d49d32d5918fe060725b694183698e5bd",
+   "name": "«minimal-primes»",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "d2d9212d49d32d5918fe060725b694183698e5bd",
+   "inherited": false,
+   "configFile": "lakefile.toml"},
+  {"url":
    "https://github.com/FormalFrontier/multivariate-polynomials.git",
    "type": "git",
    "subDir": null,
