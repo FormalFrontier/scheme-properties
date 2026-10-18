@@ -31,7 +31,7 @@ and identifies the quotient composite via
 an arbitrarily chosen representative is over `S` on its entire domain; only
 an over-`S` representative or a suitable dense restriction is guaranteed.
 
-The [ordinary-import client](../Test/DenseOpenCompositionOverClient.lean)
+The [ordinary-import client](../SchemePropertiesTest/DenseOpenCompositionOverClient.lean)
 checks five *private* generic theorems: the two direct lemmas, a quotient
 representative, an open-first sufficient condition via
 `PartialMap.pullsDenseOpens_of_isOpenMap`, and a total-second compatibility via

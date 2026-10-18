@@ -42,7 +42,7 @@ example (f : X.PartialMap Y) (hf : f.PullsDenseOpens)
   RationalMap.toRationalMap_compOfPullsDenseOpens f hf g
 ```
 
-The [direct-import client](../Test/DenseOpenCompositionClient.lean) checks
+The [direct-import client](../SchemePropertiesTest/DenseOpenCompositionClient.lean) checks
 eleven private uses: arbitrary partial and rational compositions, changes of
 both representatives, the quotient bridge, the open-map sufficiency route,
 and native/total-second compatibilities. These are private API clients,

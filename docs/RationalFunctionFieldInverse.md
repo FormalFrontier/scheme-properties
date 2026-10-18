@@ -24,7 +24,7 @@ not target local finite type. Public field-homomorphism readback, reversed
 composition and identity, and [faithfulness](RationalFunctionFieldFaithfulness.md)
 establish both native quotient inverse laws; the chosen-base category packages
 these as `IsIso f`. The three private checks in the ordinary direct-import
-[client](../Test/RationalFunctionFieldInverseClient.lean) exercise independently
+[client](../SchemePropertiesTest/RationalFunctionFieldInverseClient.lean) exercise independently
 chosen maps, both quotient inverse laws and the converse without finiteness.
 They do not export new theorems.
 
@@ -41,7 +41,7 @@ mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`, and the exact
 dependency graph in [lake-manifest.json](../lake-manifest.json).
 First successfully run `lake exe cache get`, then run
 `lake build SchemeProperties.RationalFunctionFieldInverse` and
-`lake build Test.RationalFunctionFieldInverseClient`.
+`lake build SchemePropertiesTest.RationalFunctionFieldInverseClient`.
 
 The focused module uses this library's native reconstruction and function-field
 pullback interfaces. Its original project proof expression is credited in

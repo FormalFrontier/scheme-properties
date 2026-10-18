@@ -34,8 +34,8 @@ name = "SchemeProperties"
 [[lean_lib]]
 name = "SchemePropertiesTest"
 roots = ["SchemePropertiesTest.RelativeValuativeExtension"]
-globs = ["Test.+", "SchemePropertiesTest.+"]
+globs = ["SchemePropertiesTest.+"]
 
 [[lean_lib]]
 name = "SchemePropertiesExamples"
-globs = ["Examples.+", "SchemePropertiesExamples.+"]
+globs = ["SchemePropertiesExamples.+"]

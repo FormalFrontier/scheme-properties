@@ -6,7 +6,7 @@ aggregate `SchemeProperties`) for
 `AlgebraicGeometry.Scheme.RationalMap.compOfPullsDenseOpens_assoc`. The
 [producer](../SchemeProperties/DenseOpenCompositionAssociativity.lean) imports
 the [two-factor closure theorem](../SchemeProperties/DenseOpenCompositionClosure.lean);
-the independent [direct-import client](../Test/DenseOpenCompositionAssociativityClient.lean)
+the independent [direct-import client](../SchemePropertiesTest/DenseOpenCompositionAssociativityClient.lean)
 uses both new theorems without importing the aggregate root.
 
 For arbitrary same-universe schemes `X Y Z T : Scheme.{u}`, partial maps

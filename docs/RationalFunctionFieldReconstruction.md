@@ -34,7 +34,7 @@ requires **no** local-finite-type condition. If `sY` is locally of finite type,
 For two independently dominant maps, the imported official
 `eq_of_functionFieldMap_eq` reflects equality of their reversed field maps
 without local finite type, separatedness, or chosen base. The private ordinary
-import client at `Test/RationalFunctionFieldReconstructionClient.lean`
+import client at `SchemePropertiesTest/RationalFunctionFieldReconstructionClient.lean`
 checks all these claims with arbitrary endpoints, independently chosen arrows,
 and independently given dominance witnesses; it exports no declaration.
 
@@ -65,7 +65,7 @@ revisions). From this project root:
 ```sh
 lake exe cache get
 lake build SchemeProperties.RationalFunctionFieldReconstruction
-lake build Test.RationalFunctionFieldReconstructionClient
+lake build SchemePropertiesTest.RationalFunctionFieldReconstructionClient
 ```
 
 The proof imports this library's pullback and faithfulness modules and

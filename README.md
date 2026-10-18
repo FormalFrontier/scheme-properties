@@ -235,7 +235,7 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   of the *opposite* projection kernels; they are disjoint and cover the
   complement of the common-map kernel. These opens may be empty; no total
   Spec-map immersion or connected-component claim follows. Direct import:
-  `SchemeProperties.PullbackOpenImmersion`; the [direct-import client](Test/PullbackOpenImmersionClient.lean)
+  `SchemeProperties.PullbackOpenImmersion`; the [direct-import client](SchemePropertiesTest/PullbackOpenImmersionClient.lean)
   is included.
 
 ### Generic points and birational geometry
@@ -258,7 +258,7 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   nor is `j ≫ sY` for **any independent** `sY : Y ⟶ S`. This does not assert
   a total-scheme isomorphism or a rational inverse/noninverse theorem. Direct
   import: `SchemeProperties.GenericPointFunctionField`; its
-  [client](Test/GenericPointFunctionFieldClient.lean) uses the actual
+  [client](SchemePropertiesTest/GenericPointFunctionFieldClient.lean) uses the actual
   function field of `Spec ℚ[X]`, not a literal `RatFunc ℚ` identification.
 - [Jacobson birational obstruction](docs/JacobsonBirationalObstruction.md):
   a `PartialIso X Y` with `[Subsingleton X] [JacobsonSpace Y]` forces
@@ -269,7 +269,7 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   infinite-field or finite-type premise enters the general theorem. This
   does not prove a canonical function-field-map isomorphism or noninvertibility
   of a specified native rational arrow. Direct import:
-  `SchemeProperties.JacobsonBirationalObstruction`; [one direct-import client with five private declarations](Test/JacobsonBirationalObstructionClient.lean).
+  `SchemeProperties.JacobsonBirationalObstruction`; [one direct-import client with five private declarations](SchemePropertiesTest/JacobsonBirationalObstructionClient.lean).
 - [Generic-point rational noninvertibility](docs/GenericPointRationalNoninvertibility.md):
   independently dominant native quotients between integral schemes cannot
   satisfy both source-first inverse laws when the source is subsingleton and
@@ -295,7 +295,7 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   quotient base laws are available. No local finite type, separatedness or
   integral-base hypothesis, total-scheme isomorphism or categorical
   equivalence is asserted. Direct import:
-  `SchemeProperties.RationalMapPartialIso`; [four private clients](Test/RationalMapPartialIsoClient.lean)
+  `SchemeProperties.RationalMapPartialIso`; [four private clients](SchemePropertiesTest/RationalMapPartialIsoClient.lean)
   check the exact readbacks and six-part converse.
 - [Valuation-stalk extension](SchemeProperties/RationalMapValuativeExtension.lean):
   for integral `X` over an arbitrary base `S` and a relatively proper map
@@ -505,8 +505,9 @@ maintained in `SchemePropertiesTest.FlatQuasiFinite`.
 `import SchemeProperties` loads the [aggregate](SchemeProperties.lean). For
 focused imports use `SchemeProperties.<Module>` from the [reader guide's module
 tables](docs/Guide.md); the [documentation index](docs/README.md) links focused
-mathematical guides. Inspect direct-import [Test clients](Test/) and concrete
-[Examples](Examples/) for use cases. For instance, import
+mathematical guides. Inspect direct-import [test clients](SchemePropertiesTest/) and concrete
+[examples](SchemePropertiesExamples/) for use cases; the [module-name guide](docs/ModuleNames.md)
+lists their import roots. For instance, import
 `SchemeProperties.GenericPointFunctionField`,
 `SchemeProperties.GenericPointRationalNoninvertibility`,
 `SchemeProperties.RationalMapPartialIso` or

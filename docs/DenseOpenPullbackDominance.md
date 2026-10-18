@@ -4,7 +4,7 @@
 
 Import `SchemeProperties.DenseOpenPullbackDominance` directly or use the
 `SchemeProperties` aggregate root. Its
-[ordinary-import client](../Test/DenseOpenPullbackDominanceClient.lean) checks
+[ordinary-import client](../SchemePropertiesTest/DenseOpenPullbackDominanceClient.lean) checks
 four private generic examples; neither file introduces a new map type, instance,
 or exceptional-scheme fixture. This companion extends the
 [dense-open pullback predicate](DenseOpenPullback.md) on mathlib's native

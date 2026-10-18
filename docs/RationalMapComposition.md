@@ -50,7 +50,7 @@ example (f : X ⤏ Y) [f.IsDominant] (g : Y ⤏ Z)
   RationalMap.isOver_comp_of_isDominant_first f g
 ```
 
-The ordinary-import [client](../Test/RationalMapCompositionClient.lean) checks
+The ordinary-import [client](../SchemePropertiesTest/RationalMapCompositionClient.lean) checks
 both generic second maps and both native `compHom` equalities for a total second
 morphism. Its four theorems are private tests, not public API; they do not
 construct a nondominant example.

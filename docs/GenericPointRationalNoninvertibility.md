@@ -32,7 +32,7 @@ does not. If it did, its categorical inverse would induce independently
 dominant native quotients satisfying both laws above, although
 `Spec Y.functionField` is subsingleton.
 
-The [ordinary-import private client](../Test/GenericPointRationalNoninvertibilityClient.lean)
+The [ordinary-import private client](../SchemePropertiesTest/GenericPointRationalNoninvertibilityClient.lean)
 uses `Y = Spec ℚ[X]`, `S = Spec ℚ` and the polynomial-coefficient structure
 map. It establishes **together** local finite type of the target structure,
 failure of local finite type for the induced source structure, `IsIso` for

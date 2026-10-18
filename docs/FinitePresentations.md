@@ -3,7 +3,7 @@
 Direct-import clients can import
 `SchemeProperties.SheafFinitePresentationTransport` for site-generic results
 and `SchemeProperties.ModuleFinitePresentation` for schemes and tilde.
-The example client is `Test/FinitePresentationClient.lean` (namespace
+The example client is `SchemePropertiesTest/FinitePresentationClient.lean` (namespace
 `SchemePropertiesTest.FinitePresentation`).
 
 ## Site-generic API

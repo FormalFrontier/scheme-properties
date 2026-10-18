@@ -5,7 +5,7 @@ results live in `AlgebraicGeometry.Scheme.RationalMap` and
 `AlgebraicGeometry.Scheme.PartialIso`. They require only mathlib's native
 `Birational` and `Composition` modules, not a project-specific rational-map
 category. A direct-import client is
-`Test.RationalMapPartialIsoClient`; its declarations are
+`SchemePropertiesTest.RationalMapPartialIsoClient`; its declarations are
 private.
 
 ## API and conventions
@@ -81,7 +81,7 @@ cache successfully from this repository before building:
 elan toolchain install leanprover/lean4:v4.34.0-rc2
 lake exe cache get
 lake build SchemeProperties.RationalMapPartialIso
-lake build Test.RationalMapPartialIsoClient
+lake build SchemePropertiesTest.RationalMapPartialIsoClient
 ```
 
 The construction adapts native quotient and representative contracts by

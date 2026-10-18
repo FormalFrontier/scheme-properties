@@ -25,7 +25,7 @@ stalk calculation, and then applies native equality reflection for rational
 maps from the source's function-field spectrum. It does not expose the
 predecessor's private factorization or reimplement its function-field map.
 
-`Test.RationalFunctionFieldFaithfulnessClient` contains only
+`SchemePropertiesTest.RationalFunctionFieldFaithfulnessClient` contains only
 private direct-import clients checking both independent-dominance quotient
 reflection and `map_injective` for reversed category arrows; it exports no
 additional mathematical API.
@@ -47,5 +47,5 @@ With the [pinned Lean toolchain](../lean-toolchain),
 and exact public GitHub dependency revisions), first fetch the
 matching precompiled mathlib cache using `lake exe cache get`, then run focused
 checks with `lake build SchemeProperties.RationalFunctionFieldFaithfulness` and
-`lake build Test.RationalFunctionFieldFaithfulnessClient`. The focused modules
+`lake build SchemePropertiesTest.RationalFunctionFieldFaithfulnessClient`. The focused modules
 and clients are outside the [fixed historical 73-module API snapshot](README.md).

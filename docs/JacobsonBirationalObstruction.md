@@ -27,7 +27,7 @@ Noetherianity, finite type, nonemptiness or infinite-field hypothesis. For the
 polynomial case, a reduced polynomial ring cannot be a field, and the
 polynomial Jacobson instance provides the target hypothesis.
 
-The direct-import [client](../Test/JacobsonBirationalObstructionClient.lean)
+The direct-import [client](../SchemePropertiesTest/JacobsonBirationalObstructionClient.lean)
 uses namespace `SchemePropertiesTest.JacobsonBirationalObstruction` and
 contains only private declarations: the general result, `K = RatFunc ℚ`
 with `k = ℚ`, `K = k = ZMod 2`, an empty-source obstruction, and a positive
@@ -40,7 +40,7 @@ dependency revisions in the [project manifest](../lake-manifest.json):
 ```sh
 lake exe cache get
 lake build SchemeProperties.JacobsonBirationalObstruction
-lake build Test.JacobsonBirationalObstructionClient
+lake build SchemePropertiesTest.JacobsonBirationalObstructionClient
 ```
 
 This module establishes **only geometric non-birationality**. It does not

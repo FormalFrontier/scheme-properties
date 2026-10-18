@@ -38,7 +38,7 @@ the quotient calculation uses the native `RationalMap.toRationalMap_comp` law.
 of ring homomorphisms. This argument does not assume that ordinary
 `stalkClosedPointTo_comp` alone applies to rational composition.
 
-The [private direct-import client](../Test/RationalFunctionFieldPullbackClient.lean)
+The [private direct-import client](../SchemePropertiesTest/RationalFunctionFieldPullbackClient.lean)
 checks generic
 image, representative readback, dense restriction, identities, two- and
 three-arrow composition, and mapping by the category functor.

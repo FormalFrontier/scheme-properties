@@ -39,7 +39,7 @@ rational maps satisfying `IsDominant`; `homEquivDominant_apply_val` identifies
 its underlying map. This is not an unrestricted dominance iff. The existing
 `compOfPullsDenseOpens_eq_comp` comparison with native composition has its
 own additional hypotheses and does not identify arbitrary representatives.
-The [direct-import private client](../Test/DenseOpenRationalCategoryClient.lean)
+The [direct-import private client](../SchemePropertiesTest/DenseOpenRationalCategoryClient.lean)
 exercises constructors, category laws, projections, extensionality and the
 bounded dominance equivalence.
 

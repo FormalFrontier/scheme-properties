@@ -35,7 +35,7 @@ of all rational maps on arbitrary schemes, a functor to total scheme
 morphisms, a relative-base statement, or finite-type, separatedness or
 base-field assumptions. They do not change the ordinary `Scheme` category.
 
-The [16 private direct-import uses](../Test/IntegralDominantRationalCategoryClient.lean)
+The [16 private direct-import uses](../SchemePropertiesTest/IntegralDominantRationalCategoryClient.lean)
 exercise constructors, projections, extensionality, category laws, both
 functors, their quotient-preserving maps and the unit and counit. They are
 clients, not new public results; the [producer](../SchemeProperties/IntegralDominantRationalCategory.lean)

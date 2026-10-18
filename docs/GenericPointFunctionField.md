@@ -29,7 +29,7 @@ source morphism lacks a rational inverse. No Noetherian, separatedness,
 infinite-field, presentation or finiteness premise is imposed.
 
 An ordinary direct-import private client is at
-[`Test/GenericPointFunctionFieldClient.lean`](../Test/GenericPointFunctionFieldClient.lean).
+[`SchemePropertiesTest/GenericPointFunctionFieldClient.lean`](../SchemePropertiesTest/GenericPointFunctionFieldClient.lean).
 It specializes the generic theorems to `Y = Spec ℚ[X]`, proves its
 nontriviality using the distinct prime ideals `(0)` and `(X)`, and
 instantiates the relative boundary using the finite-type structure morphism
@@ -47,7 +47,7 @@ GitHub dependencies: first run `lake exe cache get` successfully under the
 current manifest, then run
 `lake build SchemeProperties SchemePropertiesTest SchemePropertiesExamples`.
 Alternatively focus on `lake --wfail build SchemeProperties.GenericPointFunctionField`
-and `lake --wfail build Test.GenericPointFunctionFieldClient`.
+and `lake --wfail build SchemePropertiesTest.GenericPointFunctionFieldClient`.
 The dependency on reconstruction is a **local** library import, not an extra
 Lake dependency or an external incubator import.
 

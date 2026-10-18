@@ -3,7 +3,7 @@
 Import `SchemeProperties.DenseOpenCompositionClosure` to use the two
 closure theorems on mathlib's existing partial maps and rational-map quotient.
 The producer imports `SchemeProperties.DenseOpenComposition` directly;
-the private [direct-import client](../Test/DenseOpenCompositionClosureClient.lean)
+the private [direct-import client](../SchemePropertiesTest/DenseOpenCompositionClosureClient.lean)
 exercises six generic uses. The aggregate `SchemeProperties` also imports this
 leaf. These APIs use the repository's declared public GitHub dependencies.
 

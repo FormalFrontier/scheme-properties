@@ -3,7 +3,7 @@
 Import `SchemeProperties.DenseOpenCompositionUnits` directly, or import the
 aggregate `SchemeProperties`. The [producer](../SchemeProperties/DenseOpenCompositionUnits.lean)
 directly imports [controlled composition](../SchemeProperties/DenseOpenComposition.lean);
-the [private direct-import client](../Test/DenseOpenCompositionUnitsClient.lean)
+the [private direct-import client](../SchemePropertiesTest/DenseOpenCompositionUnitsClient.lean)
 checks all six laws and two representative instances without the aggregate root.
 These declarations live in the native `AlgebraicGeometry.Scheme.PartialMap`
 and `AlgebraicGeometry.Scheme.RationalMap` namespaces.

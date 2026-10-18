@@ -69,7 +69,7 @@ For the reverse range inclusion, a target prime in `U(qS)` omits some
 `U(f)`. `disjoint_ranges` and `union_ranges` restate the intersection
 and union identities for those actual arrow ranges.
 
-For example, the focused [direct-import client](../Test/PullbackOpenImmersionClient.lean)
+For example, the focused [direct-import client](../SchemePropertiesTest/PullbackOpenImmersionClient.lean)
 uses the module without the aggregate import:
 
 ```lean

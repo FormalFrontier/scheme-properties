@@ -5,7 +5,7 @@
 Import `SchemeProperties.DenseOpenPullback` directly, or use the aggregate
 `SchemeProperties` import. This module extends mathlib's **native**
 `AlgebraicGeometry.Scheme.PartialMap` and `RationalMap` (`X ⤏ Y`); it adds no
-new map type or global instance. The [direct-import client](../Test/DenseOpenPullbackClient.lean)
+new map type or global instance. The [direct-import client](../SchemePropertiesTest/DenseOpenPullbackClient.lean)
 checks seven anonymous uses of the API with warnings treated as errors.
 
 For arbitrary same-universe schemes `X` and `Y`, `f.PullsDenseOpens` means
@@ -38,7 +38,7 @@ example (f : X.PartialMap Y) (hf : IsOpenMap f.hom) :
   f.pullsDenseOpens_toRationalMap_iff.mpr (f.pullsDenseOpens_of_isOpenMap hf)
 ```
 
-The full [client](../Test/DenseOpenPullbackClient.lean) also checks the
+The full [client](../SchemePropertiesTest/DenseOpenPullbackClient.lean) also checks the
 equivalence, restriction, quotient, representative and dominant routes. These
 generic examples are not concrete nondominant witnesses and persist no new
 public theorem declarations.

@@ -57,7 +57,7 @@ Native composition needs the first arrow's dominance; closure needs both.
 Relative preservation also uses both over-base witnesses and all three chosen
 structure maps. No integrality, dominance or other geometric assumption is
 placed on `S` or its structure maps. The
-[direct-import private client](../Test/IntegralDominantRationalCategoryOverClient.lean)
+[direct-import private client](../SchemePropertiesTest/IntegralDominantRationalCategoryOverClient.lean)
 checks constructors, representatives, category and functor laws, naturality,
 triangles, equal-carrier chosen-map behavior and the absolute comparisons.
 It is in the `SchemePropertiesTest` target, not part of this public module.

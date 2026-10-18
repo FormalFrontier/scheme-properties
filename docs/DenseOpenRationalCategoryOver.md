@@ -56,7 +56,7 @@ example {S : Scheme} {X Y Z : DenseOpenRationalSchemeOver S}
 ```
 
 The independent direct-import private client
-`Test/DenseOpenRationalCategoryOverClient.lean` exercises arbitrary
+`SchemePropertiesTest/DenseOpenRationalCategoryOverClient.lean` exercises arbitrary
 bases and objects, both constructors, native over-base witnesses and composition,
 quotient extensionality, all category laws, projections, the functor laws,
 faithfulness and two potentially different maps on one underlying scheme. Its
