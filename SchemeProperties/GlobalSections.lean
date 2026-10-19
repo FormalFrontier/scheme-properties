@@ -8,7 +8,10 @@ public import Mathlib.AlgebraicGeometry.Morphisms.Proper
 public import Mathlib.CategoryTheory.ConcreteCategory.EpiMono
 
 /-!
-# Global sections of pointed universally closed schemes
+# Global sections and morphisms to affine schemes
+
+Precomposition by a morphism inducing an isomorphism on global sections is bijective
+on morphisms into any affine scheme. The source and intermediate schemes are arbitrary.
 
 An integral scheme universally closed over a field has a field of global sections.
 If it has a rational point, evaluation at that point identifies this field with the
@@ -31,6 +34,10 @@ sections.
 * Mathlib, `AlgebraicGeometry.isField_of_universallyClosed`, for the field of
   global sections, and `AlgebraicGeometry.ext_of_isAffine`, for affine-target
   morphisms determined by their maps on global sections.
+* Mathlib, `AlgebraicGeometry.ΓSpec.adjunction`, for the correspondence between
+  morphisms to spectra and homomorphisms of rings of global sections, and
+  `CategoryTheory.Adjunction.map_comp_bijective_iff`, for transporting
+  precomposition bijectivity across an adjunction.
 -/
 
 public section
@@ -42,6 +49,24 @@ namespace AlgebraicGeometry.Scheme.Hom
 universe u
 
 variable {K : Type u} [Field K] {X Y S : Scheme.{u}}
+
+/-- A morphism inducing an isomorphism on global sections induces a bijection on
+morphisms to every affine target, by precomposition. No section of the morphism is
+required. -/
+lemma precomp_bijective_of_isIso_appTop {T : Scheme.{u}}
+    (p : X ⟶ S) [IsIso p.appTop] [IsAffine T] :
+    Function.Bijective (fun h : S ⟶ T ↦ p ≫ h) := by
+  have : IsIso (Scheme.Γ.rightOp.map p) := by
+    simpa only [Functor.rightOp_obj, Scheme.Γ_obj_op, Functor.rightOp_map, Scheme.Γ_map_op] using
+      (CategoryTheory.isIso_op p.appTop)
+  have hSpec : Function.Bijective
+      (fun h : S ⟶ Spec Γ(T, ⊤) ↦ p ≫ h) := by
+    apply (ΓSpec.adjunction.map_comp_bijective_iff p (Opposite.op Γ(T, ⊤))).mp
+    exact ((asIso (Scheme.Γ.rightOp.map p)).symm.homFromEquiv).bijective
+  apply (Function.Bijective.of_comp_iff'
+    (T.isoSpec.homToEquiv (Z := X)).bijective _).mp
+  simpa only [Function.comp_def, Iso.homToEquiv, Equiv.coe_fn_mk, Category.assoc] using
+    hSpec.comp (T.isoSpec.homToEquiv (Z := S)).bijective
 
 /-- For an integral scheme universally closed over a field, a rational section makes
 its structure map an isomorphism on global sections. The inverse is evaluation at the

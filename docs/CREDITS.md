@@ -336,13 +336,23 @@ and `FiniteEtaleAlgebras.PurelyInseparableDescent` and
 [ComponentBaseChange](../SchemeProperties/ComponentBaseChange.lean).
 Neither direct dependency supplies the scheme-level construction or the
 arbitrary-extension comparison as a finished result.
-The pinned `multivariate-polynomials` formalization (`45c90b8753e0470d40f6c050f9616f484afd0120`)
+The pinned `multivariate-polynomials` formalization (`5a678826cc76272e625a0c54eb748d3802dfe05d`)
 supplies the square-zero polynomial point quotient, its evaluation-module
 presentation and the generator-prescribed algebra equivalence under pairwise
 unit differences. Its quotient presentation uses only squares and
 point-linear relations; the reduced-locus comparison is proved separately in
 Scheme Properties using its square-zero criterion and Mathlib's localization
 and spectrum equivalence APIs, rather than imported from that library.
+The same release supplies `MultivariatePolynomials.IntegrallyClosed`'s
+`MvPolynomial.isIntegrallyClosed` for arbitrary variables over an integrally closed
+domain, used in [NormalPolynomial](../SchemeProperties/NormalPolynomial.lean).
+Scheme Properties extends its existing univariate coefficient-prime localization
+strategy using Mathlib's coefficient localization, prime correspondence and
+iterated-localization APIs. The provider cites
+[Stacks Project, Tag 030A](https://stacks.math.columbia.edu/tag/030A) for the
+normal-domain polynomial ingredient; local normality over a possibly non-domain base
+and the two-stage localization argument are not imported as a finished theorem from
+that reference.
 Coherent Modules' coherence and localization criteria together with Mathlib's
 affine communication lemma support the project
 [any-affine-cover locality criterion](../SchemeProperties/CoherentQuasicoherentLocality.lean),

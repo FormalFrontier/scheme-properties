@@ -15,6 +15,17 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ## Headline results
 
+- [Local normality of polynomial rings](SchemeProperties/NormalPolynomial.lean):
+  over any commutative locally normal base ring, multivariate polynomial rings
+  with arbitrary variable types are locally normal.
+
+- [Global sections and affine targets](SchemeProperties/GlobalSections.lean): if
+  `p : X ⟶ S` induces an isomorphism on global sections and `T` is affine,
+  precomposition is a bijection `(S ⟶ T) → (X ⟶ T)`, for arbitrary `X` and
+  `S`. For an integral scheme universally closed over a field, a rational
+  section identifies its global sections with the field, so every morphism
+  to an affine scheme is constant at that rational point.
+
 ### Going down and flat stalk dimensions
 
 - [Going down](SchemeProperties/RingTheory/KrullDimension/GoingDown.lean) bounds
@@ -166,6 +177,18 @@ compatible with the structure map. Direct import for both criteria:
   all-field criterion and distinguishes it from underlying injectivity and monomorphisms.
   Direct import: `SchemeProperties.UniversallyInjectiveGeometricPoints`.
 
+### Residue fields of monomorphisms
+
+- [Residue-field maps](SchemeProperties/ResidueField.lean): for arbitrary
+  `f : X ⟶ Y` in `Scheme.{u}` with `[Mono f]` and every `x : X`, the canonical
+  map `κ(f x) → κ(x)`, `f.residueFieldMap x`, is an isomorphism.
+  `AlgebraicGeometry.Scheme.Hom.isIso_residueFieldMap_of_mono` supplies
+  `IsIso (f.residueFieldMap x)` as a named theorem, not a new global instance;
+  its conclusion can be used as a local instance with `inv` and `asIso`.
+  No finiteness, local finite type, affineness, reducedness, separatedness,
+  field-base or splitting hypothesis is required. Universal injectivity alone
+  does not imply this conclusion. Direct import: `SchemeProperties.ResidueField`.
+
 ### Finite-field points
 
 - [Finite-field lifts](SchemeProperties/FiniteFieldPoints.lean): for a finite
@@ -313,6 +336,18 @@ compatible with the structure map. Direct import for both criteria:
   or generation in degree one is required.
   Direct import: `SchemeProperties.ProjectiveSpectrum`.
 
+### Rigidity
+
+- [Rigidity from a collapsed fibre](SchemeProperties/Rigidity.lean): for a
+  field `K`, a proper integral `K`-scheme `X` whose structure map has a
+  `K`-rational section, a preconnected `K`-scheme `Y` with an arbitrary chosen
+  point `y₀`, and a `K`-scheme `Z` separated over `K`, a compatible `K`-morphism
+  `h : X ×[K] Y ⟶ Z` factors uniquely as `h = snd ≫ g` for a `K`-morphism
+  `g : Y ⟶ Z` if the topological image under `h` of the projection fibre over
+  `y₀` is subsingleton. The factorization is equality of scheme morphisms.
+  The parameter need not be reduced, and `y₀` need not be rational or closed.
+  Direct import: `SchemeProperties.Rigidity`.
+
 ### Local normality
 
 - [Normality under scheme morphisms](SchemeProperties/NormalMorphisms.lean):
@@ -330,6 +365,17 @@ compatible with the structure map. Direct import for both criteria:
   rings are allowed. No Noetherian, finite or global-domain hypothesis is
   needed. The entry point is `IsLocallyNormalRing.of_faithfullyFlat`, a theorem
   rather than an instance. Direct import: `SchemeProperties.NormalFaithfullyFlat`.
+
+- [Sections and stalk images](SchemeProperties/FunctionField/Sections.lean): on an
+  integral scheme, a rational function comes from a section on a nonempty open set
+  exactly when it lies in the image of every stalk over that open set, under the
+  canonical maps to the function field. Normality is not required.
+- [Integrally closed sections](SchemeProperties/NormalSections.lean): the section
+  ring on every open set of a normal integral scheme is integrally closed,
+  including the zero ring on the empty open set. On nonempty opens, it is also
+  integrally closed in the function field under the canonical embedding. No
+  identification of the function field with the fraction ring of sections on an
+  arbitrary open set is assumed.
 
 ### Single-cover subfunctors
 
@@ -478,6 +524,11 @@ compatible with the structure map. Direct import for both criteria:
   equivalence is asserted. Direct import:
   `SchemeProperties.RationalMapPartialIso`; [four private clients](SchemePropertiesTest/RationalMapPartialIsoClient.lean)
   check the exact readbacks and six-part converse.
+- [Integral birational isomorphisms](SchemeProperties/IntegralBirationalIsomorphism.lean):
+  for `{X Y : Scheme.{u}}` with `[IsIntegral X] [IsIntegral Y] [IsNormal Y]`,
+  and `f : X ⟶ Y` with `[IsIntegralHom f] [IsDominant f]`, the condition
+  `[IsIso f.toRationalMap.functionFieldMap]` implies `IsIso f`.
+  Direct import: `SchemeProperties.IntegralBirationalIsomorphism`.
 - [Valuation-stalk extension](SchemeProperties/RationalMapValuativeExtension.lean):
   for integral `X` over an arbitrary base `S` and a relatively proper map
   `sY : Y ⟶ S`, a native partial map `p` over `S` has a chosen compatible
@@ -714,10 +765,11 @@ input contract; later results are in focused guides and source files.
 
 ## Build
 
-[Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the four official
+[Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the project
 dependencies have exact revisions in [Lake](lakefile.toml) and the
 [manifest](lake-manifest.json). `coherent-modules`, `finite-etale-algebras`,
-`multivariate-polynomials` and `minimal-primes` use public GitHub releases. Install
+`multivariate-polynomials` and `minimal-primes` use public GitHub releases;
+`algebraic-direct-limits` is also pinned as an inherited dependency. Install
 [elan](https://github.com/leanprover/elan), fetch the matching mathlib cache
 successfully for this checkout (again after changing pins or `.lake`), then
 build the library, tests and examples:
@@ -733,6 +785,12 @@ build succeeds.
 
 ## References
 
+- A. Grothendieck, with J. Dieudonné, *Éléments de géométrie algébrique II:
+  Étude globale élémentaire de quelques classes de morphismes*, Publications
+  Mathématiques de l'IHÉS 8 (1961), Corollary 6.1.15 and its affine argument,
+  p. 114: the rational-section formulation is compared with the canonical
+  function-field-map criterion in
+  [IntegralBirationalIsomorphism](SchemeProperties/IntegralBirationalIsomorphism.lean).
 - Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry*: Exercise
   5.3.C informs the integrality criterion; the aside to Exercise 5.4.M informs
   separable-base-change normality; the discussion of reduced local rings and
@@ -754,20 +812,30 @@ build succeeds.
 - J. S. Milne, *Abelian Varieties*, version 2.00, Conventions, p. v:
   motivation for the independent Jacobson-space comparison between
   closed-point and whole-space connectedness, not a named theorem of that text.
+  Chapter I, Theorem 1.1 informs the rigidity problem and the
+  proper-neighborhood/affine-target argument in
+  [Rigidity](SchemeProperties/Rigidity.lean).
 - Charles A. Weibel, *The K-book: An Introduction to Algebraic K-theory*,
   Chapter I, §5: motivation for affine finite-presentation work.
 - [The Stacks Project](https://stacks.math.columbia.edu/), tags 037U, 0386,
   0385 and 0363: a proof route from field-extension geometric connectedness
   to connected schemes over separably closed fields.
+- [Stacks Project, Tag 030A](https://stacks.math.columbia.edu/tag/030A), cited by
+  Multivariate Polynomials for the normal-domain polynomial ingredient of
+  [polynomial local normality](SchemeProperties/NormalPolynomial.lean), not the
+  whole locally normal base and two-stage localization argument.
 - [Mathlib](https://github.com/leanprover-community/mathlib4): reused scheme,
   rational-map, restricted-Yoneda, flat-sections, tensor, sheaf and descent
   methods, as well as adapted constructions detailed in
   [Credits](docs/CREDITS.md), with authentic upstream notices preserved.
 - [Coherent Modules](https://github.com/FormalFrontier/coherent-modules),
   [Finite Étale Algebras](https://github.com/FormalFrontier/finite-etale-algebras)
-  and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials):
+  and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials/tree/5a678826cc76272e625a0c54eb748d3802dfe05d):
   prior formalizations used for coherent-module localization, finite-étale
-  component algebras and descent, and the polynomial point-quotient presentation.
+  component algebras and descent, the polynomial point-quotient presentation,
+  and `MultivariatePolynomials.IntegrallyClosed`'s `MvPolynomial.isIntegrallyClosed`.
+  Polynomial local normality extends this project's existing univariate
+  coefficient-prime localization strategy to arbitrary variables.
 
 - [Minimal Primes](https://github.com/FormalFrontier/minimal-primes) supplies
   `IsReduced.of_isLocalization`, the canonical independent-universe

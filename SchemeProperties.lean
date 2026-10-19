@@ -23,6 +23,7 @@ public import SchemeProperties.DenseOpenCompositionUnits
 public import SchemeProperties.DenseOpenCompositionOver
 public import SchemeProperties.DenseOpenRationalCategory
 public import SchemeProperties.DenseOpenRationalCategoryOver
+public import SchemeProperties.IntegralBirationalIsomorphism
 public import SchemeProperties.IntegralDominantRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategory
 public import SchemeProperties.JacobsonBirationalObstruction
@@ -55,6 +56,7 @@ public import SchemeProperties.GenericPointFunctionField
 public import SchemeProperties.GenericPointRationalNoninvertibility
 public import SchemeProperties.GlobalSections
 public import SchemeProperties.GlobalSectionsBaseChange
+public import SchemeProperties.Rigidity
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral
 public import SchemeProperties.LocallyNormalRing.Pi
@@ -66,6 +68,7 @@ public import SchemeProperties.ModuleTensorRestriction
 public import SchemeProperties.ModuleTensorLocalization
 public import SchemeProperties.NoetherianComponents
 public import SchemeProperties.Normal
+public import SchemeProperties.NormalSections
 public import SchemeProperties.LocallyNormalRing.Maximal
 public import SchemeProperties.NormalLocalization
 public import SchemeProperties.LocallyNormalRing.Product
@@ -95,6 +98,7 @@ public import SchemeProperties.Reduced
 public import SchemeProperties.ReducedHomExt
 public import SchemeProperties.ReducedLocus
 public import SchemeProperties.ReducedLocusEquiv
+public import SchemeProperties.ResidueField
 public import SchemeProperties.RingTheory.KrullDimension.QuasiFinite
 public import SchemeProperties.TrivSqZeroExtReducedLocus
 public import SchemeProperties.SheafFinitePresentation
