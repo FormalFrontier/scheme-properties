@@ -95,6 +95,17 @@ Empty sources are allowed; separatedness and finiteness are not required.
 See the [reader guide](Guide.md#reduced-source-morphism-tests) for the distinction
 from point-set equality and Mathlib's dense separated-target criterion.
 
+The same module provides
+`AlgebraicGeometry.Scheme.Hom.ext_of_apply_eq_of_comp_eq_id`:
+for `{X Y : Scheme.{u}} [AlgebraicGeometry.IsReduced X]`, any `i : Y ⟶ X`,
+and `s t : X ⟶ Y`, the equations `s ≫ i = 𝟙 X`, `t ≫ i = 𝟙 X` and
+`∀ x : X, s x = t x` imply `s = t`. Here the tests really are the entire
+underlying point maps: the two section equations force compatibility of the
+residue-field maps. No property of `Y` or `i`, finiteness hypothesis or
+nonemptiness assumption is required. The
+[integer-section application](../SchemePropertiesTest/ReducedHomExt.lean)
+independently produces the section identities for polynomial evaluation.
+
 ## Geometric-point lifting (authored note)
 
 | Module | Interface |

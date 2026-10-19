@@ -78,6 +78,18 @@ The affine-line application computes the field-point pullbacks of translation
 by `1` followed by translation by `-1`, then uses each criterion to identify the
 composite with `T ↦ T`. Its dual-number check is only the ring-level boundary.
 
+For sections of a fixed `i : Y ⟶ X`, the theorem
+`Scheme.Hom.ext_of_apply_eq_of_comp_eq_id` does allow entire point-map agreement:
+if `X` is reduced, `s ≫ i = 𝟙 X`, `t ≫ i = 𝟙 X` and `∀ x, s x = t x`, then
+`s = t`. The section equations identify the residue-field maps as inverses of
+the same transported structural map; the residue-point criterion then applies.
+Neither `Y` nor `i` needs an extra property, and `X` may be empty. The
+[integer evaluation sections](../SchemePropertiesTest/ReducedHomExt.lean) of
+`Spec ℤ[T] → Spec ℤ` give an application. Without reducedness, evaluation at
+`0` and `2` over `ℤ/4ℤ` gives distinct sections with the same point map.
+Without either section equation, identity and conjugation on the one-point
+reduced scheme `Spec ℚ(i)` show that point maps alone need not determine a morphism.
+
 Mathlib's `AlgebraicGeometry.ext_of_fromSpecResidueField_eq` instead tests a
 **dense subset** of residue-field points for maps agreeing over a separated
 relative target. The hypotheses and test families differ; no comparison theorem

@@ -190,6 +190,15 @@ statement. Mathlib's
 [`Scheme.hom_ext_of_forall`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Gluing.lean)
 (Andrew Yang) supplies equality from open-neighborhood comparisons.
 
+The section criterion `Scheme.Hom.ext_of_apply_eq_of_comp_eq_id` and its
+residue-field inverse/transport argument are due to Formal Frontier Agents.
+The criterion reuses the arbitrary-target reduced-source result above, together
+with Mathlib's [canonical residue-field maps and point transports](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/ResidueField.lean).
+The Lean proof is a new composition of Mathlib's canonical residue-field
+congruences, field-homomorphism injectivity, categorical cancellation and `Spec`
+naturality APIs, not a copy of their implementation bodies. The integer-section
+application uses the project's existing polynomial-evaluation section pattern.
+
 [Quasi-finite ring dimensions and prime heights](../SchemeProperties/RingTheory/KrullDimension/QuasiFinite.lean)
 use Mathlib's quasi-finite incomparability and order-dimension theorem: contraction
 is strict on comparable primes, which suffices for the global upper bound.

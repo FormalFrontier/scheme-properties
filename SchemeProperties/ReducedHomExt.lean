@@ -20,12 +20,21 @@ points. Frobenius on the affine line over a prime field fixes its prime spectrum
 its prime-field-valued points, but is not the identity morphism. Reducedness is also
 substantive: field-valued points of the dual numbers cannot detect their nilpotents.
 
+Two sections of the same morphism over a reduced scheme are already determined
+by their entire underlying point maps. The section identities force their residue-field
+maps to be inverses of the same transported structural map, so the criterion above applies.
+
 ## References
 
 * Mathlib, `AlgebraicGeometry.ext_of_fromSpecResidueField_eq`, for the
   dense-residue-point criterion with a separated relative target.
 * Mathlib, `AlgebraicGeometry.Scheme.hom_ext_of_forall`, for equality of morphisms
   checked on open neighborhoods.
+* Mathlib, `AlgebraicGeometry.Scheme.Hom.residueFieldMap_congr'` and
+  `AlgebraicGeometry.Scheme.residueFieldCongr_fromSpecResidueField`, for canonical
+  point transports and the corresponding residue-field points.
+* Formal Frontier Agents, for the section criterion via residue-field inverses
+  and canonical point transports.
 -/
 
 @[expose] public section
@@ -85,5 +94,90 @@ theorem ext_of_field_valued_points
   apply ext_of_fromSpecResidueField
   intro x
   exact h (X.residueField x) (X.fromSpecResidueField x)
+
+/-- Two sections of a morphism over a reduced scheme
+are equal if their entire underlying point maps agree. The target is arbitrary,
+and the source may be empty. Reducedness and both section equations are essential. -/
+theorem ext_of_apply_eq_of_comp_eq_id
+    {X Y : Scheme.{u}} [AlgebraicGeometry.IsReduced X]
+    (i : Y ⟶ X) {s t : X ⟶ Y}
+    (hs : s ≫ i = 𝟙 X) (ht : t ≫ i = 𝟙 X)
+    (h : ∀ x : X, s x = t x) :
+    s = t := by
+  apply ext_of_fromSpecResidueField
+  intro x
+  have hid : (𝟙 X : X ⟶ X) x = x := by
+    change (𝟙 X : X ⟶ X).base x = x
+    rw [Scheme.Hom.id_base, TopCat.id_app]
+  have hsx : i (s x) = x :=
+    (Scheme.Hom.comp_apply s i x).symm.trans
+      ((congrArg (fun f : X ⟶ X => f x) hs).trans hid)
+  have htx : i (t x) = x :=
+    (Scheme.Hom.comp_apply t i x).symm.trans
+      ((congrArg (fun f : X ⟶ X => f x) ht).trans hid)
+  -- Keep both point-normalization paths before comparing the section transports.
+  have hsection (r : X ⟶ Y) (hr : r ≫ i = 𝟙 X) (e : i (r x) = x) :
+      ((X.residueFieldCongr e).inv ≫ i.residueFieldMap (r x)) ≫
+        r.residueFieldMap x = 𝟙 (X.residueField x) := by
+    apply Spec.map_injective
+    apply (cancel_mono (X.fromSpecResidueField x)).1
+    calc
+      Spec.map (((X.residueFieldCongr e).inv ≫ i.residueFieldMap (r x)) ≫
+          r.residueFieldMap x) ≫ X.fromSpecResidueField x =
+          Spec.map (r.residueFieldMap x) ≫
+            Spec.map (i.residueFieldMap (r x)) ≫
+              Spec.map (X.residueFieldCongr e).inv ≫
+                X.fromSpecResidueField x := by
+        simp only [Spec.map_comp, Category.assoc]
+      _ = Spec.map (r.residueFieldMap x) ≫
+          Spec.map (i.residueFieldMap (r x)) ≫
+            X.fromSpecResidueField (i (r x)) := by
+        rw [Scheme.residueFieldCongr_inv,
+          Scheme.residueFieldCongr_fromSpecResidueField]
+      _ = Spec.map (r.residueFieldMap x) ≫
+          (Y.fromSpecResidueField (r x) ≫ i) := by
+        rw [Scheme.Hom.SpecMap_residueFieldMap_fromSpecResidueField]
+      _ = X.fromSpecResidueField x ≫ (r ≫ i) := by
+        rw [← Category.assoc, Scheme.Hom.SpecMap_residueFieldMap_fromSpecResidueField,
+          Category.assoc]
+      _ = Spec.map (𝟙 (X.residueField x)) ≫ X.fromSpecResidueField x := by
+        rw [hr, Spec.map_id, Category.comp_id, Category.id_comp]
+  let a : X.residueField x ⟶ Y.residueField (s x) :=
+    (X.residueFieldCongr hsx).inv ≫ i.residueFieldMap (s x)
+  have ha : a ≫ s.residueFieldMap x = 𝟙 (X.residueField x) := hsection s hs hsx
+  -- A homomorphism from a field is injective, so the other inverse identity follows.
+  let : Mono (s.residueFieldMap x) :=
+    ConcreteCategory.mono_of_injective _ (s.residueFieldMap x).hom.injective
+  have hsa : s.residueFieldMap x ≫ a = 𝟙 (Y.residueField (s x)) := by
+    apply (cancel_mono (s.residueFieldMap x)).1
+    simp only [Category.assoc, ha, Category.comp_id, Category.id_comp]
+  let : Epi a := epi_of_epi_fac hsa
+  -- Canonical equality transports compose; their equality proofs are irrelevant.
+  have htransport :
+      (X.residueFieldCongr hsx).inv ≫
+          (X.residueFieldCongr (congrArg i (h x))).hom =
+        (X.residueFieldCongr htx).inv := by
+    simp only [Scheme.residueFieldCongr_inv, Scheme.residueFieldCongr_trans_hom]
+  have hat : a ≫ (Y.residueFieldCongr (h x)).hom =
+      (X.residueFieldCongr htx).inv ≫ i.residueFieldMap (t x) := by
+    dsimp only [a]
+    rw [Category.assoc, residueFieldMap_congr' (f := i) (h x),
+      ← Category.assoc, htransport]
+  have hκ : s.residueFieldMap x =
+      (Y.residueFieldCongr (h x)).hom ≫ t.residueFieldMap x := by
+    apply (cancel_epi a).1
+    rw [ha, ← Category.assoc, hat]
+    exact (hsection t ht htx).symm
+  calc
+    X.fromSpecResidueField x ≫ s =
+        Spec.map (s.residueFieldMap x) ≫ Y.fromSpecResidueField (s x) :=
+      (s.SpecMap_residueFieldMap_fromSpecResidueField x).symm
+    _ = Spec.map (t.residueFieldMap x) ≫
+        Spec.map (Y.residueFieldCongr (h x)).hom ≫
+          Y.fromSpecResidueField (s x) := by
+      rw [hκ, Spec.map_comp, Category.assoc]
+    _ = X.fromSpecResidueField x ≫ t := by
+      rw [Scheme.residueFieldCongr_fromSpecResidueField,
+        Scheme.Hom.SpecMap_residueFieldMap_fromSpecResidueField]
 
 end AlgebraicGeometry.Scheme.Hom

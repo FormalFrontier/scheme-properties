@@ -99,6 +99,14 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   are allowed. These tests compare scheme morphisms, not just maps of points.
   Direct import: `SchemeProperties.ReducedHomExt`; see the
   [affine-line application](SchemePropertiesTest/ReducedHomExt.lean).
+- **Sections are determined by their point maps:** if `i : Y ⟶ X`, `X` is reduced,
+  and `s t : X ⟶ Y` both satisfy `s ≫ i = 𝟙 X` and `t ≫ i = 𝟙 X`, then
+  agreement at **every** point of `X` implies `s = t`
+  (`Scheme.Hom.ext_of_apply_eq_of_comp_eq_id`). The target and structural map
+  are arbitrary, and `X` may be empty. Both section equations are essential;
+  this is not point-map extensionality for arbitrary morphisms. The same
+  [application](SchemePropertiesTest/ReducedHomExt.lean) treats integer
+  evaluation sections of the affine line over `Spec ℤ`.
 
 ### Sections and dense closed-point tests
 

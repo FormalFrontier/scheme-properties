@@ -86,4 +86,38 @@ private theorem dualNumber_field_kills_eps (K : Type) [Field K]
     rw [← map_mul, DualNumber.eps_mul_eps, map_zero]
   rcases mul_eq_zero.mp h with h | h <;> exact h
 
+-- Integer evaluation gives actual sections of the affine line over `Spec ℤ`.
+-- Entire point-map agreement forces equality of the integers by section extensionality.
+example (a b : ℤ)
+    (h : ∀ x : Spec (CommRingCat.of ℤ),
+      Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom a)) x =
+        Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom b)) x) :
+    a = b := by
+  -- These section identities use only the stock constants/evaluation laws.
+  have hsection (n : ℤ) :
+      Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom n)) ≫
+        Spec.map (CommRingCat.ofHom (Polynomial.C : ℤ →+* Polynomial ℤ)) =
+          𝟙 (Spec (CommRingCat.of ℤ)) := by
+    rw [← Spec.map_comp]
+    have hcomp : CommRingCat.ofHom (Polynomial.C : ℤ →+* Polynomial ℤ) ≫
+        CommRingCat.ofHom (Polynomial.evalRingHom n) = 𝟙 (CommRingCat.of ℤ) := by
+      apply CommRingCat.hom_ext
+      apply RingHom.ext
+      intro z
+      change (Polynomial.C z).eval n = z
+      exact Polynomial.eval_C
+    rw [hcomp, Spec.map_id]
+  have hsections : Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom a)) =
+      Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom b)) :=
+    AlgebraicGeometry.Scheme.Hom.ext_of_apply_eq_of_comp_eq_id
+      (Spec.map (CommRingCat.ofHom (Polynomial.C : ℤ →+* Polynomial ℤ)))
+      (hsection a) (hsection b) h
+  have hX := congrArg
+    (fun f : CommRingCat.of (Polynomial ℤ) ⟶ CommRingCat.of ℤ => f.hom Polynomial.X)
+    (Spec.map_injective hsections)
+  exact calc
+    a = (Polynomial.X : Polynomial ℤ).eval a := Polynomial.eval_X.symm
+    _ = (Polynomial.X : Polynomial ℤ).eval b := hX
+    _ = b := Polynomial.eval_X
+
 end SchemePropertiesTest.ReducedHomExt
