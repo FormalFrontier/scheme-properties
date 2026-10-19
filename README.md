@@ -22,9 +22,12 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 - [Global sections and affine targets](SchemeProperties/GlobalSections.lean): if
   `p : X ⟶ S` induces an isomorphism on global sections and `T` is affine,
   precomposition is a bijection `(S ⟶ T) → (X ⟶ T)`, for arbitrary `X` and
-  `S`. For an integral scheme universally closed over a field, a rational
-  section identifies its global sections with the field, so every morphism
-  to an affine scheme is constant at that rational point.
+  `S`. A reduced connected scheme universally closed over a field has a
+  field of global sections. For a reduced preconnected scheme universally
+  closed over a field, a rational section identifies its global sections
+  with the base field, so every morphism to an affine scheme is constant at
+  that rational point. Direct import for the field criterion and the
+  canonical global-sections isomorphism: `SchemeProperties.GlobalSections.Field`.
 
 ### Going down and flat stalk dimensions
 

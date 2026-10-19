@@ -6,10 +6,10 @@
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "d2d9212d49d32d5918fe060725b694183698e5bd",
+   "rev": "834a247017a096e2f788c3042bbf3804acec7265",
    "name": "«minimal-primes»",
    "manifestFile": "lake-manifest.json",
-   "inputRev": "d2d9212d49d32d5918fe060725b694183698e5bd",
+   "inputRev": "834a247017a096e2f788c3042bbf3804acec7265",
    "inherited": false,
    "configFile": "lakefile.toml"},
   {"url":

@@ -31,7 +31,7 @@ rev = "5a678826cc76272e625a0c54eb748d3802dfe05d"
 [[require]]
 name = "minimal-primes"
 git = "https://github.com/FormalFrontier/minimal-primes.git"
-rev = "d2d9212d49d32d5918fe060725b694183698e5bd"
+rev = "834a247017a096e2f788c3042bbf3804acec7265"
 
 [[lean_lib]]
 name = "SchemeProperties"
