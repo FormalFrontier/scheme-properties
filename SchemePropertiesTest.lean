@@ -6,3 +6,4 @@ module
 
 import SchemePropertiesTest.RelativeValuativeExtension
 import SchemePropertiesTest.NormalSectionsModel
+public import SchemePropertiesTest.KernImage

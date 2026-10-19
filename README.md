@@ -15,6 +15,16 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ## Headline results
 
+- [Open factorization for closed maps](SchemeProperties/KernImage.lean): for
+  `π : E ⟶ B` with explicit `IsClosedMap π`, `f : E ⟶ Z` and opens `U ⊆ Z`,
+  `V ⊆ B`, the bound `V ≤ π.kernImage hπ (f ⁻¹ᵁ U)` is equivalent to a unique
+  scheme morphism `(π ⁻¹ᵁ V).toScheme ⟶ U.toScheme` factoring the restriction
+  of `f`. `Scheme.Hom.le_kernImage_preimage_iff_existsUnique` uses Mathlib's
+  `resLE`; no finiteness, reducedness or separatedness is assumed. This is an
+  auxiliary open-factorization property, not a rigidity theorem. Direct import:
+  `SchemeProperties.KernImage`; the [coproduct-square example](SchemePropertiesTest/KernImage.lean)
+  has a nonempty proper good-fibre open and a nonsaturated target preimage.
+
 - [Local normality of polynomial rings](SchemeProperties/NormalPolynomial.lean):
   over any commutative locally normal base ring, multivariate polynomial rings
   with arbitrary variable types are locally normal.

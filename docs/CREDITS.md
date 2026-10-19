@@ -97,6 +97,15 @@ or a Frobenius identification.
 
 ## Mathematical sources and upstream notices
 
+The [open-factorization property](../SchemeProperties/KernImage.lean) uses
+Mathlib's `Scheme.Hom.resLE`, `resLE_comp_ι` and open-subscheme inclusion API
+from [`AlgebraicGeometry/Restrict.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Restrict.lean),
+whose author is **Andrew Yang**. Categorical cancellation by the open inclusion
+supplies uniqueness; evaluation of the factorization equation supplies the
+reverse open bound. These are uses of imported APIs, not copies of Mathlib
+proof expression. The project proof and coproduct-square application retain
+the collective project credit above; upstream notices remain in their files.
+
 The [algebraically closed field-valued point criterion](UniversallyInjectiveGeometricPoints.md)
 uses Mathlib's `AlgebraicGeometry.tfae_universallyInjective`, by Andrew Yang and
 Justus Springer, as its all-field antecedent. Mathlib's
