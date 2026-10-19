@@ -15,6 +15,10 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
 
 ## Headline results
 
+- [Reduced projective spectra](SchemeProperties/ProjReduced.lean): for any
+  `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever
+  `A` is reduced, with no nonemptiness or finiteness assumption.
+
 - [Open factorization for closed maps](SchemeProperties/KernImage.lean): for
   `π : E ⟶ B` with explicit `IsClosedMap π`, `f : E ⟶ Z` and opens `U ⊆ Z`,
   `V ⊆ B`, the bound `V ≤ π.kernImage hπ (f ⁻¹ᵁ U)` is equivalent to a unique
@@ -302,6 +306,25 @@ compatible with the structure map. Direct import for both criteria:
   surjectivity cannot simply be omitted. Direct imports:
   `SchemeProperties.RingTheory.KrullDimension.GeneralizingMap` and
   `SchemeProperties.FlatKrullDimension`.
+
+### Dimension under extension of a field
+
+- [Affine-field base change](SchemeProperties/Dimension/FieldExtension.lean):
+  for affine schemes `S` and `T` whose canonical global section rings are fields,
+  any locally finite type `p : X ⟶ S` and any `q : T ⟶ S` satisfy
+  `topologicalKrullDim (Limits.pullback p q) = topologicalKrullDim X`.
+  The field assumptions are ordinary `IsField` witnesses, not chosen field
+  structures on new rings. The field-spectrum corollary applies to every field
+  extension `K → L` and every scheme locally of finite type over `K`.
+  These are the canonical categorical pullbacks with the original Zariski
+  topologies. Dimensions lie in `WithBot ℕ∞`, including `⊥` for empty schemes
+  and `∞`. No quasi-compactness, quasi-separatedness, global Noetherianity or
+  finite-type hypothesis on the global section ring of `X` is imposed.
+  All schemes and fields in each statement share one universe; transport
+  between differently sized scheme presentations is not provided.
+  Direct import: `SchemeProperties.Dimension.FieldExtension`; the
+  [private examples](SchemePropertiesTest/Dimension/FieldExtension.lean) use
+  zero-ring spectra, polynomial spectra and their countable coproduct.
 
 ### Quasi-finite dimension bounds and local preservation
 
@@ -789,8 +812,9 @@ input contract; later results are in focused guides and source files.
 [Lean](lean-toolchain) is pinned to v4.34.0-rc2; mathlib and the project
 dependencies have exact revisions in [Lake](lakefile.toml) and the
 [manifest](lake-manifest.json). `coherent-modules`, `finite-etale-algebras`,
-`multivariate-polynomials` and `minimal-primes` use public GitHub releases;
-`algebraic-direct-limits` is also pinned as an inherited dependency. Install
+`multivariate-polynomials`, `minimal-primes` and
+[`graded-rings`](https://github.com/FormalFrontier/graded-rings) use public GitHub
+releases; `algebraic-direct-limits` is also pinned as an inherited dependency. Install
 [elan](https://github.com/leanprover/elan), fetch the matching mathlib cache
 successfully for this checkout (again after changing pins or `.lake`), then
 build the library, tests and examples:
@@ -864,6 +888,15 @@ build succeeds.
   generalizes Andrew Yang's Mathlib `isReduced_localizationPreserves` and the
   earlier commutative-ring formulation in `SchemeProperties.Reduced`; its proof
   uses Mathlib's radical-localization and nilradical APIs.
+  Minimal Primes also supplies the tensor-field dimension theorem
+  `Algebra.ringKrullDim_tensorProduct_of_finiteType` and the arbitrary open-cover
+  supremum theorem `topologicalKrullDim_eq_iSup_of_isOpenEmbedding_cover`, used
+  together in `SchemeProperties.Dimension.FieldExtension`.
+
+- [Graded Rings](https://github.com/FormalFrontier/graded-rings) supplies
+  [`HomogeneousLocalization.isReduced`](https://github.com/FormalFrontier/graded-rings/blob/cb0f2e43578783e926fe8b216d103496d3d93313/GradedRings/HomogeneousLocalizationReduced.lean),
+  the homogeneous-localization reducedness API used for the stalks of
+  [reduced projective spectra](SchemeProperties/ProjReduced.lean).
 
 The [credits](docs/CREDITS.md) distinguish mathematical antecedents, followed
 proof patterns, imported APIs, adapted expression and original project work.

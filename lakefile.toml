@@ -31,7 +31,7 @@ rev = "5a678826cc76272e625a0c54eb748d3802dfe05d"
 [[require]]
 name = "minimal-primes"
 git = "https://github.com/FormalFrontier/minimal-primes.git"
-rev = "834a247017a096e2f788c3042bbf3804acec7265"
+rev = "44b23fb524e62c7f91f7cbe7f07db873cb5c1d66"
 
 [[lean_lib]]
 name = "SchemeProperties"
@@ -44,3 +44,8 @@ globs = ["SchemePropertiesTest.+", "SchemePropertiesTest"]
 [[lean_lib]]
 name = "SchemePropertiesExamples"
 globs = ["SchemePropertiesExamples.+"]
+
+[[require]]
+name = "graded-rings"
+git = "https://github.com/FormalFrontier/graded-rings.git"
+rev = "cb0f2e43578783e926fe8b216d103496d3d93313"

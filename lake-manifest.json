@@ -2,14 +2,25 @@
  "packagesDir": ".lake/packages",
  "packages":
  [{"url":
+   "https://github.com/FormalFrontier/graded-rings.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "cb0f2e43578783e926fe8b216d103496d3d93313",
+   "name": "«graded-rings»",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "cb0f2e43578783e926fe8b216d103496d3d93313",
+   "inherited": false,
+   "configFile": "lakefile.toml"},
+  {"url":
    "https://github.com/FormalFrontier/minimal-primes.git",
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "834a247017a096e2f788c3042bbf3804acec7265",
+   "rev": "44b23fb524e62c7f91f7cbe7f07db873cb5c1d66",
    "name": "«minimal-primes»",
    "manifestFile": "lake-manifest.json",
-   "inputRev": "834a247017a096e2f788c3042bbf3804acec7265",
+   "inputRev": "44b23fb524e62c7f91f7cbe7f07db873cb5c1d66",
    "inherited": false,
    "configFile": "lakefile.toml"},
   {"url":

@@ -23,6 +23,7 @@ public import SchemeProperties.DenseOpenCompositionUnits
 public import SchemeProperties.DenseOpenCompositionOver
 public import SchemeProperties.DenseOpenRationalCategory
 public import SchemeProperties.DenseOpenRationalCategoryOver
+public import SchemeProperties.Dimension.FieldExtension
 public import SchemeProperties.IntegralBirationalIsomorphism
 public import SchemeProperties.IntegralDominantRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategory

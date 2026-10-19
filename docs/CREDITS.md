@@ -342,6 +342,14 @@ follows Anchor's localization method, not an arbitrary-open sections formula.
 Mathlib's **ring-valued** qcqs localization and compact-open induction feed
 the project **module-valued** [extension](../SchemeProperties/QcqsModuleLocalization.lean).
 
+The [Graded Rings](https://github.com/FormalFrontier/graded-rings) formalization at
+`cb0f2e43578783e926fe8b216d103496d3d93313` supplies
+[`HomogeneousLocalization.isReduced`](https://github.com/FormalFrontier/graded-rings/blob/cb0f2e43578783e926fe8b216d103496d3d93313/GradedRings/HomogeneousLocalizationReduced.lean),
+which makes homogeneous localizations of reduced graded rings reduced.
+[Reduced projective spectra](../SchemeProperties/ProjReduced.lean) uses this API for
+its stalks, together with Mathlib's stalk comparison and reduced-stalk criterion
+to establish reducedness of `Proj`.
+
 The pinned `coherent-modules` formalization (`408a52bd54df17ccc928ce970942f1313ff10d5c`) supplies
 `CoherentModules.Localization`'s coherence-under-localization and spanning
 lemmas and `ModuleCat.isCoherent` from `CoherentModules/ModuleCat.lean`, used in
