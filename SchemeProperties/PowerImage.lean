@@ -159,19 +159,19 @@ theorem powerRootMap_faithfullyFlat (n : ℕ) (A : FGAlgCat.{u} K)
   change (AdjoinRoot.of (powerRootPolynomial K n A a)).FaithfullyFlat
   rw [← AdjoinRoot.algebraMap_eq (f := powerRootPolynomial K n A a),
     RingHom.faithfullyFlat_algebraMap_iff]
-  haveI := powerRootAlgebra_free K n A a hn
+  have := powerRootAlgebra_free K n A a hn
   by_cases h : Subsingleton (A.obj : Type u)
-  · letI : Subsingleton (A.obj : Type u) := h
+  · let : Subsingleton (A.obj : Type u) := h
     apply (Module.FaithfullyFlat.iff_flat_and_proper_ideal
       (A.obj : Type u) (AdjoinRoot (powerRootPolynomial K n A a))).2
     exact ⟨inferInstance, fun I hI => (hI (Subsingleton.elim I ⊤)).elim⟩
-  · haveI : Nontrivial (A.obj : Type u) := not_subsingleton_iff_nontrivial.mp h
+  · have : Nontrivial (A.obj : Type u) := not_subsingleton_iff_nontrivial.mp h
     have hp : (powerRootPolynomial K n A a).Monic :=
       Polynomial.monic_X_pow_sub_C (a : A.obj) (Nat.ne_of_gt hn)
     have hd : 0 < (powerRootPolynomial K n A a).degree := by
       rw [powerRootPolynomial, Polynomial.degree_X_pow_sub_C hn]
       exact_mod_cast hn
-    haveI : Nontrivial (AdjoinRoot (powerRootPolynomial K n A a)) :=
+    have : Nontrivial (AdjoinRoot (powerRootPolynomial K n A a)) :=
       (AdjoinRoot.of.injective_of_monic_of_degree_pos hp hd).nontrivial
     infer_instance
 
@@ -199,7 +199,7 @@ theorem powerImage_isOneCoverDense (n : ℕ) (hn : 0 < n) :
 its standard presentation has one generator and an inverse. -/
 theorem laurentPolynomial_finiteType :
     Algebra.FiniteType K (LaurentPolynomial K) := by
-  letI : AddMonoid.FG ℤ := AddGroup.fg_iff_addMonoid_fg.mp inferInstance
+  let : AddMonoid.FG ℤ := AddGroup.fg_iff_addMonoid_fg.mp inferInstance
   infer_instance
 
 /-- The finitely generated Laurent-polynomial test algebra. -/

@@ -28,6 +28,7 @@ namespace AlgebraicGeometry
 
 /-- A scheme viewed as an object of the dense-open rational-map category. -/
 structure DenseOpenRationalScheme where
+  /-- The underlying scheme, with no integrality or irreducibility requirement. -/
   toScheme : Scheme.{u}
 
 namespace DenseOpenRationalScheme
@@ -37,6 +38,7 @@ def of (X : Scheme.{u}) : DenseOpenRationalScheme.{u} := ⟨X⟩
 
 /-- A native rational map whose inverse image of every dense open is dense. -/
 structure Hom (X Y : DenseOpenRationalScheme.{u}) where
+  /-- The underlying quotient rational map, which pulls dense opens back densely. -/
   toRationalMap : X.toScheme ⤏ Y.toScheme
   pullsDenseOpens : toRationalMap.PullsDenseOpens
 

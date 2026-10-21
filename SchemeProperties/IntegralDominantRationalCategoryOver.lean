@@ -66,7 +66,9 @@ end IntegralDenseOpenRationalSchemeOver
 
 /-- Integral scheme equipped with an arbitrary chosen total structure morphism. -/
 structure IntegralDominantRationalSchemeOver (S : Scheme.{u}) where
+  /-- The underlying integral scheme equipped with the chosen structure morphism to `S`. -/
   toScheme : Scheme.{u}
+  /-- The chosen total structure morphism to `S`, with no dominance requirement. -/
   toBase : toScheme ⟶ S
   integral : IsIntegral toScheme
 
@@ -82,6 +84,8 @@ instance {S : Scheme.{u}} (X : IntegralDominantRationalSchemeOver S) :
 /-- A dominant rational quotient with an over-base partial representative.
 The endpoint `Over` dictionaries are chosen from these two objects. -/
 structure Hom {S : Scheme.{u}} (X Y : IntegralDominantRationalSchemeOver S) where
+  /-- The underlying dominant quotient rational map, admitting a representative
+  over `S` for the chosen structure morphisms `X.toBase` and `Y.toBase`. -/
   toRationalMap : X.toScheme ⤏ Y.toScheme
   dominant : toRationalMap.IsDominant
   isOver : @Scheme.RationalMap.IsOver _ _ S

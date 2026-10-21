@@ -51,18 +51,18 @@ theorem isField_globalSections_of_universallyClosed
     (f : X ⟶ Spec (.of K)) [UniversallyClosed f]
     [IsReduced X] [ConnectedSpace X] : _root_.IsField Γ(X, ⊤) := by
   classical
-  letI : Nontrivial Γ(X, ⊤) :=
+  let : Nontrivial Γ(X, ⊤) :=
     @LocallyRingedSpace.component_nontrivial X.toLocallyRingedSpace ⊤
       ⟨⟨Classical.choice (inferInstance : Nonempty X), by trivial⟩⟩
-  letI : CompactSpace X := QuasiCompact.compactSpace_of_compactSpace f
-  letI : PreconnectedSpace (PrimeSpectrum Γ(X, ⊤)) :=
+  let : CompactSpace X := QuasiCompact.compactSpace_of_compactSpace f
+  let : PreconnectedSpace (PrimeSpectrum Γ(X, ⊤)) :=
     X.toSpecΓ.denseRange.preconnectedSpace X.toSpecΓ.continuous
   -- Transport integrality across Γ(Spec K) ≅ K, retaining the canonical scalar map.
   have hρ : (f.appTop.hom.comp (Scheme.ΓSpecIso (.of K)).inv.hom).IsIntegral :=
     (RingHom.isIntegral_respectsIso.cancel_left_isIso
       (Scheme.ΓSpecIso (.of K)).inv f.appTop).2
         (isIntegral_appTop_of_universallyClosed f)
-  letI : Ring.KrullDimLE 0 Γ(X, ⊤) := Ring.krullDimLE_iff.mpr (by
+  let : Ring.KrullDimLE 0 Γ(X, ⊤) := Ring.krullDimLE_iff.mpr (by
     simpa only [ringKrullDim_eq_zero_of_field K, Nat.cast_zero] using hρ.ringKrullDim_le)
   exact PrimeSpectrum.isField_of_isReduced_of_preconnectedSpace Γ(X, ⊤)
 
@@ -78,15 +78,15 @@ theorem isIso_appTop_of_isReduced_of_universallyClosed_of_section
     (f : X ⟶ Spec (.of K)) [IsReduced X]
     [PreconnectedSpace X] [UniversallyClosed f]
     (p : Spec (.of K) ⟶ X) (hp : p ≫ f = 𝟙 _) : IsIso f.appTop := by
-  letI : Nonempty X := Nonempty.map p inferInstance
-  letI : ConnectedSpace X :=
+  let : Nonempty X := Nonempty.map p inferInstance
+  let : ConnectedSpace X :=
     { toPreconnectedSpace := inferInstance, toNonempty := inferInstance }
-  letI : IsSimpleRing Γ(X, ⊤) :=
+  let : IsSimpleRing Γ(X, ⊤) :=
     (isSimpleRing_iff_isField Γ(X, ⊤)).2
       (isField_globalSections_of_universallyClosed K f)
-  letI : Nontrivial Γ(Spec (.of K), ⊤) :=
+  let : Nontrivial Γ(Spec (.of K), ⊤) :=
     (Scheme.ΓSpecIso (.of K)).commRingCatIsoToRingEquiv.toEquiv.nontrivial
-  letI : Mono p.appTop :=
+  let : Mono p.appTop :=
     ConcreteCategory.mono_of_injective p.appTop p.appTop.hom.injective
   have hfp : f.appTop ≫ p.appTop = 𝟙 _ := by
     rw [← comp_appTop, hp, id_appTop]

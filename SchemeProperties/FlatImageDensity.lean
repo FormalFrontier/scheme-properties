@@ -50,36 +50,36 @@ theorem exists_affine_lift_of_flat_surjective_lfp
       g.hom.FaithfullyFlat ∧ g.hom.FinitePresentation ∧
         Spec.map g ≫ y = x ≫ f := by
   let p : pullback y f ⟶ Spec A := pullback.fst y f
-  haveI : Flat p := inferInstance
-  haveI : LocallyOfFinitePresentation p := inferInstance
-  haveI : Surjective p := inferInstance
+  have : Flat p := inferInstance
+  have : LocallyOfFinitePresentation p := inferInstance
+  have : Surjective p := inferInstance
   let 𝒰 : (Spec A).Cover (Scheme.precoverage @Flat) := p.cover (by infer_instance)
-  letI : IsZariskiLocalAtSource
+  let : IsZariskiLocalAtSource
       (@LocallyOfFinitePresentation : MorphismProperty Scheme.{u}) :=
     HasRingHomProperty.instIsZariskiLocalAtSource (Q := RingHom.FinitePresentation)
-  letI : Scheme.JointlySurjective (Scheme.precoverage (@Flat : MorphismProperty Scheme.{u})) :=
+  let : Scheme.JointlySurjective (Scheme.precoverage (@Flat : MorphismProperty Scheme.{u})) :=
     Scheme.instJointlySurjectivePrecoverage
-  letI : MorphismProperty.RespectsLeft
+  let : MorphismProperty.RespectsLeft
       (@Flat : MorphismProperty Scheme.{u}) @IsOpenImmersion :=
     ⟨fun _ hi _ hf ↦ by
-      letI : IsOpenImmersion _ := hi
-      letI : Flat _ := hf
+      let : IsOpenImmersion _ := hi
+      let : Flat _ := hf
       infer_instance⟩
-  haveI : QuasiCompactCover 𝒰.toPreZeroHypercover :=
+  have : QuasiCompactCover 𝒰.toPreZeroHypercover :=
     QuasiCompactCover.of_isOpenMap (𝒰 := 𝒰) (fun _ ↦ by
       change IsOpenMap p
       exact p.isOpenMap)
   obtain ⟨𝒱, refinement, hfinite, hopen⟩ :=
     QuasiCompactCover.exists_hom (P := @Flat) 𝒰
-  letI : Finite 𝒱.I₀ := hfinite
+  let : Finite 𝒱.I₀ := hfinite
   let U : Scheme.{u} := ∐ 𝒱.cover.X
-  haveI : IsAffine U := by
+  have : IsAffine U := by
     change IsAffine (∐ (fun j : 𝒱.I₀ ↦ Spec (𝒱.X j)))
     infer_instance
   let q : Spec _ ⟶ Spec A := U.isoSpec.inv ≫ Sigma.desc 𝒱.cover.f
   obtain ⟨g, hg⟩ := Spec.map_surjective q
   have hflat : Flat q := by
-    letI : IsZariskiLocalAtSource (@Flat : MorphismProperty Scheme.{u}) :=
+    let : IsZariskiLocalAtSource (@Flat : MorphismProperty Scheme.{u}) :=
       HasRingHomProperty.instIsZariskiLocalAtSource (Q := RingHom.Flat)
     have hsource : Flat U.isoSpec.inv := inferInstance
     have htarget : Flat (Sigma.desc 𝒱.cover.f) :=
@@ -89,7 +89,7 @@ theorem exists_affine_lift_of_flat_surjective_lfp
     have hcomponent (j : 𝒱.I₀) : LocallyOfFinitePresentation (𝒱.cover.f j) := by
       rw [← refinement.w₀ j]
       change LocallyOfFinitePresentation (refinement.h₀ j ≫ p)
-      haveI : IsOpenImmersion (refinement.h₀ j) := hopen j
+      have : IsOpenImmersion (refinement.h₀ j) := hopen j
       have hleft : LocallyOfFinitePresentation (refinement.h₀ j) := inferInstance
       have hright : LocallyOfFinitePresentation p := by assumption
       exact MorphismProperty.comp_mem _ _ _ hleft hright
@@ -98,7 +98,7 @@ theorem exists_affine_lift_of_flat_surjective_lfp
     dsimp [q]
     infer_instance
   have hsurjective : Surjective q := by
-    haveI : Surjective (Sigma.desc 𝒱.cover.f) :=
+    have : Surjective (Sigma.desc 𝒱.cover.f) :=
       Surjective.sigmaDesc_of_union_range_eq_univ 𝒱.cover.iUnion_range
     dsimp [q]
     infer_instance
@@ -141,23 +141,23 @@ theorem isOneCoverDense_range_lftPoints (K : Type u) [Field K]
       ((Presheaf.restrictedULiftYoneda.{0} (finiteAlgSpecOver K)).map f)).IsOneCoverDense
         (faithfullyFlatTestMorphisms K) := by
   classical
-  haveI : LocallyOfFiniteType Y.hom := Y.prop
-  haveI : IsLocallyNoetherian (Spec (.of K)) := inferInstance
-  haveI : IsLocallyNoetherian ((Functor.fromPUnit (Spec (.of K))).obj Y.right) := by
+  have : LocallyOfFiniteType Y.hom := Y.prop
+  have : IsLocallyNoetherian (Spec (.of K)) := inferInstance
+  have : IsLocallyNoetherian ((Functor.fromPUnit (Spec (.of K))).obj Y.right) := by
     change IsLocallyNoetherian (Spec (.of K))
     infer_instance
-  haveI : IsLocallyNoetherian Y.left :=
+  have : IsLocallyNoetherian Y.left :=
     LocallyOfFiniteType.isLocallyNoetherian Y.hom
-  haveI : LocallyOfFiniteType f.left := by
-    haveI : LocallyOfFiniteType (f.left ≫ Y.hom) := by
+  have : LocallyOfFiniteType f.left := by
+    have : LocallyOfFiniteType (f.left ≫ Y.hom) := by
       rw [MorphismProperty.Over.w f]
       exact X.prop
     exact locallyOfFiniteType_of_comp f.left Y.hom
-  haveI : LocallyOfFinitePresentation f.left := inferInstance
+  have : LocallyOfFinitePresentation f.left := inferInstance
   intro A point
   obtain ⟨B, g, x, hfaithful, hpresentation, htriangle⟩ :=
     exists_affine_lift_of_flat_surjective_lfp f.left (.of A.unop.obj) point.down.left
-  letI : Algebra K B :=
+  let : Algebra K B :=
     (g.hom.comp (algebraMap K A.unop.obj)).toAlgebra
   have hfiniteType : Algebra.FiniteType K B := by
     rw [← RingHom.finiteType_algebraMap]

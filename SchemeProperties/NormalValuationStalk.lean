@@ -47,7 +47,7 @@ theorem valuationRing_stalk_of_coheight_le_one {X : Scheme.{u}} (x : X)
     [_root_.IsIntegrallyClosed (X.presheaf.stalk x)]
     [IsNoetherianRing (X.presheaf.stalk x)] (hx : Order.coheight x ≤ 1) :
     ValuationRing (X.presheaf.stalk x) := by
-  letI : Ring.KrullDimLE 1 (X.presheaf.stalk x) := krullDimLE_of_coheight_le hx
+  let : Ring.KrullDimLE 1 (X.presheaf.stalk x) := krullDimLE_of_coheight_le hx
   apply ((tfae_of_isNoetherianRing_of_isLocalRing_of_isDomain
     (X.presheaf.stalk x)).out 4 2).mp
   refine ⟨inferInstance, fun P hP hPprime ↦ ?_⟩

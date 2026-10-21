@@ -62,7 +62,7 @@ fibre topology; it does not assert that the morphism is an isomorphism. -/
 theorem subsingleton_of_isProper_of_isAffine {K : Type u} [Field K] {X : Scheme.{u}}
     (f : X ⟶ Spec (CommRingCat.of K)) [IsProper f] [IsAffine X] [PreconnectedSpace X] :
     Subsingleton X := by
-  haveI : IsFinite f :=
+  have : IsFinite f :=
     IsFinite.iff_isProper_and_isAffineHom.mpr ⟨inferInstance, inferInstance⟩
   exact subsingleton_of_locallyQuasiFinite f
 

@@ -67,6 +67,7 @@ end IntegralDenseOpenRationalScheme
 
 /-- An integral scheme regarded as an object with dominant quotient rational-map arrows. -/
 structure IntegralDominantRationalScheme where
+  /-- The underlying integral scheme. -/
   toScheme : Scheme.{u}
   integral : IsIntegral toScheme
 
@@ -81,6 +82,7 @@ instance (X : IntegralDominantRationalScheme.{u}) : IsIntegral X.toScheme :=
 
 /-- A dominant native quotient rational map, with a proof-only dominance field. -/
 structure Hom (X Y : IntegralDominantRationalScheme.{u}) where
+  /-- The underlying dominant quotient rational map between the integral schemes. -/
   toRationalMap : X.toScheme ⤏ Y.toScheme
   dominant : toRationalMap.IsDominant
 

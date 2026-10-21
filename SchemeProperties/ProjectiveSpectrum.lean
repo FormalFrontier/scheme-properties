@@ -40,7 +40,7 @@ variable {A : Type u} {σ : Type v} [CommRing A] [SetLike σ A]
 
 /-- The projective spectrum of a reduced graded commutative ring is reduced. -/
 instance isReduced [_root_.IsReduced A] : AlgebraicGeometry.IsReduced (Proj 𝒜) := by
-  letI (M : Submonoid A) : _root_.IsReduced (HomogeneousLocalization 𝒜 M) :=
+  let (M : Submonoid A) : _root_.IsReduced (HomogeneousLocalization 𝒜 M) :=
     isReduced_of_injective
       (algebraMap (HomogeneousLocalization 𝒜 M) (Localization M))
       (HomogeneousLocalization.val_injective M)
@@ -76,7 +76,7 @@ instance preirreducibleSpace [IsDomain A] : PreirreducibleSpace (Proj 𝒜) := b
 concentrated in degree zero shows why nonemptiness is a separate hypothesis. -/
 theorem isIntegral [IsDomain A] [Nonempty (Proj 𝒜)] :
     AlgebraicGeometry.IsIntegral (Proj 𝒜) := by
-  letI : IrreducibleSpace (Proj 𝒜) :=
+  let : IrreducibleSpace (Proj 𝒜) :=
     { toPreirreducibleSpace := inferInstance, toNonempty := inferInstance }
   exact AlgebraicGeometry.isIntegral_of_irreducibleSpace_of_isReduced (Proj 𝒜)
 

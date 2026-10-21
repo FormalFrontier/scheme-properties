@@ -73,9 +73,9 @@ theorem universallyInjective_iff_injective_geometricPoints
     intro K _ g₁ g₂ h
     let π : Spec (.of (AlgebraicClosure K)) ⟶ Spec (.of K) :=
       Spec.map (CommRingCat.ofHom (algebraMap K (AlgebraicClosure K)))
-    haveI : Flat π := inferInstance
-    haveI : Surjective π := inferInstance
-    haveI : Epi π := Flat.epi_of_flat_of_surjective π
+    have : Flat π := inferInstance
+    have : Surjective π := inferInstance
+    have : Epi π := Flat.epi_of_flat_of_surjective π
     apply (cancel_epi π).mp
     apply hf (AlgebraicClosure K)
     simpa only [Category.assoc] using congrArg (fun g ↦ π ≫ g) h

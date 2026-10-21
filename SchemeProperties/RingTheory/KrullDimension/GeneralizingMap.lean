@@ -43,15 +43,15 @@ theorem ringKrullDim_le_of_generalizingMap_comap_of_surjective
     (hg : GeneralizingMap (PrimeSpectrum.comap f))
     (hs : Function.Surjective (PrimeSpectrum.comap f)) :
     ringKrullDim R ≤ ringKrullDim S := by
-  letI : Algebra R S := f.toAlgebra
-  letI : Algebra.HasGoingDown R S :=
+  let : Algebra R S := f.toAlgebra
+  let : Algebra.HasGoingDown R S :=
     Algebra.HasGoingDown.iff_generalizingMap_primeSpectrumComap.mpr (by
       simpa only [RingHom.algebraMap_toAlgebra] using hg)
   change (⨆ l : LTSeries (PrimeSpectrum R), (l.length : WithBot ℕ∞)) ≤
     Order.krullDim (PrimeSpectrum S)
   refine iSup_le fun l ↦ ?_
   obtain ⟨q, hq⟩ := hs l.last
-  letI : q.asIdeal.LiesOver l.last.asIdeal := by
+  let : q.asIdeal.LiesOver l.last.asIdeal := by
     refine ⟨?_⟩
     simpa only [Ideal.under_def, RingHom.algebraMap_toAlgebra,
       PrimeSpectrum.comap_asIdeal] using congrArg PrimeSpectrum.asIdeal hq.symm

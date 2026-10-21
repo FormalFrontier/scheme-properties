@@ -126,12 +126,12 @@ theorem exists_le_extension_of_valuationRing_stalk
           X.homOfLE (inf_le_right : p.domain ⊓ q.domain ≤ q.domain) ≫ q.hom := by
   classical
   obtain ⟨U, hxU, hU⟩ := exists_isIntegral_open_of_isDomain_stalk X x
-  letI : IsIntegral U.toScheme := hU
+  let : IsIntegral U.toScheme := hU
   let xU : U.toScheme := ⟨x, hxU⟩
-  letI : _root_.IsDomain (U.toScheme.presheaf.stalk xU) :=
+  let : _root_.IsDomain (U.toScheme.presheaf.stalk xU) :=
     (U.stalkIso xU).commRingCatIsoToRingEquiv.toMulEquiv.isDomain
       (X.presheaf.stalk x)
-  letI : ValuationRing (U.toScheme.presheaf.stalk xU) :=
+  let : ValuationRing (U.toScheme.presheaf.stalk xU) :=
     Function.Surjective.valuationRing
       (U.stalkIso xU).symm.commRingCatIsoToRingEquiv.toRingHom
       (U.stalkIso xU).symm.commRingCatIsoToRingEquiv.surjective
@@ -160,10 +160,10 @@ theorem exists_le_extension_of_valuationRing_stalk
   have hD : p.domain ≤ q.domain := le_sup_left
   have hread : X.homOfLE hD ≫ q.hom = p.hom :=
     homOfLE_glueHom_left p V b hcompat
-  letI : X.Over S := .ofHom sX
-  letI : Y.Over S := .ofHom sY
-  letI : p.IsOver S := (isOver_iff (S := S) (f := p)).mpr hp
-  letI : b.IsOver S := (Scheme.Hom.isOver_iff (S := S) (f := b)).mpr hb
+  let : X.Over S := .ofHom sX
+  let : Y.Over S := .ofHom sY
+  let : p.IsOver S := (isOver_iff (S := S) (f := p)).mpr hp
+  let : b.IsOver S := (Scheme.Hom.isOver_iff (S := S) (f := b)).mpr hb
   have hqS : q.hom ≫ sY = q.domain.ι ≫ sX :=
     (isOver_iff (S := S) (f := q)).mp (inferInstance : q.IsOver S)
   refine ⟨q, (show x ∈ p.domain ⊔ V from Or.inr hxV), hD, hqS, hread,
@@ -192,7 +192,7 @@ theorem exists_le_extension_of_coheight_le_one [IsNormal X] [IsLocallyNoetherian
         q.toRationalMap = p.toRationalMap ∧
         X.homOfLE (inf_le_left : p.domain ⊓ q.domain ≤ p.domain) ≫ p.hom =
           X.homOfLE (inf_le_right : p.domain ⊓ q.domain ≤ q.domain) ≫ q.hom := by
-  letI : ValuationRing (X.presheaf.stalk x) :=
+  let : ValuationRing (X.presheaf.stalk x) :=
     valuationRing_stalk_of_coheight_le_one x hx
   exact exists_le_extension_of_valuationRing_stalk sX sY p hp x
 
@@ -277,7 +277,7 @@ theorem existsUnique_extension_of_krullDimLE_one [IsNormal X] [IsLocallyNoetheri
     rw [← Category.assoc, hread i, hrS i]
   refine ⟨h, ⟨hS, hread none⟩, ?_⟩
   intro g hg
-  letI : IsDominant p.domain.ι := Opens.isDominant_ι p.dense_domain
+  let : IsDominant p.domain.ι := Opens.isDominant_ι p.dense_domain
   exact ext_of_isDominant_of_isSeparated sY (hg.1.trans hS.symm) p.domain.ι
     (hg.2.trans (hread none).symm)
 

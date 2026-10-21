@@ -28,7 +28,9 @@ namespace AlgebraicGeometry
 
 /-- A scheme with a chosen total structure morphism to `S`. -/
 structure DenseOpenRationalSchemeOver (S : Scheme.{u}) where
+  /-- The underlying scheme equipped with the chosen structure morphism to `S`. -/
   toScheme : Scheme.{u}
+  /-- The chosen total structure morphism to `S`, not required to pull dense opens back densely. -/
   toBase : toScheme ⟶ S
 
 namespace DenseOpenRationalSchemeOver
@@ -46,6 +48,8 @@ def of {S X : Scheme.{u}} (p : X ⟶ S) : DenseOpenRationalSchemeOver S := ⟨X,
 The two explicit `Over` arguments retain distinct structure maps even if the
 underlying schemes coincide. -/
 structure Hom {S : Scheme.{u}} (X Y : DenseOpenRationalSchemeOver S) where
+  /-- The underlying quotient rational map, which pulls dense opens back densely
+  and admits a representative over `S` for the chosen maps `X.toBase` and `Y.toBase`. -/
   toRationalMap : X.toScheme ⤏ Y.toScheme
   pullsDenseOpens : toRationalMap.PullsDenseOpens
   isOver : @Scheme.RationalMap.IsOver _ _ S

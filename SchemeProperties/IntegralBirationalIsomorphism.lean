@@ -55,27 +55,27 @@ theorem isIso_of_isIntegralHom_of_isIso_functionFieldMap
     [IsIso f.toRationalMap.functionFieldMap] : IsIso f := by
   classical
   let φ := f.toRationalMap.functionFieldMap
-  haveI : IsIso φ := inferInstance
+  have : IsIso φ := inferInstance
   change MorphismProperty.isomorphisms Scheme f
   apply IsZariskiLocalAtTarget.of_forall_exists_morphismRestrict
   intro y
   obtain ⟨_, ⟨U, hU, rfl⟩, hyU, -⟩ :=
     Y.isBasis_affineOpens.exists_subset_of_mem_open (Set.mem_univ y) isOpen_univ
-  letI : Nonempty U := ⟨⟨y, hyU⟩⟩
-  letI : Nonempty (f ⁻¹ᵁ U) := f.nonempty_preimage_of_isDominant U
+  let : Nonempty U := ⟨⟨y, hyU⟩⟩
+  let : Nonempty (f ⁻¹ᵁ U) := f.nonempty_preimage_of_isDominant U
   refine ⟨U, hyU, ?_⟩
   change IsIso (f ∣_ U)
   apply (isIso_morphismRestrict_iff_isIso_app f hU).mpr
   let A : CommRingCat.{u} := Γ(Y, U)
   let B : CommRingCat.{u} := Γ(X, f ⁻¹ᵁ U)
-  haveI : IsOpenImmersion hU.fromSpec :=
+  have : IsOpenImmersion hU.fromSpec :=
     IsAffineOpen.isOpenImmersion_fromSpec hU
-  haveI : IsNormal (Spec A) := isNormal_of_isOpenImmersion hU.fromSpec
-  haveI : IsLocallyNormalRing A := isLocallyNormalRing_of_isNormal_spec A
-  haveI : IsIntegrallyClosed A :=
+  have : IsNormal (Spec A) := isNormal_of_isOpenImmersion hU.fromSpec
+  have : IsLocallyNormalRing A := isLocallyNormalRing_of_isNormal_spec A
+  have : IsIntegrallyClosed A :=
     IsIntegrallyClosed.of_localization_maximal fun P _ _ ↦
       IsLocallyNormalRing.isIntegrallyClosed_atPrime ⟨P, inferInstance⟩
-  haveI : IsFractionRing A Y.functionField :=
+  have : IsFractionRing A Y.functionField :=
     functionField_isFractionRing_of_isAffineOpen Y U hU
   have hsquare : f.app U ≫ X.germToFunctionField (f ⁻¹ᵁ U) =
       Y.germToFunctionField U ≫ φ :=
@@ -83,13 +83,13 @@ theorem isIso_of_isIntegralHom_of_isIso_functionFieldMap
   have hcomm : f.app U ≫ (X.germToFunctionField (f ⁻¹ᵁ U) ≫ inv φ) =
       Y.germToFunctionField U := by
     rw [← Category.assoc, hsquare, Category.assoc, IsIso.hom_inv_id, Category.comp_id]
-  letI : Algebra A B := (f.app U).hom.toAlgebra
-  letI : Algebra B Y.functionField :=
+  let : Algebra A B := (f.app U).hom.toAlgebra
+  let : Algebra B Y.functionField :=
     (X.germToFunctionField (f ⁻¹ᵁ U) ≫ inv φ).hom.toAlgebra
-  haveI : IsScalarTower A B Y.functionField := by
+  have : IsScalarTower A B Y.functionField := by
     apply IsScalarTower.of_algebraMap_eq'
     exact congrArg CommRingCat.Hom.hom hcomm.symm
-  haveI : Algebra.IsIntegral A B :=
+  have : Algebra.IsIntegral A B :=
     algebraMap_isIntegral_iff.mp (f.isIntegral_app U hU)
   have hinj : Function.Injective (algebraMap B Y.functionField) := by
     change Function.Injective (fun b ↦ inv φ (X.germToFunctionField (f ⁻¹ᵁ U) b))

@@ -47,7 +47,7 @@ variable (R : Type u) [CommRing R]
       ULift.{w} A.obj := rfl
 
 /-- The universe-lift functor sends an algebra homomorphism to its lifted function. -/
-@[simp] theorem uliftFunctor_map_apply {A B : FGAlgCat.{v} R} (f : A ⟶ B) (x : A.obj) :
+theorem uliftFunctor_map_apply {A B : FGAlgCat.{v} R} (f : A ⟶ B) (x : A.obj) :
     ((uliftFunctor R : FGAlgCat.{v} R ⥤ FGAlgCat.{max v w} R).map f).hom
       (ULift.up x) = ULift.up (f.hom x) := rfl
 

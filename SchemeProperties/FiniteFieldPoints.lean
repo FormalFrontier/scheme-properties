@@ -59,7 +59,7 @@ theorem finite_overHom_of_finiteField
   let Y := Limits.pullback p q
   let r : Y ⟶ T := Limits.pullback.snd p q
   let 𝒰 := Y.affineCover.finiteSubcover
-  letI : ∀ i, Finite (Over.mk (𝟙 T) ⟶ Over.mk (𝒰.f i ≫ r)) := by
+  let : ∀ i, Finite (Over.mk (𝟙 T) ⟶ Over.mk (𝒰.f i ≫ r)) := by
     intro i
     let A := Γ(𝒰.X i, ⊤)
     let e := (𝒰.X i).isoSpec
@@ -71,9 +71,9 @@ theorem finite_overHom_of_finiteField
     have hφ : φ.hom.FiniteType := by
       apply (HasRingHomProperty.Spec_iff (P := @LocallyOfFiniteType)).mp
       simpa only [φ, Spec.map_preimage] using hs
-    letI : Algebra K A := φ.hom.toAlgebra
-    letI : Algebra.FiniteType K A := hφ
-    letI : Finite (A →ₐ[K] K) :=
+    let : Algebra K A := φ.hom.toAlgebra
+    let : Algebra.FiniteType K A := hφ
+    let : Finite (A →ₐ[K] K) :=
       Algebra.FiniteType.finite_algHom (R := K) (A := A) (B := K)
     have hmap : Spec.algebraMap K A = s := by
       change Spec.map (CommRingCat.ofHom φ.hom) = s
@@ -91,7 +91,7 @@ theorem finite_overHom_of_finiteField
       (Over.mk (𝟙 T) ⟶ Over.mk r) :=
     fun a => Over.homMk (a.2.left ≫ 𝒰.f a.1)
       (by simpa [Category.assoc] using Over.w a.2)
-  haveI : Finite (Over.mk (𝟙 T) ⟶ Over.mk r) :=
+  have : Finite (Over.mk (𝟙 T) ⟶ Over.mk r) :=
     Finite.of_surjective compose (by
       intro a
       let x : T := default
@@ -108,7 +108,7 @@ theorem finite_overHom_of_finiteField
       apply Over.OverMorphism.ext
       change b ≫ 𝒰.f i = a.left
       exact IsOpenImmersion.lift_fac _ _ h)
-  haveI : Finite ((Over.map q).obj (Over.mk (𝟙 T)) ⟶ Over.mk p) :=
+  have : Finite ((Over.map q).obj (Over.mk (𝟙 T)) ⟶ Over.mk p) :=
     Finite.of_equiv (Over.mk (𝟙 T) ⟶ Over.mk r)
       ((Over.mapPullbackAdj q).homEquiv (Over.mk (𝟙 T)) (Over.mk p)).symm
   let e : (Over.map q).obj (Over.mk (𝟙 T)) ≅ Over.mk q :=

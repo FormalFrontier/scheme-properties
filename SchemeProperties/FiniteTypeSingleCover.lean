@@ -57,15 +57,15 @@ theorem hasPullbacks_finiteTypeAffineTests :
     HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := by
   let P : MorphismProperty CommRingCat.{u} :=
     RingHom.toMorphismProperty @RingHom.FiniteType
-  letI : P.IsStableUnderComposition :=
+  let : P.IsStableUnderComposition :=
     ⟨fun f g hf hg ↦ RingHom.FiniteType.comp hg hf⟩
-  letI : P.IsStableUnderCobaseChange :=
+  let : P.IsStableUnderCobaseChange :=
     RingHom.isStableUnderCobaseChange_toMorphismProperty_iff.mpr
       RingHom.finiteType_isStableUnderBaseChange
-  letI : P.HasOfPrecompProperty P :=
+  let : P.HasOfPrecompProperty P :=
     ⟨fun f g _ hfg ↦ RingHom.FiniteType.of_comp_finiteType hfg⟩
-  haveI : HasPushouts (MorphismProperty.Under P ⊤ (CommRingCat.of K)) := inferInstance
-  haveI : HasPushouts (FGAlgCat.{u} K) :=
+  have : HasPushouts (MorphismProperty.Under P ⊤ (CommRingCat.of K)) := inferInstance
+  have : HasPushouts (FGAlgCat.{u} K) :=
     Adjunction.hasColimitsOfShape_of_equivalence (FGAlgCat.equivUnder (.of K)).functor
   infer_instance
 
@@ -94,12 +94,12 @@ private theorem isPushout_commRingCat_of_fgAlgCat
       (CommRingCat.ofHom g'.hom.hom.toRingHom) := by
   let P : MorphismProperty CommRingCat.{u} :=
     RingHom.toMorphismProperty @RingHom.FiniteType
-  letI : P.IsStableUnderComposition :=
+  let : P.IsStableUnderComposition :=
     ⟨fun a b ha hb ↦ RingHom.FiniteType.comp hb ha⟩
-  letI : P.IsStableUnderCobaseChange :=
+  let : P.IsStableUnderCobaseChange :=
     RingHom.isStableUnderCobaseChange_toMorphismProperty_iff.mpr
       RingHom.finiteType_isStableUnderBaseChange
-  letI : P.HasOfPrecompProperty P :=
+  let : P.HasOfPrecompProperty P :=
     ⟨fun a b _ hab ↦ RingHom.FiniteType.of_comp_finiteType hab⟩
   let F := (FGAlgCat.equivUnder (CommRingCat.of K)).functor
   let G := MorphismProperty.Under.forget P ⊤ (CommRingCat.of K)
@@ -115,7 +115,7 @@ theorem faithfullyFlatTestMorphisms_isStableUnderBaseChange :
   intro X Y Y' S f g f' g' hs hg
   have hs' := isPushout_commRingCat_of_fgAlgCat K f.unop g.unop
     g'.unop f'.unop hs.unop
-  haveI : (RingHom.toMorphismProperty @RingHom.FaithfullyFlat).IsStableUnderCobaseChange :=
+  have : (RingHom.toMorphismProperty @RingHom.FaithfullyFlat).IsStableUnderCobaseChange :=
     RingHom.isStableUnderCobaseChange_toMorphismProperty_iff.mpr
       RingHom.FaithfullyFlat.isStableUnderBaseChange
   exact MorphismProperty.IsStableUnderCobaseChange.of_isPushout
@@ -148,7 +148,7 @@ theorem algebraicOverPoints_isSheafFor_faithfullyFlat
     (Y : algebraicOver K) {X U : (FGAlgCat.{u} K)ᵒᵖ} (f : U ⟶ X)
     (hf : faithfullyFlatTestMorphisms K f) :
     Presieve.IsSheafFor ((algebraicOverPoints K).obj Y) (Presieve.singleton f) := by
-  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  let : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
   let P := finiteAlgSpecOver K
   let fSpec : (P.obj U).left ⟶ (P.obj X).left := (P.map f).left
   have hff : Flat fSpec ∧ Surjective fSpec := by
@@ -156,13 +156,13 @@ theorem algebraicOverPoints_isSheafFor_faithfullyFlat
       Surjective ((finiteAlgSpecOver K).map f).left
     rw [finiteAlgSpecOver_map_left K f]
     exact (flat_and_surjective_SpecMap_iff _).mpr hf
-  letI : Flat fSpec := hff.1
-  letI : Surjective fSpec := hff.2
-  haveI : QuasiCompact fSpec := by
+  let : Flat fSpec := hff.1
+  let : Surjective fSpec := hff.2
+  have : QuasiCompact fSpec := by
     change QuasiCompact ((finiteAlgSpecOver K).map f).left
     rw [finiteAlgSpecOver_map_left K f]
-    letI : IsAffine (Spec (.of U.unop.obj)) := isAffine_Spec _
-    letI : IsAffine (Spec (.of X.unop.obj)) := isAffine_Spec _
+    let : IsAffine (Spec (.of U.unop.obj)) := isAffine_Spec _
+    let : IsAffine (Spec (.of X.unop.obj)) := isAffine_Spec _
     have hAffine : IsAffineHom (Spec.map (CommRingCat.ofHom f.unop.hom.hom.toRingHom)) :=
       isAffineHom_of_isAffine _
     exact quasiCompact_iff_forall_isAffineOpen.mpr
@@ -251,8 +251,8 @@ theorem algebraicOverOneCoverEquiv_apply (X Y : algebraicOver K)
     (hD : D.IsOneCoverDense (faithfullyFlatTestMorphisms K)) (f : X ⟶ Y) :
     algebraicOverOneCoverEquiv K X Y D hD f =
       D.ι ≫ (algebraicOverPoints K).map f := by
-  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
-  letI : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
+  let : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  let : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
     faithfullyFlatTestMorphisms_isStableUnderBaseChange K
   exact Subfunctor.oneCoverExtensionEquiv_apply hD
     (fun g hg ↦ algebraicOverPoints_isSheafFor_faithfullyFlat K Y g hg) _
@@ -309,8 +309,8 @@ theorem ι_comp_extendAlgebraicOverIso_hom (X Y : algebraicOver K)
     (e : D.toFunctor ≅ E.toFunctor) :
     D.ι ≫ (algebraicOverPoints K).map (extendAlgebraicOverIso K X Y D E hD hE e).hom =
       e.hom ≫ E.ι := by
-  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
-  letI : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
+  let : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  let : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
     faithfullyFlatTestMorphisms_isStableUnderBaseChange K
   change D.ι ≫ (algebraicOverPoints K).map ((algebraicOverPointsFullyFaithful K).preimageIso
     (Subfunctor.extendOneCoverIso hD hE
@@ -331,8 +331,8 @@ theorem ι_comp_extendAlgebraicOverIso_inv (X Y : algebraicOver K)
     (e : D.toFunctor ≅ E.toFunctor) :
     E.ι ≫ (algebraicOverPoints K).map (extendAlgebraicOverIso K X Y D E hD hE e).inv =
       e.inv ≫ D.ι := by
-  letI : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
-  letI : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
+  let : HasPullbacks ((FGAlgCat.{u} K)ᵒᵖ) := hasPullbacks_finiteTypeAffineTests K
+  let : (faithfullyFlatTestMorphisms K).IsStableUnderBaseChange :=
     faithfullyFlatTestMorphisms_isStableUnderBaseChange K
   change E.ι ≫ (algebraicOverPoints K).map ((algebraicOverPointsFullyFaithful K).preimageIso
     (Subfunctor.extendOneCoverIso hD hE

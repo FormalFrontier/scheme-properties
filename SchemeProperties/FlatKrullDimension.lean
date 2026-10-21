@@ -46,11 +46,11 @@ theorem krullDim_le_of_surjective
   rw [Order.krullDim_eq_iSup_coheight, Order.krullDim_eq_iSup_coheight]
   refine iSup_le fun y ↦ ?_
   obtain ⟨x, rfl⟩ := f.surjective y
-  letI : Algebra (Y.presheaf.stalk (f x)) (X.presheaf.stalk x) :=
+  let : Algebra (Y.presheaf.stalk (f x)) (X.presheaf.stalk x) :=
     (f.stalkMap x).hom.toAlgebra
-  haveI : Module.Flat (Y.presheaf.stalk (f x)) (X.presheaf.stalk x) :=
+  have : Module.Flat (Y.presheaf.stalk (f x)) (X.presheaf.stalk x) :=
     Flat.stalkMap f x
-  haveI : IsLocalHom
+  have : IsLocalHom
       (algebraMap (Y.presheaf.stalk (f x)) (X.presheaf.stalk x)) := by
     change IsLocalHom (f.stalkMap x).hom
     infer_instance

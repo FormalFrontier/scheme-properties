@@ -35,7 +35,7 @@ instance isReduced {A : Type u} {σ : Type v}
     [CommRing A] [SetLike σ A] [AddSubgroupClass σ A]
     (𝒜 : ℕ → σ) [GradedRing 𝒜] [_root_.IsReduced A] :
     AlgebraicGeometry.IsReduced (AlgebraicGeometry.Proj 𝒜) := by
-  letI : ∀ x : AlgebraicGeometry.Proj 𝒜,
+  let : ∀ x : AlgebraicGeometry.Proj 𝒜,
       _root_.IsReduced ((AlgebraicGeometry.Proj 𝒜).presheaf.stalk x) := fun x ↦
     _root_.isReduced_of_injective (stalkIso' 𝒜 x).toRingHom (stalkIso' 𝒜 x).injective
   exact isReduced_of_isReduced_stalk (AlgebraicGeometry.Proj 𝒜)

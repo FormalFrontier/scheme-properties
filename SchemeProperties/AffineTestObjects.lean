@@ -66,7 +66,7 @@ theorem mono_iff_injective_spec {X Y : Scheme.{u}} (f : X ⟶ Y) :
   · intro H R _ g h e
     exact H _ inferInstance g h e
   · intro H T hT g h e
-    letI := hT
+    let := hT
     apply (cancel_epi T.isoSpec.inv).mp
     apply H Γ(T, ⊤)
     simpa only [Category.assoc] using congrArg (fun k ↦ T.isoSpec.inv ≫ k) e

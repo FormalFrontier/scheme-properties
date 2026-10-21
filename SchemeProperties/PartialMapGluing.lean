@@ -175,7 +175,7 @@ variable (p : X.PartialMap Y) (V : X.Opens) (f : V.toScheme ⟶ Y)
 lemma glueHom_domain : (p.glueHom V f h).domain = p.domain ⊔ V := rfl
 
 /-- The glued morphism restricts to the original morphism on its whole domain. -/
-@[reassoc (attr := simp)]
+@[simp, reassoc]
 lemma homOfLE_glueHom_left :
     X.homOfLE (le_sup_left : p.domain ≤ p.domain ⊔ V) ≫ (p.glueHom V f h).hom = p.hom := by
   dsimp (config := { zeta := false }) only [glueHom]
@@ -183,7 +183,7 @@ lemma homOfLE_glueHom_left :
   exact Cover.ι_glueMorphisms C k _ true
 
 /-- The glued morphism restricts to the given morphism on the whole added open. -/
-@[reassoc (attr := simp)]
+@[simp, reassoc]
 lemma homOfLE_glueHom_right :
     X.homOfLE (le_sup_right : V ≤ p.domain ⊔ V) ≫ (p.glueHom V f h).hom = f := by
   dsimp (config := { zeta := false }) only [glueHom]
@@ -274,13 +274,13 @@ variable (p q : X.PartialMap Y)
 lemma glue_domain : (p.glue q h).domain = p.domain ⊔ q.domain := rfl
 
 /-- The glued morphism restricts to the first morphism on its whole domain. -/
-@[reassoc (attr := simp)]
+@[simp, reassoc]
 lemma homOfLE_glue_left :
     X.homOfLE (le_sup_left : p.domain ≤ p.domain ⊔ q.domain) ≫ (p.glue q h).hom = p.hom := by
   exact homOfLE_glueHom_left p q.domain q.hom h
 
 /-- The glued morphism restricts to the second morphism on its whole domain. -/
-@[reassoc (attr := simp)]
+@[simp, reassoc]
 lemma homOfLE_glue_right :
     X.homOfLE (le_sup_right : q.domain ≤ p.domain ⊔ q.domain) ≫ (p.glue q h).hom = q.hom := by
   exact homOfLE_glueHom_right p q.domain q.hom h

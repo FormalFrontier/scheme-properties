@@ -56,7 +56,7 @@ theorem isDetecting_isAffine :
     ObjectProperty.IsDetecting (fun T : Scheme.{u} => IsAffine T) := by
   intro X Y f hf
   have hStrong := isStrongGenerator_isAffine.{u}
-  haveI : Mono f := (hStrong.isSeparating.mono_iff f).2 (by
+  have : Mono f := (hStrong.isSeparating.mono_iff f).2 (by
     intro G hG g₁ g₂ h
     exact (hf G hG (g₂ ≫ f)).unique h rfl)
   exact hStrong.isIso_of_mono f (fun G hG h => (hf G hG h).exists)
@@ -68,7 +68,7 @@ theorem isIso_iff_bijective_spec {X Y : Scheme.{u}} (f : X ⟶ Y) :
       Function.Bijective (fun g : Spec (.of R) ⟶ X => g ≫ f) := by
   constructor
   · intro hf
-    letI : IsIso f := hf
+    let : IsIso f := hf
     intro R _
     constructor
     · intro g₁ g₂ h
@@ -78,7 +78,7 @@ theorem isIso_iff_bijective_spec {X Y : Scheme.{u}} (f : X ⟶ Y) :
   · intro hf
     apply isDetecting_isAffine f
     intro G hG h
-    letI : IsAffine G := hG
+    let : IsAffine G := hG
     have hR := hf Γ(G, ⊤)
     obtain ⟨g, hg, hg_unique⟩ :=
       (Function.bijective_iff_existsUnique _).mp hR (G.isoSpec.inv ≫ h)

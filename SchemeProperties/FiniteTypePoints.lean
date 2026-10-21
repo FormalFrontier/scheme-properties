@@ -407,7 +407,7 @@ theorem algebraicOverPoints_eq (K : Type u) [Field K] :
       ULift.{0} ((finiteAlgSpecOver K).obj A ⟶ Y.obj) := rfl
 
 /-- Restriction of a represented point along a test morphism is precomposition. -/
-@[simp] theorem algebraicOverPoints_map_apply (K : Type u) [Field K]
+theorem algebraicOverPoints_map_apply (K : Type u) [Field K]
     (Y : algebraicOver K) {X U : (FGAlgCat K)ᵒᵖ} (f : U ⟶ X)
     (x : ULift.{0} ((finiteAlgSpecOver K).obj X ⟶ Y.obj)) :
     ((algebraicOverPoints K).obj Y).map f.op x =
