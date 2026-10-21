@@ -20,7 +20,7 @@ namespace SchemePropertiesTest.IntegralBirationalRationalSpectrum
 
 private theorem rationalSpectrumIdentity_isIso :
     IsIso (𝟙 (Spec (CommRingCat.of ℚ))) := by
-  haveI :
+  have :
       IsIso (Scheme.Hom.toRationalMap (𝟙 (Spec (CommRingCat.of ℚ)))).functionFieldMap := by
     change IsIso (Scheme.RationalMap.id (Spec (CommRingCat.of ℚ))).functionFieldMap
     rw [Scheme.RationalMap.functionFieldMap_id]

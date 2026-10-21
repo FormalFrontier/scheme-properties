@@ -27,7 +27,7 @@ private theorem origin_injective_geometricPoints (k : Type u) [Field k] :
     ∀ (K : Type u) [Field K] [IsAlgClosed K],
       Function.Injective (fun g : Spec (.of K) ⟶ Spec (.of k) ↦
         g ≫ Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom (0 : k)))) := by
-  haveI : IsClosedImmersion
+  have : IsClosedImmersion
       (Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom (0 : k)))) :=
     IsClosedImmersion.spec_of_surjective _ (Polynomial.eval_surjective (0 : k))
   exact (universallyInjective_iff_injective_geometricPoints _).mp inferInstance

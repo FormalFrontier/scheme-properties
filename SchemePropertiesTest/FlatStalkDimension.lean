@@ -124,7 +124,7 @@ private theorem fraction_dimension_drops :
 
 private theorem fraction_not_local : ¬ IsLocalHom (algebraMap A (FractionRing A)) := by
   intro h
-  letI := h
+  let := h
   exact (not_le_of_gt fraction_dimension_drops) fraction_flat.ringKrullDim_le
 
 end SchemePropertiesTest.FlatStalkDimension

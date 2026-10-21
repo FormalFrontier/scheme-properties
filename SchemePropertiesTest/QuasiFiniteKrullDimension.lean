@@ -59,7 +59,7 @@ private theorem evalZero_moduleFinite : Module.Finite ℚ[X] ℚ :=
   evalZero_finite
 
 private theorem evalZero_algebraQuasiFinite : Algebra.QuasiFinite ℚ[X] ℚ := by
-  letI : Module.Finite ℚ[X] ℚ := evalZero_moduleFinite
+  let : Module.Finite ℚ[X] ℚ := evalZero_moduleFinite
   infer_instance
 
 private theorem evalZero_quasiFinite : evalZero.QuasiFinite :=
@@ -67,7 +67,7 @@ private theorem evalZero_quasiFinite : evalZero.QuasiFinite :=
 
 private theorem evalZero_not_flat : ¬ evalZero.Flat := by
   intro h
-  letI : Module.Flat ℚ[X] ℚ := h
+  let : Module.Flat ℚ[X] ℚ := h
   have hinj : Function.Injective evalZero :=
     FaithfulSMul.algebraMap_injective ℚ[X] ℚ
   exact Polynomial.X_ne_zero (hinj (by simp [evalZero]))
@@ -99,12 +99,12 @@ private theorem closedOrigin_finite : IsFinite closedOrigin :=
   (IsFinite.SpecMap_iff (CommRingCat.ofHom evalZero)).mpr evalZero_finite
 
 private theorem closedOrigin_locallyQuasiFinite : LocallyQuasiFinite closedOrigin := by
-  letI : IsFinite closedOrigin := closedOrigin_finite
+  let : IsFinite closedOrigin := closedOrigin_finite
   infer_instance
 
 private theorem closedOrigin_dimension_bound :
     Order.krullDim (Spec (.of ℚ)) ≤ Order.krullDim (Spec (.of ℚ[X])) := by
-  letI : LocallyQuasiFinite closedOrigin := closedOrigin_locallyQuasiFinite
+  let : LocallyQuasiFinite closedOrigin := closedOrigin_locallyQuasiFinite
   exact AlgebraicGeometry.LocallyQuasiFinite.krullDim_le closedOrigin
 
 private theorem rationalSpectrum_dimension : Order.krullDim (Spec (.of ℚ)) = 0 := by
@@ -126,8 +126,8 @@ private def coefficientInclusion : ℚ →+* ℚ[X] := algebraMap ℚ ℚ[X]
 
 private theorem coefficientInclusion_not_quasiFinite : ¬ coefficientInclusion.QuasiFinite := by
   intro h
-  haveI : Algebra.QuasiFinite ℚ ℚ[X] := RingHom.quasiFinite_algebraMap.mp h
-  haveI : Module.Finite ℚ ℚ[X] := Module.Finite.of_quasiFinite
+  have : Algebra.QuasiFinite ℚ ℚ[X] := RingHom.quasiFinite_algebraMap.mp h
+  have : Module.Finite ℚ ℚ[X] := Module.Finite.of_quasiFinite
   exact Polynomial.transcendental_X ℚ (Algebra.IsIntegral.isIntegral Polynomial.X).isAlgebraic
 
 private def affineLineProjection : Spec (.of ℚ[X]) ⟶ Spec (.of ℚ) :=

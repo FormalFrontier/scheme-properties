@@ -77,12 +77,12 @@ private theorem liftedField_integral (K : Type u) [Field K] :
 
 private theorem liftedField_reduced (K : Type u) [Field K] :
     AlgebraicGeometry.IsReduced (Spec (.of (ULift.{u} K))) := by
-  letI := liftedField_integral K
+  let := liftedField_integral K
   infer_instance
 
 private theorem liftedField_connected (K : Type u) [Field K] :
     ConnectedSpace (Spec (.of (ULift.{u} K))) := by
-  letI := liftedField_integral K
+  let := liftedField_integral K
   infer_instance
 
 private theorem liftedField_isIso (K : Type u) [Field K] :
@@ -91,19 +91,19 @@ private theorem liftedField_isIso (K : Type u) [Field K] :
 
 private theorem liftedField_universallyClosed (K : Type u) [Field K] :
     UniversallyClosed (liftedFieldMap K) := by
-  letI := liftedField_isIso K
+  let := liftedField_isIso K
   infer_instance
 
 /-- The lifted spectrum has a field of sections by the integral-source result. -/
 private theorem liftedField_sections_isField (K : Type u) [Field K] :
     _root_.IsField Γ(Spec (.of (ULift.{u} K)), ⊤) := by
-  letI := liftedField_integral K
+  let := liftedField_integral K
   exact isField_of_universallyClosed (ULift.{u} K) (𝟙 _)
 
 /-- The lifted map induces an isomorphism on sections because it is an isomorphism. -/
 private theorem liftedField_appTop_isIso (K : Type u) [Field K] :
     IsIso (liftedFieldMap K).appTop := by
-  letI := liftedField_isIso K
+  let := liftedField_isIso K
   rw [← Scheme.Γ_map_op]
   exact Scheme.Γ.map_isIso (liftedFieldMap K).op
 
@@ -133,7 +133,7 @@ private theorem zeroSpectrum_reduced :
   infer_instance
 
 private theorem zeroSpectrum_preconnected : PreconnectedSpace zeroSpectrum.{u} := by
-  letI := zeroSpectrum_isEmpty.{u}
+  let := zeroSpectrum_isEmpty.{u}
   infer_instance
 
 private theorem zeroStructureMap_closedImmersion (K : Type u) [Field K] :
@@ -142,7 +142,7 @@ private theorem zeroStructureMap_closedImmersion (K : Type u) [Field K] :
 
 private theorem zeroStructureMap_universallyClosed (K : Type u) [Field K] :
     UniversallyClosed (zeroStructureMap K) := by
-  letI := zeroStructureMap_closedImmersion K
+  let := zeroStructureMap_closedImmersion K
   infer_instance
 
 private theorem zeroSpectrum_sections_subsingleton :
@@ -152,14 +152,14 @@ private theorem zeroSpectrum_sections_subsingleton :
 
 private theorem zeroSpectrum_sections_not_isField :
     ¬ _root_.IsField Γ(zeroSpectrum.{u}, ⊤) := by
-  letI := zeroSpectrum_sections_subsingleton.{u}
+  let := zeroSpectrum_sections_subsingleton.{u}
   intro h
   obtain ⟨a, b, hab⟩ := h.exists_pair_ne
   exact hab (Subsingleton.elim _ _)
 
 private theorem zeroStructureMap_no_section (K : Type u) [Field K] :
     ¬ ∃ p : Spec (.of K) ⟶ zeroSpectrum.{u}, p ≫ zeroStructureMap K = 𝟙 _ := by
-  letI := zeroSpectrum_isEmpty.{u}
+  let := zeroSpectrum_isEmpty.{u}
   rintro ⟨p, _⟩
   obtain ⟨x⟩ := (inferInstance : Nonempty (Spec (.of K)))
   exact isEmptyElim (p x)
@@ -168,15 +168,15 @@ private theorem zeroStructureMap_no_section (K : Type u) [Field K] :
 
 example (K : Type u) [Field K] :
     _root_.IsField Γ(Spec (.of (ULift.{u} K)), ⊤) := by
-  letI := liftedField_reduced K
-  letI := liftedField_connected K
-  letI := liftedField_universallyClosed K
+  let := liftedField_reduced K
+  let := liftedField_connected K
+  let := liftedField_universallyClosed K
   exact isField_globalSections_of_universallyClosed K (liftedFieldMap K)
 
 example (K : Type u) [Field K] : IsIso (liftedFieldMap K).appTop := by
-  letI := liftedField_reduced K
-  letI := liftedField_connected K
-  letI := liftedField_universallyClosed K
+  let := liftedField_reduced K
+  let := liftedField_connected K
+  let := liftedField_universallyClosed K
   exact Scheme.Hom.isIso_appTop_of_isReduced_of_universallyClosed_of_section
     (liftedFieldMap K) (liftedFieldPoint K) (liftedField_section K)
 

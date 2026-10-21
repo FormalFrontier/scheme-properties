@@ -72,13 +72,13 @@ private instance origin_stalk_isDomain : IsDomain (affineLine.presheaf.stalk ori
   (StructureSheaf.stalkIso (Polynomial ℚ) origin).symm.toRingEquiv.toMulEquiv.isDomain _
 
 private theorem origin_valuationRing : ValuationRing (affineLine.presheaf.stalk origin) := by
-  letI : Algebra (Polynomial ℚ) (affineLine.presheaf.stalk origin) :=
+  let : Algebra (Polynomial ℚ) (affineLine.presheaf.stalk origin) :=
     StructureSheaf.stalkAlgebra (Polynomial ℚ) origin
-  letI : IsLocalization.AtPrime (affineLine.presheaf.stalk origin) origin.asIdeal :=
+  let : IsLocalization.AtPrime (affineLine.presheaf.stalk origin) origin.asIdeal :=
     StructureSheaf.IsLocalization.to_stalk (Polynomial ℚ) origin
-  letI : IsLocalRing (affineLine.presheaf.stalk origin) :=
+  let : IsLocalRing (affineLine.presheaf.stalk origin) :=
     IsLocalization.AtPrime.isLocalRing _ origin.asIdeal
-  letI : IsDedekindDomain (affineLine.presheaf.stalk origin) :=
+  let : IsDedekindDomain (affineLine.presheaf.stalk origin) :=
     IsLocalization.AtPrime.isDedekindDomain (Polynomial ℚ) origin.asIdeal _
   infer_instance
 
@@ -108,7 +108,7 @@ private def projectiveMap : affineLine ⟶ projectiveLine :=
 
 private instance degreeZero_finiteType :
     Algebra.FiniteType (homogeneousGrading 0) homogeneousCoordinateRing := by
-  letI : IsScalarTower ℚ (homogeneousGrading 0) homogeneousCoordinateRing :=
+  let : IsScalarTower ℚ (homogeneousGrading 0) homogeneousCoordinateRing :=
     IsScalarTower.of_algebraMap_eq' (R := ℚ) (S := homogeneousGrading 0)
       (A := homogeneousCoordinateRing) rfl
   exact Algebra.FiniteType.of_restrictScalars_finiteType

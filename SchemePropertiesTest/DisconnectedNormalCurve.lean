@@ -107,14 +107,14 @@ instance source_isLocallyNoetherian : IsLocallyNoetherian source := inferInstanc
 /-- The two orthogonal nonzero idempotents prevent integrality of the source. -/
 theorem source_not_isIntegral : ¬ IsIntegral source := by
   intro h
-  letI : IsDomain (ℤ × ℤ) := (affine_isIntegral_iff (.of (ℤ × ℤ))).mp h
+  let : IsDomain (ℤ × ℤ) := (affine_isIntegral_iff (.of (ℤ × ℤ))).mp h
   have hmul : ((1, 0) : ℤ × ℤ) * (0, 1) = 0 := by ext <;> simp
   rcases mul_eq_zero.mp hmul with hzero | hzero
   · exact one_ne_zero (congrArg Prod.fst hzero)
   · exact one_ne_zero (congrArg Prod.snd hzero)
 
 private theorem integer_coheight_le_one (z : base) : Order.coheight z ≤ 1 := by
-  haveI : z.asIdeal.IsPrime := z.isPrime
+  have : z.asIdeal.IsPrime := z.isPrime
   have hdim : ringKrullDim ℤ ≤ 1 := Ring.krullDimLE_iff.mp inferInstance
   have hheight : z.asIdeal.height ≤ 1 := by
     exact_mod_cast z.asIdeal.height_le_ringKrullDim_of_isPrime.trans hdim
@@ -237,7 +237,7 @@ instance omittedPoint_stalk_isDiscreteValuationRing :
   have hP : integerTwo.asIdeal ≠ ⊥ := by
     change Ideal.span {(2 : ℤ)} ≠ ⊥
     exact twoIdeal_ne_bot
-  letI : IsDiscreteValuationRing (Localization.AtPrime integerTwo.asIdeal) :=
+  let : IsDiscreteValuationRing (Localization.AtPrime integerTwo.asIdeal) :=
     IsLocalization.AtPrime.isDiscreteValuationRing_of_dedekind_domain
       ℤ hP _
   exact IsDiscreteValuationRing.RingEquivClass.isDiscreteValuationRing

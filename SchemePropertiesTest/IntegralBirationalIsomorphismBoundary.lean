@@ -68,9 +68,9 @@ private theorem complexToReal_boundary :
   refine ⟨inferInstance, inferInstance, inferInstance, inferInstance,
     inferInstance, inferInstance, ?_, hnotIso⟩
   intro hfield
-  letI := hfield
+  let := hfield
   -- These isomorphisms come from the local-ring stalk dictionary, not topology alone.
-  haveI : IsIso ((Spec (CommRingCat.of ℂ)).fromSpecStalk
+  have : IsIso ((Spec (CommRingCat.of ℂ)).fromSpecStalk
       (genericPoint (Spec (CommRingCat.of ℂ)))) := by
     have hpoint : genericPoint (Spec (CommRingCat.of ℂ)) =
         closedPoint (CommRingCat.of ℂ) := by
@@ -80,7 +80,7 @@ private theorem complexToReal_boundary :
       exact maximalIdeal_eq_bot.symm
     rw [hpoint, ← AlgebraicGeometry.Spec_stalkClosedPointIso]
     infer_instance
-  haveI : IsIso ((Spec (CommRingCat.of ℝ)).fromSpecStalk
+  have : IsIso ((Spec (CommRingCat.of ℝ)).fromSpecStalk
       (genericPoint (Spec (CommRingCat.of ℝ)))) := by
     have hpoint : genericPoint (Spec (CommRingCat.of ℝ)) =
         closedPoint (CommRingCat.of ℝ) := by

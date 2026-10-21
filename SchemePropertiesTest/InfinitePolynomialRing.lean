@@ -27,14 +27,14 @@ private theorem variables_not_finite : ¬ Finite ℕ :=
   Infinite.not_finite
 
 private theorem isLocallyNormalRing : IsLocallyNormalRing (MvPolynomial ℕ ℚ) := by
-  letI : UniqueFactorizationMonoid (MvPolynomial ℕ ℚ) :=
+  let : UniqueFactorizationMonoid (MvPolynomial ℕ ℚ) :=
     MvPolynomial.uniqueFactorizationMonoid ℕ
-  letI : IsIntegrallyClosed (MvPolynomial ℕ ℚ) :=
+  let : IsIntegrallyClosed (MvPolynomial ℕ ℚ) :=
     GCDMonoid.toIsIntegrallyClosed
   exact isLocallyNormalRing_of_isDomain _
 
 private theorem isNormal_spec : IsNormal (Spec (.of (MvPolynomial ℕ ℚ))) := by
-  letI : IsLocallyNormalRing (MvPolynomial ℕ ℚ) := isLocallyNormalRing
+  let : IsLocallyNormalRing (MvPolynomial ℕ ℚ) := isLocallyNormalRing
   infer_instance
 
 end SchemePropertiesTest.InfinitePolynomialRing

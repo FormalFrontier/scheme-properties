@@ -46,7 +46,7 @@ private def affineLineProjection : Spec (.of ℚ[X]) ⟶ Spec (.of ℚ) :=
 private theorem polynomial_free : Module.Free ℚ ℚ[X] := inferInstance
 
 private theorem polynomial_faithfullyFlat : Module.FaithfullyFlat ℚ ℚ[X] := by
-  letI : Module.Free ℚ ℚ[X] := polynomial_free
+  let : Module.Free ℚ ℚ[X] := polynomial_free
   infer_instance
 
 private theorem coefficientMap_faithfullyFlat : coefficientMap.FaithfullyFlat :=
@@ -78,8 +78,8 @@ private theorem rational_dimension_bound_via_faithfullyFlat :
 
 private theorem rationalSpectrum_dimension_bound :
     Order.krullDim (Spec (.of ℚ)) ≤ Order.krullDim (Spec (.of ℚ[X])) := by
-  letI : Flat affineLineProjection := affineLineProjection_flat_surjective.1
-  letI : Surjective affineLineProjection := affineLineProjection_flat_surjective.2
+  let : Flat affineLineProjection := affineLineProjection_flat_surjective.1
+  let : Surjective affineLineProjection := affineLineProjection_flat_surjective.2
   exact Flat.krullDim_le_of_surjective affineLineProjection
 
 -- Independent stock computations, without using any of the three bounds.
@@ -129,7 +129,7 @@ private theorem fractionMap_X_isUnit : IsUnit (fractionMap (Polynomial.X : ℚ[X
 
 private theorem fractionMap_not_faithfullyFlat : ¬ fractionMap.FaithfullyFlat := by
   intro h
-  letI : Module.FaithfullyFlat ℚ[X] (FractionRing (ℚ[X])) :=
+  let : Module.FaithfullyFlat ℚ[X] (FractionRing (ℚ[X])) :=
     RingHom.faithfullyFlat_algebraMap_iff.mp h
   have hX : IsUnit (Polynomial.X : ℚ[X]) :=
     (isUnit_map_iff (algebraMap ℚ[X] (FractionRing (ℚ[X]))) Polynomial.X).mp fractionMap_X_isUnit
@@ -173,8 +173,8 @@ private theorem zeroMorphism_flat_surjective : Flat zeroMorphism ∧ Surjective 
 
 private theorem zeroSpectrum_dimension_bound :
     Order.krullDim (Spec (.of (ZMod 1))) ≤ Order.krullDim (Spec (.of (ZMod 1))) := by
-  letI : Flat zeroMorphism := zeroMorphism_flat_surjective.1
-  letI : Surjective zeroMorphism := zeroMorphism_flat_surjective.2
+  let : Flat zeroMorphism := zeroMorphism_flat_surjective.1
+  let : Surjective zeroMorphism := zeroMorphism_flat_surjective.2
   exact Flat.krullDim_le_of_surjective zeroMorphism
 
 end SchemePropertiesTest.FlatKrullDimension

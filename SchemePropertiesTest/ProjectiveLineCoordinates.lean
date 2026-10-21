@@ -77,7 +77,7 @@ def baseIso : Spec (.of DegreeZero) ≅ base :=
   Scheme.Spec.mapIso degreeZeroEquiv.symm.toCommRingCatIso.op
 
 instance degreeZero_finiteType : Algebra.FiniteType DegreeZero PolynomialRing := by
-  haveI : IsScalarTower ℤ DegreeZero PolynomialRing :=
+  have : IsScalarTower ℤ DegreeZero PolynomialRing :=
     AddCommGroup.intIsScalarTower (R := DegreeZero) (M := PolynomialRing)
   exact Algebra.FiniteType.of_restrictScalars_finiteType ℤ DegreeZero PolynomialRing
 

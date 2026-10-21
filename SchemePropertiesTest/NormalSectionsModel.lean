@@ -38,7 +38,7 @@ private theorem coordinateRing_isIntegrallyClosed : IsIntegrallyClosed coordinat
   GCDMonoid.toIsIntegrallyClosed
 
 private theorem affineLine_isNormal : IsNormal affineLine := by
-  letI := coordinateRing_isIntegrallyClosed
+  let := coordinateRing_isIntegrallyClosed
   infer_instance
 
 private theorem affineLine_isIntegral : IsIntegral affineLine := by
@@ -51,7 +51,7 @@ private theorem topSections_isDomain : IsDomain Γ(affineLine, ⊤) := by
   infer_instance
 
 private theorem topSections_isIntegrallyClosed : IsIntegrallyClosed Γ(affineLine, ⊤) := by
-  letI := coordinateRing_isIntegrallyClosed
+  let := coordinateRing_isIntegrallyClosed
   exact IsIntegrallyClosed.of_equiv
     (Scheme.ΓSpecIso (.of coordinateRing)).symm.commRingCatIsoToRingEquiv
 
@@ -67,7 +67,7 @@ private def stalkMap (x : affineLine) : affineLine.presheaf.stalk x →+* affine
 
 private theorem topSectionMap_germ (x : affineLine) (s : Γ(affineLine, ⊤)) :
     stalkMap x (topGerm x s) = topSectionMap s := by
-  letI := topOpen_nonempty
+  let := topOpen_nonempty
   exact affineLine.algebraMap_germ_eq_germToFunctionField (U := ⊤) (by trivial) s
 
 private abbrev puncturedLine : affineLine.Opens :=
@@ -79,11 +79,11 @@ private theorem puncturedLine_nonempty : Nonempty puncturedLine := by
   simpa only [Ideal.mem_bot] using (Polynomial.X_ne_zero : (Polynomial.X : coordinateRing) ≠ 0)
 
 private theorem puncturedLine_isNormal : IsNormal puncturedLine.toScheme := by
-  letI := affineLine_isNormal
+  let := affineLine_isNormal
   infer_instance
 
 private theorem puncturedLine_isIntegral : IsIntegral puncturedLine.toScheme := by
-  letI := puncturedLine_nonempty
+  let := puncturedLine_nonempty
   infer_instance
 
 private def puncturedSectionMap : Γ(affineLine, puncturedLine) →+* affineLine.functionField :=
@@ -91,9 +91,9 @@ private def puncturedSectionMap : Γ(affineLine, puncturedLine) →+* affineLine
   algebraMap _ _
 
 private theorem emptySections_isIntegrallyClosed : IsIntegrallyClosed Γ(affineLine, ⊥) := by
-  letI : Subsingleton Γ(affineLine, ⊥) :=
+  let : Subsingleton Γ(affineLine, ⊥) :=
     CommRingCat.subsingleton_of_isTerminal affineLine.sheaf.isTerminalOfEmpty
-  letI : Unique (FractionRing Γ(affineLine, ⊥)) := FractionRing.unique _
+  let : Unique (FractionRing Γ(affineLine, ⊥)) := FractionRing.unique _
   apply isIntegrallyClosedIn_iff.mpr
   constructor
   · intro a b _
@@ -105,8 +105,8 @@ private theorem coordinateFunction_mem_stalkMap_range :
     ∀ x : (⊤ : affineLine.Opens),
       topSectionMap ((Scheme.ΓSpecIso (.of coordinateRing)).inv
         (Polynomial.X : coordinateRing)) ∈ Set.range (stalkMap x.1) := by
-  letI := affineLine_isIntegral
-  letI := topOpen_nonempty
+  let := affineLine_isIntegral
+  let := topOpen_nonempty
   exact (Scheme.mem_range_algebraMap_functionField_iff (X := affineLine) ⊤
     (topSectionMap ((Scheme.ΓSpecIso (.of coordinateRing)).inv
       (Polynomial.X : coordinateRing)))).mp
@@ -115,9 +115,9 @@ private theorem coordinateFunction_mem_stalkMap_range :
 private theorem puncturedSectionMap_preimage_of_integral (f : affineLine.functionField)
     (hf : puncturedSectionMap.IsIntegralElem f) :
     ∃ s : Γ(affineLine, puncturedLine), puncturedSectionMap s = f := by
-  letI := affineLine_isNormal
-  letI := affineLine_isIntegral
-  letI := puncturedLine_nonempty
+  let := affineLine_isNormal
+  let := affineLine_isIntegral
+  let := puncturedLine_nonempty
   exact (isIntegrallyClosedIn_iff.mp
     (IsNormal.isIntegrallyClosedIn_sections (X := affineLine) puncturedLine)).2 hf
 
@@ -125,9 +125,9 @@ private theorem topFraction_preimage_of_integral (f : FractionRing Γ(affineLine
     (hf : _root_.IsIntegral Γ(affineLine, ⊤) f) :
     ∃ s : Γ(affineLine, ⊤), algebraMap Γ(affineLine, ⊤)
       (FractionRing Γ(affineLine, ⊤)) s = f := by
-  letI := affineLine_isNormal
-  letI := affineLine_isIntegral
-  letI : IsIntegrallyClosed Γ(affineLine, ⊤) :=
+  let := affineLine_isNormal
+  let := affineLine_isIntegral
+  let : IsIntegrallyClosed Γ(affineLine, ⊤) :=
     IsNormal.isIntegrallyClosed_sections (X := affineLine) ⊤
   exact IsIntegrallyClosed.algebraMap_eq_of_integral hf
 
@@ -135,8 +135,8 @@ private theorem emptyFraction_preimage_of_integral (f : FractionRing Γ(affineLi
     (hf : _root_.IsIntegral Γ(affineLine, ⊥) f) :
     ∃ s : Γ(affineLine, ⊥), algebraMap Γ(affineLine, ⊥)
       (FractionRing Γ(affineLine, ⊥)) s = f := by
-  letI := affineLine_isNormal
-  letI := affineLine_isIntegral
+  let := affineLine_isNormal
+  let := affineLine_isIntegral
   exact (isIntegrallyClosedIn_iff.mp
     (IsNormal.isIntegrallyClosed_sections (X := affineLine) ⊥)).2 hf
 

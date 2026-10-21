@@ -61,7 +61,7 @@ private def projectiveLinePoint : Proj 𝒜 where
       simpa only [HomogeneousIdeal.toIdeal_bot, Ideal.mem_bot] using hx')
 
 private theorem projectiveLine_irreducibleSpace : IrreducibleSpace (Proj 𝒜) := by
-  letI : Nonempty (Proj 𝒜) := ⟨projectiveLinePoint K⟩
+  let : Nonempty (Proj 𝒜) := ⟨projectiveLinePoint K⟩
   exact Proj.irreducibleSpace 𝒜
 
 end AlgebraicGeometry

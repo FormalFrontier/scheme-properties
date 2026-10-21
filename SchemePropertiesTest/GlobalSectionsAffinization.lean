@@ -23,7 +23,7 @@ namespace SchemePropertiesTest.GlobalSectionsAffinization
 
 example (X T : Scheme.{u}) [IsAffine T] :
     Function.Bijective (fun h : Spec Γ(X, ⊤) ⟶ T ↦ X.toSpecΓ ≫ h) := by
-  letI : IsIso X.toSpecΓ.appTop := by
+  let : IsIso X.toSpecΓ.appTop := by
     rw [Scheme.toSpecΓ_appTop]
     infer_instance
   exact Scheme.Hom.precomp_bijective_of_isIso_appTop X.toSpecΓ

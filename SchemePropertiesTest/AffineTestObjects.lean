@@ -43,7 +43,7 @@ private theorem lineInPlane_closedImmersion : IsClosedImmersion lineInPlane :=
   IsClosedImmersion.spec_of_surjective _ (Polynomial.eval_surjective (0 : Polynomial ℚ))
 
 private theorem lineInPlane_mono : Mono lineInPlane := by
-  letI := lineInPlane_closedImmersion
+  let := lineInPlane_closedImmersion
   infer_instance
 
 private def rationalPoint (a : ℚ) : Spec (.of ℚ) ⟶ affineLine :=

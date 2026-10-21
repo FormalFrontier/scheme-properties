@@ -84,14 +84,14 @@ private theorem globalMap_extension_iff (h : source ⟶ ProjectiveLineCoordinate
     exact hglobal
 
 private theorem rational_domain_eq_top : partialMap.toRationalMap.domain = ⊤ := by
-  letI : source.Over base := .ofHom structureMap
-  letI : ProjectiveLineCoordinates.target.Over base :=
+  let : source.Over base := .ofHom structureMap
+  let : ProjectiveLineCoordinates.target.Over base :=
     .ofHom ProjectiveLineCoordinates.structureMap
-  letI : IsProper (ProjectiveLineCoordinates.target ↘ base) := by
+  let : IsProper (ProjectiveLineCoordinates.target ↘ base) := by
     change IsProper ProjectiveLineCoordinates.structureMap
     infer_instance
-  letI : partialMap.IsOver base := Scheme.PartialMap.isOver_iff.mpr partialMap_over
-  letI : partialMap.toRationalMap.IsOver base := ⟨partialMap, inferInstance, rfl⟩
+  let : partialMap.IsOver base := Scheme.PartialMap.isOver_iff.mpr partialMap_over
+  let : partialMap.toRationalMap.IsOver base := ⟨partialMap, inferInstance, rfl⟩
   apply top_unique
   intro x _
   exact Scheme.RationalMap.mem_domain_of_coheight_le_one

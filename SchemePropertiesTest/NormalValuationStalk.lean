@@ -43,7 +43,7 @@ private theorem field_stalk_boundary (K : Type u) [Field K] (x : Spec (.of K)) :
   have hx : Order.coheight x = 0 := Order.coheight_eq_zero.mpr (by
     intro y _
     exact le_of_eq (Subsingleton.elim _ _))
-  letI : Ring.KrullDimLE 0 ((Spec (.of K)).presheaf.stalk x) :=
+  let : Ring.KrullDimLE 0 ((Spec (.of K)).presheaf.stalk x) :=
     krullDimLE_of_coheight_le hx.le
   exact ⟨Ring.KrullDimLE.isField_of_isDomain, hx,
     valuationRing_stalk_of_coheight_le_one x (by simp [hx])⟩

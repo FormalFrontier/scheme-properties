@@ -42,7 +42,7 @@ private theorem affineLine_nonempty : Nonempty affineLine :=
 
 private theorem p0_mono : Mono p0 := by
   change Mono (Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom (0 : ℚ))))
-  letI : IsClosedImmersion
+  let : IsClosedImmersion
       (Spec.map (CommRingCat.ofHom (Polynomial.evalRingHom (0 : ℚ)))) :=
     IsClosedImmersion.spec_of_surjective _ (fun q => ⟨Polynomial.C q, by simp⟩)
   infer_instance
@@ -69,7 +69,7 @@ private theorem p0_points_not_surjective :
 
 private theorem p0_not_isIso : ¬ IsIso p0 := by
   intro h
-  letI : IsIso p0 := h
+  let : IsIso p0 := h
   exact p0_misses_p1 (p1 ≫ inv p0) (by simp [Category.assoc])
 
 private theorem affineLine_identity_strongGenerator : IsIso (𝟙 affineLine) := by
@@ -100,7 +100,7 @@ private theorem zeroRing_identity : IsIso (𝟙 (Spec (.of (ZMod 1)))) := by
 
 private theorem zeroRing_points_zeroSection_bijective :
     Function.Bijective (fun g : Spec (.of (ZMod 1)) ⟶ Spec (.of ℚ) => g ≫ p0) := by
-  letI : IsEmpty (Spec (.of (ZMod 1))) := zeroRing_isEmpty
+  let : IsEmpty (Spec (.of (ZMod 1))) := zeroRing_isEmpty
   have h := isInitialOfIsEmpty (X := Spec (.of (ZMod 1)))
   constructor
   · intro a b _
