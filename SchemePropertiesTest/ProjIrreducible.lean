@@ -43,7 +43,7 @@ private theorem x_zero_ne_zero :
     (MvPolynomial.X (0 : Fin 2) : MvPolynomial (Fin 2) K) ≠ 0 := by
   intro h
   have h_eval := congrArg (MvPolynomial.eval (fun _ : Fin 2 => (1 : K))) h
-  exact (one_ne_zero : (1 : K) ≠ 0) (by simpa using h_eval)
+  simp at h_eval
 
 /-- A point of the projective line whose homogeneous ideal is zero. -/
 private def projectiveLinePoint : Proj 𝒜 where

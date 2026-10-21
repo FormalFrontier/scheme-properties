@@ -4,12 +4,13 @@ Authors: Formal Frontier Agents
 -/
 module
 
-import Mathlib.Algebra.Field.Rat
+public import Mathlib.Algebra.Field.Rat
 import Mathlib.Algebra.MvPolynomial.Division
 import Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Basic
 import Mathlib.AlgebraicGeometry.Properties
 import Mathlib.RingTheory.Ideal.Maximal
 import Mathlib.RingTheory.MvPolynomial.Homogeneous
+public import SchemeProperties.PolynomialProjectiveSpace
 import SchemeProperties.ProjectiveSpectrum
 
 /-!
@@ -76,13 +77,13 @@ private theorem xZero_not_mem_coordinateIdeal : X (0 : Fin 2) ∉ coordinateIdea
 private theorem coordinateIdeal_isPrime : coordinateIdeal.toIdeal.IsPrime :=
   Ideal.isPrime_span_singleton_of_prime (MvPolynomial.X_prime (R := ℚ) (i := (1 : Fin 2)))
 
-private def coordinatePoint :
+private def rationalLineCoordinatePoint :
     ProjectiveSpectrum (MvPolynomial.homogeneousSubmodule (Fin 2) ℚ) where
   asHomogeneousIdeal := coordinateIdeal
   isPrime := coordinateIdeal_isPrime
   not_irrelevant_le := fun h => xZero_not_mem_coordinateIdeal (h xZero_mem_irrelevant)
 
-private theorem genericPoint_ne_coordinatePoint : genericPoint ≠ coordinatePoint := by
+private theorem genericPoint_ne_coordinatePoint : genericPoint ≠ rationalLineCoordinatePoint := by
   intro h
   have hI : (⊥ : Ideal (MvPolynomial (Fin 2) ℚ)) = coordinateIdeal.toIdeal :=
     congrArg (fun x : ProjectiveSpectrum (MvPolynomial.homogeneousSubmodule (Fin 2) ℚ) =>
@@ -92,11 +93,22 @@ private theorem genericPoint_ne_coordinatePoint : genericPoint ≠ coordinatePoi
     exact Ideal.mem_span_singleton_self _
   exact MvPolynomial.X_ne_zero _ (Ideal.mem_bot.mp hx)
 
+/-- The rational projective line has distinct points with homogeneous ideals `(0)`
+and `(X 1)`, respectively. -/
+public theorem
+    _root_.AlgebraicGeometry.PolynomialProjectiveSpace.exists_points_rat_line_with_ideals :
+    ∃ η x : PolynomialProjectiveSpace ℚ 1,
+      η.asHomogeneousIdeal = ⊥ ∧
+      x.asHomogeneousIdeal.toIdeal = Ideal.span {MvPolynomial.X (1 : Fin 2)} ∧
+      η ≠ x :=
+  ⟨genericPoint, rationalLineCoordinatePoint, rfl, rfl, genericPoint_ne_coordinatePoint⟩
+
 private theorem projectiveLine_nonempty : Nonempty projectiveLine :=
   ⟨genericPoint⟩
 
-private theorem projectiveLine_has_two_points : ∃ x y : projectiveLine, x ≠ y :=
-  ⟨genericPoint, coordinatePoint, genericPoint_ne_coordinatePoint⟩
+private theorem projectiveLine_has_two_points : ∃ x y : projectiveLine, x ≠ y := by
+  obtain ⟨η, x, _, _, h⟩ := PolynomialProjectiveSpace.exists_points_rat_line_with_ideals
+  exact ⟨η, x, h⟩
 
 private instance projectiveLine_instNonempty : Nonempty projectiveLine :=
   projectiveLine_nonempty

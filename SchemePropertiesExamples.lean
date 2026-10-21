@@ -1,0 +1,50 @@
+/-
+SPDX-License-Identifier: Apache-2.0
+Authors: Formal Frontier Agents
+-/
+module
+
+public import SchemePropertiesExamples.ComponentBaseChange
+public import SchemePropertiesExamples.ComponentBaseChangeAxiomAudit
+public import SchemePropertiesExamples.ComponentBaseChangeRoot
+public import SchemePropertiesExamples.ComponentProduct
+public import SchemePropertiesExamples.ComponentProductAxiomAudit
+public import SchemePropertiesExamples.ComponentProductRoot
+public import SchemePropertiesExamples.ComponentScheme
+public import SchemePropertiesExamples.ComponentSchemeAxiomAudit
+public import SchemePropertiesExamples.ComponentSchemeRoot
+public import SchemePropertiesExamples.CoproductSections
+public import SchemePropertiesExamples.CoproductSectionsAxiomAudit
+public import SchemePropertiesExamples.CoproductSectionsRoot
+public import SchemePropertiesExamples.CoproductTopology
+public import SchemePropertiesExamples.CoproductTopologyAxiomAudit
+public import SchemePropertiesExamples.CoproductTopologyRoot
+public import SchemePropertiesExamples.FiniteTypeUniverseLift
+public import SchemePropertiesExamples.FlatImageDensity
+public import SchemePropertiesExamples.FunctionFieldNaturality
+public import SchemePropertiesExamples.GeometricallyIntegral
+public import SchemePropertiesExamples.IntegralNeighborhood
+public import SchemePropertiesExamples.LocallyNormalPi
+public import SchemePropertiesExamples.NormalAffine
+public import SchemePropertiesExamples.PointSquareZeroQuotientClients
+public import SchemePropertiesExamples.PointSquareZeroQuotientFixtures
+public import SchemePropertiesExamples.PolynomialPointClients
+public import SchemePropertiesExamples.PolynomialPointFixtures
+public import SchemePropertiesExamples.PolynomialQuotientClosedPoints
+public import SchemePropertiesExamples.ProjectiveSpectrum
+public import SchemePropertiesExamples.PullbackSpectrumPushout
+public import SchemePropertiesExamples.ReducedLocus
+public import SchemePropertiesExamples.ReducedLocusEquivClients
+public import SchemePropertiesExamples.SingleCover
+public import SchemePropertiesExamples.SingleCoverFiniteType
+public import SchemePropertiesExamples.SingleCoverGeneric
+public import SchemePropertiesExamples.SingleCoverGroup
+public import SchemePropertiesExamples.SingleCoverPower
+public import SchemePropertiesExamples.TrivSqZeroExtReducedLocus
+public import SchemePropertiesExamples.TrivSqZeroExtReducedLocusClients
+
+/-!
+# Examples of scheme properties
+
+The canonical examples of scheme properties and their applications.
+-/

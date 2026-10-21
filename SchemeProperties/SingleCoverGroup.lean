@@ -56,14 +56,14 @@ theorem tensorLeftIsoProd_inv_app_snd (A B : K) :
     (limit.isLimit _) ⟨.right⟩
 
 /-- The tensor-to-chosen-product comparison preserves the first projection. -/
-@[reassoc (attr := simp)]
+@[simp, reassoc]
 theorem tensorLeftIsoProd_hom_app_fst (A B : K) :
     (tensorLeftIsoProd A).hom.app B ≫ prod.fst = fst A B :=
   (tensorProductIsBinaryProduct A B).conePointUniqueUpToIso_hom_comp
     (limit.isLimit _) ⟨.left⟩
 
 /-- The tensor-to-chosen-product comparison preserves the second projection. -/
-@[reassoc (attr := simp)]
+@[simp, reassoc]
 theorem tensorLeftIsoProd_hom_app_snd (A B : K) :
     (tensorLeftIsoProd A).hom.app B ≫ prod.snd = snd A B :=
   (tensorProductIsBinaryProduct A B).conePointUniqueUpToIso_hom_comp

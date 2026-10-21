@@ -87,6 +87,6 @@ theorem isIso_iff_bijective_spec {X Y : Scheme.{u}} (f : X ⟶ Y) :
     · intro g' hg'
       apply (cancel_epi G.isoSpec.inv).mp
       simpa only [Iso.inv_hom_id_assoc] using
-        hg_unique (G.isoSpec.inv ≫ g') (by simpa only [Category.assoc, hg'])
+        hg_unique (G.isoSpec.inv ≫ g') (by simp only [Category.assoc, hg'])
 
 end AlgebraicGeometry.Scheme

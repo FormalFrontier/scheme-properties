@@ -58,7 +58,7 @@ private theorem p0_misses_p1 (g : Spec (.of ℚ) ⟶ Spec (.of ℚ)) : g ≫ p0 
   have hx := congrArg
     (fun k : CommRingCat.of (Polynomial ℚ) ⟶ CommRingCat.of ℚ => k.hom Polynomial.X) he
   have hz : (0 : ℚ) = 1 := by
-    simpa [CommRingCat.hom_comp] using hx
+    simp at hx
   exact zero_ne_one hz
 
 private theorem p0_points_not_surjective :

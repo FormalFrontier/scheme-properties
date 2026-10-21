@@ -107,7 +107,6 @@ theorem ext_of_apply_eq_of_comp_eq_id
   apply ext_of_fromSpecResidueField
   intro x
   have hid : (𝟙 X : X ⟶ X) x = x := by
-    change (𝟙 X : X ⟶ X).base x = x
     rw [Scheme.Hom.id_base, TopCat.id_app]
   have hsx : i (s x) = x :=
     (Scheme.Hom.comp_apply s i x).symm.trans

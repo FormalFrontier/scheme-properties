@@ -59,7 +59,7 @@ private def affineLineEvalPoint (a : ZMod 2) :
     rw [← Spec.map_comp, ← Spec.map_id (CommRingCat.of (ZMod 2))]
     congr 1
     ext x
-    simp [CommRingCat.comp_apply, Polynomial.algebraMap_eq])
+    simp [Polynomial.algebraMap_eq])
 
 private def affineLineZeroPoint :
     Over.mk (𝟙 (Spec (CommRingCat.of (ZMod 2)))) ⟶ Over.mk affineLineProjection :=
@@ -78,7 +78,7 @@ private theorem affineLineZeroPoint_ne_onePoint : affineLineZeroPoint ≠ affine
   have hX := congrArg
     (fun f : CommRingCat.of (Polynomial (ZMod 2)) ⟶ CommRingCat.of (ZMod 2) =>
       f.hom Polynomial.X) hEval
-  exact (zero_ne_one : (0 : ZMod 2) ≠ 1) (by simpa using hX)
+  simp at hX
 
 /-- Two named points of the fixed polynomial affine line; this is input data,
 not a replacement for the over-category morphism type. -/

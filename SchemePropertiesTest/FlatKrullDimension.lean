@@ -55,7 +55,8 @@ private theorem coefficientMap_faithfullyFlat : coefficientMap.FaithfullyFlat :=
 private theorem coefficientMap_flat : coefficientMap.Flat :=
   coefficientMap_faithfullyFlat.flat
 
-private theorem coefficientMap_generalizing : GeneralizingMap (PrimeSpectrum.comap coefficientMap) :=
+private theorem coefficientMap_generalizing :
+    GeneralizingMap (PrimeSpectrum.comap coefficientMap) :=
   coefficientMap_flat.generalizingMap_comap
 
 private theorem coefficientMap_comap_surjective :
@@ -134,7 +135,7 @@ private theorem fractionMap_not_faithfullyFlat : ¬ fractionMap.FaithfullyFlat :
   have hX : IsUnit (Polynomial.X : ℚ[X]) :=
     (isUnit_map_iff (algebraMap ℚ[X] (FractionRing (ℚ[X]))) Polynomial.X).mp fractionMap_X_isUnit
   have hzero := hX.map (Polynomial.evalRingHom (0 : ℚ))
-  simpa using hzero
+  simp at hzero
 
 private theorem fractionMorphism_not_surjective : ¬ Surjective fractionMorphism := by
   intro h
@@ -144,7 +145,8 @@ private theorem fractionMorphism_not_surjective : ¬ Surjective fractionMorphism
 private theorem fractionRing_dimension : ringKrullDim (FractionRing (ℚ[X])) = 0 :=
   ringKrullDim_eq_zero_of_field _
 
-private theorem fraction_dimension_drop : ringKrullDim (FractionRing (ℚ[X])) < ringKrullDim ℚ[X] := by
+private theorem fraction_dimension_drop :
+    ringKrullDim (FractionRing (ℚ[X])) < ringKrullDim ℚ[X] := by
   rw [fractionRing_dimension, polynomial_dimension]
   exact WithBot.coe_lt_coe.mpr (show (0 : ℕ∞) < 1 from zero_lt_one)
 

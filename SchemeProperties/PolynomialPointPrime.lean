@@ -36,7 +36,6 @@ noncomputable def evalPrime (x : R) : PrimeSpectrum R[X] :=
 theorem evalPrime_asIdeal (x : R) : (evalPrime x).asIdeal = RingHom.ker (evalRingHom x) :=
   rfl
 
-@[simp]
 theorem mem_evalPrime_iff (x : R) (p : R[X]) :
     p ∈ (evalPrime x).asIdeal ↔ p.eval x = 0 := by
   simp [evalPrime, RingHom.mem_ker]
@@ -46,7 +45,6 @@ theorem evalPrime_asIdeal_eq_span (x : R) :
     (evalPrime x).asIdeal = Ideal.span {X - C x} := by
   rw [evalPrime_asIdeal, ker_evalRingHom]
 
-@[simp]
 theorem X_sub_C_mem_evalPrime_iff (x y : R) :
     X - C y ∈ (evalPrime x).asIdeal ↔ x = y := by
   rw [mem_evalPrime_iff]

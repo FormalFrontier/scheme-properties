@@ -53,7 +53,7 @@ globs = ["SchemePropertiesTest.+", "SchemePropertiesTest"]
 
 [[lean_lib]]
 name = "SchemePropertiesExamples"
-globs = ["SchemePropertiesExamples.+"]
+globs = ["SchemePropertiesExamples.+", "SchemePropertiesExamples"]
 
 [[require]]
 name = "graded-rings"

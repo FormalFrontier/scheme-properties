@@ -4,7 +4,7 @@ Authors: Formal Frontier Agents
 -/
 module
 
-import SchemeProperties.Normal
+public import SchemeProperties.Normal
 import Mathlib.Algebra.EuclideanDomain.Int
 import Mathlib.Algebra.Ring.PUnit
 import Mathlib.Data.Nat.Prime.Int
@@ -16,7 +16,7 @@ import Mathlib.RingTheory.PrincipalIdealDomain
 
 The integers are an integrally closed domain, so their spectrum is normal.
 The distinguished open `D(2)` is affine and normal. It contains the generic
-point but omits the prime ideal `(2)`, so it is nonempty and proper.
+point but omits the prime ideal `(2)`, so it is nonempty and a strict open subset.
 The empty spectrum of the zero ring `PUnit` supplies the boundary case.
 
 ## References
@@ -51,18 +51,30 @@ private theorem integerSpec_isNormal : IsNormal integerSpec := by
   let _ : IsLocallyNormalRing ℤ := integer_isLocallyNormalRing
   exact normalSpec (R := CommRingCat.of ℤ)
 
-private abbrev integerBasicOpenTwo : integerSpec.Opens :=
+/-- The basic open `D(2)` in `Spec ℤ`. -/
+public abbrev integerBasicOpenTwo : (Spec (CommRingCat.of ℤ)).Opens :=
   PrimeSpectrum.basicOpen (2 : ℤ)
 
-private theorem integerBasicOpenTwo_isAffineOpen : IsAffineOpen integerBasicOpenTwo :=
+/-- The integer open is the distinguished open defined by the constant two. -/
+public theorem integerBasicOpenTwo_eq :
+    integerBasicOpenTwo = PrimeSpectrum.basicOpen (2 : ℤ) := rfl
+
+/-- Membership in `D(2)` means that two is not in the prime ideal. -/
+public theorem mem_integerBasicOpenTwo (p : Spec (CommRingCat.of ℤ)) :
+    p ∈ integerBasicOpenTwo ↔ (2 : ℤ) ∉ p.asIdeal :=
+  PrimeSpectrum.mem_basicOpen (2 : ℤ) p
+
+/-- The distinguished open `D(2)` in the integer spectrum is affine. -/
+public theorem integerBasicOpenTwo_isAffineOpen : IsAffineOpen integerBasicOpenTwo :=
   IsAffineOpen.Spec_basicOpen (R := CommRingCat.of ℤ) (2 : ℤ)
 
-private def integerBasicOpenTwoPoint : integerBasicOpenTwo :=
-  ⟨(⊥ : PrimeSpectrum ℤ), by
-    change (2 : ℤ) ∉ (⊥ : PrimeSpectrum ℤ).asIdeal
-    simpa only [PrimeSpectrum.asIdeal_bot, Ideal.mem_bot] using Int.prime_two.ne_zero⟩
+private def integerBasicOpenTwoPoint : integerBasicOpenTwo := by
+  let p : Spec (CommRingCat.of ℤ) := (⊥ : PrimeSpectrum ℤ)
+  refine ⟨p, (mem_integerBasicOpenTwo p).2 ?_⟩
+  simpa only [p, PrimeSpectrum.asIdeal_bot, Ideal.mem_bot] using Int.prime_two.ne_zero
 
-private theorem integerBasicOpenTwo_nonempty : Nonempty integerBasicOpenTwo :=
+/-- The generic point belongs to `D(2)`, so this open is nonempty. -/
+public theorem integerBasicOpenTwo_nonempty : Nonempty integerBasicOpenTwo :=
   ⟨integerBasicOpenTwoPoint⟩
 
 private def integerTwoPrime : PrimeSpectrum ℤ :=
@@ -71,16 +83,18 @@ private def integerTwoPrime : PrimeSpectrum ℤ :=
 private theorem integerTwoPrime_not_mem_basicOpenTwo :
     integerTwoPrime ∉ integerBasicOpenTwo := by
   intro hp
-  exact (PrimeSpectrum.mem_basicOpen (2 : ℤ) integerTwoPrime).mp hp
+  exact (mem_integerBasicOpenTwo integerTwoPrime).mp hp
     (Ideal.mem_span_singleton_self (2 : ℤ))
 
-private theorem integerBasicOpenTwo_ne_top : integerBasicOpenTwo ≠ ⊤ := by
+/-- The open `D(2)` is a strict subset of `Spec ℤ`, since it omits the prime `(2)`. -/
+public theorem integerBasicOpenTwo_ne_top : integerBasicOpenTwo ≠ ⊤ := by
   intro h
   apply integerTwoPrime_not_mem_basicOpenTwo
   rw [h]
   exact TopologicalSpace.Opens.mem_top _
 
-private theorem integerBasicOpenTwo_isNormal : IsNormal integerBasicOpenTwo := by
+/-- The open subscheme `D(2)` of the integer spectrum is normal. -/
+public theorem integerBasicOpenTwo_isNormal : IsNormal integerBasicOpenTwo := by
   let _ : IsNormal integerSpec := integerSpec_isNormal
   infer_instance
 
