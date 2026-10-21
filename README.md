@@ -40,6 +40,8 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   This does not assert a scheme isomorphism or uniqueness of scheme morphisms.
   Direct import: `SchemeProperties.ProperAffineField`.
 
+- [Finite-variable polynomial Proj](SchemeProperties/PolynomialProjProper.lean) is proper over the original `Spec R` for every commutative ring `R : Type (max u v)` and finite `σ : Type v`, including zero rings and empty `σ`; see the [guide](docs/SpectraAndGlobalGeometry.md#polynomial-proj-properness).
+
 - [Rigidity from a collapsed fibre](SchemeProperties/Rigidity.lean): for a
   field `K`, a proper integral `K`-scheme `X` whose structure map has a
   `K`-rational section, a preconnected `K`-scheme `Y` with an arbitrary chosen
@@ -159,7 +161,7 @@ build succeeds.
   [Credits](docs/CREDITS.md), with authentic upstream notices preserved.
 - [Coherent Modules](https://github.com/FormalFrontier/coherent-modules),
   [Finite Étale Algebras](https://github.com/FormalFrontier/finite-etale-algebras)
-  and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials/tree/5a678826cc76272e625a0c54eb748d3802dfe05d):
+  and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials/tree/602ba00e0d71b83ecc78adebffef1a494b2a47b1):
   prior formalizations used for coherent-module localization, finite-étale
   component algebras and descent, the polynomial point-quotient presentation,
   and `MultivariatePolynomials.IntegrallyClosed`'s `MvPolynomial.isIntegrallyClosed`.

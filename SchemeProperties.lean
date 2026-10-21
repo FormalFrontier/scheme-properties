@@ -84,6 +84,7 @@ public import SchemeProperties.PolynomialPointReducedLocus
 public import SchemeProperties.PolynomialPointSquareZeroReducedLocus
 public import SchemeProperties.PresheafModuleTensorStalk
 public import SchemeProperties.ProjectiveSpectrum
+public import SchemeProperties.PolynomialProjProper
 public import SchemeProperties.PullbackOpenImmersion
 public import SchemeProperties.PullbackSpectrumPushout
 public import SchemeProperties.QcqsModuleLocalization

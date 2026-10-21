@@ -362,7 +362,7 @@ and `FiniteEtaleAlgebras.PurelyInseparableDescent` and
 [ComponentBaseChange](../SchemeProperties/ComponentBaseChange.lean).
 Neither direct dependency supplies the scheme-level construction or the
 arbitrary-extension comparison as a finished result.
-The pinned `multivariate-polynomials` formalization (`5a678826cc76272e625a0c54eb748d3802dfe05d`)
+The pinned `multivariate-polynomials` formalization (`602ba00e0d71b83ecc78adebffef1a494b2a47b1`)
 supplies the square-zero polynomial point quotient, its evaluation-module
 presentation and the generator-prescribed algebra equivalence under pairwise
 unit differences. Its quotient presentation uses only squares and
@@ -379,6 +379,16 @@ iterated-localization APIs. The provider cites
 normal-domain polynomial ingredient; local normality over a possibly non-domain base
 and the two-stage localization argument are not imported as a finished theorem from
 that reference.
+The [polynomial Proj coefficient morphism](PolynomialProjProper.md) uses
+Mathlib's total-degree grading, projective spectrum, degree-zero structural
+morphism and properness theory, together with Multivariate Polynomials'
+`MvPolynomial.gradeZeroAlgEquiv` and its coefficient laws. The composition and
+three properness applications use imported interfaces rather than copied proof
+expression. The point `[1:0]` and empty-boundary explanation are original
+mathematical exposition, not an additional Lean point construction. Authentic
+upstream notices remain upstream; the new statements and documentation have the
+collective project credit above.
+
 Coherent Modules' coherence and localization criteria together with Mathlib's
 affine communication lemma support the project
 [any-affine-cover locality criterion](../SchemeProperties/CoherentQuasicoherentLocality.lean),

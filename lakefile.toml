@@ -27,12 +27,19 @@ rev = "79575f65c9edec560f27756917761eed78331a2a"
 [[require]]
 name = "multivariate-polynomials"
 git = "https://github.com/FormalFrontier/multivariate-polynomials.git"
-rev = "5a678826cc76272e625a0c54eb748d3802dfe05d"
+rev = "602ba00e0d71b83ecc78adebffef1a494b2a47b1"
 
 [[require]]
 name = "minimal-primes"
 git = "https://github.com/FormalFrontier/minimal-primes.git"
 rev = "44b23fb524e62c7f91f7cbe7f07db873cb5c1d66"
+
+# Match Mathlib's resolved Batteries revision, overriding Aesop's nested pin.
+[[require]]
+name = "batteries"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/batteries"
+rev = "4cac2177c37f5530c4da76aa8e4307f3fc9e4dcb"
 
 [[lean_lib]]
 name = "SchemeProperties"

@@ -63,6 +63,19 @@ See the [overview](../README.md), [reader guide](Guide.md) and
   localization (`coordinateAwayEval_fromZeroRingHom` and
   `coordinateAwayEval_comp_fromZeroRingHom`).
 
+## Polynomial Proj properness
+
+- [Polynomial Proj properness](../SchemeProperties/PolynomialProjProper.lean): for
+  a commutative ring `R` and finite variable type `σ`, with
+  `R : Type (max u v)` and `σ : Type v`, `Proj.isProper_toSpec_mvPolynomial`
+  gives properness over the original `Spec R`. Zero rings and empty variable
+  types are allowed; `σ = Fin n` permits every coefficient universe and every
+  `n`, including zero. The morphism is `Proj.toSpecZero` followed by the spectrum
+  isomorphism induced by the forward `MvPolynomial.gradeZeroAlgEquiv`.
+  The [coefficient-map guide](PolynomialProjProper.md) explains the
+  orientation, projective-line example and boundary cases.
+  Direct import: `SchemeProperties.PolynomialProjProper`.
+
 ## Rigidity
 
 - [Rigidity from a collapsed fibre](../SchemeProperties/Rigidity.lean): for a

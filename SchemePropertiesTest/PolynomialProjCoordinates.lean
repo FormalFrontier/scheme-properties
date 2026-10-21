@@ -27,7 +27,7 @@ attribute [local instance] MvPolynomial.gradedAlgebra
 private theorem binaryCoordinateChart_nonempty :
     Nonempty ↥(Proj.basicOpen (MvPolynomial.homogeneousSubmodule (Fin 2) (ZMod 2))
       (MvPolynomial.X (0 : Fin 2))) := by
-  letI : Fact (1 < 2) := ⟨Nat.one_lt_two⟩
+  let : Fact (1 < 2) := ⟨Nat.one_lt_two⟩
   let p : PrimeSpectrum (ZMod 2) := Classical.choice inferInstance
   exact ⟨⟨coordinatePoint (0 : Fin 2) p, coordinatePoint_mem_basicOpen _ _⟩⟩
 
