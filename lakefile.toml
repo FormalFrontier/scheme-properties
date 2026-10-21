@@ -1,4 +1,5 @@
 name = "scheme-properties"
+lintDriver = "batteries/runLinter"
 version = "0.1.0"
 defaultTargets = ["SchemeProperties", "SchemePropertiesTest", "SchemePropertiesExamples"]
 
@@ -38,6 +39,8 @@ name = "SchemeProperties"
 
 [[lean_lib]]
 name = "SchemePropertiesTest"
+# Test modules intentionally keep their helper declarations private.
+leanOptions = { weak.linter.privateModule = false }
 roots = ["SchemePropertiesTest.RelativeValuativeExtension"]
 globs = ["SchemePropertiesTest.+", "SchemePropertiesTest"]
 

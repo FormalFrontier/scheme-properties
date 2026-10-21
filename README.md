@@ -19,6 +19,13 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever
   `A` is reduced, with no nonemptiness or finiteness assumption.
 
+- [Polynomial projective coordinate separation](SchemeProperties/PolynomialProjGeometry.lean):
+  over any nontrivial commutative ring and any nontrivial variable type, the
+  total-degree polynomial projective spectrum has at least two underlying points.
+  Coordinate points over the same coefficient prime are distinct for distinct
+  indices; each lies in exactly its own coordinate basic open. This includes the
+  projective line over the two-element field, without a domain or field-size bound.
+
 - [Open factorization for closed maps](SchemeProperties/KernImage.lean): for
   `π : E ⟶ B` with explicit `IsClosedMap π`, `f : E ⟶ Z` and opens `U ⊆ Z`,
   `V ⊆ B`, the bound `V ≤ π.kernImage hπ (f ⁻¹ᵁ U)` is equivalent to a unique
@@ -42,6 +49,17 @@ infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form
   with the base field, so every morphism to an affine scheme is constant at
   that rational point. Direct import for the field criterion and the
   canonical global-sections isomorphism: `SchemeProperties.GlobalSections.Field`.
+
+### Points of proper affine schemes over a field
+
+- [Proper affine point criterion](SchemeProperties/ProperAffineField.lean): for any
+  field `K : Type u` and `X : Scheme.{u}`, a morphism
+  `f : X ⟶ Spec (CommRingCat.of K)` with
+  `[IsProper f] [IsAffine X] [PreconnectedSpace X]` gives `Subsingleton X`
+  (`AlgebraicGeometry.Scheme.Hom.subsingleton_of_isProper_of_isAffine`).
+  The underlying point set has at most one point; `X` may be empty or nonreduced.
+  This does not assert a scheme isomorphism or uniqueness of scheme morphisms.
+  Direct import: `SchemeProperties.ProperAffineField`.
 
 ### Going down and flat stalk dimensions
 
@@ -379,6 +397,21 @@ compatible with the structure map. Direct import for both criteria:
   A nonempty projective spectrum of a domain is integral. No finite generation
   or generation in degree one is required.
   Direct import: `SchemeProperties.ProjectiveSpectrum`.
+
+- [Polynomial projective space](SchemeProperties/PolynomialProjectiveSpace.lean):
+  for every commutative ring `R` and `n : ℕ`, `PolynomialProjectiveSpace R n`
+  is `Proj (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) R)`.
+  The canonical `toSpec` and `coordinateSection R n i`, for every
+  `i : Fin (n + 1)`, satisfy `coordinateSection R n i ≫ toSpec R n = 𝟙 _`
+  as scheme morphisms, including `n = 0` and the zero ring.
+  The model is nonempty for nontrivial `R` and integral for domain `R`.
+  `Proj.nonempty_mvPolynomial` and `Proj.isIntegral_mvPolynomial` are
+  theorem-only generalizations to any nonempty variable type in an
+  independent universe, with the same respective ring hypotheses.
+  [Coordinate evaluation](SchemeProperties/PolynomialProjCoordinates.lean)
+  restricts to the identity on coefficients through degree zero and homogeneous
+  localization (`coordinateAwayEval_fromZeroRingHom` and
+  `coordinateAwayEval_comp_fromZeroRingHom`).
 
 ### Rigidity
 
