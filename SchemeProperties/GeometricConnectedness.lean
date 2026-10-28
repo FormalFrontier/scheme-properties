@@ -5,6 +5,7 @@ Authors: Formal Frontier Agents
 module
 
 public import Mathlib.AlgebraicGeometry.AlgClosed.Basic
+public import Mathlib.RingTheory.FiniteStability
 public import Mathlib.AlgebraicGeometry.Geometrically.Connected
 public import Mathlib.RingTheory.Spectrum.Prime.Homeomorph
 
@@ -228,8 +229,8 @@ lemma connectedSpace_tensorProduct_of_isSepClosed_of_finiteType [IsSepClosed k]
     (connectedSpace_tensorProduct_left_iff_of_isPurelyInseparable k K A).mpr inferInstance
   let _ : ConnectedSpace (PrimeSpectrum (K ⊗[k] B)) :=
     (connectedSpace_tensorProduct_left_iff_of_isPurelyInseparable k K B).mpr inferInstance
-  let _ : Algebra.FiniteType K (K ⊗[k] A) := Algebra.FiniteType.baseChange K
-  let _ : Algebra.FiniteType K (K ⊗[k] B) := Algebra.FiniteType.baseChange K
+  let _ : Algebra.FiniteType K (K ⊗[k] A) := inferInstance
+  let _ : Algebra.FiniteType K (K ⊗[k] B) := inferInstance
   have hprod : ConnectedSpace
       (PrimeSpectrum ((K ⊗[k] A) ⊗[K] (K ⊗[k] B))) :=
     connectedSpace_tensorProduct_of_isAlgClosed K (K ⊗[k] A) (K ⊗[k] B)

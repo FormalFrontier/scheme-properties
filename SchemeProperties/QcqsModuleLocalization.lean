@@ -5,6 +5,7 @@ Authors: Formal Frontier Agents
 module
 
 public import SchemeProperties.Quasicoherent
+public import Mathlib.Algebra.Module.LocalizedModule.Away
 public import Mathlib.Algebra.Category.Grp.Zero
 public import Mathlib.AlgebraicGeometry.Morphisms.QuasiSeparated
 public import Mathlib.Topology.Sheaves.SheafCondition.Sites

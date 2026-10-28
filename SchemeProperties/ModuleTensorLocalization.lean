@@ -372,7 +372,7 @@ theorem basicTensorEquiv_naturality {M' N' : ModuleCat.{u} R}
   | add x y hx hy =>
     simp only [map_add, hx, hy]
 
-private instance awayRingHomInvPair (f : R) :
+instance awayRingHomInvPair (f : R) :
     RingHomInvPair
       (IsLocalization.algEquiv (.powers f) (Localization.Away f)
         Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv.toRingHom
@@ -382,7 +382,7 @@ private instance awayRingHomInvPair (f : R) :
     (IsLocalization.algEquiv (.powers f) (Localization.Away f)
       Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv
 
-private instance awayRingHomInvPair_symm (f : R) :
+instance awayRingHomInvPair_symm (f : R) :
     RingHomInvPair
       (IsLocalization.algEquiv (.powers f) (Localization.Away f)
         Γ(Spec R, PrimeSpectrum.basicOpen f)).symm.toRingEquiv.toRingHom

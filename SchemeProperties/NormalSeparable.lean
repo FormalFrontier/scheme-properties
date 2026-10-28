@@ -491,7 +491,7 @@ theorem IsLocallyNormalRing.tensorProduct_of_isTranscendentalSeparable
     have hM : Algebra.EssFiniteType k M :=
       IntermediateField.essFiniteType_iff.mpr <|
         IntermediateField.fg_adjoin_of_finite (Set.finite_singleton x)
-    exact SetLike.le_def.mp (le_iSup (fun i : I ↦ i.1) ⟨M, hM⟩)
+    exact IsConcreteLE.le_iff.mp (le_iSup (fun i : I ↦ i.1) ⟨M, hM⟩)
       (IntermediateField.subset_adjoin k {x} (by simp))
   have hNormal (i : I) : IsLocallyNormalRing (A ⊗[k] i.1) := by
     let _ : Algebra.EssFiniteType k i.1 := i.2

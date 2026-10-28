@@ -96,7 +96,7 @@ theorem not_locallyOfFiniteType_fromSpecStalk_genericPoint
   have hclosed : IsClosed ({genericPoint Y} : Set Y) := by
     have hsource : closedPoint Y.functionField ∈ closedPoints (Spec Y.functionField) :=
       IsLocalRing.isClosed_singleton_closedPoint Y.functionField
-    have himage := (Y.fromSpecStalk (genericPoint Y)).closePoints_subset_preimage_closedPoints
+    have himage := (Y.fromSpecStalk (genericPoint Y)).closedPoints_subset_preimage_closedPoints
       hsource
     change IsClosed
       {(Y.fromSpecStalk (genericPoint Y)) (closedPoint Y.functionField)} at himage

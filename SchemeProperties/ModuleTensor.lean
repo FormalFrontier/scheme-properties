@@ -306,10 +306,8 @@ noncomputable def tensorSymm {X : Scheme.{u}} (M N : X.Modules) :
   have hb : (((braiding M.val N.val).hom.app' (.op U)).hom
       (s ⊗ₜ[X.sheaf.obj.obj (.op U)] t)) =
         t ⊗ₜ[X.sheaf.obj.obj (.op U)] s := by
-    change ((braiding (M.val.obj (.op U)) (N.val.obj (.op U))).hom).hom
-      (s ⊗ₜ[X.sheaf.obj.obj (.op U)] t) = _
-    exact ModuleCat.MonoidalCategory.braiding_hom_apply
-      (R := X.sheaf.obj.obj (.op U)) s t
+    rw [PresheafOfModulesOfCommRing.braiding_hom_app]
+    rfl
   rw [hb]
   rfl
 

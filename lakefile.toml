@@ -5,12 +5,12 @@ defaultTargets = ["SchemeProperties", "SchemePropertiesTest", "SchemePropertiesE
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"
-rev = "83abb3e776bdefcbc447a1e44d0debe4010039e5"
+rev = "2cabef97b63d3275776b8b060d802de6a6fa1055"
 
 [[require]]
 name = "coherent-modules"
 git = "https://github.com/FormalFrontier/coherent-modules.git"
-rev = "fc30df937c7476f1c01f7cb39005f8cae37f8f34"
+rev = "2ade813e288fe643aa156961bbc8e8185a18bac0"
 
 [[require]]
 name = "finiteEtaleAlgebras"
