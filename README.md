@@ -48,6 +48,20 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   isomorphism of spaces, and no general Scheme structure is asserted for the
   maximal-point space.
 
+- [Lifts to closed-point targets](SchemeProperties/ClosedPointLifts.lean):
+  for a Jacobson locally ringed target `Y` and an arbitrary locally ringed source
+  `X`, `closedPointInclusionHomEquiv` identifies maps `X ⟶ C(Y)` with original
+  morphisms `X ⟶ Y` whose every image point is closed. The inverse is the unique
+  full locally ringed-space lift through the given inclusion. Its section,
+  stalk and global-section maps read back the original maps through the given
+  comparisons. It is natural in every source morphism and in closed-point-preserving
+  morphisms between Jacobson targets, and retains supplied structure-map triangles.
+  Its [affine specialization](SchemeProperties/MaximalPointLifts.lean)
+  identifies maps `X ⟶ C(R)` with original maps `X ⟶ Spec R` whose image ideals
+  are all maximal, for any commutative Jacobson ring `R`, and reads back the
+  original homomorphism `R → Γ(X)`. No Jacobson hypothesis is imposed on `X`
+  or its global-section ring.
+
 - [Hom recovery for maximal-point spaces](SchemeProperties/MaximalPointHom.lean):
   for commutative Jacobson rings `R` and `S`, `maximalPointHomEquiv` identifies
   ring homomorphisms `R →+* S` preserving maximal ideals under contraction with
@@ -59,6 +73,17 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   it identifies maximal-contraction-preserving algebra homomorphisms with
   morphisms over `Spec K`; if `S` is finite type over `K`, every algebra
   homomorphism corresponds, with no finite-type assumption on `R`.
+
+- [Locality of full ringed morphisms](SchemeProperties/MaximalPointRingedHom.lean):
+  for commutative Jacobson rings `R,S`, a ringed morphism `g : C(S) ⟶ C(R)`
+  is local if and only if its original global-coordinate homomorphism
+  preserves maximal ideals under contraction. Under this condition the entire
+  original morphism is the forgotten `maximalPointMap`, and its unique locally
+  ringed lift retains all supplied components and respects composition.
+  For given `K`-algebra structures over any commutative ring `K`, scalar
+  compatibility and finite type of `S` over `K` imply locality, with no
+  finite-type hypothesis on `R`. The full sheaves retain nilpotents and the
+  zero ring is included.
 
 - [Reduced projective spectra](SchemeProperties/ProjReduced.lean): for any
   `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever

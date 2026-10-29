@@ -4,7 +4,7 @@ Authors: Formal Frontier Agents
 -/
 module
 
-public import SchemeProperties.MaximalPointMorphisms
+public import SchemeProperties.MaximalPointRingedHom
 public import Mathlib.CategoryTheory.Comma.Over.Basic
 public import Mathlib.Logic.Equiv.Basic
 
@@ -56,8 +56,13 @@ variable [IsJacobsonRing R] [IsJacobsonRing S]
 /-- The ring homomorphism recovered from the global-section map of a morphism
 of maximal-point locally ringed spaces, using the coordinate isomorphisms. -/
 def maximalPointRingHom (g : maximalPointSpace S ⟶ maximalPointSpace R) : R →+* S :=
-  (maximalPointCoordinates S).symm.toRingHom.comp
-    ((LocallyRingedSpace.Γ.map g.op).hom.comp (maximalPointCoordinates R).toRingHom)
+  maximalPointRingedHomCoordinates g.toShHom
+
+/-- The coordinate map of the forgotten locally ringed morphism is the same
+coordinate homomorphism used by the locally ringed Hom equivalence. -/
+lemma maximalPointRingedHomCoordinates_toShHom
+    (g : maximalPointSpace S ⟶ maximalPointSpace R) :
+    maximalPointRingedHomCoordinates g.toShHom = maximalPointRingHom g := rfl
 
 /-- Evaluation of the recovered homomorphism in the global coordinates. -/
 lemma maximalPointRingHom_apply (g : maximalPointSpace S ⟶ maximalPointSpace R) (r : R) :
