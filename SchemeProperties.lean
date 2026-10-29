@@ -30,6 +30,7 @@ public import SchemeProperties.IntegralDominantRationalCategory
 public import SchemeProperties.JacobsonBirationalObstruction
 public import SchemeProperties.JacobsonClosedPoints
 public import SchemeProperties.JacobsonConnectedness
+public import SchemeProperties.MaximalPointHom
 public import SchemeProperties.MaximalPointSheafMaps
 public import SchemeProperties.RationalFunctionFieldPullback
 public import SchemeProperties.RationalFunctionFieldFaithfulness

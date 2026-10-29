@@ -28,6 +28,18 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   isomorphism of spaces, and no general Scheme structure is asserted for the
   maximal-point space.
 
+- [Hom recovery for maximal-point spaces](SchemeProperties/MaximalPointHom.lean):
+  for commutative Jacobson rings `R` and `S`, `maximalPointHomEquiv` identifies
+  ring homomorphisms `R →+* S` preserving maximal ideals under contraction with
+  all locally ringed space morphisms `C(S) ⟶ C(R)`, where
+  `C(R) = Spec.maximalPointSpace R`. The inverse is
+  `χS⁻¹ ∘ Γ(g) ∘ χR` for the original coordinate isomorphisms, so the full
+  morphism is recovered from its global-section map. This equivalence restricts
+  to supplied scalar maps. For given `K`-algebra actions in a common universe,
+  it identifies maximal-contraction-preserving algebra homomorphisms with
+  morphisms over `Spec K`; if `S` is finite type over `K`, every algebra
+  homomorphism corresponds, with no finite-type assumption on `R`.
+
 - [Reduced projective spectra](SchemeProperties/ProjReduced.lean): for any
   `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever
   `A` is reduced, with no nonemptiness or finiteness assumption.

@@ -30,7 +30,6 @@ rational composition, without a finite-type or separatedness premise.
 -/
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 set_option backward.isDefEq.respectTransparency.types false
 set_option backward.isDefEq.respectTransparency false
 set_option backward.defeqAttrib.useBackward true
@@ -45,7 +44,7 @@ variable {X Y : Scheme.{u}} [IsIntegral X] [IsIntegral Y]
 
 private theorem partial_generic_image (p : X.PartialMap Y) [IsDominant p.hom] :
     p.fromFunctionField (closedPoint X.functionField) = genericPoint Y := by
-  letI : Nonempty p.domain := ⟨⟨p.dense_domain.nonempty.choose,
+  let : Nonempty p.domain := ⟨⟨p.dense_domain.nonempty.choose,
     p.dense_domain.nonempty.choose_spec⟩⟩
   have hmem : genericPoint X ∈ p.domain :=
     (genericPoint_spec X).mem_open_set_iff p.domain.isOpen |>.mpr
@@ -75,7 +74,7 @@ generic point of the target of a dominant rational map. -/
 theorem RationalMap.fromFunctionField_closedPoint (r : X ⤏ Y) [r.IsDominant] :
     r.fromFunctionField (closedPoint X.functionField) = genericPoint Y := by
   obtain ⟨p, rfl⟩ := PartialMap.toRationalMap_surjective r
-  haveI : IsDominant p.hom := (p.isDominant_toRationalMap_iff).mp inferInstance
+  have : IsDominant p.hom := (p.isDominant_toRationalMap_iff).mp inferInstance
   exact partial_generic_image p
 
 /-- The reversed homomorphism of function fields induced by a dominant rational
@@ -169,7 +168,7 @@ theorem RationalMap.fromFunctionField_comp {Z : Scheme.{u}}
       Spec.map r.functionFieldMap ≫ s.fromFunctionField := by
   obtain ⟨p, rfl⟩ := PartialMap.toRationalMap_surjective r
   obtain ⟨q, rfl⟩ := PartialMap.toRationalMap_surjective s
-  haveI : IsDominant p.hom := (p.isDominant_toRationalMap_iff).mp inferInstance
+  have : IsDominant p.hom := (p.isDominant_toRationalMap_iff).mp inferInstance
   simpa only [RationalMap.toRationalMap_comp,
     RationalMap.fromFunctionField_toRationalMap] using
     partial_comp_fromFunctionField p q

@@ -21,7 +21,6 @@ its reversed function-field map is an isomorphism.
 -/
 
 set_option warningAsError true
-set_option linter.style.haveILetI false
 
 noncomputable section
 
@@ -85,16 +84,16 @@ theorem genericPointRationalHom_boundary {S : Scheme.{u}} (sY : Y ⟶ S)
         (Y.fromSpecStalk (genericPoint Y)).toRationalMap.functionFieldMap)
   · intro hIso
     let forward := genericPointRationalHom Y sY
-    haveI : IsIso forward := hIso
-    haveI hsource : Subsingleton
+    have : IsIso forward := hIso
+    have hsource : Subsingleton
         (IntegralDominantRationalSchemeOver.of
           (Y.fromSpecStalk (genericPoint Y) ≫ sY)).toScheme := by
       change Subsingleton (PrimeSpectrum Y.functionField)
       infer_instance
-    haveI : JacobsonSpace (IntegralDominantRationalSchemeOver.of sY).toScheme := by
+    have : JacobsonSpace (IntegralDominantRationalSchemeOver.of sY).toScheme := by
       change JacobsonSpace Y
       infer_instance
-    haveI : Nontrivial (IntegralDominantRationalSchemeOver.of sY).toScheme := by
+    have : Nontrivial (IntegralDominantRationalSchemeOver.of sY).toScheme := by
       change Nontrivial Y
       infer_instance
     have hforward : forward.toRationalMap.comp (inv forward).toRationalMap =
