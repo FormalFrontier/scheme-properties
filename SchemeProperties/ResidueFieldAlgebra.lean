@@ -162,6 +162,81 @@ theorem Hom.residueFieldAlgHom_apply (f : X ⟶ Y)
     f.residueFieldAlgHom πX πY hf x a = f.residueFieldMap x a :=
   rfl
 
+/-- An open immersion induces an isomorphism on its canonical residue-field map.
+This is an explicit-term form of the residue-field instance. -/
+theorem Hom.isIso_residueFieldMap_of_isOpenImmersion (f : X ⟶ Y)
+    [IsOpenImmersion f] (x : X) : IsIso (f.residueFieldMap x) :=
+  inferInstance
+
+/-- A base-compatible morphism whose residue map is an isomorphism at `x`
+induces an algebra equivalence on the original residue algebras. -/
+def Hom.residueFieldAlgEquiv (f : X ⟶ Y)
+    (πX : X ⟶ Spec (CommRingCat.of R)) (πY : Y ⟶ Spec (CommRingCat.of R))
+    (hf : f ≫ πY = πX) (x : X) [IsIso (f.residueFieldMap x)] :
+    @AlgEquiv R (Y.residueField (f x)) (X.residueField x) _ _ _
+      (((Y.Γevaluation (f x)).hom.comp
+        (@algebraMap R Γ(Y, ⊤) _ _ (πY.globalSectionsAlgebra R))).toAlgebra)
+      (((X.Γevaluation x).hom.comp
+        (@algebraMap R Γ(X, ⊤) _ _ (πX.globalSectionsAlgebra R))).toAlgebra) := by
+  letI := (((Y.Γevaluation (f x)).hom.comp
+    (@algebraMap R Γ(Y, ⊤) _ _ (πY.globalSectionsAlgebra R))).toAlgebra)
+  letI := (((X.Γevaluation x).hom.comp
+    (@algebraMap R Γ(X, ⊤) _ _ (πX.globalSectionsAlgebra R))).toAlgebra)
+  exact AlgEquiv.ofBijective (f.residueFieldAlgHom πX πY hf x)
+    (asIso (f.residueFieldMap x)).commRingCatIsoToRingEquiv.bijective
+
+/-- Promotion to an equivalence preserves the canonical algebra homomorphism. -/
+@[simp]
+theorem Hom.residueFieldAlgEquiv_toAlgHom (f : X ⟶ Y)
+    (πX : X ⟶ Spec (CommRingCat.of R)) (πY : Y ⟶ Spec (CommRingCat.of R))
+    (hf : f ≫ πY = πX) (x : X) [IsIso (f.residueFieldMap x)] :
+    @AlgEquiv.toAlgHom R (Y.residueField (f x)) (X.residueField x) _ _ _
+        (((Y.Γevaluation (f x)).hom.comp
+          (@algebraMap R Γ(Y, ⊤) _ _ (πY.globalSectionsAlgebra R))).toAlgebra)
+        (((X.Γevaluation x).hom.comp
+          (@algebraMap R Γ(X, ⊤) _ _ (πX.globalSectionsAlgebra R))).toAlgebra)
+        (f.residueFieldAlgEquiv πX πY hf x) =
+      f.residueFieldAlgHom πX πY hf x :=
+  rfl
+
+/-- The equivalence has the same underlying canonical residue-field ring map. -/
+@[simp]
+theorem Hom.residueFieldAlgEquiv_toRingHom (f : X ⟶ Y)
+    (πX : X ⟶ Spec (CommRingCat.of R)) (πY : Y ⟶ Spec (CommRingCat.of R))
+    (hf : f ≫ πY = πX) (x : X) [IsIso (f.residueFieldMap x)] :
+    (f.residueFieldAlgEquiv πX πY hf x : Y.residueField (f x) →+* X.residueField x) =
+      (f.residueFieldMap x).hom :=
+  rfl
+
+/-- Elementwise readback of the residue-algebra equivalence. -/
+@[simp]
+theorem Hom.residueFieldAlgEquiv_apply (f : X ⟶ Y)
+    (πX : X ⟶ Spec (CommRingCat.of R)) (πY : Y ⟶ Spec (CommRingCat.of R))
+    (hf : f ≫ πY = πX) (x : X) [IsIso (f.residueFieldMap x)]
+    (a : Y.residueField (f x)) :
+    f.residueFieldAlgEquiv πX πY hf x a = f.residueFieldMap x a :=
+  rfl
+
+/-- The promoted equivalence carries the original base scalar map to the
+original base scalar map at the source point. -/
+theorem Hom.residueFieldAlgEquiv_algebraMap (f : X ⟶ Y)
+    (πX : X ⟶ Spec (CommRingCat.of R)) (πY : Y ⟶ Spec (CommRingCat.of R))
+    (hf : f ≫ πY = πX) (x : X) [IsIso (f.residueFieldMap x)] (r : R) :
+    f.residueFieldAlgEquiv πX πY hf x
+        ((@algebraMap R (Y.residueField (f x)) _ _
+          (((Y.Γevaluation (f x)).hom.comp
+            (@algebraMap R Γ(Y, ⊤) _ _ (πY.globalSectionsAlgebra R))).toAlgebra)) r) =
+      (@algebraMap R (X.residueField x) _ _
+        (((X.Γevaluation x).hom.comp
+          (@algebraMap R Γ(X, ⊤) _ _ (πX.globalSectionsAlgebra R))).toAlgebra)) r := by
+  let : Algebra R (Y.residueField (f x)) :=
+    (((Y.Γevaluation (f x)).hom.comp
+      (@algebraMap R Γ(Y, ⊤) _ _ (πY.globalSectionsAlgebra R))).toAlgebra)
+  let : Algebra R (X.residueField x) :=
+    (((X.Γevaluation x).hom.comp
+      (@algebraMap R Γ(X, ⊤) _ _ (πX.globalSectionsAlgebra R))).toAlgebra)
+  exact (f.residueFieldAlgHom πX πY hf x).commutes r
+
 /-- A specified base-compatible isomorphism gives the canonical contravariant
 `R`-algebra equivalence on the original residue fields and original actions. -/
 def residueFieldAlgEquiv

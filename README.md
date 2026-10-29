@@ -58,6 +58,12 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   The parameter need not be reduced, and `y₀` need not be rational or closed.
   Direct import: `SchemeProperties.Rigidity`.
 
+- [Real–complex residue degrees](SchemeProperties/RealComplexSpectrum.lean):
+  the coproduct `Spec ℝ ⨿ Spec ℂ`, over `Spec ℝ` by the identity and the
+  standard real-algebra map to `ℂ`, has two distinct closed points. Their
+  original residue real algebras are canonically equivalent to `ℝ` and `ℂ`
+  and have real dimensions one and two, respectively.
+
 ## Mathematical guides
 
 The full statements, material hypotheses, API limitations and examples are
