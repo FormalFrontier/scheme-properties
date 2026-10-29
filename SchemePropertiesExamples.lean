@@ -23,6 +23,7 @@ public import SchemePropertiesExamples.FiniteTypeUniverseLift
 public import SchemePropertiesExamples.FlatImageDensity
 public import SchemePropertiesExamples.FunctionFieldNaturality
 public import SchemePropertiesExamples.GeometricallyIntegral
+public import SchemePropertiesExamples.LocallyConstructiblePreimage
 public import SchemePropertiesExamples.IntegralNeighborhood
 public import SchemePropertiesExamples.LocallyNormalPi
 public import SchemePropertiesExamples.NormalAffine

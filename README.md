@@ -6,11 +6,31 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Locally closed points in continuous preimages](SchemeProperties/LocallyConstructiblePreimage.lean):
+  for arbitrary topological spaces and a continuous map, every nonempty preimage
+  of a locally constructible set has a member at which that same preimage is
+  locally closed. No separation, compactness or Noetherian hypothesis is needed;
+  the result does not assert preservation of constructibility by continuous maps.
+  A [dense-preimage application](SchemePropertiesExamples/LocallyConstructiblePreimage.lean)
+  shows that a dense such preimage in a nonempty source has nonempty interior.
+
 - [Closedness through closed points](SchemeProperties/JacobsonClosedPoints.lean):
   in any Jacobson topological space, a locally closed subset is closed if and only
   if its trace in the closed-point subspace is closed. Local closedness is required
   for the full subset, not just its trace; no separation or finiteness hypothesis
   is imposed.
+
+- [Locally constructible closed-point traces](SchemeProperties/JacobsonClosedPoints.lean):
+  in any Jacobson topological space, a subset satisfying Mathlib's
+  `Topology.IsLocallyConstructible` has a dense closed-point trace, and is closed
+  exactly when that trace is closed in the original closed-point subspace.
+  Closed-point traces also detect inclusion and equality between such subsets,
+  with no separation or Noetherian hypothesis. The proofs use density after
+  intersection with arbitrary locally closed subsets, without assuming those
+  subsets are locally constructible. A common density theorem for arbitrary
+  unions of locally closed sets recovers Mathlib's locally closed density theorem
+  by a singleton-index specialization; this union theorem does not assert trace
+  conservativity.
 
 - [Maximal-point locally ringed spaces](SchemeProperties/MaximalPointSpace.lean):
   for any commutative Jacobson ring `R`, construct a locally ringed space on the

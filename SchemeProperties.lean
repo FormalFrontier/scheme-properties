@@ -63,6 +63,7 @@ public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.Rigidity
 public import SchemeProperties.IdealSheafModule
 public import SchemeProperties.Integral
+public import SchemeProperties.LocallyConstructiblePreimage
 public import SchemeProperties.LocallyNormalRing.Pi
 public import SchemeProperties.ModuleFinitePresentation
 public import SchemeProperties.ModuleProperties
