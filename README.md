@@ -6,6 +6,12 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Closedness through closed points](SchemeProperties/JacobsonClosedPoints.lean):
+  in any Jacobson topological space, a locally closed subset is closed if and only
+  if its trace in the closed-point subspace is closed. Local closedness is required
+  for the full subset, not just its trace; no separation or finiteness hypothesis
+  is imposed.
+
 - [Reduced projective spectra](SchemeProperties/ProjReduced.lean): for any
   `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever
   `A` is reduced, with no nonemptiness or finiteness assumption.
