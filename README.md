@@ -12,6 +12,22 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   for the full subset, not just its trace; no separation or finiteness hypothesis
   is imposed.
 
+- [Maximal-point locally ringed spaces](SchemeProperties/MaximalPointSpace.lean):
+  for any commutative Jacobson ring `R`, construct a locally ringed space on the
+  closed-point subspace of `Spec R`. Its inclusion induces an isomorphism of
+  full sheaves after pushforward, principal-open rings are `R_f`, stalks are
+  `R_m`, and global sections recover `R`, with nilpotents and supplied scalars.
+  [Localization-basis recognition](SchemeProperties/MaximalPointSheaf.lean)
+  identifies any full sheaf with compatible coordinate actions and the same
+  localization property. [Morphisms](SchemeProperties/MaximalPointMorphisms.lean)
+  are contravariant for homomorphisms whose contractions preserve maximal
+  ideals; this preservation is derived for finite-type homomorphisms from a
+  Jacobson ring. [Full component uniqueness](SchemeProperties/MaximalPointSheafMaps.lean)
+  identifies a supplied sheaf component from its global coordinates, without
+  assuming that component is already local. The inclusion need not be an
+  isomorphism of spaces, and no general Scheme structure is asserted for the
+  maximal-point space.
+
 - [Reduced projective spectra](SchemeProperties/ProjReduced.lean): for any
   `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever
   `A` is reduced, with no nonemptiness or finiteness assumption.

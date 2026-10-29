@@ -107,7 +107,7 @@ noncomputable def tmul {X : Scheme.{u}} (M N : X.Modules) (U : X.Opens)
 @[simp] theorem tensorUnit_app_tmul {X : Scheme.{u}} (M N : X.Modules) (U : X.Opens)
     (s : Γ(M, U)) (t : Γ(N, U)) :
     ((tensorUnit M N).app (.op U)).hom
-        (s ⊗ₜ[X.sheaf.obj.obj (.op U)] t) = tmul M N U s t := rfl
+        (s ⊗ₜ[X.presheaf.obj (.op U)] t) = tmul M N U s t := rfl
 
 /-- A pure tensor with zero on the left is zero. -/
 @[simp] theorem zero_tmul {X : Scheme.{u}} (M N : X.Modules) (U : X.Opens)

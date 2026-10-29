@@ -7,4 +7,5 @@ module
 import SchemePropertiesTest.RelativeValuativeExtension
 import SchemePropertiesTest.NormalSectionsModel
 import SchemePropertiesTest.ResidueFieldAlgebra
+import SchemePropertiesTest.MaximalPointSpace
 public import SchemePropertiesTest.KernImage
