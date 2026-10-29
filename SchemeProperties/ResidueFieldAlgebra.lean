@@ -8,6 +8,7 @@ public import SchemeProperties.GlobalSectionsBaseChange
 public import SchemeProperties.ResidueField
 public import Mathlib.Algebra.Algebra.Equiv
 public import Mathlib.LinearAlgebra.Dimension.Finrank
+public import Mathlib.RingTheory.LocalRing.ResidueField.Ideal
 
 /-!
 # Residue algebras over a specified base
@@ -25,6 +26,14 @@ rank and natural finrank over any commutative base ring, without a finiteness
 hypothesis. Over a field, different original residue degrees therefore obstruct
 an exchange of points. For infinite extensions, finrank can be zero; cardinal
 rank retains the dimension.
+
+For a given algebra over a commutative ring `k` whose carrier `K` is a field,
+`Spec.residueFieldAlgEquiv` identifies each original residue algebra of `Spec K`
+with the given `k`-algebra `K`. It composes the scheme-to-ideal residue isomorphism
+with the inverse of `Ideal.algEquivResidueFieldOfField`; the scalar bridge comes
+from the naturality of `ΓSpecIso`. The module rank and finrank corollaries also
+hold over any commutative base ring; they express residue-field degrees when the
+base is a field.
 
 The scalar readbacks identify the action both with global evaluation and with
 the structure morphism's residue-field map. The construction reuses Mathlib's
@@ -242,5 +251,146 @@ theorem residueField_finrank_eq
   exact (residueFieldAlgEquiv πX πY e he x).toLinearEquiv.finrank_eq
 
 end ModuleDimension
+
+section SpecField
+
+variable (k K : Type u) [CommRing k] [Field K] [Algebra k K]
+
+/-- On the spectrum of a field extension, the original scalar map factors through
+its given algebra map and the inverse of the scheme-to-ideal residue isomorphism. -/
+theorem Spec.algebraMap_residueField (x : PrimeSpectrum K) :
+    @algebraMap k ((Spec (CommRingCat.of K)).residueField x) _ _
+        ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+          (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+            ((Spec.map
+              (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra) =
+      (CommRingCat.ofHom (algebraMap k K) ≫
+        CommRingCat.ofHom (algebraMap K x.asIdeal.ResidueField) ≫
+          (Scheme.Spec.residueFieldIso (CommRingCat.of K) x).inv).hom := by
+  erw [Hom.algebraMap_residueField
+    (Spec.map (CommRingCat.ofHom (algebraMap k K)))
+    (show Spec (CommRingCat.of K) from x), ← ΓSpecIso_inv_naturality_assoc]
+  exact congrArg
+    (fun f : CommRingCat.of K ⟶ (Spec (CommRingCat.of K)).residueField x =>
+      (CommRingCat.ofHom (algebraMap k K) ≫ f).hom)
+    (Scheme.Spec.algebraMap_residueFieldIso_inv (CommRingCat.of K) x).symm
+
+/-- The canonical equivalence from the original residue algebra of `Spec K` over
+`Spec k` to the given `k`-algebra `K`. Its ring equivalence is the scheme-to-ideal
+residue isomorphism followed by the inverse of the field's residue equivalence. -/
+def Spec.residueFieldAlgEquiv (x : PrimeSpectrum K) :
+    @AlgEquiv k ((Spec (CommRingCat.of K)).residueField x) K _ _ _
+      ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+        (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+          ((Spec.map
+            (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)
+      inferInstance := by
+  letI : Algebra k ((Spec (CommRingCat.of K)).residueField x) :=
+    ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+      (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+        ((Spec.map
+          (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)
+  let σ := (Scheme.Spec.residueFieldIso (CommRingCat.of K) x).commRingCatIsoToRingEquiv
+  let τ := x.asIdeal.algEquivResidueFieldOfField
+  apply AlgEquiv.ofRingEquiv (f := σ.trans τ.symm.toRingEquiv)
+  intro r
+  rw [Scheme.Spec.algebraMap_residueField k K x]
+  change τ.symm (σ (σ.symm (algebraMap K x.asIdeal.ResidueField
+    (algebraMap k K r)))) = algebraMap k K r
+  rw [σ.apply_symm_apply,
+    ← Ideal.algEquivResidueFieldOfField_apply x.asIdeal (algebraMap k K r),
+    τ.symm_apply_apply]
+
+/-- The underlying ring equivalence is the composite of the two canonical
+residue-field equivalences. -/
+theorem Spec.residueFieldAlgEquiv_toRingEquiv (x : PrimeSpectrum K) :
+    @AlgEquiv.toRingEquiv k ((Spec (CommRingCat.of K)).residueField x) K _ _ _
+        ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+          (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+            ((Spec.map
+              (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)
+        inferInstance (Scheme.Spec.residueFieldAlgEquiv k K x) =
+      (Scheme.Spec.residueFieldIso (CommRingCat.of K) x).commRingCatIsoToRingEquiv.trans
+        x.asIdeal.algEquivResidueFieldOfField.symm.toRingEquiv :=
+  rfl
+
+/-- The forward ring map of the canonical equivalence, in terms of the scheme
+residue isomorphism and the inverse field residue equivalence. -/
+@[simp]
+theorem Spec.residueFieldAlgEquiv_toRingHom (x : PrimeSpectrum K) :
+    (Scheme.Spec.residueFieldAlgEquiv k K x :
+        (Spec (CommRingCat.of K)).residueField x →+* K) =
+      (x.asIdeal.algEquivResidueFieldOfField.symm : x.asIdeal.ResidueField →+* K).comp
+        (Scheme.Spec.residueFieldIso (CommRingCat.of K) x).hom.hom :=
+  rfl
+
+/-- Evaluation of the canonical algebra equivalence on a residue-field element. -/
+@[simp]
+theorem Spec.residueFieldAlgEquiv_apply (x : PrimeSpectrum K)
+    (a : (Spec (CommRingCat.of K)).residueField x) :
+    Scheme.Spec.residueFieldAlgEquiv k K x a =
+      x.asIdeal.algEquivResidueFieldOfField.symm
+        ((Scheme.Spec.residueFieldIso (CommRingCat.of K) x).hom a) :=
+  rfl
+
+/-- The canonical equivalence carries the original scalar action to the given
+scalar action on `K`. -/
+theorem Spec.residueFieldAlgEquiv_algebraMap (x : PrimeSpectrum K) (r : k) :
+    Scheme.Spec.residueFieldAlgEquiv k K x
+        ((@algebraMap k ((Spec (CommRingCat.of K)).residueField x) _ _
+          ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+            (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+              ((Spec.map
+                (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)) r) =
+      algebraMap k K r := by
+  let : Algebra k ((Spec (CommRingCat.of K)).residueField x) :=
+    ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+      (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+        ((Spec.map
+          (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)
+  exact (Scheme.Spec.residueFieldAlgEquiv k K x).commutes r
+
+end SpecField
+
+section SpecFieldDimension
+
+variable (k K : Type u) [CommRing k] [Field K] [Algebra k K]
+
+/-- Cardinal module rank of the original residue algebra of a field spectrum
+agrees with that of the given algebra over the commutative base ring. -/
+theorem Spec.residueField_rank_eq (x : PrimeSpectrum K) :
+    @Module.rank k ((Spec (CommRingCat.of K)).residueField x) _ _
+        (@Algebra.toModule k ((Spec (CommRingCat.of K)).residueField x) _ _
+          ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+            (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+              ((Spec.map
+                (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)) =
+      Module.rank k K := by
+  let : Algebra k ((Spec (CommRingCat.of K)).residueField x) :=
+    ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+      (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+        ((Spec.map
+          (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)
+  exact (Scheme.Spec.residueFieldAlgEquiv k K x).toLinearEquiv.rank_eq
+
+/-- Natural module finrank of the original residue algebra of a field spectrum
+agrees with that of the given algebra over the commutative base ring. No finiteness
+hypothesis is needed; both finranks are zero when the cardinal module rank is infinite. -/
+theorem Spec.residueField_finrank_eq (x : PrimeSpectrum K) :
+    @Module.finrank k ((Spec (CommRingCat.of K)).residueField x) _ _
+        (@Algebra.toModule k ((Spec (CommRingCat.of K)).residueField x) _ _
+          ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+            (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+              ((Spec.map
+                (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)) =
+      Module.finrank k K := by
+  let : Algebra k ((Spec (CommRingCat.of K)).residueField x) :=
+    ((((Spec (CommRingCat.of K)).Γevaluation x).hom.comp
+      (@algebraMap k Γ(Spec (CommRingCat.of K), ⊤) _ _
+        ((Spec.map
+          (CommRingCat.ofHom (algebraMap k K))).globalSectionsAlgebra k))).toAlgebra)
+  exact (Scheme.Spec.residueFieldAlgEquiv k K x).toLinearEquiv.finrank_eq
+
+end SpecFieldDimension
 
 end AlgebraicGeometry.Scheme
