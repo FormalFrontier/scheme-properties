@@ -102,6 +102,7 @@ public import SchemeProperties.ReducedHomExt
 public import SchemeProperties.ReducedLocus
 public import SchemeProperties.ReducedLocusEquiv
 public import SchemeProperties.ResidueField
+public import SchemeProperties.ResidueFieldAlgebra
 public import SchemeProperties.RingTheory.KrullDimension.QuasiFinite
 public import SchemeProperties.TrivSqZeroExtReducedLocus
 public import SchemeProperties.SheafFinitePresentation

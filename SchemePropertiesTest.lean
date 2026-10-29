@@ -6,4 +6,5 @@ module
 
 import SchemePropertiesTest.RelativeValuativeExtension
 import SchemePropertiesTest.NormalSectionsModel
+import SchemePropertiesTest.ResidueFieldAlgebra
 public import SchemePropertiesTest.KernImage
