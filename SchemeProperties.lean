@@ -78,6 +78,7 @@ public import SchemeProperties.ModuleTensorRestriction
 public import SchemeProperties.ModuleTensorLocalization
 public import SchemeProperties.NoetherianComponents
 public import SchemeProperties.Topology.ClosedPointCofinite
+public import SchemeProperties.Topology.IrreducibleImage
 public import SchemeProperties.Normal
 public import SchemeProperties.NormalSections
 public import SchemeProperties.LocallyNormalRing.Maximal
