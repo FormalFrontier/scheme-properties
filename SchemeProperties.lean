@@ -76,6 +76,7 @@ public import SchemeProperties.ModuleTensorAffine
 public import SchemeProperties.ModuleTensorRestriction
 public import SchemeProperties.ModuleTensorLocalization
 public import SchemeProperties.NoetherianComponents
+public import SchemeProperties.Topology.ClosedPointCofinite
 public import SchemeProperties.Normal
 public import SchemeProperties.NormalSections
 public import SchemeProperties.LocallyNormalRing.Maximal
@@ -107,11 +108,13 @@ public import SchemeProperties.PartialMapGluing
 public import SchemeProperties.Reduced
 public import SchemeProperties.ReducedHomExt
 public import SchemeProperties.ReducedLocus
+public import SchemeProperties.QuasiCompactSurjectivity
 public import SchemeProperties.ReducedLocusEquiv
 public import SchemeProperties.ResidueField
 public import SchemeProperties.ResidueFieldAlgebra
 public import SchemeProperties.RealComplexSpectrum
 public import SchemeProperties.RingTheory.Jacobson.Int
+public import SchemeProperties.RingTheory.Jacobson.PrimeSpectrum
 public import SchemeProperties.RingTheory.KrullDimension.QuasiFinite
 public import SchemeProperties.TrivSqZeroExtReducedLocus
 public import SchemeProperties.SheafFinitePresentation

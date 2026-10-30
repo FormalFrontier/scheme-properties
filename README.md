@@ -29,6 +29,14 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   for the full subset, not just its trace; no separation or finiteness hypothesis
   is imposed.
 
+- [Cofinite closed-point topology](SchemeProperties/Topology/ClosedPointCofinite.lean):
+  in any preirreducible Noetherian topological space of Krull dimension at most
+  one, a subset of the closed-point subspace is closed exactly when it is the
+  whole space or finite. Its given topology is therefore cofinite, without
+  separation, sobriety or Jacobson hypotheses. The Zariski closed-point topology
+  of `Spec K[X]` and the Zariski topology of `MaximalSpectrum K[X]` are cofinite
+  over every field `K`.
+
 - [Locally constructible closed-point traces](SchemeProperties/JacobsonClosedPoints.lean):
   in any Jacobson topological space, a subset satisfying Mathlib's
   `Topology.IsLocallyConstructible` has a dense closed-point trace, and is closed
