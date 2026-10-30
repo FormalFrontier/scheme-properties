@@ -123,6 +123,12 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   over any commutative locally normal base ring, multivariate polynomial rings
   with arbitrary variable types are locally normal.
 
+- [Global sections under flat scalar extension](SchemeProperties/GlobalSectionsBaseChange.lean):
+  for a quasicompact quasiseparated scheme over a commutative ring `k` and a flat
+  commutative `k`-algebra `K`, the canonical equivalence identifies the global
+  sections of the base change with `K ⊗[k] Γ(X, ⊤)`. Its scalar, section and pure
+  tensor formulas retain the two pullback projections. Identity and tower
+  coherence are also available for field extensions.
 - [Global sections and affine targets](SchemeProperties/GlobalSections.lean): if
   `p : X ⟶ S` induces an isomorphism on global sections and `T` is affine,
   precomposition is a bijection `(S ⟶ T) → (X ⟶ T)`, for arbitrary `X` and

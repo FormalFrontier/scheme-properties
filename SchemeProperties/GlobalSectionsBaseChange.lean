@@ -7,29 +7,32 @@ module
 public import Mathlib.AlgebraicGeometry.Morphisms.Flat
 public import Mathlib.RingTheory.TensorProduct.Maps
 
+public import SchemeProperties.Rigidity
+
 public section
 
 /-!
-# Global sections after extension of the base field
+# Global sections after flat base change
 
-For a quasicompact quasiseparated scheme `X` over a field `k`, this file
-identifies the global sections of the base change to an extension field `K`
-with `K ⊗[k] Γ(X, ⊤)`.  The equivalence is the canonical one: it sends the two
-tensor-product generators to the maps on global sections induced by the two
-pullback projections.
+For a quasicompact quasiseparated scheme `X` over a commutative ring `k` and
+a flat commutative `k`-algebra `K`, this file identifies the global sections
+of the base change with `K ⊗[k] Γ(X, ⊤)`. The equivalence is the canonical
+one: it sends the two tensor-product generators to the maps on global
+sections induced by the two pullback projections.
 
-The proof specializes mathlib's flat base-change theorem for sections on qcqs
-opens.  In particular, `X` is not assumed affine, separated, reduced,
-connected, or nonempty, and the extension is not assumed finite.
+The proof specializes Mathlib's flat base-change theorem for sections on qcqs
+opens. In particular, `X` is not assumed affine, separated, reduced,
+connected, or nonempty, and `K` need not be faithfully flat over `k`.
 
-The canonical equivalence below also satisfies identity and tower coherence.
+For field extensions, the canonical equivalence below also satisfies
+identity and tower coherence.
 
 ## References
 
 - Mathlib, `Mathlib.AlgebraicGeometry.Morphisms.Flat`,
   `isIso_pushoutSection_of_isQuasiSeparated_of_flat_right`: flat base change
   for sections on a quasi-compact quasiseparated source open over affine base
-  opens, specialized here to global sections after a field extension.
+  opens, specialized here to global sections after flat scalar extension.
 -/
 
 open CategoryTheory CategoryTheory.Limits Opposite TopologicalSpace
@@ -60,41 +63,42 @@ def Hom.baseChangeGlobalSectionsAlgebra (k K : Type u) [CommRing k] [CommRing K]
   ((pullback.snd p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop.hom.comp
     (ΓSpecIso (.of K)).inv.hom).toAlgebra
 
+-- The stock tensor structures with the canonical section algebra and its associated
+-- module specified explicitly. Both factors retain their original scalar actions.
+local notation "ΓTensor(" k ", " K ", " X ", " a ", " p ")" =>
+  @TensorProduct k (inferInstance : CommSemiring k) K Γ(X, ⊤) _ _
+    (@Algebra.toModule k K _ _ a)
+    (@Algebra.toModule k Γ(X, ⊤) _ _ (Hom.globalSectionsAlgebra k p))
+
+local notation "ΓTensorSemiring(" k ", " K ", " X ", " a ", " p ")" =>
+  @Algebra.TensorProduct.instSemiring k K Γ(X, ⊤) _ _ a _
+    (Hom.globalSectionsAlgebra k p)
+
+local notation "ΓTensorAlgebra(" k ", " K ", " X ", " a ", " p ")" =>
+  @Algebra.TensorProduct.leftAlgebra k K K Γ(X, ⊤) _ _ a _
+    (Hom.globalSectionsAlgebra k p) _ (@Algebra.id K _) inferInstance
+
+local notation:100 r " ⊗ₜ[" k ", " a ", " p "] " x =>
+  @TensorProduct.tmul k (inferInstance : CommSemiring k) _ _ _ _
+    (@Algebra.toModule k _ _ _ a)
+    (@Algebra.toModule k _ _ _ (Hom.globalSectionsAlgebra k p)) r x
+
 private theorem globalSectionsBaseChange_isPushout
-    (k K : Type u) [Field k] [Field K] [Algebra k K]
+    (k K : Type u) [CommRing k] [CommRing K] [Algebra k K] [Module.Flat k K]
     {X : Scheme.{u}} (p : X ⟶ Spec (.of k))
     [CompactSpace X] [QuasiSeparatedSpace X] :
-    letI := p.globalSectionsAlgebra k
     IsPushout
-      (CommRingCat.ofHom (algebraMap k Γ(X, ⊤)))
+      (CommRingCat.ofHom (@algebraMap k Γ(X, ⊤) _ _ (p.globalSectionsAlgebra k)))
       (CommRingCat.ofHom (algebraMap k K))
       (pullback.fst p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop
       ((ΓSpecIso (.of K)).inv ≫
         (pullback.snd p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop) := by
   let _ := p.globalSectionsAlgebra k
   let s : Spec (.of K) ⟶ Spec (.of k) := Spec.map (CommRingCat.ofHom (algebraMap k K))
-  let H : IsPullback (pullback.fst p s) (pullback.snd p s) p s :=
-    IsPullback.of_hasPullback p s
-  let _ : Flat s := Flat.SpecMap_iff.mpr
-    (RingHom.Flat.of_isField (R := k) (S := K) (Field.toIsField k) (algebraMap k K))
-  let US : (Spec (.of k)).Opens := ⊤
-  let UT : (Spec (.of K)).Opens := ⊤
-  let UX : X.Opens := ⊤
-  let UY : (pullback p s).Opens := ⊤
-  have hs : IsIso (pushoutSection H (US := US) (UT := UT) (UX := UX) (UY := UY)
-      (by simp [US, UT, s]) (by simp [US, UX]) (by simp [UY, UX, UT])) :=
-    isIso_pushoutSection_of_isQuasiSeparated_of_flat_right H
-      (by simp [US, UT, s]) (by simp [US, UX]) (by simp [UY, UX, UT])
-      (isAffineOpen_top _) (isAffineOpen_top _)
-      CompactSpace.isCompact_univ isQuasiSeparated_univ
+  let _ : Flat s := Flat.SpecMap_iff.mpr (RingHom.flat_algebraMap_iff.mpr ‹Module.Flat k K›)
   have h₀ : IsPushout p.appTop s.appTop (pullback.fst p s).appTop
-      (pullback.snd p s).appTop := by
-    have := hs
-    let hh :=
-      (isIso_pushoutSection_iff H (US := US) (UT := UT) (UX := UX) (UY := UY)
-        (by simp [US, UT, s]) (by simp [US, UX]) (by simp [UY, UX, UT])).mp this
-    simpa only [US, UT, UX, UY, s, H, Hom.app_eq_appLE, Hom.preimage_top,
-      inf_idem] using hh
+      (pullback.snd p s).appTop :=
+    Hom.isPushout_appTop_of_flat (IsPullback.of_hasPullback p s)
   have h : IsPushout
       (CommRingCat.ofHom (algebraMap k Γ(X, ⊤)))
       (CommRingCat.ofHom (algebraMap k K))
@@ -112,67 +116,46 @@ private theorem globalSectionsBaseChange_isPushout
   simpa only [s] using h
 
 /-- Global sections of a quasicompact quasiseparated scheme commute with
-extension of the base field.
+flat extension of scalars between commutative rings.
 
-The source is oriented with the extension field on the left.  The algebra
-structures occurring in the type are the canonical structures defined by the
-structure morphism and the second pullback projection. The proof specializes
-Mathlib's `isIso_pushoutSection_of_isQuasiSeparated_of_flat_right` to global
-sections and identifies the resulting pushout with the tensor product. -/
+The source has `K` on the left, with its original `k`-module structure and the
+usual left `K`-algebra structure on the tensor product. The section algebras
+are exactly the canonical structures defined by the structure morphism and
+the second pullback projection. The proof specializes Mathlib's
+`isIso_pushoutSection_of_isQuasiSeparated_of_flat_right` to global sections
+and identifies the resulting pushout with the tensor product. -/
 @[expose]
 noncomputable def globalSectionsBaseChangeEquiv
-    (k K : Type u) [Field k] [Field K] [Algebra k K]
+    (k K : Type u) [CommRing k] [CommRing K] [a : Algebra k K] [Module.Flat k K]
     {X : Scheme.{u}} (p : X ⟶ Spec (.of k))
     [CompactSpace X] [QuasiSeparatedSpace X] :
-    letI := p.globalSectionsAlgebra k
-    letI := p.baseChangeGlobalSectionsAlgebra k K
-    K ⊗[k] Γ(X, ⊤) ≃ₐ[K]
-      Γ(pullback p (Spec.map (CommRingCat.ofHom (algebraMap k K))), ⊤) := by
+    @AlgEquiv K ΓTensor(k, K, X, a, p)
+      Γ(pullback p (Spec.map (CommRingCat.ofHom (algebraMap k K))), ⊤)
+      (inferInstance : CommSemiring K) ΓTensorSemiring(k, K, X, a, p)
+      (inferInstance : Semiring
+        Γ(pullback p (Spec.map (CommRingCat.ofHom (algebraMap k K))), ⊤))
+      ΓTensorAlgebra(k, K, X, a, p) (p.baseChangeGlobalSectionsAlgebra k K) := by
   let _ := p.globalSectionsAlgebra k
   let _ := p.baseChangeGlobalSectionsAlgebra k K
   let s : Spec (.of K) ⟶ Spec (.of k) := Spec.map (CommRingCat.ofHom (algebraMap k K))
-  let h : IsPushout
+  have h : IsPushout
       (CommRingCat.ofHom (algebraMap k Γ(X, ⊤)))
       (CommRingCat.ofHom (algebraMap k K))
       (pullback.fst p s).appTop
       ((ΓSpecIso (.of K)).inv ≫ (pullback.snd p s).appTop) := by
-    let H : IsPullback (pullback.fst p s) (pullback.snd p s) p s :=
-      IsPullback.of_hasPullback p s
-    let _ : Flat s := Flat.SpecMap_iff.mpr
-      (RingHom.Flat.of_isField (R := k) (S := K) (Field.toIsField k) (algebraMap k K))
-    let US : (Spec (.of k)).Opens := ⊤
-    let UT : (Spec (.of K)).Opens := ⊤
-    let UX : X.Opens := ⊤
-    let UY : (pullback p s).Opens := ⊤
-    have hs : IsIso (pushoutSection H (US := US) (UT := UT) (UX := UX) (UY := UY)
-        (by simp [US, UT, s]) (by simp [US, UX]) (by simp [UY, UX, UT])) :=
-      isIso_pushoutSection_of_isQuasiSeparated_of_flat_right H
-        (by simp [US, UT, s]) (by simp [US, UX]) (by simp [UY, UX, UT])
-        (isAffineOpen_top _) (isAffineOpen_top _)
-        CompactSpace.isCompact_univ isQuasiSeparated_univ
+    let _ : Flat s := Flat.SpecMap_iff.mpr (RingHom.flat_algebraMap_iff.mpr ‹Module.Flat k K›)
     have h₀ : IsPushout p.appTop s.appTop (pullback.fst p s).appTop
-        (pullback.snd p s).appTop := by
-      have := hs
-      let hh :=
-        (isIso_pushoutSection_iff H (US := US) (UT := UT) (UX := UX) (UY := UY)
-          (by simp [US, UT, s]) (by simp [US, UX]) (by simp [UY, UX, UT])).mp this
-      simpa only [US, UT, UX, UY, s, H, Hom.app_eq_appLE, Hom.preimage_top,
-        inf_idem] using hh
-    have h' : IsPushout
-        (CommRingCat.ofHom (algebraMap k Γ(X, ⊤)))
-        (CommRingCat.ofHom (algebraMap k K))
-        (pullback.fst p s).appTop
-        ((ΓSpecIso (.of K)).inv ≫ (pullback.snd p s).appTop) := by
-      apply h₀.of_iso (ΓSpecIso (.of k)) (Iso.refl _) (ΓSpecIso (.of K)) (Iso.refl _)
-      · rw [← cancel_epi (ΓSpecIso (.of k)).inv]
-        simp only [Iso.inv_hom_id_assoc]
-        change (ΓSpecIso (.of k)).inv ≫ p.appTop =
-          CommRingCat.ofHom (p.appTop.hom.comp (ΓSpecIso (.of k)).inv.hom)
-        rfl
-      · exact ΓSpecIso_naturality (CommRingCat.ofHom (algebraMap k K))
-      · simp
-      · simp
-    exact h'
+        (pullback.snd p s).appTop :=
+      Hom.isPushout_appTop_of_flat (IsPullback.of_hasPullback p s)
+    apply h₀.of_iso (ΓSpecIso (.of k)) (Iso.refl _) (ΓSpecIso (.of K)) (Iso.refl _)
+    · rw [← cancel_epi (ΓSpecIso (.of k)).inv]
+      simp only [Iso.inv_hom_id_assoc]
+      change (ΓSpecIso (.of k)).inv ≫ p.appTop =
+        CommRingCat.ofHom (p.appTop.hom.comp (ΓSpecIso (.of k)).inv.hom)
+      rfl
+    · exact ΓSpecIso_naturality (CommRingCat.ofHom (algebraMap k K))
+    · simp
+    · simp
   let hTensor := (CommRingCat.isPushout_tensorProduct k K Γ(X, ⊤)).flip
   let e := hTensor.isoIsPushout (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h
   exact
@@ -184,55 +167,52 @@ noncomputable def globalSectionsBaseChangeEquiv
           (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h) r) }
 
 private theorem globalSectionsBaseChangeEquiv_eq_oldConstruction
-    (k K : Type u) [Field k] [Field K] [Algebra k K]
+    (k K : Type u) [CommRing k] [CommRing K] [a : Algebra k K] [Module.Flat k K]
     {X : Scheme.{u}} (p : X ⟶ Spec (.of k))
     [CompactSpace X] [QuasiSeparatedSpace X] :
-    letI := p.globalSectionsAlgebra k
-    letI := p.baseChangeGlobalSectionsAlgebra k K
     globalSectionsBaseChangeEquiv k K p =
       let h := globalSectionsBaseChange_isPushout k K p
-      let hTensor := (CommRingCat.isPushout_tensorProduct k K Γ(X, ⊤)).flip
+      let hTensor := (@CommRingCat.isPushout_tensorProduct k K Γ(X, ⊤) _ _ _ a
+        (p.globalSectionsAlgebra k)).flip
       let e := hTensor.isoIsPushout (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h
-      { toRingEquiv := e.commRingCatIsoToRingEquiv
-        commutes' r := by
-          change (CommRingCat.ofHom Algebra.TensorProduct.includeLeftRingHom ≫ e.hom) r =
+      @AlgEquiv.mk K ΓTensor(k, K, X, a, p)
+        Γ(pullback p (Spec.map (CommRingCat.ofHom (algebraMap k K))), ⊤)
+        (inferInstance : CommSemiring K) ΓTensorSemiring(k, K, X, a, p)
+        (inferInstance : Semiring
+          Γ(pullback p (Spec.map (CommRingCat.ofHom (algebraMap k K))), ⊤))
+        ΓTensorAlgebra(k, K, X, a, p) (p.baseChangeGlobalSectionsAlgebra k K)
+        e.commRingCatIsoToRingEquiv.toEquiv
+        e.commRingCatIsoToRingEquiv.map_mul' e.commRingCatIsoToRingEquiv.map_add'
+        (fun r => by
+          change (CommRingCat.ofHom
+              (@Algebra.TensorProduct.includeLeftRingHom k K Γ(X, ⊤) _ _ a _
+                (p.globalSectionsAlgebra k)) ≫ e.hom) r =
             ((ΓSpecIso (.of K)).inv ≫
               (pullback.snd p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop) r
           exact congr($(hTensor.inr_isoIsPushout_hom
-            (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h) r) } := by
+            (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h) r)) := by
   rfl
 
 /-- On the scalar generator, the base-change equivalence is the map induced by
 the projection to `Spec K`. -/
 theorem globalSectionsBaseChangeEquiv_tmul_one
-    (k K : Type u) [Field k] [Field K] [Algebra k K]
+    (k K : Type u) [CommRing k] [CommRing K] [a : Algebra k K] [Module.Flat k K]
     {X : Scheme.{u}} (p : X ⟶ Spec (.of k))
     [CompactSpace X] [QuasiSeparatedSpace X] (r : K) :
-    letI := p.globalSectionsAlgebra k
-    letI := p.baseChangeGlobalSectionsAlgebra k K
-    globalSectionsBaseChangeEquiv k K p (r ⊗ₜ[k] (1 : Γ(X, ⊤))) =
+    globalSectionsBaseChangeEquiv k K p (r ⊗ₜ[k, a, p] (1 : Γ(X, ⊤))) =
       (pullback.snd p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop
         ((ΓSpecIso (.of K)).inv r) := by
   let _ := p.globalSectionsAlgebra k
   let _ := p.baseChangeGlobalSectionsAlgebra k K
-  let s : Spec (.of K) ⟶ Spec (.of k) := Spec.map (CommRingCat.ofHom (algebraMap k K))
-  let h := globalSectionsBaseChange_isPushout k K p
-  let hTensor := (CommRingCat.isPushout_tensorProduct k K Γ(X, ⊤)).flip
-  let e := hTensor.isoIsPushout (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h
-  change e.hom (r ⊗ₜ[k] (1 : Γ(X, ⊤))) =
-    (pullback.snd p s).appTop ((ΓSpecIso (.of K)).inv r)
-  exact congr($(hTensor.inr_isoIsPushout_hom
-    (CommRingCat.of Γ(X, ⊤)) (CommRingCat.of K) h) r)
+  exact (globalSectionsBaseChangeEquiv k K p).commutes r
 
 /-- On the global-section generator, the base-change equivalence is the map
 induced by the projection to `X`. -/
 theorem globalSectionsBaseChangeEquiv_one_tmul
-    (k K : Type u) [Field k] [Field K] [Algebra k K]
+    (k K : Type u) [CommRing k] [CommRing K] [a : Algebra k K] [Module.Flat k K]
     {X : Scheme.{u}} (p : X ⟶ Spec (.of k))
     [CompactSpace X] [QuasiSeparatedSpace X] (x : Γ(X, ⊤)) :
-    letI := p.globalSectionsAlgebra k
-    letI := p.baseChangeGlobalSectionsAlgebra k K
-    globalSectionsBaseChangeEquiv k K p ((1 : K) ⊗ₜ[k] x) =
+    globalSectionsBaseChangeEquiv k K p ((1 : K) ⊗ₜ[k, a, p] x) =
       (pullback.fst p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop x := by
   let _ := p.globalSectionsAlgebra k
   let _ := p.baseChangeGlobalSectionsAlgebra k K
@@ -248,12 +228,10 @@ theorem globalSectionsBaseChangeEquiv_one_tmul
 tensor. -/
 @[simp]
 theorem globalSectionsBaseChangeEquiv_tmul
-    (k K : Type u) [Field k] [Field K] [Algebra k K]
+    (k K : Type u) [CommRing k] [CommRing K] [a : Algebra k K] [Module.Flat k K]
     {X : Scheme.{u}} (p : X ⟶ Spec (.of k))
     [CompactSpace X] [QuasiSeparatedSpace X] (r : K) (x : Γ(X, ⊤)) :
-    letI := p.globalSectionsAlgebra k
-    letI := p.baseChangeGlobalSectionsAlgebra k K
-    globalSectionsBaseChangeEquiv k K p (r ⊗ₜ[k] x) =
+    globalSectionsBaseChangeEquiv k K p (r ⊗ₜ[k, a, p] x) =
       (pullback.snd p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop
           ((ΓSpecIso (.of K)).inv r) *
         (pullback.fst p (Spec.map (CommRingCat.ofHom (algebraMap k K)))).appTop x := by
