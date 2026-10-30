@@ -43,12 +43,13 @@ rev = "4cac2177c37f5530c4da76aa8e4307f3fc9e4dcb"
 
 [[lean_lib]]
 name = "SchemeProperties"
+roots = ["SchemeProperties", "SchemeProperties.Topology.IrreduciblePowers"]
 
 [[lean_lib]]
 name = "SchemePropertiesTest"
 # Test modules intentionally keep their helper declarations private.
 leanOptions = { weak.linter.privateModule = false }
-roots = ["SchemePropertiesTest.RelativeValuativeExtension"]
+roots = ["SchemePropertiesTest.RelativeValuativeExtension", "SchemePropertiesTest.IrreduciblePowers"]
 globs = ["SchemePropertiesTest.+", "SchemePropertiesTest"]
 
 [[lean_lib]]

@@ -313,3 +313,13 @@ the existing single-cover extension API and Mathlib's Cartesian group-object
 infrastructure; Milne's Proposition 5.12 motivates its conditional presheaf form.
 Formal Frontier maintainers and contributors developed Lean proofs, examples and
 documentation with AI assistance and mathematical review.
+
+
+## Closures of preirreducible powers
+
+`IsPreirreducible.exists_closure_pow_eq` shows that the closures of the powers of a
+preirreducible subset containing the identity eventually stabilize in a separately
+continuous monoid, provided its order of irreducible closed subsets is
+finite-dimensional. The result includes the zeroth power and requires neither
+joint continuity nor a separation axiom. Import
+`SchemeProperties.Topology.IrreduciblePowers` to use it.
