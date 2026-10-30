@@ -6,6 +6,15 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Closed points of scheme pullbacks](SchemeProperties/ClosedPointProducts.lean):
+  for specified locally finite-type arrows to the spectrum of any field, the
+  original projections of any specified pullback give a surjection onto pairs
+  of closed points. Over a separably closed field this is a canonical set
+  equivalence, with pairing, projection, uniqueness, eta, diagonal and
+  fixed-base naturality laws. No global finite-type, quasi-compactness,
+  separation or reducedness assumption is imposed. This does not identify the
+  Zariski closed-point topology with the ordinary product topology.
+
 - [Locally closed points in continuous preimages](SchemeProperties/LocallyConstructiblePreimage.lean):
   for arbitrary topological spaces and a continuous map, every nonempty preimage
   of a locally constructible set has a member at which that same preimage is

@@ -29,6 +29,7 @@ public import SchemeProperties.IntegralDominantRationalCategoryOver
 public import SchemeProperties.IntegralDominantRationalCategory
 public import SchemeProperties.JacobsonBirationalObstruction
 public import SchemeProperties.ClosedPointLifts
+public import SchemeProperties.ClosedPointProducts
 public import SchemeProperties.JacobsonClosedPoints
 public import SchemeProperties.JacobsonConnectedness
 public import SchemeProperties.MaximalPointHom
