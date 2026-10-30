@@ -85,6 +85,12 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   finite-type hypothesis on `R`. The full sheaves retain nilpotents and the
   zero ring is included.
 
+- [The integers are Jacobson](SchemeProperties/RingTheory/Jacobson/Int.lean):
+  the canonical integer ring is a Jacobson ring. A
+  [polynomial evaluation example](SchemePropertiesExamples/IntegerMaximalPointEvaluation.lean)
+  identifies the maximal-point morphism over `Spec ℤ` induced by evaluation at
+  zero, `ℤ[X] →ₐ[ℤ] ℤ`, together with its recovered ring map and the value `X ↦ 0`.
+
 - [Reduced projective spectra](SchemeProperties/ProjReduced.lean): for any
   `ℕ`-graded commutative ring `A` with grading `𝒜`, `Proj 𝒜` is reduced whenever
   `A` is reduced, with no nonemptiness or finiteness assumption.
