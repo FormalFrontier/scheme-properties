@@ -130,3 +130,5 @@ public import SchemeProperties.StructureSheaf
 public import SchemeProperties.Torsion
 public import SchemeProperties.UniversallyInjectiveGeometricPoints
 public import SchemeProperties.KernImage
+
+public import SchemeProperties.SpecHomDescent

@@ -4,6 +4,9 @@ Authors: Formal Frontier Agents
 -/
 module
 
+public import SchemeProperties.SpecHomDescent
+import Mathlib.CategoryTheory.Limits.Shapes.RegularMono
+
 public import SchemeProperties.FiniteTypePoints
 public import SchemeProperties.SingleCoverExtension
 public import Mathlib.AlgebraicGeometry.Sites.Fpqc
@@ -168,14 +171,6 @@ theorem algebraicOverPoints_isSheafFor_faithfullyFlat
     exact quasiCompact_iff_forall_isAffineOpen.mpr
       (fun _ hV ↦ (@IsAffineOpen.preimage _ _ _ hV
         (Spec.map (CommRingCat.ofHom f.unop.hom.hom.toRingHom)) hAffine).isCompact)
-  have hcover : Presieve.singleton fSpec ∈ Scheme.fpqcPrecoverage (P.obj X).left :=
-    Scheme.Hom.singleton_mem_fpqcPrecoverage fSpec
-  have hsheaf : Presieve.IsSheafFor (yoneda.obj Y.obj.left)
-      (Presieve.singleton fSpec) :=
-    (GrothendieckTopology.Subcanonical.isSheaf_of_isRepresentable
-      (J := Scheme.fpqcTopology) _).isSheafFor _
-        (Precoverage.generate_mem_toGrothendieck hcover)
-  rw [Presieve.isSheafFor_singleton] at hsheaf
   rw [Presieve.isSheafFor_singleton]
   intro x hx
   change ULift.{0} (P.obj U ⟶ Y.obj) at x
@@ -186,15 +181,8 @@ theorem algebraicOverPoints_isSheafFor_faithfullyFlat
     rw [algebraicOverPoints_map_apply K Y (pullback.fst f f) x,
       algebraicOverPoints_map_apply K Y (pullback.snd f f) x] at h
     exact congrArg (fun a : ULift.{0} (P.obj (pullback f f) ⟶ Y.obj) ↦ a.down.left) h
-  have hrel {T : Scheme} (a b : T ⟶ (P.obj U).left)
-      (hab : a ≫ fSpec = b ≫ fSpec) : a ≫ x.down.left = b ≫ x.down.left := by
-    let l := hpb.lift a b hab
-    calc
-      a ≫ x.down.left = l ≫ ((P.map (pullback.fst f f)).left ≫ x.down.left) := by
-        rw [← Category.assoc, hpb.lift_fst]
-      _ = l ≫ ((P.map (pullback.snd f f)).left ≫ x.down.left) := by rw [hcompat]
-      _ = b ≫ x.down.left := by rw [← Category.assoc, hpb.lift_snd]
-  obtain ⟨y, hy, _⟩ := hsheaf x.down.left (fun a b hab ↦ hrel a b hab)
+  obtain ⟨y, hy, hyuniq⟩ := Cofork.IsColimit.existsUnique
+    ((EffectiveEpi.getStruct fSpec).isColimitCoforkOfIsPullback hpb) x.down.left hcompat
   have hy' : fSpec ≫ y = x.down.left := hy
   have hbase : y ≫ Y.obj.hom = (P.obj X).hom := by
     apply (cancel_epi fSpec).mp
@@ -213,12 +201,11 @@ theorem algebraicOverPoints_isSheafFor_faithfullyFlat
     apply ULift.ext
     apply MorphismProperty.Over.Hom.ext
     change z.down.left = y
-    apply (cancel_epi fSpec).mp
     have hz' : fSpec ≫ z.down.left = x.down.left := by
       have h := congrArg ULift.down hz
       change (P.map f ≫ z.down) = x.down at h
       exact congrArg (fun a : P.obj U ⟶ Y.obj ↦ a.left) h
-    exact hz'.trans hy'.symm
+    exact hyuniq _ hz'
 
 /-- Maps from a one-cover dense subfunctor of finite-type scheme points to
 represented points correspond exactly to morphisms of the ambient schemes.
