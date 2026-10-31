@@ -43,7 +43,7 @@ rev = "4cac2177c37f5530c4da76aa8e4307f3fc9e4dcb"
 
 [[lean_lib]]
 name = "SchemeProperties"
-roots = ["SchemeProperties", "SchemeProperties.Topology.IrreduciblePowers"]
+roots = ["SchemeProperties", "SchemeProperties.Topology.IrreduciblePowers", "SchemeProperties.AffineFpqc"]
 
 [[lean_lib]]
 name = "SchemePropertiesTest"
