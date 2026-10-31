@@ -349,6 +349,13 @@ point has an affine source neighborhood on which the morphism is flat. Surjectiv
 therefore gives a genuinely nonempty such affine source open, without assuming
 quasi-compactness; see
 [`SchemeProperties/GenericFlatness/Pointed.lean`](SchemeProperties/GenericFlatness/Pointed.lean).
+
+More generally, a surjective locally finite type morphism `f : X ⟶ Y` to a nonempty
+reduced scheme with finitely many irreducible components has a nonempty affine open
+`U : X.Opens` with `Flat (U.ι ≫ f)`, without assuming quasi-compactness. Its image
+need not be dense in the whole target. See
+[`SchemeProperties/GenericFlatness/Reduced.lean`](SchemeProperties/GenericFlatness/Reduced.lean).
+
 The proofs use Mathlib's scheme, localization, and flatness APIs and the public
 multivariate-polynomials generic-freeness theorem
 `Algebra.FiniteType.exists_free_localizationAway`. For background on generic
