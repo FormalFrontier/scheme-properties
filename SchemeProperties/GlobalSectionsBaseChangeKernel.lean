@@ -6,7 +6,8 @@ module
 
 public import SchemeProperties.GlobalSectionsBaseChange
 public import Mathlib.RingTheory.Flat.FaithfullyFlat.Algebra
-import CoherentModules.RingTheory.Flat.BaseChange
+import Mathlib.LinearAlgebra.TensorProduct.RightExactness
+import Mathlib.RingTheory.Flat.Equalizer
 
 @[expose] public section
 
@@ -27,8 +28,9 @@ morphisms and the two pullback projections.
 
 * `Scheme.globalSectionsBaseChangeEquiv` and its generator formulas supply
   the comparison between the tensor product and global sections.
-* Coherent Modules, `Algebra.TensorProduct.ker_map_id_left`, supplies flat
-  base change for algebra kernels.
+* Coherent Modules' algebra-kernel base-change argument, expressed using
+  Mathlib's `Module.Flat.ker_lTensor_eq` and
+  `TensorProduct.AlgebraTensorModule.range_lTensor_idealMap`.
 * Mathlib, `Module.FaithfullyFlat.tensorProduct_mk_injective`, supplies
   injectivity on an arbitrary module under faithfully flat scalar extension.
 -/
@@ -44,8 +46,8 @@ namespace AlgebraicGeometry.Scheme
 
 /-- Flat scalar extension extends the kernel of the map on global sections
 of a morphism between quasicompact quasiseparated schemes over `Spec R`.
-The proof transports `Algebra.TensorProduct.ker_map_id_left` through
-`globalSectionsBaseChangeEquiv`. -/
+The proof transports Mathlib's preservation of kernels by flat tensor products
+through `globalSectionsBaseChangeEquiv`. -/
 theorem map_ker_appTop_baseChange
     (R S : Type u) [CommRing R] [CommRing S] [Algebra R S]
     [Module.Flat R S] {X Y : Scheme.{u}}
@@ -121,9 +123,13 @@ theorem map_ker_appTop_baseChange
     (RingHom.ker fR).map (pullback.fst pY s).appTop.hom =
         ((RingHom.ker fR).map iY).map eYR := by
       rw [Ideal.map_map, hiY]
-    _ = (RingHom.ker t).map eYR :=
-      congrArg (Ideal.map eYR)
-        (Algebra.TensorProduct.ker_map_id_left (S := S) fR).symm
+    _ = (RingHom.ker t).map eYR := by
+      apply congrArg (Ideal.map eYR)
+      symm
+      apply (Submodule.restrictScalars_injective R _ _)
+      exact (Module.Flat.ker_lTensor_eq R S fR.toLinearMap).trans
+        (_root_.TensorProduct.AlgebraTensorModule.range_lTensor_idealMap
+          (R := R) (A := S) R (RingHom.ker fR))
     _ = (RingHom.ker (fS.appTop.hom.comp eYR)).map eYR := by
       apply congrArg (Ideal.map eYR)
       rw [hnat]

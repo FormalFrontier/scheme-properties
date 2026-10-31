@@ -336,3 +336,20 @@ continuous monoid, provided its order of irreducible closed subsets is
 finite-dimensional. The result includes the zeroth power and requires neither
 joint continuity nor a separation axiom. Import
 `SchemeProperties.Topology.IrreduciblePowers` to use it.
+
+## Generic flatness
+
+A locally finite type, quasi-compact morphism to an integral scheme is flat over a
+nonempty dense open of the target, on the whole preimage of that open. No
+Noetherianity assumption on the target is needed. See
+[`SchemeProperties/GenericFlatness/Uniform.lean`](SchemeProperties/GenericFlatness/Uniform.lean).
+
+For a locally finite type morphism to an integral scheme, every point above the generic
+point has an affine source neighborhood on which the morphism is flat. Surjectivity
+therefore gives a genuinely nonempty such affine source open, without assuming
+quasi-compactness; see
+[`SchemeProperties/GenericFlatness/Pointed.lean`](SchemeProperties/GenericFlatness/Pointed.lean).
+The proofs use Mathlib's scheme, localization, and flatness APIs and the public
+multivariate-polynomials generic-freeness theorem
+`Algebra.FiniteType.exists_free_localizationAway`. For background on generic
+flatness, see J. S. Milne, *Algebraic Groups* (2017).
