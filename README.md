@@ -6,6 +6,11 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Faithful flatness of finite families](SchemeProperties/RingTheory/FaithfullyFlatPi.lean):
+  a finite family of flat commutative-ring maps that is jointly surjective on
+  prime spectra induces a faithfully flat map to the product. The spectrum
+  implication also holds for arbitrary families of commutative semirings,
+  without flatness. Empty index types and zero rings are included.
 - [Flatness under source precomposition](SchemeProperties/FlatSourceCancellation.lean):
   for arbitrary scheme morphisms `p : X ⟶ Y` and `f : Y ⟶ Z`, flatness and
   point-surjectivity of `p`, together with flatness of `p ≫ f`, imply flatness

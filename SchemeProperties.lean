@@ -55,6 +55,7 @@ public import SchemeProperties.SingleCoverGroup
 public import SchemeProperties.FiniteTypeSingleCover
 public import SchemeProperties.FlatImageDensity
 public import SchemeProperties.FlatSourceCancellation
+public import SchemeProperties.RingTheory.FaithfullyFlatPi
 public import SchemeProperties.FlatQuasiFinite
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
