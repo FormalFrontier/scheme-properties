@@ -64,6 +64,7 @@ public import SchemeProperties.GenericPointFunctionField
 public import SchemeProperties.GenericPointRationalNoninvertibility
 public import SchemeProperties.GlobalSections
 public import SchemeProperties.GlobalSectionsBaseChange
+public import SchemeProperties.GlobalSectionsBaseChangeKernel
 public import SchemeProperties.Rigidity
 public import SchemeProperties.IdealSheaf.Reduced
 public import SchemeProperties.IdealSheafModule

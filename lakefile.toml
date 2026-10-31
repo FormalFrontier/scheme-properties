@@ -17,7 +17,7 @@ rev = "83abb3e776bdefcbc447a1e44d0debe4010039e5"
 [[require]]
 name = "coherent-modules"
 git = "https://github.com/FormalFrontier/coherent-modules.git"
-rev = "408a52bd54df17ccc928ce970942f1313ff10d5c"
+rev = "8dd3ab73d6feb55d3c58fc3eee96a0532e049eee"
 
 [[require]]
 name = "finiteEtaleAlgebras"
