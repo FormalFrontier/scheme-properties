@@ -17,7 +17,12 @@ public section
 set_option warningAsError true
 
 /-!
-# Integrality from domain stalks
+# Integral schemes and integral open subschemes
+
+A nonempty reduced scheme with finitely many irreducible components has a nonempty
+integral open subscheme. Only the finiteness of the topological irreducible components
+is required; in particular, topological Noetherianity suffices. The proof uses Mathlib's
+finite-component closure theorem and the existing open restriction of the original scheme.
 
 This file proves that a connected locally Noetherian scheme whose local rings
 are domains is integral. The main local step shows that a point with a domain
@@ -318,5 +323,40 @@ theorem isIntegral_of_isNoetherian_of_connectedSpace_of_stalk_isDomain
     (X : Scheme) [IsNoetherian X] [ConnectedSpace X]
     [∀ x : X, IsDomain (X.presheaf.stalk x)] : IsIntegral X := by
   exact isIntegral_of_isLocallyNoetherian_of_connectedSpace_of_stalk_isDomain X
+
+namespace Scheme
+
+/-- A nonempty reduced scheme with finitely many irreducible components has a nonempty
+integral open subscheme. The open subscheme is the restriction of the original scheme;
+it need not be dense in the whole scheme. -/
+theorem exists_nonempty_isIntegral_open
+    (X : Scheme.{u}) [IsReduced X] [Nonempty X]
+    (hfinite : (irreducibleComponents X).Finite) :
+    ∃ U : X.Opens, (U : Set X).Nonempty ∧ IsIntegral U.toScheme := by
+  classical
+  let x : X := Nonempty.some inferInstance
+  let Z : Set X := _root_.irreducibleComponent x
+  have hZ : Z ∈ irreducibleComponents X := irreducibleComponent_mem_irreducibleComponents x
+  let U : X.Opens :=
+    ⟨(⋃₀ (irreducibleComponents X \ {Z}))ᶜ,
+      (hfinite.sdiff.isClosed_sUnion fun W hW ↦
+        isClosed_of_mem_irreducibleComponents W hW.1).isOpen_compl⟩
+  have hU : IsIrreducible (U : Set X) := by
+    have hclosure : closure (U : Set X) = Z :=
+      closure_sUnion_irreducibleComponents_sdiff_singleton hfinite Z hZ
+    apply isIrreducible_iff_closure.mp
+    rw [hclosure]
+    exact hZ.1
+  let : IrreducibleSpace U.toScheme := isIrreducible_iff_irreducibleSpace.mp hU
+  exact ⟨U, hU.nonempty, isIntegral_of_irreducibleSpace_of_isReduced U.toScheme⟩
+
+/-- A nonempty reduced scheme with Noetherian underlying space has a nonempty integral
+open subscheme. No Noetherianity assumption on the structure sheaf is required. -/
+theorem exists_nonempty_isIntegral_open_of_noetherianSpace
+    (X : Scheme.{u}) [IsReduced X] [Nonempty X] [NoetherianSpace X] :
+    ∃ U : X.Opens, (U : Set X).Nonempty ∧ IsIntegral U.toScheme :=
+  exists_nonempty_isIntegral_open X NoetherianSpace.finite_irreducibleComponents
+
+end Scheme
 
 end AlgebraicGeometry
