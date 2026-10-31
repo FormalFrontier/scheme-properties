@@ -132,3 +132,4 @@ public import SchemeProperties.UniversallyInjectiveGeometricPoints
 public import SchemeProperties.KernImage
 
 public import SchemeProperties.SpecHomDescent
+public import SchemeProperties.DenseOver
