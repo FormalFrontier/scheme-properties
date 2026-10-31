@@ -4,6 +4,22 @@ See the [overview](../README.md), [reader guide](Guide.md) and
 [documentation index](README.md) for navigation and imports. Mathematical
 [references](../README.md#references) and [credits](CREDITS.md) apply throughout.
 
+## Flatness under source precomposition
+
+For arbitrary morphisms `p : X ⟶ Y` and `f : Y ⟶ Z`,
+`AlgebraicGeometry.Flat.of_comp p f` deduces flatness of `f` from flatness and
+point-surjectivity of `p` and flatness of `p ≫ f`. No quasi-compactness,
+Noetherianity, affineness or finiteness hypothesis is needed. The proof works
+on full local stalk rings and includes empty schemes.
+
+Its ring-theoretic input, `RingHom.Flat.of_comp_of_faithfullyFlat`, takes
+commutative ring maps `a : A →+* B` and `b : B →+* C` in independent universes.
+Faithful flatness of `b` and flatness of `b.comp a` imply flatness of `a`.
+Faithful flatness of the composite is not assumed, and zero rings are allowed.
+These theorems concern a source tower, rather than target base-change descent.
+Direct imports: `SchemeProperties.FlatSourceCancellation` and
+`SchemeProperties.RingTheory.FlatSourceCancellation`.
+
 ## Going down and flat stalk dimensions
 
 - [Going down](../SchemeProperties/RingTheory/KrullDimension/GoingDown.lean) bounds

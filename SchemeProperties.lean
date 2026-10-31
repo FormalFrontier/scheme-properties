@@ -54,6 +54,7 @@ public import SchemeProperties.SingleCoverTransport
 public import SchemeProperties.SingleCoverGroup
 public import SchemeProperties.FiniteTypeSingleCover
 public import SchemeProperties.FlatImageDensity
+public import SchemeProperties.FlatSourceCancellation
 public import SchemeProperties.FlatQuasiFinite
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness

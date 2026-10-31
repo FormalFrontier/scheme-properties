@@ -6,6 +6,14 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Flatness under source precomposition](SchemeProperties/FlatSourceCancellation.lean):
+  for arbitrary scheme morphisms `p : X ⟶ Y` and `f : Y ⟶ Z`, flatness and
+  point-surjectivity of `p`, together with flatness of `p ≫ f`, imply flatness
+  of `f`, without quasi-compactness or finiteness assumptions. The
+  [ring-tower theorem](SchemeProperties/RingTheory/FlatSourceCancellation.lean)
+  cancels a faithfully flat second map from a flat composite of commutative
+  ring maps in independent universes; the composite need not be faithfully flat.
+
 - [Closed points of scheme pullbacks](SchemeProperties/ClosedPointProducts.lean):
   for specified locally finite-type arrows to the spectrum of any field, the
   original projections of any specified pullback give a surjection onto pairs
