@@ -69,6 +69,15 @@ theorem affineFpqcMorphisms_iff (B : Scheme.{u})
       Flat (Scheme.Spec.map f.left) ∧ Surjective (Scheme.Spec.map f.left) :=
   Iff.rfl
 
+/-- An affine-test morphism is fpqc exactly when its underlying ring homomorphism
+is faithfully flat. -/
+theorem affineFpqcMorphisms_iff_faithfullyFlat
+    (B : Scheme.{u})
+    {X Y : CostructuredArrow Scheme.Spec B} (f : X ⟶ Y) :
+    affineFpqcMorphisms B f ↔ (f.left.unop).hom.FaithfullyFlat :=
+  (affineFpqcMorphisms_iff B f).trans
+    (AlgebraicGeometry.flat_and_surjective_SpecMap_iff f.left.unop)
+
 /-- The scheme morphism induced by an fpqc morphism of affine tests is flat. -/
 theorem affineFpqcMorphisms_flat (B : Scheme.{u})
     {X Y : CostructuredArrow Scheme.Spec B} {f : X ⟶ Y}

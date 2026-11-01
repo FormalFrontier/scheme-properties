@@ -142,7 +142,7 @@ noncomputable def finiteAlgSpecFullyFaithful
 
 /-- The spectrum of a finitely generated algebra as a locally-finite-type scheme over its field. -/
 @[expose, implicit_reducible] noncomputable def finiteAlgSpecOver
-    (K : Type u) [Field K] :
+    (K : Type u) [CommRing K] :
     (FGAlgCat K)ᵒᵖ ⥤ locallyFiniteTypeMorphism.Over ⊤ (Spec (.of K)) where
   obj A := MorphismProperty.Over.mk ⊤ ((algSpec (.of K)).obj
     ((ObjectProperty.ι _).op.obj A)).hom (by
@@ -152,12 +152,12 @@ noncomputable def finiteAlgSpecFullyFaithful
     ((algSpec (.of K)).map ((ObjectProperty.ι _).op.map f)) trivial
 
 /-- The underlying scheme of the spectrum of a finite-type algebra is its affine spectrum. -/
-@[simp] theorem finiteAlgSpecOver_obj_left (K : Type u) [Field K]
+@[simp] theorem finiteAlgSpecOver_obj_left (K : Type u) [CommRing K]
     (A : (FGAlgCat K)ᵒᵖ) :
     ((finiteAlgSpecOver K).obj A).left = Spec (.of A.unop.obj) := rfl
 
 /-- The structure morphism of a finite-type affine spectrum is induced by the algebra map. -/
-@[simp] theorem finiteAlgSpecOver_obj_hom (K : Type u) [Field K]
+@[simp] theorem finiteAlgSpecOver_obj_hom (K : Type u) [CommRing K]
     (testAlgebra : (FGAlgCat K)ᵒᵖ) :
     ((finiteAlgSpecOver K).obj testAlgebra).hom =
       Spec.map (CommRingCat.ofHom (algebraMap K testAlgebra.unop.obj)) := by
@@ -166,7 +166,7 @@ noncomputable def finiteAlgSpecFullyFaithful
 
 /-- On underlying schemes, finite-algebra spectrum sends an algebra map to the
 contravariant map of affine spectra. -/
-@[simp] theorem finiteAlgSpecOver_map_left (K : Type u) [Field K]
+@[simp] theorem finiteAlgSpecOver_map_left (K : Type u) [CommRing K]
     {X U : (FGAlgCat K)ᵒᵖ} (f : U ⟶ X) :
     ((finiteAlgSpecOver K).map f).left =
       Spec.map (CommRingCat.ofHom f.unop.hom.hom.toRingHom) := by
