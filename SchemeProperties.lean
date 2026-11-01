@@ -47,6 +47,7 @@ public import SchemeProperties.FieldExtensionLifting
 public import SchemeProperties.FiniteAlgHom
 public import SchemeProperties.FiniteFieldPoints
 public import SchemeProperties.FinitePresentation.PointDescent
+public import SchemeProperties.FiniteType.PointFactorization
 public import SchemeProperties.FiniteTypePoints
 public import SchemeProperties.AffineDensity
 public import SchemeProperties.AffinePoints

@@ -6,6 +6,14 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Factorization on finite-type points](SchemeProperties/FiniteType/PointFactorization.lean):
+  over any commutative ring `K`, a morphism `f : X ⟶ Y` with `X` locally of
+  finite type over `Spec K` factors through a monomorphism `i : N ⟶ Y` if and
+  only if every point of `X` over a finitely generated `K`-algebra lifts through
+  `i` after composition with `f`. The factorization is in schemes over the
+  same `Spec K`. No finiteness, affineness or separatedness condition is
+  imposed on `N` or `Y`; the source's local finite-type hypothesis is needed.
+
 - [Points over finitely generated subalgebras](SchemeProperties/FinitePresentation/PointDescent.lean):
   for any given tower of commutative rings `K → R → S`, every `S`-point of a
   scheme locally of finite presentation over `Spec K` factors through a
