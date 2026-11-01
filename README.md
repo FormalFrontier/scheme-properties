@@ -6,6 +6,15 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Points over finitely generated subalgebras](SchemeProperties/FinitePresentation/PointDescent.lean):
+  for any given tower of commutative rings `K → R → S`, every `S`-point of a
+  scheme locally of finite presentation over `Spec K` factors through a
+  finitely generated `R`-subalgebra `A ⊆ S`. The forward map is the
+  algebra-spectrum map of the inclusion, and the composite equals the original
+  point over the original `Spec K`. No affineness or quasi-compactness of the
+  tested scheme, injectivity of `R → S`, or finite generation of `R` over `K`
+  is required.
+
 - [Morphisms from dense affine-point subfunctors](SchemeProperties/AffinePoints.lean):
   for arbitrary schemes `X` and `Y` over any base scheme `B`, let `N_B` be
   the full affine-point functor over `B`. If `D ⊆ N_B(X)` is one-cover-dense
