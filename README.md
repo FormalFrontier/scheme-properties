@@ -6,6 +6,16 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Morphisms from dense affine-point subfunctors](SchemeProperties/AffinePoints.lean):
+  for arbitrary schemes `X` and `Y` over any base scheme `B`, let `N_B` be
+  the full affine-point functor over `B`. If `D ⊆ N_B(X)` is one-cover-dense
+  for flat, surjective morphisms of affine `B`-schemes, every natural
+  transformation `α : D ⟶ N_B(Y)` is induced by a unique morphism
+  `f : X ⟶ Y` over the same base, with `D.ι ≫ N_B.map f = α`
+  (`Scheme.existsUnique_hom_of_isOneCoverDense`). No sheaf condition on `X`
+  or `D`, finite-product condition on `D`, or finiteness or separatedness
+  hypothesis is required.
+
 - [Faithful flatness of finite families](SchemeProperties/RingTheory/FaithfullyFlatPi.lean):
   a finite family of flat commutative-ring maps that is jointly surjective on
   prime spectra induces a faithfully flat map to the product. The spectrum
