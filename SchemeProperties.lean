@@ -4,6 +4,7 @@ Authors: Formal Frontier Agents
 -/
 module
 
+public import SchemeProperties.Algebra.Category.FGAlgCat.Range
 public import SchemeProperties.AffineGenerators
 public import SchemeProperties.ConnectedComponents
 public import SchemeProperties.CoherentQuasicoherent

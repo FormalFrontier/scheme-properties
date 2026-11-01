@@ -6,6 +6,13 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Ranges of finitely generated algebras](SchemeProperties/Algebra/Category/FGAlgCat/Range.lean):
+  over any commutative ring, taking the range of an algebra map with finitely
+  generated domain is left adjoint to the inclusion of finitely generated
+  subalgebra stages. The stage functor is therefore final. The ambient algebra
+  need not be finitely generated, the base and carrier universes are independent,
+  and neither the given map nor the scalar map need be injective.
+
 - [Factorization on finite-type points](SchemeProperties/FiniteType/PointFactorization.lean):
   over any commutative ring `K`, a morphism `f : X ⟶ Y` with `X` locally of
   finite type over `Spec K` factors through a monomorphism `i : N ⟶ Y` if and
