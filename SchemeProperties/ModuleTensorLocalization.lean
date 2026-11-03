@@ -7,6 +7,7 @@ module
 public import SchemeProperties.ModuleTensorAffine
 public import SchemeProperties.ModuleTensorRestriction
 public import Mathlib.RingTheory.Localization.Module
+public import SchemeProperties.ModuleTilde
 
 public section
 
@@ -410,66 +411,6 @@ private instance awayRingHomInvPair_symm (f : R) :
     (IsLocalization.algEquiv (.powers f) (Localization.Away f)
       Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv
 
-private theorem away_smul_eq_native (L : ModuleCat.{u} R) (f : R)
-    (r : Localization.Away f) (x : LocalizedModule (.powers f) L) :
-    letI : Module Γ(Spec R, PrimeSpectrum.basicOpen f)
-      (LocalizedModule (.powers f) L) := LocalizedModule.moduleOfIsLocalization
-    r • x = IsLocalization.algEquiv (.powers f) (Localization.Away f)
-      Γ(Spec R, PrimeSpectrum.basicOpen f) r • x := by
-  let : Module Γ(Spec R, PrimeSpectrum.basicOpen f)
-      (LocalizedModule (.powers f) L) := LocalizedModule.moduleOfIsLocalization
-  obtain ⟨⟨a, s⟩, rfl⟩ := IsLocalization.mk'_surjective (.powers f) r
-  induction x using LocalizedModule.induction_on with
-  | h m t =>
-    rw [IsLocalization.algEquiv_mk']
-    rw [← Localization.mk_eq_mk', LocalizedModule.mk_smul_mk,
-      LocalizedModule.mk'_smul_mk]
-
-/-- Canonical equivalence from the localized module over `Localization.Away f`
-to native sections on `D(f)`. It is semilinear over the native
-`IsLocalization.algEquiv` from `Away f` to `Γ(Spec R, D(f))`. -/
-noncomputable def awayModuleEquiv (L : ModuleCat.{u} R) (f : R) :
-    letI : RingHomInvPair
-        (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv.toRingHom
-        (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f)).symm.toRingEquiv.toRingHom :=
-      RingHomInvPair.of_ringEquiv
-        (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv
-    letI : RingHomInvPair
-        (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f)).symm.toRingEquiv.toRingHom
-        (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv.toRingHom :=
-      RingHomInvPair.of_ringEquiv_symm
-        (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv
-    LinearEquiv (σ' := (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-        Γ(Spec R, PrimeSpectrum.basicOpen f)).symm.toRingEquiv.toRingHom)
-      (IsLocalization.algEquiv (.powers f) (Localization.Away f)
-        Γ(Spec R, PrimeSpectrum.basicOpen f)).toRingEquiv.toRingHom
-      (LocalizedModule (.powers f) L) Γ(tilde L, PrimeSpectrum.basicOpen f) := by
-  letI : Module Γ(Spec R, PrimeSpectrum.basicOpen f)
-      (LocalizedModule (.powers f) L) := LocalizedModule.moduleOfIsLocalization
-  let e₀ := IsLocalizedModule.iso (.powers f)
-    (tilde.toOpen L (PrimeSpectrum.basicOpen f)).hom
-  let e : LocalizedModule (.powers f) L ≃ₗ[R] Γ(tilde L, PrimeSpectrum.basicOpen f) := e₀
-  let eS := e.extendScalarsOfIsLocalization (.powers f)
-    Γ(Spec R, PrimeSpectrum.basicOpen f)
-  exact
-    { e.toAddEquiv with
-      map_smul' := fun r x ↦ by
-        change eS (r • x) = IsLocalization.algEquiv (.powers f) (Localization.Away f)
-          Γ(Spec R, PrimeSpectrum.basicOpen f) r • eS x
-        rw [away_smul_eq_native R L f r x, eS.map_smul] }
-
-theorem awayModuleEquiv_mk (L : ModuleCat.{u} R) (f : R) (m : L) :
-    awayModuleEquiv R L f (LocalizedModule.mk m 1) =
-      (tilde.toOpen L (PrimeSpectrum.basicOpen f)).hom m := by
-  exact IsLocalizedModule.iso_mk_one (.powers f)
-    (tilde.toOpen L (PrimeSpectrum.basicOpen f)).hom m
-
 /-- The semilinear comparison from the tensor of explicit localized modules
 over `Localization.Away f` to the tensor of native sections over
 `Γ(Spec R, D(f))`, along the native `IsLocalization.algEquiv`. -/
@@ -504,8 +445,8 @@ theorem awayTensorEquiv_mk_tmul (f : R) (m : M) (n : N) :
     awayTensorEquiv R M N f
         (LocalizedModule.mk m 1 ⊗ₜ[Localization.Away f] LocalizedModule.mk n 1) =
       locTensor R M N f (m ⊗ₜ[R] n) := by
-  change awayModuleEquiv R M f (LocalizedModule.mk m 1) ⊗ₜ[_]
-    awayModuleEquiv R N f (LocalizedModule.mk n 1) = _
+  change (awayModuleEquiv R M f).toFun (LocalizedModule.mk m 1) ⊗ₜ[_]
+    (awayModuleEquiv R N f).toFun (LocalizedModule.mk n 1) = _
   rw [awayModuleEquiv_mk, awayModuleEquiv_mk, locTensor_tmul]
 
 /-- Canonical `R`-linear tensor localization in the explicit `Away f`

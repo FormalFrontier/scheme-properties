@@ -85,6 +85,7 @@ public import SchemeProperties.ModuleTensor
 public import SchemeProperties.ModuleTensorAffine
 public import SchemeProperties.ModuleTensorRestriction
 public import SchemeProperties.ModuleTensorLocalization
+public import SchemeProperties.ModuleTilde
 public import SchemeProperties.NoetherianComponents
 public import SchemeProperties.Topology.ClosedPointCofinite
 public import SchemeProperties.Topology.IrreducibleImage
