@@ -130,6 +130,7 @@ public import SchemeProperties.RealComplexSpectrum
 public import SchemeProperties.RingTheory.Jacobson.Int
 public import SchemeProperties.RingTheory.Jacobson.PrimeSpectrum
 public import SchemeProperties.RingTheory.KrullDimension.QuasiFinite
+public import SchemeProperties.RingTheory.Spectrum.Prime.Polynomial
 public import SchemeProperties.TrivSqZeroExtReducedLocus
 public import SchemeProperties.SheafFinitePresentation
 public import SchemeProperties.SheafFinitePresentationTransport

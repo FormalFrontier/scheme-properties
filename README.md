@@ -93,6 +93,15 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   structure on `L`; no perfection, separability or infinitude assumption on
   `K` is required.
 
+- [Fibres of polynomial spectra under field extension](SchemeProperties/RingTheory/Spectrum/Prime/Polynomial.lean):
+  for independently universed fields `K` and `L` with their given `K`-algebra,
+  the coefficient-extension spectrum map has finite fibre over a prime `p`
+  exactly when `p` is nonzero or `L` is algebraic over `K`. All ordinary point
+  fibres are finite exactly for algebraic extensions, and then the generic
+  fibre consists precisely of the zero prime of `L[X]`. Infinite algebraic
+  extensions and inseparable extensions are included; these are not geometric
+  field-valued lift fibres or a quasi-finiteness assertion.
+
 - [Locally constructible closed-point traces](SchemeProperties/JacobsonClosedPoints.lean):
   in any Jacobson topological space, a subset satisfying Mathlib's
   `Topology.IsLocallyConstructible` has a dense closed-point trace, and is closed
