@@ -277,6 +277,48 @@ hypothesis is imposed. These are not full-stalk dimension equalities. The existi
 between local rings. See the [reader guide](Guide.md) and
 [closed-origin example](../SchemePropertiesTest/QuasiFiniteKrullDimension.lean).
 
+## Polynomial automorphism-orbit topology
+
+Direct import
+[`SchemeProperties.Topology.PolynomialClosedPointOrbits`](../SchemeProperties/Topology/PolynomialClosedPointOrbits.lean).
+These interfaces are outside the historical inventory below. Each takes
+`(K : Type u) (L : Type v) [Field K] [Field L]`, the given
+`[givenAlgebra : Algebra K L]` and `[IsAlgClosure K L]`, with independent universes.
+
+- `Polynomial.algAutOrbitHomeomorphMaximalSpectrum K L` is a homeomorphism
+  from the existing `MulAction.orbitRel.Quotient (L ≃ₐ[K] L) L` to
+  `MaximalSpectrum (Polynomial K)`. Its source topology is exactly
+  `@instTopologicalSpaceQuotient L (MulAction.orbitRel (L ≃ₐ[K] L) L)
+  (TopologicalSpace.cofinite (X := L))`: the quotient topology from the
+  cofinite topology on the original field `L`. Its target topology is
+  `MaximalSpectrum.zariskiTopology (R := Polynomial K)`.
+- The `[simp]` theorem
+  `Polynomial.algAutOrbitHomeomorphMaximalSpectrum_toEquiv` identifies its
+  `toEquiv` with `Polynomial.algAutOrbitEquivMaximalSpectrum K L`.
+  Mathlib's `Homeomorph.coe_toEquiv` and `Homeomorph.coe_symm_toEquiv`
+  recover both functions: writing `h` for the homeomorphism and `e` for this
+  equivalence, `h q = e q` and `h.symm x = e.symm x`. Thus the entire
+  forward and inverse maps are retained without unfolding the construction.
+- `Polynomial.isQuotientMap_algAutOrbitEquivMaximalSpectrum_mk` proves
+  `Topology.IsQuotientMap` for the composite of the existing orbit projection
+  `a ↦ Quotient.mk (MulAction.orbitRel (L ≃ₐ[K] L) L) a` and
+  `Polynomial.algAutOrbitEquivMaximalSpectrum K L`, from cofinite `L` to
+  the Zariski maximal spectrum. Its value at `a` has ideal the kernel of
+  evaluation `Polynomial.aeval a`, as expressed by the existing
+  `Polynomial.algAutOrbitEquivMaximalSpectrum_asIdeal_ker_aeval` formula.
+
+The action, orbit quotient, algebraic equivalence and evaluation-kernel
+formulas are the existing ones, with the given algebra structure. This concerns
+maximal ideals, or closed points of `Spec K[X]`, not the whole prime spectrum
+or its generic point; evaluation need not be surjective onto `L`. No topology
+on `K` or on `L ≃ₐ[K] L`, topological-field structure on `L`, joint continuity,
+perfection, separability, finite-dimensionality or base-field infinitude
+hypothesis is imposed. The finite-fibre comparison uses Group Theory's
+`IsIntegral.finite_orbit` and
+`CofiniteTopology.coinduced_eq_cofinite_of_finite_fibers`; integrality of each
+chosen point is enough, without finiteness of the automorphism group or a
+separable-degree count.
+
 ## Complete module inventory
 
 | Module | Scope | Display sites |

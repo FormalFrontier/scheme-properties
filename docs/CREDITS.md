@@ -97,6 +97,23 @@ or a Frobenius identification.
 
 ## Mathematical sources and upstream notices
 
+The [polynomial automorphism-orbit topology](../SchemeProperties/Topology/PolynomialClosedPointOrbits.lean)
+refines Multivariate Polynomials' correspondence in
+`MultivariatePolynomials.PolynomialClosedPoints` and
+`MultivariatePolynomials.PolynomialClosedPointLoci`. These supply
+`Polynomial.algAutOrbitEquivMaximalSpectrum`, the evaluation-kernel formulas,
+and the fibre and root-locus interfaces. Group Theory supplies
+`IsIntegral.finite_orbit` and
+`CofiniteTopology.coinduced_eq_cofinite_of_finite_fibers` for finiteness of
+integral-element orbits and cofinite topology under finite-fibre surjections. Mathlib
+supplies field-base algebraicity-to-integrality, quotient topology, its
+universal property, `Homeomorph` and its forward/inverse projections.
+Scheme Properties' [closed-point cofiniteness](../SchemeProperties/Topology/ClosedPointCofinite.lean)
+supplies `MaximalSpectrum.topologicalSpace_polynomial_eq_cofinite`.
+The polynomial-specific homeomorphism and original-carrier quotient-map result
+have the collective project credit above; upstream notices remain with the
+imported modules.
+
 The [open-factorization property](../SchemeProperties/KernImage.lean) uses
 Mathlib's `Scheme.Hom.resLE`, `resLE_comp_ι` and open-subscheme inclusion API
 from [`AlgebraicGeometry/Restrict.lean`](https://github.com/leanprover-community/mathlib4/blob/83abb3e776bdefcbc447a1e44d0debe4010039e5/Mathlib/AlgebraicGeometry/Restrict.lean),

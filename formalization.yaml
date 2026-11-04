@@ -51,6 +51,10 @@ sources:
     type: software
     relationship: adapts
     note: "Imports upstream mathlib APIs without copying proofs; authentic notices remain upstream and adapted expression is credited in docs/CREDITS.md."
+  - title: "Multivariate Polynomials, Group Theory and Mathlib: polynomial closed-point orbit topology"
+    type: software
+    relationship: adapts
+    note: "The polynomial automorphism-orbit homeomorphism and evaluation-kernel quotient map refine Multivariate Polynomials' existing orbit correspondence and fibre/root-locus API, using Group Theory's finite integral-element orbits and cofinite topology for finite-fibre surjections, Mathlib's integrality, quotient-topology and Homeomorph interfaces, and Scheme Properties' polynomial maximal-spectrum cofiniteness. See docs/API.md and docs/CREDITS.md."
 
 automation:
   methods:

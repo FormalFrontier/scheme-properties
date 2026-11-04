@@ -84,7 +84,14 @@ but do not replace, Mathlib's scheme and rational-map APIs.
   whole space or finite. Its given topology is therefore cofinite, without
   separation, sobriety or Jacobson hypotheses. The Zariski closed-point topology
   of `Spec K[X]` and the Zariski topology of `MaximalSpectrum K[X]` are cofinite
-  over every field `K`.
+  over every field `K`. For any algebraic closure `L` of `K`, the
+  [automorphism-orbit homeomorphism](SchemeProperties/Topology/PolynomialClosedPointOrbits.lean)
+  identifies the existing `(L ≃ₐ[K] L)`-orbit quotient of cofinite `L` with this
+  Zariski maximal spectrum, retaining Multivariate Polynomials' underlying
+  equivalence. The evaluation-kernel classifier from `L` is a quotient map.
+  The fields may have independent universes, using the given `K`-algebra
+  structure on `L`; no perfection, separability or infinitude assumption on
+  `K` is required.
 
 - [Locally constructible closed-point traces](SchemeProperties/JacobsonClosedPoints.lean):
   in any Jacobson topological space, a subset satisfying Mathlib's
@@ -319,9 +326,9 @@ build succeeds.
   [polynomial local normality](SchemeProperties/NormalPolynomial.lean), not the
   whole locally normal base and two-stage localization argument.
 - [Mathlib](https://github.com/leanprover-community/mathlib4): reused scheme,
-  rational-map, restricted-Yoneda, flat-sections, tensor, sheaf and descent
-  methods, as well as adapted constructions detailed in
-  [Credits](docs/CREDITS.md), with authentic upstream notices preserved.
+  rational-map, restricted-Yoneda, flat-sections, tensor, sheaf, descent,
+  quotient-topology and homeomorphism methods, as well as adapted constructions
+  detailed in [Credits](docs/CREDITS.md), with authentic upstream notices preserved.
 - [Coherent Modules](https://github.com/FormalFrontier/coherent-modules),
   [Finite Étale Algebras](https://github.com/FormalFrontier/finite-etale-algebras)
   and [Multivariate Polynomials](https://github.com/FormalFrontier/multivariate-polynomials/tree/602ba00e0d71b83ecc78adebffef1a494b2a47b1):
@@ -329,7 +336,13 @@ build succeeds.
   component algebras and descent, the polynomial point-quotient presentation,
   and `MultivariatePolynomials.IntegrallyClosed`'s `MvPolynomial.isIntegrallyClosed`.
   Polynomial local normality extends this project's existing univariate
-  coefficient-prime localization strategy to arbitrary variables.
+  coefficient-prime localization strategy to arbitrary variables. For polynomial
+  orbit topology, the [Multivariate Polynomials closed-point modules](https://github.com/FormalFrontier/multivariate-polynomials/tree/9230f70aa26f680b291886ee1946210d65031cc5/MultivariatePolynomials)
+  supply the existing orbit correspondence and evaluation-kernel, fibre
+  and root-locus interfaces. [Group Theory](https://github.com/FormalFrontier/group-theory)
+  supplies finite orbits of integral elements and cofinite quotient topologies
+  for surjections with finite fibres. Scheme Properties supplies polynomial
+  maximal-spectrum cofiniteness.
 
 - [Minimal Primes](https://github.com/FormalFrontier/minimal-primes) supplies
   `IsReduced.of_isLocalization`, the canonical independent-universe

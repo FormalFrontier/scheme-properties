@@ -27,12 +27,18 @@ rev = "79575f65c9edec560f27756917761eed78331a2a"
 [[require]]
 name = "multivariate-polynomials"
 git = "https://github.com/FormalFrontier/multivariate-polynomials.git"
-rev = "58f7a9d7846189577c2a46ed1b06161ef71975b1"
+rev = "9230f70aa26f680b291886ee1946210d65031cc5"
 
 [[require]]
 name = "minimal-primes"
 git = "https://github.com/FormalFrontier/minimal-primes.git"
-rev = "44b23fb524e62c7f91f7cbe7f07db873cb5c1d66"
+rev = "c069147fd1754e4a87be7e09003439f1d2250bfd"
+
+# Finite integral-element orbits and cofinite topologies on their quotient spaces.
+[[require]]
+name = "groupTheory"
+git = "https://github.com/FormalFrontier/group-theory.git"
+rev = "9d82a1f4f48a5c75679b01a985274d3a27d1c54c"
 
 # Match Mathlib's resolved Batteries revision, overriding Aesop's nested pin.
 [[require]]

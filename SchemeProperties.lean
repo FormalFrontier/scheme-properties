@@ -88,6 +88,7 @@ public import SchemeProperties.ModuleTensorLocalization
 public import SchemeProperties.ModuleTilde
 public import SchemeProperties.NoetherianComponents
 public import SchemeProperties.Topology.ClosedPointCofinite
+public import SchemeProperties.Topology.PolynomialClosedPointOrbits
 public import SchemeProperties.Topology.IrreducibleImage
 public import SchemeProperties.Normal
 public import SchemeProperties.NormalSections
