@@ -6,6 +6,16 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
+- [Finiteness near a given generic point](SchemeProperties/GenericFiniteness.lean):
+  a locally finite type, quasi-compact morphism `f : X ⟶ S` whose ordinary
+  point-fibre `f ⁻¹' {η}` is finite over a given generic point `η` of the whole
+  target becomes finite on the whole preimage of a dense open neighbourhood
+  of that same point. No separatedness, quasi-separatedness, reducedness or
+  Noetherian hypothesis is required; empty fibres are allowed. The accompanying
+  [openness theorem](SchemeProperties/GenericFiniteness/Openness.lean) makes a
+  finite morphism an open map after restricting around a given generic point,
+  without assuming the target reduced or the fibre nonempty.
+
 - [Ranges of finitely generated algebras](SchemeProperties/Algebra/Category/FGAlgCat/Range.lean):
   over any commutative ring, taking the range of an algebra map with finitely
   generated domain is left adjoint to the inclusion of finitely generated
