@@ -64,6 +64,7 @@ public import SchemeProperties.RingTheory.FaithfullyFlatPi
 public import SchemeProperties.FlatQuasiFinite
 public import SchemeProperties.GenericFlatness
 public import SchemeProperties.GenericFiniteness
+public import SchemeProperties.GenericFiniteness.Components
 public import SchemeProperties.PowerImage
 public import SchemeProperties.GeometricConnectedness
 public import SchemeProperties.GeometricPointLifting

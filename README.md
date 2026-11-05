@@ -6,12 +6,15 @@ but do not replace, Mathlib's scheme and rational-map APIs.
 
 ## Headline results
 
-- [Finiteness near a given generic point](SchemeProperties/GenericFiniteness.lean):
-  a locally finite type, quasi-compact morphism `f : X ⟶ S` whose ordinary
-  point-fibre `f ⁻¹' {η}` is finite over a given generic point `η` of the whole
-  target becomes finite on the whole preimage of a dense open neighbourhood
-  of that same point. No separatedness, quasi-separatedness, reducedness or
-  Noetherian hypothesis is required; empty fibres are allowed. The accompanying
+- [Finiteness near all component generic points](SchemeProperties/GenericFiniteness/Components.lean):
+  a locally finite type, quasi-compact morphism with finite ordinary point-fibres
+  over every component generic point becomes finite on the whole preimage of a
+  dense open containing all those points, provided their canonical inherited
+  subspace topology is discrete. In particular, this holds when the target has
+  finitely many irreducible components. No separatedness, quasi-separatedness,
+  reducedness or Noetherian hypothesis is required; empty fibres are allowed.
+  The [single-point criterion](SchemeProperties/GenericFiniteness.lean) treats a
+  given generic point of the whole target directly. The accompanying
   [openness theorem](SchemeProperties/GenericFiniteness/Openness.lean) makes a
   finite morphism an open map after restricting around a given generic point,
   without assuming the target reduced or the fibre nonempty.

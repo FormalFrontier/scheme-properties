@@ -62,6 +62,15 @@ automation:
       framework: "Formal Frontier agent-assisted Lean development"
       notes: "AI-assisted Lean proofs, examples and documentation, with mathematical review; no uniform model or cost claim."
 
+highlights:
+  - title: "Finiteness near all component generic points"
+    statement: "A locally finite type, quasi-compact morphism with finite ordinary fibres over every component generic point becomes finite on the whole preimage of a dense open containing all those points whenever their canonical subspace topology is discrete, in particular when the target has finitely many irreducible components."
+    declarations:
+      - declaration: AlgebraicGeometry.Scheme.Hom.exists_isFinite_morphismRestrict_of_discreteTopology_genericPoints
+        file: SchemeProperties/GenericFiniteness/Components.lean
+      - declaration: AlgebraicGeometry.Scheme.Hom.exists_isFinite_morphismRestrict_of_finite_irreducibleComponents
+        file: SchemeProperties/GenericFiniteness/Components.lean
+
 status:
   scope: >-
     Extension from one-cover dense subfunctors for morphism classes with relative pullbacks
@@ -99,6 +108,10 @@ status:
     nonseparated families or identification with a particular source ring is asserted.
     Local algebra, finite presentations, components, tensors, dense-open rational maps, relative categories and function fields. Generic-point field maps need no finite-type premise; the chosen-base generic-point rational arrow is noninvertible for a nontrivial Jacobson integral target despite its reversed field-map isomorphism. Inverse reflection requires original-source local finite type, whereas reconstruction requires target-map local finite type. Exact rational inverses require independently dominant quotients; literal chosen-base overness needs the forward quotient base law. No total-scheme isomorphism, unrestricted category equivalence or source-coverage claim. Selected declaration pointers below are not a census; see docs/Guide.md.
   main_results:
+    - declaration: AlgebraicGeometry.Scheme.Hom.exists_isFinite_morphismRestrict_of_discreteTopology_genericPoints
+      file: SchemeProperties/GenericFiniteness/Components.lean
+    - declaration: AlgebraicGeometry.Scheme.Hom.exists_isFinite_morphismRestrict_of_finite_irreducibleComponents
+      file: SchemeProperties/GenericFiniteness/Components.lean
     - declaration: PrimeSpectrum.isReduced_atPrime_homeomorphOfRingEquiv_iff
       file: SchemeProperties/ReducedLocusEquiv.lean
     - declaration: PrimeSpectrum.isOpen_isReduced_atPrime_iff_ringEquiv
